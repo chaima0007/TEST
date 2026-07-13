@@ -43,6 +43,7 @@ export class BaseConnaissances {
   constructor() {
     this.utilisateurs = new Map();
     this.recettes = RECETTES_PAR_DEFAUT.map((r) => ({ ...r }));
+    this.microObjectifs = new Map();
   }
 
   ajouterUtilisateur(utilisateur) {
@@ -59,6 +60,25 @@ export class BaseConnaissances {
       throw new Error(`Utilisateur ${userId} inconnu dans la base de connaissances.`);
     }
     return { ...utilisateur };
+  }
+
+  /** Remplace les micro-objectifs de l'utilisateur (pas de doublons). */
+  setMicroObjectifs(userId, microObjectifs) {
+    this.getUtilisateur(userId);
+    this.microObjectifs.set(userId, microObjectifs.map((m) => ({ ...m })));
+  }
+
+  getMicroObjectifs(userId) {
+    return (this.microObjectifs.get(userId) ?? []).map((m) => ({ ...m }));
+  }
+
+  validerMicroObjectif(userId, microId) {
+    const liste = this.microObjectifs.get(userId) ?? [];
+    const micro = liste.find((m) => m.id === microId);
+    if (!micro) {
+      throw new Error(`Micro-objectif ${microId} inconnu pour l'utilisateur ${userId}.`);
+    }
+    micro.fait = true;
   }
 
   ajouterRecette(recette) {

@@ -50,6 +50,7 @@ class BaseConnaissances:
     def __init__(self):
         self._utilisateurs = {}
         self._recettes = [dict(r) for r in RECETTES_PAR_DEFAUT]
+        self._sommeil = {}
 
     # -- Utilisateurs ---------------------------------------------------------
 
@@ -62,6 +63,16 @@ class BaseConnaissances:
         if user_id not in self._utilisateurs:
             raise KeyError(f"Utilisateur {user_id} inconnu dans la base de connaissances.")
         return dict(self._utilisateurs[user_id])
+
+    # -- Sommeil --------------------------------------------------------------
+
+    def ajouter_sommeil(self, user_id: int, duree: float, date: str = "") -> None:
+        """Enregistre une nuit de sommeil (durée en heures)."""
+        self.get_utilisateur(user_id)  # valide que l'utilisateur existe
+        self._sommeil.setdefault(user_id, []).append({"date": date, "duree": duree})
+
+    def get_historique_sommeil(self, user_id: int) -> list:
+        return [dict(nuit) for nuit in self._sommeil.get(user_id, [])]
 
     # -- Recettes -------------------------------------------------------------
 
