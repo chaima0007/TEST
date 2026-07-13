@@ -2,7 +2,7 @@
 
 *Généré le 2026-07-13. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
 
-**775 réponses · 184 modules · 1141 sources officielles · 506 fiches avec contacts · 153 alertes de délai**
+**783 réponses · 184 modules · 1150 sources officielles · 514 fiches avec contacts · 153 alertes de délai**
 
 ## Modules en ligne
 
@@ -25,7 +25,7 @@
 | Assurance logement | Assurance habitation & incendie | 4 | 4 | 4 | 1 |
 | — | Assurance hospitalisation | 4 | 6 | 1 | 2 |
 | — | Assurance maladie & mutualité | 4 | 7 | 0 | 0 |
-| Épargne & placements | Assurance-vie (épargne/placement) — branche 21 et 23 | 3 | 4 | 3 | 0 |
+| Épargne & placements | Assurance-vie (épargne/placement) — branche 21 et 23 | 4 | 5 | 4 | 0 |
 | Assurances | Assurances — auto obligatoire, RC familiale, litiges | 4 | 5 | 3 | 1 |
 | — | Bail à ferme (location de biens agricoles) | 4 | 5 | 1 | 1 |
 | — | Bail de résidence principale — Région de Bruxelles-Capitale | 9 | 11 | 0 | 0 |
@@ -48,7 +48,7 @@
 | Circulation routière | Circulation routière — accident, constat, permis | 4 | 7 | 2 | 2 |
 | Citoyenneté | Droits et devoirs du citoyen | 4 | 7 | 3 | 2 |
 | Droits dans l'Union européenne | Citoyen européen — vivre, travailler, étudier dans l'UE | 4 | 8 | 4 | 0 |
-| Consommation & contrats | Clauses abusives dans les contrats de consommation | 3 | 3 | 3 | 0 |
+| Consommation & contrats | Clauses abusives dans les contrats de consommation | 4 | 4 | 4 | 0 |
 | Colocation | Colocation — bail commun & règles | 4 | 4 | 4 | 1 |
 | Travail & deuil | Congé de deuil (petit chômage pour décès) | 4 | 5 | 0 | 0 |
 | — | Congé de maternité & congé de naissance | 4 | 4 | 0 | 1 |
@@ -75,7 +75,7 @@
 | Drogues & prévention | Drogues — prévention, ravages et information | 5 | 6 | 2 | 1 |
 | Droit à l'image | Droit à l'image — photos & vidéos | 4 | 8 | 4 | 0 |
 | Indépendants & sécurité sociale | Droit passerelle (indépendant en difficulté) | 4 | 4 | 4 | 1 |
-| Aînés & hébergement | Droits du résident en maison de repos (MR/MRS) | 3 | 6 | 3 | 0 |
+| Aînés & hébergement | Droits du résident en maison de repos (MR/MRS) | 4 | 8 | 4 | 0 |
 | Eau & distribution | Eau — facture, impayés et coupure | 4 | 8 | 4 | 0 |
 | Travail & santé | Protection et écartement de la travailleuse enceinte | 4 | 5 | 4 | 0 |
 | Famille & jeunesse | Émancipation d'un mineur | 4 | 5 | 1 | 0 |
@@ -96,7 +96,7 @@
 | Formation en alternance | Formation en alternance / apprentissage (apprendre un métier) | 4 | 7 | 4 | 0 |
 | Fraude & sécurité numérique | Arnaques & fraude en ligne — réagir vite | 4 | 8 | 4 | 2 |
 | Décès & démarches | Funérailles, sépulture & dernières volontés (Wallonie) | 4 | 4 | 1 | 0 |
-| Logement & location | Garantie locative & compte bloqué | 3 | 3 | 3 | 0 |
+| Logement & location | Garantie locative & compte bloqué | 4 | 4 | 4 | 0 |
 | Petite enfance & accueil | Garde d'enfants — crèche & milieux d'accueil | 4 | 7 | 4 | 0 |
 | Gouvernement & institutions | Gouvernement & institutions — comment la Belgique est gouvernée | 5 | 10 | 0 | 0 |
 | — | GRAPA — garantie de revenus aux personnes âgées | 4 | 4 | 0 | 1 |
@@ -139,7 +139,7 @@
 | Urbanisme & travaux | Permis d'urbanisme — travaux & rénovation | 4 | 8 | 4 | 1 |
 | Justice pénale | Porter plainte, classement sans suite & partie civile | 4 | 4 | 4 | 0 |
 | — | Plainte contre la police (Comité P) | 4 | 5 | 1 | 0 |
-| Impôts & difficultés de paiement | Plan de paiement pour dettes fiscales | 3 | 3 | 3 | 1 |
+| Impôts & difficultés de paiement | Plan de paiement pour dettes fiscales | 4 | 4 | 4 | 1 |
 | — | Précompte immobilier | 4 | 7 | 1 | 1 |
 | Jeunes & premier emploi | Jeunes — premier emploi & stage d'insertion | 4 | 6 | 4 | 0 |
 | Primes rénovation | Primes à la rénovation et à l'énergie (logement) | 4 | 8 | 3 | 3 |
@@ -165,7 +165,7 @@
 | — | Soins de santé à l'étranger (remboursement) | 4 | 5 | 1 | 2 |
 | Santé & remboursements | Statut affection chronique — frais de santé allégés | 4 | 4 | 4 | 0 |
 | — | Statut social de l'artiste (travail des arts) | 4 | 6 | 1 | 0 |
-| Succession & fiscalité | Déclaration et droits de succession | 3 | 4 | 3 | 2 |
+| Succession & fiscalité | Déclaration et droits de succession | 4 | 5 | 4 | 2 |
 | Successions | Successions & héritage — accepter, renoncer, délais | 5 | 11 | 4 | 2 |
 | — | Succession internationale | 4 | 5 | 1 | 0 |
 | Surendettement & dettes | Surendettement — Règlement collectif de dettes (RCD) | 9 | 11 | 0 | 2 |
@@ -175,13 +175,13 @@
 | Testament & donations | Testament & planifier sa succession | 4 | 7 | 4 | 0 |
 | Santé & remboursements | Tiers payant — ne payer que sa part chez le soignant | 4 | 4 | 4 | 0 |
 | — | Titres-services (aide à domicile) | 4 | 6 | 1 | 0 |
-| Santé & remboursements | Frais de transport pour raison médicale | 3 | 4 | 3 | 0 |
+| Santé & remboursements | Frais de transport pour raison médicale | 4 | 5 | 4 | 0 |
 | Droits des passagers | Voyageurs — train & avion (retard, annulation) | 4 | 8 | 4 | 2 |
 | Travail & emploi | Travail & emploi — licenciement, préavis, chômage | 5 | 6 | 5 | 5 |
 | Travail & contrats | Travail intérimaire — contrat et droits | 4 | 4 | 4 | 0 |
 | Travail & revenus | Travail à temps partiel & allocation de garantie de revenus | 4 | 5 | 4 | 0 |
 | — | Tutelle d'un enfant mineur | 4 | 6 | 1 | 0 |
-| Logement & fiscalité | TVA réduite à 6 % pour la rénovation | 3 | 3 | 3 | 1 |
+| Logement & fiscalité | TVA réduite à 6 % pour la rénovation | 4 | 4 | 4 | 1 |
 | Travail & congés | Vacances annuelles & pécule de vacances | 4 | 8 | 4 | 0 |
 | — | Vices cachés (garantie de l'acheteur) | 4 | 5 | 1 | 1 |
 | Vie privée & données | Vie privée & données personnelles (RGPD) | 4 | 8 | 1 | 1 |

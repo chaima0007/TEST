@@ -19,11 +19,21 @@
       "reponse": "La garantie locative sert à couvrir d'éventuels manquements du locataire (loyers impayés, dégâts). Son montant maximal est encadré et dépend de la région et de la forme de la garantie. En règle générale, si la garantie est constituée sur un compte individualisé bloqué au nom du locataire, elle est plafonnée à 2 mois de loyer ; si elle prend la forme d'une garantie bancaire (constituée progressivement) ou via certains dispositifs régionaux, elle peut atteindre 3 mois. Le bailleur ne peut pas exiger plus que le maximum légal, ni la garder « en liquide » : elle doit être placée correctement. Vérifiez le plafond exact applicable dans votre région.",
       "reference_legale": "Décret wallon du 15 mars 2018 et ordonnance bruxelloise relative au bail d'habitation (plafond et forme de la garantie locative)",
       "contacts": [
-        {"nom": "Service logement de votre région", "pour": "plafond et formes de garantie"},
-        {"nom": "Votre banque", "pour": "compte garantie bloqué / garantie bancaire"}
+        {
+          "nom": "Service logement de votre région",
+          "pour": "plafond et formes de garantie"
+        },
+        {
+          "nom": "Votre banque",
+          "pour": "compte garantie bloqué / garantie bancaire"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://finances.belgium.be/fr/particuliers/habitation/louer-et-donner-en-location/garantie-locative", "intitule": "SPF Finances — Garantie locative"}
+        {
+          "type": "officiel",
+          "url": "https://finances.belgium.be/fr/particuliers/habitation/louer-et-donner-en-location/garantie-locative",
+          "intitule": "SPF Finances — Garantie locative"
+        }
       ],
       "date_verification": "2026-06-30"
     },
@@ -33,11 +43,22 @@
       "reponse": "La garantie ne va pas dans la poche du bailleur : elle doit être placée de façon sécurisée. La forme classique est le compte individualisé bloqué, ouvert au nom du locataire (les intérêts lui reviennent) : ni le bailleur ni le locataire ne peuvent y toucher seuls, l'argent n'est libéré qu'à la fin du bail, d'un commun accord ou sur décision de justice. Il existe aussi le système e-DEPO de la Caisse des Dépôts et Consignations (SPF Finances), qui permet de consigner la garantie auprès de l'État. Des aides régionales existent pour les locataires qui ont du mal à réunir la garantie (prêts à taux zéro, fonds de garantie).",
       "reference_legale": "Décrets/ordonnances régionaux sur le bail d'habitation (constitution de la garantie) ; e-DEPO (Caisse des Dépôts et Consignations)",
       "contacts": [
-        {"nom": "Votre banque", "pour": "compte garantie locative bloqué"},
-        {"nom": "e-DEPO (SPF Finances)", "lien": "https://finances.belgium.be", "pour": "consignation de la garantie"}
+        {
+          "nom": "Votre banque",
+          "pour": "compte garantie locative bloqué"
+        },
+        {
+          "nom": "e-DEPO (SPF Finances)",
+          "lien": "https://finances.belgium.be",
+          "pour": "consignation de la garantie"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://finances.belgium.be/fr/particuliers/habitation/louer-et-donner-en-location/garantie-locative", "intitule": "SPF Finances — Garantie locative et e-DEPO"}
+        {
+          "type": "officiel",
+          "url": "https://finances.belgium.be/fr/particuliers/habitation/louer-et-donner-en-location/garantie-locative",
+          "intitule": "SPF Finances — Garantie locative et e-DEPO"
+        }
       ],
       "date_verification": "2026-06-30"
     },
@@ -47,11 +68,45 @@
       "reponse": "À la fin du bail, la garantie (et ses intérêts) vous est en principe restituée si vous avez respecté vos obligations et qu'il n'y a pas de dégâts à votre charge. La libération se fait soit d'un commun accord écrit entre bailleur et locataire (que la banque exige pour débloquer le compte), soit, en cas de désaccord, sur décision du juge de paix. Pour éviter les litiges : faites un état des lieux d'entrée ET de sortie, comparez-les, et gardez les preuves. Si le bailleur refuse de libérer la garantie sans raison, vous pouvez saisir le juge de paix (la conciliation y est gratuite).",
       "reference_legale": "Décrets/ordonnances régionaux sur le bail d'habitation (restitution de la garantie) ; Code judiciaire (juge de paix)",
       "contacts": [
-        {"nom": "Bailleur / banque", "pour": "accord de libération de la garantie"},
-        {"nom": "Juge de paix", "pour": "litige sur la restitution (conciliation gratuite)"}
+        {
+          "nom": "Bailleur / banque",
+          "pour": "accord de libération de la garantie"
+        },
+        {
+          "nom": "Juge de paix",
+          "pour": "litige sur la restitution (conciliation gratuite)"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://finances.belgium.be/fr/particuliers/habitation/louer-et-donner-en-location/garantie-locative", "intitule": "SPF Finances — Restitution de la garantie"}
+        {
+          "type": "officiel",
+          "url": "https://finances.belgium.be/fr/particuliers/habitation/louer-et-donner-en-location/garantie-locative",
+          "intitule": "SPF Finances — Restitution de la garantie"
+        }
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "GARLOC-AIDE-001",
+      "question": "Je n'arrive pas à payer la garantie en une fois : quelles solutions existent ?",
+      "reponse": "Vous n'êtes pas obligé de verser toute la garantie immédiatement. Selon la région, la loi prévoit plusieurs formes : le compte bloqué (versement en une fois) mais aussi la garantie bancaire que vous reconstituez par mensualités auprès de votre banque, sans intérêts pour vous — la banque ne peut pas la refuser au seul motif de vos revenus si vous y domiciliez vos revenus professionnels ou de remplacement. Des aides publiques existent aussi : en Wallonie et à Bruxelles, des fonds régionaux et le CPAS peuvent avancer ou garantir la garantie locative (le CPAS peut se porter garant sans que le propriétaire sache que l'aide vient de lui, via une garantie bancaire standard). Renseignez-vous avant de renoncer à un logement pour cette raison.",
+      "reference_legale": "Décret wallon du 15 mars 2018 et ordonnance bruxelloise relative au bail d'habitation (formes de la garantie) ; loi du 8 juillet 1976 organique des CPAS (aide sociale)",
+      "contacts": [
+        {
+          "nom": "Service logement de votre région",
+          "pour": "plafond et formes de garantie"
+        },
+        {
+          "nom": "Votre banque",
+          "pour": "compte garantie bloqué / garantie bancaire"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://finances.belgium.be/fr/particuliers/habitation/louer-et-donner-en-location/garantie-locative",
+          "intitule": "SPF Finances — Garantie locative"
+        }
       ],
       "date_verification": "2026-06-30"
     }

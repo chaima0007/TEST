@@ -2,11 +2,11 @@
   "registre": "Questions de la communauté — index public navigable",
   "principe": "Questions issues du corpus officiel vérifié ; réponse complète dans la fiche liée. Les futures questions d'utilisateurs seront anonymisées et modérées avant publication.",
   "genere_le": "2026-07-13",
-  "total_questions": 775,
+  "total_questions": 783,
   "categories": {
     "Autres": 221,
     "Justice pénale": 20,
-    "Santé & remboursements": 19,
+    "Santé & remboursements": 20,
     "Étrangers & séjour": 12,
     "Indépendant & activité": 9,
     "Droits fondamentaux & Constitution": 8,
@@ -37,6 +37,7 @@
     "Animaux": 4,
     "Assurance véhicule": 4,
     "Assurance logement": 4,
+    "Épargne & placements": 4,
     "Assurances": 4,
     "Logement étudiant": 4,
     "Services bancaires": 4,
@@ -51,6 +52,7 @@
     "Circulation routière": 4,
     "Citoyenneté": 4,
     "Droits dans l'Union européenne": 4,
+    "Consommation & contrats": 4,
     "Colocation": 4,
     "Travail & deuil": 4,
     "Consommation": 4,
@@ -65,6 +67,7 @@
     "Divorce & séparation": 4,
     "Documents d'identité": 4,
     "Droit à l'image": 4,
+    "Aînés & hébergement": 4,
     "Eau & distribution": 4,
     "Famille & jeunesse": 4,
     "Énergie": 4,
@@ -74,6 +77,7 @@
     "Fonds social chauffage": 4,
     "Formation en alternance": 4,
     "Fraude & sécurité numérique": 4,
+    "Logement & location": 4,
     "Petite enfance & accueil": 4,
     "Famille & enfants": 4,
     "Impôts & fiscalité": 4,
@@ -94,6 +98,7 @@
     "Famille & argent": 4,
     "Permis unique (travailleur étranger)": 4,
     "Urbanisme & travaux": 4,
+    "Impôts & difficultés de paiement": 4,
     "Jeunes & premier emploi": 4,
     "Primes rénovation": 4,
     "Santé & famille": 4,
@@ -106,26 +111,21 @@
     "Santé mentale": 4,
     "Santé & patient": 4,
     "Sexisme & espace public": 4,
+    "Succession & fiscalité": 4,
     "Télécommunications": 4,
     "Travail & organisation": 4,
     "Testament & donations": 4,
     "Droits des passagers": 4,
     "Travail & contrats": 4,
     "Travail & revenus": 4,
+    "Logement & fiscalité": 4,
     "Vie privée & données": 4,
     "Violences conjugales": 4,
     "Voisinage": 4,
     "Achat véhicule d'occasion": 4,
     "Vote & démocratie": 4,
     "Voyage d'un enfant": 4,
-    "Voyages": 4,
-    "Épargne & placements": 3,
-    "Consommation & contrats": 3,
-    "Aînés & hébergement": 3,
-    "Logement & location": 3,
-    "Impôts & difficultés de paiement": 3,
-    "Succession & fiscalité": 3,
-    "Logement & fiscalité": 3
+    "Voyages": 4
   },
   "questions": [
     {
@@ -1061,6 +1061,19 @@
       "reference_legale": "Code des impôts sur les revenus 1992 et Code des droits et taxes divers (taxe sur les primes et fiscalité de l'assurance-vie)",
       "lien_fiche": "/fiche/assurance_vie_branche_21_23#AVIE-FISCALITE-001",
       "source_officielle": "https://www.fsma.be/fr/assurance-vie-branche-23",
+      "popularite": null,
+      "origine": "corpus_officiel"
+    },
+    {
+      "id": "QPUB-assurance-vie-branche-21-23-AVIE-PROTECTION-001",
+      "question": "Mon argent est-il protégé si la compagnie d'assurance fait faillite ?",
+      "domaine": "Épargne & placements",
+      "module": "assurance_vie_branche_21_23",
+      "titre_fiche": "Assurance-vie (épargne/placement) — branche 21 et 23",
+      "reponse_resume": "Cela dépend de la branche. Les contrats de la branche 21 (à capital garanti) relèvent du Fonds de garantie belge : en cas de défaillance de l'assureur, la valeur de rachat est protégée jusqu'à 100 000 € par preneur et par compagnie —…",
+      "reference_legale": "Loi du 4 avril 2014 relative aux assurances ; arrêté royal du 14 novembre 2008 (Fonds de garantie — protection des produits de la branche 21)",
+      "lien_fiche": "/fiche/assurance_vie_branche_21_23#AVIE-PROTECTION-001",
+      "source_officielle": "https://www.fsma.be/fr",
       "popularite": null,
       "origine": "corpus_officiel"
     },
@@ -2438,6 +2451,19 @@
       "reponse_resume": "D'abord, ne vous laissez pas intimider : une clause abusive est nulle, donc l'entreprise ne peut pas valablement s'en prévaloir contre vous. Contestez par écrit (en citant le caractère abusif de la clause) et conservez une copie. Si…",
       "reference_legale": "Code de droit économique — livre VI (nullité des clauses abusives) et règlement extrajudiciaire des litiges de consommation",
       "lien_fiche": "/fiche/clauses_abusives#CLABUS-REAGIR-001",
+      "source_officielle": "https://economie.fgov.be/fr/themes/ventes/contrats/clauses-abusives",
+      "popularite": null,
+      "origine": "corpus_officiel"
+    },
+    {
+      "id": "QPUB-clauses-abusives-CLABUS-NULLITE-001",
+      "question": "Si une clause est déclarée abusive, tout mon contrat tombe-t-il ?",
+      "domaine": "Consommation & contrats",
+      "module": "clauses_abusives",
+      "titre_fiche": "Clauses abusives dans les contrats de consommation",
+      "reponse_resume": "Non, en principe seule la clause abusive est nulle : elle est réputée non écrite et l'entreprise ne peut pas s'en prévaloir contre vous. Le reste du contrat continue de s'appliquer s'il peut subsister sans la clause supprimée — vous…",
+      "reference_legale": "Code de droit économique — livre VI (nullité de la clause abusive et maintien du contrat, art. VI.84)",
+      "lien_fiche": "/fiche/clauses_abusives#CLABUS-NULLITE-001",
       "source_officielle": "https://economie.fgov.be/fr/themes/ventes/contrats/clauses-abusives",
       "popularite": null,
       "origine": "corpus_officiel"
@@ -3912,6 +3938,19 @@
       "origine": "corpus_officiel"
     },
     {
+      "id": "QPUB-droits-resident-maison-repos-MR-PRIX-001",
+      "question": "La maison de repos peut-elle augmenter le prix ou facturer des suppléments ?",
+      "domaine": "Aînés & hébergement",
+      "module": "droits_resident_maison_repos",
+      "titre_fiche": "Droits du résident en maison de repos (MR/MRS)",
+      "reponse_resume": "Pas librement. Le prix d'hébergement et la liste de ce qu'il couvre doivent figurer dans la convention d'hébergement, tout comme les suppléments autorisés (et leur tarif) : un supplément qui n'est pas prévu dans la convention ne vous est…",
+      "reference_legale": "Code wallon de l'action sociale et de la santé et ordonnance bruxelloise (normes Iriscare/COCOM) — prix d'hébergement, suppléments et contrôle des établissements",
+      "lien_fiche": "/fiche/droits_resident_maison_repos#MR-PRIX-001",
+      "source_officielle": "https://www.iriscare.brussels/fr/citoyens/aines/",
+      "popularite": null,
+      "origine": "corpus_officiel"
+    },
+    {
       "id": "QPUB-eau-EAU-COUPURE-001",
       "question": "Mon distributeur peut-il me couper l'eau si je n'ai pas payé ?",
       "domaine": "Eau & distribution",
@@ -5025,6 +5064,19 @@
       "reponse_resume": "À la fin du bail, la garantie (et ses intérêts) vous est en principe restituée si vous avez respecté vos obligations et qu'il n'y a pas de dégâts à votre charge. La libération se fait soit d'un commun accord écrit entre bailleur et…",
       "reference_legale": "Décrets/ordonnances régionaux sur le bail d'habitation (restitution de la garantie) ; Code judiciaire (juge de paix)",
       "lien_fiche": "/fiche/garantie_locative#GARLOC-RESTITUTION-001",
+      "source_officielle": "https://finances.belgium.be/fr/particuliers/habitation/louer-et-donner-en-location/garantie-locative",
+      "popularite": null,
+      "origine": "corpus_officiel"
+    },
+    {
+      "id": "QPUB-garantie-locative-GARLOC-AIDE-001",
+      "question": "Je n'arrive pas à payer la garantie en une fois : quelles solutions existent ?",
+      "domaine": "Logement & location",
+      "module": "garantie_locative",
+      "titre_fiche": "Garantie locative & compte bloqué",
+      "reponse_resume": "Vous n'êtes pas obligé de verser toute la garantie immédiatement. Selon la région, la loi prévoit plusieurs formes : le compte bloqué (versement en une fois) mais aussi la garantie bancaire que vous reconstituez par mensualités auprès de…",
+      "reference_legale": "Décret wallon du 15 mars 2018 et ordonnance bruxelloise relative au bail d'habitation (formes de la garantie) ; loi du 8 juillet 1976 organique des CPAS (aide sociale)",
+      "lien_fiche": "/fiche/garantie_locative#GARLOC-AIDE-001",
       "source_officielle": "https://finances.belgium.be/fr/particuliers/habitation/louer-et-donner-en-location/garantie-locative",
       "popularite": null,
       "origine": "corpus_officiel"
@@ -7409,6 +7461,19 @@
       "origine": "corpus_officiel"
     },
     {
+      "id": "QPUB-plan-paiement-fiscal-PLANFISC-EFFETS-001",
+      "question": "Un plan de paiement arrête-t-il les intérêts et les poursuites ?",
+      "domaine": "Impôts & difficultés de paiement",
+      "module": "plan_paiement_fiscal",
+      "titre_fiche": "Plan de paiement pour dettes fiscales",
+      "reponse_resume": "Il faut distinguer les deux. Tant que vous respectez le plan accordé, l'administration suspend en principe les poursuites (huissier, saisies) pour la dette concernée. En revanche, les intérêts de retard continuent en principe de courir…",
+      "reference_legale": "Code du recouvrement amiable et forcé des créances fiscales et non fiscales (loi du 13 avril 2019) — poursuites, intérêts de retard et surséance",
+      "lien_fiche": "/fiche/plan_paiement_fiscal#PLANFISC-EFFETS-001",
+      "source_officielle": "https://finances.belgium.be/fr/particuliers/paiements-remboursements/difficultes-de-paiement/plan-de-paiement",
+      "popularite": null,
+      "origine": "corpus_officiel"
+    },
+    {
       "id": "QPUB-precompte-immobilier-PRECI-001",
       "question": "Qu'est-ce que le précompte immobilier ?",
       "domaine": "Autres",
@@ -8787,6 +8852,19 @@
       "origine": "corpus_officiel"
     },
     {
+      "id": "QPUB-succession-droits-succession-SUCCDR-REGION-001",
+      "question": "Quelle région est compétente pour ma succession, et qu'est-ce que cela change ?",
+      "domaine": "Succession & fiscalité",
+      "module": "succession_droits_succession",
+      "titre_fiche": "Déclaration et droits de succession",
+      "reponse_resume": "La région compétente est celle où le défunt a eu son domicile fiscal le plus longtemps au cours des cinq années précédant le décès — pas celle où vivent les héritiers, ni celle où se trouvent les biens. Ce point change beaucoup de choses…",
+      "reference_legale": "Loi spéciale du 16 janvier 1989 relative au financement des Communautés et des Régions (localisation de l'impôt) ; Code des droits de succession régionalisé",
+      "lien_fiche": "/fiche/succession_droits_succession#SUCCDR-REGION-001",
+      "source_officielle": "https://finances.belgium.be/fr/particuliers/deces/declaration-succession",
+      "popularite": null,
+      "origine": "corpus_officiel"
+    },
+    {
       "id": "QPUB-successions-SUCC-OPTIONS-001",
       "question": "Suis-je obligé d'accepter un héritage ?",
       "domaine": "Successions",
@@ -9372,6 +9450,19 @@
       "origine": "corpus_officiel"
     },
     {
+      "id": "QPUB-transport-medical-TRANSMED-DEMANDE-001",
+      "question": "Comment demander l'intervention, et ma mutualité peut-elle rembourser plus ?",
+      "domaine": "Santé & remboursements",
+      "module": "transport_medical",
+      "titre_fiche": "Frais de transport pour raison médicale",
+      "reponse_resume": "L'intervention légale s'obtient via votre mutualité : remettez-lui les justificatifs (prescription ou attestation du médecin quand elle est requise, factures ou attestations de transport, preuves des trajets). Ne jetez jamais ces…",
+      "reference_legale": "Loi coordonnée du 14 juillet 1994 (intervention de l'assurance soins de santé dans les frais de transport) ; loi du 6 août 1990 relative aux mutualités (assurance complémentaire)",
+      "lien_fiche": "/fiche/transport_medical#TRANSMED-DEMANDE-001",
+      "source_officielle": "https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/frais-de-transport-pour-raison-medicale",
+      "popularite": null,
+      "origine": "corpus_officiel"
+    },
+    {
       "id": "QPUB-transport-passagers-TRANS-TRAIN-RETARD-001",
       "question": "Mon train a beaucoup de retard ou est annulé, ai-je droit à quelque chose ?",
       "domaine": "Droits des passagers",
@@ -9680,6 +9771,19 @@
       "reference_legale": "Code de la TVA et arrêté royal n° 20 (régime de TVA réduite pour la démolition-reconstruction de logements)",
       "lien_fiche": "/fiche/tva_renovation_6#TVA6-DEMOLITION-001",
       "source_officielle": "https://finances.belgium.be/fr/particuliers/habitation/construire-renover",
+      "popularite": null,
+      "origine": "corpus_officiel"
+    },
+    {
+      "id": "QPUB-tva-renovation-6-TVA6-RESPONSABILITE-001",
+      "question": "Qui est responsable si le taux de 6 % a été appliqué à tort ?",
+      "domaine": "Logement & fiscalité",
+      "module": "tva_renovation_6",
+      "titre_fiche": "TVA réduite à 6 % pour la rénovation",
+      "reponse_resume": "Depuis la réforme des formalités, l'ancienne attestation a été remplacée par une mention standard que l'entrepreneur appose sur la facture : elle indique que le taux réduit ne s'applique que si les conditions (âge du bâtiment, usage comme…",
+      "reference_legale": "Arrêté royal n° 20 en matière de TVA (taux réduit rénovation — mention sur la facture et responsabilité du client)",
+      "lien_fiche": "/fiche/tva_renovation_6#TVA6-RESPONSABILITE-001",
+      "source_officielle": "https://finances.belgium.be/fr/particuliers/habitation/construire-renover/renover/renover-taux-de-tva",
       "popularite": null,
       "origine": "corpus_officiel"
     },

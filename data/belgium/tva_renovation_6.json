@@ -19,11 +19,22 @@
       "reponse": "Le taux normal de TVA est de 21 %, mais les travaux de RÉNOVATION d'un logement privé peuvent bénéficier d'un taux réduit à 6 % à plusieurs conditions cumulatives : le logement doit être suffisamment ancien (en principe depuis un certain nombre d'années, vérifiez le seuil en vigueur), il doit être affecté, après les travaux, principalement à l'habitation privée, et les travaux doivent être réalisés et facturés par un entrepreneur enregistré (la TVA réduite ne s'applique pas si vous achetez vous-même les matériaux). Le taux réduit porte sur les travaux immobiliers (main-d'œuvre et matériaux fournis par l'entrepreneur), pas sur certains équipements exclus.",
       "reference_legale": "Code de la TVA et arrêté royal n° 20 (taux réduit pour la rénovation d'habitations)",
       "contacts": [
-        {"nom": "SPF Finances", "lien": "https://finances.belgium.be", "pour": "conditions du taux de TVA réduit"},
-        {"nom": "Votre entrepreneur", "pour": "facturation à 6 % et attestation"}
+        {
+          "nom": "SPF Finances",
+          "lien": "https://finances.belgium.be",
+          "pour": "conditions du taux de TVA réduit"
+        },
+        {
+          "nom": "Votre entrepreneur",
+          "pour": "facturation à 6 % et attestation"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://finances.belgium.be/fr/particuliers/habitation/construire-renover/renover/renover-taux-de-tva", "intitule": "SPF Finances — TVA réduite rénovation"}
+        {
+          "type": "officiel",
+          "url": "https://finances.belgium.be/fr/particuliers/habitation/construire-renover/renover/renover-taux-de-tva",
+          "intitule": "SPF Finances — TVA réduite rénovation"
+        }
       ],
       "date_verification": "2026-06-30"
     },
@@ -33,10 +44,17 @@
       "reponse": "C'est l'entrepreneur qui applique le taux de 6 % sur sa facture, mais il doit pouvoir justifier que les conditions sont remplies. En pratique, les éléments attestant que le bien est un logement privé suffisamment ancien sont mentionnés/justifiés (selon la procédure en vigueur, par une mention sur la facture ou une attestation du client). La facture doit être conforme (détail des travaux). Conservez précieusement vos factures : en cas de contrôle, c'est ce qui prouve que le taux réduit était justifié. Si l'entrepreneur applique 21 % alors que vous remplissez les conditions, discutez-en avant la facturation.",
       "reference_legale": "Arrêté royal n° 20 (conditions et justificatifs du taux réduit de TVA pour la rénovation)",
       "contacts": [
-        {"nom": "Votre entrepreneur enregistré", "pour": "application et justification du 6 %"}
+        {
+          "nom": "Votre entrepreneur enregistré",
+          "pour": "application et justification du 6 %"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://finances.belgium.be/fr/particuliers/habitation/construire-renover/renover/renover-taux-de-tva", "intitule": "SPF Finances — Formalités TVA rénovation"}
+        {
+          "type": "officiel",
+          "url": "https://finances.belgium.be/fr/particuliers/habitation/construire-renover/renover/renover-taux-de-tva",
+          "intitule": "SPF Finances — Formalités TVA rénovation"
+        }
       ],
       "date_verification": "2026-06-30"
     },
@@ -47,10 +65,43 @@
       "reference_legale": "Code de la TVA et arrêté royal n° 20 (régime de TVA réduite pour la démolition-reconstruction de logements)",
       "alerte_delai": "Vérifiez les conditions AVANT le début des travaux : le régime démolition-reconstruction est conditionnel et a évolué.",
       "contacts": [
-        {"nom": "SPF Finances", "lien": "https://finances.belgium.be", "pour": "régime démolition-reconstruction"}
+        {
+          "nom": "SPF Finances",
+          "lien": "https://finances.belgium.be",
+          "pour": "régime démolition-reconstruction"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://finances.belgium.be/fr/particuliers/habitation/construire-renover", "intitule": "SPF Finances — Construire et rénover (TVA)"}
+        {
+          "type": "officiel",
+          "url": "https://finances.belgium.be/fr/particuliers/habitation/construire-renover",
+          "intitule": "SPF Finances — Construire et rénover (TVA)"
+        }
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "TVA6-RESPONSABILITE-001",
+      "question": "Qui est responsable si le taux de 6 % a été appliqué à tort ?",
+      "reponse": "Depuis la réforme des formalités, l'ancienne attestation a été remplacée par une mention standard que l'entrepreneur appose sur la facture : elle indique que le taux réduit ne s'applique que si les conditions (âge du bâtiment, usage comme logement privé, travaux facturés à l'occupant…) sont remplies, et que le client dispose d'un délai pour contester par écrit s'il sait que ce n'est pas le cas. Si vous ne contestez pas alors que les conditions ne sont pas réunies, la responsabilité du supplément de TVA, des intérêts et des amendes peut être mise à votre charge, et non à celle de l'entrepreneur. Vérifiez donc honnêtement les conditions avant de laisser passer une facture à 6 % : le taux réduit est un droit quand les conditions sont réunies, pas une optimisation à tenter.",
+      "reference_legale": "Arrêté royal n° 20 en matière de TVA (taux réduit rénovation — mention sur la facture et responsabilité du client)",
+      "contacts": [
+        {
+          "nom": "SPF Finances",
+          "lien": "https://finances.belgium.be",
+          "pour": "conditions du taux de TVA réduit"
+        },
+        {
+          "nom": "Votre entrepreneur",
+          "pour": "facturation à 6 % et attestation"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://finances.belgium.be/fr/particuliers/habitation/construire-renover/renover/renover-taux-de-tva",
+          "intitule": "SPF Finances — TVA réduite rénovation"
+        }
       ],
       "date_verification": "2026-06-30"
     }

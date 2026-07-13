@@ -19,10 +19,18 @@
       "reponse": "Dans un contrat entre une entreprise et un consommateur, une clause est « abusive » lorsqu'elle crée un déséquilibre manifeste entre les droits et obligations des parties, au détriment du consommateur. La loi protège le consommateur, qui n'a généralement pas le pouvoir de négocier les conditions générales : il ne peut souvent que « prendre ou laisser ». Une clause abusive est réputée NULLE (sans effet) : elle ne s'applique pas, même si vous avez signé le contrat. Le reste du contrat, lui, continue en principe à s'appliquer. C'est une protection forte : signer ne valide pas une clause illégale.",
       "reference_legale": "Code de droit économique — livre VI (clauses abusives, art. VI.82 et suivants)",
       "contacts": [
-        {"nom": "SPF Économie", "lien": "https://economie.fgov.be", "pour": "signaler une clause abusive"}
+        {
+          "nom": "SPF Économie",
+          "lien": "https://economie.fgov.be",
+          "pour": "signaler une clause abusive"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/ventes/contrats/clauses-abusives", "intitule": "SPF Économie — Clauses abusives"}
+        {
+          "type": "officiel",
+          "url": "https://economie.fgov.be/fr/themes/ventes/contrats/clauses-abusives",
+          "intitule": "SPF Économie — Clauses abusives"
+        }
       ],
       "date_verification": "2026-06-30"
     },
@@ -32,10 +40,18 @@
       "reponse": "La loi contient une « liste noire » de clauses considérées comme abusives en toutes circonstances. Quelques exemples : permettre à l'entreprise de modifier unilatéralement le prix ou les caractéristiques du produit sans raison valable, vous lier alors que l'entreprise garde le choix de s'exécuter ou non, prévoir des indemnités de rupture manifestement disproportionnées à votre seule charge, limiter abusivement votre droit à réparation, ou reconduire automatiquement un contrat sans information ni délai raisonnable pour le résilier. Si vous repérez ce type de clause, sachez qu'elle est probablement sans effet.",
       "reference_legale": "Code de droit économique — livre VI (liste des clauses abusives, art. VI.83)",
       "contacts": [
-        {"nom": "SPF Économie", "lien": "https://economie.fgov.be", "pour": "vérifier le caractère abusif d'une clause"}
+        {
+          "nom": "SPF Économie",
+          "lien": "https://economie.fgov.be",
+          "pour": "vérifier le caractère abusif d'une clause"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/ventes/contrats/clauses-abusives", "intitule": "SPF Économie — Liste des clauses abusives"}
+        {
+          "type": "officiel",
+          "url": "https://economie.fgov.be/fr/themes/ventes/contrats/clauses-abusives",
+          "intitule": "SPF Économie — Liste des clauses abusives"
+        }
       ],
       "date_verification": "2026-06-30"
     },
@@ -45,11 +61,43 @@
       "reponse": "D'abord, ne vous laissez pas intimider : une clause abusive est nulle, donc l'entreprise ne peut pas valablement s'en prévaloir contre vous. Contestez par écrit (en citant le caractère abusif de la clause) et conservez une copie. Si l'entreprise insiste, vous pouvez signaler la pratique au SPF Économie (Point de contact), qui peut intervenir et sanctionner les professionnels, et recourir à la médiation de consommation. En cas de litige sur une somme réclamée en vertu d'une telle clause, vous pouvez la contester devant le juge (juge de paix selon le montant). Pour un contrat important, faites-le relire avant de signer.",
       "reference_legale": "Code de droit économique — livre VI (nullité des clauses abusives) et règlement extrajudiciaire des litiges de consommation",
       "contacts": [
-        {"nom": "SPF Économie — Point de contact", "lien": "https://economie.fgov.be", "pour": "signaler une clause abusive"},
-        {"nom": "Service de médiation pour le consommateur / juge de paix", "pour": "litige sur une clause"}
+        {
+          "nom": "SPF Économie — Point de contact",
+          "lien": "https://economie.fgov.be",
+          "pour": "signaler une clause abusive"
+        },
+        {
+          "nom": "Service de médiation pour le consommateur / juge de paix",
+          "pour": "litige sur une clause"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/ventes/contrats/clauses-abusives", "intitule": "SPF Économie — Réagir face à une clause abusive"}
+        {
+          "type": "officiel",
+          "url": "https://economie.fgov.be/fr/themes/ventes/contrats/clauses-abusives",
+          "intitule": "SPF Économie — Réagir face à une clause abusive"
+        }
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "CLABUS-NULLITE-001",
+      "question": "Si une clause est déclarée abusive, tout mon contrat tombe-t-il ?",
+      "reponse": "Non, en principe seule la clause abusive est nulle : elle est réputée non écrite et l'entreprise ne peut pas s'en prévaloir contre vous. Le reste du contrat continue de s'appliquer s'il peut subsister sans la clause supprimée — vous gardez donc le bénéfice du contrat (la livraison, le service, l'abonnement) sans subir la clause déséquilibrée. Ce n'est que si le contrat ne peut pas survivre sans cette clause qu'il peut être annulé entièrement. Concrètement : ne payez pas des frais fondés uniquement sur une clause abusive, contestez par écrit en citant la clause, et si l'entreprise insiste, saisissez le Service de médiation compétent ou le juge, qui doit soulever d'office le caractère abusif d'une clause.",
+      "reference_legale": "Code de droit économique — livre VI (nullité de la clause abusive et maintien du contrat, art. VI.84)",
+      "contacts": [
+        {
+          "nom": "SPF Économie",
+          "lien": "https://economie.fgov.be",
+          "pour": "signaler une clause abusive"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://economie.fgov.be/fr/themes/ventes/contrats/clauses-abusives",
+          "intitule": "SPF Économie — Clauses abusives"
+        }
       ],
       "date_verification": "2026-06-30"
     }

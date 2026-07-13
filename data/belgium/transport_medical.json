@@ -19,10 +19,17 @@
       "reponse": "Oui, en partie et selon les cas. L'assurance maladie obligatoire prévoit des interventions dans les frais de transport pour certaines situations médicales : transport d'un enfant ou d'un patient vers un centre de rééducation, déplacements liés à un traitement contre le cancer, transport pour dialyse rénale, etc. À cela s'ajoutent des aides de votre mutualité (assurance complémentaire) et, parfois, des aides communales ou régionales. Le niveau de prise en charge dépend du motif médical, du type de transport (voiture, ambulance, transport assis) et de votre statut (par ex. intervention majorée). Renseignez-vous AVANT le transport quand c'est possible.",
       "reference_legale": "Loi coordonnée du 14 juillet 1994 (interventions dans les frais de transport médical)",
       "contacts": [
-        {"nom": "Votre mutualité", "pour": "interventions et aides au transport médical"}
+        {
+          "nom": "Votre mutualité",
+          "pour": "interventions et aides au transport médical"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/frais-de-transport-pour-raison-medicale", "intitule": "INAMI — Frais de transport pour raison médicale"}
+        {
+          "type": "officiel",
+          "url": "https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/frais-de-transport-pour-raison-medicale",
+          "intitule": "INAMI — Frais de transport pour raison médicale"
+        }
       ],
       "date_verification": "2026-06-30"
     },
@@ -32,12 +39,27 @@
       "reponse": "Le transport urgent en ambulance, déclenché via le 112, est facturé selon un tarif réglementé (forfait), une partie pouvant rester à votre charge ; votre mutualité ou votre assurance peut intervenir. Ne renoncez jamais à appeler le 112 en cas d'urgence vitale pour des raisons de coût. À distinguer du transport NON urgent (transport médico-sanitaire assis ou couché pour des rendez-vous, dialyse, etc.), qui suit d'autres règles de tarif et de remboursement. Demandez toujours une facture détaillée et conservez-la pour le remboursement.",
       "reference_legale": "Loi du 8 juillet 1964 relative à l'aide médicale urgente (transport en ambulance, tarif réglementé) ; loi coordonnée du 14 juillet 1994 (interventions)",
       "contacts": [
-        {"nom": "Secours", "numero": "112", "pour": "urgence vitale (ambulance)"},
-        {"nom": "Votre mutualité", "pour": "intervention dans les frais d'ambulance"}
+        {
+          "nom": "Secours",
+          "numero": "112",
+          "pour": "urgence vitale (ambulance)"
+        },
+        {
+          "nom": "Votre mutualité",
+          "pour": "intervention dans les frais d'ambulance"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/frais-de-transport-pour-raison-medicale", "intitule": "INAMI — Transport médical (urgent et non urgent)"},
-        {"type": "officiel", "url": "https://www.health.belgium.be/fr", "intitule": "SPF Santé publique — Aide médicale urgente"}
+        {
+          "type": "officiel",
+          "url": "https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/frais-de-transport-pour-raison-medicale",
+          "intitule": "INAMI — Transport médical (urgent et non urgent)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.health.belgium.be/fr",
+          "intitule": "SPF Santé publique — Aide médicale urgente"
+        }
       ],
       "date_verification": "2026-06-30"
     },
@@ -47,10 +69,37 @@
       "reponse": "Pour les patients qui doivent se déplacer fréquemment, des interventions spécifiques existent. Les patients suivant un traitement contre le cancer (chimiothérapie, radiothérapie) bénéficient d'une intervention dans leurs frais de déplacement, de même que les patients en dialyse rénale, qui doivent se rendre très régulièrement à l'hôpital. Ces interventions se demandent en général via la mutualité, sur la base d'attestations du centre de soins. Comme les conditions et montants évoluent, demandez à votre mutualité ou à l'assistant social de l'hôpital de vous indiquer précisément ce à quoi vous avez droit et comment l'obtenir.",
       "reference_legale": "Loi coordonnée du 14 juillet 1994 (interventions dans les frais de transport des patients oncologiques et dialysés)",
       "contacts": [
-        {"nom": "Assistant social de l'hôpital / votre mutualité", "pour": "intervention transport oncologie / dialyse"}
+        {
+          "nom": "Assistant social de l'hôpital / votre mutualité",
+          "pour": "intervention transport oncologie / dialyse"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/frais-de-transport-pour-raison-medicale", "intitule": "INAMI — Transport des patients oncologiques et dialysés"}
+        {
+          "type": "officiel",
+          "url": "https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/frais-de-transport-pour-raison-medicale",
+          "intitule": "INAMI — Transport des patients oncologiques et dialysés"
+        }
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "TRANSMED-DEMANDE-001",
+      "question": "Comment demander l'intervention, et ma mutualité peut-elle rembourser plus ?",
+      "reponse": "L'intervention légale s'obtient via votre mutualité : remettez-lui les justificatifs (prescription ou attestation du médecin quand elle est requise, factures ou attestations de transport, preuves des trajets). Ne jetez jamais ces documents, même si vous doutez d'un remboursement. En plus de l'assurance obligatoire, la plupart des mutualités prévoient une intervention supplémentaire via leur assurance complémentaire (transport urgent et non urgent, montants et plafonds propres à chaque mutualité) : les conditions varient d'une mutualité à l'autre, renseignez-vous directement auprès de la vôtre avant d'organiser un transport coûteux. En cas de refus, demandez une décision écrite : elle peut être contestée, au besoin devant le tribunal du travail.",
+      "reference_legale": "Loi coordonnée du 14 juillet 1994 (intervention de l'assurance soins de santé dans les frais de transport) ; loi du 6 août 1990 relative aux mutualités (assurance complémentaire)",
+      "contacts": [
+        {
+          "nom": "Votre mutualité",
+          "pour": "interventions et aides au transport médical"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/frais-de-transport-pour-raison-medicale",
+          "intitule": "INAMI — Frais de transport pour raison médicale"
+        }
       ],
       "date_verification": "2026-06-30"
     }

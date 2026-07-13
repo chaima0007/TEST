@@ -19,11 +19,23 @@
       "reponse": "La branche 21 est une assurance-épargne « sécurisée » : votre capital versé est en principe garanti (vous ne perdez pas votre mise), souvent avec un taux d'intérêt garanti, parfois complété par une participation bénéficiaire variable. C'est un produit prudent, adapté à un horizon de moyen/long terme. Le capital est généralement couvert par un Fonds de garantie (sous conditions et plafonds) en cas de défaillance de l'assureur. En contrepartie de la sécurité, le rendement est modéré. Vérifiez les frais d'entrée et la fiscalité avant de souscrire.",
       "reference_legale": "Loi du 4 avril 2014 relative aux assurances (assurance-vie branche 21)",
       "contacts": [
-        {"nom": "FSMA", "lien": "https://www.fsma.be", "pour": "information sur les produits d'assurance-vie"},
-        {"nom": "Wikifin (FSMA)", "lien": "https://www.wikifin.be", "pour": "comparer épargne et placements"}
+        {
+          "nom": "FSMA",
+          "lien": "https://www.fsma.be",
+          "pour": "information sur les produits d'assurance-vie"
+        },
+        {
+          "nom": "Wikifin (FSMA)",
+          "lien": "https://www.wikifin.be",
+          "pour": "comparer épargne et placements"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://www.fsma.be/fr", "intitule": "FSMA — Assurance-vie"}
+        {
+          "type": "officiel",
+          "url": "https://www.fsma.be/fr",
+          "intitule": "FSMA — Assurance-vie"
+        }
       ],
       "date_verification": "2026-06-30"
     },
@@ -33,10 +45,18 @@
       "reponse": "La branche 23 est une assurance-vie liée à des fonds d'investissement : votre versement est investi sur les marchés (actions, obligations…) via un ou plusieurs fonds. Le potentiel de rendement est plus élevé qu'en branche 21, MAIS il n'y a en principe PAS de capital garanti : la valeur peut monter comme baisser, et vous supportez le risque d'investissement. C'est un produit pour un horizon long et pour qui accepte le risque. Avant de souscrire, lisez attentivement le document d'informations clés (frais, profil de risque, fonds sous-jacents) et assurez-vous que cela correspond à votre situation.",
       "reference_legale": "Loi du 4 avril 2014 relative aux assurances (assurance-vie branche 23, liée à des fonds d'investissement)",
       "contacts": [
-        {"nom": "FSMA / Wikifin", "lien": "https://www.fsma.be/fr/assurance-vie-branche-23", "pour": "comprendre le risque de la branche 23"}
+        {
+          "nom": "FSMA / Wikifin",
+          "lien": "https://www.fsma.be/fr/assurance-vie-branche-23",
+          "pour": "comprendre le risque de la branche 23"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://www.fsma.be/fr/assurance-vie-branche-23", "intitule": "FSMA — Assurance-vie branche 23"}
+        {
+          "type": "officiel",
+          "url": "https://www.fsma.be/fr/assurance-vie-branche-23",
+          "intitule": "FSMA — Assurance-vie branche 23"
+        }
       ],
       "date_verification": "2026-06-30"
     },
@@ -46,12 +66,53 @@
       "reponse": "Plusieurs éléments influencent le rendement réel. À la souscription, une taxe sur les primes d'assurance-vie s'applique généralement (un pourcentage du versement). Des frais d'entrée et de gestion sont prélevés par l'assureur (comparez-les, ils varient). À la sortie, la fiscalité dépend du produit et de la durée du contrat (par exemple, en branche 21, un précompte peut s'appliquer si vous retirez tôt). Certains contrats peuvent aussi être utilisés dans le cadre de l'épargne à long terme (avec avantage fiscal, sous conditions). Demandez une simulation nette de frais et de taxes avant de vous engager.",
       "reference_legale": "Code des impôts sur les revenus 1992 et Code des droits et taxes divers (taxe sur les primes et fiscalité de l'assurance-vie)",
       "contacts": [
-        {"nom": "Assureur / courtier", "pour": "frais, taxe sur primes et fiscalité"},
-        {"nom": "Wikifin (FSMA)", "lien": "https://www.wikifin.be", "pour": "comparer le coût réel"}
+        {
+          "nom": "Assureur / courtier",
+          "pour": "frais, taxe sur primes et fiscalité"
+        },
+        {
+          "nom": "Wikifin (FSMA)",
+          "lien": "https://www.wikifin.be",
+          "pour": "comparer le coût réel"
+        }
       ],
       "sources": [
-        {"type": "officiel", "url": "https://www.fsma.be/fr/assurance-vie-branche-23", "intitule": "FSMA — Frais et fiscalité de l'assurance-vie"},
-        {"type": "officiel", "url": "https://www.wikifin.be/fr", "intitule": "Wikifin (FSMA) — Assurance-vie"}
+        {
+          "type": "officiel",
+          "url": "https://www.fsma.be/fr/assurance-vie-branche-23",
+          "intitule": "FSMA — Frais et fiscalité de l'assurance-vie"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.wikifin.be/fr",
+          "intitule": "Wikifin (FSMA) — Assurance-vie"
+        }
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "AVIE-PROTECTION-001",
+      "question": "Mon argent est-il protégé si la compagnie d'assurance fait faillite ?",
+      "reponse": "Cela dépend de la branche. Les contrats de la branche 21 (à capital garanti) relèvent du Fonds de garantie belge : en cas de défaillance de l'assureur, la valeur de rachat est protégée jusqu'à 100 000 € par preneur et par compagnie — au-delà, vous devenez créancier de la faillite. Les contrats de la branche 23, eux, ne bénéficient d'aucune garantie de ce type : la valeur dépend des fonds d'investissement sous-jacents et peut monter comme baisser ; le risque est par nature à votre charge (les actifs restent toutefois cantonnés). Avant de signer, vérifiez que la compagnie est agréée par la Banque nationale de Belgique et consultez les documents d'information obligatoires : la protection réelle de votre épargne fait partie des critères de choix, pas seulement le rendement affiché.",
+      "reference_legale": "Loi du 4 avril 2014 relative aux assurances ; arrêté royal du 14 novembre 2008 (Fonds de garantie — protection des produits de la branche 21)",
+      "contacts": [
+        {
+          "nom": "FSMA",
+          "lien": "https://www.fsma.be",
+          "pour": "information sur les produits d'assurance-vie"
+        },
+        {
+          "nom": "Wikifin (FSMA)",
+          "lien": "https://www.wikifin.be",
+          "pour": "comparer épargne et placements"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.fsma.be/fr",
+          "intitule": "FSMA — Assurance-vie"
+        }
       ],
       "date_verification": "2026-06-30"
     }
