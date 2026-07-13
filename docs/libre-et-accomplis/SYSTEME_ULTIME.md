@@ -292,7 +292,13 @@ LibreEtAccomplis/
 - **Technologie** : Kafka (communication inter-agents) + logique de priorisation
   custom (Python/Node.js).
 - **Fonctionnalités** : vérification des doublons, priorisation dynamique,
-  journalisation (audit log).
+  journalisation (audit log), arbitrage des conflits par règles de veto
+  définies par les experts (la règle d'expert prime toujours sur l'agent).
+- **Scaffolding exécutable** : [`scaffolding/python/orchestrateur.py`](./scaffolding/python/orchestrateur.py)
+  (avec le cas de conflit « recette sucrée / utilisateur diabétique » couvert par les tests).
+- **Périmètre** : l'orchestrateur décide au niveau des agents (priorités,
+  doublons, vetos). Les décisions humaines — fusion d'une PR, mise en
+  production — restent aux experts et au CTO (règle d'or n°3).
 
 ### Infrastructure cloud (AWS/GCP)
 

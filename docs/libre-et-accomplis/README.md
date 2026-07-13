@@ -14,7 +14,7 @@ déployée uniquement après 100 % de tests réussis.
 | [`scripts/verifier_traductions.py`](./scripts/verifier_traductions.py) | Vérifie que toutes les clés sont traduites dans chaque langue (utilisable en CI). |
 | [`scripts/gerer_feedback_experts.py`](./scripts/gerer_feedback_experts.py) | CLI de gestion des feedbacks d'experts : ajout, liste par expert, rappels (CSV importable dans Airtable). |
 | [`exemples/ci-cd-pipeline.yml`](./exemples/ci-cd-pipeline.yml) | Exemple de pipeline CI/CD (GitHub Actions) avec job sécurité et déploiement conditionnel — modèle à adapter, non activé. |
-| [`scaffolding/python/`](./scaffolding/python/) | Agents Nutrition + Santé et base de connaissances en Python, avec tests unitaires exécutables. |
+| [`scaffolding/python/`](./scaffolding/python/) | Agents Nutrition + Santé, Orchestrateur Central (priorisation, doublons, vetos d'experts, audit log) et base de connaissances en Python, avec tests exécutables. |
 | [`scaffolding/nodejs/`](./scaffolding/nodejs/) | Agents Nutrition + Objectifs en Node.js (ESM + `node:test`). |
 | [`traductions/messages.json`](./traductions/messages.json) | Fichier de traduction multilingue (FR, EN, ES, DE). |
 | [`modeles/feedback-expert.md`](./modeles/feedback-expert.md) | Modèle de feedback/correction d'expert. |
