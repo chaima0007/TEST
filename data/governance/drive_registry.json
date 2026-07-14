@@ -1,0 +1,41 @@
+{
+  "registre": "Registre Google Drive — dossiers officiels & règles anti-doublons",
+  "protocole": "P-DRIVE-ANTI-DOUBLON",
+  "statut": "EN VIGUEUR",
+  "cree_le": "2026-07-14",
+  "contexte": "Plusieurs sessions Claude (onglets/projets différents) écrivent dans le même Drive et le même dépôt. Ce registre est la source unique de vérité : toute session le lit AVANT d'écrire dans le Drive.",
+  "dossiers_officiels": [
+    {
+      "nom": "La Loi Avec Moi — Audits",
+      "folder_id": "11Nia45zmPqtL9Rox38KP05c8Fy_q64Fa",
+      "usage": "Journaux d'audit, lots de travail, dossiers de passation du projet La Loi Avec Moi."
+    },
+    {
+      "nom": "🗂️ Caelum — Journal d'Audit (Travaux techniques)",
+      "folder_id": "1npTlFufVU03luocJIw365Sd3evziZGg_",
+      "usage": "Journaux d'audit techniques du projet Caelum (et sessions liées KMM/CompeteIQ)."
+    }
+  ],
+  "regles": [
+    "RÉUTILISER : ne JAMAIS créer un nouveau dossier pour un usage déjà couvert ci-dessus ; utiliser le folder_id existant.",
+    "CHERCHER AVANT DE CRÉER : interroger le Drive (recherche par titre/parentId) avant toute création ; si un document du jour couvre déjà le sujet, ne pas le recréer.",
+    "NOMMAGE : « AAAA-MM-JJ — TYPE — sujet » (TYPE : DÉMARRAGE, LOT, JOURNAL, CLÔTURE, DOSSIER, ERREURS…). Ajouter l'heure UTC dans le corps du document.",
+    "UN DOCUMENT = UN ÉVÉNEMENT : jamais de modification rétroactive d'un journal ; un nouveau fait = un nouveau document daté.",
+    "SIGNATURE DE SESSION : chaque journal indique la branche git et le(s) commit(s) concernés, pour relier Drive et dépôt.",
+    "READ-BACK : relire le document après création (protocole de vérification avant envoi) avant de l'annoncer.",
+    "SÉPARATION DES PROJETS : un journal La Loi Avec Moi ne va pas dans le dossier Caelum, et inversement. Un récapitulatif transversal va dans le dossier du projet principal concerné, en un seul exemplaire."
+  ],
+  "documents_de_reference": [
+    {
+      "titre": "2026-07-14 — DOSSIER COMPLET — Tout ce qui a été fait (session Caelum + La Loi Avec Moi) & règle anti-doublons",
+      "doc_id": "1R9sDAMXtGoEHssqoiwMA3AlMIKe6CCgWsfJ_gLOvJU0",
+      "role": "Récapitulatif transversal partageable entre sessions."
+    },
+    {
+      "titre": "📖 LISEZ-MOI — Règles du journal (nommage, format, zéro doublon)",
+      "doc_id": "1X8vSSV-Ymsyrh4QNcfOBXbE6wP4UHWw40NAXa_q2Eg8",
+      "role": "Règles rédigées par une autre session dans le dossier Caelum — complémentaires, à respecter aussi."
+    }
+  ],
+  "note_honnete": "Le Drive ne permet pas (via les outils actuels) de modifier un document existant : c'est pour cela que la convention est « un document daté par événement » plutôt qu'un journal unique mis à jour."
+}
