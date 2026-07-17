@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+# Annule les exécutions précédentes encore en cours sur la même branche/PR.
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Lint, Typecheck & Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Le client Prisma est généré dans lib/generated/prisma (gitignoré).
+      # prisma/seed.ts l'importe, donc il doit exister avant le typecheck.
+      - name: Generate Prisma client
+        run: npx prisma generate
+
+      - name: Lint (ESLint)
+        run: npm run lint
+
+      # Le build doit précéder le typecheck : il génère next-env.d.ts
+      # et .next/types/** dont dépend `tsc`.
+      - name: Build (Next.js)
+        run: npm run build
+
+      - name: Typecheck (TypeScript)
+        run: npm run typecheck

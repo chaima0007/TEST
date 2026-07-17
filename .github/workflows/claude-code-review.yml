@@ -1,0 +1,52 @@
+name: Claude Code Review
+
+# Revue de code automatique par Claude à chaque ouverture / mise à jour de PR.
+# Prérequis : définir le secret de dépôt ANTHROPIC_API_KEY
+# (Settings → Secrets and variables → Actions → New repository secret).
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  claude-review:
+    name: Revue automatique
+    runs-on: ubuntu-latest
+    # N'exécute la revue que si la clé API est configurée (évite les échecs
+    # sur les forks ou tant que le secret n'est pas créé).
+    if: ${{ github.event.pull_request.head.repo.full_name == github.repository }}
+    permissions:
+      contents: read
+      pull-requests: write
+      issues: read
+      id-token: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Claude Code Review
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          claude_args: "--max-turns 25"
+          prompt: |
+            Tu es un relecteur de code senior. Relis cette pull request et
+            laisse des commentaires constructifs, en français, directement sur
+            les lignes concernées via les outils GitHub.
+
+            Avant de commencer, lis AGENTS.md : ce projet utilise une version de
+            Next.js (16) et React (19) dont les conventions diffèrent — ne te fie
+            pas à tes habitudes, vérifie dans node_modules/next/dist/docs/ si besoin.
+
+            Concentre ta revue sur :
+            - Bugs et erreurs de logique
+            - Sécurité : authentification, autorisation, fuites de données,
+              injections, secrets en clair, en-têtes/CSP
+            - Respect des conventions Next.js 16 / React 19 du projet
+            - Qualité : lisibilité, duplication, simplifications possibles
+
+            Sois précis et actionnable. Si la PR est propre, dis-le clairement
+            plutôt que d'inventer des remarques.
