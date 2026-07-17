@@ -1,0 +1,16 @@
+{
+  "registre": "Annuaire — trouver un service près de chez soi",
+  "but": "Aider chacun à trouver le bon service local. Honnête : on ne liste pas d'adresses inventées ; on renvoie vers les annuaires OFFICIELS qui donnent les coordonnées exactes par commune.",
+  "principe": "Les adresses exactes viennent des sources officielles. Une base d'adresses complète nécessiterait un jeu de données officiel (open data) que l'on pourra intégrer.",
+  "services": [
+    {"service": "CPAS (aide sociale, alimentaire, urgence)", "comment": "Le CPAS de votre commune de résidence.", "annuaire": "https://www.mi-is.be/fr/cpas", "officiel": true},
+    {"service": "Aide juridique — avocat gratuit (BAJ)", "comment": "Bureau d'aide juridique de votre arrondissement.", "annuaire": "https://avocats.be/fr/zoom/avocatsbe/laide-juridique", "officiel": false},
+    {"service": "Tribunaux & justice de paix", "comment": "Trouver le tribunal/canton compétent.", "annuaire": "https://www.tribunaux-rechtbanken.be", "officiel": true},
+    {"service": "Police locale", "comment": "Votre zone de police locale.", "annuaire": "https://www.police.be", "officiel": true},
+    {"service": "Médiation de dettes", "comment": "Service de médiation de dettes agréé (souvent au CPAS).", "annuaire": "http://socialsante.wallonie.be/surendettement/citoyen/?q=services-mediation-dettes", "officiel": true},
+    {"service": "Aide à la jeunesse (SAJ/SPJ)", "comment": "Pour les enfants/jeunes et les familles.", "annuaire": "https://www.aidealajeunesse.cfwb.be", "officiel": true},
+    {"service": "Violences conjugales / familiales", "comment": "Écoute et orientation vers les refuges.", "annuaire": "https://www.belgium.be/fr/sante/aide_et_assistance", "officiel": true},
+    {"service": "Drogues / assuétudes", "comment": "Information, écoute et centres spécialisés.", "annuaire": "https://infordrogues.be", "officiel": false},
+    {"service": "Mutualité (santé, aidant proche, congés)", "comment": "Votre mutualité (organisme assureur).", "annuaire": "https://www.inami.fgov.be/fr/professionnels/autres/mutualites", "officiel": true}
+  ]
+}

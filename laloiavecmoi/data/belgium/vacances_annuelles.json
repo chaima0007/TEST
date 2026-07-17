@@ -1,0 +1,77 @@
+{
+  "module": "vacances_annuelles",
+  "titre": "Vacances annuelles & pécule de vacances",
+  "domaine": "Travail & congés",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 28 juin 1971 (lois coordonnées) relative aux vacances annuelles des travailleurs salariés",
+    "portee": "Droit aux congés payés, calcul du pécule et fixation des vacances",
+    "source_officielle": "https://emploi.belgique.be/fr/themes/vacances-annuelles"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les montants et le détail varient selon votre statut (ouvrier/employé), votre régime de travail et votre carrière ; vérifiez auprès de votre employeur, de votre caisse de vacances ou de l'ONVA.",
+  "faits": [
+    {
+      "id": "VAC-DROIT-001",
+      "question": "Combien de jours de vacances ai-je droit, et comment se calculent-ils ?",
+      "reponse": "Pour une année complète de travail, un salarié a droit à 4 semaines de vacances légales (soit 20 jours pour une semaine de 5 jours, 24 pour une semaine de 6 jours). Point essentiel : les vacances de l'année se calculent sur les prestations de l'année PRÉCÉDENTE (l'« année de référence »). Si vous avez peu ou pas travaillé l'an dernier (premier emploi, retour d'inactivité), vous aurez moins de jours légaux — mais des dispositifs existent pour compléter (vacances jeunes, vacances seniors, vacances supplémentaires/« européennes »). Renseignez-vous pour ne pas vous retrouver sans congés payés.",
+      "reference_legale": "Loi du 28 juin 1971 (lois coordonnées) relative aux vacances annuelles des travailleurs salariés (durée et année de référence)",
+      "contacts": [
+        {"nom": "Votre employeur / secrétariat social", "pour": "nombre de jours de vacances et solde"},
+        {"nom": "Caisse de vacances / ONVA (ouvriers)", "pour": "calcul des jours et du pécule"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://emploi.belgique.be/fr/themes/vacances-annuelles", "intitule": "SPF Emploi — Vacances annuelles"},
+        {"type": "officiel", "url": "https://www.socialsecurity.be/citizen/fr", "intitule": "Sécurité sociale — Vacances annuelles"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "VAC-PECULE-001",
+      "question": "Qu'est-ce que le pécule de vacances (simple et double) ?",
+      "reponse": "Le pécule de vacances comprend deux parties. Le simple pécule, c'est votre rémunération normale maintenue pendant vos jours de congé (vous êtes payé même en vacances). Le double pécule est un supplément, versé en général une fois par an (souvent en mai-juin) : c'est un coup de pouce financier pour les vacances. Différence importante selon le statut : pour les EMPLOYÉS, l'employeur paie le pécule ; pour les OUVRIERS, c'est une caisse de vacances (ou l'ONVA) qui verse le pécule, calculé sur les salaires de l'année de référence. Les montants exacts dépendent de votre rémunération : vérifiez votre décompte.",
+      "reference_legale": "Loi du 28 juin 1971 (lois coordonnées) relative aux vacances annuelles (simple et double pécule)",
+      "contacts": [
+        {"nom": "Employeur (employés)", "pour": "versement du pécule de vacances"},
+        {"nom": "ONVA / caisse de vacances (ouvriers)", "pour": "pécule de vacances des ouvriers"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://emploi.belgique.be/fr/themes/vacances-annuelles", "intitule": "SPF Emploi — Pécule de vacances"},
+        {"type": "officiel", "url": "https://www.socialsecurity.be/citizen/fr", "intitule": "Sécurité sociale — Pécule de vacances"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "VAC-PRISE-001",
+      "question": "Qui décide des dates de mes vacances, et les jours fériés comptent-ils ?",
+      "reponse": "Les dates de vacances se fixent d'un commun accord entre vous et votre employeur (l'employeur ne peut pas vous imposer unilatéralement toutes vos dates, ni vous refuser tout congé sans motif). Des règles favorisent une période continue, surtout pour les travailleurs avec enfants en âge scolaire. À côté des vacances, vous avez droit aux jours fériés légaux (10 par an) : s'ils tombent un jour habituellement non travaillé, ils sont en principe remplacés par un jour de remplacement. Demandez vos congés à l'avance et gardez une trace écrite de l'accord pour éviter les malentendus.",
+      "reference_legale": "Loi du 28 juin 1971 (lois coordonnées) relative aux vacances annuelles ; loi du 4 janvier 1974 relative aux jours fériés",
+      "contacts": [
+        {"nom": "Votre employeur", "pour": "fixation des dates de congé"},
+        {"nom": "Syndicat / SPF Emploi", "lien": "https://emploi.belgique.be", "pour": "litige sur les congés"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://emploi.belgique.be/fr/themes/vacances-annuelles", "intitule": "SPF Emploi — Prise des vacances"},
+        {"type": "officiel", "url": "https://emploi.belgique.be/fr/themes/jours-feries", "intitule": "SPF Emploi — Jours fériés"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "VAC-FIN-CONTRAT-001",
+      "question": "Que deviennent mes congés si je quitte mon employeur ou si je tombe malade en vacances ?",
+      "reponse": "Si vous quittez votre employeur (démission, licenciement, fin de contrat), vous recevez un pécule de vacances de départ (« pécule de sortie ») pour les jours de congé que vous n'avez pas pris et pour les droits déjà constitués ; votre nouvel employeur en tiendra compte. Autre situation utile à connaître : si vous tombez malade AVANT vos vacances, les jours concernés ne sont pas perdus (la maladie prime, vous pourrez reprendre ces congés plus tard) ; depuis 2024, le principe vaut aussi si la maladie survient pendant les vacances, à condition de prévenir l'employeur et de fournir un certificat. Conservez vos décomptes de vacances d'un employeur à l'autre.",
+      "reference_legale": "Loi du 28 juin 1971 (lois coordonnées) relative aux vacances annuelles (pécule de sortie et coïncidence maladie/vacances)",
+      "contacts": [
+        {"nom": "Votre employeur / secrétariat social", "pour": "pécule de sortie et report de congés"},
+        {"nom": "Votre mutualité", "pour": "incapacité pendant les vacances"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://emploi.belgique.be/fr/themes/vacances-annuelles", "intitule": "SPF Emploi — Vacances et fin de contrat"},
+        {"type": "officiel", "url": "https://www.socialsecurity.be/citizen/fr", "intitule": "Sécurité sociale — Vacances et maladie"}
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

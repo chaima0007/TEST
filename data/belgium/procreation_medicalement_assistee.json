@@ -1,0 +1,61 @@
+{
+  "module": "procreation_medicalement_assistee",
+  "titre": "PMA — procréation médicalement assistée",
+  "domaine": "Santé & famille",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 6 juillet 2007 relative à la procréation médicalement assistée et à la destination des embryons surnuméraires et des gamètes",
+    "portee": "Accès, encadrement et conditions de la PMA (insémination, FIV) en Belgique",
+    "source_officielle": "https://www.ejustice.just.fgov.be/eli/loi/2007/07/06/2007023090/justel"
+  },
+  "derniere_revue": "2026-06-29",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. La PMA est un parcours médical encadré : seul un centre de fécondation agréé peut vous informer précisément sur votre situation et le remboursement.",
+  "faits": [
+    {
+      "id": "PMA-001",
+      "question": "Qui a accès à la PMA en Belgique ?",
+      "reponse": "La loi belge ouvre la PMA largement : les couples (de sexe différent ou deux femmes) comme les femmes seules peuvent y avoir accès. La personne ou les personnes qui portent le projet parental établissent une convention avec le centre de fécondation consulté. Les centres gardent toutefois une liberté d'appréciation et peuvent invoquer une clause de conscience, en motivant par écrit un éventuel refus.",
+      "reference_legale": "Loi du 6 juillet 2007 relative à la procréation médicalement assistée",
+      "sources": [
+        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/loi/2007/07/06/2007023090/justel", "intitule": "Loi du 6 juillet 2007 (Justel)"},
+        {"type": "officiel", "url": "https://igvm-iefh.belgium.be/sites/default/files/downloads/6_juillet_2007.pdf", "intitule": "Institut pour l'égalité des femmes et des hommes — texte de la loi"}
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "PMA-002",
+      "question": "Y a-t-il une limite d'âge ?",
+      "reponse": "Oui. La loi fixe des limites d'âge pour la femme : le prélèvement de gamètes et la demande d'implantation d'embryons ou d'insémination sont ouverts aux femmes majeures jusqu'à 45 ans, et l'implantation ou l'insémination ne peut plus être effectuée chez une femme de plus de 47 ans. Une exception existe pour la cryoconservation (congélation) sur indication médicale. Les conditions de remboursement peuvent fixer des plafonds d'âge distincts.",
+      "reference_legale": "Loi du 6 juillet 2007 (limites d'âge, art. 4)",
+      "sources": [
+        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/loi/2007/07/06/2007023090/justel", "intitule": "Loi du 6 juillet 2007 (Justel)"}
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "PMA-003",
+      "question": "Le traitement est-il remboursé ?",
+      "reponse": "Un remboursement par l'assurance soins de santé (INAMI) est prévu sous conditions, avec un nombre de cycles de FIV limité et des conditions d'âge. Le détail (montants, nombre de tentatives, plafonds d'âge) est fixé par la réglementation INAMI et appliqué par votre mutualité et le centre : demandez-leur une estimation précise avant de commencer, car les frais hors conditions restent à votre charge.",
+      "reference_legale": "Loi du 6 juillet 2007 ; remboursement via la réglementation de l'assurance soins de santé (INAMI)",
+      "contacts": [
+        {"nom": "Votre mutualité / centre de fécondation agréé", "pour": "estimation du remboursement"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.inami.fgov.be/fr", "intitule": "INAMI — assurance soins de santé"}
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "PMA-004",
+      "question": "Don de gamètes, embryons surnuméraires : que dit la loi ?",
+      "reponse": "La loi encadre le sort des embryons surnuméraires et des gamètes (don à un autre projet parental, don à la recherche dans les conditions de la loi du 11 mai 2003, ou destruction) ainsi que le don de gamètes/embryons. Aucun lien de filiation ne peut être établi entre l'enfant à naître et le donneur. La loi limite aussi le nombre de femmes pouvant recevoir les gamètes d'un même donneur.",
+      "reference_legale": "Loi du 6 juillet 2007 (don et destination des embryons surnuméraires et des gamètes)",
+      "sources": [
+        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/loi/2007/07/06/2007023090/justel", "intitule": "Loi du 6 juillet 2007 (Justel)"}
+      ],
+      "date_verification": "2026-06-29"
+    }
+  ]
+}

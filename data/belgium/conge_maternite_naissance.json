@@ -1,0 +1,73 @@
+{
+  "module": "conge_maternite_naissance",
+  "titre": "Congé de maternité & congé de naissance",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 16 mars 1971 sur le travail (protection de la maternité) et loi du 3 juillet 1978 relative aux contrats de travail (congé de naissance)",
+    "portee": "Travailleuses salariées (repos de maternité) et travailleurs devenant parents (congé de naissance) — indemnités via l'assurance soins de santé et indemnités",
+    "source_officielle": "https://www.inami.fgov.be/fr/themes/grossesse-et-naissance"
+  },
+  "derniere_revue": "2026-06-29",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information juridique générale, à jour à la date de revue. Les montants d'indemnités sont indexés : voir l'INAMI et votre mutualité.",
+  "faits": [
+    {
+      "id": "MATNAIS-001",
+      "question": "Combien de temps dure le repos de maternité ?",
+      "reponse": "Le repos de maternité d'une travailleuse salariée dure 15 semaines (17 semaines en cas de naissance multiple). Il se compose du repos prénatal (6 semaines maximum, dont la semaine qui précède la date prévue de l'accouchement est obligatoire) et du repos postnatal (9 semaines obligatoires à partir de l'accouchement). Les semaines prénatales non prises peuvent en partie être reportées après l'accouchement.",
+      "reference_legale": "Loi du 16 mars 1971 sur le travail (protection de la maternité, repos de maternité)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.inami.fgov.be/fr/themes/grossesse-et-naissance/maternite/repos-de-maternite-pour-les-salariees-ou-les-chomeuses",
+          "intitule": "INAMI — Repos de maternité"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "MATNAIS-002",
+      "question": "Suis-je payée pendant mon repos de maternité ?",
+      "reponse": "Pendant le repos de maternité, vous ne recevez pas de salaire de votre employeur, mais une indemnité de maternité versée par votre mutualité dans le cadre de l'assurance indemnités. Le montant dépend de votre situation et est plafonné ; il faut être en règle d'assurabilité auprès de la mutualité.",
+      "reference_legale": "Loi relative à l'assurance obligatoire soins de santé et indemnités, coordonnée le 14 juillet 1994 (assurance indemnités)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.inami.fgov.be/fr/themes/grossesse-et-naissance",
+          "intitule": "INAMI — Grossesse et naissance (indemnités)"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "MATNAIS-003",
+      "question": "Qu'est-ce que le congé de naissance (ex-congé de paternité) ?",
+      "reponse": "Le coparent (père ou coparente) a droit à un congé de naissance de 20 jours pour les naissances survenues à partir du 1er janvier 2023. Ces jours se prennent, au choix du travailleur, dans les 4 mois qui suivent l'accouchement et peuvent être étalés sur cette période.",
+      "reference_legale": "Loi du 3 juillet 1978 relative aux contrats de travail, art. 30, §2 (congé de naissance)",
+      "alerte_delai": "Le congé de naissance (20 jours) doit être pris dans les 4 mois suivant l'accouchement.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://werk.belgie.be/fr/themes/jours-feries-et-conges/conge-de-naissance",
+          "intitule": "SPF Emploi — Congé de naissance"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "MATNAIS-004",
+      "question": "Le congé de naissance est-il rémunéré ?",
+      "reponse": "Oui. Pendant les 3 premiers jours, vous gardez votre rémunération complète à charge de l'employeur. Pour les jours suivants, vous ne percevez pas de salaire mais une allocation versée par votre mutualité, fixée à 82 % du salaire brut perdu (plafonné). Une protection contre le licenciement s'applique.",
+      "reference_legale": "Loi du 3 juillet 1978 relative aux contrats de travail, art. 30, §2 ; indemnités selon la loi coordonnée du 14 juillet 1994",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://werk.belgie.be/fr/themes/jours-feries-et-conges/conge-de-naissance",
+          "intitule": "SPF Emploi — Rémunération du congé de naissance"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    }
+  ]
+}

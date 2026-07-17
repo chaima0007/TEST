@@ -1,0 +1,73 @@
+{
+  "module": "bail_commercial",
+  "titre": "Bail commercial",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 30 avril 1951 sur les baux commerciaux (protection du fonds de commerce)",
+    "portee": "Locaux affectés principalement à un commerce de détail ou à l'activité d'un artisan en contact direct avec le public",
+    "source_officielle": "https://www.ejustice.just.fgov.be/eli/loi/1951/04/30/1951043000/justel"
+  },
+  "derniere_revue": "2026-06-29",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information juridique générale, à jour à la date de revue. Ne constitue pas un conseil individualisé. Les baux commerciaux de courte durée (≤ 1 an) relèvent de régimes régionaux distincts.",
+  "faits": [
+    {
+      "id": "BAILCOM-001",
+      "question": "Qu'est-ce qu'un bail commercial et quelle est sa durée minimale ?",
+      "reponse": "Le bail commercial protège le locataire d'un local affecté principalement à un commerce de détail ou à l'activité d'un artisan en contact direct avec le public. Sa durée ne peut être inférieure à 9 ans, même si le contrat prévoit moins. Le preneur peut toutefois mettre fin au bail à l'expiration de chaque triennat, moyennant un préavis de 6 mois.",
+      "reference_legale": "Loi du 30 avril 1951 sur les baux commerciaux, art. 3 (durée minimale de 9 ans)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/loi/1951/04/30/1951043000/justel",
+          "intitule": "Justel — Loi du 30 avril 1951 sur les baux commerciaux"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "BAILCOM-002",
+      "question": "Ai-je droit au renouvellement de mon bail commercial ?",
+      "reponse": "Le preneur a le droit de demander le renouvellement de son bail (jusqu'à trois fois, soit 36 ans au total) pour poursuivre son commerce. La demande doit être adressée au bailleur par exploit d'huissier ou par lettre recommandée, à peine de déchéance, au plus tôt 18 mois et au plus tard 15 mois avant la fin du bail.",
+      "reference_legale": "Loi du 30 avril 1951 sur les baux commerciaux, art. 14 (demande de renouvellement)",
+      "alerte_delai": "Demander le renouvellement entre 18 et 15 mois avant la fin du bail, par recommandé ou huissier (à peine de déchéance).",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/loi/1951/04/30/1951043000/justel",
+          "intitule": "Justel — Loi du 30 avril 1951, art. 14"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "BAILCOM-003",
+      "question": "Le bailleur peut-il refuser le renouvellement, et ai-je droit à une indemnité ?",
+      "reponse": "Le bailleur peut refuser le renouvellement dans certains cas (occupation personnelle, reconstruction, etc.). Selon le motif, le preneur évincé peut avoir droit à une indemnité d'éviction (par exemple une, deux ou trois années de loyer), destinée à compenser la perte du fonds de commerce. Un refus sans motif légitime ouvre droit à une indemnité plus élevée.",
+      "reference_legale": "Loi du 30 avril 1951 sur les baux commerciaux, art. 25 (indemnité d'éviction)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/loi/1951/04/30/1951043000/justel",
+          "intitule": "Justel — Loi du 30 avril 1951, art. 25"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "BAILCOM-004",
+      "question": "Le loyer commercial peut-il être révisé en cours de bail ?",
+      "reponse": "Oui. À l'expiration de chaque triennat, chaque partie peut demander au juge de paix la révision du loyer, à condition de prouver que la valeur locative normale du bien a augmenté ou diminué d'au moins 15 % par rapport au loyer en cours, en raison de circonstances nouvelles.",
+      "reference_legale": "Loi du 30 avril 1951 sur les baux commerciaux, art. 6 (révision triennale du loyer)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/loi/1951/04/30/1951043000/justel",
+          "intitule": "Justel — Loi du 30 avril 1951, art. 6"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    }
+  ]
+}

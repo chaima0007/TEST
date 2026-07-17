@@ -1,0 +1,490 @@
+[
+  {
+    "horodatage_commit": "2026-06-27T21:31:13+00:00",
+    "nouveaux": [
+      "la_loi_avec_moi/accident_travail.json",
+      "la_loi_avec_moi/aidants_proches.json",
+      "la_loi_avec_moi/aide_juridique.json",
+      "la_loi_avec_moi/aide_urgence.json",
+      "la_loi_avec_moi/allocations_familiales.json",
+      "la_loi_avec_moi/animaux.json",
+      "la_loi_avec_moi/assurances.json",
+      "la_loi_avec_moi/bail_bruxelles.json",
+      "la_loi_avec_moi/bail_flandre.json",
+      "la_loi_avec_moi/bail_wallonie.json",
+      "la_loi_avec_moi/banque.json",
+      "la_loi_avec_moi/burnout_bienetre.json",
+      "la_loi_avec_moi/chomage.json",
+      "la_loi_avec_moi/circulation.json",
+      "la_loi_avec_moi/citoyen.json",
+      "la_loi_avec_moi/consommation.json",
+      "la_loi_avec_moi/couple.json",
+      "la_loi_avec_moi/credit.json",
+      "la_loi_avec_moi/deces.json",
+      "la_loi_avec_moi/dechets.json",
+      "la_loi_avec_moi/discrimination.json",
+      "la_loi_avec_moi/divorce.json",
+      "la_loi_avec_moi/documents_identite.json",
+      "la_loi_avec_moi/drogues.json",
+      "la_loi_avec_moi/eau.json",
+      "la_loi_avec_moi/energie.json",
+      "la_loi_avec_moi/enfants_places.json",
+      "la_loi_avec_moi/enseignement.json",
+      "la_loi_avec_moi/etrangers.json",
+      "la_loi_avec_moi/expulsion.json",
+      "la_loi_avec_moi/famille.json",
+      "la_loi_avec_moi/fraude_arnaques.json",
+      "la_loi_avec_moi/gouvernement.json",
+      "la_loi_avec_moi/handicap.json",
+      "la_loi_avec_moi/harcelement.json",
+      "la_loi_avec_moi/impots.json",
+      "la_loi_avec_moi/incapacite_travail.json",
+      "la_loi_avec_moi/independant.json",
+      "la_loi_avec_moi/job_etudiant.json",
+      "la_loi_avec_moi/justice_penal.json",
+      "la_loi_avec_moi/logement_social.json",
+      "la_loi_avec_moi/mobilite_douce.json",
+      "la_loi_avec_moi/naissance.json",
+      "la_loi_avec_moi/pension.json",
+      "la_loi_avec_moi/protection_personne.json",
+      "la_loi_avec_moi/saisies_huissier.json",
+      "la_loi_avec_moi/sante_mentale.json",
+      "la_loi_avec_moi/sante_patient.json",
+      "la_loi_avec_moi/successions.json",
+      "la_loi_avec_moi/surendettement.json",
+      "la_loi_avec_moi/telecom.json",
+      "la_loi_avec_moi/transport_passagers.json",
+      "la_loi_avec_moi/travail.json",
+      "la_loi_avec_moi/vie_privee_rgpd.json",
+      "la_loi_avec_moi/violences_conjugales.json",
+      "la_loi_avec_moi/voisinage.json",
+      "la_loi_avec_moi/vote_electoral.json",
+      "caelum/appels_projets.json",
+      "caelum/conformite_entreprises.json"
+    ],
+    "modifies": [],
+    "violations": [],
+    "statut": "OK"
+  },
+  {
+    "horodatage_commit": "2026-06-27T21:31:13+00:00",
+    "nouveaux": [],
+    "modifies": [],
+    "violations": [],
+    "statut": "OK"
+  },
+  {
+    "horodatage_commit": "2026-06-27T21:31:13+00:00",
+    "nouveaux": [],
+    "modifies": [],
+    "violations": [],
+    "statut": "OK"
+  },
+  {
+    "horodatage_commit": "2026-06-27T21:38:10+00:00",
+    "nouveaux": [],
+    "modifies": [],
+    "violations": [],
+    "statut": "OK"
+  },
+  {
+    "horodatage_commit": "2026-06-27T21:40:20+00:00",
+    "nouveaux": [
+      "la_loi_avec_moi/adoption.json",
+      "la_loi_avec_moi/fin_de_vie.json"
+    ],
+    "modifies": [],
+    "violations": [],
+    "statut": "OK"
+  },
+  {
+    "horodatage_commit": "2026-06-27T21:44:29+00:00",
+    "nouveaux": [],
+    "modifies": [],
+    "violations": [],
+    "statut": "OK"
+  },
+  {
+    "horodatage_commit": "2026-06-27T21:59:42+00:00",
+    "nouveaux": [
+      "la_loi_avec_moi/mediation_conflits.json",
+      "la_loi_avec_moi/recours_administration.json"
+    ],
+    "modifies": [],
+    "violations": [],
+    "statut": "OK"
+  },
+  {
+    "horodatage_commit": "2026-06-27T22:12:55+00:00",
+    "nouveaux": [
+      "la_loi_avec_moi/bail_etudiant.json",
+      "la_loi_avec_moi/premier_emploi.json"
+    ],
+    "modifies": [
+      "la_loi_avec_moi/recours_administration.json"
+    ],
+    "violations": [],
+    "statut": "OK"
+  },
+  {
+    "horodatage_commit": "2026-06-27T22:14:34+00:00",
+    "nouveaux": [
+      "la_loi_avec_moi/achat_logement.json",
+      "la_loi_avec_moi/assurance_auto.json"
+    ],
+    "modifies": [],
+    "violations": [],
+    "statut": "OK"
+  },
+  {
+    "horodatage_commit": "2026-06-27T22:18:08+00:00",
+    "nouveaux": [
+      "la_loi_avec_moi/copropriete.json",
+      "la_loi_avec_moi/credit_hypothecaire.json"
+    ],
+    "modifies": [],
+    "violations": [],
+    "statut": "OK"
+  },
+  {
+    "horodatage_commit": "2026-06-27T22:32:30+00:00",
+    "nouveaux": [
+      "la_loi_avec_moi/permis_urbanisme.json",
+      "la_loi_avec_moi/voyages.json"
+    ],
+    "modifies": [],
+    "violations": [],
+    "statut": "OK"
+  },
+  {
+    "horodatage_commit": "2026-06-27T22:49:13+00:00",
+    "nouveaux": [
+      "la_loi_avec_moi/benevolat.json",
+      "la_loi_avec_moi/fonction_publique.json"
+    ],
+    "modifies": [
+      "la_loi_avec_moi/permis_urbanisme.json"
+    ],
+    "violations": [],
+    "statut": "OK"
+  },
+  {
+    "horodatage_commit": "2026-06-27T23:20:05+00:00",
+    "nouveaux": [],
+    "modifies": [],
+    "violations": [],
+    "statut": "OK"
+  },
+  {
+    "horodatage_commit": "2026-06-28T13:42:01+00:00",
+    "nouveaux": [
+      "la_loi_avec_moi/assurance_habitation.json",
+      "la_loi_avec_moi/garde_enfants.json"
+    ],
+    "modifies": [],
+    "violations": [],
+    "statut": "OK"
+  },
+  {
+    "horodatage_commit": "2026-06-28T13:56:50+00:00",
+    "nouveaux": [
+      "la_loi_avec_moi/malfacons_travaux.json",
+      "la_loi_avec_moi/recouvrement_amiable.json"
+    ],
+    "modifies": [],
+    "violations": [],
+    "statut": "OK"
+  },
+  {
+    "horodatage_commit": "2026-06-28T14:04:07+00:00",
+    "nouveaux": [],
+    "modifies": [],
+    "violations": [],
+    "statut": "OK"
+  },
+  {
+    "horodatage_commit": "2026-06-28T14:06:09+00:00",
+    "nouveaux": [
+      "la_loi_avec_moi/credit_consommation.json",
+      "la_loi_avec_moi/voiture_occasion.json"
+    ],
+    "modifies": [],
+    "violations": [],
+    "statut": "OK"
+  },
+  {
+    "horodatage_commit": "2026-06-28T14:08:07+00:00",
+    "nouveaux": [
+      "la_loi_avec_moi/sexisme_espace_public.json",
+      "la_loi_avec_moi/voyage_mineur.json"
+    ],
+    "modifies": [],
+    "violations": [],
+    "statut": "OK"
+  },
+  {
+    "horodatage_commit": "2026-06-28T14:11:19+00:00",
+    "nouveaux": [
+      "la_loi_avec_moi/bourse_etudes.json",
+      "la_loi_avec_moi/droit_image.json"
+    ],
+    "modifies": [],
+    "violations": [],
+    "statut": "OK"
+  },
+  {
+    "horodatage_commit": "2026-06-28T14:11:19+00:00",
+    "nouveaux": [],
+    "modifies": [],
+    "violations": [],
+    "statut": "OK"
+  },
+  {
+    "horodatage_commit": "2026-06-28T14:15:07+00:00",
+    "nouveaux": [],
+    "modifies": [],
+    "violations": [],
+    "statut": "OK"
+  },
+  {
+    "horodatage_commit": "2026-06-28T14:40:04+00:00",
+    "nouveaux": [],
+    "modifies": [],
+    "violations": [],
+    "statut": "OK"
+  },
+  {
+    "horodatage_commit": "2026-06-28T14:41:16+00:00",
+    "nouveaux": [
+      "la_loi_avec_moi/colocation.json",
+      "la_loi_avec_moi/maltraitance_aines.json"
+    ],
+    "modifies": [],
+    "violations": [],
+    "statut": "OK"
+  },
+  {
+    "horodatage_commit": "2026-06-28T14:45:30+00:00",
+    "nouveaux": [
+      "la_loi_avec_moi/adresse_reference.json",
+      "la_loi_avec_moi/testament.json"
+    ],
+    "modifies": [],
+    "violations": [],
+    "statut": "OK"
+  },
+  {
+    "horodatage_commit": "2026-06-28T15:14:25+00:00",
+    "nouveaux": [
+      "caelum/normes_simulateur_map.json"
+    ],
+    "modifies": [
+      "la_loi_avec_moi/adresse_reference.json",
+      "caelum/conformite_entreprises.json"
+    ],
+    "violations": [
+      "[caelum/normes_simulateur_map.json] champ 'separation' manquant (séparation des projets)"
+    ],
+    "statut": "BLOQUÉ"
+  },
+  {
+    "horodatage_commit": "2026-06-28T15:14:25+00:00",
+    "nouveaux": [
+      "caelum/normes_simulateur_map.json"
+    ],
+    "modifies": [
+      "la_loi_avec_moi/adresse_reference.json",
+      "caelum/conformite_entreprises.json"
+    ],
+    "violations": [
+      "[caelum/normes_simulateur_map.json] champ 'separation' manquant (séparation des projets)"
+    ],
+    "statut": "BLOQUÉ"
+  },
+  {
+    "horodatage_commit": "2026-06-28T15:14:25+00:00",
+    "nouveaux": [
+      "caelum/normes_simulateur_map.json"
+    ],
+    "modifies": [
+      "la_loi_avec_moi/adresse_reference.json",
+      "caelum/conformite_entreprises.json"
+    ],
+    "violations": [
+      "[caelum/normes_simulateur_map.json] champ 'separation' manquant (séparation des projets)"
+    ],
+    "statut": "BLOQUÉ"
+  },
+  {
+    "horodatage_commit": "2026-06-28T15:14:25+00:00",
+    "nouveaux": [
+      "caelum/normes_simulateur_map.json"
+    ],
+    "modifies": [
+      "la_loi_avec_moi/adresse_reference.json",
+      "caelum/conformite_entreprises.json"
+    ],
+    "violations": [
+      "[caelum/normes_simulateur_map.json] champ 'separation' manquant (séparation des projets)"
+    ],
+    "statut": "BLOQUÉ"
+  },
+  {
+    "horodatage_commit": "2026-06-28T15:14:25+00:00",
+    "nouveaux": [
+      "caelum/normes_simulateur_map.json"
+    ],
+    "modifies": [
+      "la_loi_avec_moi/adresse_reference.json",
+      "caelum/conformite_entreprises.json"
+    ],
+    "violations": [],
+    "statut": "OK"
+  },
+  {
+    "horodatage_commit": "2026-06-28T15:14:25+00:00",
+    "nouveaux": [],
+    "modifies": [],
+    "violations": [],
+    "statut": "OK"
+  },
+  {
+    "horodatage_commit": "2026-06-28T15:23:53+00:00",
+    "nouveaux": [
+      "la_loi_avec_moi/citoyen_europeen.json",
+      "la_loi_avec_moi/litiges_transfrontaliers.json",
+      "la_loi_avec_moi/recours_europeens.json"
+    ],
+    "modifies": [],
+    "violations": [],
+    "statut": "OK"
+  },
+  {
+    "horodatage_commit": "2026-06-28T15:49:44+00:00",
+    "nouveaux": [],
+    "modifies": [
+      "la_loi_avec_moi/recours_europeens.json"
+    ],
+    "violations": [],
+    "statut": "OK"
+  },
+  {
+    "horodatage_commit": "2026-06-29T02:14:13+00:00",
+    "nouveaux": [
+      "la_loi_avec_moi/accidents_route_indemnisation.json",
+      "la_loi_avec_moi/aide_medicale_urgente.json",
+      "la_loi_avec_moi/assurance_hospitalisation.json",
+      "la_loi_avec_moi/assurance_maladie_mutuelle.json",
+      "la_loi_avec_moi/bail_a_ferme.json",
+      "la_loi_avec_moi/bail_commercial.json",
+      "la_loi_avec_moi/casier_judiciaire.json",
+      "la_loi_avec_moi/changement_nom_prenom.json",
+      "la_loi_avec_moi/chomage_temporaire.json",
+      "la_loi_avec_moi/conge_maternite_naissance.json",
+      "la_loi_avec_moi/conges_thematiques.json",
+      "la_loi_avec_moi/don_organes.json",
+      "la_loi_avec_moi/donation.json",
+      "la_loi_avec_moi/dossier_medical_global.json",
+      "la_loi_avec_moi/epargne_pension.json",
+      "la_loi_avec_moi/expropriation.json",
+      "la_loi_avec_moi/filiation_reconnaissance.json",
+      "la_loi_avec_moi/grapa.json",
+      "la_loi_avec_moi/maladie_professionnelle.json",
+      "la_loi_avec_moi/nationalite_belge.json",
+      "la_loi_avec_moi/occupation_sans_titre.json",
+      "la_loi_avec_moi/pension_complementaire.json",
+      "la_loi_avec_moi/permis_conduire.json",
+      "la_loi_avec_moi/precompte_immobilier.json",
+      "la_loi_avec_moi/revenu_integration_cpas.json",
+      "la_loi_avec_moi/saisie_immobiliere.json",
+      "la_loi_avec_moi/service_bancaire_base.json",
+      "la_loi_avec_moi/successions_internationales.json",
+      "la_loi_avec_moi/tutelle_mineurs.json"
+    ],
+    "modifies": [
+      "caelum/conformite_entreprises.json",
+      "caelum/normes_simulateur_map.json"
+    ],
+    "violations": [
+      "[la_loi_avec_moi/donation.json] DON-004: aucune source officielle"
+    ],
+    "statut": "BLOQUÉ"
+  },
+  {
+    "horodatage_commit": "2026-06-29T02:14:13+00:00",
+    "nouveaux": [
+      "la_loi_avec_moi/accidents_route_indemnisation.json",
+      "la_loi_avec_moi/aide_medicale_urgente.json",
+      "la_loi_avec_moi/assurance_hospitalisation.json",
+      "la_loi_avec_moi/assurance_maladie_mutuelle.json",
+      "la_loi_avec_moi/bail_a_ferme.json",
+      "la_loi_avec_moi/bail_commercial.json",
+      "la_loi_avec_moi/casier_judiciaire.json",
+      "la_loi_avec_moi/changement_nom_prenom.json",
+      "la_loi_avec_moi/chomage_temporaire.json",
+      "la_loi_avec_moi/conge_maternite_naissance.json",
+      "la_loi_avec_moi/conges_thematiques.json",
+      "la_loi_avec_moi/don_organes.json",
+      "la_loi_avec_moi/donation.json",
+      "la_loi_avec_moi/dossier_medical_global.json",
+      "la_loi_avec_moi/epargne_pension.json",
+      "la_loi_avec_moi/expropriation.json",
+      "la_loi_avec_moi/filiation_reconnaissance.json",
+      "la_loi_avec_moi/grapa.json",
+      "la_loi_avec_moi/maladie_professionnelle.json",
+      "la_loi_avec_moi/nationalite_belge.json",
+      "la_loi_avec_moi/occupation_sans_titre.json",
+      "la_loi_avec_moi/pension_complementaire.json",
+      "la_loi_avec_moi/permis_conduire.json",
+      "la_loi_avec_moi/precompte_immobilier.json",
+      "la_loi_avec_moi/revenu_integration_cpas.json",
+      "la_loi_avec_moi/saisie_immobiliere.json",
+      "la_loi_avec_moi/service_bancaire_base.json",
+      "la_loi_avec_moi/successions_internationales.json",
+      "la_loi_avec_moi/tutelle_mineurs.json"
+    ],
+    "modifies": [
+      "caelum/conformite_entreprises.json",
+      "caelum/normes_simulateur_map.json"
+    ],
+    "violations": [],
+    "statut": "OK"
+  },
+  {
+    "horodatage_commit": "2026-06-29T02:14:13+00:00",
+    "nouveaux": [],
+    "modifies": [],
+    "violations": [],
+    "statut": "OK"
+  },
+  {
+    "horodatage_commit": "2026-06-29T07:50:19+00:00",
+    "nouveaux": [
+      "la_loi_avec_moi/domiciliation.json",
+      "la_loi_avec_moi/equivalence_diplomes.json",
+      "la_loi_avec_moi/ivg.json",
+      "la_loi_avec_moi/legalisation_apostille.json",
+      "la_loi_avec_moi/loi_breyne.json",
+      "la_loi_avec_moi/marchand_de_sommeil.json",
+      "la_loi_avec_moi/plaintes_police_comite_p.json",
+      "la_loi_avec_moi/produits_defectueux.json",
+      "la_loi_avec_moi/publicite_administration.json",
+      "la_loi_avec_moi/sanctions_administratives_communales.json",
+      "la_loi_avec_moi/soins_sante_transfrontaliers.json",
+      "la_loi_avec_moi/statut_social_artiste.json",
+      "la_loi_avec_moi/titres_services.json",
+      "la_loi_avec_moi/vices_caches.json",
+      "la_loi_avec_moi/violences_sexuelles_cpvs.json"
+    ],
+    "modifies": [],
+    "violations": [],
+    "statut": "OK"
+  },
+  {
+    "horodatage_commit": "2026-06-29T07:50:19+00:00",
+    "nouveaux": [],
+    "modifies": [],
+    "violations": [],
+    "statut": "OK"
+  }
+]

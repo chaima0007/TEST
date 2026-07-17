@@ -1,0 +1,70 @@
+{
+  "id": "santander",
+  "slug": "santander",
+  "name": "Banco Santander SA",
+  "country": "Spain",
+  "city": "Madrid",
+  "sector": "Finance/Bank",
+  "size": {
+    "revenue_bn_eur": 57,
+    "employees": 212000,
+    "index": "IBEX35"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": false,
+    "swiss_hrdd": false,
+    "sfdr": true,
+    "esg_rating": {
+      "msci": "BBB",
+      "sustainalytics": "24.7 Medium Risk",
+      "target": "A"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "Chief Sustainability Officer / Chief Risk Officer",
+    "team": "Sustainability & Responsible Banking team, ESG Risk Integration",
+    "location": "Boadilla del Monte (campus siège), Londres (Santander UK), São Paulo (Santander Brasil), New York (Santander US)",
+    "process": "Comité de Sostenibilidad mensuel, processus ESRM (Environmental and Social Risk Management) intégré au crédit, revue annuelle de la politique d'exclusion sectorielle"
+  },
+  "pain_points": [
+    "Exposition massive à l'Amérique Latine (Brésil, Mexique, Argentine, Chili) : financement d'industries à fort risque DDH (agribusiness, mines, infra) dans des pays à gouvernance variable",
+    "SFDR conformité : portefeuilles Article 8 représentant 150+ Mrd EUR avec exigences PAI sociaux documentés insuffisamment standardisées",
+    "Financement de l'agribusiness brésilien : lien entre crédits agricoles Santander Brasil et déforestation amazonienn / droits des peuples indigènes",
+    "Conditions de travail dans les centres d'appels externalisés (Maroc, Pologne, Argentine) : standards sociaux et droits à l'organisation syndicale",
+    "Inclusion financière vs. exclusion numérique : risques DDH liés à la fermeture d'agences et à la migration vers le digital pour les populations vulnérables",
+    "Conformité CSDDD pour une banque universelle : définir le périmètre de la due diligence (financement vs. activités propres vs. investissements)"
+  ],
+  "observed_failures": [
+    "Rapport Rainforest Action Network 2023 : Santander Brasil figurait dans le top 10 des banques finançant des entreprises liées à la déforestation amazonienne (26 Mrd USD depuis 2016)",
+    "Fonds Article 8 Santander AM : 2 fonds mis sous surveillance par la CNMV espagnole en 2023 pour claims ESG insuffisamment documentés",
+    "Fermetures d'agences Santander UK (2022) : impact sur les communautés rurales vulnérables dépendantes du cash — plainte Citizens Advice auprès de la FCA"
+  ],
+  "signals_of_risk": [
+    "Exposition géographique massive à l'Amérique Latine dans des secteurs à fort risque DDH (agriculture, mines, énergie)",
+    "Pression réglementaire croisée : SFDR (UE), SEC (USA), BCB/CVM (Brésil) — cohérence des approches DDH entre régions",
+    "Risque de litige climatique pour le financement de l'expansion agricole en Amazonie"
+  ],
+  "signals_of_trust": [
+    "Santander Responsible Banking Report publié annuellement selon GRI et TCFD",
+    "Engagement 120 Mrd EUR en finance durable (verde y social) d'ici 2025",
+    "Politique d'exclusion charbon mise à jour 2023 avec sortie complète des marchés OCDE d'ici 2030",
+    "Santander X : programme d'entrepreneuriat social touchant 500 000 entrepreneurs dans les pays émergents"
+  ],
+  "recommended_actions": [
+    "Proposer une solution d'intégration des risques DDH dans le processus ESRM pour les secteurs agribusiness et mines en Amérique Latine",
+    "Démontrer comment documenter les PAI sociaux SFDR avec des données vérifiables pour renforcer la crédibilité des fonds Article 8",
+    "Présenter un module de scoring DDH pour le portefeuille de crédit Brésil avec focus déforestation et droits indigènes",
+    "Organiser une session avec l'équipe Sustainable Banking autour de la convergence CSDDD/SFDR pour les banques universelles européennes"
+  ],
+  "local_tone": "Ton professionnel espagnol avec conscience de la dimension ibéro-américaine. Santander est fier de son ancrage dans les marchés émergents — valoriser les approches qui renforcent les pratiques responsables sans fragiliser la compétitivité locale. Le bilinguisme espagnol/anglais est un atout.",
+  "cultural_notes": "Santander a une culture commerciale agressive avec une forte orientation résultats. Les équipes de durabilité travaillent dans un contexte de tension entre ambitions ESG et pression sur les marges. Démontrer le ROI des investissements DDH et montrer comment la conformité préserve l'accès aux marchés de capitaux ESG est essentiel.",
+  "priority": 3,
+  "last_updated": "2026-06-21",
+  "source_links": [
+    "https://www.santander.com/en/sustainability",
+    "https://www.ran.org/the-understory/banking-on-climate-chaos-2023-santander/",
+    "https://www.business-humanrights.org/en/companies/banco-santander/"
+  ]
+}

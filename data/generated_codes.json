@@ -1,0 +1,147 @@
+{
+  "version": "1.0",
+  "description": "CaelumSwarm™ — Codes Générés",
+  "sessions": [
+    {
+      "version": "1.0",
+      "generated_at": "2026-06-22T22:49:08.261523+00:00",
+      "total_algorithms": 9,
+      "unique_count": 3,
+      "known_count": 6,
+      "excellent_count": 8,
+      "algorithms": {
+        "quantum_scorer": {
+          "type": "UNIQUE",
+          "algorithm": "CaelumQuantumScorer",
+          "description": "Scoring quantique CSDDD via Hadamard + Grover + Monte Carlo",
+          "result": {
+            "quantum_score": 50.2063,
+            "mc_mean": 50.2264,
+            "mc_std": 2.4981,
+            "confidence_99": [
+              43.79,
+              56.66
+            ],
+            "final_score": 50.2184
+          },
+          "elapsed_ms": 11.9,
+          "performance": "EXCELLENT"
+        },
+        "bayesian_network": {
+          "type": "UNIQUE",
+          "algorithm": "CaelumBayesianRiskNetwork",
+          "description": "Réseau bayésien supply chain CSDDD (9 noeuds de risque)",
+          "result": {
+            "overall_risk": 25.86,
+            "top_risks": {
+              "high_risk_country": 0.8,
+              "high_risk_sector": 0.6,
+              "supply_chain_opacity": 0.4118
+            }
+          },
+          "elapsed_ms": 2.5,
+          "performance": "EXCELLENT"
+        },
+        "supply_chain_graph": {
+          "type": "UNIQUE",
+          "algorithm": "CaelumSupplyChainGraph",
+          "description": "Graphe supply chain: PageRank + Dijkstra + détection cycles",
+          "result": {
+            "top_supplier": "S9",
+            "critical_path_cost": 10.6539,
+            "cycles_detected": 0
+          },
+          "elapsed_ms": 0.8,
+          "performance": "EXCELLENT"
+        },
+        "sha3_fingerprint": {
+          "type": "CONNU",
+          "algorithm": "SHA-3 256",
+          "description": "Empreinte cryptographique de rapports compliance",
+          "result": {
+            "fingerprint": "d3f1c29b87dcf917...",
+            "bits": 256
+          },
+          "elapsed_ms": 0.05,
+          "performance": "EXCELLENT"
+        },
+        "huffman_compression": {
+          "type": "CONNU",
+          "algorithm": "Huffman Coding",
+          "description": "Compression des scores pour bases de données",
+          "result": {
+            "compression_ratio": 1.64,
+            "n_scores": 200
+          },
+          "elapsed_ms": 0.19,
+          "performance": "EXCELLENT"
+        },
+        "bloom_filter": {
+          "type": "CONNU",
+          "algorithm": "Bloom Filter",
+          "description": "Détection O(1) doublons icônes sidebar",
+          "result": {
+            "summary": "Bloom(5 items, 71 bits, 9 hashes, fp=0.001)",
+            "new_icon_exists": false,
+            "existing_icon_found": true
+          },
+          "elapsed_ms": 0.08,
+          "performance": "EXCELLENT"
+        },
+        "gradient_descent": {
+          "type": "CONNU",
+          "algorithm": "Gradient Descent",
+          "description": "Optimisation poids engine vers avg_composite=61.03",
+          "result": {
+            "optimized_weights": [
+              0.257812,
+              0.252604,
+              0.247396,
+              0.242187
+            ],
+            "final_loss": 24674.780904,
+            "iterations": 1000,
+            "converged": false
+          },
+          "elapsed_ms": 1.72,
+          "performance": "BON"
+        },
+        "simulated_annealing": {
+          "type": "CONNU",
+          "algorithm": "Simulated Annealing",
+          "description": "Sélection optimale de domaines pour chaque wave",
+          "result": {
+            "best_combination": [
+              95.0,
+              95.0,
+              95.0
+            ],
+            "best_score": 285.0,
+            "final_temperature": 0.0
+          },
+          "elapsed_ms": 4.85,
+          "performance": "EXCELLENT"
+        },
+        "astar_path": {
+          "type": "CONNU",
+          "algorithm": "A* Search",
+          "description": "Chemin optimal vers certification CSDDD",
+          "result": {
+            "path": [
+              "data_mapping",
+              "risk_assessment",
+              "remediation",
+              "certification"
+            ],
+            "total_cost": 3.8643,
+            "steps": 4
+          },
+          "elapsed_ms": 0.03,
+          "performance": "EXCELLENT"
+        }
+      }
+    }
+  ],
+  "total_algorithms": 9,
+  "last_run": "2026-06-22T22:49:08.261523+00:00"
+}

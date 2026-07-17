@@ -1,0 +1,131 @@
+{
+  "module": "permis_urbanisme",
+  "titre": "Permis d'urbanisme — travaux & rénovation",
+  "domaine": "Urbanisme & travaux",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code du développement territorial (CoDT, Wallonie) ; CoBAT (Bruxelles) ; Codex flamand de l'aménagement du territoire",
+    "portee": "Quand un permis est requis pour construire, transformer ou rénover",
+    "source_officielle": "https://www.belgium.be/fr/logement/construire_et_renover/permis_d_urbanisme"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les règles d'urbanisme dépendent fortement de la Région ET de la commune (zones protégées) ; vérifiez TOUJOURS auprès du service urbanisme communal avant de commencer.",
+  "faits": [
+    {
+      "id": "URBA-PERMIS-001",
+      "question": "Pour quels travaux ai-je besoin d'un permis d'urbanisme ?",
+      "reponse": "Le principe est large : la plupart des travaux de construction, démolition ou transformation (intérieure comme extérieure) nécessitent un permis d'urbanisme ; la dispense est l'exception. Les règles varient selon la Région et la commune : à Bruxelles et en Flandre, un permis est généralement requis dès qu'on modifie l'aspect d'une façade visible de la rue ; en Wallonie, beaucoup de petites rénovations de façade sont dispensées, sauf en zone protégée. Certains travaux exigent aussi l'intervention d'un architecte. Avant de commencer, demandez confirmation au service urbanisme de votre commune.",
+      "reference_legale": "Code du développement territorial (CoDT, Wallonie) ; CoBAT (Bruxelles) ; Codex flamand de l'aménagement du territoire",
+      "alerte_delai": "Demandez le permis AVANT de commencer : des travaux sans permis peuvent entraîner une remise en état et une amende.",
+      "contacts": [
+        {
+          "nom": "Service urbanisme de votre commune",
+          "pour": "savoir si un permis est requis, déposer la demande"
+        },
+        {
+          "nom": "Architecte",
+          "pour": "travaux nécessitant son intervention"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.belgium.be/fr/logement/construire_et_renover/permis_d_urbanisme",
+          "intitule": "Belgium.be — Permis d'urbanisme"
+        },
+        {
+          "type": "officiel",
+          "url": "https://urbanisme.irisnet.be/lepermisdurbanisme/quand-faut-il-un-permis-durbanisme",
+          "intitule": "Urbanisme Bruxelles — Quand faut-il un permis ?"
+        }
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "URBA-DEMARCHE-001",
+      "question": "Comment demander un permis et que risque-t-on sans permis ?",
+      "reponse": "La demande se dépose à la commune (souvent via un formulaire régional, parfois avec un dossier établi par un architecte). La commune instruit, peut organiser une enquête publique, puis accorde ou refuse ; un recours est possible en cas de refus. Faire des travaux soumis à permis sans l'avoir obtenu est une infraction urbanistique : vous risquez l'arrêt du chantier, une remise en état (parfois la démolition) et une amende, et cela peut bloquer une vente future. Mieux vaut donc régulariser ou demander avant.",
+      "reference_legale": "Code du développement territorial (CoDT, Wallonie) / Code bruxellois de l'aménagement du territoire (CoBAT) / Codex flamand — procédure de demande et sanctions des infractions urbanistiques",
+      "contacts": [
+        {
+          "nom": "Service urbanisme de votre commune",
+          "pour": "dépôt et suivi de la demande, recours"
+        },
+        {
+          "nom": "Service logement de votre Région",
+          "pour": "formulaires et règles régionales"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.wallonie.be/fr/demarches/demander-un-permis-durbanisme",
+          "intitule": "Wallonie — Demander un permis d'urbanisme"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://www.wikifin.be/fr/logement-et-emprunt-hypothecaire/acheter-construire-renover-une-habitation/construire-et-renover-0",
+          "intitule": "Wikifin (FSMA) — Construire et rénover"
+        }
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "URBA-REGIONAL-001",
+      "question": "Quel régime de permis selon ma région ?",
+      "reponse": "L'urbanisme est une compétence RÉGIONALE : les règles et le permis dépendent de la région où se trouve le bien (la demande s'introduit en principe via votre commune). En WALLONIE : le permis d'urbanisme relève du CoDT (Code du Développement Territorial) ; la région de langue allemande, située en Région wallonne, applique le même cadre. En FLANDRE : c'est l'omgevingsvergunning (permis d'environnement unique), via l'Omgevingsloket (Departement Omgeving). À BRUXELLES : la politique d'urbanisme et le permis relèvent d'urban.brussels (Région de Bruxelles-Capitale). Vérifiez auprès de votre commune les actes soumis à permis ou à simple déclaration.",
+      "reference_legale": "Compétence régionale de l'urbanisme : Code du Développement Territorial (CoDT) en Wallonie ; Vlaamse Codex Ruimtelijke Ordening et décret relatif à l'omgevingsvergunning en Flandre ; Code bruxellois de l'aménagement du territoire (CoBAT) à Bruxelles",
+      "contacts": [
+        {
+          "nom": "Votre commune (service urbanisme)",
+          "pour": "introduction de la demande (toutes régions)"
+        },
+        {
+          "nom": "Omgevingsloket / Departement Omgeving (Flandre)",
+          "lien": "https://www.omgevingvlaanderen.be/",
+          "pour": "omgevingsvergunning en Flandre"
+        },
+        {
+          "nom": "urban.brussels (Bruxelles)",
+          "lien": "https://urban.brussels/fr",
+          "pour": "urbanisme et permis à Bruxelles"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.wallonie.be/fr/demarches/demander-un-permis-durbanisme",
+          "intitule": "Wallonie — permis d urbanisme (CoDT)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.omgevingvlaanderen.be/",
+          "intitule": "Departement Omgeving — omgevingsvergunning (Flandre)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://urban.brussels/fr",
+          "intitule": "urban.brussels — urbanisme et permis (Bruxelles)"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "URBA-ACHAT-INFRACTION-001",
+      "question": "J'achète un bien : comment éviter une mauvaise surprise d'urbanisme ?",
+      "reponse": "Avant d'acheter, faites vérifier la situation urbanistique du bien. La commune délivre des renseignements urbanistiques qui indiquent notamment les permis délivrés, l'affectation de la zone et l'existence éventuelle d'infractions (travaux réalisés sans permis par un précédent propriétaire). C'est crucial : une infraction urbanistique non régularisée « suit » le bien, et l'acheteur risque de devoir régulariser, remettre en état, voire démolir. Le notaire est tenu de mentionner les informations urbanistiques dans le compromis et l'acte : lisez-les attentivement et, en cas de doute, demandez une condition suspensive ou des garanties au vendeur. Mieux vaut tout vérifier avant de signer qu'hériter d'un problème.",
+      "reference_legale": "Code du développement territorial (CoDT, Wallonie) / Code bruxellois de l'aménagement du territoire (CoBAT) / Codex flamand — information urbanistique et infractions",
+      "contacts": [
+        {"nom": "Service urbanisme de la commune", "pour": "renseignements urbanistiques du bien"},
+        {"nom": "Notaire", "pour": "mentions urbanistiques et garanties dans l'acte"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/logement/construire_et_renover/permis_d_urbanisme", "intitule": "Belgium.be — Permis et renseignements urbanistiques"},
+        {"type": "officiel", "url": "https://www.wallonie.be/fr/demarches/demander-un-permis-durbanisme", "intitule": "Wallonie — Urbanisme (CoDT)"}
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

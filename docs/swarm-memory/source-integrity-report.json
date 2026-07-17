@@ -1,0 +1,5824 @@
+{
+  "generated_at": "2026-06-22T07:39:34.264815+00:00",
+  "agent": "SourceIntegrityMonitorAgent",
+  "version": "1.0.0",
+  "authorized_sources": [
+    {
+      "nom": "SEC EDGAR — Dodd-Frank Conflict Minerals Reports",
+      "url": "sec.gov",
+      "domain": "sec.gov",
+      "type": "officielle",
+      "fiabilite_score": 98,
+      "derniere_verification": "2026-06-01",
+      "statut": "actif",
+      "description": "US SEC filings on conflict minerals (3TG) — Dodd-Frank §1502"
+    },
+    {
+      "nom": "Global Witness",
+      "url": "globalwitness.org",
+      "domain": "globalwitness.org",
+      "type": "ONG",
+      "fiabilite_score": 91,
+      "derniere_verification": "2026-05-15",
+      "statut": "actif",
+      "description": "Investigations on natural resource exploitation and human rights abuses"
+    },
+    {
+      "nom": "Business & Human Rights Resource Centre",
+      "url": "business-humanrights.org",
+      "domain": "business-humanrights.org",
+      "type": "ONG",
+      "fiabilite_score": 93,
+      "derniere_verification": "2026-06-01",
+      "statut": "actif",
+      "description": "Global tracker for corporate human rights obligations"
+    },
+    {
+      "nom": "OECD Due Diligence Guidelines",
+      "url": "oecd.org",
+      "domain": "oecd.org",
+      "type": "officielle",
+      "fiabilite_score": 97,
+      "derniere_verification": "2026-05-20",
+      "statut": "actif",
+      "description": "OECD Guidelines for Multinational Enterprises and due diligence guidance"
+    },
+    {
+      "nom": "EUR-Lex — CSDDD Official Text",
+      "url": "eur-lex.europa.eu",
+      "domain": "eur-lex.europa.eu",
+      "type": "officielle",
+      "fiabilite_score": 99,
+      "derniere_verification": "2026-06-10",
+      "statut": "actif",
+      "description": "EU Official Journal — Corporate Sustainability Due Diligence Directive text"
+    },
+    {
+      "nom": "ITUC Global Rights Index",
+      "url": "survey.ituc-csi.org",
+      "domain": "ituc-csi.org",
+      "type": "ONG",
+      "fiabilite_score": 89,
+      "derniere_verification": "2026-05-01",
+      "statut": "actif",
+      "description": "Annual ranking of worst countries for workers' rights"
+    },
+    {
+      "nom": "OHCHR — UN Human Rights",
+      "url": "ohchr.org",
+      "domain": "ohchr.org",
+      "type": "officielle",
+      "fiabilite_score": 97,
+      "derniere_verification": "2026-06-01",
+      "statut": "actif",
+      "description": "UN Office of the High Commissioner for Human Rights"
+    },
+    {
+      "nom": "The Enough Project — 3TG Scorecard",
+      "url": "enoughproject.org",
+      "domain": "enough.org",
+      "type": "ONG",
+      "fiabilite_score": 85,
+      "derniere_verification": "2026-04-15",
+      "statut": "actif",
+      "description": "Corporate scorecard on conflict minerals sourcing (3TG)"
+    }
+  ],
+  "summary": {
+    "authorized_sources_count": 8,
+    "engines_scanned": 262,
+    "engines_with_sources": 262,
+    "engines_with_alerts": 0,
+    "unknown_source_entries": 0
+  },
+  "engine_source_audit": [
+    {
+      "engine": "academic_freedom_education_rights_engine",
+      "path": "swarm/intelligence/academic_freedom_education_rights_engine.py",
+      "sources": [
+        {
+          "source": "scholars_at_risk_free_to_think_annual_report",
+          "status": "authorized"
+        },
+        {
+          "source": "iff_academic_freedom_index_global_ranking",
+          "status": "authorized"
+        },
+        {
+          "source": "hrw_education_rights_violations_documentation",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "academic_freedom_engine",
+      "path": "swarm/intelligence/academic_freedom_engine.py",
+      "sources": [
+        {
+          "source": "scholars_at_risk_network_academic_freedom_monitoring_project",
+          "status": "authorized"
+        },
+        {
+          "source": "academic_freedom_index_global_public_policy_institute_report",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_university_repression_global_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "academic_freedom_scholar_persecution_engine",
+      "path": "swarm/intelligence/academic_freedom_scholar_persecution_engine.py",
+      "sources": [
+        {
+          "source": "scholars_at_risk_network_monitoring_project_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "academic_freedom_index_fau_erlangen_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_academic_freedom_reports",
+          "status": "authorized"
+        },
+        {
+          "source": "aaup_annual_report_academic_freedom_2023",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "academic_freedom_university_rights_engine",
+      "path": "swarm/intelligence/academic_freedom_university_rights_engine.py",
+      "sources": [
+        {
+          "source": "scholars_at_risk_free_to_think_annual_report",
+          "status": "authorized"
+        },
+        {
+          "source": "academic_freedom_index_global_public_policy_institute",
+          "status": "authorized"
+        },
+        {
+          "source": "iff_university_autonomy_scorecard_worldwide",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "access_medicine_inequality_engine",
+      "path": "swarm/intelligence/access_medicine_inequality_engine.py",
+      "sources": [
+        {
+          "source": "msf_access_campaign_essential_medicines_patent_barrier_report",
+          "status": "authorized"
+        },
+        {
+          "source": "who_essential_medicines_list_trips_doha_declaration_review",
+          "status": "authorized"
+        },
+        {
+          "source": "dndi_drugs_neglected_diseases_initiative_global_access_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "access_to_justice_rule_of_law_engine",
+      "path": "swarm/intelligence/access_to_justice_rule_of_law_engine.py",
+      "sources": [
+        {
+          "source": "world_justice_project_rule_of_law_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "freedom_house_rule_of_law_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "transparency_international_cpi_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "icj_judicial_independence_2022",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "active_cyber_defense_honeypot_engine",
+      "path": "swarm/intelligence/active_cyber_defense_honeypot_engine.py",
+      "sources": [
+        {
+          "source": "eu_nis2_directive_active_defense_2024",
+          "status": "authorized"
+        },
+        {
+          "source": "owasp_honeypot_framework_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "europol_ec3_cybercrime_reporting_2024",
+          "status": "authorized"
+        },
+        {
+          "source": "nist_sp800_61_incident_response_2024",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "ai_surveillance_rights_engine",
+      "path": "swarm/intelligence/ai_surveillance_rights_engine.py",
+      "sources": [
+        {
+          "source": "amnesty_international_surveillance_giants_ai_report",
+          "status": "authorized"
+        },
+        {
+          "source": "eff_atlas_of_surveillance_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "ohchr_right_to_privacy_digital_age_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "albinism_rights_engine",
+      "path": "swarm/intelligence/albinism_rights_engine.py",
+      "sources": [
+        {
+          "source": "un_ohchr_independent_expert_albinism_ikponwosa_ero_report",
+          "status": "authorized"
+        },
+        {
+          "source": "under_the_same_sun_albinism_killings_database_africa",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_end_attacks_persons_albinism_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "algorithmic_bias_rights_engine",
+      "path": "swarm/intelligence/algorithmic_bias_rights_engine.py",
+      "sources": [
+        {
+          "source": "algorithmic_justice_league_facial_recognition_bias_audit_report",
+          "status": "authorized"
+        },
+        {
+          "source": "ai_now_institute_discriminatory_algorithms_employment_housing_study",
+          "status": "authorized"
+        },
+        {
+          "source": "propublica_compas_recidivism_racial_bias_investigative_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "anti_money_laundering_human_rights_engine",
+      "path": "swarm/intelligence/anti_money_laundering_human_rights_engine.py",
+      "sources": [
+        {
+          "source": "fatf_mutual_evaluation_reports",
+          "status": "authorized"
+        },
+        {
+          "source": "financial_secrecy_index_tax_justice_network",
+          "status": "authorized"
+        },
+        {
+          "source": "global_financial_integrity_illicit_flows_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "anti_personnel_mines_cluster_munitions_engine",
+      "path": "swarm/intelligence/anti_personnel_mines_cluster_munitions_engine.py",
+      "sources": [
+        {
+          "source": "landmine_monitor_2024_annual_report",
+          "status": "authorized"
+        },
+        {
+          "source": "icbl_cluster_munition_monitor_2024",
+          "status": "authorized"
+        },
+        {
+          "source": "unmas_contamination_assessment_global_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "halo_trust_demining_progress_report_2024",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "antiterrorism_laws_rights_abuse_engine",
+      "path": "swarm/intelligence/antiterrorism_laws_rights_abuse_engine.py",
+      "sources": [
+        {
+          "source": "amnesty_international_counterterrorism_rights_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_antiterrorism_abuses_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "international_commission_jurists_emergency_powers_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "un_special_rapporteur_counterterrorism_2023",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "armed_conflict_civilian_protection_engine",
+      "path": "swarm/intelligence/armed_conflict_civilian_protection_engine.py",
+      "sources": [
+        {
+          "source": "icrc_international_humanitarian_law_report",
+          "status": "authorized"
+        },
+        {
+          "source": "airwaves_civilian_harm_monitoring_report",
+          "status": "authorized"
+        },
+        {
+          "source": "un_ocha_humanitarian_access_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "arms_trade_civilian_harm_engine",
+      "path": "swarm/intelligence/arms_trade_civilian_harm_engine.py",
+      "sources": [
+        {
+          "source": "sipri_arms_transfers_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "arms_control_association_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_arms_trade_2022",
+          "status": "authorized"
+        },
+        {
+          "source": "un_arms_trade_treaty_report_2023",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "arms_trade_engine",
+      "path": "swarm/intelligence/arms_trade_engine.py",
+      "sources": [
+        {
+          "source": "sipri_arms_transfers_database_global_trends_report",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_arms_trade_atrocities_annual_report",
+          "status": "authorized"
+        },
+        {
+          "source": "arms_control_association_treaty_compliance_global_monitor",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "arts_cultural_expression_rights_engine",
+      "path": "swarm/intelligence/arts_cultural_expression_rights_engine.py",
+      "sources": [
+        {
+          "source": "freemuse_state_of_artistic_freedom_annual_report",
+          "status": "authorized"
+        },
+        {
+          "source": "pen_international_writer_persecution_database",
+          "status": "authorized"
+        },
+        {
+          "source": "article19_online_expression_censorship_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "austerity_social_rights_engine",
+      "path": "swarm/intelligence/austerity_social_rights_engine.py",
+      "sources": [
+        {
+          "source": "imf_conditionality_social_impact_assessment_database",
+          "status": "authorized"
+        },
+        {
+          "source": "un_cescr_austerity_measures_retrogression_reports",
+          "status": "authorized"
+        },
+        {
+          "source": "oxfam_austerity_poverty_inequality_global_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "autonomous_weapons_ai_warfare_rights_engine",
+      "path": "swarm/intelligence/autonomous_weapons_ai_warfare_rights_engine.py",
+      "sources": [
+        {
+          "source": "icrc_autonomous_weapons_report",
+          "status": "authorized"
+        },
+        {
+          "source": "stop_killer_robots_campaign_report",
+          "status": "authorized"
+        },
+        {
+          "source": "un_secretary_general_new_agenda_peace",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "bioethics_genetic_privacy_rights_engine",
+      "path": "swarm/intelligence/bioethics_genetic_privacy_rights_engine.py",
+      "sources": [
+        {
+          "source": "un_human_genome_declaration_report",
+          "status": "authorized"
+        },
+        {
+          "source": "isscr_stem_cell_ethics_guidelines",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_genetic_surveillance_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "bioethics_rights_engine",
+      "path": "swarm/intelligence/bioethics_rights_engine.py",
+      "sources": [
+        {
+          "source": "china_tribunal_organ_harvesting_final_judgment_2019",
+          "status": "authorized"
+        },
+        {
+          "source": "declaration_of_helsinki_world_medical_association",
+          "status": "authorized"
+        },
+        {
+          "source": "nuffield_council_bioethics_reports",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "biometric_surveillance_rights_engine",
+      "path": "swarm/intelligence/biometric_surveillance_rights_engine.py",
+      "sources": [
+        {
+          "source": "algorithmic_justice_league_facial_recognition_bias_audit",
+          "status": "authorized"
+        },
+        {
+          "source": "ai_now_institute_surveillance_accountability_report",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_ban_facial_recognition_campaign",
+          "status": "authorized"
+        },
+        {
+          "source": "nist_frvt_face_recognition_accuracy_demographic_bias_study",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "bonded_labor_debt_slavery_rights_engine",
+      "path": "swarm/intelligence/bonded_labor_debt_slavery_rights_engine.py",
+      "sources": [
+        {
+          "source": "ilo_global_estimates_modern_slavery_forced_labour_2022",
+          "status": "authorized"
+        },
+        {
+          "source": "walk_free_global_slavery_index_bonded_labour_south_asia",
+          "status": "authorized"
+        },
+        {
+          "source": "anti_slavery_international_debt_bondage_contemporary_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "border_crossing_detention_rights_engine",
+      "path": "swarm/intelligence/border_crossing_detention_rights_engine.py",
+      "sources": [
+        {
+          "source": "unhcr_mediterranean_sea_crossing_deaths_database",
+          "status": "authorized"
+        },
+        {
+          "source": "border_violence_monitoring_network_report",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_immigration_detention_conditions",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "border_wall_migration_rights_engine",
+      "path": "swarm/intelligence/border_wall_migration_rights_engine.py",
+      "sources": [
+        {
+          "source": "unhcr_global_trends_forced_displacement_report",
+          "status": "authorized"
+        },
+        {
+          "source": "hrw_border_violence_pushback_documentation",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_migration_detention_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "business_human_rights_engine",
+      "path": "swarm/intelligence/business_human_rights_engine.py",
+      "sources": [
+        {
+          "source": "business_human_rights_resource_centre_corporate_accountability_database",
+          "status": "authorized"
+        },
+        {
+          "source": "un_working_group_business_human_rights_annual_report",
+          "status": "authorized"
+        },
+        {
+          "source": "oecd_guidelines_multinational_enterprises_due_diligence_guidance",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "business_tax_evasion_human_rights_engine",
+      "path": "swarm/intelligence/business_tax_evasion_human_rights_engine.py",
+      "sources": [
+        {
+          "source": "icij_panama_papers_2016_ongoing",
+          "status": "authorized"
+        },
+        {
+          "source": "tax_justice_network_fsi_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "oxfam_tax_havens_report_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "oecd_beps_implementation_2023",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "caste_discrimination_untouchability_engine",
+      "path": "swarm/intelligence/caste_discrimination_untouchability_engine.py",
+      "sources": [
+        {
+          "source": "human_rights_watch_caste_discrimination_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "equality_labs_caste_report_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "international_dalit_solidarity_network_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "un_special_rapporteur_minority_rights_caste_2023",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "child_labor_exploitation_rights_engine",
+      "path": "swarm/intelligence/child_labor_exploitation_rights_engine.py",
+      "sources": [
+        {
+          "source": "ilo_child_labour_global_estimates_2022",
+          "status": "authorized"
+        },
+        {
+          "source": "unicef_child_labour_country_profiles_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "global_march_against_child_labour_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_child_labour_database",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "child_labor_mining_rights_engine",
+      "path": "swarm/intelligence/child_labor_mining_rights_engine.py",
+      "sources": [
+        {
+          "source": "amnesty_international_cobalt_child_labor_drc_mining_report",
+          "status": "authorized"
+        },
+        {
+          "source": "ilo_ipec_child_labour_mining_hazardous_work_global_report",
+          "status": "authorized"
+        },
+        {
+          "source": "somo_centre_research_multinationals_child_labor_minerals_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "child_marriage_engine",
+      "path": "swarm/intelligence/child_marriage_engine.py",
+      "sources": [
+        {
+          "source": "unicef_girls_not_brides_global_child_marriage_data_portal",
+          "status": "authorized"
+        },
+        {
+          "source": "save_the_children_too_young_to_wed_global_report",
+          "status": "authorized"
+        },
+        {
+          "source": "un_women_child_early_forced_marriage_prevention_framework",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "child_marriage_forced_union_engine",
+      "path": "swarm/intelligence/child_marriage_forced_union_engine.py",
+      "sources": [
+        {
+          "source": "unicef_child_marriage_global_database_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "girls_not_brides_global_partnership_country_profiles",
+          "status": "authorized"
+        },
+        {
+          "source": "hrw_human_rights_watch_child_marriage_regional_reports",
+          "status": "authorized"
+        },
+        {
+          "source": "unfpa_state_of_world_population_child_marriage_data",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "child_marriage_forced_union_rights_engine",
+      "path": "swarm/intelligence/child_marriage_forced_union_rights_engine.py",
+      "sources": [
+        {
+          "source": "unicef_child_marriage_global_database_2025",
+          "status": "authorized"
+        },
+        {
+          "source": "girls_not_brides_forced_union_country_profiles",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_no_place_for_children_report",
+          "status": "authorized"
+        },
+        {
+          "source": "unhcr_child_protection_forced_displacement_data",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "child_marriage_forced_unions_engine",
+      "path": "swarm/intelligence/child_marriage_forced_unions_engine.py",
+      "sources": [
+        {
+          "source": "girls_not_brides_global_data_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "unicef_child_marriage_data_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "icrw_child_marriage_atlas_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_child_marriage_reports_2023",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "child_poverty_social_exclusion_engine",
+      "path": "swarm/intelligence/child_poverty_social_exclusion_engine.py",
+      "sources": [
+        {
+          "source": "unicef_state_worlds_children_poverty_exclusion_report",
+          "status": "authorized"
+        },
+        {
+          "source": "save_the_children_global_childhood_report_deprivation",
+          "status": "authorized"
+        },
+        {
+          "source": "un_crc_committee_general_comment_26_childrens_rights_environment",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "child_soldiers_armed_recruitment_engine",
+      "path": "swarm/intelligence/child_soldiers_armed_recruitment_engine.py",
+      "sources": [
+        {
+          "source": "child_soldiers_international_global_report_2024",
+          "status": "authorized"
+        },
+        {
+          "source": "unicef_children_armed_conflict_report_2024",
+          "status": "authorized"
+        },
+        {
+          "source": "un_secretary_general_children_armed_conflict_2024",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_child_soldiers_2024",
+          "status": "authorized"
+        },
+        {
+          "source": "watchlist_children_armed_conflict_2024",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "child_soldiers_rights_engine",
+      "path": "swarm/intelligence/child_soldiers_rights_engine.py",
+      "sources": [
+        {
+          "source": "unicef_children_and_armed_conflict_annual_report",
+          "status": "authorized"
+        },
+        {
+          "source": "child_soldiers_international_global_report",
+          "status": "authorized"
+        },
+        {
+          "source": "un_security_council_mrm_monitoring_reporting_mechanism",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "child_trafficking_exploitation_rights_engine",
+      "path": "swarm/intelligence/child_trafficking_exploitation_rights_engine.py",
+      "sources": [
+        {
+          "source": "ilo_child_labor_global_estimates_report",
+          "status": "authorized"
+        },
+        {
+          "source": "interpol_child_trafficking_exploitation_database",
+          "status": "authorized"
+        },
+        {
+          "source": "ecpat_online_child_exploitation_monitoring_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "children_rights_armed_conflict_engine",
+      "path": "swarm/intelligence/children_rights_armed_conflict_engine.py",
+      "sources": [
+        {
+          "source": "un_secretary_general_children_armed_conflict_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "save_the_children_annual_report_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "child_soldiers_international_annual_report",
+          "status": "authorized"
+        },
+        {
+          "source": "unicef_grave_violations_monitoring_2023",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "climate_change_human_rights_engine",
+      "path": "swarm/intelligence/climate_change_human_rights_engine.py",
+      "sources": [
+        {
+          "source": "ipcc_sixth_assessment_report_2022",
+          "status": "authorized"
+        },
+        {
+          "source": "unhrc_climate_change_human_rights_resolution",
+          "status": "authorized"
+        },
+        {
+          "source": "internal_displacement_monitoring_centre_annual_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "climate_displacement_engine",
+      "path": "swarm/intelligence/climate_displacement_engine.py",
+      "sources": [
+        {
+          "source": "idmc_global_report_internal_displacement_annual",
+          "status": "authorized"
+        },
+        {
+          "source": "unhcr_climate_change_displacement_legal_protection_gap_report",
+          "status": "authorized"
+        },
+        {
+          "source": "world_bank_groundswell_climate_migration_projections_2050",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "climate_forced_migration_rights_engine",
+      "path": "swarm/intelligence/climate_forced_migration_rights_engine.py",
+      "sources": [
+        {
+          "source": "unhcr_climate_change_displacement_global_trends_report",
+          "status": "authorized"
+        },
+        {
+          "source": "world_bank_groundswell_internal_climate_migration_report",
+          "status": "authorized"
+        },
+        {
+          "source": "ipcc_ar6_impacts_adaptation_vulnerability_chapter_migration",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "climate_justice_engine",
+      "path": "swarm/intelligence/climate_justice_engine.py",
+      "sources": [
+        {
+          "source": "ipcc_sixth_assessment_report_regional_impacts",
+          "status": "authorized"
+        },
+        {
+          "source": "loss_damage_global_climate_vulnerability_index",
+          "status": "authorized"
+        },
+        {
+          "source": "climate_action_tracker_country_profiles",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "climate_justice_environmental_defenders_engine",
+      "path": "swarm/intelligence/climate_justice_environmental_defenders_engine.py",
+      "sources": [
+        {
+          "source": "global_witness_environmental_defenders_annual_report",
+          "status": "authorized"
+        },
+        {
+          "source": "ipcc_climate_loss_damage_vulnerable_populations",
+          "status": "authorized"
+        },
+        {
+          "source": "frontline_defenders_at_risk_global_database",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "climate_justice_loss_damage_rights_engine",
+      "path": "swarm/intelligence/climate_justice_loss_damage_rights_engine.py",
+      "sources": [
+        {
+          "source": "unfccc_loss_damage_mechanism_cop27_cop28_reports",
+          "status": "authorized"
+        },
+        {
+          "source": "ipcc_sixth_assessment_report_impacts_adaptation",
+          "status": "authorized"
+        },
+        {
+          "source": "hrw_climate_justice_human_rights_documentation",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "climate_litigation_rights_engine",
+      "path": "swarm/intelligence/climate_litigation_rights_engine.py",
+      "sources": [
+        {
+          "source": "sabin_center_climate_change_litigation_database",
+          "status": "authorized"
+        },
+        {
+          "source": "un_hrc_resolution_48_13_right_healthy_environment",
+          "status": "authorized"
+        },
+        {
+          "source": "clientearth_strategic_climate_litigation_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "climate_loss_damage_engine",
+      "path": "swarm/intelligence/climate_loss_damage_engine.py",
+      "sources": [
+        {
+          "source": "loss_damage_collaboration_global_climate_vulnerability_report",
+          "status": "authorized"
+        },
+        {
+          "source": "v20_vulnerable_twenty_group_climate_vulnerable_forum_annual_report",
+          "status": "authorized"
+        },
+        {
+          "source": "unfccc_santiago_network_loss_damage_technical_assistance_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "climate_refugee_displacement_rights_engine",
+      "path": "swarm/intelligence/climate_refugee_displacement_rights_engine.py",
+      "sources": [
+        {
+          "source": "idmc_global_report_internal_displacement_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "unhcr_climate_change_displacement_report_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "platform_disaster_displacement_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "ipcc_sixth_assessment_report_displacement_chapter",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "colonial_reparations_engine",
+      "path": "swarm/intelligence/colonial_reparations_engine.py",
+      "sources": [
+        {
+          "source": "un_durban_declaration_programme_action_reparations_review",
+          "status": "authorized"
+        },
+        {
+          "source": "caricom_reparations_commission_ten_point_plan_report",
+          "status": "authorized"
+        },
+        {
+          "source": "colonial_crimes_accountability_coalition_global_audit",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "colonial_reparations_memory_rights_engine",
+      "path": "swarm/intelligence/colonial_reparations_memory_rights_engine.py",
+      "sources": [
+        {
+          "source": "caricom_reparations_commission_10_point_plan",
+          "status": "authorized"
+        },
+        {
+          "source": "un_special_rapporteur_racism_reparations_report",
+          "status": "authorized"
+        },
+        {
+          "source": "icom_restitution_cultural_heritage_global_review",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "colonial_reparations_restitution_rights_engine",
+      "path": "swarm/intelligence/colonial_reparations_restitution_rights_engine.py",
+      "sources": [
+        {
+          "source": "caricom_reparations_commission_ten_point_plan_2014",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_colonial_accountability_report_2024",
+          "status": "authorized"
+        },
+        {
+          "source": "un_special_rapporteur_racism_reparations_resolution_2021",
+          "status": "authorized"
+        },
+        {
+          "source": "africa_union_reparations_framework_historical_injustices",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "conflict_minerals_engine",
+      "path": "swarm/intelligence/conflict_minerals_engine.py",
+      "sources": [
+        {
+          "source": "un_group_experts_drc_conflict_minerals_sanctions_report",
+          "status": "authorized"
+        },
+        {
+          "source": "global_witness_ipis_mining_conflict_supply_chain_database",
+          "status": "authorized"
+        },
+        {
+          "source": "oecd_due_diligence_guidance_responsible_mineral_supply_chains",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "conscientious_objector_rights_engine",
+      "path": "swarm/intelligence/conscientious_objector_rights_engine.py",
+      "sources": [
+        {
+          "source": "war_resisters_international_conscientious_objection_country_report",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_prisoners_of_conscience_conscription_report",
+          "status": "authorized"
+        },
+        {
+          "source": "un_commission_human_rights_resolution_conscientious_objection",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "corporate_accountability_human_rights_engine",
+      "path": "swarm/intelligence/corporate_accountability_human_rights_engine.py",
+      "sources": [
+        {
+          "source": "business_human_rights_resource_centre_corporate_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "oecd_due_diligence_guidance_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "un_guiding_principles_business_rights_implementation_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_corporate_accountability_2023",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "corporate_accountability_rights_engine",
+      "path": "swarm/intelligence/corporate_accountability_rights_engine.py",
+      "sources": [
+        {
+          "source": "ohchr_business_human_rights_ruggie_principles",
+          "status": "authorized"
+        },
+        {
+          "source": "global_witness_corporate_impunity_report",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_supply_chain_forced_labor",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "corporate_impunity_engine",
+      "path": "swarm/intelligence/corporate_impunity_engine.py",
+      "sources": [
+        {
+          "source": "business_human_rights_resource_centre_corporate_abuse_tracker",
+          "status": "authorized"
+        },
+        {
+          "source": "global_witness_corporate_accountability_annual_investigation_report",
+          "status": "authorized"
+        },
+        {
+          "source": "un_working_group_business_human_rights_state_reports_review",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "corruption_human_rights_nexus_engine",
+      "path": "swarm/intelligence/corruption_human_rights_nexus_engine.py",
+      "sources": [
+        {
+          "source": "transparency_international_cpi_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_corruption_impunity_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "global_integrity_report_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "unodc_corruption_human_rights_nexus_2023",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "counter_terrorism_rights_violations_engine",
+      "path": "swarm/intelligence/counter_terrorism_rights_violations_engine.py",
+      "sources": [
+        {
+          "source": "un_special_rapporteur_counter_terrorism_rights",
+          "status": "authorized"
+        },
+        {
+          "source": "aclu_global_war_terror_accountability_report",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_antiterrorism_law_misuse",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "counterterrorism_abuse_engine",
+      "path": "swarm/intelligence/counterterrorism_abuse_engine.py",
+      "sources": [
+        {
+          "source": "amnesty_international_antiterrorism_double_standards_report",
+          "status": "authorized"
+        },
+        {
+          "source": "un_special_rapporteur_promotion_protection_human_rights_counter_terrorism_annual",
+          "status": "authorized"
+        },
+        {
+          "source": "icj_assessing_damage_urging_action_eminent_jurists_panel_terrorism_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "critical_minerals_transition_rights_engine",
+      "path": "swarm/intelligence/critical_minerals_transition_rights_engine.py",
+      "sources": [
+        {
+          "source": "amnesty_international_cobalt_child_labor_mining_drc_2016",
+          "status": "authorized"
+        },
+        {
+          "source": "global_witness_myanmar_jade_junta_financing_2021",
+          "status": "authorized"
+        },
+        {
+          "source": "business_human_rights_resource_centre_lithium_indigenous_rights",
+          "status": "authorized"
+        },
+        {
+          "source": "iea_critical_minerals_supply_chains_sustainability_report_2024",
+          "status": "authorized"
+        },
+        {
+          "source": "eu_battery_regulation_2023_supply_chain_due_diligence_requirements",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "cultural_minority_rights_engine",
+      "path": "swarm/intelligence/cultural_minority_rights_engine.py",
+      "sources": [
+        {
+          "source": "un_declaration_rights_indigenous_peoples_drip2007",
+          "status": "authorized"
+        },
+        {
+          "source": "unesco_cultural_diversity_convention_2005_reports",
+          "status": "authorized"
+        },
+        {
+          "source": "minority_rights_group_international_world_directory",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "cybercrime_digital_rights_exploitation_engine",
+      "path": "swarm/intelligence/cybercrime_digital_rights_exploitation_engine.py",
+      "sources": [
+        {
+          "source": "unodc_cybercrime_global_assessment_report",
+          "status": "authorized"
+        },
+        {
+          "source": "interpol_cybercrime_threat_assessment_annual",
+          "status": "authorized"
+        },
+        {
+          "source": "mandiant_apt_state_sponsored_cyberattack_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "death_in_custody_prison_conditions_engine",
+      "path": "swarm/intelligence/death_in_custody_prison_conditions_engine.py",
+      "sources": [
+        {
+          "source": "un_special_rapporteur_torture_detention_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "penal_reform_international_global_prison_trends_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_death_in_custody_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_prison_conditions_2023",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "death_penalty_execution_rights_engine",
+      "path": "swarm/intelligence/death_penalty_execution_rights_engine.py",
+      "sources": [
+        {
+          "source": "amnesty_international_death_penalty_global_report_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "death_penalty_information_center_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "hands_off_cain_world_report_executions_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "cornell_center_death_penalty_worldwide_2023",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "death_penalty_extrajudicial_killings_engine",
+      "path": "swarm/intelligence/death_penalty_extrajudicial_killings_engine.py",
+      "sources": [
+        {
+          "source": "amnesty_international_death_penalty_global_report",
+          "status": "authorized"
+        },
+        {
+          "source": "reprieve_extrajudicial_killing_documentation",
+          "status": "authorized"
+        },
+        {
+          "source": "un_special_rapporteur_extrajudicial_executions_reports",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "debt_bondage_microfinance_exploitation_engine",
+      "path": "swarm/intelligence/debt_bondage_microfinance_exploitation_engine.py",
+      "sources": [
+        {
+          "source": "ilo_global_estimates_modern_slavery_debt_bondage_microfinance",
+          "status": "authorized"
+        },
+        {
+          "source": "cgap_microfinance_consumer_protection_predatory_lending_report",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_pakistan_brick_kilns_bonded_labor",
+          "status": "authorized"
+        },
+        {
+          "source": "cgdev_andhra_pradesh_microfinance_crisis_suicides_analysis",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "debt_bondage_rights_engine",
+      "path": "swarm/intelligence/debt_bondage_rights_engine.py",
+      "sources": [
+        {
+          "source": "ilo_global_estimates_modern_slavery_forced_labour_debt_bondage",
+          "status": "authorized"
+        },
+        {
+          "source": "ilo_protocol_p029_forced_labour_convention_2014",
+          "status": "authorized"
+        },
+        {
+          "source": "anti_slavery_international_bonded_labour_south_asia_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "deforestation_indigenous_rights_engine",
+      "path": "swarm/intelligence/deforestation_indigenous_rights_engine.py",
+      "sources": [
+        {
+          "source": "global_forest_watch_deforestation_monitoring_2024",
+          "status": "authorized"
+        },
+        {
+          "source": "global_witness_land_defenders_annual_report",
+          "status": "authorized"
+        },
+        {
+          "source": "cultural_survival_indigenous_rights_database",
+          "status": "authorized"
+        },
+        {
+          "source": "ipbes_biodiversity_land_use_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "digital_divide_access_rights_engine",
+      "path": "swarm/intelligence/digital_divide_access_rights_engine.py",
+      "sources": [
+        {
+          "source": "itu_measuring_digital_development_report",
+          "status": "authorized"
+        },
+        {
+          "source": "a4ai_affordability_report",
+          "status": "authorized"
+        },
+        {
+          "source": "web_foundation_digital_rights_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "digital_gender_gap_rights_engine",
+      "path": "swarm/intelligence/digital_gender_gap_rights_engine.py",
+      "sources": [
+        {
+          "source": "itu_measuring_digital_development_gender_gap_report",
+          "status": "authorized"
+        },
+        {
+          "source": "web_foundation_womens_rights_online_access_barriers_study",
+          "status": "authorized"
+        },
+        {
+          "source": "plan_international_online_safety_girls_harassment_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "digital_surveillance_engine",
+      "path": "swarm/intelligence/digital_surveillance_engine.py",
+      "sources": [
+        {
+          "source": "citizen_lab_pegasus_spyware_global_targeting_report",
+          "status": "authorized"
+        },
+        {
+          "source": "access_now_digital_rights_surveillance_annual_report",
+          "status": "authorized"
+        },
+        {
+          "source": "freedom_house_freedom_on_the_net_global_internet_freedom_index",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "digital_surveillance_mass_monitoring_engine",
+      "path": "swarm/intelligence/digital_surveillance_mass_monitoring_engine.py",
+      "sources": [
+        {
+          "source": "freedom_house_freedom_net_2024",
+          "status": "authorized"
+        },
+        {
+          "source": "privacy_international_surveillance_database_2024",
+          "status": "authorized"
+        },
+        {
+          "source": "citizen_lab_targeted_threat_lab_2024",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_digital_surveillance_report_2024",
+          "status": "authorized"
+        },
+        {
+          "source": "electronic_frontier_foundation_global_surveillance_2024",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "digital_surveillance_privacy_rights_engine",
+      "path": "swarm/intelligence/digital_surveillance_privacy_rights_engine.py",
+      "sources": [
+        {
+          "source": "freedom_house_freedom_net_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "privacy_international_surveillance_database",
+          "status": "authorized"
+        },
+        {
+          "source": "citizen_lab_targeted_threat_lab_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "electronic_frontier_foundation_global_surveillance_2023",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "digital_surveillance_rights_engine",
+      "path": "swarm/intelligence/digital_surveillance_rights_engine.py",
+      "sources": [
+        {
+          "source": "amnesty_international_surveillance_giants_report_2019",
+          "status": "authorized"
+        },
+        {
+          "source": "citizen_lab_pegasus_investigations_2021_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "access_now_digital_rights_annual_report_2024",
+          "status": "authorized"
+        },
+        {
+          "source": "electronic_frontier_foundation_atlas_surveillance",
+          "status": "authorized"
+        },
+        {
+          "source": "eu_fundamental_rights_agency_facial_recognition_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "disability_rights_ableism_engine",
+      "path": "swarm/intelligence/disability_rights_ableism_engine.py",
+      "sources": [
+        {
+          "source": "un_crpd_committee_concluding_observations_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "disability_rights_international_reports",
+          "status": "authorized"
+        },
+        {
+          "source": "who_world_disability_report_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "european_disability_forum_annual_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "disability_rights_engine",
+      "path": "swarm/intelligence/disability_rights_engine.py",
+      "sources": [
+        {
+          "source": "disability_rights_international_behind_closed_doors_report",
+          "status": "authorized"
+        },
+        {
+          "source": "who_world_report_on_disability_2011",
+          "status": "authorized"
+        },
+        {
+          "source": "crpd_committee_concluding_observations_2023",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "disability_rights_inclusive_society_engine",
+      "path": "swarm/intelligence/disability_rights_inclusive_society_engine.py",
+      "sources": [
+        {
+          "source": "un_crpd_committee_concluding_observations_2024",
+          "status": "authorized"
+        },
+        {
+          "source": "who_world_report_disability_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "disability_rights_international_annual_report_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "oecd_disability_employment_inclusion_data_2024",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "disability_rights_social_exclusion_engine",
+      "path": "swarm/intelligence/disability_rights_social_exclusion_engine.py",
+      "sources": [
+        {
+          "source": "un_crpd_committee_concluding_observations_india_ethiopia_turkey_2019_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_disability_institutionalization_report_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "who_world_report_on_disability_2021_global_statistics",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_disability_rights_social_exclusion_analysis",
+          "status": "authorized"
+        },
+        {
+          "source": "un_special_rapporteur_disability_rights_report_2022",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "domestic_worker_exploitation_rights_engine",
+      "path": "swarm/intelligence/domestic_worker_exploitation_rights_engine.py",
+      "sources": [
+        {
+          "source": "ilo_c189_domestic_workers_convention_implementation_global_review",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_domestic_worker_exploitation_kafala_gulf_report",
+          "status": "authorized"
+        },
+        {
+          "source": "idwf_international_domestic_workers_federation_conditions_survey",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "drug_policy_criminalization_rights_engine",
+      "path": "swarm/intelligence/drug_policy_criminalization_rights_engine.py",
+      "sources": [
+        {
+          "source": "harm_reduction_international_drug_policy_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_drug_policy_rights_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "idpc_drug_policy_guide_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_death_penalty_drugs_2023",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "drug_policy_human_rights_engine",
+      "path": "swarm/intelligence/drug_policy_human_rights_engine.py",
+      "sources": [
+        {
+          "source": "human_rights_watch_killing_the_future_drug_war_report",
+          "status": "authorized"
+        },
+        {
+          "source": "unodc_world_drug_report_annual_statistics_trends",
+          "status": "authorized"
+        },
+        {
+          "source": "idpc_international_drug_policy_consortium_shadow_report_ungass",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "eco_grief_rights_engine",
+      "path": "swarm/intelligence/eco_grief_rights_engine.py",
+      "sources": [
+        {
+          "source": "lancet_countdown_climate_change_mental_health_report_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "american_psychological_association_eco_anxiety_climate_distress_report",
+          "status": "authorized"
+        },
+        {
+          "source": "unhcr_climate_displacement_psychological_trauma_global_review",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "economic_austerity_social_rights_engine",
+      "path": "swarm/intelligence/economic_austerity_social_rights_engine.py",
+      "sources": [
+        {
+          "source": "cesr_economic_social_rights_austerity_report",
+          "status": "authorized"
+        },
+        {
+          "source": "oxfam_inequality_austerity_report",
+          "status": "authorized"
+        },
+        {
+          "source": "un_desc_structural_adjustment_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "economic_domestic_abuse_engine",
+      "path": "swarm/intelligence/economic_domestic_abuse_engine.py",
+      "sources": [
+        {
+          "source": "nnedv_purple_purse_financial_abuse_domestic_violence_report",
+          "status": "authorized"
+        },
+        {
+          "source": "un_women_cedaw_economic_rights_intimate_partner_violence_review",
+          "status": "authorized"
+        },
+        {
+          "source": "world_bank_women_property_rights_financial_inclusion_global_study",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "economic_sanctions_human_rights_engine",
+      "path": "swarm/intelligence/economic_sanctions_human_rights_engine.py",
+      "sources": [
+        {
+          "source": "human_rights_watch_sanctions_civilian_impact_annual_report",
+          "status": "authorized"
+        },
+        {
+          "source": "oxfam_unintended_consequences_sanctions_humanitarian_crisis_report",
+          "status": "authorized"
+        },
+        {
+          "source": "un_special_rapporteur_unilateral_coercive_measures_human_rights_annual",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "economic_social_rights_engine",
+      "path": "swarm/intelligence/economic_social_rights_engine.py",
+      "sources": [
+        {
+          "source": "ituc_global_rights_index_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "ilo_world_employment_social_outlook_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "un_sr_extreme_poverty_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "oxfam_inequality_report_2023",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "elder_abuse_rights_engine",
+      "path": "swarm/intelligence/elder_abuse_rights_engine.py",
+      "sources": [
+        {
+          "source": "who_global_report_ageism_elder_abuse_prevalence",
+          "status": "authorized"
+        },
+        {
+          "source": "helpage_international_mipaa_review_elder_rights_monitoring",
+          "status": "authorized"
+        },
+        {
+          "source": "un_open_ended_working_group_ageing_convention_proposal",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "elder_care_aging_rights_engine",
+      "path": "swarm/intelligence/elder_care_aging_rights_engine.py",
+      "sources": [
+        {
+          "source": "who_global_status_report_elder_abuse",
+          "status": "authorized"
+        },
+        {
+          "source": "helpage_international_aging_rights_index",
+          "status": "authorized"
+        },
+        {
+          "source": "ilo_pension_social_protection_elderly_coverage",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "elderly_rights_age_discrimination_engine",
+      "path": "swarm/intelligence/elderly_rights_age_discrimination_engine.py",
+      "sources": [
+        {
+          "source": "who_global_report_ageism_2021",
+          "status": "authorized"
+        },
+        {
+          "source": "helpage_global_agewatch_index_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_elder_care_database",
+          "status": "authorized"
+        },
+        {
+          "source": "un_open_ended_working_group_ageing_2023",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "emergency_powers_abuse_engine",
+      "path": "swarm/intelligence/emergency_powers_abuse_engine.py",
+      "sources": [
+        {
+          "source": "icnl_civic_freedom_monitor_emergency_powers_tracker",
+          "status": "authorized"
+        },
+        {
+          "source": "venice_commission_emergency_legislation_standards",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_covid_emergency_powers_abuse_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "enforced_disappearances_engine",
+      "path": "swarm/intelligence/enforced_disappearances_engine.py",
+      "sources": [
+        {
+          "source": "un_committee_on_enforced_disappearances_reports",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_enforced_disappearances_global",
+          "status": "authorized"
+        },
+        {
+          "source": "fedefam_latin_america_missing_persons_database",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "enforced_disappearances_extrajudicial_engine",
+      "path": "swarm/intelligence/enforced_disappearances_extrajudicial_engine.py",
+      "sources": [
+        {
+          "source": "un_working_group_enforced_disappearances_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_disappearances_report_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_extrajudicial_killings_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "icc_enforced_disappearances_jurisprudence_2023",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "environmental_crime_engine",
+      "path": "swarm/intelligence/environmental_crime_engine.py",
+      "sources": [
+        {
+          "source": "global_witness_environmental_defenders_killed_annual_report",
+          "status": "authorized"
+        },
+        {
+          "source": "unodc_world_wildlife_crime_report_trafficking_analysis",
+          "status": "authorized"
+        },
+        {
+          "source": "interpol_environmental_crime_global_threat_assessment",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "environmental_defenders_engine",
+      "path": "swarm/intelligence/environmental_defenders_engine.py",
+      "sources": [
+        {
+          "source": "global_witness_defending_tomorrow_annual_report_environmental_defenders",
+          "status": "authorized"
+        },
+        {
+          "source": "front_line_defenders_global_analysis_human_rights_defenders_at_risk",
+          "status": "authorized"
+        },
+        {
+          "source": "un_special_rapporteur_environmental_defenders_annual_report_ohchr",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "environmental_defenders_rights_engine",
+      "path": "swarm/intelligence/environmental_defenders_rights_engine.py",
+      "sources": [
+        {
+          "source": "global_witness_defenders_report_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "front_line_defenders_global_analysis_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "business_human_rights_resource_centre_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "un_special_rapporteur_environment_defenders_2023",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "environmental_rights_defenders_engine",
+      "path": "swarm/intelligence/environmental_rights_defenders_engine.py",
+      "sources": [
+        {
+          "source": "global_witness_defenders_killed_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "front_line_defenders_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "business_human_rights_resource_centre_env_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "unhchr_environmental_defenders_2022",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "environmental_rights_engine",
+      "path": "swarm/intelligence/environmental_rights_engine.py",
+      "sources": [
+        {
+          "source": "global_witness_defenders_environmental_rights_report",
+          "status": "authorized"
+        },
+        {
+          "source": "unep_state_of_environment_report",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_corporate_environmental_impunity",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "ethnic_minority_rights_discrimination_engine",
+      "path": "swarm/intelligence/ethnic_minority_rights_discrimination_engine.py",
+      "sources": [
+        {
+          "source": "minority_rights_group_state_world_minorities_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_ethnic_discrimination_database",
+          "status": "authorized"
+        },
+        {
+          "source": "un_special_rapporteur_minority_issues_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_racial_discrimination_report_2023",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "extraordinary_rendition_secret_detention_engine",
+      "path": "swarm/intelligence/extraordinary_rendition_secret_detention_engine.py",
+      "sources": [
+        {
+          "source": "ssci_senate_cia_torture_report_2014_declassified",
+          "status": "authorized"
+        },
+        {
+          "source": "echr_abu_zubaydah_poland_2014_rendition_black_sites_ruling",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_extraordinary_renditions_global_network_report",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_secret_detention_cia_black_sites_analysis",
+          "status": "authorized"
+        },
+        {
+          "source": "un_special_rapporteur_torture_extraordinary_rendition_2010",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "facial_recognition_surveillance_engine",
+      "path": "swarm/intelligence/facial_recognition_surveillance_engine.py",
+      "sources": [
+        {
+          "source": "algorithmic_justice_league_facial_recognition_bias_audit",
+          "status": "authorized"
+        },
+        {
+          "source": "access_now_edri_ban_biometric_surveillance_eu_ai_act_report",
+          "status": "authorized"
+        },
+        {
+          "source": "un_ohchr_digital_surveillance_human_rights_facial_recognition",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "fair_trial_due_process_engine",
+      "path": "swarm/intelligence/fair_trial_due_process_engine.py",
+      "sources": [
+        {
+          "source": "fair_trials_international_monitoring_report",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_torture_evidence_report",
+          "status": "authorized"
+        },
+        {
+          "source": "icc_due_process_standards_review",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "fair_trial_due_process_rights_engine",
+      "path": "swarm/intelligence/fair_trial_due_process_rights_engine.py",
+      "sources": [
+        {
+          "source": "fair_trials_international_justice_index_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_fair_trial_violations_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_arbitrary_detention_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "un_special_rapporteur_independence_judges_2023",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "fistula_obstetric_rights_engine",
+      "path": "swarm/intelligence/fistula_obstetric_rights_engine.py",
+      "sources": [
+        {
+          "source": "unfpa_campaign_to_end_fistula_global_report_2021",
+          "status": "authorized"
+        },
+        {
+          "source": "who_obstetric_fistula_prevention_and_treatment_guidelines",
+          "status": "authorized"
+        },
+        {
+          "source": "lancet_obstetric_fistula_burden_disease_sub_saharan_africa_2022",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_maternal_health_rights_niger_nigeria_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "food_sovereignty_engine",
+      "path": "swarm/intelligence/food_sovereignty_engine.py",
+      "sources": [
+        {
+          "source": "grain_org_seed_patent_monopoly_corporate_control_food_report",
+          "status": "authorized"
+        },
+        {
+          "source": "un_special_rapporteur_right_food_annual_report_seed_sovereignty",
+          "status": "authorized"
+        },
+        {
+          "source": "itpgrfa_fao_treaty_plant_genetic_resources_food_agriculture",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "food_sovereignty_famine_rights_engine",
+      "path": "swarm/intelligence/food_sovereignty_famine_rights_engine.py",
+      "sources": [
+        {
+          "source": "fao_hunger_map_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "ipc_acute_food_insecurity_analysis_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "grain_land_grabbing_database_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "oxfam_food_rights_violations_report_2023",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "food_sovereignty_right_to_food_engine",
+      "path": "swarm/intelligence/food_sovereignty_right_to_food_engine.py",
+      "sources": [
+        {
+          "source": "fao_sofi_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "wfp_global_report_food_crises_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "un_sr_right_to_food_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "ihh_humanitarian_right_food_2022",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "forced_disappearance_extrajudicial_killing_engine",
+      "path": "swarm/intelligence/forced_disappearance_extrajudicial_killing_engine.py",
+      "sources": [
+        {
+          "source": "un_committee_enforced_disappearances_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_extrajudicial_killings_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_disappearances_database",
+          "status": "authorized"
+        },
+        {
+          "source": "trial_international_fight_impunity_report_2023",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "forced_disappearances_engine",
+      "path": "swarm/intelligence/forced_disappearances_engine.py",
+      "sources": [
+        {
+          "source": "icmp_international_commission_missing_persons_annual_report",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_enforced_disappearances_global_report",
+          "status": "authorized"
+        },
+        {
+          "source": "un_committee_ced_enforced_disappearances_session_reports",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "forced_disappearances_extrajudicial_engine",
+      "path": "swarm/intelligence/forced_disappearances_extrajudicial_engine.py",
+      "sources": [
+        {
+          "source": "un_committee_enforced_disappearances_report",
+          "status": "authorized"
+        },
+        {
+          "source": "fedefam_latin_america_disappearances_report",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_enforced_disappearances",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "forced_recruitment_conscription_rights_engine",
+      "path": "swarm/intelligence/forced_recruitment_conscription_rights_engine.py",
+      "sources": [
+        {
+          "source": "war_resisters_international_conscientious_objection_country_reports",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_forced_recruitment_military_conscription_report",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_eritrea_north_korea_military_slavery_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "freedom_assembly_association_rights_engine",
+      "path": "swarm/intelligence/freedom_assembly_association_rights_engine.py",
+      "sources": [
+        {
+          "source": "civicus_monitor_annual_report_civic_space_freedom_assembly_association",
+          "status": "authorized"
+        },
+        {
+          "source": "un_special_rapporteur_rights_peaceful_assembly_freedom_association_reports",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_human_rights_watch_protest_crackdown_global_review",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "freedom_expression_artistic_censorship_engine",
+      "path": "swarm/intelligence/freedom_expression_artistic_censorship_engine.py",
+      "sources": [
+        {
+          "source": "freemuse_state_of_artistic_freedom_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "pen_international_artistic_freedom_violations_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_cultural_rights_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "ipi_artistic_expression_press_freedom_2023",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "gender_pay_gap_engine",
+      "path": "swarm/intelligence/gender_pay_gap_engine.py",
+      "sources": [
+        {
+          "source": "ilo_global_wage_report_gender_pay_gap_analysis",
+          "status": "authorized"
+        },
+        {
+          "source": "world_economic_forum_global_gender_gap_report",
+          "status": "authorized"
+        },
+        {
+          "source": "eu_directive_pay_transparency_implementation_review_2024",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "genetic_discrimination_engine",
+      "path": "swarm/intelligence/genetic_discrimination_engine.py",
+      "sources": [
+        {
+          "source": "aclu_genetic_discrimination_gina_gaps_insurance_employment_report",
+          "status": "authorized"
+        },
+        {
+          "source": "unesco_human_genome_heritage_declaration_1997_bioethics_update",
+          "status": "authorized"
+        },
+        {
+          "source": "nature_genetics_biobank_consent_privacy_discrimination_global_review",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "genocide_prevention_accountability_engine",
+      "path": "swarm/intelligence/genocide_prevention_accountability_engine.py",
+      "sources": [
+        {
+          "source": "genocide_watch_early_warning_indicators_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "un_office_genocide_prevention_report_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "international_criminal_court_annual_report_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "minority_rights_group_peoples_under_threat",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "gig_economy_rights_engine",
+      "path": "swarm/intelligence/gig_economy_rights_engine.py",
+      "sources": [
+        {
+          "source": "ilo_platform_work_and_decent_work_report",
+          "status": "authorized"
+        },
+        {
+          "source": "ituc_gig_economy_workers_rights_survey",
+          "status": "authorized"
+        },
+        {
+          "source": "oxford_internet_institute_platform_labour_index",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "hate_speech_incitement_engine",
+      "path": "swarm/intelligence/hate_speech_incitement_engine.py",
+      "sources": [
+        {
+          "source": "un_special_adviser_prevention_genocide_hate_speech_report",
+          "status": "authorized"
+        },
+        {
+          "source": "global_network_initiative_content_moderation_human_rights_assessment",
+          "status": "authorized"
+        },
+        {
+          "source": "ims_media_monitoring_hate_speech_conflict_zones_database",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "hate_speech_platform_rights_engine",
+      "path": "swarm/intelligence/hate_speech_platform_rights_engine.py",
+      "sources": [
+        {
+          "source": "un_special_adviser_genocide_prevention_myanmar_facebook_hate_speech_report",
+          "status": "authorized"
+        },
+        {
+          "source": "global_witnesses_facebook_hate_speech_ethiopia_tigray_investigation",
+          "status": "authorized"
+        },
+        {
+          "source": "adl_online_hate_index_platform_accountability_annual_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "hiv_aids_stigma_rights_engine",
+      "path": "swarm/intelligence/hiv_aids_stigma_rights_engine.py",
+      "sources": [
+        {
+          "source": "unaids_global_aids_update_2023_stigma_discrimination_chapter",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_hiv_criminalization_laws_global_audit_2022",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_rights_not_crimes_hiv_decriminalization_report",
+          "status": "authorized"
+        },
+        {
+          "source": "people_living_hiv_stigma_index_global_survey_gipa_2022",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "housing_eviction_displacement_rights_engine",
+      "path": "swarm/intelligence/housing_eviction_displacement_rights_engine.py",
+      "sources": [
+        {
+          "source": "un_special_rapporteur_adequate_housing_forced_evictions_annual_report",
+          "status": "authorized"
+        },
+        {
+          "source": "cohre_centre_housing_rights_evictions_global_survey_forced_evictions",
+          "status": "authorized"
+        },
+        {
+          "source": "un_pidesc_general_comment_4_right_adequate_housing_implementation_guide",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "housing_forced_evictions_gentrification_engine",
+      "path": "swarm/intelligence/housing_forced_evictions_gentrification_engine.py",
+      "sources": [
+        {
+          "source": "un_habitat_world_cities_report_2023_adequate_housing_global",
+          "status": "authorized"
+        },
+        {
+          "source": "cohre_forced_evictions_violations_housing_rights_annual_2022",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_forced_evictions_kenya_brazil_philippines_reports",
+          "status": "authorized"
+        },
+        {
+          "source": "un_special_rapporteur_adequate_housing_country_missions_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "pidesc_codesc_general_comment_7_forced_evictions_1997",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "housing_forced_evictions_rights_engine",
+      "path": "swarm/intelligence/housing_forced_evictions_rights_engine.py",
+      "sources": [
+        {
+          "source": "un_habitat_world_cities_report_2022",
+          "status": "authorized"
+        },
+        {
+          "source": "cohre_global_survey_forced_evictions_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_housing_rights_report_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "feantsa_ethos_homelessness_europe_2023",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "housing_rights_engine",
+      "path": "swarm/intelligence/housing_rights_engine.py",
+      "sources": [
+        {
+          "source": "cohre_forced_evictions_violations_human_rights_report",
+          "status": "authorized"
+        },
+        {
+          "source": "un_habitat_world_cities_report_2022",
+          "status": "authorized"
+        },
+        {
+          "source": "pidesc_committee_general_comment_4_adequate_housing",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "housing_rights_forced_evictions_engine",
+      "path": "swarm/intelligence/housing_rights_forced_evictions_engine.py",
+      "sources": [
+        {
+          "source": "un_habitat_world_cities_report_2022",
+          "status": "authorized"
+        },
+        {
+          "source": "cohre_forced_evictions_global_survey_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "feantsa_homeless_europe_report_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_housing_rights_database",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "human_rights_defenders_engine",
+      "path": "swarm/intelligence/human_rights_defenders_engine.py",
+      "sources": [
+        {
+          "source": "front_line_defenders_annual_report_human_rights_defenders_killed",
+          "status": "authorized"
+        },
+        {
+          "source": "reporters_sans_frontieres_world_press_freedom_index_report",
+          "status": "authorized"
+        },
+        {
+          "source": "civicus_monitor_civic_space_closing_global_tracker_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "human_rights_defenders_protection_engine",
+      "path": "swarm/intelligence/human_rights_defenders_protection_engine.py",
+      "sources": [
+        {
+          "source": "front_line_defenders_annual_report_hrd_killings",
+          "status": "authorized"
+        },
+        {
+          "source": "global_witness_hrd_murders_tracking_database",
+          "status": "authorized"
+        },
+        {
+          "source": "civicus_ngo_restriction_closing_space_monitor",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "human_rights_education_engine",
+      "path": "swarm/intelligence/human_rights_education_engine.py",
+      "sources": [
+        {
+          "source": "un_declaration_human_rights_education_training_2011_implementation_report",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_human_rights_education_program_global_survey",
+          "status": "authorized"
+        },
+        {
+          "source": "hrea_human_rights_education_associates_global_status_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "human_trafficking_engine",
+      "path": "swarm/intelligence/human_trafficking_engine.py",
+      "sources": [
+        {
+          "source": "unodc_global_report_trafficking_persons_2024",
+          "status": "authorized"
+        },
+        {
+          "source": "ilo_forced_labour_modern_slavery_global_estimates_report",
+          "status": "authorized"
+        },
+        {
+          "source": "polaris_project_human_trafficking_trends_annual_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "human_trafficking_labor_exploitation_engine",
+      "path": "swarm/intelligence/human_trafficking_labor_exploitation_engine.py",
+      "sources": [
+        {
+          "source": "ilo_forced_labour_global_estimates",
+          "status": "authorized"
+        },
+        {
+          "source": "unodc_global_trafficking_persons_report",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_kafala_system_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "human_trafficking_labor_exploitation_rights_engine",
+      "path": "swarm/intelligence/human_trafficking_labor_exploitation_rights_engine.py",
+      "sources": [
+        {
+          "source": "ilo_forced_labour_estimates_2022",
+          "status": "authorized"
+        },
+        {
+          "source": "us_state_dept_trafficking_in_persons_report_2024",
+          "status": "authorized"
+        },
+        {
+          "source": "global_slavery_index_walk_free_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "unodc_global_report_trafficking_persons_2023",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "indigenous_cultural_genocide_assimilation_engine",
+      "path": "swarm/intelligence/indigenous_cultural_genocide_assimilation_engine.py",
+      "sources": [
+        {
+          "source": "nctr_canada_final_report_truth_reconciliation_commission",
+          "status": "authorized"
+        },
+        {
+          "source": "bring_them_home_report_australia_stolen_generation_1997",
+          "status": "authorized"
+        },
+        {
+          "source": "un_special_rapporteur_indigenous_peoples_cultural_genocide",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_china_tibet_boarding_schools_2024",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "indigenous_cultural_rights_language_engine",
+      "path": "swarm/intelligence/indigenous_cultural_rights_language_engine.py",
+      "sources": [
+        {
+          "source": "un_permanent_forum_indigenous_peoples_state_of_world_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "ethnologue_endangered_languages_global_database",
+          "status": "authorized"
+        },
+        {
+          "source": "cultural_survival_indigenous_rights_country_reports",
+          "status": "authorized"
+        },
+        {
+          "source": "iwgia_indigenous_world_2024_annual_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "indigenous_data_sovereignty_engine",
+      "path": "swarm/intelligence/indigenous_data_sovereignty_engine.py",
+      "sources": [
+        {
+          "source": "global_indigenous_data_alliance_care_principles",
+          "status": "authorized"
+        },
+        {
+          "source": "first_nations_ocap_principles_report",
+          "status": "authorized"
+        },
+        {
+          "source": "un_drip_cultural_data_rights_framework",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "indigenous_land_cultural_rights_engine",
+      "path": "swarm/intelligence/indigenous_land_cultural_rights_engine.py",
+      "sources": [
+        {
+          "source": "un_special_rapporteur_indigenous_peoples_annual_report",
+          "status": "authorized"
+        },
+        {
+          "source": "forest_peoples_programme_land_rights_violations",
+          "status": "authorized"
+        },
+        {
+          "source": "cultural_survival_indigenous_rights_monitor",
+          "status": "authorized"
+        },
+        {
+          "source": "hrw_indigenous_land_documentation",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "indigenous_land_rights_extraction_engine",
+      "path": "swarm/intelligence/indigenous_land_rights_extraction_engine.py",
+      "sources": [
+        {
+          "source": "global_witness_land_defender_killings_report",
+          "status": "authorized"
+        },
+        {
+          "source": "un_special_rapporteur_indigenous_peoples_land",
+          "status": "authorized"
+        },
+        {
+          "source": "cultural_survival_fpic_violation_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "indigenous_rights_engine",
+      "path": "swarm/intelligence/indigenous_rights_engine.py",
+      "sources": [
+        {
+          "source": "iwgia_indigenous_world_annual_report",
+          "status": "authorized"
+        },
+        {
+          "source": "un_special_rapporteur_indigenous_peoples_country_visits_reports",
+          "status": "authorized"
+        },
+        {
+          "source": "forest_peoples_programme_fpic_violations_global_tracker",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "informal_economy_rights_engine",
+      "path": "swarm/intelligence/informal_economy_rights_engine.py",
+      "sources": [
+        {
+          "source": "wiego_women_informal_employment_global_local_rights_report",
+          "status": "authorized"
+        },
+        {
+          "source": "ilo_world_employment_social_outlook_informal_economy_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "streetnet_international_street_vendor_rights_monitoring",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "internet_freedom_censorship_engine",
+      "path": "swarm/intelligence/internet_freedom_censorship_engine.py",
+      "sources": [
+        {
+          "source": "freedom_house_freedom_net_internet_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "netblocks_internet_shutdown_tracker_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "article_19_internet_freedom_report_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "access_now_keepiton_report_2023",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "internet_freedom_digital_rights_engine",
+      "path": "swarm/intelligence/internet_freedom_digital_rights_engine.py",
+      "sources": [
+        {
+          "source": "freedom_house_freedom_on_the_net_annual_report_2024",
+          "status": "authorized"
+        },
+        {
+          "source": "citizen_lab_internet_censorship_country_reports",
+          "status": "authorized"
+        },
+        {
+          "source": "article_19_digital_rights_global_expression_2024",
+          "status": "authorized"
+        },
+        {
+          "source": "netblocks_internet_shutdown_observatory_data",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "internet_shutdown_engine",
+      "path": "swarm/intelligence/internet_shutdown_engine.py",
+      "sources": [
+        {
+          "source": "access_now_keepiton_internet_shutdowns_annual_report",
+          "status": "authorized"
+        },
+        {
+          "source": "netblocks_cost_internet_shutdowns_global_tracker",
+          "status": "authorized"
+        },
+        {
+          "source": "freedom_house_freedom_net_global_internet_freedom_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "intersex_rights_engine",
+      "path": "swarm/intelligence/intersex_rights_engine.py",
+      "sources": [
+        {
+          "source": "oii_europe_intersex_human_rights_violations_country_report",
+          "status": "authorized"
+        },
+        {
+          "source": "ilga_world_state_sponsored_homophobia_intersex_report",
+          "status": "authorized"
+        },
+        {
+          "source": "un_crc_crpd_concluding_observations_intersex_children_surgery",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "judicial_independence_rights_engine",
+      "path": "swarm/intelligence/judicial_independence_rights_engine.py",
+      "sources": [
+        {
+          "source": "venice_commission_rule_of_law_reports",
+          "status": "authorized"
+        },
+        {
+          "source": "icj_judicial_independence_standards",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_judicial_persecution_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "juvenile_justice_engine",
+      "path": "swarm/intelligence/juvenile_justice_engine.py",
+      "sources": [
+        {
+          "source": "unicef_justice_children_global_report_annual",
+          "status": "authorized"
+        },
+        {
+          "source": "child_rights_international_network_juvenile_justice_database",
+          "status": "authorized"
+        },
+        {
+          "source": "un_committee_rights_child_general_comment_10_juvenile_justice",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "labor_union_rights_freedom_association_engine",
+      "path": "swarm/intelligence/labor_union_rights_freedom_association_engine.py",
+      "sources": [
+        {
+          "source": "ituc_global_rights_index_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "ilo_freedom_association_reports_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "frontline_defenders_labor_rights_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "solidarity_center_union_repression_database",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "land_grabbing_agribusiness_engine",
+      "path": "swarm/intelligence/land_grabbing_agribusiness_engine.py",
+      "sources": [
+        {
+          "source": "land_matrix_initiative_global_land_deals_database",
+          "status": "authorized"
+        },
+        {
+          "source": "grain_org_land_grabbing_database_africa_asia_latam",
+          "status": "authorized"
+        },
+        {
+          "source": "oxfam_behind_the_brands_land_rights_scorecard",
+          "status": "authorized"
+        },
+        {
+          "source": "global_witness_deforestation_agribusiness_reports",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "land_grabbing_displacement_rights_engine",
+      "path": "swarm/intelligence/land_grabbing_displacement_rights_engine.py",
+      "sources": [
+        {
+          "source": "global_witness_land_defenders_killed_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "oakland_institute_land_grabbing_database_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "grain_land_grabbing_global_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "business_human_rights_resource_centre_land_2023",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "land_grabbing_rights_engine",
+      "path": "swarm/intelligence/land_grabbing_rights_engine.py",
+      "sources": [
+        {
+          "source": "global_witness_land_grabbing_defenders_report",
+          "status": "authorized"
+        },
+        {
+          "source": "grain_seized_the_2008_landgrab_for_food_and_financial_security",
+          "status": "authorized"
+        },
+        {
+          "source": "oxfam_land_rights_commercial_agriculture_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "land_mine_cluster_munitions_rights_engine",
+      "path": "swarm/intelligence/land_mine_cluster_munitions_rights_engine.py",
+      "sources": [
+        {
+          "source": "icbl_landmine_monitor_report",
+          "status": "authorized"
+        },
+        {
+          "source": "geneva_international_centre_demining_report",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_cluster_munitions_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "land_rights_engine",
+      "path": "swarm/intelligence/land_rights_engine.py",
+      "sources": [
+        {
+          "source": "global_witness_land_defenders_killings_annual_report",
+          "status": "authorized"
+        },
+        {
+          "source": "land_matrix_initiative_global_land_deal_database",
+          "status": "authorized"
+        },
+        {
+          "source": "fao_voluntary_guidelines_responsible_governance_tenure_implementation_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "leprosy_affected_rights_engine",
+      "path": "swarm/intelligence/leprosy_affected_rights_engine.py",
+      "sources": [
+        {
+          "source": "who_global_leprosy_programme_2021_2030_strategy",
+          "status": "authorized"
+        },
+        {
+          "source": "ilep_international_federation_anti_leprosy_associations_reports",
+          "status": "authorized"
+        },
+        {
+          "source": "india_national_leprosy_eradication_programme_discrimination_laws_audit",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_leprosy_discrimination_india_2020",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "lgbtq_rights_criminalization_engine",
+      "path": "swarm/intelligence/lgbtq_rights_criminalization_engine.py",
+      "sources": [
+        {
+          "source": "ilga_world_state_sponsored_homophobia_report",
+          "status": "authorized"
+        },
+        {
+          "source": "hrw_lgbtq_rights_violations_global_documentation",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_lgbtq_persecution_annual_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "lgbtq_rights_engine",
+      "path": "swarm/intelligence/lgbtq_rights_engine.py",
+      "sources": [
+        {
+          "source": "ilga_world_state_sponsored_homophobia_global_legislation_report",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_lgbtq_rights_criminalization_violence_report",
+          "status": "authorized"
+        },
+        {
+          "source": "rainbow_europe_map_index_lgbtq_rights_comparative_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "lgbtq_rights_violence_criminalization_engine",
+      "path": "swarm/intelligence/lgbtq_rights_violence_criminalization_engine.py",
+      "sources": [
+        {
+          "source": "ilga_world_state_sponsored_homophobia_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_lgbtq_database_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_sexual_orientation_rights_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "outright_international_violence_report_2023",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "malnutrition_child_nutrition_rights_engine",
+      "path": "swarm/intelligence/malnutrition_child_nutrition_rights_engine.py",
+      "sources": [
+        {
+          "source": "unicef_global_nutrition_report_2024",
+          "status": "authorized"
+        },
+        {
+          "source": "wfp_food_security_ipc_analysis",
+          "status": "authorized"
+        },
+        {
+          "source": "who_global_child_malnutrition_joint_estimates",
+          "status": "authorized"
+        },
+        {
+          "source": "ifpri_global_hunger_index_2024",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "maternal_health_rights_obstetric_violence_engine",
+      "path": "swarm/intelligence/maternal_health_rights_obstetric_violence_engine.py",
+      "sources": [
+        {
+          "source": "who_maternal_mortality_estimates_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "lancet_obstetric_violence_systematic_review_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "unfpa_state_world_population_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_reproductive_rights_database",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "medical_experimentation_ethics_rights_engine",
+      "path": "swarm/intelligence/medical_experimentation_ethics_rights_engine.py",
+      "sources": [
+        {
+          "source": "who_international_clinical_trials_ethics_violations_report",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_medical_experimentation_unethical_research_review",
+          "status": "authorized"
+        },
+        {
+          "source": "msf_access_medicines_post_trial_accountability_global_assessment",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "medical_neutrality_engine",
+      "path": "swarm/intelligence/medical_neutrality_engine.py",
+      "sources": [
+        {
+          "source": "physicians_for_human_rights_attack_on_health_care_global_report",
+          "status": "authorized"
+        },
+        {
+          "source": "msf_not_a_target_attacks_hospitals_healthcare_conflict_report",
+          "status": "authorized"
+        },
+        {
+          "source": "who_ssa_surveillance_system_attacks_healthcare_database",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "mega_infrastructure_construction_labor_engine",
+      "path": "swarm/intelligence/mega_infrastructure_construction_labor_engine.py",
+      "sources": [
+        {
+          "source": "the_guardian_qatar_world_cup_workers_deaths_6500_investigation_2021",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_gulf_kafala_system_migrant_workers_2020",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_neom_howeitat_tribe_forced_evictions_2020",
+          "status": "authorized"
+        },
+        {
+          "source": "world_bank_inspection_panel_nam_theun_2_laos_2013",
+          "status": "authorized"
+        },
+        {
+          "source": "ilo_labour_standards_infrastructure_projects_bri_report_2023",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "menopause_workplace_rights_engine",
+      "path": "swarm/intelligence/menopause_workplace_rights_engine.py",
+      "sources": [
+        {
+          "source": "cipd_menopause_workplace_policy_uk_survey_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "british_menopause_society_employment_discrimination_health_report",
+          "status": "authorized"
+        },
+        {
+          "source": "un_women_cedaw_reproductive_health_employment_rights_review",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "menstrual_health_education_engine",
+      "path": "swarm/intelligence/menstrual_health_education_engine.py",
+      "sources": [
+        {
+          "source": "unicef_wash_menstrual_health_management_schools_global_report",
+          "status": "authorized"
+        },
+        {
+          "source": "days_for_girls_period_poverty_mhm_global_monitoring",
+          "status": "authorized"
+        },
+        {
+          "source": "un_women_menstrual_health_human_rights_framework_sdg6",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "mental_health_involuntary_treatment_engine",
+      "path": "swarm/intelligence/mental_health_involuntary_treatment_engine.py",
+      "sources": [
+        {
+          "source": "who_mental_health_atlas_global_report",
+          "status": "authorized"
+        },
+        {
+          "source": "mental_disability_rights_international_behind_closed_doors",
+          "status": "authorized"
+        },
+        {
+          "source": "mdri_human_rights_psychiatric_institutions_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "mental_health_rights_engine",
+      "path": "swarm/intelligence/mental_health_rights_engine.py",
+      "sources": [
+        {
+          "source": "who_mental_health_atlas_global_psychiatry_resources",
+          "status": "authorized"
+        },
+        {
+          "source": "hrw_disability_rights_mental_health_institutionalization_report",
+          "status": "authorized"
+        },
+        {
+          "source": "crpd_committee_general_comment_1_legal_capacity_article12",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "mental_health_rights_psychiatric_violence_engine",
+      "path": "swarm/intelligence/mental_health_rights_psychiatric_violence_engine.py",
+      "sources": [
+        {
+          "source": "who_mental_health_atlas_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "disability_rights_international_psychiatric_report",
+          "status": "authorized"
+        },
+        {
+          "source": "mad_in_america_forced_treatment_database",
+          "status": "authorized"
+        },
+        {
+          "source": "mental_health_europe_annual_report_2023",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "migrant_detention_engine",
+      "path": "swarm/intelligence/migrant_detention_engine.py",
+      "sources": [
+        {
+          "source": "global_detention_project_immigration_detention_global_report",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_immigration_enforcement_detention_report_annual",
+          "status": "authorized"
+        },
+        {
+          "source": "unhcr_detention_guidelines_asylum_seekers_stateless_persons",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "migrant_worker_labor_exploitation_engine",
+      "path": "swarm/intelligence/migrant_worker_labor_exploitation_engine.py",
+      "sources": [
+        {
+          "source": "ilo_forced_labour_global_estimates_report",
+          "status": "authorized"
+        },
+        {
+          "source": "migrant_rights_kafala_system_documentation",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_migrant_worker_abuse_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "migrant_workers_rights_kafala_engine",
+      "path": "swarm/intelligence/migrant_workers_rights_kafala_engine.py",
+      "sources": [
+        {
+          "source": "ilo_migrant_workers_report_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_kafala_system_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_migrant_workers_gulf_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "business_human_rights_resource_centre_migrant_2023",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "migration_asylum_seekers_rights_engine",
+      "path": "swarm/intelligence/migration_asylum_seekers_rights_engine.py",
+      "sources": [
+        {
+          "source": "unhcr_global_trends_forced_displacement_report",
+          "status": "authorized"
+        },
+        {
+          "source": "ecre_asylum_statistics_europe_quarterly",
+          "status": "authorized"
+        },
+        {
+          "source": "hrw_migrant_detention_conditions_global",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "minority_religious_freedom_rights_engine",
+      "path": "swarm/intelligence/minority_religious_freedom_rights_engine.py",
+      "sources": [
+        {
+          "source": "uscirf_annual_report_religious_freedom_violations",
+          "status": "authorized"
+        },
+        {
+          "source": "open_doors_world_watch_list_christian_persecution",
+          "status": "authorized"
+        },
+        {
+          "source": "forum18_central_asia_religious_freedom_monitoring",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "minority_religious_rights_persecution_engine",
+      "path": "swarm/intelligence/minority_religious_rights_persecution_engine.py",
+      "sources": [
+        {
+          "source": "uscirf_annual_report_religious_freedom",
+          "status": "authorized"
+        },
+        {
+          "source": "forum_18_religious_freedom_monitoring",
+          "status": "authorized"
+        },
+        {
+          "source": "hrw_religious_persecution_documentation",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "neurodiversity_rights_engine",
+      "path": "swarm/intelligence/neurodiversity_rights_engine.py",
+      "sources": [
+        {
+          "source": "autistic_self_advocacy_network_asan_neurodiversity_rights_framework",
+          "status": "authorized"
+        },
+        {
+          "source": "un_crpd_convention_rights_persons_disabilities_article24_inclusive_education",
+          "status": "authorized"
+        },
+        {
+          "source": "lancet_psychiatry_adhd_autism_global_prevalence_access_report_2023",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "neuroright_mental_sovereignty_engine",
+      "path": "swarm/intelligence/neuroright_mental_sovereignty_engine.py",
+      "sources": [
+        {
+          "source": "neurorights_foundation_yuste_five_neurorights_framework",
+          "status": "authorized"
+        },
+        {
+          "source": "un_ohchr_neurotechnology_human_rights_report_2021",
+          "status": "authorized"
+        },
+        {
+          "source": "ieee_neuroethics_brain_computer_interface_rights_standards",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "nomadic_peoples_rights_engine",
+      "path": "swarm/intelligence/nomadic_peoples_rights_engine.py",
+      "sources": [
+        {
+          "source": "european_roma_rights_centre_annual_report_forced_evictions",
+          "status": "authorized"
+        },
+        {
+          "source": "minority_rights_group_nomadic_peoples_under_threat_report",
+          "status": "authorized"
+        },
+        {
+          "source": "un_dnudpa_nomadic_indigenous_peoples_rights_implementation",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "nuclear_radiation_civilian_rights_engine",
+      "path": "swarm/intelligence/nuclear_radiation_civilian_rights_engine.py",
+      "sources": [
+        {
+          "source": "greenpeace_nuclear_testing_contamination_report",
+          "status": "authorized"
+        },
+        {
+          "source": "ippnw_nuclear_weapons_humanitarian_impact_study",
+          "status": "authorized"
+        },
+        {
+          "source": "iaea_radiation_protection_standards_review",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "nuclear_testing_environmental_rights_engine",
+      "path": "swarm/intelligence/nuclear_testing_environmental_rights_engine.py",
+      "sources": [
+        {
+          "source": "icrc_nuclear_weapons_humanitarian_law_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "un_special_rapporteur_toxic_substances_nuclear_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "ippnw_nuclear_testing_health_effects_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "ican_humanitarian_impact_nuclear_testing_2023",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "nuclear_testing_legacy_engine",
+      "path": "swarm/intelligence/nuclear_testing_legacy_engine.py",
+      "sources": [
+        {
+          "source": "ican_nuclear_testing_humanitarian_consequences_global_report",
+          "status": "authorized"
+        },
+        {
+          "source": "atomic_heritage_foundation_nuclear_testing_legacy_database",
+          "status": "authorized"
+        },
+        {
+          "source": "tpnw_treaty_prohibition_nuclear_weapons_victim_assistance_article_6_7",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "obstetric_violence_rights_engine",
+      "path": "swarm/intelligence/obstetric_violence_rights_engine.py",
+      "sources": [
+        {
+          "source": "who_figo_prevention_elimination_disrespect_abuse_childbirth_report",
+          "status": "authorized"
+        },
+        {
+          "source": "ohchr_special_rapporteur_torture_healthcare_obstetric_violence_review",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_obstetric_violence_latin_america_india_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "ocean_fishing_rights_engine",
+      "path": "swarm/intelligence/ocean_fishing_rights_engine.py",
+      "sources": [
+        {
+          "source": "fao_iuu_fishing_global_record_vessels",
+          "status": "authorized"
+        },
+        {
+          "source": "ilo_work_in_fishing_convention_c188_reports",
+          "status": "authorized"
+        },
+        {
+          "source": "environmental_justice_foundation_seafood_slavery_reports",
+          "status": "authorized"
+        },
+        {
+          "source": "global_fishing_watch_vessel_monitoring_data",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "older_persons_rights_engine",
+      "path": "swarm/intelligence/older_persons_rights_engine.py",
+      "sources": [
+        {
+          "source": "helpage_international_global_agewatch_index",
+          "status": "authorized"
+        },
+        {
+          "source": "who_global_report_ageism_abuse_older_persons",
+          "status": "authorized"
+        },
+        {
+          "source": "un_mipaa_madrid_international_plan_ageing_2002",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "online_censorship_internet_freedom_engine",
+      "path": "swarm/intelligence/online_censorship_internet_freedom_engine.py",
+      "sources": [
+        {
+          "source": "freedom_house_freedom_on_the_net_2023_annual_report",
+          "status": "authorized"
+        },
+        {
+          "source": "access_now_shutdown_tracker_2023_global_internet_disruptions",
+          "status": "authorized"
+        },
+        {
+          "source": "un_hrc_resolution_internet_rights_a_hrc_32_l20_2016",
+          "status": "authorized"
+        },
+        {
+          "source": "reporters_without_borders_press_freedom_index_digital_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "article19_internet_freedom_censorship_global_expression_report_2023",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "online_censorship_platform_governance_engine",
+      "path": "swarm/intelligence/online_censorship_platform_governance_engine.py",
+      "sources": [
+        {
+          "source": "freedom_house_freedom_on_net_report",
+          "status": "authorized"
+        },
+        {
+          "source": "access_now_shutdown_tracker",
+          "status": "authorized"
+        },
+        {
+          "source": "article19_digital_expression_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "organ_trafficking_engine",
+      "path": "swarm/intelligence/organ_trafficking_engine.py",
+      "sources": [
+        {
+          "source": "david_matas_david_kilgour_bloody_harvest_organ_harvesting_china_report",
+          "status": "authorized"
+        },
+        {
+          "source": "declaration_istanbul_custodian_group_organ_trafficking_transplant_tourism",
+          "status": "authorized"
+        },
+        {
+          "source": "unodc_global_report_trafficking_persons_organ_removal_chapter",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "organ_trafficking_human_parts_engine",
+      "path": "swarm/intelligence/organ_trafficking_human_parts_engine.py",
+      "sources": [
+        {
+          "source": "china_tribunal_2019_forced_organ_harvesting_report_london",
+          "status": "authorized"
+        },
+        {
+          "source": "un_special_rapporteur_sale_trafficking_children_organ_2016",
+          "status": "authorized"
+        },
+        {
+          "source": "council_of_europe_marty_report_2010_kosovo_organ_trafficking",
+          "status": "authorized"
+        },
+        {
+          "source": "who_global_observatory_organ_donation_transplantation_2022",
+          "status": "authorized"
+        },
+        {
+          "source": "organs_watch_scheper_hughes_global_organ_trafficking_networks_2001",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "pandemic_health_emergency_rights_engine",
+      "path": "swarm/intelligence/pandemic_health_emergency_rights_engine.py",
+      "sources": [
+        {
+          "source": "who_covid19_vaccination_tracker_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "msf_access_medicines_report_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_covid_rights_2021",
+          "status": "authorized"
+        },
+        {
+          "source": "oxfam_vaccine_inequality_2022",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "patent_revenue_prioritization_engine",
+      "path": "swarm/intelligence/patent_revenue_prioritization_engine.py",
+      "sources": [
+        {
+          "source": "epo_patent_analytics_2026",
+          "status": "authorized"
+        },
+        {
+          "source": "caelum_market_analysis_2026",
+          "status": "authorized"
+        },
+        {
+          "source": "eu_csddd_implementation_tracker_2026",
+          "status": "authorized"
+        },
+        {
+          "source": "un_sdg_technology_licensing_2025",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "peacekeeping_accountability_governance_engine",
+      "path": "swarm/intelligence/peacekeeping_accountability_governance_engine.py",
+      "sources": [
+        {
+          "source": "human_rights_watch_peacekeeping_accountability_report_2024",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_un_peacekeeping_abuse_study_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "un_oios_peacekeeping_conduct_discipline_report_2024",
+          "status": "authorized"
+        },
+        {
+          "source": "global_policy_forum_peacekeeping_reform_analysis_2023",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "peasant_land_tenure_rights_engine",
+      "path": "swarm/intelligence/peasant_land_tenure_rights_engine.py",
+      "sources": [
+        {
+          "source": "grain_org_land_grabbing_database_2025",
+          "status": "authorized"
+        },
+        {
+          "source": "international_land_coalition_land_matrix_global_report_2025",
+          "status": "authorized"
+        },
+        {
+          "source": "fao_voluntary_guidelines_responsible_governance_tenure_implementation_review",
+          "status": "authorized"
+        },
+        {
+          "source": "oxfam_righting_the_land_rights_gap_report_2025",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "peasant_rights_engine",
+      "path": "swarm/intelligence/peasant_rights_engine.py",
+      "sources": [
+        {
+          "source": "via_campesina_international_peasant_movement_annual_report",
+          "status": "authorized"
+        },
+        {
+          "source": "grain_org_land_grabbing_corporate_food_regime_report",
+          "status": "authorized"
+        },
+        {
+          "source": "un_special_rapporteur_right_food_peasants_undrop_implementation_review",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "period_poverty_rights_engine",
+      "path": "swarm/intelligence/period_poverty_rights_engine.py",
+      "sources": [
+        {
+          "source": "plan_international_girls_report_menstrual_health_period_poverty_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "unfpa_menstrual_hygiene_management_sdg6_global_review",
+          "status": "authorized"
+        },
+        {
+          "source": "wash_united_menstrual_health_school_absenteeism_global_study",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "poverty_social_exclusion_rights_engine",
+      "path": "swarm/intelligence/poverty_social_exclusion_rights_engine.py",
+      "sources": [
+        {
+          "source": "world_bank_poverty_global_database",
+          "status": "authorized"
+        },
+        {
+          "source": "oxfam_inequality_kills_annual_report",
+          "status": "authorized"
+        },
+        {
+          "source": "ilo_social_protection_floor_global_assessment",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "press_freedom_journalist_safety_engine",
+      "path": "swarm/intelligence/press_freedom_journalist_safety_engine.py",
+      "sources": [
+        {
+          "source": "rsf_world_press_freedom_index_2024",
+          "status": "authorized"
+        },
+        {
+          "source": "committee_protect_journalists_impunity_index_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "reporters_without_borders_barometer_2024",
+          "status": "authorized"
+        },
+        {
+          "source": "cpj_journalists_imprisoned_database_2023",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "pretrial_detention_engine",
+      "path": "swarm/intelligence/pretrial_detention_engine.py",
+      "sources": [
+        {
+          "source": "fair_trials_international_pretrial_detention_global_report",
+          "status": "authorized"
+        },
+        {
+          "source": "penal_reform_international_global_prison_trends",
+          "status": "authorized"
+        },
+        {
+          "source": "un_working_group_arbitrary_detention_annual_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "prison_conditions_detention_rights_engine",
+      "path": "swarm/intelligence/prison_conditions_detention_rights_engine.py",
+      "sources": [
+        {
+          "source": "un_special_rapporteur_torture_report_detention_conditions_global",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_cpt_annual_report_prison_overcrowding_ill_treatment",
+          "status": "authorized"
+        },
+        {
+          "source": "un_standard_minimum_rules_treatment_prisoners_nelson_mandela_rules_2015",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "prison_healthcare_denial_engine",
+      "path": "swarm/intelligence/prison_healthcare_denial_engine.py",
+      "sources": [
+        {
+          "source": "penal_reform_international_prison_health_standards_mandela_rules",
+          "status": "authorized"
+        },
+        {
+          "source": "who_prison_health_infectious_disease_tuberculosis_hiv_report",
+          "status": "authorized"
+        },
+        {
+          "source": "hrw_sick_unable_to_get_care_prison_healthcare_denial_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "prison_labor_engine",
+      "path": "swarm/intelligence/prison_labor_engine.py",
+      "sources": [
+        {
+          "source": "american_civil_liberties_union_captive_labor_exploitation_prison_industries_report",
+          "status": "authorized"
+        },
+        {
+          "source": "ilo_hard_to_see_harder_to_count_survey_guidelines_forced_labour_prisons",
+          "status": "authorized"
+        },
+        {
+          "source": "un_subcommittee_prevention_torture_annual_report_detention_labor",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "prison_labor_exploitation_rehabilitation_engine",
+      "path": "swarm/intelligence/prison_labor_exploitation_rehabilitation_engine.py",
+      "sources": [
+        {
+          "source": "laogai_research_foundation_china_prison_camps_2022",
+          "status": "authorized"
+        },
+        {
+          "source": "prison_policy_initiative_unicor_forced_labor_usa_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "hrw_makala_prison_congo_inhumane_conditions_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "un_special_rapporteur_torture_penitentiary_conditions_2022",
+          "status": "authorized"
+        },
+        {
+          "source": "heuni_open_prisons_finland_rehabilitation_model_2021",
+          "status": "authorized"
+        },
+        {
+          "source": "bastoy_prison_norway_recidivism_rehabilitation_report_2020",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "prison_labor_exploitation_rights_engine",
+      "path": "swarm/intelligence/prison_labor_exploitation_rights_engine.py",
+      "sources": [
+        {
+          "source": "ilo_forced_labour_global_estimates_2022",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_prison_conditions_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "prison_policy_initiative_annual_report",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_detention_database",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "prison_overcrowding_engine",
+      "path": "swarm/intelligence/prison_overcrowding_engine.py",
+      "sources": [
+        {
+          "source": "world_prison_brief_icps_global_prison_population_database",
+          "status": "authorized"
+        },
+        {
+          "source": "penal_reform_international_global_prison_trends_annual_report",
+          "status": "authorized"
+        },
+        {
+          "source": "un_special_rapporteur_torture_places_of_deprivation_liberty_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "prison_rehabilitation_reentry_rights_engine",
+      "path": "swarm/intelligence/prison_rehabilitation_reentry_rights_engine.py",
+      "sources": [
+        {
+          "source": "penal_reform_international_global_prison_trends",
+          "status": "authorized"
+        },
+        {
+          "source": "un_mandela_rules_implementation_monitoring_report",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_solitary_confinement_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "prison_torture_rights_engine",
+      "path": "swarm/intelligence/prison_torture_rights_engine.py",
+      "sources": [
+        {
+          "source": "un_committee_against_torture_annual_report",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_custodial_torture_global_review",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_prison_conditions_overcrowding_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "protest_freedom_assembly_rights_engine",
+      "path": "swarm/intelligence/protest_freedom_assembly_rights_engine.py",
+      "sources": [
+        {
+          "source": "civicus_monitor_civic_space_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_protest_rights_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_protest_repression_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "un_special_rapporteur_peaceful_assembly_2023",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "racial_discrimination_minority_rights_engine",
+      "path": "swarm/intelligence/racial_discrimination_minority_rights_engine.py",
+      "sources": [
+        {
+          "source": "cerd_committee_reports_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "minority_rights_group_international_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_racial_discrimination_2022",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_systemic_racism_2023",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "racial_discrimination_systemic_racism_engine",
+      "path": "swarm/intelligence/racial_discrimination_systemic_racism_engine.py",
+      "sources": [
+        {
+          "source": "un_cerd_racial_discrimination_report",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_racial_profiling_report",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_systemic_racism_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "racial_justice_police_brutality_engine",
+      "path": "swarm/intelligence/racial_justice_police_brutality_engine.py",
+      "sources": [
+        {
+          "source": "mapping_police_violence_database_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_racial_justice_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_police_brutality_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "un_special_rapporteur_racism_2023",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "racial_profiling_engine",
+      "path": "swarm/intelligence/racial_profiling_engine.py",
+      "sources": [
+        {
+          "source": "open_society_justice_initiative_ethnic_profiling_europe_report",
+          "status": "authorized"
+        },
+        {
+          "source": "ecri_council_europe_racial_profiling_recommendations",
+          "status": "authorized"
+        },
+        {
+          "source": "mapping_police_violence_racial_disparity_database",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "refugee_detention_engine",
+      "path": "swarm/intelligence/refugee_detention_engine.py",
+      "sources": [
+        {
+          "source": "global_detention_project_immigration_detention_global_report",
+          "status": "authorized"
+        },
+        {
+          "source": "unhcr_global_trends_forced_displacement_annual_report",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_refugee_detention_conditions_global_audit",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "refugee_digital_rights_engine",
+      "path": "swarm/intelligence/refugee_digital_rights_engine.py",
+      "sources": [
+        {
+          "source": "privacy_international_unhcr_biometric_data_refugee_rights_report",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_digital_id_surveillance_refugees_global_review",
+          "status": "authorized"
+        },
+        {
+          "source": "alan_turing_institute_data_protection_displaced_populations_study",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "refugee_integration_inclusion_rights_engine",
+      "path": "swarm/intelligence/refugee_integration_inclusion_rights_engine.py",
+      "sources": [
+        {
+          "source": "unhcr_global_trends_refugee_integration_report",
+          "status": "authorized"
+        },
+        {
+          "source": "international_rescue_committee_integration_report",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_refugee_exclusion_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "refugees_asylum_seekers_rights_engine",
+      "path": "swarm/intelligence/refugees_asylum_seekers_rights_engine.py",
+      "sources": [
+        {
+          "source": "unhcr_global_trends_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_refugee_rights_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_refugee_crisis_report_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "borderline_europe_pushback_monitoring_2023",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "religious_persecution_minority_rights_engine",
+      "path": "swarm/intelligence/religious_persecution_minority_rights_engine.py",
+      "sources": [
+        {
+          "source": "open_doors_world_watch_list_2024",
+          "status": "authorized"
+        },
+        {
+          "source": "us_commission_international_religious_freedom_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "pew_research_global_restrictions_religion_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_religious_persecution_database",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "reproductive_rights_bodily_autonomy_engine",
+      "path": "swarm/intelligence/reproductive_rights_bodily_autonomy_engine.py",
+      "sources": [
+        {
+          "source": "who_safe_abortion_guidelines",
+          "status": "authorized"
+        },
+        {
+          "source": "center_reproductive_rights_global_report",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_reproductive_rights_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "reproductive_rights_engine",
+      "path": "swarm/intelligence/reproductive_rights_engine.py",
+      "sources": [
+        {
+          "source": "who_global_abortion_policies_database_unsafe_abortion_report",
+          "status": "authorized"
+        },
+        {
+          "source": "guttmacher_institute_abortion_worldwide_report_incidence_safety",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_bodily_autonomy_reproductive_rights_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "right_to_development_engine",
+      "path": "swarm/intelligence/right_to_development_engine.py",
+      "sources": [
+        {
+          "source": "un_declaration_right_to_development_1986_resolution_41_128",
+          "status": "authorized"
+        },
+        {
+          "source": "unctad_trade_development_report",
+          "status": "authorized"
+        },
+        {
+          "source": "oxfam_imf_austerity_conditionality_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "right_to_education_access_engine",
+      "path": "swarm/intelligence/right_to_education_access_engine.py",
+      "sources": [
+        {
+          "source": "unicef_out_of_school_children_initiative_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "unesco_global_education_monitoring_report_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "global_coalition_protect_education_conflict_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_right_to_education_reports_2023",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "right_to_food_famine_accountability_engine",
+      "path": "swarm/intelligence/right_to_food_famine_accountability_engine.py",
+      "sources": [
+        {
+          "source": "fao_wfp_ipc_acute_food_insecurity_global_report_2025",
+          "status": "authorized"
+        },
+        {
+          "source": "un_special_rapporteur_right_to_food_annual_report",
+          "status": "authorized"
+        },
+        {
+          "source": "oxfam_hunger_in_a_warming_world_2024",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_famine_crimes_accountability_2025",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "right_to_strike_labor_engine",
+      "path": "swarm/intelligence/right_to_strike_labor_engine.py",
+      "sources": [
+        {
+          "source": "ituc_global_rights_index_annual_report",
+          "status": "authorized"
+        },
+        {
+          "source": "ilo_convention_87_98_compliance_monitoring",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_labor_rights_global_survey",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "right_to_truth_engine",
+      "path": "swarm/intelligence/right_to_truth_engine.py",
+      "sources": [
+        {
+          "source": "ictj_international_center_transitional_justice_truth_commissions_database",
+          "status": "authorized"
+        },
+        {
+          "source": "un_special_rapporteur_truth_reparation_guarantees_non_recurrence_annual_report",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_truth_justice_reparation_annual_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "right_to_truth_transitional_justice_engine",
+      "path": "swarm/intelligence/right_to_truth_transitional_justice_engine.py",
+      "sources": [
+        {
+          "source": "onu_rapporteur_special_verite_justice_reparation_rapports",
+          "status": "authorized"
+        },
+        {
+          "source": "ictj_international_center_transitional_justice_database",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_transitional_justice_reports",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "sanitation_rights_access_engine",
+      "path": "swarm/intelligence/sanitation_rights_access_engine.py",
+      "sources": [
+        {
+          "source": "who_unicef_joint_monitoring_programme_water_sanitation_hygiene",
+          "status": "authorized"
+        },
+        {
+          "source": "un_special_rapporteur_human_right_safe_drinking_water_sanitation",
+          "status": "authorized"
+        },
+        {
+          "source": "wateraid_wash_global_progress_report_sdg6",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "seafarers_maritime_labor_rights_engine",
+      "path": "swarm/intelligence/seafarers_maritime_labor_rights_engine.py",
+      "sources": [
+        {
+          "source": "ilo_maritime_labour_convention_mlc2006_reports",
+          "status": "authorized"
+        },
+        {
+          "source": "itf_seafarers_abandonment_database",
+          "status": "authorized"
+        },
+        {
+          "source": "imo_flag_state_compliance_audit_reports",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "settler_colonialism_land_rights_engine",
+      "path": "swarm/intelligence/settler_colonialism_land_rights_engine.py",
+      "sources": [
+        {
+          "source": "undrip_indigenous_rights_monitoring",
+          "status": "authorized"
+        },
+        {
+          "source": "land_matrix_global_land_grabbing_database",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_land_rights_reports",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "sex_education_rights_engine",
+      "path": "swarm/intelligence/sex_education_rights_engine.py",
+      "sources": [
+        {
+          "source": "siecus_state_of_sex_education_united_states_report",
+          "status": "authorized"
+        },
+        {
+          "source": "unesco_international_technical_guidance_sexuality_education_cse",
+          "status": "authorized"
+        },
+        {
+          "source": "ippf_comprehensive_sexuality_education_rights_global_review",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "sex_work_criminalization_trafficking_engine",
+      "path": "swarm/intelligence/sex_work_criminalization_trafficking_engine.py",
+      "sources": [
+        {
+          "source": "unodc_global_report_trafficking_persons_2022",
+          "status": "authorized"
+        },
+        {
+          "source": "europol_trafficking_sexual_exploitation_nigeria_report_2021",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_sex_work_decriminalization_2016",
+          "status": "authorized"
+        },
+        {
+          "source": "who_hiv_prevention_sex_workers_global_guidance_2012",
+          "status": "authorized"
+        },
+        {
+          "source": "ecpat_international_child_sexual_exploitation_tourism_2022",
+          "status": "authorized"
+        },
+        {
+          "source": "nz_prostitution_law_review_committee_report_2008",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "sex_work_rights_engine",
+      "path": "swarm/intelligence/sex_work_rights_engine.py",
+      "sources": [
+        {
+          "source": "who_unaids_sex_work_criminalization_health_impact_report",
+          "status": "authorized"
+        },
+        {
+          "source": "global_network_sex_work_projects_gnswp_annual_advocacy_report",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_swept_away_criminalization_sex_workers_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "sex_worker_rights_criminalization_engine",
+      "path": "swarm/intelligence/sex_worker_rights_criminalization_engine.py",
+      "sources": [
+        {
+          "source": "global_network_sex_work_projects_sweat_annual_report_2025",
+          "status": "authorized"
+        },
+        {
+          "source": "unaids_sex_workers_hiv_rights_global_assessment_2025",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_swept_away_sex_workers_policing_report_2025",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_sex_workers_rights_decriminalization_policy_2024",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "sexual_orientation_gender_identity_rights_engine",
+      "path": "swarm/intelligence/sexual_orientation_gender_identity_rights_engine.py",
+      "sources": [
+        {
+          "source": "ilga_world_state_sponsored_homophobia_report_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_chechen_lgbtq_persecution_camps",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_iran_lgbtq_executions_criminalization",
+          "status": "authorized"
+        },
+        {
+          "source": "outright_international_sogi_rights_global_tracker",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "sexual_orientation_lgbtq_rights_engine",
+      "path": "swarm/intelligence/sexual_orientation_lgbtq_rights_engine.py",
+      "sources": [
+        {
+          "source": "ilga_world_state_sponsored_homophobia_report",
+          "status": "authorized"
+        },
+        {
+          "source": "rainbow_europe_lgbti_rights_annual_index",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_lgbtq_violence_documentation",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "sexual_violence_conflict_impunity_engine",
+      "path": "swarm/intelligence/sexual_violence_conflict_impunity_engine.py",
+      "sources": [
+        {
+          "source": "un_action_sexual_violence_conflict_annual_report_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_sexual_violence_conflict_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "icc_sexual_gender_based_crimes_protocol_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "un_women_report_sexual_violence_armed_conflict_2023",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "sexual_violence_conflict_weapon_engine",
+      "path": "swarm/intelligence/sexual_violence_conflict_weapon_engine.py",
+      "sources": [
+        {
+          "source": "un_secretary_general_sexual_violence_conflict_2024",
+          "status": "authorized"
+        },
+        {
+          "source": "ohchr_conflict_related_sexual_violence_report_2024",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_sexual_violence_war_2024",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_conflict_sexual_violence_2024",
+          "status": "authorized"
+        },
+        {
+          "source": "international_criminal_court_sexual_violence_cases_2024",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "slavery_reparations_engine",
+      "path": "swarm/intelligence/slavery_reparations_engine.py",
+      "sources": [
+        {
+          "source": "caricom_reparations_commission_ten_point_plan_report",
+          "status": "authorized"
+        },
+        {
+          "source": "un_durban_declaration_programme_action_slavery_heritage",
+          "status": "authorized"
+        },
+        {
+          "source": "thomas_craemer_slavery_reparations_economic_quantification_study",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "social_media_censorship_engine",
+      "path": "swarm/intelligence/social_media_censorship_engine.py",
+      "sources": [
+        {
+          "source": "freedom_house_freedom_on_the_net_platform_censorship_report",
+          "status": "authorized"
+        },
+        {
+          "source": "citizenlab_internet_censorship_global_network_interference_dataset",
+          "status": "authorized"
+        },
+        {
+          "source": "netblocks_internet_shutdown_observatory_social_media_blocking_monitor",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "social_media_political_censorship_engine",
+      "path": "swarm/intelligence/social_media_political_censorship_engine.py",
+      "sources": [
+        {
+          "source": "access_now_keepiton_internet_shutdown_tracker",
+          "status": "authorized"
+        },
+        {
+          "source": "freedom_house_freedom_on_the_net_report",
+          "status": "authorized"
+        },
+        {
+          "source": "eff_coercive_content_moderation_analysis",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "social_protection_poverty_rights_engine",
+      "path": "swarm/intelligence/social_protection_poverty_rights_engine.py",
+      "sources": [
+        {
+          "source": "ilo_world_social_protection_report_2022_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "world_bank_poverty_social_protection_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "un_special_rapporteur_extreme_poverty_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "oxfam_inequality_report_social_protection_2023",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "solitary_confinement_engine",
+      "path": "swarm/intelligence/solitary_confinement_engine.py",
+      "sources": [
+        {
+          "source": "solitary_watch_supermax_isolation_global_report_annual",
+          "status": "authorized"
+        },
+        {
+          "source": "un_subcommittee_prevention_torture_solitary_confinement_report",
+          "status": "authorized"
+        },
+        {
+          "source": "mandela_rules_un_standard_minimum_treatment_prisoners_2015",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "space_rights_outer_space_militarization_engine",
+      "path": "swarm/intelligence/space_rights_outer_space_militarization_engine.py",
+      "sources": [
+        {
+          "source": "unoosa_space_debris_environment_report",
+          "status": "authorized"
+        },
+        {
+          "source": "secure_world_foundation_space_threat_assessment",
+          "status": "authorized"
+        },
+        {
+          "source": "un_group_experts_outer_space_security",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "sports_athlete_rights_engine",
+      "path": "swarm/intelligence/sports_athlete_rights_engine.py",
+      "sources": [
+        {
+          "source": "global_athletes_athlete_rights_violations_report",
+          "status": "authorized"
+        },
+        {
+          "source": "wada_doping_violations_annual_statistics",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_sports_abuse_documentation",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "stateless_persons_documentation_engine",
+      "path": "swarm/intelligence/stateless_persons_documentation_engine.py",
+      "sources": [
+        {
+          "source": "unhcr_global_statelessness_report_2024",
+          "status": "authorized"
+        },
+        {
+          "source": "institute_statelessness_inclusion_world_statelessness_report",
+          "status": "authorized"
+        },
+        {
+          "source": "open_society_foundations_documentation_denial_study",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_stateless_persons_documentation_2023",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "stateless_persons_nationality_rights_engine",
+      "path": "swarm/intelligence/stateless_persons_nationality_rights_engine.py",
+      "sources": [
+        {
+          "source": "unhcr_ibelong_campaign_statelessness_global_report_2024",
+          "status": "authorized"
+        },
+        {
+          "source": "convention_1954_stateless_persons_status_state_parties_analysis",
+          "status": "authorized"
+        },
+        {
+          "source": "convention_1961_reduction_statelessness_ratification_review",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_rohingya_statelessness_myanmar_1982_law",
+          "status": "authorized"
+        },
+        {
+          "source": "inter_american_commission_dominican_republic_tc0168_nationality_2014",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "stateless_persons_rights_engine",
+      "path": "swarm/intelligence/stateless_persons_rights_engine.py",
+      "sources": [
+        {
+          "source": "unhcr_statelessness_global_report",
+          "status": "authorized"
+        },
+        {
+          "source": "european_network_on_statelessness_report",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_rohingya_documentation",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "statelessness_engine",
+      "path": "swarm/intelligence/statelessness_engine.py",
+      "sources": [
+        {
+          "source": "unhcr_ibelong_campaign_global_statelessness_report_2024",
+          "status": "authorized"
+        },
+        {
+          "source": "institute_statelessness_inclusion_global_statelessness_report",
+          "status": "authorized"
+        },
+        {
+          "source": "open_society_foundations_statelessness_documentation_access_study",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "street_children_rights_engine",
+      "path": "swarm/intelligence/street_children_rights_engine.py",
+      "sources": [
+        {
+          "source": "unicef_street_children_global_situation_analysis",
+          "status": "authorized"
+        },
+        {
+          "source": "consortium_street_children_global_street_child_report",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_street_children_violence_police_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "supply_chain_transparency_engine",
+      "path": "swarm/intelligence/supply_chain_transparency_engine.py",
+      "sources": [
+        {
+          "source": "know_the_chain_benchmark_supply_chain",
+          "status": "authorized"
+        },
+        {
+          "source": "corporate_human_rights_benchmark_chrb",
+          "status": "authorized"
+        },
+        {
+          "source": "csddd_eu_due_diligence_directive_tracker",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "surveillance_facial_recognition_rights_engine",
+      "path": "swarm/intelligence/surveillance_facial_recognition_rights_engine.py",
+      "sources": [
+        {
+          "source": "access_now_ban_biometric_surveillance_global_facial_recognition_report",
+          "status": "authorized"
+        },
+        {
+          "source": "algorithmic_justice_league_facial_recognition_racial_bias_misidentification_study",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_surveillance_tech_authoritarian_export_human_rights_impact",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "torture_cruel_treatment_detention_engine",
+      "path": "swarm/intelligence/torture_cruel_treatment_detention_engine.py",
+      "sources": [
+        {
+          "source": "un_committee_against_torture_annual_report_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_torture_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_torture_detention_database",
+          "status": "authorized"
+        },
+        {
+          "source": "association_prevention_torture_global_report_2023",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "toxic_waste_environmental_racism_engine",
+      "path": "swarm/intelligence/toxic_waste_environmental_racism_engine.py",
+      "sources": [
+        {
+          "source": "unep_ogoniland_assessment_niger_delta_2011",
+          "status": "authorized"
+        },
+        {
+          "source": "bullard_dumping_in_dixie_environmental_racism_1990",
+          "status": "authorized"
+        },
+        {
+          "source": "epa_ejscreen_cancer_alley_louisiana_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "basel_convention_hazardous_waste_exports_review_2022",
+          "status": "authorized"
+        },
+        {
+          "source": "vedanta_kabwe_zambia_high_court_london_settlement_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "global_witness_environmental_defenders_killed_2022",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "transitional_justice_engine",
+      "path": "swarm/intelligence/transitional_justice_engine.py",
+      "sources": [
+        {
+          "source": "ictj_transitional_justice_global_survey_annual_report",
+          "status": "authorized"
+        },
+        {
+          "source": "un_special_rapporteur_truth_justice_reparations_guarantees_non_recurrence",
+          "status": "authorized"
+        },
+        {
+          "source": "icc_rome_statute_state_parties_compliance_review",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "unaccompanied_migrant_children_rights_engine",
+      "path": "swarm/intelligence/unaccompanied_migrant_children_rights_engine.py",
+      "sources": [
+        {
+          "source": "unicef_child_alert_unaccompanied_migrant_children_2025",
+          "status": "authorized"
+        },
+        {
+          "source": "unhcr_global_trends_forced_displacement_2025",
+          "status": "authorized"
+        },
+        {
+          "source": "save_the_children_no_safe_place_migration_report_2025",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_children_immigration_detention_report_2025",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "unpaid_care_work_rights_engine",
+      "path": "swarm/intelligence/unpaid_care_work_rights_engine.py",
+      "sources": [
+        {
+          "source": "oxfam_time_to_care_unpaid_work_gender_global_report",
+          "status": "authorized"
+        },
+        {
+          "source": "ilo_global_estimates_unpaid_care_work_wcms_report",
+          "status": "authorized"
+        },
+        {
+          "source": "un_women_care_economy_invest_now_policy_brief",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "war_crimes_accountability_engine",
+      "path": "swarm/intelligence/war_crimes_accountability_engine.py",
+      "sources": [
+        {
+          "source": "icc_annual_report_situations_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "un_commission_inquiry_war_crimes_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_ihl_violations_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "icrc_international_humanitarian_law_report_2023",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "water_pollution_environmental_rights_engine",
+      "path": "swarm/intelligence/water_pollution_environmental_rights_engine.py",
+      "sources": [
+        {
+          "source": "who_drinking_water_quality_guidelines_2022",
+          "status": "authorized"
+        },
+        {
+          "source": "unep_pollution_action_note_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "business_human_rights_resource_pollution_database",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_environmental_rights_report_2023",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "water_rights_access_engine",
+      "path": "swarm/intelligence/water_rights_access_engine.py",
+      "sources": [
+        {
+          "source": "who_unicef_jmp_progress_drinking_water_sanitation_hygiene_report",
+          "status": "authorized"
+        },
+        {
+          "source": "un_special_rapporteur_human_right_safe_drinking_water_sanitation_report",
+          "status": "authorized"
+        },
+        {
+          "source": "foodandwaterwatch_water_privatisation_global_crisis_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "water_rights_access_sanitation_engine",
+      "path": "swarm/intelligence/water_rights_access_sanitation_engine.py",
+      "sources": [
+        {
+          "source": "who_unicef_joint_water_monitoring_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_water_crisis_reports",
+          "status": "authorized"
+        },
+        {
+          "source": "food_water_watch_privatization_database",
+          "status": "authorized"
+        },
+        {
+          "source": "oxfam_water_conflict_monitor_2023",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "water_rights_engine",
+      "path": "swarm/intelligence/water_rights_engine.py",
+      "sources": [
+        {
+          "source": "un_special_rapporteur_water_sanitation_annual_reports",
+          "status": "authorized"
+        },
+        {
+          "source": "water_justice_coalition_global_privatization_audit",
+          "status": "authorized"
+        },
+        {
+          "source": "who_unicef_jmp_water_sanitation_hygiene_progress_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "water_sanitation_access_rights_engine",
+      "path": "swarm/intelligence/water_sanitation_access_rights_engine.py",
+      "sources": [
+        {
+          "source": "who_unicef_jmp_water_sanitation_report",
+          "status": "authorized"
+        },
+        {
+          "source": "un_water_sdg6_progress_report",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_water_conflict_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "water_scarcity_conflict_rights_engine",
+      "path": "swarm/intelligence/water_scarcity_conflict_rights_engine.py",
+      "sources": [
+        {
+          "source": "who_unicef_jmp_water_sanitation_report",
+          "status": "authorized"
+        },
+        {
+          "source": "un_water_world_water_development_report",
+          "status": "authorized"
+        },
+        {
+          "source": "hrw_water_conflict_rights_violations_documentation",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "whistleblower_leaker_protection_engine",
+      "path": "swarm/intelligence/whistleblower_leaker_protection_engine.py",
+      "sources": [
+        {
+          "source": "government_accountability_project_report",
+          "status": "authorized"
+        },
+        {
+          "source": "cpj_journalist_source_protection_report",
+          "status": "authorized"
+        },
+        {
+          "source": "un_special_rapporteur_whistleblower_protection",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "whistleblower_protection_corporate_accountability_engine",
+      "path": "swarm/intelligence/whistleblower_protection_corporate_accountability_engine.py",
+      "sources": [
+        {
+          "source": "eu_directive_2019_1937_whistleblower_protection_transposition_analysis",
+          "status": "authorized"
+        },
+        {
+          "source": "global_whistleblowing_index_2023_retaliation_patterns_report",
+          "status": "authorized"
+        },
+        {
+          "source": "sec_dodd_frank_whistleblower_program_annual_report_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "un_special_rapporteur_freedom_expression_snowden_assange_cases",
+          "status": "authorized"
+        },
+        {
+          "source": "transparency_international_corporate_accountability_whistleblowing_2024",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "whistleblower_protection_engine",
+      "path": "swarm/intelligence/whistleblower_protection_engine.py",
+      "sources": [
+        {
+          "source": "government_accountability_project_whistleblower_protection_global_report",
+          "status": "authorized"
+        },
+        {
+          "source": "rsf_reporters_without_borders_press_freedom_index_annual",
+          "status": "authorized"
+        },
+        {
+          "source": "council_of_europe_recommendation_protection_whistleblowers_cm_rec_2014_7",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "wildlife_trafficking_biodiversity_rights_engine",
+      "path": "swarm/intelligence/wildlife_trafficking_biodiversity_rights_engine.py",
+      "sources": [
+        {
+          "source": "unodc_wildlife_crime_world_report_2024",
+          "status": "authorized"
+        },
+        {
+          "source": "traffic_wildlife_trade_monitoring_network",
+          "status": "authorized"
+        },
+        {
+          "source": "iucn_red_list_species_status_2024",
+          "status": "authorized"
+        },
+        {
+          "source": "cites_trade_database_annual_saisies",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "witch_hunt_persecution_engine",
+      "path": "swarm/intelligence/witch_hunt_persecution_engine.py",
+      "sources": [
+        {
+          "source": "un_independent_expert_report_harmful_traditional_practices_witchcraft",
+          "status": "authorized"
+        },
+        {
+          "source": "actionaid_stepping_stones_witch_camp_monitoring_report",
+          "status": "authorized"
+        },
+        {
+          "source": "hrw_accused_killed_witch_hunt_persecution_africa_pacific",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "womens_rights_gender_based_violence_engine",
+      "path": "swarm/intelligence/womens_rights_gender_based_violence_engine.py",
+      "sources": [
+        {
+          "source": "un_women_gender_based_violence_report_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "who_global_prevalence_violence_against_women_2021",
+          "status": "authorized"
+        },
+        {
+          "source": "girls_not_brides_child_marriage_database_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "equality_now_womens_rights_global_2023",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "xenophobia_hate_crime_minority_engine",
+      "path": "swarm/intelligence/xenophobia_hate_crime_minority_engine.py",
+      "sources": [
+        {
+          "source": "osce_odihr_hate_crime_data_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_xenophobia_discrimination_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "amnesty_international_hate_crimes_minorities_2023",
+          "status": "authorized"
+        },
+        {
+          "source": "un_committee_elimination_racial_discrimination_2023",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    },
+    {
+      "engine": "youth_justice_rights_engine",
+      "path": "swarm/intelligence/youth_justice_rights_engine.py",
+      "sources": [
+        {
+          "source": "unicef_justice_children_juvenile_justice_global_assessment",
+          "status": "authorized"
+        },
+        {
+          "source": "human_rights_watch_youth_justice_incarceration_racial_bias_report",
+          "status": "authorized"
+        },
+        {
+          "source": "penal_reform_international_global_prison_trends_youth_report",
+          "status": "authorized"
+        }
+      ],
+      "alerts": [],
+      "clean": true
+    }
+  ],
+  "unknown_sources": [],
+  "recommendations": [
+    {
+      "priority": "INFO",
+      "action": "ALL_SOURCES_AUTHORIZED",
+      "detail": "All declared sources match the authorized CSDDD whitelist"
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "module": "domiciliation",
+  "titre": "Domiciliation & changement d'adresse",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 19 juillet 1991 relative aux registres de la population et aux cartes d'identité ; arrêté royal du 16 juillet 1992",
+    "portee": "Citoyens en Belgique",
+    "source_officielle": "https://ibz.be/fr/single-digital-gateway/enregistrement-dun-changement-dadresse"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information juridique générale, à jour à la date de revue. Si vous quittez le pays, faites une déclaration de départ avant votre départ.",
+  "faits": [
+    {
+      "id": "DOMIC-001",
+      "question": "Dois-je déclarer mon changement d'adresse, et dans quel délai ?",
+      "reponse": "Oui. Toute personne doit être inscrite dans la commune où elle a sa résidence principale effective. Vous devez déclarer votre changement d'adresse à l'administration de la commune où vous vous installez, dans les 8 jours ouvrables après le déménagement (au guichet, en ligne ou via Mon DOSSIER).",
+      "reference_legale": "Loi du 19 juillet 1991 relative aux registres de la population (obligation d'inscription)",
+      "alerte_delai": "Déclarer le changement d'adresse dans les 8 jours ouvrables suivant l'installation.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://ibz.be/fr/single-digital-gateway/enregistrement-dun-changement-dadresse",
+          "intitule": "IBZ — Enregistrement d'un changement d'adresse"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "DOMIC-002",
+      "question": "Comment se déroule l'enregistrement ?",
+      "reponse": "Après votre déclaration, la commune demande une enquête de résidence à l'agent de quartier (en principe dans les 15 jours). Si l'enquête est positive (vous habitez effectivement à l'adresse), la nouvelle adresse est inscrite au Registre national et vous êtes invité au guichet pour mettre à jour votre carte d'identité.",
+      "reference_legale": "Arrêté royal du 16 juillet 1992 relatif aux registres de la population (enquête de résidence)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://ibz.be/fr/single-digital-gateway/enregistrement-dun-changement-dadresse",
+          "intitule": "IBZ — Enquête de résidence"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "DOMIC-003",
+      "question": "Que faire en cas de désaccord avec la commune ?",
+      "reponse": "Si vous n'êtes pas d'accord avec la décision de la commune sur votre résidence principale, vous pouvez introduire un recours dans les 30 jours de la notification, auprès de la Direction générale Identité et Affaires citoyennes du SPF Intérieur (le ministre de l'Intérieur statue). La requête doit être motivée.",
+      "reference_legale": "Loi du 19 juillet 1991 (recours en matière de résidence principale)",
+      "alerte_delai": "Recours dans les 30 jours de la notification de la décision communale.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://ibz.be/fr/single-digital-gateway/enregistrement-dun-changement-dadresse",
+          "intitule": "IBZ — Recours résidence principale"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "DOMIC-DEPART-ETRANGER-001",
+      "question": "Je pars vivre à l'étranger : que dois-je faire ?",
+      "reponse": "Avant votre départ, faites une déclaration de départ auprès de l'administration communale de votre domicile actuel : vous serez rayé des registres de la population belges à la date de votre départ effectif. C'est important, car cela a des conséquences (fin de l'inscription, impact sur la mutuelle, les impôts, les allocations). Une fois installé à l'étranger, vous pouvez vous faire inscrire auprès du poste consulaire belge (ambassade ou consulat) de votre pays de résidence : cela facilite vos démarches (documents d'identité, vote, assistance). Conservez la preuve de votre déclaration de départ. Si vous revenez ensuite en Belgique, vous devrez vous réinscrire dans votre commune.",
+      "reference_legale": "Loi du 19 juillet 1991 relative aux registres de la population (déclaration de départ et radiation)",
+      "alerte_delai": "Faites la déclaration de départ AVANT de quitter le pays, à la date de votre départ effectif.",
+      "contacts": [
+        {"nom": "Administration communale", "pour": "déclaration de départ à l'étranger"},
+        {"nom": "Poste consulaire belge du pays de résidence", "lien": "https://diplomatie.belgium.be", "pour": "inscription consulaire"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://ibz.be/fr/single-digital-gateway/enregistrement-dun-changement-dadresse", "intitule": "IBZ — Changement d'adresse et départ"},
+        {"type": "officiel", "url": "https://diplomatie.belgium.be", "intitule": "SPF Affaires étrangères — Belges à l'étranger"}
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

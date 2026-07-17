@@ -1,0 +1,392 @@
+{
+  "generated_at": "2026-06-22T07:39:53.618247+00:00",
+  "agent": "CiscoCertificationTrackerAgent",
+  "version": "1.0.0",
+  "context": "Caelum Partners — tech compliance team, 2026",
+  "summary": {
+    "total_courses": 9,
+    "all_gratuit": true,
+    "heures_totales": 385,
+    "heures_mois_1_6": 125,
+    "courses_en_6_mois": 4
+  },
+  "category_summary": {
+    "cybersecurity": {
+      "count": 4,
+      "heures": 185,
+      "avg_pertinence": 8.2
+    },
+    "networking": {
+      "count": 1,
+      "heures": 70,
+      "avg_pertinence": 6.0
+    },
+    "python": {
+      "count": 2,
+      "heures": 80,
+      "avg_pertinence": 10.0
+    },
+    "data": {
+      "count": 1,
+      "heures": 30,
+      "avg_pertinence": 8.0
+    },
+    "iot": {
+      "count": 1,
+      "heures": 20,
+      "avg_pertinence": 5.0
+    }
+  },
+  "courses": [
+    {
+      "nom": "Introduction to Cybersecurity",
+      "plateforme": "Cisco NetAcad",
+      "duree_heures": 15,
+      "certif_associee": "Cisco Intro to Cybersecurity Badge",
+      "pertinence_caelum": 9,
+      "lien": "https://www.netacad.com/courses/cybersecurity/introduction-cybersecurity",
+      "statut": "non_commencé",
+      "modules_completes": [],
+      "modules_total": 5,
+      "gratuit": true,
+      "note_pertinence": "Point d'entrée essentiel: menaces cyber, sécurité données, conformité RGPD/CSDDD. Recommandé pour tout le personnel Caelum.",
+      "priorite": 1,
+      "domaines_couverts": [
+        "Threat landscape",
+        "Network security basics",
+        "Data protection",
+        "Security principles",
+        "Career paths in cybersecurity"
+      ],
+      "categorie": "cybersecurity",
+      "priorite_score": 0.94
+    },
+    {
+      "nom": "Cybersecurity Essentials",
+      "plateforme": "Cisco NetAcad",
+      "duree_heures": 30,
+      "certif_associee": "Cisco Cybersecurity Essentials Badge",
+      "pertinence_caelum": 9,
+      "lien": "https://www.netacad.com/courses/cybersecurity/cybersecurity-essentials",
+      "statut": "non_commencé",
+      "modules_completes": [],
+      "modules_total": 9,
+      "gratuit": true,
+      "note_pertinence": "Approfondissement: cryptographie, infrastructure PKI, défense périmétrique. Critique pour sécurité API Caelum et protection des engines swarm.",
+      "priorite": 1,
+      "domaines_couverts": [
+        "Cryptography",
+        "Access control",
+        "PKI",
+        "Endpoint security",
+        "Vulnerability assessment",
+        "Network defense"
+      ],
+      "categorie": "cybersecurity",
+      "priorite_score": 0.89
+    },
+    {
+      "nom": "CyberOps Associate (prépare examen 200-201)",
+      "plateforme": "Cisco NetAcad",
+      "duree_heures": 70,
+      "certif_associee": "Cisco Certified CyberOps Associate (examen 200-201 payant)",
+      "pertinence_caelum": 8,
+      "lien": "https://www.netacad.com/courses/cybersecurity/cyberops-associate",
+      "statut": "non_commencé",
+      "modules_completes": [],
+      "modules_total": 28,
+      "gratuit": true,
+      "note_gratuite": "Formation gratuite; examen 200-201 payant (~$330 USD) pour la certification officielle",
+      "note_pertinence": "Prépare aux opérations SOC: détection d'intrusion, analyse forensique, réponse aux incidents. Idéal pour le profil tech compliance de Caelum.",
+      "priorite": 2,
+      "domaines_couverts": [
+        "Security monitoring",
+        "Host-based analysis",
+        "Network intrusion analysis",
+        "Security policies",
+        "Incident response",
+        "Linux fundamentals"
+      ],
+      "categorie": "cybersecurity",
+      "priorite_score": 0.745
+    },
+    {
+      "nom": "Networking Essentials",
+      "plateforme": "Cisco NetAcad",
+      "duree_heures": 70,
+      "certif_associee": "Cisco Networking Essentials Badge",
+      "pertinence_caelum": 6,
+      "lien": "https://www.netacad.com/courses/networking/networking-essentials",
+      "statut": "non_commencé",
+      "modules_completes": [],
+      "modules_total": 20,
+      "gratuit": true,
+      "note_pertinence": "Fondamentaux réseau utiles pour comprendre l'infrastructure cloud Caelum et les communications API inter-agents.",
+      "priorite": 4,
+      "domaines_couverts": [
+        "Network protocols",
+        "IP addressing",
+        "Routing basics",
+        "Wireless networks",
+        "Network troubleshooting"
+      ],
+      "categorie": "networking",
+      "priorite_score": 0.5
+    },
+    {
+      "nom": "Python Essentials 1",
+      "plateforme": "Cisco NetAcad",
+      "duree_heures": 40,
+      "certif_associee": "PCEP — Certified Entry-Level Python Programmer (examen OpenEDG)",
+      "pertinence_caelum": 10,
+      "lien": "https://www.netacad.com/courses/programming/pcap-programming-essentials-python",
+      "statut": "non_commencé",
+      "modules_completes": [],
+      "modules_total": 9,
+      "gratuit": true,
+      "note_pertinence": "CRITIQUE pour Caelum: tous les swarm engines sont en Python. Maîtrise Python = capacité à auditer, modifier et valider les engines de conformité.",
+      "priorite": 1,
+      "domaines_couverts": [
+        "Python syntax",
+        "Data types",
+        "Control flow",
+        "Functions",
+        "Lists/tuples/dicts",
+        "Modules",
+        "Exceptions"
+      ],
+      "categorie": "python",
+      "priorite_score": 0.95
+    },
+    {
+      "nom": "Python Essentials 2",
+      "plateforme": "Cisco NetAcad",
+      "duree_heures": 40,
+      "certif_associee": "PCAP — Certified Associate in Python Programming (examen OpenEDG)",
+      "pertinence_caelum": 10,
+      "lien": "https://www.netacad.com/courses/programming/pcap-programming-essentials-python",
+      "statut": "non_commencé",
+      "modules_completes": [],
+      "modules_total": 8,
+      "gratuit": true,
+      "note_pertinence": "Avancé Python: OOP, fichiers, générateurs, regex. Essentiel pour comprendre les dataclasses des engines CaelumSwarm.",
+      "priorite": 1,
+      "domaines_couverts": [
+        "OOP in Python",
+        "File I/O",
+        "Generators",
+        "Regex",
+        "Standard library",
+        "List comprehensions",
+        "Decorators"
+      ],
+      "categorie": "python",
+      "priorite_score": 0.95
+    },
+    {
+      "nom": "Data Analytics Essentials",
+      "plateforme": "Cisco NetAcad",
+      "duree_heures": 30,
+      "certif_associee": "Cisco Data Analytics Essentials Badge",
+      "pertinence_caelum": 8,
+      "lien": "https://www.netacad.com/courses/data-science/data-analytics-essentials",
+      "statut": "non_commencé",
+      "modules_completes": [],
+      "modules_total": 9,
+      "gratuit": true,
+      "note_pertinence": "Analyse des données de conformité, visualisation des scores ESG, compréhension statistique des risk indices.",
+      "priorite": 2,
+      "domaines_couverts": [
+        "Data lifecycle",
+        "Statistical analysis",
+        "Data visualization",
+        "SQL basics",
+        "Tableau introduction",
+        "Business intelligence"
+      ],
+      "categorie": "data",
+      "priorite_score": 0.715
+    },
+    {
+      "nom": "Network Security",
+      "plateforme": "Cisco NetAcad",
+      "duree_heures": 70,
+      "certif_associee": "Prépare partiellement CCNA Security",
+      "pertinence_caelum": 7,
+      "lien": "https://www.netacad.com/courses/cybersecurity/network-security",
+      "statut": "non_commencé",
+      "modules_completes": [],
+      "modules_total": 14,
+      "gratuit": true,
+      "note_pertinence": "Sécurisation réseau avancée pour l'infrastructure Caelum: firewalls, VPN, IDS/IPS.",
+      "priorite": 3,
+      "domaines_couverts": [
+        "Firewall configuration",
+        "VPN",
+        "IDS/IPS",
+        "ACLs",
+        "AAA",
+        "Network monitoring"
+      ],
+      "categorie": "cybersecurity",
+      "priorite_score": 0.6667
+    },
+    {
+      "nom": "IoT Fundamentals",
+      "plateforme": "Cisco NetAcad",
+      "duree_heures": 20,
+      "certif_associee": "Cisco IoT Fundamentals Badge",
+      "pertinence_caelum": 5,
+      "lien": "https://www.netacad.com/courses/iot/iot-fundamentals-iot-and-digital-transformation",
+      "statut": "non_commencé",
+      "modules_completes": [],
+      "modules_total": 4,
+      "gratuit": true,
+      "note_pertinence": "Contexte supply chain IoT utile pour les engines traçabilité Caelum; moins prioritaire que cyber/Python/data.",
+      "priorite": 5,
+      "domaines_couverts": [
+        "IoT architecture",
+        "Sensors and devices",
+        "IoT protocols",
+        "IoT security",
+        "Digital transformation"
+      ],
+      "categorie": "iot",
+      "priorite_score": 0.435
+    }
+  ],
+  "roadmap_6_mois": [
+    {
+      "cours": "Python Essentials 1",
+      "categorie": "python",
+      "mois_debut": 1,
+      "mois_fin": 2,
+      "heures": 40,
+      "pertinence_caelum": 10,
+      "priorite_score": 0.95,
+      "certif_associee": "PCEP — Certified Entry-Level Python Programmer (examen OpenEDG)",
+      "statut": "non_commencé"
+    },
+    {
+      "cours": "Python Essentials 2",
+      "categorie": "python",
+      "mois_debut": 3,
+      "mois_fin": 4,
+      "heures": 40,
+      "pertinence_caelum": 10,
+      "priorite_score": 0.95,
+      "certif_associee": "PCAP — Certified Associate in Python Programming (examen OpenEDG)",
+      "statut": "non_commencé"
+    },
+    {
+      "cours": "Introduction to Cybersecurity",
+      "categorie": "cybersecurity",
+      "mois_debut": 5,
+      "mois_fin": 5,
+      "heures": 15,
+      "pertinence_caelum": 9,
+      "priorite_score": 0.94,
+      "certif_associee": "Cisco Intro to Cybersecurity Badge",
+      "statut": "non_commencé"
+    },
+    {
+      "cours": "Cybersecurity Essentials",
+      "categorie": "cybersecurity",
+      "mois_debut": 6,
+      "mois_fin": 6,
+      "heures": 30,
+      "pertinence_caelum": 9,
+      "priorite_score": 0.89,
+      "certif_associee": "Cisco Cybersecurity Essentials Badge",
+      "statut": "non_commencé"
+    },
+    {
+      "cours": "CyberOps Associate (prépare examen 200-201)",
+      "categorie": "cybersecurity",
+      "mois_debut": "Beyond M6",
+      "mois_fin": "Beyond M6",
+      "heures": 70,
+      "pertinence_caelum": 8,
+      "priorite_score": 0.745,
+      "certif_associee": "Cisco Certified CyberOps Associate (examen 200-201 payant)",
+      "statut": "non_commencé"
+    },
+    {
+      "cours": "Data Analytics Essentials",
+      "categorie": "data",
+      "mois_debut": "Beyond M6",
+      "mois_fin": "Beyond M6",
+      "heures": 30,
+      "pertinence_caelum": 8,
+      "priorite_score": 0.715,
+      "certif_associee": "Cisco Data Analytics Essentials Badge",
+      "statut": "non_commencé"
+    },
+    {
+      "cours": "Network Security",
+      "categorie": "cybersecurity",
+      "mois_debut": "Beyond M6",
+      "mois_fin": "Beyond M6",
+      "heures": 70,
+      "pertinence_caelum": 7,
+      "priorite_score": 0.6667,
+      "certif_associee": "Prépare partiellement CCNA Security",
+      "statut": "non_commencé"
+    },
+    {
+      "cours": "Networking Essentials",
+      "categorie": "networking",
+      "mois_debut": "Beyond M6",
+      "mois_fin": "Beyond M6",
+      "heures": 70,
+      "pertinence_caelum": 6,
+      "priorite_score": 0.5,
+      "certif_associee": "Cisco Networking Essentials Badge",
+      "statut": "non_commencé"
+    },
+    {
+      "cours": "IoT Fundamentals",
+      "categorie": "iot",
+      "mois_debut": "Beyond M6",
+      "mois_fin": "Beyond M6",
+      "heures": 20,
+      "pertinence_caelum": 5,
+      "priorite_score": 0.435,
+      "certif_associee": "Cisco IoT Fundamentals Badge",
+      "statut": "non_commencé"
+    }
+  ],
+  "recommendations": [
+    {
+      "phase": "Semaine 1 (immédiat)",
+      "action": "Introduction to Cybersecurity + Python Essentials 1",
+      "raison": "Quick wins: 15h + 40h, pertinence 9/10 et 10/10",
+      "heures": 55
+    },
+    {
+      "phase": "Mois 1–2",
+      "action": "Cybersecurity Essentials + Python Essentials 2",
+      "raison": "Socle complet sécurité + maîtrise Python pour auditer les engines",
+      "heures": 70
+    },
+    {
+      "phase": "Mois 3–4",
+      "action": "CyberOps Associate + Data Analytics Essentials",
+      "raison": "Niveau opérationnel SOC + analyse des données de conformité",
+      "heures": 100
+    },
+    {
+      "phase": "Mois 5–6",
+      "action": "Network Security",
+      "raison": "Sécurisation de l'infrastructure Caelum",
+      "heures": 70
+    },
+    {
+      "phase": "Au-delà M6",
+      "action": "Networking Essentials + IoT Fundamentals",
+      "raison": "Compléments pertinents pour supply chain et infrastructure",
+      "heures": 90
+    }
+  ],
+  "note_exams": "Tous les cours sont 100% gratuits sur netacad.com. Les certifications officielles Cisco (CyberOps 200-201) nécessitent un examen payant. Les badges Cisco NetAcad sont gratuits et partageables sur LinkedIn."
+}

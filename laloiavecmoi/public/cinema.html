@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bande-Annonce — La Loi Avec Moi</title>
+<style>
+  :root{ --or:#f5b301; --rouge:#e23b2e; --braise:#ff6a00; }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html,body{ height:100%; background:#000; color:#fff;
+    font-family:"Helvetica Neue",Arial,sans-serif; overflow-x:hidden; }
+  .scene{ min-height:100vh; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; text-align:center;
+    padding:6vh 6vw; position:relative; }
+
+  /* ---------- Écran 1 : l'avertissement dramatique ---------- */
+  #s1{ background:radial-gradient(circle at 50% 30%, #2a0a00, #000 70%); }
+  .surtitre{ letter-spacing:.5em; font-size:clamp(.7rem,2vw,1rem);
+    color:var(--or); text-transform:uppercase; opacity:0;
+    animation:apparait 1.2s ease forwards .3s; }
+  .titre-cata{ font-size:clamp(2.4rem,9vw,7rem); font-weight:900;
+    line-height:.95; text-transform:uppercase; margin:.3em 0;
+    background:linear-gradient(180deg,#fff,#f5b301 60%,#e23b2e);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    text-shadow:0 0 40px rgba(255,106,0,.35); opacity:0;
+    animation:impact 1s cubic-bezier(.2,.9,.2,1) forwards .8s; }
+  .accroche{ max-width:680px; font-size:clamp(1rem,2.6vw,1.4rem);
+    color:#ddd; opacity:0; animation:apparait 1.4s ease forwards 1.8s; }
+
+  /* ---------- Flammes (CSS pur) ---------- */
+  .flammes{ position:fixed; left:0; right:0; bottom:0; height:38vh;
+    pointer-events:none; z-index:5; filter:blur(2px); opacity:0;
+    transition:opacity .6s; }
+  .flammes.on{ opacity:1; }
+  .flamme{ position:absolute; bottom:-10%; width:14vw; height:42vh;
+    background:radial-gradient(circle at 50% 90%,var(--or),var(--braise) 40%,var(--rouge) 70%,transparent 78%);
+    border-radius:50% 50% 40% 40%; mix-blend-mode:screen;
+    animation:feu 1.1s ease-in-out infinite alternate; }
+  @keyframes feu{ from{ transform:scaleY(.85) scaleX(1) translateY(6%);} to{ transform:scaleY(1.15) scaleX(.92) translateY(-4%);} }
+
+  /* ---------- Écran 2 : les héros ---------- */
+  #s2{ background:linear-gradient(160deg,#0a0f2a,#000); }
+  .equipe{ color:var(--or); letter-spacing:.3em; text-transform:uppercase;
+    font-size:clamp(.7rem,2vw,1rem); }
+  .heros{ display:flex; gap:clamp(.6rem,3vw,2.5rem); flex-wrap:wrap;
+    justify-content:center; margin-top:5vh; }
+  .hero{ width:clamp(110px,22vw,180px); }
+  .badge{ width:100%; aspect-ratio:1; border-radius:24px;
+    display:flex; align-items:center; justify-content:center;
+    font-size:clamp(2.4rem,8vw,4rem); position:relative;
+    background:linear-gradient(145deg,#141a3a,#05071a);
+    border:1px solid rgba(245,179,1,.4);
+    box-shadow:0 0 30px rgba(60,80,200,.3), inset 0 0 20px rgba(0,0,0,.6);
+    animation:flotte 3s ease-in-out infinite; }
+  .hero:nth-child(2) .badge{ animation-delay:.4s; }
+  .hero:nth-child(3) .badge{ animation-delay:.8s; }
+  .hero h3{ margin-top:.8em; font-size:clamp(.9rem,2.4vw,1.15rem); }
+  .hero p{ color:#9aa3c7; font-size:.8rem; margin-top:.2em; }
+  @keyframes flotte{ 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+
+  /* ---------- Écran 3 : l'atterrissage confiance ---------- */
+  #s3{ background:linear-gradient(180deg,#04111a,#0a2233); }
+  .calme{ font-size:clamp(1.6rem,5vw,3rem); font-weight:800; max-width:760px;
+    line-height:1.15; }
+  .calme span{ color:#5ad1c0; }
+  .chiffres{ display:flex; gap:clamp(1rem,4vw,3rem); flex-wrap:wrap;
+    justify-content:center; margin:5vh 0; }
+  .chiffre b{ display:block; font-size:clamp(1.8rem,6vw,3rem); color:var(--or); }
+  .chiffre small{ color:#bcd; letter-spacing:.05em; }
+  .cta{ display:inline-block; margin-top:2vh; padding:1rem 2.4rem;
+    background:#5ad1c0; color:#04111a; font-weight:800; text-decoration:none;
+    border-radius:999px; font-size:1.1rem; transition:transform .2s, box-shadow .2s;
+    box-shadow:0 10px 40px rgba(90,209,192,.35); }
+  .cta:hover{ transform:translateY(-3px); box-shadow:0 16px 50px rgba(90,209,192,.5); }
+  .note{ margin-top:3vh; color:#7f93a3; font-size:.8rem; max-width:560px; }
+
+  /* ---------- Barre de contrôle ---------- */
+  .controls{ position:fixed; top:16px; right:16px; z-index:20; display:flex; gap:8px; }
+  .controls button{ background:rgba(0,0,0,.5); color:#fff; border:1px solid #444;
+    border-radius:999px; padding:.5rem .9rem; font-size:.8rem; cursor:pointer;
+    backdrop-filter:blur(6px); }
+  .controls button:hover{ border-color:var(--or); color:var(--or); }
+  .shake{ animation:shake .5s; }
+  @keyframes shake{ 0%,100%{transform:translate(0,0)} 20%{transform:translate(-8px,4px)}
+    40%{transform:translate(8px,-4px)} 60%{transform:translate(-6px,-3px)} 80%{transform:translate(6px,3px)} }
+
+  @keyframes apparait{ from{opacity:0; transform:translateY(14px)} to{opacity:1; transform:none} }
+  @keyframes impact{ 0%{opacity:0; transform:scale(1.4)} 100%{opacity:1; transform:scale(1)} }
+  .scroll-hint{ position:absolute; bottom:18px; color:#888; font-size:.8rem;
+    animation:apparait 1s ease forwards 2.6s; opacity:0; }
+  @media (prefers-reduced-motion: reduce){ *{animation:none !important; transition:none !important} .flammes{opacity:.6} }
+</style>
+</head>
+<body>
+
+<div class="controls">
+  <button id="fx">🔥 Effets</button>
+  <button id="boom">💥 BOOM</button>
+</div>
+
+<div class="flammes" id="flammes">
+  <div class="flamme" style="left:-4%"></div>
+  <div class="flamme" style="left:18%; animation-delay:.3s"></div>
+  <div class="flamme" style="left:40%; animation-delay:.6s"></div>
+  <div class="flamme" style="left:62%; animation-delay:.2s"></div>
+  <div class="flamme" style="left:84%; animation-delay:.5s"></div>
+</div>
+
+<!-- ÉCRAN 1 -->
+<section class="scene" id="s1">
+  <p class="surtitre">Dans un monde où personne ne lit ses droits…</p>
+  <h1 class="titre-cata">Code Civil :<br/>le dernier recours</h1>
+  <p class="accroche">Une expulsion. Un licenciement. Une amende injuste. Le chaos administratif s'abat sur la Belgique.
+    Une seule chose peut encore sauver le citoyen…</p>
+  <div class="scroll-hint">▼ faites défiler</div>
+</section>
+
+<!-- ÉCRAN 2 -->
+<section class="scene" id="s2">
+  <p class="equipe">Ils ne portent pas de cape. Ils citent des sources.</p>
+  <h2 class="titre-cata" style="font-size:clamp(1.8rem,7vw,4.5rem)">Les Gardiens du Code Civil</h2>
+  <div class="heros">
+    <div class="hero"><div class="badge">⚖️</div><h3>La Justicière</h3><p>frappe avec l'article exact</p></div>
+    <div class="hero"><div class="badge">🛡️</div><h3>Le Bouclier</h3><p>protège tes garanties locatives</p></div>
+    <div class="hero"><div class="badge">📜</div><h3>Le Sourcier</h3><p>ne cite que l'officiel</p></div>
+  </div>
+</section>
+
+<!-- ÉCRAN 3 : atterrissage confiance -->
+<section class="scene" id="s3">
+  <h2 class="calme">…mais dans la vraie vie, le super-pouvoir,<br/><span>c'est juste de connaître ses droits.</span></h2>
+  <div class="chiffres">
+    <div class="chiffre"><b>184</b><small>fiches juridiques</small></div>
+    <div class="chiffre"><b>759</b><small>réponses claires</small></div>
+    <div class="chiffre"><b>100 %</b><small>sources officielles</small></div>
+  </div>
+  <a class="cta" href="#" onclick="return false;">Découvrir mes droits — gratuitement</a>
+  <p class="note">La Loi Avec Moi — l'information juridique belge, gratuite, sourcée et datée.
+    (Bande-annonce pour rire & partager : le vrai site, lui, reste calme et rassurant.)</p>
+</section>
+
+<script>
+  // Effets contrôlés par l'utilisateur (jamais imposés à l'arrivée).
+  const flammes = document.getElementById('flammes');
+  document.getElementById('fx').onclick = () => flammes.classList.toggle('on');
+
+  // "Boom" : son synthétisé via Web Audio (aucun fichier externe) + secousse.
+  document.getElementById('boom').onclick = () => {
+    document.body.classList.remove('shake'); void document.body.offsetWidth;
+    document.body.classList.add('shake');
+    flammes.classList.add('on');
+    try{
+      const ctx = new (window.AudioContext||window.webkitAudioContext)();
+      const o = ctx.createOscillator(), g = ctx.createGain();
+      o.type='sine'; o.frequency.setValueAtTime(120,ctx.currentTime);
+      o.frequency.exponentialRampToValueAtTime(30,ctx.currentTime+0.6);
+      g.gain.setValueAtTime(0.6,ctx.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+0.7);
+      o.connect(g); g.connect(ctx.destination); o.start(); o.stop(ctx.currentTime+0.7);
+    }catch(e){ /* audio indisponible : on garde le visuel */ }
+  };
+</script>
+</body>
+</html>

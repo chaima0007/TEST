@@ -1,0 +1,73 @@
+{
+  "module": "grapa",
+  "titre": "GRAPA — garantie de revenus aux personnes âgées",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 22 mars 2001 instituant la garantie de revenus aux personnes âgées (GRAPA)",
+    "portee": "Personnes ayant atteint l'âge légal de la pension et résidant en Belgique, sans ressources suffisantes (compétence fédérale, Service fédéral des Pensions)",
+    "source_officielle": "https://www.sfpd.fgov.be/fr/droit-a-la-pension/grapa"
+  },
+  "derniere_revue": "2026-06-29",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information juridique générale, à jour à la date de revue. Les montants sont indexés : consultez le Service fédéral des Pensions (1765) pour votre situation.",
+  "faits": [
+    {
+      "id": "GRAPA-001",
+      "question": "Qu'est-ce que la GRAPA ?",
+      "reponse": "La GRAPA (garantie de revenus aux personnes âgées) est une allocation sociale — et non une pension — destinée aux personnes qui ont atteint l'âge légal de la pension et qui ne disposent pas de ressources suffisantes pour vivre. Elle est payée par le Service fédéral des Pensions (SFP).",
+      "reference_legale": "Loi du 22 mars 2001 instituant la garantie de revenus aux personnes âgées",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.sfpd.fgov.be/fr/droit-a-la-pension/grapa",
+          "intitule": "Service fédéral des Pensions — GRAPA"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "GRAPA-002",
+      "question": "Quelles sont les conditions pour bénéficier de la GRAPA ?",
+      "reponse": "Il faut : avoir atteint l'âge légal de la pension (65 ans, porté à 66 ans à partir de février 2025 et à 67 ans à partir de février 2030) ; avoir sa résidence principale en Belgique ; être de nationalité belge ou dans une catégorie assimilée. Le SFP procède à un examen des ressources : les revenus et pensions du demandeur (et de la personne avec qui il partage sa résidence) sont pris en compte.",
+      "reference_legale": "Loi du 22 mars 2001, art. 3 et 4 (conditions d'âge, de résidence et examen des ressources)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.sfpd.fgov.be/fr/droit-a-la-pension/grapa",
+          "intitule": "Service fédéral des Pensions — Conditions GRAPA"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "GRAPA-003",
+      "question": "Puis-je partir à l'étranger en touchant la GRAPA ?",
+      "reponse": "La GRAPA suppose d'habiter réellement et de manière permanente en Belgique. Vous pouvez séjourner à l'étranger au maximum 29 jours par année civile. Tout séjour à l'étranger de plus de 5 jours consécutifs doit être déclaré au Service fédéral des Pensions avant le départ, sous peine de perdre l'allocation pour cette période.",
+      "reference_legale": "Loi du 22 mars 2001 (condition de résidence effective) et son arrêté d'exécution",
+      "alerte_delai": "Déclarer au SFP, avant le départ, tout séjour à l'étranger de plus de 5 jours consécutifs.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.sfpd.fgov.be/fr/droit-a-la-pension/grapa",
+          "intitule": "Service fédéral des Pensions — Séjour à l'étranger et GRAPA"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "GRAPA-004",
+      "question": "Comment demander la GRAPA ?",
+      "reponse": "Dans de nombreux cas, la GRAPA est examinée automatiquement lors de votre demande de pension ou lorsque vous atteignez l'âge légal. Sinon, vous pouvez en faire la demande auprès du Service fédéral des Pensions (numéro gratuit 1765) ou via l'administration communale.",
+      "reference_legale": "Loi du 22 mars 2001 (procédure de demande et d'octroi)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.sfpd.fgov.be/fr/droit-a-la-pension/grapa",
+          "intitule": "Service fédéral des Pensions — Demander la GRAPA"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    }
+  ]
+}

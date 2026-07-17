@@ -1,0 +1,5332 @@
+[
+  {
+    "engine": "system_awareness_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "autonomous_agent_economy_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "access_water_sanitation_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "housing_crisis_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "customer_onboarding_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "predictive_arbitrage_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "ai_surveillance_autocracy_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "digital_privacy_surveillance_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "small_arms_proliferation_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_data_exfiltration_risk_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "emergency_powers_abuse_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "financial_contagion_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "anti_corruption_accountability_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "children_rights_armed_conflict_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "epistemic_security_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_objection_handling_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "cultural_genocide_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "ocean_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "transitional_justice_truth_commission_engine",
+    "entities_evaluated": 8,
+    "avg_reward": 1.0,
+    "weight_delta": {
+      "sub1": 0.0,
+      "sub2": 0.0,
+      "sub3": 0.0,
+      "sub4": 0.0
+    },
+    "new_weights": {
+      "sub1": 0.3,
+      "sub2": 0.25,
+      "sub3": 0.25,
+      "sub4": 0.2,
+      "updated_at": "2026-06-21T18:19:29.337125",
+      "engine": "transitional_justice_truth_commission_engine"
+    },
+    "timestamp": "2026-06-21T18:19:29.336997",
+    "status": "updated"
+  },
+  {
+    "engine": "mental_health_involuntary_treatment_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "social_cohesion_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "internet_shutdown_digital_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "autonomous_financial_ecosystem_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "climate_forced_migration_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_forecast_accuracy_commit_reliability_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "xenophobia_hate_crime_minority_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "genetic_privacy_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "environmental_crime_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "stakeholder_map_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "biopower_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "bioethics_genetic_privacy_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "epigenetic_health_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "arctic_geopolitics_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_pricing_discipline_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "access_to_justice_engine",
+    "entities_evaluated": 8,
+    "avg_reward": 1.0,
+    "weight_delta": {
+      "sub1": 0.0,
+      "sub2": 0.0,
+      "sub3": 0.0,
+      "sub4": 0.0
+    },
+    "new_weights": {
+      "sub1": 0.3,
+      "sub2": 0.25,
+      "sub3": 0.25,
+      "sub4": 0.2,
+      "updated_at": "2026-06-21T18:19:29.371588",
+      "engine": "access_to_justice_engine"
+    },
+    "timestamp": "2026-06-21T18:19:29.371546",
+    "status": "updated"
+  },
+  {
+    "engine": "digital_twins_infrastructure_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "attention_economy_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "residential_school_indigenous_assimilation_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "synthetic_asset_liquidation_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "refugee_refoulement_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "death_penalty_abolition_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "economic_sanctions_human_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "metamorphic_business_model_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "maternal_mortality_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "corporate_accountability_engine",
+    "entities_evaluated": 8,
+    "avg_reward": 1.0,
+    "weight_delta": {
+      "sub1": 0.0,
+      "sub2": 0.0,
+      "sub3": 0.0,
+      "sub4": 0.0
+    },
+    "new_weights": {
+      "sub1": 0.3,
+      "sub2": 0.25,
+      "sub3": 0.25,
+      "sub4": 0.2,
+      "updated_at": "2026-06-21T18:19:29.388943",
+      "engine": "corporate_accountability_engine"
+    },
+    "timestamp": "2026-06-21T18:19:29.388902",
+    "status": "updated"
+  },
+  {
+    "engine": "energy_transition_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "quantum_race_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "human_rights_defenders_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "electoral_rights_engine",
+    "entities_evaluated": 8,
+    "avg_reward": 1.0,
+    "weight_delta": {
+      "sub1": 0.0,
+      "sub2": 0.0,
+      "sub3": 0.0,
+      "sub4": 0.0
+    },
+    "new_weights": {
+      "sub1": 0.3,
+      "sub2": 0.25,
+      "sub3": 0.25,
+      "sub4": 0.2,
+      "updated_at": "2026-06-21T18:19:29.397014",
+      "engine": "electoral_rights_engine"
+    },
+    "timestamp": "2026-06-21T18:19:29.396978",
+    "status": "updated"
+  },
+  {
+    "engine": "worker_automation_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_conversation_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "soft_power_hegemony_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "post_quantum_cryptography_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "enforced_disappearances_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "pr_crisis_management_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_pipeline_contamination_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "antipersonnel_mines_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "environmental_defenders_killings_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "elder_rights_aging_population_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "religious_persecution_minority_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_deal_velocity_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "anti_personnel_mines_cluster_munitions_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "stateless_persons_documentation_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "ai_weapons_race_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "urban_heat_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "youth_justice_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "emotional_contagion_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_email_sequence_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "temporal_engineering_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sexual_violence_wartime_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "nuclear_fusion_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "trafficking_forced_labor_modern_slavery_engine",
+    "entities_evaluated": 8,
+    "avg_reward": 1.0,
+    "weight_delta": {
+      "sub1": 0.0,
+      "sub2": 0.0,
+      "sub3": 0.0,
+      "sub4": 0.0
+    },
+    "new_weights": {
+      "sub1": 0.3,
+      "sub2": 0.25,
+      "sub3": 0.25,
+      "sub4": 0.2,
+      "updated_at": "2026-06-21T18:19:29.444457",
+      "engine": "trafficking_forced_labor_modern_slavery_engine"
+    },
+    "timestamp": "2026-06-21T18:19:29.444424",
+    "status": "updated"
+  },
+  {
+    "engine": "soil_carbon_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "game_theory_decision_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "corruption_human_rights_nexus_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "algorithmic_bias_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "nomadic_peoples_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "quantum_computing_disruption_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_pipeline_generation_velocity_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "whistleblower_protection_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "colonial_reparations_restitution_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "child_soldiers_armed_recruitment_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "collective_consciousness_orchestration_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "debt_bondage_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "child_soldiers_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "indigenous_land_rights_extraction_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "nuclear_testing_environmental_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "corporate_capture_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "poverty_social_exclusion_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "swarm_orchestration_conflict_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "judicial_independence_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "academic_freedom_scholar_persecution_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "price_negotiation_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "witch_hunt_persecution_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "digital_twin_economy_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "extraordinary_rendition_secret_detention_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "nuclear_radiation_civilian_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "bio_computational_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_account_expansion_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "private_military_contractor_accountability_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "deforestation_indigenous_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "press_freedom_engine",
+    "entities_evaluated": 8,
+    "avg_reward": 1.0,
+    "weight_delta": {
+      "sub1": 0.0,
+      "sub2": 0.0,
+      "sub3": 0.0,
+      "sub4": 0.0
+    },
+    "new_weights": {
+      "sub1": 0.3,
+      "sub2": 0.25,
+      "sub3": 0.25,
+      "sub4": 0.2,
+      "updated_at": "2026-06-21T18:19:29.504044",
+      "engine": "press_freedom_engine"
+    },
+    "timestamp": "2026-06-21T18:19:29.504002",
+    "status": "updated"
+  },
+  {
+    "engine": "quantum_economic_disruption_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "planetary_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "active_cyber_defense_honeypot_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "minority_language_cultural_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "deal_momentum_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_negotiation_leverage_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "unpaid_care_work_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "hate_speech_incitement_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "disability_rights_inclusive_society_engine",
+    "entities_evaluated": 8,
+    "avg_reward": 1.0,
+    "weight_delta": {
+      "sub1": 0.0,
+      "sub2": 0.0,
+      "sub3": 0.0,
+      "sub4": 0.0
+    },
+    "new_weights": {
+      "sub1": 0.3,
+      "sub2": 0.25,
+      "sub3": 0.25,
+      "sub4": 0.2,
+      "updated_at": "2026-06-21T18:19:29.528309",
+      "engine": "disability_rights_inclusive_society_engine"
+    },
+    "timestamp": "2026-06-21T18:19:29.528268",
+    "status": "updated"
+  },
+  {
+    "engine": "corporate_human_rights_due_diligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_pipeline_stage_inflation_crm_hygiene_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "statelessness_citizenship_deprivation_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_forecast_accuracy_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "deep_sea_mining_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "right_to_strike_labor_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sovereign_wealth_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "housing_eviction_homelessness_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "youth_rights_intergenerational_justice_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "dark_patterns_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "smart_city_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sanctions_evasion_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "racial_justice_engine",
+    "entities_evaluated": 8,
+    "avg_reward": 1.0,
+    "weight_delta": {
+      "sub1": 0.0,
+      "sub2": 0.0,
+      "sub3": 0.0,
+      "sub4": 0.0
+    },
+    "new_weights": {
+      "sub1": 0.3,
+      "sub2": 0.25,
+      "sub3": 0.25,
+      "sub4": 0.2,
+      "updated_at": "2026-06-21T18:19:29.552543",
+      "engine": "racial_justice_engine"
+    },
+    "timestamp": "2026-06-21T18:19:29.552501",
+    "status": "updated"
+  },
+  {
+    "engine": "quality_assurance_process_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "child_labor_mining_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "freedom_religion_belief_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "semiconductor_war_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "cultural_heritage_destruction_rights_engine",
+    "entities_evaluated": 8,
+    "avg_reward": 1.0,
+    "weight_delta": {
+      "sub1": 0.0,
+      "sub2": 0.0,
+      "sub3": 0.0,
+      "sub4": 0.0
+    },
+    "new_weights": {
+      "sub1": 0.3,
+      "sub2": 0.25,
+      "sub3": 0.25,
+      "sub4": 0.2,
+      "updated_at": "2026-06-21T18:19:29.561688",
+      "engine": "cultural_heritage_destruction_rights_engine"
+    },
+    "timestamp": "2026-06-21T18:19:29.561657",
+    "status": "updated"
+  },
+  {
+    "engine": "seo_ranking_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "quantum_resilience_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "client_retention_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sovereign_debt_crisis_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "nonconsensual_intimate_image_abuse_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "pipeline_coverage_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "buyer_persona_drift_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "environmental_defenders_persecution_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "industrial_policy_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "psychological_warfare_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "account_executive_ramp_velocity_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "mental_health_rights_psychiatric_violence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "generative_ai_economy_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "religious_persecution_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "child_marriage_forced_unions_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "right_to_asylum_refugee_protection_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "water_scarcity_conflict_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "vertical_farming_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "freedom_of_assembly_protest_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "migrant_workers_rights_kafala_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "water_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "customer_service_quality_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "right_to_health_engine",
+    "entities_evaluated": 8,
+    "avg_reward": 1.0,
+    "weight_delta": {
+      "sub1": 0.0,
+      "sub2": 0.0,
+      "sub3": 0.0,
+      "sub4": 0.0
+    },
+    "new_weights": {
+      "sub1": 0.3,
+      "sub2": 0.25,
+      "sub3": 0.25,
+      "sub4": 0.2,
+      "updated_at": "2026-06-21T18:19:29.607250",
+      "engine": "right_to_health_engine"
+    },
+    "timestamp": "2026-06-21T18:19:29.607213",
+    "status": "updated"
+  },
+  {
+    "engine": "indigenous_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "anthropocene_terraforming_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "refugee_return_voluntary_repatriation_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "existential_risk_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_pipeline_hygiene_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "border_crossing_detention_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "water_weaponization_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "space_economy_sovereignty_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "police_brutality_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "gender_based_violence_femicide_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "housing_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "arctic_sovereignty_race_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "lgbtq_rights_violence_criminalization_engine",
+    "entities_evaluated": 8,
+    "avg_reward": 1.0,
+    "weight_delta": {
+      "sub1": 0.0,
+      "sub2": 0.0,
+      "sub3": 0.0,
+      "sub4": 0.0
+    },
+    "new_weights": {
+      "sub1": 0.3,
+      "sub2": 0.25,
+      "sub3": 0.25,
+      "sub4": 0.2,
+      "updated_at": "2026-06-21T18:19:29.630980",
+      "engine": "lgbtq_rights_violence_criminalization_engine"
+    },
+    "timestamp": "2026-06-21T18:19:29.630946",
+    "status": "updated"
+  },
+  {
+    "engine": "sales_capacity_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "drug_trafficking_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "caelum_synthesis_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "forced_marriage_child_marriage_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "neuromorphic_bci_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "prison_torture_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "arms_embargo_violation_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "fair_trial_due_process_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "algorithmic_surveillance_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "environmental_racism_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "social_media_political_censorship_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_data_access_anomaly_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "maternal_health_rights_obstetric_violence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "disability_rights_ableism_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "drone_warfare_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "child_marriage_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "cultural_heritage_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "behavioral_finance_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "ai_surveillance_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "icc_universal_jurisdiction_impunity_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "autonomous_weapons_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "albinism_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "digital_health_sovereignty_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "buyer_intent_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "water_rights_access_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "dark_web_economy_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_meeting_quality_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "war_crimes_siege_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_customer_relationship_health_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "wildlife_trafficking_biodiversity_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "armed_conflict_civilian_protection_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "neuroright_mental_sovereignty_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "defi_systemic_risk_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "temporal_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_negotiation_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "lgbtqi_rights_criminalization_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "digital_colonialism_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "fistula_obstetric_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "platform_economy_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "right_to_education_access_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "elderly_abuse_care_home_rights_engine",
+    "entities_evaluated": 8,
+    "avg_reward": 1.0,
+    "weight_delta": {
+      "sub1": 0.0,
+      "sub2": 0.0,
+      "sub3": 0.0,
+      "sub4": 0.0
+    },
+    "new_weights": {
+      "sub1": 0.3,
+      "sub2": 0.25,
+      "sub3": 0.25,
+      "sub4": 0.2,
+      "updated_at": "2026-06-21T18:19:29.705565",
+      "engine": "elderly_abuse_care_home_rights_engine"
+    },
+    "timestamp": "2026-06-21T18:19:29.705524",
+    "status": "updated"
+  },
+  {
+    "engine": "indigenous_land_cultural_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "gender_pay_gap_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "military_ai_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "ecocide_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "whistleblower_protection_corporate_accountability_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_time_allocation_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "forecast_calibration_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_deal_momentum_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "statelessness_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "access_medicine_inequality_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "corporate_tax_justice_development_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "anti_corruption_engine",
+    "entities_evaluated": 8,
+    "avg_reward": 1.0,
+    "weight_delta": {
+      "sub1": 0.0,
+      "sub2": 0.0,
+      "sub3": 0.0,
+      "sub4": 0.0
+    },
+    "new_weights": {
+      "sub1": 0.3,
+      "sub2": 0.25,
+      "sub3": 0.25,
+      "sub4": 0.2,
+      "updated_at": "2026-06-21T18:19:29.727408",
+      "engine": "anti_corruption_engine"
+    },
+    "timestamp": "2026-06-21T18:19:29.727369",
+    "status": "updated"
+  },
+  {
+    "engine": "certification_standards_tracker_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "acid_attack_gender_violence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "peasant_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "pipeline_generation_efficiency_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "nomadic_pastoralist_peoples_rights_engine",
+    "entities_evaluated": 8,
+    "avg_reward": 1.0,
+    "weight_delta": {
+      "sub1": 0.0,
+      "sub2": 0.0,
+      "sub3": 0.0,
+      "sub4": 0.0
+    },
+    "new_weights": {
+      "sub1": 0.3,
+      "sub2": 0.25,
+      "sub3": 0.25,
+      "sub4": 0.2,
+      "updated_at": "2026-06-21T18:19:29.736605",
+      "engine": "nomadic_pastoralist_peoples_rights_engine"
+    },
+    "timestamp": "2026-06-21T18:19:29.736574",
+    "status": "updated"
+  },
+  {
+    "engine": "sales_win_rate_decay_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "gig_economy_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "antiterrorism_laws_rights_abuse_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "land_grabbing_displacement_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "water_privatization_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "carbon_credit_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "cultural_property_looting_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sexual_violence_conflict_impunity_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "media_integrity_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "longevity_inequality_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_multithreading_depth_relationship_breadth_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "state_terrorism_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "quota_attainment_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "post_work_ubi_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "surveillance_facial_recognition_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "climate_geopolitics_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "digital_surveillance_mass_monitoring_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "religious_law_lgbtq_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "linguistic_sovereignty_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "synthetic_biology_risk_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "border_wall_migration_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "longevity_tech_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sovereign_ai_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "rep_incentive_misalignment_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "arctic_sovereignty_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_competitive_win_rate_erosion_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "biomimetic_strategy_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "environmental_rights_defenders_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "right_to_food_famine_accountability_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_onboarding_ramp_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "mega_infrastructure_construction_labor_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "counter_terrorism_rights_violations_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "child_poverty_social_exclusion_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "rare_earth_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "forced_sterilization_reproductive_coercion_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_outbound_prospecting_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "first_principles_architecture_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "emotional_capital_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "pandemic_bioweapons_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "housing_rights_eviction_engine",
+    "entities_evaluated": 8,
+    "avg_reward": -0.0625,
+    "weight_delta": {
+      "sub1": 0.0333,
+      "sub2": -0.0027,
+      "sub3": -0.0027,
+      "sub4": -0.028
+    },
+    "new_weights": {
+      "sub1": 0.3333,
+      "sub2": 0.2473,
+      "sub3": 0.2473,
+      "sub4": 0.172,
+      "updated_at": "2026-06-21T18:19:29.818676",
+      "engine": "housing_rights_eviction_engine"
+    },
+    "timestamp": "2026-06-21T18:19:29.818634",
+    "status": "updated"
+  },
+  {
+    "engine": "sales_stakeholder_mapping_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "economic_coercion_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "climate_justice_environmental_defenders_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "bottleneck_sniper_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "environmental_defenders_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "migrant_detention_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "organ_trafficking_human_parts_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "digital_nomad_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "nuclear_victims_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sovereign_wealth_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "aging_infrastructure_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "stateless_persons_nationality_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "conflict_mineral_resources_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "human_rights_education_rights_engine",
+    "entities_evaluated": 8,
+    "avg_reward": 1.0,
+    "weight_delta": {
+      "sub1": 0.0,
+      "sub2": 0.0,
+      "sub3": 0.0,
+      "sub4": 0.0
+    },
+    "new_weights": {
+      "sub1": 0.3,
+      "sub2": 0.25,
+      "sub3": 0.25,
+      "sub4": 0.2,
+      "updated_at": "2026-06-21T18:19:29.845817",
+      "engine": "human_rights_education_rights_engine"
+    },
+    "timestamp": "2026-06-21T18:19:29.845732",
+    "status": "updated"
+  },
+  {
+    "engine": "noise_pollution_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "apostasy_blasphemy_persecution_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "social_protection_poverty_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "cybersecurity_data_protection_engine",
+    "entities_evaluated": 8,
+    "avg_reward": -0.0625,
+    "weight_delta": {
+      "sub1": -0.0136,
+      "sub2": 0.0,
+      "sub3": 0.0,
+      "sub4": 0.0136
+    },
+    "new_weights": {
+      "sub1": 0.2864,
+      "sub2": 0.25,
+      "sub3": 0.25,
+      "sub4": 0.2136,
+      "updated_at": "2026-06-21T18:19:29.854175",
+      "engine": "cybersecurity_data_protection_engine"
+    },
+    "timestamp": "2026-06-21T18:19:29.854142",
+    "status": "updated"
+  },
+  {
+    "engine": "electoral_integrity_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "mercenary_warfare_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "narrative_control_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "deal_ghosting_risk_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "human_rights_defenders_protection_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "death_in_custody_prison_conditions_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "freedom_expression_artistic_censorship_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "prison_torture_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_territory_whitespace_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "child_labor_exploitation_rights_engine",
+    "entities_evaluated": 8,
+    "avg_reward": 1.0,
+    "weight_delta": {
+      "sub1": 0.0,
+      "sub2": 0.0,
+      "sub3": 0.0,
+      "sub4": 0.0
+    },
+    "new_weights": {
+      "sub1": 0.3,
+      "sub2": 0.25,
+      "sub3": 0.25,
+      "sub4": 0.2,
+      "updated_at": "2026-06-21T18:19:29.872523",
+      "engine": "child_labor_exploitation_rights_engine"
+    },
+    "timestamp": "2026-06-21T18:19:29.872489",
+    "status": "updated"
+  },
+  {
+    "engine": "elderly_rights_ageism_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "war_crimes_accountability_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "housing_eviction_displacement_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "hate_speech_platform_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "complex_network_physics_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "ai_surveillance_biometric_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "rep_attrition_risk_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "forced_recruitment_conscription_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "supply_chain_transparency_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "data_protection_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "cbdc_sovereignty_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "innovation_scout_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "autonomous_weapons_lethal_robotics_rights_engine",
+    "entities_evaluated": 8,
+    "avg_reward": 1.0,
+    "weight_delta": {
+      "sub1": 0.0,
+      "sub2": 0.0,
+      "sub3": 0.0,
+      "sub4": 0.0
+    },
+    "new_weights": {
+      "sub1": 0.3,
+      "sub2": 0.25,
+      "sub3": 0.25,
+      "sub4": 0.2,
+      "updated_at": "2026-06-21T18:19:29.898733",
+      "engine": "autonomous_weapons_lethal_robotics_rights_engine"
+    },
+    "timestamp": "2026-06-21T18:19:29.898694",
+    "status": "updated"
+  },
+  {
+    "engine": "sales_objection_pattern_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "human_trafficking_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "prison_labor_exploitation_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_cycle_velocity_degradation_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "lithium_battery_recycling_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sportwashing_geopolitics_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "digital_identity_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "food_weaponization_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "death_penalty_extrajudicial_killings_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "period_poverty_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "right_to_privacy_engine",
+    "entities_evaluated": 8,
+    "avg_reward": 1.0,
+    "weight_delta": {
+      "sub1": 0.0,
+      "sub2": 0.0,
+      "sub3": 0.0,
+      "sub4": 0.0
+    },
+    "new_weights": {
+      "sub1": 0.3,
+      "sub2": 0.25,
+      "sub3": 0.25,
+      "sub4": 0.2,
+      "updated_at": "2026-06-21T18:19:29.920717",
+      "engine": "right_to_privacy_engine"
+    },
+    "timestamp": "2026-06-21T18:19:29.920677",
+    "status": "updated"
+  },
+  {
+    "engine": "climate_finance_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_value_proposition_deterioration_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "ai_bias_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "human_rights_defenders_assassination_engine",
+    "entities_evaluated": 8,
+    "avg_reward": 1.0,
+    "weight_delta": {
+      "sub1": 0.0,
+      "sub2": 0.0,
+      "sub3": 0.0,
+      "sub4": 0.0
+    },
+    "new_weights": {
+      "sub1": 0.3,
+      "sub2": 0.25,
+      "sub3": 0.25,
+      "sub4": 0.2,
+      "updated_at": "2026-06-21T18:19:29.929483",
+      "engine": "human_rights_defenders_assassination_engine"
+    },
+    "timestamp": "2026-06-21T18:19:29.929444",
+    "status": "updated"
+  },
+  {
+    "engine": "child_online_exploitation_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "minority_religious_freedom_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "refugees_asylum_seekers_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_rep_burnout_attrition_risk_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "human_trafficking_modern_slavery_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "competitive_battlecard_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_competitive_intelligence_battle_card_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "climate_loss_damage_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "satellite_surveillance_privacy_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "surveillance_capitalism_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "tax_haven_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "freedom_of_assembly_engine",
+    "entities_evaluated": 8,
+    "avg_reward": 1.0,
+    "weight_delta": {
+      "sub1": 0.0,
+      "sub2": 0.0,
+      "sub3": 0.0,
+      "sub4": 0.0
+    },
+    "new_weights": {
+      "sub1": 0.3,
+      "sub2": 0.25,
+      "sub3": 0.25,
+      "sub4": 0.2,
+      "updated_at": "2026-06-21T18:19:29.956134",
+      "engine": "freedom_of_assembly_engine"
+    },
+    "timestamp": "2026-06-21T18:19:29.956096",
+    "status": "updated"
+  },
+  {
+    "engine": "food_waste_economy_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "cyber_sovereignty_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_onboarding_ramp_velocity_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_buyer_engagement_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_incentive_compensation_risk_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "internet_freedom_censorship_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "informal_economy_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "critical_infra_cyber_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "revenue_attribution_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "urban_flooding_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "cultural_heritage_destruction_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "space_economy_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "refugee_detention_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "indigenous_land_rights_territorial_sovereignty_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "water_rights_access_sanitation_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "resource_optimization_capacity_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "unaccompanied_migrant_children_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "refugee_weaponization_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "hiv_aids_stigma_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_multi_threading_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "migration_asylum_seekers_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "transnational_repression_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "resource_curse_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "disability_rights_accessibility_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "methane_crisis_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "ethnic_minority_rights_discrimination_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "migrant_domestic_workers_engine",
+    "entities_evaluated": 8,
+    "avg_reward": 1.0,
+    "weight_delta": {
+      "sub1": 0.0,
+      "sub2": 0.0,
+      "sub3": 0.0,
+      "sub4": 0.0
+    },
+    "new_weights": {
+      "sub1": 0.3,
+      "sub2": 0.25,
+      "sub3": 0.25,
+      "sub4": 0.2,
+      "updated_at": "2026-06-21T18:19:30.013688",
+      "engine": "migrant_domestic_workers_engine"
+    },
+    "timestamp": "2026-06-21T18:19:30.013647",
+    "status": "updated"
+  },
+  {
+    "engine": "legal_regulatory_watch_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "toxic_waste_environmental_racism_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_champion_departure_relationship_continuity_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "gender_apartheid_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "ocean_governance_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "metaverse_governance_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_poc_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_deal_velocity_collapse_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "space_debris_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "customer_expansion_readiness_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "ocean_plastic_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "dark_data_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sex_worker_rights_criminalization_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "media_freedom_journalist_protection_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "refugee_crisis_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "elder_rights_ageism_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "deduplication_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "child_soldiers_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_coaching_receptivity_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "regenerative_finance_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "caste_discrimination_dalit_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "food_sovereignty_agricultural_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "crypto_economic_governance_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "academic_integrity_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "water_wars_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "digital_sovereignty_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "metacognitive_ai_alignment_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "caste_discrimination_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_quota_sandbag_overcommit_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "prison_conditions_detention_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_customer_success_handoff_quality_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_proposal_conversion_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sports_athlete_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "coral_reef_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "neural_language_dominance_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "reparations_genocide_victims_engine",
+    "entities_evaluated": 8,
+    "avg_reward": 1.0,
+    "weight_delta": {
+      "sub1": 0.0,
+      "sub2": 0.0,
+      "sub3": 0.0,
+      "sub4": 0.0
+    },
+    "new_weights": {
+      "sub1": 0.3,
+      "sub2": 0.25,
+      "sub3": 0.25,
+      "sub4": 0.2,
+      "updated_at": "2026-06-21T18:19:30.098348",
+      "engine": "reparations_genocide_victims_engine"
+    },
+    "timestamp": "2026-06-21T18:19:30.098310",
+    "status": "updated"
+  },
+  {
+    "engine": "nuclear_blackmail_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "environmental_defenders_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "nuclear_testing_legacy_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "circular_economy_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "digital_gender_gap_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "online_censorship_platform_governance_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "refugee_integration_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "partner_channel_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "electoral_interference_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "forced_sterilization_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "algae_energy_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "soil_degradation_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "minority_religious_rights_persecution_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "transnational_crime_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "statelessness_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "organizational_health_culture_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "deal_stage_progression_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sex_work_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "esg_greenwash_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "social_media_roi_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "pension_crisis_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "ai_alignment_risk_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_multithreading_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "business_tax_evasion_human_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "biometric_border_surveillance_migration_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "biosafety_infrastructure_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "disability_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "geopolitical_alliance_fracture_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "corporate_impunity_accountability_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "crypto_mining_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "psychopolitics_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "post_human_augmentation_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "food_security_weaponization_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_buyer_intent_signal_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "economic_singularity_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "pandemic_health_emergency_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_proof_of_value_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "it_systems_health_monitoring_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "torture_cruel_treatment_detention_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "pipeline_health_index_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "antifragility_index_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "corporate_surveillance_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "critical_resource_scarcity_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "ai_governance_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "space_rights_outer_space_militarization_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_crm_data_hygiene_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "collective_intelligence_amplification_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "autonomous_vehicle_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "prison_labor_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "social_bond_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "antibiotic_resistance_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "dark_pattern_manipulation_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "prison_labor_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "transitional_justice_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "land_grabbing_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_buyer_meeting_quality_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_crm_adoption_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "peacekeeping_accountability_governance_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "prison_healthcare_denial_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_channel_partnership_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "indigenous_cultural_rights_language_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "political_assassination_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "academic_freedom_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "personalized_learning_path_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "social_media_mental_health_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "amr_global_response_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "carbon_border_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "climate_justice_loss_damage_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "port_logistics_capture_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "land_grab_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "digital_divide_access_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "children_armed_conflict_grave_violations_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_quota_gaming_detection_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "forecast_commit_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "territory_optimizer_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_competitive_win_loss_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "labor_union_rights_freedom_association_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "conscientious_objector_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "territory_performance_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "intersex_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "nuclear_disarmament_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "order_management_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "land_degradation_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "autonomous_weapons_ai_warfare_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "elder_care_crisis_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "singularity_economy_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "witchcraft_accusation_persecution_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "transhumanist_ethics_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "neuroadaptive_ux_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "biopiracy_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "competitive_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "democratic_decay_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "conflict_minerals_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "urban_air_mobility_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_skills_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "arms_transfer_accountability_engine",
+    "entities_evaluated": 8,
+    "avg_reward": 1.0,
+    "weight_delta": {
+      "sub1": 0.0,
+      "sub2": 0.0,
+      "sub3": 0.0,
+      "sub4": 0.0
+    },
+    "new_weights": {
+      "sub1": 0.3,
+      "sub2": 0.25,
+      "sub3": 0.25,
+      "sub4": 0.2,
+      "updated_at": "2026-06-21T18:19:30.298932",
+      "engine": "arms_transfer_accountability_engine"
+    },
+    "timestamp": "2026-06-21T18:19:30.298893",
+    "status": "updated"
+  },
+  {
+    "engine": "sales_territory_imbalance_coverage_gap_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "freedom_religion_belief_persecution_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "cognitive_warfare_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "crypto_regulation_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "land_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "economic_austerity_social_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "nexus_crisis_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "algorithmic_justice_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "death_penalty_execution_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_onboarding_effectiveness_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "urban_heat_crisis_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "social_media_censorship_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "domestic_worker_exploitation_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "social_credit_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "emotional_intelligence_market_behavior_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "business_human_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "mental_health_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "hate_crime_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "albinism_persecution_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "gene_drive_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "digital_surveillance_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "child_rights_engine",
+    "entities_evaluated": 8,
+    "avg_reward": 1.0,
+    "weight_delta": {
+      "sub1": 0.0,
+      "sub2": 0.0,
+      "sub3": 0.0,
+      "sub4": 0.0
+    },
+    "new_weights": {
+      "sub1": 0.3,
+      "sub2": 0.25,
+      "sub3": 0.25,
+      "sub4": 0.2,
+      "updated_at": "2026-06-21T18:19:30.338644",
+      "engine": "child_rights_engine"
+    },
+    "timestamp": "2026-06-21T18:19:30.338605",
+    "status": "updated"
+  },
+  {
+    "engine": "biometric_surveillance_state_control_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_objection_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "telemedicine_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "cybercrime_digital_rights_exploitation_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "global_tax_reform_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "forced_disappearances_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "climate_change_human_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "journalist_murder_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_discovery_quality_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "racial_discrimination_systemic_racism_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "pandemic_preparedness_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "medical_neutrality_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "child_online_safety_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "birth_registration_engine",
+    "entities_evaluated": 8,
+    "avg_reward": 1.0,
+    "weight_delta": {
+      "sub1": 0.0,
+      "sub2": 0.0,
+      "sub3": 0.0,
+      "sub4": 0.0
+    },
+    "new_weights": {
+      "sub1": 0.3,
+      "sub2": 0.25,
+      "sub3": 0.25,
+      "sub4": 0.2,
+      "updated_at": "2026-06-21T18:19:30.362586",
+      "engine": "birth_registration_engine"
+    },
+    "timestamp": "2026-06-21T18:19:30.362548",
+    "status": "updated"
+  },
+  {
+    "engine": "space_weather_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "corporate_accountability_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "digital_divide_internet_access_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "misinformation_ecosystem_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_proposal_quality_win_rate_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_territory_overlap_conflict_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "trust_economy_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "ethnic_cleansing_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "colonial_reparations_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_negotiation_effectiveness_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "competitive_positioning_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "press_freedom_journalist_safety_engine",
+    "entities_evaluated": 8,
+    "avg_reward": 1.0,
+    "weight_delta": {
+      "sub1": 0.0,
+      "sub2": 0.0,
+      "sub3": 0.0,
+      "sub4": 0.0
+    },
+    "new_weights": {
+      "sub1": 0.3,
+      "sub2": 0.25,
+      "sub3": 0.25,
+      "sub4": 0.2,
+      "updated_at": "2026-06-21T18:19:30.390189",
+      "engine": "press_freedom_journalist_safety_engine"
+    },
+    "timestamp": "2026-06-21T18:19:30.390155",
+    "status": "updated"
+  },
+  {
+    "engine": "urban_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "neuro_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "infrastructure_resilience_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "swarm_security_shield_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "labor_union_collective_bargaining_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "diaspora_geopolitics_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_buyer_persona_mismatch_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "drug_policy_human_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "longevity_economy_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "food_system_collapse_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_capacity_planning_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_forecast_sanity_check_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "malnutrition_child_nutrition_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "urban_mining_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_pricing_negotiation_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "climate_litigation_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "arms_trade_civilian_harm_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "rare_earth_dominance_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "invoice_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "solitary_confinement_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "wealth_concentration_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "narrative_sovereignty_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sexual_violence_conflict_accountability_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_meeting_quality_conversion_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "pension_collapse_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "black_swan_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "power_vacuum_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "forced_labor_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_customer_health_score_deterioration_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "financial_crime_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "civilizational_memory_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "digital_democracy_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "climate_refugee_displacement_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "biometric_surveillance_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_rep_ramp_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "migration_crisis_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "slavery_reparations_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "peasant_land_tenure_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "child_marriage_forced_union_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "fair_trial_due_process_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "anti_torture_engine",
+    "entities_evaluated": 8,
+    "avg_reward": 1.0,
+    "weight_delta": {
+      "sub1": 0.0,
+      "sub2": 0.0,
+      "sub3": 0.0,
+      "sub4": 0.0
+    },
+    "new_weights": {
+      "sub1": 0.3,
+      "sub2": 0.25,
+      "sub3": 0.25,
+      "sub4": 0.2,
+      "updated_at": "2026-06-21T18:19:30.480377",
+      "engine": "anti_torture_engine"
+    },
+    "timestamp": "2026-06-21T18:19:30.480325",
+    "status": "updated"
+  },
+  {
+    "engine": "seed_sovereignty_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "food_system_sovereignty_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_buyer_engagement_velocity_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_account_penetration_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "organ_trafficking_body_autonomy_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_social_selling_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "autonomous_supply_chain_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "debt_bondage_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "competitive_win_rate_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "debt_trap_economic_coercion_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "economic_rights_engine",
+    "entities_evaluated": 8,
+    "avg_reward": 1.0,
+    "weight_delta": {
+      "sub1": 0.0,
+      "sub2": 0.0,
+      "sub3": 0.0,
+      "sub4": 0.0
+    },
+    "new_weights": {
+      "sub1": 0.3,
+      "sub2": 0.25,
+      "sub3": 0.25,
+      "sub4": 0.2,
+      "updated_at": "2026-06-21T18:19:30.505955",
+      "engine": "economic_rights_engine"
+    },
+    "timestamp": "2026-06-21T18:19:30.505915",
+    "status": "updated"
+  },
+  {
+    "engine": "menstrual_health_education_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sex_education_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_account_churn_early_warning_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "colonial_reparations_historical_justice_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "water_geopolitics_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "critical_minerals_transition_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "refugee_rights_engine",
+    "entities_evaluated": 8,
+    "avg_reward": 1.0,
+    "weight_delta": {
+      "sub1": 0.0,
+      "sub2": 0.0,
+      "sub3": 0.0,
+      "sub4": 0.0
+    },
+    "new_weights": {
+      "sub1": 0.3,
+      "sub2": 0.25,
+      "sub3": 0.25,
+      "sub4": 0.2,
+      "updated_at": "2026-06-21T18:19:30.518871",
+      "engine": "refugee_rights_engine"
+    },
+    "timestamp": "2026-06-21T18:19:30.518831",
+    "status": "updated"
+  },
+  {
+    "engine": "sales_negotiation_discipline_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "cultural_minority_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "arbitrary_detention_political_prisoners_engine",
+    "entities_evaluated": 8,
+    "avg_reward": 1.0,
+    "weight_delta": {
+      "sub1": 0.0,
+      "sub2": 0.0,
+      "sub3": 0.0,
+      "sub4": 0.0
+    },
+    "new_weights": {
+      "sub1": 0.3,
+      "sub2": 0.25,
+      "sub3": 0.25,
+      "sub4": 0.2,
+      "updated_at": "2026-06-21T18:19:30.523528",
+      "engine": "arbitrary_detention_political_prisoners_engine"
+    },
+    "timestamp": "2026-06-21T18:19:30.523501",
+    "status": "updated"
+  },
+  {
+    "engine": "competitive_win_probability_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "climate_migration_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "genocide_prevention_accountability_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "techno_darwinism_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "quota_gap_analysis_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "access_to_justice_rule_of_law_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "deal_contamination_risk_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "forced_disappearances_extrajudicial_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "pricing_elasticity_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "anti_terrorism_counter_extremism_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "corporate_accountability_human_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "ip_warfare_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "geopolitical_resilience_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "hypersonic_weapons_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "child_labor_education_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "biosurveillance_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "mining_extraction_community_rights_engine",
+    "entities_evaluated": 8,
+    "avg_reward": 1.0,
+    "weight_delta": {
+      "sub1": 0.0,
+      "sub2": 0.0,
+      "sub3": 0.0,
+      "sub4": 0.0
+    },
+    "new_weights": {
+      "sub1": 0.3,
+      "sub2": 0.25,
+      "sub3": 0.25,
+      "sub4": 0.2,
+      "updated_at": "2026-06-21T18:19:30.559311",
+      "engine": "mining_extraction_community_rights_engine"
+    },
+    "timestamp": "2026-06-21T18:19:30.559277",
+    "status": "updated"
+  },
+  {
+    "engine": "arbitrary_detention_engine",
+    "entities_evaluated": 8,
+    "avg_reward": 1.0,
+    "weight_delta": {
+      "sub1": 0.0,
+      "sub2": 0.0,
+      "sub3": 0.0,
+      "sub4": 0.0
+    },
+    "new_weights": {
+      "sub1": 0.3,
+      "sub2": 0.25,
+      "sub3": 0.25,
+      "sub4": 0.2,
+      "updated_at": "2026-06-21T18:19:30.561382",
+      "engine": "arbitrary_detention_engine"
+    },
+    "timestamp": "2026-06-21T18:19:30.561336",
+    "status": "updated"
+  },
+  {
+    "engine": "internet_freedom_digital_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "right_to_education_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_pipeline_concentration_risk_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "settler_colonialism_land_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "prison_privatization_profit_rights_engine",
+    "entities_evaluated": 8,
+    "avg_reward": 1.0,
+    "weight_delta": {
+      "sub1": 0.0,
+      "sub2": 0.0,
+      "sub3": 0.0,
+      "sub4": 0.0
+    },
+    "new_weights": {
+      "sub1": 0.3,
+      "sub2": 0.25,
+      "sub3": 0.25,
+      "sub4": 0.2,
+      "updated_at": "2026-06-21T18:19:30.569915",
+      "engine": "prison_privatization_profit_rights_engine"
+    },
+    "timestamp": "2026-06-21T18:19:30.569885",
+    "status": "updated"
+  },
+  {
+    "engine": "arts_cultural_expression_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_burnout_risk_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "arms_trade_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "older_persons_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "right_to_development_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "racial_justice_police_brutality_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_velocity_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "synthetic_media_detection_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "deal_velocity_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_discount_approval_abuse_margin_erosion_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_inbound_lead_response_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "land_rights_eviction_indigenous_territories_engine",
+    "entities_evaluated": 8,
+    "avg_reward": 1.0,
+    "weight_delta": {
+      "sub1": 0.0,
+      "sub2": 0.0,
+      "sub3": 0.0,
+      "sub4": 0.0
+    },
+    "new_weights": {
+      "sub1": 0.3,
+      "sub2": 0.25,
+      "sub3": 0.25,
+      "sub4": 0.2,
+      "updated_at": "2026-06-21T18:19:30.595082",
+      "engine": "land_rights_eviction_indigenous_territories_engine"
+    },
+    "timestamp": "2026-06-21T18:19:30.595046",
+    "status": "updated"
+  },
+  {
+    "engine": "food_security_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "water_sanitation_rights_engine",
+    "entities_evaluated": 8,
+    "avg_reward": -0.0625,
+    "weight_delta": {
+      "sub1": 0.0333,
+      "sub2": -0.0027,
+      "sub3": -0.0027,
+      "sub4": -0.028
+    },
+    "new_weights": {
+      "sub1": 0.3333,
+      "sub2": 0.2473,
+      "sub3": 0.2473,
+      "sub4": 0.172,
+      "updated_at": "2026-06-21T18:19:30.600091",
+      "engine": "water_sanitation_rights_engine"
+    },
+    "timestamp": "2026-06-21T18:19:30.600053",
+    "status": "updated"
+  },
+  {
+    "engine": "sales_deal_velocity_acceleration_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "ethics_compliance_sentinel_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "treaty_erosion_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "anti_corruption_accountability_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "civilizational_debt_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "obstetric_violence_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "omega_synthesis_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "hybrid_warfare_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "climate_finance_loss_damage_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "mental_health_forced_treatment_rights_engine",
+    "entities_evaluated": 8,
+    "avg_reward": 1.0,
+    "weight_delta": {
+      "sub1": 0.0,
+      "sub2": 0.0,
+      "sub3": 0.0,
+      "sub4": 0.0
+    },
+    "new_weights": {
+      "sub1": 0.3,
+      "sub2": 0.25,
+      "sub3": 0.25,
+      "sub4": 0.2,
+      "updated_at": "2026-06-21T18:19:30.620377",
+      "engine": "mental_health_forced_treatment_rights_engine"
+    },
+    "timestamp": "2026-06-21T18:19:30.620328",
+    "status": "updated"
+  },
+  {
+    "engine": "academic_freedom_university_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "climate_tipping_points_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "information_warfare_civilian_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "austerity_social_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "metacognitive_bias_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "racial_discrimination_minority_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "hyperconnectivity_fragility_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "win_loss_pattern_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "food_sovereignty_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "housing_forced_eviction_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "academic_freedom_education_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "nuclear_risk_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "account_expansion_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "enforced_disappearance_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "press_freedom_journalist_protection_engine",
+    "entities_evaluated": 8,
+    "avg_reward": -0.0625,
+    "weight_delta": {
+      "sub1": 0.0333,
+      "sub2": -0.0027,
+      "sub3": -0.0027,
+      "sub4": -0.028
+    },
+    "new_weights": {
+      "sub1": 0.3333,
+      "sub2": 0.2473,
+      "sub3": 0.2473,
+      "sub4": 0.172,
+      "updated_at": "2026-06-21T18:19:30.654285",
+      "engine": "press_freedom_journalist_protection_engine"
+    },
+    "timestamp": "2026-06-21T18:19:30.654232",
+    "status": "updated"
+  },
+  {
+    "engine": "climate_displacement_migration_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "right_to_truth_transitional_justice_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "right_to_truth_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "reproductive_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "human_rights_education_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_decision_criteria_alignment_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "minority_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "supply_chain_esg_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "renewal_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "continuous_improvement_excellence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sexual_orientation_lgbtq_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "statelessness_citizenship_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_forecast_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "minority_language_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "currency_war_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_rep_onboarding_ramp_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "prison_rehabilitation_reentry_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "nuclear_deterrence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "satellite_constellation_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "elder_abuse_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "wildfire_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "regulatory_compliance_legal_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "child_marriage_forced_union_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "protest_freedom_assembly_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "space_warfare_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "rural_women_land_inheritance_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "arms_embargo_violations_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "alternative_protein_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "clean_water_access_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "death_penalty_engine",
+    "entities_evaluated": 8,
+    "avg_reward": 1.0,
+    "weight_delta": {
+      "sub1": 0.0,
+      "sub2": 0.0,
+      "sub3": 0.0,
+      "sub4": 0.0
+    },
+    "new_weights": {
+      "sub1": 0.3,
+      "sub2": 0.25,
+      "sub3": 0.25,
+      "sub4": 0.2,
+      "updated_at": "2026-06-21T18:19:30.722986",
+      "engine": "death_penalty_engine"
+    },
+    "timestamp": "2026-06-21T18:19:30.722947",
+    "status": "updated"
+  },
+  {
+    "engine": "pharmaceutical_access_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sexual_orientation_identity_criminalization_engine",
+    "entities_evaluated": 8,
+    "avg_reward": 1.0,
+    "weight_delta": {
+      "sub1": 0.0,
+      "sub2": 0.0,
+      "sub3": 0.0,
+      "sub4": 0.0
+    },
+    "new_weights": {
+      "sub1": 0.3,
+      "sub2": 0.25,
+      "sub3": 0.25,
+      "sub4": 0.2,
+      "updated_at": "2026-06-21T18:19:30.727134",
+      "engine": "sexual_orientation_identity_criminalization_engine"
+    },
+    "timestamp": "2026-06-21T18:19:30.727102",
+    "status": "updated"
+  },
+  {
+    "engine": "disability_rights_inclusion_engine",
+    "entities_evaluated": 8,
+    "avg_reward": -0.0625,
+    "weight_delta": {
+      "sub1": 0.0333,
+      "sub2": -0.0027,
+      "sub3": -0.0027,
+      "sub4": -0.028
+    },
+    "new_weights": {
+      "sub1": 0.3333,
+      "sub2": 0.2473,
+      "sub3": 0.2473,
+      "sub4": 0.172,
+      "updated_at": "2026-06-21T18:19:30.728761",
+      "engine": "disability_rights_inclusion_engine"
+    },
+    "timestamp": "2026-06-21T18:19:30.728724",
+    "status": "updated"
+  },
+  {
+    "engine": "permafrost_methane_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_commission_clawback_risk_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "memetic_resonance_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "drug_policy_criminalization_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "patent_revenue_prioritization_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_compensation_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "juvenile_justice_child_detention_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "third_party_work_validation_engine",
+    "entities_evaluated": 8,
+    "avg_reward": -0.0625,
+    "weight_delta": {
+      "sub1": -0.0136,
+      "sub2": 0.0,
+      "sub3": 0.0,
+      "sub4": 0.0136
+    },
+    "new_weights": {
+      "sub1": 0.2864,
+      "sub2": 0.25,
+      "sub3": 0.25,
+      "sub4": 0.2136,
+      "updated_at": "2026-06-21T18:19:30.745253",
+      "engine": "third_party_work_validation_engine"
+    },
+    "timestamp": "2026-06-21T18:19:30.745222",
+    "status": "updated"
+  },
+  {
+    "engine": "hyperpersonalization_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "cognitive_enhancement_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "caste_discrimination_untouchability_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "nuclear_waste_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_rep_burnout_productivity_decay_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "religious_freedom_persecution_engine",
+    "entities_evaluated": 8,
+    "avg_reward": -0.0625,
+    "weight_delta": {
+      "sub1": 0.0333,
+      "sub2": -0.0027,
+      "sub3": -0.0027,
+      "sub4": -0.028
+    },
+    "new_weights": {
+      "sub1": 0.3333,
+      "sub2": 0.2473,
+      "sub3": 0.2473,
+      "sub4": 0.172,
+      "updated_at": "2026-06-21T18:19:30.758867",
+      "engine": "religious_freedom_persecution_engine"
+    },
+    "timestamp": "2026-06-21T18:19:30.758832",
+    "status": "updated"
+  },
+  {
+    "engine": "battery_geopolitics_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "prison_conditions_detainee_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_conversation_quality_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_pipeline_health_degradation_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "digital_rights_engine",
+    "entities_evaluated": 8,
+    "avg_reward": 1.0,
+    "weight_delta": {
+      "sub1": 0.0,
+      "sub2": 0.0,
+      "sub3": 0.0,
+      "sub4": 0.0
+    },
+    "new_weights": {
+      "sub1": 0.3,
+      "sub2": 0.25,
+      "sub3": 0.25,
+      "sub4": 0.2,
+      "updated_at": "2026-06-21T18:19:30.770755",
+      "engine": "digital_rights_engine"
+    },
+    "timestamp": "2026-06-21T18:19:30.770719",
+    "status": "updated"
+  },
+  {
+    "engine": "whistleblower_leaker_protection_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "upsell_opportunity_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "price_optimization_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "undersea_cable_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "medical_experimentation_ethics_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "witch_hunt_accusation_persecution_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "water_pollution_environmental_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "housing_rights_forced_evictions_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "pandemic_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_customer_lifecycle_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "street_children_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "prison_overcrowding_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "rep_activity_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "water_sanitation_access_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "shadow_economy_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_buyer_intent_signal_decay_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_rep_burnout_attrition_risk_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "social_protection_engine",
+    "entities_evaluated": 8,
+    "avg_reward": 1.0,
+    "weight_delta": {
+      "sub1": 0.0,
+      "sub2": 0.0,
+      "sub3": 0.0,
+      "sub4": 0.0
+    },
+    "new_weights": {
+      "sub1": 0.3,
+      "sub2": 0.25,
+      "sub3": 0.25,
+      "sub4": 0.2,
+      "updated_at": "2026-06-21T18:19:30.803850",
+      "engine": "social_protection_engine"
+    },
+    "timestamp": "2026-06-21T18:19:30.803809",
+    "status": "updated"
+  },
+  {
+    "engine": "forced_disappearance_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "digital_surveillance_privacy_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "indigenous_data_sovereignty_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "corporate_impunity_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_rep_burnout_disengagement_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "elder_care_aging_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "housing_forced_evictions_gentrification_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "food_sovereignty_famine_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_competitive_win_loss_pattern_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "crm_data_quality_risk_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "semantic_knowledge_graph_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "internet_shutdown_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "polycrisis_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "afrodescendant_reparations_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "microplastics_health_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "cultural_genocide_heritage_destruction_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "poverty_criminalization_anti_homeless_laws_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "strategic_foresight_simulation_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_coaching_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "refugee_digital_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "proxy_warfare_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "migrant_worker_labor_exploitation_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "gig_economy_fragility_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "revenue_leakage_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sexual_reproductive_health_rights_engine",
+    "entities_evaluated": 8,
+    "avg_reward": -0.0625,
+    "weight_delta": {
+      "sub1": 0.0333,
+      "sub2": -0.0027,
+      "sub3": -0.0027,
+      "sub4": -0.028
+    },
+    "new_weights": {
+      "sub1": 0.3333,
+      "sub2": 0.2473,
+      "sub3": 0.2473,
+      "sub4": 0.172,
+      "updated_at": "2026-06-21T18:19:30.853098",
+      "engine": "sexual_reproductive_health_rights_engine"
+    },
+    "timestamp": "2026-06-21T18:19:30.852992",
+    "status": "updated"
+  },
+  {
+    "engine": "platform_labor_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "quota_fairness_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "juvenile_justice_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "leprosy_affected_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_competitive_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_expansion_revenue_signal_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_multi_channel_engagement_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "toxic_waste_environmental_racism_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "synthetic_reality_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "neuro_economic_decision_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "prison_reform_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "fractional_ownership_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "account_penetration_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "forced_disappearance_extrajudicial_killing_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "prison_conditions_torture_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "elderly_rights_age_discrimination_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "diaspora_weaponization_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "antipersonnel_mines_victim_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "indigenous_land_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "knowledge_gap_skills_analysis_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "migrant_worker_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "exponential_tech_convergence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "strategic_risk_governance_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "climate_justice_engine",
+    "entities_evaluated": 8,
+    "avg_reward": 1.0,
+    "weight_delta": {
+      "sub1": 0.0,
+      "sub2": 0.0,
+      "sub3": 0.0,
+      "sub4": 0.0
+    },
+    "new_weights": {
+      "sub1": 0.3,
+      "sub2": 0.25,
+      "sub3": 0.25,
+      "sub4": 0.2,
+      "updated_at": "2026-06-21T18:19:30.908088",
+      "engine": "climate_justice_engine"
+    },
+    "timestamp": "2026-06-21T18:19:30.908049",
+    "status": "updated"
+  },
+  {
+    "engine": "land_mine_cluster_munitions_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "lgbtq_rights_criminalization_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "artisanal_mining_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "neurodiversity_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_champion_stability_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "colonial_reparations_memory_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "environmental_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "global_health_security_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "debt_trap_diplomacy_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "digital_divide_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "data_analytics_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "competitor_win_loss_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "stateless_persons_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "counterterrorism_abuse_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "domestic_violence_engine",
+    "entities_evaluated": 8,
+    "avg_reward": 1.0,
+    "weight_delta": {
+      "sub1": 0.0,
+      "sub2": 0.0,
+      "sub3": 0.0,
+      "sub4": 0.0
+    },
+    "new_weights": {
+      "sub1": 0.3,
+      "sub2": 0.25,
+      "sub3": 0.25,
+      "sub4": 0.2,
+      "updated_at": "2026-06-21T18:19:30.936019",
+      "engine": "domestic_violence_engine"
+    },
+    "timestamp": "2026-06-21T18:19:30.935980",
+    "status": "updated"
+  },
+  {
+    "engine": "sales_rep_retention_risk_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_territory_coverage_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "space_militarization_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "crypto_financial_crime_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "maritime_piracy_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "ocean_acidification_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_pricing_confidence_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "psychedelic_medicine_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_quota_attainment_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "child_trafficking_exploitation_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "gender_based_violence_engine",
+    "entities_evaluated": 8,
+    "avg_reward": 1.0,
+    "weight_delta": {
+      "sub1": 0.0,
+      "sub2": 0.0,
+      "sub3": 0.0,
+      "sub4": 0.0
+    },
+    "new_weights": {
+      "sub1": 0.3,
+      "sub2": 0.25,
+      "sub3": 0.25,
+      "sub4": 0.2,
+      "updated_at": "2026-06-21T18:19:30.962055",
+      "engine": "gender_based_violence_engine"
+    },
+    "timestamp": "2026-06-21T18:19:30.962015",
+    "status": "updated"
+  },
+  {
+    "engine": "lawfare_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "refugee_integration_inclusion_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_process_velocity_anomaly_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "nuclear_weapons_humanitarian_impact_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "augmented_reality_neural_interface_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "agribusiness_land_grab_community_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "bonded_labor_debt_slavery_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "femicide_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "menopause_workplace_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_price_sensitivity_negotiation_leverage_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "right_to_food_engine",
+    "entities_evaluated": 8,
+    "avg_reward": 1.0,
+    "weight_delta": {
+      "sub1": 0.0,
+      "sub2": 0.0,
+      "sub3": 0.0,
+      "sub4": 0.0
+    },
+    "new_weights": {
+      "sub1": 0.3,
+      "sub2": 0.25,
+      "sub3": 0.25,
+      "sub4": 0.2,
+      "updated_at": "2026-06-21T18:19:30.982607",
+      "engine": "right_to_food_engine"
+    },
+    "timestamp": "2026-06-21T18:19:30.982566",
+    "status": "updated"
+  },
+  {
+    "engine": "womens_rights_gender_based_violence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "genetic_discrimination_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sexual_violence_conflict_weapon_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "racial_profiling_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "roma_traveller_rights_engine",
+    "entities_evaluated": 8,
+    "avg_reward": 1.0,
+    "weight_delta": {
+      "sub1": 0.0,
+      "sub2": 0.0,
+      "sub3": 0.0,
+      "sub4": 0.0
+    },
+    "new_weights": {
+      "sub1": 0.3,
+      "sub2": 0.25,
+      "sub3": 0.25,
+      "sub4": 0.2,
+      "updated_at": "2026-06-21T18:19:30.989350",
+      "engine": "roma_traveller_rights_engine"
+    },
+    "timestamp": "2026-06-21T18:19:30.989304",
+    "status": "updated"
+  },
+  {
+    "engine": "sales_objection_handling_effectiveness_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "social_media_platform_accountability_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "bio_digital_convergence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "techno_feudalism_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "complexity_horizon_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "energy_poverty_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "logistics_prediction_flow_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "demographic_winter_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "eco_grief_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "disability_rights_social_exclusion_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "criminal_state_capture_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "pricing_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "insurance_climate_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "email_personalization_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "rare_disease_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "synthetic_consciousness_alignment_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_coaching_effectiveness_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "food_sovereignty_right_to_food_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "organ_trafficking_transplant_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "predictive_talent_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_buyer_response_latency_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "organ_trafficking_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "famine_weaponization_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_forecast_sandbagging_detection_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "supply_chain_fragility_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "climate_displacement_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "account_scoring_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "economic_social_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "nuclear_weapons_disarmament_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_discount_leakage_margin_erosion_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "facial_recognition_surveillance_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "ai_autonomous_weapons_human_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "bioethics_engine",
+    "entities_evaluated": 8,
+    "avg_reward": 1.0,
+    "weight_delta": {
+      "sub1": 0.0,
+      "sub2": 0.0,
+      "sub3": 0.0,
+      "sub4": 0.0
+    },
+    "new_weights": {
+      "sub1": 0.3,
+      "sub2": 0.25,
+      "sub3": 0.25,
+      "sub4": 0.2,
+      "updated_at": "2026-06-21T18:19:31.065487",
+      "engine": "bioethics_engine"
+    },
+    "timestamp": "2026-06-21T18:19:31.065447",
+    "status": "updated"
+  },
+  {
+    "engine": "sovereign_ai_governance_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "agent_orchestrator_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "youth_bulge_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "forecast_accuracy_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "cultural_chronology_microculture_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "anti_corruption_whistleblower_protection_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sanitation_rights_access_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "reproductive_rights_bodily_autonomy_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "economic_domestic_abuse_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "human_trafficking_labor_exploitation_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "dao_governance_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "psychographic_profiling_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "solitary_confinement_isolation_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_deal_desk_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "anti_money_laundering_human_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "colonial_reparations_transitional_justice_engine",
+    "entities_evaluated": 8,
+    "avg_reward": 1.0,
+    "weight_delta": {
+      "sub1": 0.0,
+      "sub2": 0.0,
+      "sub3": 0.0,
+      "sub4": 0.0
+    },
+    "new_weights": {
+      "sub1": 0.3,
+      "sub2": 0.25,
+      "sub3": 0.25,
+      "sub4": 0.2,
+      "updated_at": "2026-06-21T18:19:31.099247",
+      "engine": "colonial_reparations_transitional_justice_engine"
+    },
+    "timestamp": "2026-06-21T18:19:31.099212",
+    "status": "updated"
+  },
+  {
+    "engine": "bioethics_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "tax_justice_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "gender_pay_gap_economic_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_rep_burnout_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "human_trafficking_labor_exploitation_rights_engine",
+    "entities_evaluated": 8,
+    "avg_reward": 1.0,
+    "weight_delta": {
+      "sub1": 0.0,
+      "sub2": 0.0,
+      "sub3": 0.0,
+      "sub4": 0.0
+    },
+    "new_weights": {
+      "sub1": 0.3,
+      "sub2": 0.25,
+      "sub3": 0.25,
+      "sub4": 0.2,
+      "updated_at": "2026-06-21T18:19:31.108537",
+      "engine": "human_trafficking_labor_exploitation_rights_engine"
+    },
+    "timestamp": "2026-06-21T18:19:31.108500",
+    "status": "updated"
+  },
+  {
+    "engine": "seafarers_maritime_labor_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "nps_satisfaction_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_reference_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "customer_sentiment_decay_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "meeting_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "child_labor_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "geoengineering_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "sales_quota_attainment_pattern_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "information_fluid_dynamics_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "quantum_social_intelligence_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "lgbtq_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "freedom_assembly_association_rights_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  },
+  {
+    "engine": "pretrial_detention_engine",
+    "status": "skipped",
+    "reason": "no entities loaded"
+  }
+]

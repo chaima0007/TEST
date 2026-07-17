@@ -1,0 +1,77 @@
+{
+  "module": "protection_personne",
+  "titre": "Personnes vulnérables — administration de biens & protection",
+  "domaine": "Protection des personnes vulnérables",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Protection judiciaire des majeurs (Code civil) — administration de biens et/ou de la personne, ordonnée par le juge de paix",
+    "portee": "Protéger une personne majeure devenue incapable de gérer ses affaires",
+    "source_officielle": "https://justice.belgium.be/fr/themes_et_dossiers/personnes_et_familles/protection_des_majeurs/protection_judiciaire"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Pour une situation concrète, le juge de paix et un notaire/avocat peuvent vous guider.",
+  "faits": [
+    {
+      "id": "PROT-ADMIN-001",
+      "question": "Comment protéger un proche qui ne peut plus gérer ses affaires (maladie, handicap, grand âge) ?",
+      "reponse": "On peut demander une mesure de protection judiciaire : l'administration de biens et/ou de la personne, ordonnée par le juge de paix. Le juge désigne un administrateur (en priorité un proche) qui assiste ou représente la personne. La protection est faite « sur mesure » : le juge précise ce que la personne peut encore faire seule et ce pour quoi elle est aidée. Cela évite les abus tout en respectant son autonomie.",
+      "reference_legale": "Code civil — protection judiciaire des majeurs (administration de biens et de la personne)",
+      "contacts": [
+        {"nom": "Juge de paix du domicile de la personne", "pour": "demander la mesure"},
+        {"nom": "Notaire / avocat", "pour": "conseil"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://justice.belgium.be/fr/themes_et_dossiers/personnes_et_familles/protection_des_majeurs/protection_judiciaire", "intitule": "SPF Justice — Protection judiciaire"},
+        {"type": "officiel", "url": "https://justice.belgium.be/fr/themes_et_dossiers/personnes_et_familles/protection_des_majeurs/mission_de_l_administrateur", "intitule": "SPF Justice — Mission de l'administrateur"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "PROT-DEMANDE-001",
+      "question": "Qui peut demander la mise sous administration, et comment ?",
+      "reponse": "La demande peut être introduite par la personne elle-même, sa famille, un autre intéressé (voisin, aidant, assistant social) ou le procureur du Roi. Elle se dépose auprès du juge de paix du lieu de résidence de la personne à protéger, avec un certificat médical circonstancié. Le juge entend la personne autant que possible. On peut aussi anticiper de son vivant via une « déclaration » désignant à l'avance son administrateur de confiance.",
+      "reference_legale": "Code civil — demande de protection judiciaire ; mandat de protection extrajudiciaire",
+      "contacts": [
+        {"nom": "Justice de paix", "pour": "introduire la requête"},
+        {"nom": "Médecin", "pour": "certificat médical circonstancié"}
+      ],
+      "alerte_delai": "En cas d'urgence (personne vulnérable exposée à des abus financiers), saisissez vite le juge de paix.",
+      "sources": [
+        {"type": "officiel", "url": "https://justice.belgium.be/fr/themes_et_dossiers/personnes_et_familles/protection_des_majeurs/protection_judiciaire/demander_une_mesure_de_protection_judiciaire", "intitule": "SPF Justice — Demander une mesure de protection"},
+        {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr/question/ou-et-comment-introduire-la-demande-de-mise-sous-administration-de-biens-etou-de-la", "intitule": "Droits Quotidiens — Introduire la demande"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "PROT-MANDAT-EXTRA-001",
+      "question": "Puis-je choisir à l'avance qui gérera mes affaires si je perds mes capacités ?",
+      "reponse": "Oui, grâce au mandat de protection extrajudiciaire : tant que vous êtes capable, vous désignez vous-même une ou plusieurs personnes de confiance qui pourront gérer vos biens (et, dans une certaine mesure, des aspects personnels) le jour où vous ne pourrez plus le faire. C'est une alternative souple à l'administration judiciaire : si un mandat valable existe et suffit, le juge de paix n'impose pas forcément de mesure judiciaire. Le mandat doit être enregistré dans un registre central tenu par le notariat pour produire ses effets ; un notaire est nécessaire si le mandat porte sur des actes pour lesquels la loi l'exige. Vous pouvez en fixer l'étendue et les limites.",
+      "reference_legale": "Code civil — mandat de protection extrajudiciaire (art. 489 et suivants), introduit par la loi du 17 mars 2013 réformant les régimes d'incapacité",
+      "contacts": [
+        {"nom": "Notaire", "pour": "rédaction et enregistrement du mandat extrajudiciaire"},
+        {"nom": "Juge de paix", "pour": "contrôle si le mandat devient insuffisant"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://justice.belgium.be/fr/themes_et_dossiers/personnes_et_familles/protection_des_majeurs", "intitule": "SPF Justice — Protection des majeurs (mandat extrajudiciaire)"},
+        {"type": "secondaire", "url": "https://www.notaire.be", "intitule": "Notaire.be — Mandat de protection extrajudiciaire"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "PROT-CONTROLE-001",
+      "question": "Comment éviter qu'un administrateur abuse de son pouvoir ?",
+      "reponse": "L'administrateur est contrôlé par le juge de paix. Il doit lui remettre un rapport de sa gestion (notamment un rapport initial et un rapport annuel) et agir dans le seul intérêt de la personne protégée. Pour les actes les plus importants — par exemple vendre un bien immobilier, faire une donation, contracter un emprunt ou renoncer à une succession — il doit obtenir une autorisation spéciale préalable du juge de paix. La personne protégée, un membre de sa famille ou la personne de confiance peuvent signaler tout problème au juge, qui peut adapter la mesure ou remplacer l'administrateur.",
+      "reference_legale": "Code civil — mission et contrôle de l'administrateur, actes soumis à autorisation du juge de paix (art. 499 et suivants)",
+      "contacts": [
+        {"nom": "Juge de paix", "pour": "signaler un problème, demander le remplacement de l'administrateur"},
+        {"nom": "Personne de confiance", "pour": "relayer la voix de la personne protégée"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://justice.belgium.be/fr/themes_et_dossiers/personnes_et_familles/protection_des_majeurs/mission_de_l_administrateur", "intitule": "SPF Justice — Mission et contrôle de l'administrateur"}
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

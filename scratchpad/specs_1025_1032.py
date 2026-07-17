@@ -1,0 +1,118 @@
+# Specs waves 1025-1032 — 24 nouveaux moteurs de droits humains
+# Préfixes vérifiés : JSOR→PGRV, NBSC→NAOR (0 collision après corrections), 0 doublon interne
+# Remplacements : plea_bargain(existe)→prosecutorial_misconduct ; juvenile_sex_registry(existe)→prison_grievance ;
+#                 mandatory_sex_registry(doublon)→prison_grievance_retalia ; newborn_consent(trop proche)→neonatal_opioid
+# (filename, title, wave, desc, prefix, idx)
+SPECS = [
+    # Wave 1025 — Disparités raciales & santé spécifiques
+    ("racial_cardio_health_disparity_rights_engine.py",
+     "Disparités cardiovasculaires raciales & sous-traitement des patients noirs", "Wave 1025",
+     "Patients noirs souffrant de maladies cardiaques moins bien traités en raison de biais raciaux médicaux implicites.",
+     "RHDC", "racial_cardio_disparity"),
+    ("black_maternal_mortality_urban_rights_engine.py",
+     "Mortalité maternelle des femmes noires en milieu urbain & biais hospitaliers", "Wave 1025",
+     "Femmes noires urbaines mourant 3 fois plus lors de l'accouchement que les blanches malgré un accès aux soins.",
+     "BMMR", "black_maternal_urban"),
+    ("latino_mental_health_stigma_rights_engine.py",
+     "Stigmatisation de la santé mentale dans les communautés latinos & accès aux soins", "Wave 1025",
+     "Communautés latines évitant les soins psychiatriques en raison de la stigmatisation culturelle et de la barrière linguistique.",
+     "LMHS", "latino_mental_stigma"),
+
+    # Wave 1026 — Droits à l'éducation (inédits)
+    ("college_financial_aid_appeal_rights_engine.py",
+     "Appels des aides financières universitaires & opacité des processus", "Wave 1026",
+     "Étudiants en difficulté refusés dans leurs appels d'aide financière sans processus transparent ni recours.",
+     "CFAA", "college_aid_appeal"),
+    ("athlete_scholarship_revocation_rights_engine.py",
+     "Révocation des bourses sportives & droits des athlètes universitaires", "Wave 1026",
+     "Athlètes universitaires perdant leurs bourses pour blessures ou performances sans procédure d'appel équitable.",
+     "SDRA", "scholarship_revocation"),
+    ("vocational_school_fraud_rights_engine.py",
+     "Fraude des écoles professionnelles privées & droits des étudiants lésés", "Wave 1026",
+     "Étudiants endettés après des formations professionnelles privées prometteuses n'offrant pas les emplois annoncés.",
+     "VSFR", "vocational_fraud"),
+
+    # Wave 1027 — Eau, énergie & logement (inédits)
+    ("stormwater_fee_low_income_rights_engine.py",
+     "Frais de gestion des eaux pluviales & fardeau sur les ménages pauvres", "Wave 1027",
+     "Propriétaires à faibles revenus assommés par des frais d'eau pluviale croissants sans programme d'exemption.",
+     "SWFL", "stormwater_fee_low"),
+    ("energy_efficiency_renter_split_rights_engine.py",
+     "Split incitation énergie & locataires exclus des programmes d'efficacité", "Wave 1027",
+     "Locataires incapables de bénéficier des aides à l'efficacité énergétique qui vont au propriétaire non-résident.",
+     "ERSP", "energy_renter_split"),
+    ("utility_winter_disconnect_rights_engine.py",
+     "Coupures d'eau et d'énergie en hiver & protection des ménages vulnérables", "Wave 1027",
+     "Familles dont les services sont coupés en plein hiver faute de protections saisonnières dans certains États.",
+     "UDWN", "utility_winter_cutoff"),
+
+    # Wave 1028 — Justice pénale & droits des détenus (inédits)
+    ("prosecutorial_misconduct_rights_engine.py",
+     "Faute professionnelle des procureurs & absence d'imputabilité pénale", "Wave 1028",
+     "Procureurs dissimulant des preuves favorables à la défense sans conséquences disciplinaires ou criminelles.",
+     "PRMR", "prosecutorial_misconduct"),
+    ("prison_grievance_retaliation_rights_engine.py",
+     "Représailles carcérales après dépôt de griefs & droits des détenus", "Wave 1028",
+     "Détenus transférés ou sanctionnés après avoir utilisé le système interne de griefs pour signaler des abus.",
+     "PGRV", "prison_grievance_retalia"),
+    ("prison_labor_minimum_wage_rights_engine.py",
+     "Travail carcéral & droits des détenus à un salaire minimum légal", "Wave 1028",
+     "Détenus contraints de travailler pour des entreprises privées payés quelques cents l'heure sans droit du travail.",
+     "PLWR", "prison_labor_wage"),
+
+    # Wave 1029 — Santé & systèmes hospitaliers (inédits)
+    ("ambulance_surprise_billing_rights_engine.py",
+     "Facturation surprise d'ambulances & droits des patients d'urgence", "Wave 1029",
+     "Patients recevant des factures exorbitantes d'ambulances hors réseau lors d'urgences sans choix possible.",
+     "ABSB", "ambulance_surprise_bill"),
+    ("emergency_room_boarding_rights_engine.py",
+     "Blocage aux urgences & crise de lits psychiatriques dans les hôpitaux", "Wave 1029",
+     "Patients psychiatriques bloqués aux urgences pendant des jours en l'absence de lits psychiatriques disponibles.",
+     "ERBC", "er_psychiatric_boarding"),
+    ("hospital_merger_rural_access_rights_engine.py",
+     "Fusions hospitalières & fermeture de services dans les zones rurales", "Wave 1029",
+     "Fusions hospitalières entraînant la fermeture de maternités et urgences rurales sans alternative accessible.",
+     "HMRC", "hospital_merger_rural"),
+
+    # Wave 1030 — Travail & droits des travailleurs (inédits)
+    ("misclassified_courier_rights_engine.py",
+     "Coursiers et livreurs mal classifiés & droits à la protection sociale", "Wave 1030",
+     "Livreurs à vélo et coursiers traités comme indépendants sans protection accident ni sécurité sociale.",
+     "MCCR", "courier_misclass"),
+    ("volunteer_firefighter_rights_engine.py",
+     "Droits des pompiers volontaires & protection contre les représailles patronales", "Wave 1030",
+     "Pompiers volontaires licenciés par leurs employeurs civils pour leur indisponibilité lors d'incendies.",
+     "VFDR", "volunteer_firefighter"),
+    ("paid_sick_leave_gap_rights_engine.py",
+     "Lacunes des lois sur les congés maladie payés & exclusions sectorielles", "Wave 1030",
+     "Travailleurs de certains secteurs exclus des lois sur les congés maladie payés selon leur État ou taille d'entreprise.",
+     "PSGL", "paid_sick_leave_gap"),
+
+    # Wave 1031 — Vie privée & objets connectés (inédits)
+    ("iot_device_data_collection_rights_engine.py",
+     "Collecte de données par les objets connectés & droits des consommateurs", "Wave 1031",
+     "Appareils connectés domestiques transmettant des données comportementales sans consentement clair des utilisateurs.",
+     "IOTD", "iot_data_collect"),
+    ("smart_tv_surveillance_rights_engine.py",
+     "Surveillance par les télévisions intelligentes & vie privée au domicile", "Wave 1031",
+     "Téléviseurs intelligents enregistrant les habitudes de visionnage et conversations sans opt-out facile.",
+     "STSV", "smart_tv_surveil"),
+    ("connected_car_data_privacy_rights_engine.py",
+     "Données des voitures connectées & vie privée des conducteurs", "Wave 1031",
+     "Constructeurs automobiles collectant et vendant des données de localisation et conduite sans consentement.",
+     "CCDP", "connected_car_data"),
+
+    # Wave 1032 — Protection des enfants (inédits)
+    ("mandatory_reporter_failure_rights_engine.py",
+     "Échec des signalants obligatoires & droits des enfants victimes d'abus", "Wave 1032",
+     "Enfants abusés dont les cas n'ont pas été signalés par des enseignants ou médecins sans conséquences légales.",
+     "MRFL", "mandatory_reporter"),
+    ("safe_haven_infant_law_rights_engine.py",
+     "Lois Safe Haven pour nourrissons & lacunes de protection des bébés abandonnés", "Wave 1032",
+     "Nourrissons abandonnés hors des lieux Safe Haven légaux créant une zone grise légale pour les mères en détresse.",
+     "ISHL", "safe_haven_infant"),
+    ("neonatal_opioid_withdrawal_rights_engine.py",
+     "Nouveau-nés en sevrage aux opioïdes & droits à des soins appropriés", "Wave 1032",
+     "Bébés nés dépendants aux opioïdes privés de protocoles de soins standardisés selon l'hôpital et l'État.",
+     "NAOR", "neonatal_opioid"),
+]

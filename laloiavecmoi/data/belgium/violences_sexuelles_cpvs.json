@@ -1,0 +1,69 @@
+{
+  "module": "violences_sexuelles_cpvs",
+  "titre": "Violences sexuelles — aide et CPVS",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code pénal — infractions contre l'intégrité sexuelle (réforme par la loi du 21 mars 2022)",
+    "portee": "Citoyens en Belgique",
+    "source_officielle": "https://cpvs.belgium.be/fr"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Vous n'êtes jamais responsable des violences subies. En danger : 112. Pour un accompagnement : un CPVS ou une ligne d'écoute.",
+  "faits": [
+    {
+      "id": "VSEX-001",
+      "question": "Où trouver de l'aide après des violences sexuelles ?",
+      "reponse": "Les Centres de Prise en charge des Violences Sexuelles (CPVS) offrent, en un seul lieu et 7 jours sur 7, des soins médicaux, un soutien psychologique et un accompagnement par une équipe spécialement formée. Ils sont accessibles à toute victime, quels que soient son origine, son âge, son identité de genre ou son statut de séjour. En danger immédiat, appelez le 112.",
+      "reference_legale": "Code pénal — infractions contre l'intégrité sexuelle (loi du 21 mars 2022 réformant le droit pénal sexuel)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://cpvs.belgium.be/fr",
+          "intitule": "Centres de Prise en charge des Violences Sexuelles (CPVS)"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "VSEX-002",
+      "question": "Puis-je porter plainte et faire constater les faits au CPVS ?",
+      "reponse": "Oui. Dans un CPVS, vous pouvez, si vous le souhaitez, faire réaliser un examen médico-légal (avec prélèvement et conservation de preuves) et déposer plainte sur place auprès d'un service de police spécialisé. Rien n'est obligatoire : vous restez libre de vos choix et de leur rythme.",
+      "reference_legale": "Code d'instruction criminelle (dépôt de plainte) ; Code pénal — infractions sexuelles",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.cpvs.belgium.be/fr/contact",
+          "intitule": "CPVS — Accès et démarches"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "VSEX-003",
+      "question": "Existe-t-il une aide d'écoute gratuite ?",
+      "reponse": "Oui. Des services d'écoute (par exemple SOS Viol) offrent une aide anonyme, confidentielle et gratuite — soutien psychologique, accompagnement social et informations juridiques — accessibles aux victimes comme à leurs proches, par téléphone ou par tchat.",
+      "reference_legale": "Code pénal — infractions contre l'intégrité sexuelle (cadre de la prise en charge des victimes)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://cpvs.belgium.be/fr",
+          "intitule": "CPVS — Aide aux victimes de violences sexuelles"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "VSEX-CONSENTEMENT-001",
+      "question": "Qu'a changé la réforme du droit pénal sexuel sur le consentement ?",
+      "reponse": "La réforme du droit pénal sexuel (loi du 21 mars 2022) place le consentement au cœur de la définition des infractions sexuelles. Le principe : tout acte à caractère sexuel suppose le consentement libre de chaque personne. Ce consentement doit être donné librement, il s'apprécie selon les circonstances, il ne peut pas être déduit de la simple absence de résistance ou du silence, et il peut être retiré à tout moment. Il n'y a pas de consentement valable lorsque la personne est, par exemple, sans connaissance, endormie, sous l'effet de la peur ou de la contrainte. La protection des mineurs est renforcée (seuils d'âge précis). Concrètement : sans consentement, il y a infraction — la responsabilité pèse sur l'auteur, jamais sur la victime.",
+      "reference_legale": "Code pénal — droit pénal sexuel fondé sur le consentement (réforme par la loi du 21 mars 2022)",
+      "sources": [
+        {"type": "officiel", "url": "https://cpvs.belgium.be/fr", "intitule": "CPVS — Violences sexuelles et consentement"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/justice/victime", "intitule": "Belgium.be — Victime : vos droits"}
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

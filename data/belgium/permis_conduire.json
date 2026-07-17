@@ -1,0 +1,110 @@
+{
+  "module": "permis_conduire",
+  "titre": "Permis de conduire",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Arrêté royal du 23 mars 1998 relatif au permis de conduire ; loi du 16 mars 1968 relative à la police de la circulation routière",
+    "portee": "Conducteurs résidant en Belgique. La délivrance se fait via la commune ; l'organisation des examens et des auto-écoles relève des Régions",
+    "source_officielle": "https://mobilit.belgium.be/fr/route/conduire/permis-de-conduire"
+  },
+  "derniere_revue": "2026-06-29",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information juridique générale, à jour à la date de revue. Certaines conditions (examens, auto-écoles) relèvent des Régions et peuvent varier ; vérifiez auprès de votre Région.",
+  "faits": [
+    {
+      "id": "PERMIS-001",
+      "question": "Qui peut obtenir un permis de conduire belge et où le demander ?",
+      "reponse": "Peuvent obtenir un permis belge les personnes inscrites au registre de la population (ou des étrangers) d'une commune belge et qui y ont leur résidence normale. Le permis lui-même se demande à votre administration communale. Pour conduire en Belgique, vous devez être titulaire et porteur d'un permis valable pour la catégorie du véhicule.",
+      "reference_legale": "Arrêté royal du 23 mars 1998 relatif au permis de conduire, art. 3",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://mobilit.belgium.be/fr/route/conduire/permis-de-conduire",
+          "intitule": "SPF Mobilité — Permis de conduire"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/cgi_loi/article.pl?language=fr&numac_search=1998014078",
+          "intitule": "Justel — AR du 23 mars 1998 relatif au permis de conduire"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "PERMIS-002",
+      "question": "Qu'est-ce que le permis de conduire provisoire (catégorie B) ?",
+      "reponse": "Après avoir réussi l'examen théorique, vous pouvez demander un permis de conduire provisoire pour vous entraîner avant l'examen pratique. Pour la catégorie B, il existe plusieurs modèles (notamment le modèle 36, dès 17 ans, et le modèle 18). Avec un permis provisoire, vous ne pouvez conduire qu'en Belgique, et des conditions précises s'appliquent à chaque modèle.",
+      "reference_legale": "Arrêté royal du 10 juillet 2006 relatif au permis de conduire pour les véhicules de catégorie B",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://mobilit.belgium.be/fr/route/conduire/permis-de-conduire/permis-de-conduire-belge/permis-de-conduire-provisoire-categorie",
+          "intitule": "SPF Mobilité — Permis de conduire provisoire catégorie B"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "PERMIS-003",
+      "question": "Combien de temps mon examen théorique reste-t-il valable ?",
+      "reponse": "La réussite de l'examen théorique reste valable 3 ans. Pendant ce délai, vous pouvez demander un permis provisoire et présenter l'examen pratique. Au-delà, l'examen théorique doit être repassé.",
+      "reference_legale": "Arrêté royal du 23 mars 1998 relatif au permis de conduire (validité de l'examen théorique)",
+      "alerte_delai": "Examen théorique valable 3 ans : présentez l'examen pratique avant l'échéance.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://mobilit.belgium.be/fr/route/conduire/permis-de-conduire/permis-de-conduire-belge/permis-de-conduire-provisoire-categorie",
+          "intitule": "SPF Mobilité — Validité de l'examen théorique"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "PERMIS-004",
+      "question": "Les règles du permis sont-elles les mêmes dans toute la Belgique ?",
+      "reponse": "Les grandes catégories et le document restent fédéraux, mais depuis la 6e réforme de l'État, les Régions (Wallonie, Bruxelles, Flandre) sont compétentes pour l'organisation des examens (théorique et pratique) et des auto-écoles. Les conditions d'accès aux examens peuvent donc varier d'une Région à l'autre : vérifiez les règles de votre Région.",
+      "reference_legale": "Arrêté royal du 23 mars 1998 (cadre fédéral) ; compétences régionales en matière d'examens et d'auto-écoles",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://mobilit.belgium.be/fr/route/conduire/permis-de-conduire",
+          "intitule": "SPF Mobilité — Conditions des Régions"
+        },
+        {
+          "type": "officiel",
+          "url": "https://mobilite.wallonie.be/home/je-suis/un-citoyen/en-voiture/services-et-solutions/permis-de-conduire.html",
+          "intitule": "Mobilité Wallonie — Permis de conduire"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.vlaanderen.be/",
+          "intitule": "Vlaanderen — rijbewijs/examens (Flandre)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://be.brussels/",
+          "intitule": "be.brussels — permis et examens (Bruxelles)"
+        }
+      ],
+      "date_verification": "2026-06-29",
+      "contacts": [
+        {
+          "nom": "Mobilité Wallonie",
+          "lien": "https://mobilite.wallonie.be/",
+          "pour": "examens et auto-écoles en Wallonie"
+        },
+        {
+          "nom": "Vlaanderen — Mobiliteit (rijbewijs)",
+          "lien": "https://www.vlaanderen.be/",
+          "pour": "examens et rijopleiding en Flandre"
+        },
+        {
+          "nom": "Région de Bruxelles-Capitale (mobilité)",
+          "lien": "https://be.brussels/",
+          "pour": "examens et auto-écoles à Bruxelles"
+        }
+      ]
+    }
+  ]
+}

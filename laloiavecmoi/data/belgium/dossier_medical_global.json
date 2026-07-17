@@ -1,0 +1,73 @@
+{
+  "module": "dossier_medical_global",
+  "titre": "Dossier médical global (DMG)",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Arrêté royal du 23 mars 1982 (ticket modérateur) ; loi coordonnée du 14 juillet 1994 — dossier médical global",
+    "portee": "Citoyens en Belgique",
+    "source_officielle": "https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/facilites-financieres/dossier-medical-global"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information juridique générale, à jour à la date de revue. Les montants sont indexés : voir l'INAMI ou votre mutualité.",
+  "faits": [
+    {
+      "id": "DMG-001",
+      "question": "Qu'est-ce que le dossier médical global (DMG) ?",
+      "reponse": "Le DMG est un dossier tenu par votre médecin généraliste qui centralise vos données de santé. Il améliore votre suivi individuel et la concertation entre soignants, et il vous donne droit à un meilleur remboursement chez votre généraliste.",
+      "reference_legale": "Loi relative à l'assurance obligatoire soins de santé et indemnités, coordonnée le 14 juillet 1994 (dossier médical global)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/facilites-financieres/dossier-medical-global",
+          "intitule": "INAMI — Dossier médical global"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "DMG-002",
+      "question": "Quels avantages financiers procure le DMG ?",
+      "reponse": "Avec un DMG, votre part personnelle (ticket modérateur) chez votre généraliste est réduite (de l'ordre de 4 € en consultation, 1 € si vous bénéficiez de l'intervention majorée, et 0 € pour les bénéficiaires de l'intervention majorée de moins de 25 ans). Si vous avez au moins 75 ans ou êtes malade chronique, la part personnelle des visites à domicile est diminuée de 30 %. Le DMG coûte 32 € (depuis 2021), payés directement entre votre médecin et votre mutualité.",
+      "reference_legale": "Arrêté royal du 23 mars 1982 (réduction du ticket modérateur liée au DMG)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/facilites-financieres/dossier-medical-global",
+          "intitule": "INAMI — Avantages du DMG"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "DMG-003",
+      "question": "Comment l'ouvrir et combien de temps dure-t-il ?",
+      "reponse": "Lors d'une consultation ou d'une visite, demandez simplement à votre médecin généraliste d'ouvrir votre DMG. L'avantage reste valable jusqu'à la fin de la 2e année civile suivant l'ouverture, et votre mutualité prolonge automatiquement le DMG si vous consultez votre généraliste au moins une fois par an.",
+      "reference_legale": "Loi coordonnée du 14 juillet 1994 (gestion et prolongation du DMG)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/facilites-financieres/dossier-medical-global",
+          "intitule": "INAMI — Ouvrir et prolonger un DMG"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "DMG-ACCES-PARTAGE-001",
+      "question": "Puis-je accéder à mon dossier médical, et qui peut le consulter ?",
+      "reponse": "Oui. La loi sur les droits du patient vous donne le droit d'accéder à votre dossier médical et d'en obtenir une copie : adressez la demande à votre médecin ou à l'hôpital, qui doit y répondre rapidement. Vos données peuvent par ailleurs être partagées entre vos soignants via les réseaux de santé sécurisés (coffre-fort électronique), mais uniquement avec votre consentement éclairé et entre professionnels qui ont une relation de soins avec vous. Vous gardez le contrôle : vous pouvez consulter qui a accès, exclure un soignant, et retirer votre consentement. Ce partage améliore la continuité et la sécurité des soins (éviter les examens en double, connaître vos allergies et traitements).",
+      "reference_legale": "Loi du 22 août 2002 relative aux droits du patient (accès au dossier et consentement au partage des données de santé)",
+      "contacts": [
+        {"nom": "Votre médecin / l'hôpital", "pour": "accès et copie de votre dossier médical"},
+        {"nom": "Votre mutualité", "pour": "consentement éclairé au partage des données de santé"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.health.belgium.be/fr/sante/organisation-des-soins-de-sante/droits-des-patients", "intitule": "SPF Santé publique — Droits du patient (accès au dossier)"},
+        {"type": "officiel", "url": "https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/facilites-financieres/dossier-medical-global", "intitule": "INAMI — Dossier médical global"}
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

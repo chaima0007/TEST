@@ -1,0 +1,60 @@
+# .env.local — Caelum Partners CaelumSwarm™
+# Généré le 2026-06-22 08:27
+# NE JAMAIS COMMITTER CE FICHIER (il est dans .gitignore)
+
+# ============================================================
+# CAELUMSWARM API — REQUIS
+# ============================================================
+# URL de l'API CaelumSwarm backend (requis pour toutes les routes)
+# SWARM_API_URL=https://api.caelumpartners.com
+
+# URL publique CaelumSwarm (accessible côté client/browser)
+# NEXT_PUBLIC_SWARM_API_URL=https://api.caelumpartners.com
+
+
+# --------------------------------------------------
+# POSTGRESQL
+# --------------------------------------------------
+# URL de connexion PostgreSQL (format: postgresql://user:pass@host:5432/db)
+# DATABASE_URL=postgresql://caelum:password@localhost:5432/caelumswarm
+
+
+# --------------------------------------------------
+# AUTH DEMO
+# --------------------------------------------------
+# Email de démonstration pour les accès démo
+# DEMO_EMAIL=demo@caelumpartners.com
+
+# Mot de passe de démonstration (jamais en production)
+# DEMO_PASSWORD=demo2026!
+
+
+# --------------------------------------------------
+# COMPOSIO (EMAIL/CALENDAR)
+# --------------------------------------------------
+# Clé API Composio pour intégration Gmail/Google Calendar
+# COMPOSIO_API_KEY=comp_xxxxxxxxxxxxxxxxxxxx
+
+
+# --------------------------------------------------
+# OPENAI GPT-4
+# --------------------------------------------------
+# Clé API OpenAI pour fonctions IA avancées
+# OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxx
+
+
+# --------------------------------------------------
+# ANTHROPIC CLAUDE
+# --------------------------------------------------
+# Clé API Anthropic Claude pour agents IA
+# ANTHROPIC_API_KEY=sk-ant-xxxxxxxxxxxxxxxxxxxx
+
+
+# --------------------------------------------------
+# NEXTAUTH.JS
+# --------------------------------------------------
+# Secret JWT NextAuth (générer avec: openssl rand -base64 32)
+# NEXTAUTH_SECRET=Ge7dXPqHxYz...(32 chars random)
+
+# URL publique de l'application (pour les callbacks OAuth)
+# NEXTAUTH_URL=https://astounding-haupia-16b5a6.netlify.app

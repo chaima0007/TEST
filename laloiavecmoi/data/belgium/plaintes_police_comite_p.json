@@ -1,0 +1,73 @@
+{
+  "module": "plaintes_police_comite_p",
+  "titre": "Plainte contre la police (Comité P)",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi organique du 18 juillet 1991 du contrôle des services de police et de renseignements",
+    "portee": "Citoyens en Belgique",
+    "source_officielle": "https://www.police.be/5998/fr/contact/insatisfait-de-nos-services/formulaire-de-plainte"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information juridique générale, à jour à la date de revue. En danger immédiat : 112. Pour un fait pénal : un service de police ou le procureur du Roi.",
+  "faits": [
+    {
+      "id": "PLAINPOL-001",
+      "question": "Je suis mécontent d'une intervention policière : que faire ?",
+      "reponse": "Vous pouvez porter plainte. Selon le cas, adressez-vous directement à la zone de police concernée, au Comité permanent de contrôle des services de police (Comité P) ou à l'Inspection générale (AIG). Toute plainte est examinée et un retour vous est adressé.",
+      "reference_legale": "Loi organique du 18 juillet 1991 (contrôle des services de police)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.police.be/5998/fr/contact/insatisfait-de-nos-services/formulaire-de-plainte",
+          "intitule": "Police — Formulaire de plainte"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "PLAINPOL-002",
+      "question": "Qu'est-ce que le Comité P ?",
+      "reponse": "Le Comité permanent de contrôle des services de police (Comité P) est un organe de contrôle externe et indépendant, institué par la loi du 18 juillet 1991. Il veille au bon fonctionnement des services de police et au respect des droits fondamentaux, et il traite les plaintes des citoyens.",
+      "reference_legale": "Loi organique du 18 juillet 1991 (institution et missions du Comité P)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.police.be/5998/fr/contact/insatisfait-de-nos-services/formulaire-de-plainte",
+          "intitule": "Police — Contrôle des services de police (Comité P, AIG)"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "PLAINPOL-003",
+      "question": "Et si les faits sont graves (coups, corruption…) ?",
+      "reponse": "Si les faits reprochés constituent une infraction pénale (coups et blessures, faux, corruption…), adressez-vous à un service de police ou écrivez au procureur du Roi. Pour qu'une plainte « qualité de service » soit traitée, elle doit notamment être claire et concerner des faits récents (la police fédérale applique un délai de l'ordre de quelques mois).",
+      "reference_legale": "Loi organique du 18 juillet 1991 ; Code d'instruction criminelle (plainte pénale)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.police.be/5998/fr/contact/insatisfait-de-nos-services/formulaire-de-plainte",
+          "intitule": "Police — Plaintes et faits pénaux"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "PLAINPOL-DROITS-AUDITION-001",
+      "question": "Quels sont mes droits lors d'un contrôle ou d'une audition par la police ?",
+      "reponse": "Vous avez des droits, et les connaître aide aussi à constituer une plainte si besoin. Lors d'une audition, vous avez le droit d'être informé brièvement des faits, le droit de garder le silence et de ne pas vous accuser vous-même, et le droit de signaler une erreur dans le procès-verbal (qu'on doit vous laisser relire). Pour des faits punissables, vous avez en principe droit à la consultation et à l'assistance d'un avocat avant et pendant l'audition (droits dits « Salduz ») ; si vous êtes privé de liberté, ce droit est renforcé. Vous pouvez aussi demander qu'un fait à votre décharge soit acté. Notez la date, l'heure et, si possible, le numéro/service des agents : ces éléments sont utiles pour une éventuelle plainte au Comité P.",
+      "reference_legale": "Code d'instruction criminelle — droits de la personne auditionnée et assistance de l'avocat (loi « Salduz » du 13 août 2011)",
+      "contacts": [
+        {"nom": "Avocat / Bureau d'aide juridique", "pour": "assistance lors d'une audition (gratuite selon revenus)"},
+        {"nom": "Comité P", "lien": "https://www.police.be/5998/fr/contact/insatisfait-de-nos-services/formulaire-de-plainte", "pour": "plainte sur le déroulement d'une intervention"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/justice/victime", "intitule": "Belgium.be — Droits dans la procédure pénale"},
+        {"type": "officiel", "url": "https://www.police.be/5998/fr/contact/insatisfait-de-nos-services/formulaire-de-plainte", "intitule": "Police — Plainte et contrôle des services"}
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

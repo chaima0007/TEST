@@ -1,0 +1,264 @@
+{
+  "genere_le": "2026-07-17T16:03:11.418779+00:00",
+  "monte_carlo_n": 20000,
+  "corpus": {
+    "reponses": 783,
+    "sources": 1312,
+    "modules": 184,
+    "sources_officielles": 1150,
+    "caelum_normes": 17,
+    "caelum": {
+      "normes": 17,
+      "sources": 29,
+      "aides": 3
+    }
+  },
+  "sante": [],
+  "scenarios": [
+    {
+      "scenario": "Trafic · Trafic normal",
+      "type": "etat",
+      "rps": 5,
+      "cache_pct": 60,
+      "p95_ms": 45,
+      "p99_ms": 49,
+      "pct_sous_200ms": 100.0,
+      "verdict": "OK",
+      "mitigation": "revalidate:30 + rendu statique"
+    },
+    {
+      "scenario": "Trafic · Pic quotidien",
+      "type": "etat",
+      "rps": 50,
+      "cache_pct": 75,
+      "p95_ms": 47,
+      "p99_ms": 51,
+      "pct_sous_200ms": 100.0,
+      "verdict": "OK",
+      "mitigation": "revalidate:30 + rendu statique"
+    },
+    {
+      "scenario": "Trafic · Buzz presse",
+      "type": "stress",
+      "rps": 300,
+      "cache_pct": 85,
+      "p95_ms": 55,
+      "p99_ms": 59,
+      "pct_sous_200ms": 100.0,
+      "verdict": "OK",
+      "mitigation": "revalidate:30 + rendu statique"
+    },
+    {
+      "scenario": "Trafic · Viral / spike",
+      "type": "stress",
+      "rps": 1500,
+      "cache_pct": 92,
+      "p95_ms": 97,
+      "p99_ms": 101,
+      "pct_sous_200ms": 100.0,
+      "verdict": "OK",
+      "mitigation": "revalidate:30 + rendu statique"
+    },
+    {
+      "scenario": "Sources · Capteur (réseau indisponible)",
+      "type": "etat",
+      "verdict": "OK",
+      "mitigation": "capteur prêt ; à exécuter là où le réseau est ouvert"
+    },
+    {
+      "scenario": "Sources · Rotation normale",
+      "type": "etat",
+      "taux_casse_pct": 1.0,
+      "urls_impactees_moy": 14,
+      "pct_corpus": 1.04,
+      "verdict": "OK",
+      "mitigation": "détecteur de changement + 2e source de secours"
+    },
+    {
+      "scenario": "Sources · Refonte d'un portail",
+      "type": "stress",
+      "taux_casse_pct": 5.0,
+      "urls_impactees_moy": 63,
+      "pct_corpus": 4.8,
+      "verdict": "ALERTE",
+      "mitigation": "détecteur de changement + 2e source de secours"
+    },
+    {
+      "scenario": "Sources · Panne large",
+      "type": "stress",
+      "taux_casse_pct": 15.0,
+      "urls_impactees_moy": 200,
+      "pct_corpus": 15.27,
+      "verdict": "CRITIQUE",
+      "mitigation": "détecteur de changement + 2e source de secours"
+    },
+    {
+      "scenario": "Build · Aujourd'hui",
+      "type": "etat",
+      "pages_estimees": 231,
+      "verdict": "OK",
+      "mitigation": "heap 4 Go + webpackMemoryOptimizations + SSG"
+    },
+    {
+      "scenario": "Build · +1 an (x2)",
+      "type": "stress",
+      "pages_estimees": 462,
+      "verdict": "OK",
+      "mitigation": "heap 4 Go + webpackMemoryOptimizations + SSG"
+    },
+    {
+      "scenario": "Build · +3 ans (x4)",
+      "type": "stress",
+      "pages_estimees": 924,
+      "verdict": "OK",
+      "mitigation": "heap 4 Go + webpackMemoryOptimizations + SSG"
+    },
+    {
+      "scenario": "Déploiement · SWARM_API_URL absente",
+      "type": "etat",
+      "verdict": "OK",
+      "mitigation": "console.warn + mode hors-ligne"
+    },
+    {
+      "scenario": "Déploiement · Upstream swarm en panne",
+      "type": "etat",
+      "verdict": "OK",
+      "mitigation": "fallback HTTP 502 (jamais 503)"
+    },
+    {
+      "scenario": "Déploiement · Webhook leads non configuré",
+      "type": "etat",
+      "verdict": "ALERTE",
+      "mitigation": "lead non perdu si guard présent ; sinon ALERTE"
+    },
+    {
+      "scenario": "Données · Identité légale Caelum",
+      "type": "etat",
+      "verdict": "ALERTE",
+      "mitigation": "garde identité + avertissement affiché tant que placeholder"
+    },
+    {
+      "scenario": "Données · Couverture sources officielles",
+      "type": "etat",
+      "pct_officiel": 87.7,
+      "verdict": "OK",
+      "mitigation": "protocole de confiance des sources (tier1)"
+    },
+    {
+      "scenario": "Sécurité · Abus formulaire (payload/email)",
+      "type": "etat",
+      "pct_bloque_attendu": 69.0,
+      "verdict": "OK",
+      "mitigation": "limites taille/longueur + 413"
+    },
+    {
+      "scenario": "Veille juridique · Fraîcheur des fiches",
+      "type": "etat",
+      "modules": 151,
+      "frais": 151,
+      "a_reverifier": 0,
+      "prioritaire": 0,
+      "sources_modifiees": 0,
+      "verdict": "OK",
+      "mitigation": "capteur de changement juridique (fraîcheur + empreinte sources)"
+    },
+    {
+      "scenario": "Croissance · Corpus",
+      "type": "etat",
+      "verdict": "OK",
+      "reponses": 783,
+      "modules": 184,
+      "depuis_naissance": 355,
+      "battements_sans_croissance": 2,
+      "mitigation": "ajouter régulièrement des domaines vérifiés (loi + source officielle)"
+    },
+    {
+      "scenario": "Caelum · Conformité B2B",
+      "type": "etat",
+      "verdict": "OK",
+      "caelum_normes": 17,
+      "caelum_sources": 29,
+      "caelum_aides": 3,
+      "mitigation": "base de normes vérifiées + aides publiques sourcées"
+    },
+    {
+      "scenario": "Plan stratégique · Avancement",
+      "type": "etat",
+      "verdict": "ALERTE",
+      "plan_pct": 46,
+      "plan_faits": 6,
+      "plan_total": 13,
+      "prochaine_etape": "Valider la grille de prix grands comptes (proposition prête : A/B/C) (avant le 2026-07-02)",
+      "battements_sans_progres": 68,
+      "en_retard": 3,
+      "mitigation": "respecter les dates butoirs du plan — ne pas stagner"
+    },
+    {
+      "scenario": "Hiérarchie des normes · Conflits",
+      "type": "etat",
+      "verdict": "OK",
+      "conflits": 0,
+      "mitigation": "GEL des décisions + audit croisé sources officielles (UE>fédéral>régional) si conflit"
+    },
+    {
+      "scenario": "Anomalies doc · Obsolescence",
+      "type": "etat",
+      "verdict": "OK",
+      "anomalies_total": 6,
+      "anomalies_ouvertes": 0,
+      "mitigation": "capturer + source canonique + rapport d'écart, sans jamais stopper la mission"
+    },
+    {
+      "scenario": "Veille marché · Opportunités",
+      "type": "etat",
+      "verdict": "OK",
+      "opp_total": 6,
+      "opp_nouveau": 0,
+      "prochaine_opp": null,
+      "mitigation": "instruire les opportunités 'nouveau' (radar market_opportunities.json)"
+    },
+    {
+      "scenario": "Langues · Visiteur non francophone",
+      "type": "etat",
+      "verdict": "OK",
+      "mitigation": "FR/NL natifs, /en Caelum, traduction à la volée (mention 'FR/NL fait foi')"
+    }
+  ],
+  "sceau": {
+    "seal_id": "AUTO-20260717160311",
+    "statut": "APPROUVÉ",
+    "pire_verdict_etat": "ALERTE",
+    "score_resilience": 80.0,
+    "verts": 20,
+    "total": 25,
+    "autonomie_systeme_pct": 100.0,
+    "decisions_humaines_en_attente": [
+      "Déploiement · Webhook leads non configuré",
+      "Données · Identité légale Caelum"
+    ],
+    "fragilites_stress": [
+      "Sources · Panne large"
+    ],
+    "alertes_etat_a_corriger": [
+      "Déploiement · Webhook leads non configuré",
+      "Données · Identité légale Caelum",
+      "Plan stratégique · Avancement"
+    ],
+    "regle": "BLOQUÉ seulement si l'ÉTAT ACTUEL (santé + scénarios 'etat') a un CRITIQUE ; les scénarios extrêmes 'stress' alimentent la résilience et la liste des fragilités."
+  },
+  "vie": {
+    "etat_vie": "🟠 Vigilance",
+    "battements": 91,
+    "age_jours": 18.27,
+    "naissance": "2026-06-29T09:31:18.850752+00:00"
+  },
+  "todo": {
+    "total": 4,
+    "par_priorite": {
+      "haute": 0,
+      "moyenne": 3,
+      "basse": 1
+    }
+  },
+  "avertissement": "Simulations = modèles probabilistes/déterministes locaux, pas des appels réseau réels."
+}

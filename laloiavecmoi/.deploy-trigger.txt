@@ -1,0 +1,4 @@
+Déclencheur de déploiement Vercel — La Loi Avec Moi
+Dernier: 2026-06-29 21:16 (production)
+trigger 192946
+reconnect trigger 193853

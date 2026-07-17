@@ -1,0 +1,74 @@
+{
+  "module": "bail_a_ferme",
+  "titre": "Bail à ferme (location de biens agricoles)",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 4 novembre 1969 sur le bail à ferme ; en Wallonie, décret du 2 mai 2019 réformant le bail à ferme",
+    "portee": "Citoyens en Belgique",
+    "source_officielle": "https://agriculture.wallonie.be/home/ruralite-et-foncier/foncier/foncier-agricole/louer/bail-a-ferme/legislation-et-documentation.html"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information juridique générale, à jour à la date de revue. Le bail à ferme est régionalisé : vérifiez les règles de votre Région.",
+  "faits": [
+    {
+      "id": "FERME-001",
+      "question": "Qu'est-ce qu'un bail à ferme et combien de temps dure-t-il ?",
+      "reponse": "Le bail à ferme est la location d'un bien rural (terre ou bâtiment) en vue de son exploitation agricole. Le bail classique dure au minimum 9 ans et se prolonge par périodes. Il existe aussi des formes plus longues : bail de longue durée (au moins 27 ans), bail de carrière, bail de fin de carrière, et bail de courte durée. La matière est régionalisée (la Wallonie et la Flandre ont leurs propres règles).",
+      "reference_legale": "Loi du 4 novembre 1969 sur le bail à ferme, art. 4 (durée) ; décret wallon du 2 mai 2019",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://agriculture.wallonie.be/home/ruralite-et-foncier/foncier/foncier-agricole/louer/bail-a-ferme/legislation-et-documentation.html",
+          "intitule": "SPW Agriculture — Bail à ferme (législation)"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "FERME-002",
+      "question": "Le fermage (le loyer) est-il plafonné ?",
+      "reponse": "Oui. Le fermage est encadré par la loi : il est calculé à partir du revenu cadastral et de coefficients fixés par région agricole, avec des maxima légaux. En Wallonie, le décret du 20 octobre 2016 limite les fermages.",
+      "reference_legale": "Décret wallon du 20 octobre 2016 limitant les fermages",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://agriculture.wallonie.be/home/ruralite-et-foncier/foncier/foncier-agricole/louer/bail-a-ferme/legislation-et-documentation.html",
+          "intitule": "SPW Agriculture — Fermages"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "FERME-003",
+      "question": "Comment le preneur (l'exploitant) est-il protégé ?",
+      "reponse": "Le bail à ferme protège fortement l'exploitant : droit au renouvellement du bail, préavis strictement encadrés, et, en cas de vente du bien loué, droit de préemption (priorité d'achat) du preneur. La preuve du bail peut être apportée par toutes voies de droit.",
+      "reference_legale": "Loi du 4 novembre 1969 sur le bail à ferme (renouvellement, congé et droit de préemption)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://wallex.wallonie.be/eli/loi-decret/2019/05/02/2019015073/2020/01/01",
+          "intitule": "Wallex — Réforme du bail à ferme (décret du 2 mai 2019)"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "FERME-PREEMPTION-001",
+      "question": "Le propriétaire veut vendre la terre que j'exploite : ai-je une priorité d'achat ?",
+      "reponse": "Oui. Le preneur (l'exploitant) bénéficie d'un droit de préemption : si le propriétaire veut vendre le bien loué, il doit d'abord vous l'offrir, en priorité et aux mêmes conditions qu'à un tiers. Concrètement, le notaire vous notifie le contenu de la vente projetée (prix et conditions) et vous disposez d'un délai pour répondre et exercer votre droit. Si la vente a lieu sans respecter votre droit de préemption, vous pouvez, dans un délai légal, demander en justice d'être subrogé à l'acheteur (reprendre l'achat à sa place) ou réclamer des dommages et intérêts. C'est une protection forte du métier d'agriculteur : ne laissez pas passer les délais de réponse.",
+      "reference_legale": "Loi du 4 novembre 1969 sur le bail à ferme (droit de préemption du preneur) ; décret wallon du 2 mai 2019",
+      "alerte_delai": "Répondez dans le délai indiqué par la notification du notaire : passé ce délai, le droit de préemption est perdu.",
+      "contacts": [
+        {"nom": "Notaire", "pour": "notification de la vente et exercice du droit de préemption"},
+        {"nom": "SPW Agriculture", "lien": "https://agriculture.wallonie.be", "pour": "information sur le bail à ferme"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://agriculture.wallonie.be/home/ruralite-et-foncier/foncier/foncier-agricole/louer/bail-a-ferme/legislation-et-documentation.html", "intitule": "SPW Agriculture — Bail à ferme et droit de préemption"},
+        {"type": "officiel", "url": "https://wallex.wallonie.be/eli/loi-decret/2019/05/02/2019015073/2020/01/01", "intitule": "Wallex — Bail à ferme (décret du 2 mai 2019)"}
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "module": "appels_projets",
+  "projet": "Caelum Partners",
+  "titre": "Appels à projets & financements — capacité Caelum",
+  "but": "Apprendre à Caelum à (1) détecter, (2) qualifier (Go/No-Go), (3) rédiger et (4) suivre les réponses aux appels à projets : subventions ET marchés publics. Utilisable d'abord pour financer Caelum, puis vendu comme service.",
+  "juridiction": "BE/UE",
+  "langue": "fr",
+  "separation": "Projet ENTREPRISES (B2B). Ne pas mélanger avec La Loi Avec Moi.",
+  "derniere_revue": "2026-06-27",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Les budgets, taux et échéances des dispositifs changent souvent (certains ferment en cours d'année). Toujours vérifier l'appel exact sur le portail officiel avant de s'engager.",
+  "types": [
+    {
+      "type": "subventions",
+      "definition": "Aides financières publiques (non remboursables ou avantageuses) pour financer un projet (numérique, cybersécurité, innovation, ESG).",
+      "exemples": [
+        {"nom": "Chèques-entreprises (Wallonie)", "objet": "maturité numérique, cybersécurité, conseil stratégique", "note": "Plafonds pluriannuels élevés, prise en charge d'une part des honoraires de prestataires agréés. Vérifier conditions/plafonds en cours.", "source": "https://www.digitalwallonia.be/fr/publications/aides-transformation-numerique/"},
+        {"nom": "VLAIO (Flandre)", "objet": "subsides innovation/numérique", "note": "Réforme entrée en vigueur en 2026 : volet conseil recentré sur la cybersécurité. Vérifier.", "source": "https://www.vlaio.be"},
+        {"nom": "Innoviris (Bruxelles)", "objet": "recherche & innovation", "note": "Budget limité : en 2026, des dispositifs n'acceptent plus de nouvelles demandes. Vérifier la disponibilité AVANT de promettre.", "source": "https://innoviris.brussels"},
+        {"nom": "Horizon Europe / EIC Accelerator (UE)", "objet": "innovation deep-tech, startups", "note": "Montants importants, très compétitif, souvent en consortium.", "source": "https://eic.ec.europa.eu"},
+        {"nom": "Digital Europe Programme / EDIH (UE)", "objet": "transformation numérique, cyber, IA", "note": "Pôles d'innovation numérique (EDIH) accompagnent les PME.", "source": "https://digital-strategy.ec.europa.eu"}
+      ]
+    },
+    {
+      "type": "marches_publics",
+      "definition": "Contrats par lesquels une administration achète des biens/services. Source de revenu récurrent et crédible pour Caelum.",
+      "exemples": [
+        {"nom": "e-Procurement (publicprocurement.be)", "objet": "plateforme fédérale officielle des marchés publics belges", "note": "Gratuite ; consulter les avis, déposer une offre, carte d'identité numérique d'entreprise. Recours obligatoire renforcé.", "source": "https://bosa.belgium.be/fr/applications/e-procurement"},
+        {"nom": "TED — Tenders Electronic Daily (UE)", "objet": "marchés publics européens", "note": "Seuils de publication revus à la baisse : davantage de marchés publiés au niveau UE.", "source": "https://ted.europa.eu"},
+        {"nom": "marchespublics.wallonie.be", "objet": "marchés publics en Wallonie + guidance RGPD", "note": "Le RGPD s'applique à tous les marchés publics : un atout pour Caelum.", "source": "https://marchespublics.wallonie.be"}
+      ]
+    }
+  ],
+  "process_caelum": [
+    {"etape": "1. Veille", "detail": "Surveiller e-Procurement, TED et les portails de subventions ; alerter dès qu'un appel pertinent s'ouvre.", "automatisation": "ÉLEVÉE"},
+    {"etape": "2. Go/No-Go", "detail": "Scorer chaque appel (éligibilité, montant, effort, probabilité de gagner, alignement) avant d'investir du temps.", "automatisation": "ÉLEVÉE"},
+    {"etape": "3. Rédaction", "detail": "Assembler le dossier à partir d'une bibliothèque de réponses réutilisables (références, RGPD, cyber, ESG, CV équipe).", "automatisation": "MOYENNE — l'IA rédige, l'humain valide."},
+    {"etape": "4. Dépôt & suivi", "detail": "Respecter les délais, déposer via la plateforme, suivre les résultats et capitaliser (win/loss).", "automatisation": "MOYENNE"}
+  ],
+  "go_nogo_criteres": [
+    {"critere": "Éligibilité", "question": "Caelum/le client remplit-il les conditions (taille, secteur, région) ?", "poids": 0.30},
+    {"critere": "Probabilité de gagner", "question": "A-t-on les références et l'avantage pour gagner ?", "poids": 0.25},
+    {"critere": "Montant / valeur", "question": "Le gain justifie-t-il l'effort ?", "poids": 0.25},
+    {"critere": "Effort / délai", "question": "A-t-on le temps et les ressources avant l'échéance ?", "poids": 0.20}
+  ]
+}

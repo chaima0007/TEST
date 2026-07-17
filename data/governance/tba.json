@@ -1,0 +1,377 @@
+{
+  "registre": "Tableau de Bord d'Avancement (TBA)",
+  "but": "Référence opérationnelle unique : état réel de chaque projet, jauges %, actions faites, prochaines étapes et point de sortie (dernier état validé) pour une continuité totale entre sessions.",
+  "derniere_mise_a_jour": "2026-06-28",
+  "projets": [
+    {
+      "nom": "La Loi Avec Moi (citoyens)",
+      "point_de_sortie": "132 modules / 416 réponses (couverture citoyenne quasi exhaustive), 100% lois + sources. Build OK (208 pages), audits verts.",
+      "taches": [
+        {
+          "nom": "Base juridique sourcée (domaines + réponses)",
+          "pct": 92,
+          "statut": "en cours",
+          "actions_faites": [
+            "132 modules (dont droits UE/transfrontaliers)",
+            "416 réponses, 100% loi concrète (audit loi_reference: 0 vague)",
+            "100% sources officielles (source_trust: 0 hors-tier1 en 'officiel')",
+            "Domaines récents: revenu d'intégration (CPAS), assurance maladie (INAMI), casier judiciaire, permis de conduire, bail commercial, nationalité belge, donations, congés thématiques, GRAPA, congé maternité/naissance, chômage temporaire, maladie professionnelle (Fedris), bail à ferme, changement nom/prénom, occupation sans titre (squat), filiation/reconnaissance, tutelle des mineurs — sources vérifiées",
+            "vérif approfondie + 1200 simulations OK"
+          ],
+          "prochaines_etapes": [
+            "Continuer les domaines citoyens manquants (sécurité sociale détaillée, baux commerciaux, etc.)"
+          ]
+        },
+        {
+          "nom": "Page « Base juridique » (rendu serveur)",
+          "pct": 100,
+          "statut": "terminé",
+          "actions_faites": [
+            "Composant serveur lisant data/belgium",
+            "Recherche plein texte (tolérante aux accents)",
+            "Filtre par domaine",
+            "Compteur de résultats accessible"
+          ],
+          "prochaines_etapes": []
+        },
+        {
+          "nom": "Modèles de documents prêts à l'emploi",
+          "pct": 95,
+          "statut": "en cours",
+          "actions_faites": [
+            "16 modèles copier-coller",
+            "Bouton Télécharger (.txt) par modèle",
+            "Lecture audio (accessibilité)"
+          ],
+          "prochaines_etapes": [
+            "(option) export PDF mis en page"
+          ]
+        },
+        {
+          "nom": "Espace enfants & jeunes / mineurs",
+          "pct": 90,
+          "statut": "en cours",
+          "actions_faites": [
+            "Page /loi-avec-moi/jeunes (langage simple, gros repères)",
+            "Numéros d aide 103/112/1712",
+            "Cartes vers sujets clés",
+            "Lien dans la nav"
+          ],
+          "prochaines_etapes": [
+            "Pictos illustrés / version lecture facile"
+          ]
+        },
+        {
+          "nom": "Versions multilingues (NL en premier)",
+          "pct": 75,
+          "statut": "en cours",
+          "actions_faites": [
+            "Bannière multilingue (14 langues, slogan)",
+            "Aide à la traduction auto sur la base juridique",
+            "Espace NL /de-wet-met-mij (11 thèmes prioritaires)",
+            "Fiches NL sourcées : wonen, werk, juridische-hulp, consumentenrecht, familie, administratie, schulden, geweld, gezondheid, energie, ouderen",
+            "Enrichissement Wonen (Vlaams Woninghuurdecreet, 8 fiches) — correction waarborg 2→3 mois, ajout durée/indexation/qualité/EPC",
+            "Enrichissement Consumentenrecht (+crédit conso) et Juridische-hulp (+rechtsbijstand/documents)",
+            "Enrichissement Familie (+onderhoudsbijdrage, DAVO voorschot max €175/kind vérifié, familiale bemiddeling) — 6→9 fiches",
+            "Centralisation des fiches NL dans data/nl/fiches.ts (source unique, ZÉRO duplication) — 11 pages refactorées pour s'y brancher",
+            "Page de recherche /de-wet-met-mij/zoeken (recherche tolérante aux accents sur toutes les fiches) + CTA dans le hub + sitemap dérivé de la source",
+            "Énergie NL = règles FLAMANDES (VREG/Fluvius/LAC), pas les règles wallonnes (régionalisation respectée)",
+            "Sources officielles NL vérifiées (codex.vlaanderen.be, FOD Volksgezondheid, eJustice, FOD Economie, FOD Financiën, 1712, Vlaanderen.be, Vlaamse Nutsregulator, VLOCO, advocaat.be)"
+          ],
+          "prochaines_etapes": [
+            "Poursuivre la traduction NL (familie approfondie) selon le trafic"
+          ]
+        },
+        {
+          "nom": "Déploiement & hébergement",
+          "pct": 0,
+          "statut": "bloqué (décision Chaima)",
+          "actions_faites": [
+            "App laloiavecmoi/ séparée et build vérifié (71 pages SEO prérendues)"
+          ],
+          "prochaines_etapes": [
+            "Hébergeur + domaine + NEXT_PUBLIC_SITE_URL"
+          ]
+        },
+        {
+          "nom": "Cartographie d'adresses officielles par ville",
+          "pct": 0,
+          "statut": "à faire",
+          "actions_faites": [],
+          "prochaines_etapes": [
+            "Trouver une source open-data officielle (jamais d'adresse inventée)"
+          ]
+        },
+        {
+          "nom": "Pages SEO par domaine (acquisition)",
+          "pct": 100,
+          "statut": "terminé",
+          "actions_faites": [
+            "Route /loi/[domaine] générée depuis data/belgium",
+            "generateStaticParams + metadata par domaine (67 pages)",
+            "Maillage interne depuis la base juridique"
+          ],
+          "prochaines_etapes": []
+        },
+        {
+          "nom": "Pages légales (mentions, confidentialité, accessibilité)",
+          "pct": 90,
+          "statut": "en cours",
+          "actions_faites": [
+            "Mentions légales (placeholders éditeur)",
+            "Confidentialité RGPD",
+            "Déclaration accessibilité",
+            "sitemap + build OK"
+          ],
+          "prochaines_etapes": [
+            "Compléter l identité légale de l éditeur (BCE/TVA/adresse)"
+          ]
+        }
+      ]
+    },
+    {
+      "nom": "Caelum (entreprises B2B)",
+      "point_de_sortie": "Veille conformité 2026 (6 normes sourcées + chiffres), agent « Appels & Financements » et simulateur /appels-projets en ligne. Séparé de La Loi Avec Moi.",
+      "taches": [
+        {
+          "nom": "Veille conformité 2026 (normes entreprises)",
+          "pct": 95,
+          "statut": "en cours",
+          "actions_faites": [
+            "17 normes sourcées (e-facture, NIS2, CSRD, CSDDD, RGPD, lanceurs, AI Act, EAA, UBO, DORA, transparence salariale, DAC7, PPWR, délais de paiement, CBAM, EUDR, anti-blanchiment)",
+            "Chiffres/%/échéances vérifiés (EUR-Lex, SPF Finances, FSMA, régulateurs)",
+            "Toutes câblées base+map+simulateur+SEO (P-SYNC-NORMES vert, 13 normes)",
+            "Questions simulateur ajoutées: secteur financier (DORA), plateforme numérique (DAC7), emballages (PPWR)"
+          ],
+          "prochaines_etapes": [
+            "Veille continue: ajouter les futures obligations dès publication officielle"
+          ]
+        },
+        {
+          "nom": "Simulateur « Appels à projets »",
+          "pct": 100,
+          "statut": "terminé",
+          "actions_faites": [
+            "Page /appels-projets (4 questions → aides + marchés)",
+            "Lien nav"
+          ],
+          "prochaines_etapes": []
+        },
+        {
+          "nom": "Agent « Appels & Financements »",
+          "pct": 100,
+          "statut": "terminé",
+          "actions_faites": [
+            "Veille/Go-NoGo/Matching testés (auto-test OK)"
+          ],
+          "prochaines_etapes": []
+        },
+        {
+          "nom": "Page « Conformité 2026 » + simulateur « Suis-je concerné ? »",
+          "pct": 100,
+          "statut": "terminé",
+          "actions_faites": [
+            "Page /conformite-2026",
+            "Simulateur « Suis-je concerné ? » (4 questions)",
+            "Effet cascade + CTA",
+            "Lien dans la nav"
+          ],
+          "prochaines_etapes": []
+        },
+        {
+          "nom": "Positionnement commercial & business plan",
+          "pct": 100,
+          "statut": "terminé",
+          "actions_faites": [
+            "Logique d entreprise (moat + modèle récurrent)",
+            "Page /offres-conformite (3 offres)",
+            "Combo conformité+subvention",
+            "Canal fiduciaires B2B2B"
+          ],
+          "prochaines_etapes": [
+            "Fixer les prix (décision Chaima)"
+          ]
+        },
+        {
+          "nom": "Pages SEO programmatiques (acquisition)",
+          "pct": 100,
+          "statut": "terminé",
+          "actions_faites": [
+            "Hub /conformite",
+            "6 pages /conformite/[norme] générées depuis la base vérifiée",
+            "generateStaticParams + metadata SEO par norme",
+            "CTA vers simulateur + offres",
+            "8 pages SEO par secteur (/conformite/secteur/[secteur]) + maillage interne"
+          ],
+          "prochaines_etapes": [
+            "Pages par secteur (longue traîne) quand le trafic le justifiera"
+          ]
+        },
+        {
+          "nom": "Capture de leads (simulateur)",
+          "pct": 90,
+          "statut": "en cours",
+          "actions_faites": [
+            "Formulaire e-mail sur le simulateur",
+            "API /api/leads SANS credential",
+            "Transmission via webhook (variable d env LEADS_WEBHOOK_URL)",
+            "Confirmation + RGPD mini-mention"
+          ],
+          "prochaines_etapes": [
+            "Brancher LEADS_WEBHOOK_URL (CRM/Zapier) — décision Chaima"
+          ]
+        },
+        {
+          "nom": "Newsletter de veille (canal possédé)",
+          "pct": 90,
+          "statut": "en cours",
+          "actions_faites": [
+            "Page /veille (landing newsletter)",
+            "Inscription via /api/leads (source newsletter-veille)",
+            "Sans credential (webhook env)"
+          ],
+          "prochaines_etapes": [
+            "Brancher l envoi réel quand LEADS_WEBHOOK_URL / outil e-mail sera choisi"
+          ]
+        },
+        {
+          "nom": "Kit de contenu de lancement (posts + e-mails + FAQ)",
+          "pct": 100,
+          "statut": "terminé",
+          "actions_faites": [
+            "5 posts LinkedIn founder-led (faits sourcés, aucun prix inventé)",
+            "3 e-mails (bienvenue veille, nurture simulateur, approche fiduciaire B2B2B)",
+            "FAQ citoyens & entreprises",
+            "Projets séparés, liens [lien] à remplacer après déploiement",
+            "KIT_CONTENU_LANCEMENT.md"
+          ],
+          "prochaines_etapes": [
+            "Remplacer les [lien] par les URLs réelles après mise en ligne"
+          ]
+        }
+      ]
+    },
+    {
+      "nom": "Infrastructure & Gouvernance (flotte d'agents)",
+      "point_de_sortie": "43 protocoles. Agents incrémental + scalabilité/monitoring intégrés à l'orchestrateur, verdict global OK.",
+      "taches": [
+        {
+          "nom": "Protocoles de gouvernance",
+          "pct": 90,
+          "statut": "en cours",
+          "actions_faites": [
+            "43 protocoles au registre",
+            "Orchestrateur 1-geste"
+          ],
+          "prochaines_etapes": [
+            "Revue périodique"
+          ]
+        },
+        {
+          "nom": "Protocole incrémental (P-INCREMENTAL)",
+          "pct": 100,
+          "statut": "terminé",
+          "actions_faites": [
+            "Checkpoint d'historique + delta-only + normes de sécurité",
+            "Intégré flotte"
+          ],
+          "prochaines_etapes": []
+        },
+        {
+          "nom": "Scalabilité & monitoring (P-SCALABILITE)",
+          "pct": 95,
+          "statut": "en cours",
+          "actions_faites": [
+            "Capacity planning multi-plateforme",
+            "Prévision de saturation",
+            "Latence (proxies) + coût (modèle)"
+          ],
+          "prochaines_etapes": [
+            "Renseigner les vrais coûts (décision Chaima)"
+          ]
+        },
+        {
+          "nom": "Charte d'autonomie (P-AUTONOMIE)",
+          "pct": 100,
+          "statut": "terminé",
+          "actions_faites": [
+            "Intégrée au protocole central + mémoire permanente"
+          ],
+          "prochaines_etapes": []
+        },
+        {
+          "nom": "Tableau de Bord d'Avancement (P-TBA)",
+          "pct": 100,
+          "statut": "terminé",
+          "actions_faites": [
+            "TBA dynamique + générateur + intégration orchestrateur"
+          ],
+          "prochaines_etapes": []
+        },
+        {
+          "nom": "SEO technique (sitemap + robots)",
+          "pct": 95,
+          "statut": "en cours",
+          "actions_faites": [
+            "sitemap.ts + robots.ts Caelum (normes + secteurs)",
+            "sitemap La Loi Avec Moi enrichi (/loi/[domaine], /jeunes, /base-juridique)"
+          ],
+          "prochaines_etapes": [
+            "Définir NEXT_PUBLIC_SITE_URL au déploiement (Caelum)"
+          ]
+        },
+        {
+          "nom": "Tests de charge & latence",
+          "pct": 95,
+          "statut": "en cours",
+          "actions_faites": [
+            "Simulateur p50/p95/p99",
+            "Cycle exhaustif 1200 simulations",
+            "Toutes routes p95<111ms, 0% erreur",
+            "Vérif sources approfondie: 0 conflit, 0 preuve faible"
+          ],
+          "prochaines_etapes": [
+            "Re-tester sur l hébergement réel après déploiement"
+          ]
+        }
+      ]
+    }
+  ],
+  "actions_chaima": [
+    {
+      "priorite": 1,
+      "action": "Activer la capture de leads",
+      "comment": "Créer un webhook (Zapier \"Catch Hook\" ou Make) et coller son URL dans la variable d env LEADS_WEBHOOK_URL de l hébergement. Aucun mot de passe à me donner.",
+      "statut": "en attente",
+      "depuis": "2026-06-28"
+    },
+    {
+      "priorite": 2,
+      "action": "Fixer les prix des offres conformité",
+      "comment": "Renseigner les montants (Essentiel / Sérénité / Sur-mesure) sur la page /offres-conformite.",
+      "statut": "en attente",
+      "depuis": "2026-06-28"
+    },
+    {
+      "priorite": 3,
+      "action": "Renseigner les vrais coûts",
+      "comment": "Compléter data/cost_model.json avec les factures réelles (hébergement, domaine, etc.).",
+      "statut": "en attente",
+      "depuis": "2026-06-28"
+    },
+    {
+      "priorite": 4,
+      "action": "Déployer les 2 sites séparément",
+      "comment": "EN ATTENTE : valider d abord la stratégie A→Z (STRATEGIE_LANCEMENT_AZ.md) + cocher la checklist GO/NO-GO. Pas de lancement avant.",
+      "statut": "en attente",
+      "depuis": "2026-06-28"
+    },
+    {
+      "priorite": 5,
+      "action": "Calibrer les fournisseurs d API",
+      "comment": "Renseigner les vrais prix/qualité/latence dans data/governance/api_providers.json pour activer l arbitrage réel.",
+      "statut": "en attente",
+      "depuis": "2026-06-28"
+    }
+  ]
+}

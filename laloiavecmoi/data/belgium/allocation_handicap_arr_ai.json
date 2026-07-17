@@ -1,0 +1,120 @@
+{
+  "module": "allocation_handicap_arr_ai",
+  "titre": "Allocations handicap — ARR et AI (18-65 ans)",
+  "domaine": "Handicap & revenus",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 27 février 1987 relative aux allocations aux personnes handicapées (allocation de remplacement de revenus et allocation d'intégration)",
+    "portee": "Allocations financières fédérales pour les personnes en situation de handicap en âge de travailler",
+    "source_officielle": "https://handicap.belgium.be/fr/allocations/allocation-de-remplacement-de-revenus"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les montants et plafonds sont indexés et l'évaluation est individuelle ; adressez-vous à la DG Personnes handicapées (SPF Sécurité sociale).",
+  "faits": [
+    {
+      "id": "ARRAI-PRINCIPE-001",
+      "question": "Quelles allocations existent pour une personne handicapée en âge de travailler ?",
+      "reponse": "Pour les personnes de 18 à 65 ans, deux allocations fédérales peuvent se cumuler. L'allocation de remplacement de revenus (ARR) s'adresse à la personne dont la capacité de gain est fortement réduite à cause de son handicap (elle compense l'impossibilité de gagner un revenu suffisant par le travail). L'allocation d'intégration (AI) compense les coûts supplémentaires liés à la perte d'autonomie dans la vie quotidienne (se déplacer, se laver, cuisiner, communiquer…), mesurée en « points ». Ces allocations sont gérées par la DG Personnes handicapées (SPF Sécurité sociale).",
+      "reference_legale": "Loi du 27 février 1987 relative aux allocations aux personnes handicapées (ARR et AI)",
+      "contacts": [
+        {
+          "nom": "DG Personnes handicapées (SPF Sécurité sociale)",
+          "numero": "0800 987 99",
+          "pour": "ARR et AI"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://handicap.belgium.be/fr/allocations/allocation-de-remplacement-de-revenus",
+          "intitule": "DG Personnes handicapées — ARR"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.socialsecurity.be/citizen/fr/handicap/interventions-et-allocations",
+          "intitule": "Sécurité sociale — Allocations handicap"
+        }
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "ARRAI-CONDITIONS-001",
+      "question": "Quelles conditions et comment est évalué le handicap ?",
+      "reponse": "Il faut notamment avoir entre 18 et 65 ans, résider en Belgique, et présenter un handicap reconnu après une évaluation médicale réalisée par la DG Personnes handicapées. Pour l'ARR, on évalue la réduction de la capacité de gain ; pour l'AI, on évalue la perte d'autonomie en points sur différents domaines de la vie quotidienne. Les allocations tiennent aussi compte des revenus (du demandeur et, selon les règles en vigueur, du ménage). La reconnaissance ouvre par ailleurs d'autres droits dérivés (avantages fiscaux, sociaux, carte de stationnement…). Les montants exacts sont indexés.",
+      "reference_legale": "Loi du 27 février 1987 (conditions médicales et de revenus de l'ARR et de l'AI)",
+      "contacts": [
+        {
+          "nom": "DG Personnes handicapées",
+          "lien": "https://handicap.belgium.be",
+          "pour": "évaluation et conditions"
+        },
+        {
+          "nom": "Votre mutualité / commune / CPAS",
+          "pour": "aide à la demande"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.socialsecurity.be/citizen/fr/handicap/interventions-et-allocations",
+          "intitule": "Sécurité sociale — Conditions des allocations handicap"
+        }
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "ARRAI-DEMANDE-001",
+      "question": "Comment introduire la demande et contester une décision ?",
+      "reponse": "La demande s'introduit en ligne via le guichet My Handicap (avec votre carte d'identité électronique), ou avec l'aide de votre commune, de votre mutualité ou d'un assistant social. Une évaluation médicale peut être organisée ; la décision vous est notifiée par écrit. Si vous n'êtes pas d'accord avec la décision (refus, taux ou nombre de points contesté), vous pouvez introduire un recours devant le tribunal du travail dans le délai indiqué (la procédure est gratuite en frais de rôle et l'aide juridique est possible). Conservez tous vos documents médicaux : ils sont essentiels pour le dossier et le recours.",
+      "reference_legale": "Loi du 27 février 1987 (procédure de demande et recours devant le tribunal du travail)",
+      "alerte_delai": "Un recours contre la décision se fait devant le tribunal du travail dans le délai mentionné sur la notification.",
+      "contacts": [
+        {
+          "nom": "My Handicap (DG Personnes handicapées)",
+          "lien": "https://handicap.belgium.be",
+          "pour": "introduire la demande"
+        },
+        {
+          "nom": "Tribunal du travail / Bureau d'aide juridique",
+          "pour": "contester une décision"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://handicap.belgium.be/fr/allocations/allocation-de-remplacement-de-revenus",
+          "intitule": "DG Personnes handicapées — Demande et recours"
+        }
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "ARRAI-MENAGE-001",
+      "question": "Les revenus de mon partenaire ou un changement de situation familiale changent-ils mon allocation ?",
+      "reponse": "Oui, pour l'allocation de remplacement de revenus (ARR) : son montant dépend de votre catégorie familiale (personne isolée, cohabitante ou avec charge de famille) et des revenus du ménage, avec des abattements qui neutralisent une partie des revenus du partenaire. Un mariage, une cohabitation, une séparation ou une variation de revenus peut donc augmenter ou diminuer l'allocation. Vous devez déclarer tout changement de situation (familiale, de revenus, d'adresse) à la DG Personnes handicapées : une allocation versée sur la base d'informations dépassées peut être récupérée. Bon réflexe : demandez un nouveau calcul dès qu'un changement survient, plutôt que d'attendre un contrôle.",
+      "reference_legale": "Loi du 27 février 1987 relative aux allocations aux personnes handicapées (catégories familiales, abattements et prise en compte des revenus du ménage)",
+      "contacts": [
+        {
+          "nom": "DG Personnes handicapées (SPF Sécurité sociale)",
+          "numero": "0800 987 99",
+          "pour": "ARR et AI"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://handicap.belgium.be/fr/allocations/allocation-de-remplacement-de-revenus",
+          "intitule": "DG Personnes handicapées — ARR"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.socialsecurity.be/citizen/fr/handicap/interventions-et-allocations",
+          "intitule": "Sécurité sociale — Allocations handicap"
+        }
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

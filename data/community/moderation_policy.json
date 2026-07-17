@@ -1,0 +1,21 @@
+{
+  "registre": "Politique de modération & anonymisation — Q&R publiques",
+  "regles": [
+    "Aucune donnée personnelle publiée (nom, adresse, n° national, e-mail, téléphone).",
+    "Anonymisation obligatoire avant publication d'une question d'utilisateur.",
+    "Réponses fondées EXCLUSIVEMENT sur sources officielles (cf. §16/§21).",
+    "Pas de conseil juridique individualisé : information générale + renvoi aux services compétents.",
+    "Modération a priori : une question n'est publique qu'après validation.",
+    "Droit à l'effacement : retrait sur simple demande."
+  ],
+  "champs_interdits_publication": [
+    "nom",
+    "prenom",
+    "adresse",
+    "nn",
+    "email",
+    "telephone",
+    "donnees_sante_identifiantes"
+  ],
+  "statut_flux_utilisateurs": "EN ATTENTE — activé quand la plateforme aura des utilisateurs réels."
+}

@@ -1,0 +1,75 @@
+{
+  "module": "adoption",
+  "titre": "Adoption — formes et procédure",
+  "domaine": "Adoption",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code civil — adoption simple et adoption plénière ; loi du 24 avril 2003 réformant l'adoption",
+    "portee": "Formes d'adoption, conditions, agrément et tribunal compétent",
+    "source_officielle": "https://justice.belgium.be/fr/themes_et_dossiers/personnes_et_familles/adoption"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. La préparation et l'agrément relèvent de votre Communauté (Fédération Wallonie-Bruxelles, Communauté flamande/germanophone) ; renseignez-vous auprès d'elle.",
+  "faits": [
+    {
+      "id": "ADOPT-FORMES-001",
+      "question": "Quelle différence entre adoption simple et adoption plénière ?",
+      "reponse": "L'adoption simple crée un lien de filiation avec les adoptants tout en maintenant certains liens avec la famille d'origine (l'enfant garde par exemple des droits successoraux dans sa famille d'origine), mais l'autorité parentale passe aux adoptants. L'adoption plénière, elle, donne à l'enfant exactement le même statut qu'un enfant né des adoptants et rompt les liens juridiques avec la famille d'origine. Le choix dépend de la situation (adoption de l'enfant du conjoint, adoption d'un mineur, etc.).",
+      "reference_legale": "Code civil — adoption simple et adoption plénière (art. 343 et suivants)",
+      "contacts": [
+        {"nom": "Direction de l'Adoption (Communauté)", "lien": "https://adoption.cfwb.be", "pour": "information, préparation, agrément"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://justice.belgium.be/fr/themes_et_dossiers/personnes_et_familles/adoption", "intitule": "SPF Justice — Adoption"},
+        {"type": "officiel", "url": "https://adoption.cfwb.be/ressources-utiles/fiches-thematiques/adoption-simple-et-adoption-pleniere/", "intitule": "Direction de l'Adoption (FWB) — Simple et plénière"}
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "ADOPT-PROCEDURE-001",
+      "question": "Comment se passe la procédure d'adoption ?",
+      "reponse": "En général : 1) une préparation et, dans beaucoup de cas (adoption plénière, adoption internationale), un agrément délivré par votre Communauté, qui atteste de votre capacité à accueillir un enfant ; 2) le recueil des consentements requis (notamment l'enfant de plus de 12 ans, les parents d'origine ou le tuteur) ; 3) le passage devant le tribunal (tribunal de la famille/jeunesse pour un mineur, première instance pour un majeur), qui prononce l'adoption. Pour une adoption intrafamiliale (ex. enfant du conjoint), l'agrément n'est pas toujours requis.",
+      "reference_legale": "Loi du 24 avril 2003 réformant l'adoption ; Code judiciaire (compétence du tribunal de la famille)",
+      "contacts": [
+        {"nom": "Direction de l'Adoption (Communauté)", "pour": "préparation et agrément"},
+        {"nom": "Tribunal de la famille", "pour": "prononcé de l'adoption"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://justice.belgium.be/fr/themes_et_dossiers/personnes_et_familles/adoption/procedures_particuliere", "intitule": "SPF Justice — Procédures d'adoption"},
+        {"type": "officiel", "url": "https://adoption.cfwb.be", "intitule": "Direction de l'Adoption (FWB)"}
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "ADOPT-QUI-001",
+      "question": "Qui peut adopter, et à quelles conditions d'âge ?",
+      "reponse": "Peut adopter une personne seule, un couple marié ou des cohabitants. La loi fixe des conditions d'âge : l'adoptant doit avoir au moins 25 ans et au moins 15 ans de plus que l'adopté. Ces seuils sont abaissés en cas d'adoption de l'enfant du conjoint ou du cohabitant : il suffit alors d'avoir 18 ans et 10 ans de plus que l'adopté. Ces conditions doivent être réunies au moment du dépôt de la requête. Côté adopté : on peut adopter un mineur comme un majeur, mais l'adoption plénière n'est possible qu'à l'égard d'une personne de moins de 18 ans. Enfin, toute personne âgée d'au moins 12 ans doit consentir à sa propre adoption.",
+      "reference_legale": "Code civil — conditions d'âge de l'adoption (art. 345) et consentement de l'adopté (art. 348-1) ; loi du 24 avril 2003 réformant l'adoption",
+      "contacts": [
+        {"nom": "Direction de l'Adoption (Communauté)", "pour": "vérifier votre éligibilité et la procédure"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/loi/2003/04/24/2003009435/justel", "intitule": "Loi du 24 avril 2003 réformant l'adoption (Justel — art. 345, 348-1)"},
+        {"type": "officiel", "url": "https://adoption.cfwb.be/ressources-utiles/cadre-legal/conditions-legales-belges-pour-pouvoir-adopter/", "intitule": "Direction de l'Adoption (FWB) — Conditions légales pour adopter"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "ADOPT-INTERNATIONALE-001",
+      "question": "Comment fonctionne l'adoption d'un enfant venant de l'étranger ?",
+      "reponse": "L'adoption internationale est strictement encadrée pour protéger l'enfant. Elle repose sur la Convention de La Haye du 29 mai 1993 et fait intervenir deux niveaux : l'autorité centrale communautaire (Direction de l'Adoption de votre Communauté), qui assure la préparation, l'agrément et l'encadrement du projet via un organisme agréé, et l'autorité centrale fédérale (SPF Justice), compétente notamment pour la reconnaissance en Belgique des adoptions réalisées à l'étranger. Il faut aussi respecter les exigences du pays d'origine de l'enfant. On ne peut donc pas adopter à l'étranger « en direct » : le passage par la Communauté et le SPF Justice est obligatoire.",
+      "reference_legale": "Convention de La Haye du 29 mai 1993 sur la protection des enfants et la coopération en matière d'adoption internationale ; loi du 24 avril 2003 réformant l'adoption",
+      "contacts": [
+        {"nom": "Direction de l'Adoption (Communauté)", "lien": "https://adoption.cfwb.be", "pour": "préparation, agrément, organisme agréé"},
+        {"nom": "SPF Justice — Autorité centrale fédérale", "lien": "https://justice.belgium.be/fr/themes_et_dossiers/personnes_et_familles/adoption", "pour": "reconnaissance de l'adoption étrangère"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://justice.belgium.be/fr/themes_et_dossiers/personnes_et_familles/adoption", "intitule": "SPF Justice — Adoption (autorité centrale fédérale)"},
+        {"type": "officiel", "url": "https://adoption.cfwb.be", "intitule": "Direction de l'Adoption (FWB) — Adoption internationale"}
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

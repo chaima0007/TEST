@@ -1,0 +1,78 @@
+{
+  "module": "assurance_habitation",
+  "titre": "Assurance habitation & incendie",
+  "domaine": "Assurance logement",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Décrets/ordonnances régionaux sur le bail d'habitation (obligation d'assurance) ; Code civil (responsabilité du locataire)",
+    "portee": "Qui doit assurer le logement, contre quoi, et que se passe-t-il en cas de sinistre",
+    "source_officielle": "https://www.wikifin.be/fr/budget-payer-emprunter-et-assurer/sassurer/habiter/qui-doit-souscrire-une-assurance-habitation"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les obligations dépendent de la Région et de la date du bail ; vérifiez votre situation et votre contrat.",
+  "faits": [
+    {
+      "id": "ASSHAB-OBLIGATION-001",
+      "question": "Suis-je obligé d'assurer mon logement (incendie) ?",
+      "reponse": "Cela dépend de votre Région et de votre statut. En Wallonie, le locataire qui y a sa résidence principale doit souscrire une assurance couvrant l'incendie et les dégâts des eaux (pour les baux depuis le 01/09/2018). À Bruxelles, le locataire doit assurer sa responsabilité incendie et dégâts des eaux avant d'occuper le bien (baux conclus/renouvelés depuis le 01/11/2024). En Flandre, l'obligation pèse sur le locataire ET le bailleur. Une alternative existe : le bailleur assure le bien avec une clause d'abandon de recours, dispensant le locataire. Vérifiez ce que dit votre bail.",
+      "reference_legale": "Décret wallon du 15 mars 2018 sur le bail d'habitation ; ordonnance bruxelloise relative au bail d'habitation ; Code flamand du logement",
+      "contacts": [
+        {"nom": "Votre assureur", "pour": "souscrire / vérifier la couverture incendie + dégâts des eaux"},
+        {"nom": "Service logement de votre Région", "pour": "obligation selon la Région et le bail"}
+      ],
+      "sources": [
+        {"type": "secondaire", "url": "https://www.wikifin.be/fr/budget-payer-emprunter-et-assurer/sassurer/habiter/qui-doit-souscrire-une-assurance-habitation", "intitule": "Wikifin (FSMA) — Qui doit souscrire une assurance habitation ?"},
+        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/services-financiers/assurances", "intitule": "SPF Économie — Assurances"}
+      ],
+      "date_verification": "2026-06-28"
+    },
+    {
+      "id": "ASSHAB-SINISTRE-001",
+      "question": "J'ai un dégât des eaux ou un incendie : que faire ?",
+      "reponse": "Réagissez vite : mettez les personnes en sécurité (en cas d'incendie, appelez le 112), limitez les dégâts si possible, et prévenez votre assureur dans le délai prévu par le contrat (souvent quelques jours). Conservez les preuves (photos, factures des biens endommagés) et, en cas de dégât des eaux, faites remplir un constat amiable avec le voisin concerné si nécessaire. Si vous êtes locataire, prévenez aussi le propriétaire. L'assurance couvre généralement les dommages au logement et votre responsabilité envers les voisins.",
+      "reference_legale": "Loi du 4 avril 2014 relative aux assurances (déclaration de sinistre et obligations) ; Code civil (responsabilité)",
+      "alerte_delai": "Déclarez le sinistre à votre assureur dans le délai prévu au contrat (souvent quelques jours) pour ne pas perdre vos droits.",
+      "contacts": [
+        {"nom": "Secours", "numero": "112", "pour": "incendie, danger"},
+        {"nom": "Votre assureur", "pour": "déclaration de sinistre, expertise"},
+        {"nom": "Ombudsman des assurances", "lien": "https://www.ombudsman-insurance.be", "pour": "litige avec l'assureur"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/services-financiers/assurances/assurances-de-dommages/lassurance-incendie", "intitule": "SPF Économie — L'assurance incendie"},
+        {"type": "secondaire", "url": "https://www.assuralia.be/fr/theme/habitation/assurance-responsabilite-civile-locataire", "intitule": "Assuralia — RC locataire"}
+      ],
+      "date_verification": "2026-06-28"
+    },
+    {
+      "id": "ASSHAB-CONTENU-001",
+      "question": "Que couvre réellement une assurance « incendie » du logement ?",
+      "reponse": "Malgré son nom, l'assurance incendie (ou « habitation ») couvre bien plus que le feu. Elle inclut en général : l'incendie, les dégâts des eaux, la tempête et la grêle, le bris de vitrage, les dégâts électriques, et les catastrophes naturelles. Elle couvre aussi votre responsabilité (si le sinistre s'étend aux voisins) et, selon la formule, le contenu (mobilier, électroménager, effets personnels). Le vol est souvent une option à ajouter. Lisez les plafonds, les exclusions et les franchises : c'est là que se jouent les différences entre contrats. Évaluez correctement la valeur de votre contenu pour éviter d'être sous-assuré.",
+      "reference_legale": "Loi du 4 avril 2014 relative aux assurances (contenu et étendue de la garantie)",
+      "contacts": [
+        {"nom": "Votre assureur / courtier", "pour": "étendue des garanties, plafonds et options (vol)"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/services-financiers/assurances/assurances-de-dommages/lassurance-incendie", "intitule": "SPF Économie — L'assurance incendie"},
+        {"type": "secondaire", "url": "https://www.wikifin.be/fr", "intitule": "Wikifin (FSMA) — Assurance habitation"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "ASSHAB-QUI-ASSURE-001",
+      "question": "Locataire ou propriétaire : qui assure quoi ?",
+      "reponse": "En principe, le propriétaire assure le bâtiment lui-même et sa propre responsabilité, tandis que le locataire assure sa responsabilité locative (les dégâts qu'il pourrait causer au bien loué) ainsi que son contenu (ses meubles). Il existe une solution pratique : le bailleur souscrit une assurance pour l'immeuble avec une clause d'« abandon de recours » envers le locataire, ce qui dispense ce dernier d'assurer sa responsabilité locative (le coût est souvent répercuté dans le loyer). En copropriété, l'immeuble est généralement assuré collectivement via le syndic. Vérifiez votre bail et votre contrat pour savoir exactement ce qui est couvert et par qui.",
+      "reference_legale": "Code civil (responsabilité locative) ; décrets et ordonnances régionaux sur le bail d'habitation (obligation d'assurance)",
+      "contacts": [
+        {"nom": "Votre assureur", "pour": "responsabilité locative et contenu"},
+        {"nom": "Propriétaire / syndic", "pour": "assurance de l'immeuble et abandon de recours"}
+      ],
+      "sources": [
+        {"type": "secondaire", "url": "https://www.assuralia.be/fr/theme/habitation/assurance-responsabilite-civile-locataire", "intitule": "Assuralia — RC locataire"},
+        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/services-financiers/assurances", "intitule": "SPF Économie — Assurances"}
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

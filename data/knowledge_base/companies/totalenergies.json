@@ -1,0 +1,70 @@
+{
+  "id": "totalenergies",
+  "slug": "totalenergies",
+  "name": "TotalEnergies SE",
+  "country": "France",
+  "city": "Courbevoie",
+  "sector": "Énergie",
+  "size": {
+    "revenue_bn_eur": 218,
+    "employees": 105000,
+    "index": "CAC40"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": false,
+    "swiss_hrdd": false,
+    "sfdr": false,
+    "esg_rating": {
+      "msci": "BBB",
+      "sustainalytics": "28.4 Medium Risk",
+      "target": "A"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "Chief Sustainability Officer / Chief Procurement Officer",
+    "team": "Direction Développement Durable & Achats Responsables",
+    "location": "Courbevoie, La Défense",
+    "process": "Appels d'offres annuels, validation COMEX pour engagements >500K EUR, pilotage par KPIs ESG intégrés aux bonus management"
+  },
+  "pain_points": [
+    "Cartographie des droits humains dans 50+ pays d'opération pétro-gazière avec des régimes autoritaires (Angola, Irak, Azerbaïdjan)",
+    "Gestion des fournisseurs sous-traitants dans la chaîne de valeur GNL : absence de traçabilité sur conditions de travail des sous-traitants en Papouasie-Nouvelle-Guinée",
+    "Alignement CSDDD avec les obligations de vigilance déjà en vigueur sous la loi française (plan de vigilance insuffisant selon ONG)",
+    "Pression des actionnaires activistes (Follow This, ClientEarth) sur les engagements climatiques liés aux droits des communautés affectées",
+    "Incidents répétés autour du projet Tilenga en Ouganda : déplacements forcés, compensations insuffisantes documentées par Oxfam",
+    "Reporting CSRD E1 (transition climatique) couplé aux impacts sociaux sur les communautés extractives — manque d'outils intégrés"
+  ],
+  "observed_failures": [
+    "Projet EACOP (Ouganda-Tanzanie) : rapport Banktrack 2023 documentant 100 000+ personnes déplacées sans compensation adéquate, objet de plainte OCDE",
+    "Plan de vigilance 2022 jugé insuffisant par le tribunal judiciaire de Paris suite à la plainte des Amis de la Terre — première décision de ce type",
+    "Audit fournisseurs GNL Qatar 2021 : conditions de travail des travailleurs migrants non conformes aux standards ILO, relevé par rapport IHRB"
+  ],
+  "signals_of_risk": [
+    "Expansion continue dans des zones à haut risque DDH (Mozambique, Irak, Myanmar jusqu'en 2021)",
+    "Taux de couverture audit fournisseurs Tier 2 inférieur à 15% selon rapport développement durable 2023",
+    "Contentieux juridiques actifs sur le devoir de vigilance en France et Belgique"
+  ],
+  "signals_of_trust": [
+    "Engagement Net Zero 2050 avec jalons intermédiaires vérifiés par SBTi",
+    "Membre du Pacte Mondial ONU et signataire des Principes directeurs ONU relatifs aux entreprises et aux droits de l'homme",
+    "Publication annuelle du plan de vigilance depuis 2017 (obligation légale française)",
+    "Investissement de 100M EUR dans le fonds d'adaptation climatique pour communautés affectées (2023)"
+  ],
+  "recommended_actions": [
+    "Proposer un audit de maturité DDH ciblant spécifiquement les zones extractives Afrique subsaharienne — démontrer l'écart vs. CSDDD exigences 2026",
+    "Présenter une solution de cartographie fournisseurs Tier 1-3 avec scoring risque pays intégrant indices Freedom House et ILO",
+    "Organiser un atelier avec le CSO autour du cas EACOP comme étude de cas interne pour identifier les lacunes de processus",
+    "Proposer un module de formation e-learning droits humains pour les 8 000+ acheteurs et contract managers terrain"
+  ],
+  "local_tone": "Ton formel, technique et factuel. Référencer systématiquement les obligations légales françaises (loi de vigilance 2017) avant les directives européennes. Éviter le militantisme — se positionner comme partenaire de conformité, pas d'activisme.",
+  "cultural_notes": "Culture d'ingénieur et de gestionnaire de risques. Les interlocuteurs apprécient les données chiffrées, les benchmarks sectoriels et les références réglementaires précises. La hiérarchie est respectée — toujours adresser le bon niveau décisionnel. Méfiance envers les consultants perçus comme génériques.",
+  "priority": 5,
+  "last_updated": "2026-06-21",
+  "source_links": [
+    "https://totalenergies.com/sites/g/files/nytnzq121/files/documents/2024-04/totalenergies-plan-de-vigilance-2023.pdf",
+    "https://www.banktrack.org/project/east_africa_crude_oil_pipeline",
+    "https://www.business-humanrights.org/fr/derni%C3%A8res-nouvelles/france-totalenergies-devoir-de-vigilance/"
+  ]
+}

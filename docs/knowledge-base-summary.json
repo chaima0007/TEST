@@ -1,0 +1,22 @@
+{
+  "nb_domaines": 12,
+  "domaines": [
+    "CSDDD",
+    "3TG_MINERAIS",
+    "ILO_CORE_CONVENTIONS",
+    "UNGP",
+    "CSRD",
+    "GRI_STANDARDS",
+    "OCDE_MNEGUIDELINES",
+    "TRAVAIL_FORCE",
+    "DROITS_ENFANT_ENTREPRISES",
+    "ACCES_JUSTICE_MECANISMES",
+    "PARIS_AGREEMENT_CLIMATE",
+    "BIODIVERSITE_TNFD"
+  ],
+  "recherche_demo": {
+    "query": "travail forcé",
+    "nb_resultats": 4,
+    "top_resultat": "ILO_CORE_CONVENTIONS"
+  }
+}

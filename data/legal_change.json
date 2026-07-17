@@ -1,0 +1,14 @@
+{
+  "genere_le": "2026-06-29T18:24:01.661661+00:00",
+  "cadence_jours": 180,
+  "total_modules": 151,
+  "frais": 151,
+  "a_reverifier": 0,
+  "prioritaire": 0,
+  "reseau_active": false,
+  "network_ok": null,
+  "sources_modifiees": [],
+  "modules_a_reverifier": [],
+  "verdict": "OK",
+  "note": "Fraîcheur locale toujours fiable ; empreinte réseau seulement si network_ok."
+}

@@ -1,0 +1,21 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2026-06-21",
+  "owner": "chaima@caelumpartners.eu",
+  "total_companies": 20,
+  "total_personas": 10,
+  "total_playbooks": 5,
+  "freshness_threshold_days": 90,
+  "search_backend": "faiss-local",
+  "cache_ttl_seconds": 3600,
+  "sections": {
+    "companies": "data/knowledge_base/companies/",
+    "personas": "data/knowledge_base/personas/",
+    "playbooks": "data/knowledge_base/playbooks/",
+    "templates": "data/knowledge_base/templates/",
+    "sources": "data/knowledge_base/sources/",
+    "index": "data/knowledge_base/index/"
+  },
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "vector_dim": 384
+}

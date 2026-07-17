@@ -1,0 +1,77 @@
+{
+  "module": "recours_europeens",
+  "titre": "Recours européens — SOLVIT, médiateur, pétition",
+  "domaine": "Recours dans l'Union européenne",
+  "juridiction": "UE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Recommandation 2013/461/UE (réseau SOLVIT) ; Traité sur le fonctionnement de l'UE — droit de pétition (art. 227) et Médiateur européen (art. 228)",
+    "portee": "Faire valoir ses droits européens quand une administration ne les respecte pas",
+    "source_officielle": "https://europa.eu/youreurope/citizens/"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale (niveau UE), à jour à la date de revue. Ces recours sont gratuits ; pour un cas précis, passez par Your Europe.",
+  "faits": [
+    {
+      "id": "UEREC-SOLVIT-001",
+      "question": "Une administration d'un autre pays de l'UE ne respecte pas mes droits européens : que faire ?",
+      "reponse": "Saisissez SOLVIT, un service GRATUIT présent dans chaque pays de l'UE. Il aide quand une autorité publique d'un autre État membre ne respecte pas vos droits européens (reconnaissance de diplôme, sécurité sociale, séjour, immatriculation de véhicule, droits du travailleur…). SOLVIT cherche une solution à l'amiable, en général dans un délai de quelques semaines. C'est souvent plus rapide qu'une procédure judiciaire. Gardez vos documents et décrivez clairement le problème.",
+      "reference_legale": "Recommandation 2013/461/UE (réseau SOLVIT), fondée sur le droit du marché intérieur (notamment la directive 2006/123/CE relative aux services)",
+      "contacts": [
+        {"nom": "SOLVIT", "lien": "https://europa.eu/youreurope/citizens/national-contact-points/index_fr.htm", "pour": "problème avec une administration d'un autre pays de l'UE (gratuit)"},
+        {"nom": "Your Europe", "lien": "https://europa.eu/youreurope/citizens/", "pour": "orientation sur vos droits européens"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://europa.eu/youreurope/citizens/national-contact-points/index_fr.htm", "intitule": "Your Europe — SOLVIT"},
+        {"type": "officiel", "url": "https://commission.europa.eu/about/contact/problems-and-complaints/help-defending-your-rights/solvit_fr", "intitule": "Commission européenne — SOLVIT"}
+      ],
+      "date_verification": "2026-06-28"
+    },
+    {
+      "id": "UEREC-MEDIATEUR-001",
+      "question": "Puis-je me plaindre des institutions européennes ou pétitionner ?",
+      "reponse": "Oui, deux droits existent. 1) Le Médiateur européen examine les plaintes pour mauvaise administration des institutions et organes de l'UE (manque de transparence, refus injustifié, retards). 2) Le droit de pétition : tout citoyen de l'UE peut adresser une pétition au Parlement européen sur un sujet qui le concerne et qui relève de l'UE. Ces démarches sont gratuites. Pour un litige avec une administration nationale, c'est plutôt SOLVIT (voir ci-dessus).",
+      "reference_legale": "Règlement (UE, Euratom) 2021/1163 fixant le statut du Médiateur européen ; droit de pétition au Parlement européen (art. 227 TFUE)",
+      "contacts": [
+        {"nom": "Médiateur européen", "lien": "https://www.ombudsman.europa.eu/fr/home", "pour": "mauvaise administration des institutions UE"},
+        {"nom": "Parlement européen — Pétitions", "lien": "https://www.europarl.europa.eu/petitions/fr/home", "pour": "déposer une pétition"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.ombudsman.europa.eu/fr/home", "intitule": "Médiateur européen"},
+        {"type": "officiel", "url": "https://www.europarl.europa.eu/petitions/fr/home", "intitule": "Parlement européen — Droit de pétition"}
+      ],
+      "date_verification": "2026-06-28"
+    },
+    {
+      "id": "UEREC-COMMISSION-001",
+      "question": "Un pays de l'UE viole le droit européen : puis-je le signaler à l'Europe ?",
+      "reponse": "Oui. Tout citoyen peut adresser une plainte à la Commission européenne lorsqu'il estime qu'un État membre (loi, règle ou pratique d'une autorité) viole le droit de l'Union. La Commission examine la plainte et peut ouvrir une procédure d'infraction contre l'État, et, si nécessaire, saisir la Cour de justice de l'Union européenne (CJUE). Attention : cette voie ne règle pas directement votre cas individuel (la Commission ne vous représente pas en justice) et elle peut être longue. Pour un problème personnel et concret avec une administration, SOLVIT est en général plus rapide. La plainte à la Commission se dépose gratuitement via un formulaire en ligne.",
+      "reference_legale": "Traité sur le fonctionnement de l'Union européenne — procédure d'infraction (art. 258) ; recours devant la Cour de justice de l'UE (directive et règlements du marché intérieur)",
+      "contacts": [
+        {"nom": "Commission européenne — Plaintes", "lien": "https://commission.europa.eu/about/contact/problems-and-complaints/complaints-about-breaches-eu-law/how-make-complaint-eu-level_fr", "pour": "signaler une violation du droit de l'UE par un État"},
+        {"nom": "SOLVIT", "lien": "https://europa.eu/youreurope/citizens/national-contact-points/index_fr.htm", "pour": "problème individuel et concret (plus rapide)"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://commission.europa.eu/about/contact/problems-and-complaints/complaints-about-breaches-eu-law/how-make-complaint-eu-level_fr", "intitule": "Commission européenne — Porter plainte au niveau de l'UE"},
+        {"type": "officiel", "url": "https://europa.eu/youreurope/citizens/", "intitule": "Your Europe — Faire valoir ses droits dans l'UE"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "UEREC-CEDH-001",
+      "question": "Puis-je saisir la Cour européenne des droits de l'homme ?",
+      "reponse": "Oui, mais sous des conditions strictes, et il ne faut pas la confondre avec l'Union européenne : la Cour européenne des droits de l'homme (CEDH), à Strasbourg, relève du Conseil de l'Europe et veille au respect de la Convention européenne des droits de l'homme. Vous pouvez la saisir si vous estimez qu'un État a violé un de vos droits garantis par la Convention (procès équitable, vie privée, liberté d'expression…), MAIS seulement après avoir épuisé toutes les voies de recours internes (jusqu'aux plus hautes juridictions belges), et dans un délai limité après la dernière décision interne. La requête est gratuite et ne nécessite pas obligatoirement un avocat pour l'introduire, mais la procédure est exigeante.",
+      "reference_legale": "Convention européenne de sauvegarde des droits de l'homme et des libertés fondamentales (droit de recours individuel devant la Cour, art. 34 et 35)",
+      "contacts": [
+        {"nom": "Cour européenne des droits de l'homme (Strasbourg)", "lien": "https://www.echr.coe.int/fr", "pour": "requête après épuisement des recours internes"},
+        {"nom": "Avocat / Bureau d'aide juridique", "pour": "évaluer la recevabilité de la requête"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.echr.coe.int/fr", "intitule": "Cour européenne des droits de l'homme"},
+        {"type": "officiel", "url": "https://europa.eu/youreurope/citizens/", "intitule": "Your Europe — Droits fondamentaux"}
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

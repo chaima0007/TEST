@@ -1,0 +1,69 @@
+{
+  "module": "statut_affection_chronique",
+  "titre": "Statut affection chronique — frais de santé allégés",
+  "domaine": "Santé & remboursements",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi relative à l'assurance obligatoire soins de santé et indemnités, coordonnée le 14 juillet 1994 ; arrêté royal relatif au statut de personne atteinte d'une affection chronique",
+    "portee": "Statut allégeant les frais de santé des personnes malades chroniques",
+    "source_officielle": "https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/facilites-financieres/statut-affection-chronique"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. L'octroi et les seuils dépendent de votre situation médicale et de vos frais ; adressez-vous à votre mutualité.",
+  "faits": [
+    {
+      "id": "AFFCHRON-PRINCIPE-001",
+      "question": "Qu'est-ce que le statut « affection chronique » ?",
+      "reponse": "C'est un statut destiné aux personnes qui ont des frais de santé élevés et récurrents, en raison d'une maladie de longue durée. Il vise à mieux protéger financièrement les malades chroniques. Son principal effet : il abaisse le plafond du maximum à facturer (MàF) de votre ménage, de sorte que vous atteignez plus vite le remboursement intégral de vos soins. Il peut aussi ouvrir des facilités supplémentaires (par exemple le tiers payant). C'est un statut à connaître si vous, ou un proche, suivez un traitement coûteux au long cours.",
+      "reference_legale": "Loi coordonnée du 14 juillet 1994 (statut de personne atteinte d'une affection chronique)",
+      "contacts": [
+        {"nom": "Votre mutualité", "pour": "statut affection chronique et effets sur le MàF"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/facilites-financieres/statut-affection-chronique", "intitule": "INAMI — Statut affection chronique"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "AFFCHRON-CONDITIONS-001",
+      "question": "Comment sait-on si on y a droit ?",
+      "reponse": "Le statut s'apprécie principalement à partir de vos dépenses de santé : si vos frais (tickets modérateurs) dépassent un certain montant pendant plusieurs années consécutives, ou si vous bénéficiez d'un forfait « maladie chronique » ou d'une reconnaissance pour une affection rare/lourde, vous pouvez obtenir le statut. Bonne nouvelle : il est en général octroyé AUTOMATIQUEMENT par votre mutualité sur la base de vos données de remboursement, sans démarche. En cas de doute, demandez à votre mutualité de vérifier votre droit.",
+      "reference_legale": "Arrêté royal relatif au statut de personne atteinte d'une affection chronique (conditions d'octroi)",
+      "contacts": [
+        {"nom": "Votre mutualité", "pour": "vérifier l'octroi du statut affection chronique"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/facilites-financieres/statut-affection-chronique", "intitule": "INAMI — Conditions du statut affection chronique"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "AFFCHRON-AVANTAGES-001",
+      "question": "Quels avantages concrets procure ce statut ?",
+      "reponse": "Le principal avantage est l'abaissement du plafond du maximum à facturer : votre ménage atteint plus rapidement le seuil au-delà duquel les soins sont remboursés à 100 %, ce qui réduit nettement le reste à charge annuel. Le statut peut aussi faciliter l'application du tiers payant et l'accès à d'autres aides liées à la maladie de longue durée. Combiné, le cas échéant, avec l'intervention majorée (BIM), il constitue une protection financière solide pour les patients chroniques. Vérifiez auprès de votre mutualité l'ensemble des avantages auxquels votre situation donne droit.",
+      "reference_legale": "Loi coordonnée du 14 juillet 1994 (effets du statut affection chronique sur le maximum à facturer)",
+      "contacts": [
+        {"nom": "Votre mutualité", "pour": "avantages cumulés (MàF, tiers payant, BIM)"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/facilites-financieres/statut-affection-chronique", "intitule": "INAMI — Avantages du statut affection chronique"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "AFFCHRON-FORFAIT-001",
+      "question": "Existe-t-il une aide forfaitaire pour les malades chroniques ?",
+      "reponse": "Oui. À côté du statut lui-même, certaines personnes atteintes d'une maladie chronique peuvent bénéficier d'un « forfait maladie chronique » : une intervention financière annuelle versée par la mutualité pour aider à couvrir les frais liés à la dépendance et aux soins (médicaments, matériel, aide…). Les conditions tiennent compte du niveau de dépenses et du degré de dépendance. Comme pour le statut, l'octroi est souvent automatique via la mutualité. Renseignez-vous : ces aides se cumulent et peuvent représenter un soutien appréciable au fil de l'année.",
+      "reference_legale": "Loi coordonnée du 14 juillet 1994 (forfait pour malades chroniques)",
+      "contacts": [
+        {"nom": "Votre mutualité", "pour": "forfait maladie chronique et aides liées"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/facilites-financieres/statut-affection-chronique", "intitule": "INAMI — Forfait maladie chronique"}
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "module": "titres_services",
+  "titre": "Titres-services (aide à domicile)",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 20 juillet 2001 visant à favoriser le développement de services et d'emplois de proximité (titres-services)",
+    "portee": "Citoyens en Belgique",
+    "source_officielle": "https://fin.belgium.be/fr/particuliers/avantages-fiscaux/titres-services-ale-cheques"
+  },
+  "derniere_revue": "2026-06-29",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information juridique générale, à jour à la date de revue. Le système et les avantages varient selon la Région : vérifiez les règles de la vôtre.",
+  "faits": [
+    {
+      "id": "TS-001",
+      "question": "Qu'est-ce que le système des titres-services ?",
+      "reponse": "Les titres-services permettent de payer une aide à domicile agréée (ménage, repassage, courses, transport de personnes à mobilité réduite) à un tarif avantageux, car le système est subventionné par votre Région. Un titre paie une heure de prestation, effectuée par une personne employée par une société agréée.",
+      "reference_legale": "Loi du 20 juillet 2001 (titres-services) — système régionalisé",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://fin.belgium.be/fr/particuliers/avantages-fiscaux/titres-services-ale-cheques",
+          "intitule": "SPF Finances — Titres-services"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://www.titre-service.brussels/citoyen/information/avantages/pour-moi",
+          "intitule": "Titres-Services Bruxelles"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "TS-002",
+      "question": "Ai-je droit à une réduction d'impôt sur les titres-services ?",
+      "reponse": "Cela dépend de votre Région de domicile au 1er janvier de l'exercice. En Wallonie, une réduction d'impôt est maintenue. Attention : en Région flamande, la réduction est supprimée pour les titres-services achetés à partir du 1er janvier 2025 ; en Région de Bruxelles-Capitale, elle est supprimée pour les achats à partir du 1er janvier 2026.",
+      "reference_legale": "Loi du 20 juillet 2001 (réduction d'impôt régionalisée pour titres-services)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://fin.belgium.be/fr/particuliers/avantages-fiscaux/titres-services-ale-cheques",
+          "intitule": "SPF Finances — Réduction d'impôt titres-services"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "TS-003",
+      "question": "Quelles conditions pratiques pour la réduction ?",
+      "reponse": "Les titres-services doivent être établis à votre nom. Si vous êtes marié(e) ou en cohabitation légale, chacun a droit à la réduction pour les titres achetés à son propre nom (vous devez donc être tous deux inscrits comme utilisateurs). Conservez votre attestation fiscale annuelle.",
+      "reference_legale": "Loi du 20 juillet 2001 (conditions de la réduction d'impôt)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://fin.belgium.be/fr/particuliers/avantages-fiscaux/titres-services-ale-cheques",
+          "intitule": "SPF Finances — Conditions titres-services"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "TS-REGIONAL-001",
+      "question": "Qui gère les titres-services selon ma région ?",
+      "reponse": "Le dispositif des titres-services (aide-ménagère, repassage, courses…) est une compétence RÉGIONALE : les conditions, le prix d'achat et le nombre de titres dépendent de votre région. En WALLONIE : le dispositif relève de la Région (information via emploi.wallonie.be). En FLANDRE : les dienstencheques, gérés par la Région flamande. À BRUXELLES : les titres-services relèvent de la Région de Bruxelles-Capitale (gestion liée à Actiris). Le volet FÉDÉRAL se limite à la déduction/avantage fiscal. Achetez et utilisez vos titres selon les règles de votre région.",
+      "reference_legale": "Compétence régionale des titres-services : décret/arrêté wallon, décret flamand (dienstencheques) et ordonnance bruxelloise relatifs aux titres-services ; avantage fiscal régi par le Code des impôts sur les revenus (volet fédéral)",
+      "contacts": [
+        {
+          "nom": "emploi.wallonie.be (Wallonie)",
+          "lien": "https://emploi.wallonie.be/",
+          "pour": "titres-services en Wallonie"
+        },
+        {
+          "nom": "Vlaanderen — dienstencheques (Flandre)",
+          "lien": "https://www.vlaanderen.be/",
+          "pour": "dienstencheques en Flandre"
+        },
+        {
+          "nom": "Actiris / Région de Bruxelles-Capitale",
+          "lien": "https://www.actiris.brussels/fr/citoyens/",
+          "pour": "titres-services à Bruxelles"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://emploi.wallonie.be/",
+          "intitule": "SPW Emploi — titres-services (Wallonie)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.vlaanderen.be/",
+          "intitule": "Vlaanderen — dienstencheques (Flandre)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.actiris.brussels/fr/citoyens/",
+          "intitule": "Actiris — titres-services (Bruxelles)"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    }
+  ]
+}

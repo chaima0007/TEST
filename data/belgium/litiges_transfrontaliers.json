@@ -1,0 +1,75 @@
+{
+  "module": "litiges_transfrontaliers",
+  "titre": "Litiges transfrontaliers (achats dans l'UE)",
+  "domaine": "Consommation transfrontalière (UE)",
+  "juridiction": "UE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Règlement (UE) 524/2013 (règlement en ligne des litiges) ; Directive 2013/11/UE (règlement extrajudiciaire des litiges de consommation)",
+    "portee": "Faire valoir ses droits de consommateur lors d'un achat dans un autre pays de l'UE",
+    "source_officielle": "https://www.cecbelgique.be/"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale (niveau UE), à jour à la date de revue. Pour un litige précis, le Centre Européen des Consommateurs vous aide gratuitement.",
+  "faits": [
+    {
+      "id": "TRANSF-LITIGE-001",
+      "question": "J'ai un problème avec un vendeur d'un autre pays de l'UE : qui peut m'aider ?",
+      "reponse": "Vous gardez vos droits de consommateur européen (information, droit de rétractation pour les achats à distance, garantie légale…). Pour un litige avec un professionnel établi dans un autre pays de l'UE, le Centre Européen des Consommateurs (CEC) Belgique vous aide gratuitement à dialoguer avec le vendeur et à trouver une solution amiable. Gardez toutes les preuves (commande, paiement, échanges). En dernier recours, des procédures simplifiées existent pour les petits litiges transfrontaliers.",
+      "reference_legale": "Directive 2011/83/UE (droits des consommateurs) ; Directive 2013/11/UE (règlement extrajudiciaire des litiges)",
+      "contacts": [
+        {"nom": "Centre Européen des Consommateurs (CEC) Belgique", "lien": "https://www.cecbelgique.be", "pour": "litige avec un vendeur d'un autre pays de l'UE (gratuit)"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://europa.eu/youreurope/citizens/consumers/index_fr.htm", "intitule": "Your Europe — Consommateurs"},
+        {"type": "secondaire", "url": "https://www.cecbelgique.be/", "intitule": "CEC Belgique — Aide aux litiges transfrontaliers"}
+      ],
+      "date_verification": "2026-06-28"
+    },
+    {
+      "id": "TRANSF-PETITS-LITIGES-001",
+      "question": "Comment régler un petit litige transfrontalier sans gros frais ?",
+      "reponse": "Pour les litiges civils ou commerciaux transfrontaliers d'un montant limité, il existe une procédure européenne de règlement des petits litiges : elle est simplifiée, par formulaire, et permet d'obtenir une décision exécutoire dans toute l'UE sans avocat obligatoire. Avant d'en arriver là, tentez la voie amiable via le CEC. Conservez tous les documents : ils sont la base de votre dossier.",
+      "reference_legale": "Règlement (CE) 861/2007 instituant une procédure européenne de règlement des petits litiges",
+      "contacts": [
+        {"nom": "Centre Européen des Consommateurs (CEC) Belgique", "lien": "https://www.cecbelgique.be", "pour": "orientation amiable avant procédure"},
+        {"nom": "Your Europe", "lien": "https://europa.eu/youreurope/citizens/", "pour": "procédure européenne des petits litiges"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://europa.eu/youreurope/citizens/consumers/consumers-dispute-resolution/index_fr.htm", "intitule": "Your Europe — Règlement des litiges de consommation"},
+        {"type": "secondaire", "url": "https://www.cecbelgique.be/", "intitule": "CEC Belgique"}
+      ],
+      "date_verification": "2026-06-28"
+    },
+    {
+      "id": "TRANSF-GARANTIE-001",
+      "question": "Mon achat dans un autre pays de l'UE est défectueux : quelle garantie ?",
+      "reponse": "Partout dans l'Union européenne, vous bénéficiez d'une garantie légale de conformité d'au moins 2 ans sur les biens achetés auprès d'un professionnel. Si le produit présente un défaut (il ne fonctionne pas, n'est pas conforme à la description), le vendeur doit d'abord le réparer ou le remplacer gratuitement ; si ce n'est pas possible ou pas fait dans un délai raisonnable, vous avez droit à une réduction de prix ou au remboursement. Cette garantie est due par le VENDEUR (pas seulement le fabricant) et s'ajoute à toute garantie commerciale. Pour un litige avec un vendeur d'un autre pays de l'UE, le Centre Européen des Consommateurs vous aide gratuitement.",
+      "reference_legale": "Directive (UE) 2019/771 relative à la garantie légale de conformité des biens",
+      "contacts": [
+        {"nom": "Centre Européen des Consommateurs (CEC) Belgique", "lien": "https://www.cecbelgique.be", "pour": "défaut d'un produit acheté dans l'UE"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://europa.eu/youreurope/citizens/consumers/shopping/guarantees-returns/index_fr.htm", "intitule": "Your Europe — Garanties et retours"},
+        {"type": "secondaire", "url": "https://www.cecbelgique.be/", "intitule": "CEC Belgique — Garantie légale"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "TRANSF-RETRACTATION-001",
+      "question": "J'ai acheté en ligne dans l'UE : puis-je me rétracter ?",
+      "reponse": "Oui. Pour un achat à distance (en ligne, par téléphone) auprès d'un professionnel établi dans l'UE, vous disposez d'un droit de rétractation de 14 jours à compter de la réception du bien, sans devoir vous justifier ni payer de pénalité. Vous renvoyez le produit (les frais de retour peuvent rester à votre charge si le vendeur l'a indiqué) et le vendeur vous rembourse, en principe dans les 14 jours. Certaines exceptions existent (produits sur mesure, biens périssables, contenus numériques téléchargés avec votre accord, etc.). Gardez les preuves d'envoi du retour et de votre demande de rétractation.",
+      "reference_legale": "Directive 2011/83/UE relative aux droits des consommateurs (droit de rétractation des contrats à distance)",
+      "alerte_delai": "Droit de rétractation : 14 jours après réception du bien, par une déclaration claire au vendeur.",
+      "contacts": [
+        {"nom": "Centre Européen des Consommateurs (CEC) Belgique", "lien": "https://www.cecbelgique.be", "pour": "litige sur une rétractation/un remboursement"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://europa.eu/youreurope/citizens/consumers/shopping/cancellation-rights/index_fr.htm", "intitule": "Your Europe — Droit de rétractation"},
+        {"type": "secondaire", "url": "https://www.cecbelgique.be/", "intitule": "CEC Belgique — Achats en ligne"}
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

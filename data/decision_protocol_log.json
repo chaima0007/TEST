@@ -1,0 +1,184 @@
+[
+  {
+    "timestamp": "2026-06-23T00:05:25.671075",
+    "decision_id": "180c87b713d1c31d",
+    "action": "patent filing PAT-001",
+    "target": "data/ip_registry.json",
+    "context": "Dépôt brevet provisoire USPTO",
+    "risk_level": "MODÉRÉ",
+    "decision": "AUTORISÉ",
+    "approved": true,
+    "reasons": [],
+    "agents": [
+      {
+        "agent": "IMPACT",
+        "risk_score": 0.25,
+        "risk_level": "FAIBLE",
+        "reversible": true,
+        "requires_backup": false,
+        "status": "OK"
+      },
+      {
+        "agent": "DEPS",
+        "dependencies": [],
+        "cascade_count": 0,
+        "high_cascade": false,
+        "status": "OK"
+      },
+      {
+        "agent": "PROTOCOL",
+        "status": "OK",
+        "violations": [],
+        "warnings": [],
+        "claude_md_compliant": true,
+        "agents_md_compliant": true
+      },
+      {
+        "agent": "MONTE_CARLO",
+        "simulations": 100000,
+        "success_rate": 94.91,
+        "confidence_interval_95": 0.136,
+        "threshold_required": 50.0,
+        "approved": true,
+        "confidence": "94.9% ± 0.14%"
+      },
+      {
+        "agent": "ROLLBACK",
+        "recovery_plan": "git stash && git checkout HEAD~1 && python3 scripts/build_health_protocol.py",
+        "estimated_recovery_minutes": 3,
+        "backup_required": false,
+        "status": "READY"
+      },
+      {
+        "agent": "SECURITY",
+        "issues": [
+          "Opération IP — hash SHA-256 requis pour preuve d'antériorité"
+        ],
+        "security_score": 85,
+        "status": "WARN"
+      }
+    ],
+    "simulations_run": 100000
+  },
+  {
+    "timestamp": "2026-06-23T00:05:25.678390",
+    "decision_id": "f2df7e204c5c3d8f",
+    "action": "git push dashboards fix",
+    "target": "app/dashboard/",
+    "context": "Correction useCallback 133 dashboards",
+    "risk_level": "FAIBLE",
+    "decision": "AUTORISÉ",
+    "approved": true,
+    "reasons": [],
+    "agents": [
+      {
+        "agent": "IMPACT",
+        "risk_score": 0.4,
+        "risk_level": "MODÉRÉ",
+        "reversible": true,
+        "requires_backup": false,
+        "status": "OK"
+      },
+      {
+        "agent": "DEPS",
+        "dependencies": [
+          "app/dashboard/**/page.tsx",
+          "CI:build"
+        ],
+        "cascade_count": 2,
+        "high_cascade": false,
+        "status": "OK"
+      },
+      {
+        "agent": "PROTOCOL",
+        "status": "OK",
+        "violations": [],
+        "warnings": [],
+        "claude_md_compliant": true,
+        "agents_md_compliant": true
+      },
+      {
+        "agent": "MONTE_CARLO",
+        "simulations": 10000,
+        "success_rate": 94.66,
+        "confidence_interval_95": 0.441,
+        "threshold_required": 40.0,
+        "approved": true,
+        "confidence": "94.7% ± 0.44%"
+      },
+      {
+        "agent": "ROLLBACK",
+        "recovery_plan": "git stash && git checkout HEAD~1 && python3 scripts/build_health_protocol.py",
+        "estimated_recovery_minutes": 3,
+        "backup_required": false,
+        "status": "READY"
+      },
+      {
+        "agent": "SECURITY",
+        "issues": [],
+        "security_score": 100,
+        "status": "OK"
+      }
+    ],
+    "simulations_run": 10000
+  },
+  {
+    "timestamp": "2026-06-23T00:05:26.026843",
+    "decision_id": "e2dc1b69de946df8",
+    "action": "deploy to production Vercel",
+    "target": "vercel:production",
+    "context": "Mise en production suite CI verte",
+    "risk_level": "ÉLEVÉ",
+    "decision": "AUTORISÉ",
+    "approved": true,
+    "reasons": [],
+    "agents": [
+      {
+        "agent": "IMPACT",
+        "risk_score": 0.5,
+        "risk_level": "ÉLEVÉ",
+        "reversible": true,
+        "requires_backup": true,
+        "status": "OK"
+      },
+      {
+        "agent": "DEPS",
+        "dependencies": [],
+        "cascade_count": 0,
+        "high_cascade": false,
+        "status": "OK"
+      },
+      {
+        "agent": "PROTOCOL",
+        "status": "OK",
+        "violations": [],
+        "warnings": [],
+        "claude_md_compliant": true,
+        "agents_md_compliant": true
+      },
+      {
+        "agent": "MONTE_CARLO",
+        "simulations": 500000,
+        "success_rate": 86.66,
+        "confidence_interval_95": 0.094,
+        "threshold_required": 60.0,
+        "approved": true,
+        "confidence": "86.7% ± 0.09%"
+      },
+      {
+        "agent": "ROLLBACK",
+        "recovery_plan": "git stash && git checkout HEAD~1 && python3 scripts/build_health_protocol.py",
+        "estimated_recovery_minutes": 3,
+        "backup_required": false,
+        "status": "READY"
+      },
+      {
+        "agent": "SECURITY",
+        "issues": [],
+        "security_score": 100,
+        "status": "OK"
+      }
+    ],
+    "simulations_run": 500000
+  }
+]

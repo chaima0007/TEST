@@ -1,0 +1,162 @@
+{
+  "module": "aide_urgence",
+  "titre": "Où aller quand ça va mal — faim, sans-abri, danger, sans papiers",
+  "domaine": "Aide sociale & urgence",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Aide sociale et droit à l'aide (loi organique des CPAS du 8 juillet 1976 ; SPP Intégration Sociale)",
+    "portee": "Aide d'urgence : alimentation, hébergement, danger, personnes sans papiers",
+    "source_officielle": "https://www.belgium.be/fr/famille/aide_sociale/cpas"
+  },
+  "derniere_revue": "2026-06-26",
+  "statut_fiabilite": "verifie",
+  "mission": "Protéger, sensibiliser, informer.",
+  "avertissement": "En cas de danger immédiat, appelez le 112 (secours) ou le 101 (police). Pour l'aide sociale, le CPAS de votre commune est le premier interlocuteur. Information générale, à jour à la date de revue.",
+  "faits": [
+    {
+      "id": "URG-FAIM-001",
+      "question": "J'ai faim / je n'ai plus de quoi manger : où aller ?",
+      "reponse": "Adressez-vous au CPAS de votre commune (il y en a un partout) : il peut fournir une aide financière, des colis alimentaires et une aide d'urgence. Des associations distribuent aussi des repas et des colis. Demander de l'aide est un droit, pas une honte. Si la situation est très urgente, voyez la fiche « aide sociale en urgence ».",
+      "reference_legale": "Loi organique des CPAS du 8 juillet 1976 — droit à l'aide sociale",
+      "contacts": [
+        {
+          "nom": "CPAS de votre commune",
+          "pour": "aide financière, colis alimentaires"
+        }
+      ],
+      "alerte_delai": "Si vous ne pouvez pas attendre, demandez explicitement une aide d'urgence (voir fiche dédiée).",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.belgium.be/fr/famille/aide_sociale/cpas",
+          "intitule": "Belgium.be — CPAS"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://www.bruxelles-j.be/droits-sociaux/obtenir-de-laide-du-cpas/quelles-sont-les-aides-fournies-par-le-cpas/",
+          "intitule": "Bruxelles-J — Les aides du CPAS"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "URG-SANSABRI-001",
+      "question": "Je n'ai pas (ou plus) de logement : où aller ?",
+      "reponse": "Le CPAS aide les personnes sans abri : aide financière, adresse de référence (pour garder des droits sans domicile fixe), aide à trouver un logement, et parfois un logement d'urgence (location de courte durée, en principe 6 mois renouvelable une fois). Dans les grandes villes, des dispositifs d'accueil et d'hébergement d'urgence existent. Le CPAS de la commune où vous vous trouvez est le point de départ.",
+      "reference_legale": "Loi organique des CPAS du 8 juillet 1976 ; loi du 26 mai 2002 concernant le droit à l'intégration sociale (adresse de référence, logement d'urgence)",
+      "contacts": [
+        {
+          "nom": "CPAS (commune où vous êtes)",
+          "pour": "hébergement d'urgence, adresse de référence"
+        },
+        {
+          "nom": "Urgences",
+          "numero": "112",
+          "pour": "détresse vitale (froid, santé)"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.belgium.be/fr/logement/logement_social/sans-abri",
+          "intitule": "Belgium.be — Sans-abri"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.mi-is.be/fr/logement-durgence-0",
+          "intitule": "SPP Intégration Sociale — Logement d'urgence"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "URG-CPAS-URGENT-001",
+      "question": "C'est urgent, je ne peux pas attendre : comment obtenir de l'aide vite ?",
+      "reponse": "Si votre situation est trop urgente pour attendre la procédure normale, vous pouvez demander une aide sociale en urgence au président ou à la présidente du CPAS : en demandant à le/la rencontrer, ou par courrier recommandé expliquant pourquoi c'est urgent. Gardez une copie de votre demande. Le CPAS doit examiner votre situation.",
+      "reference_legale": "Loi organique des CPAS — aide urgente / décision du président",
+      "contacts": [
+        {
+          "nom": "Président·e du CPAS de votre commune",
+          "pour": "demande d'aide en urgence"
+        }
+      ],
+      "alerte_delai": "Formulez la demande comme « urgente » et par écrit (recommandé) pour accélérer et garder une preuve.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.belgium.be/fr/famille/aide_sociale/cpas",
+          "intitule": "Belgium.be — CPAS"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://www.bruxelles-j.be/ton-autonomie/tu-es-mineur/laide-sociale-comment-subvenir-a-mes-besoins/",
+          "intitule": "Bruxelles-J — L'aide sociale"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "URG-SANSPAPIERS-001",
+      "question": "Je suis sans papiers / en séjour illégal : ai-je droit à une aide ?",
+      "reponse": "Même en séjour illégal, vous avez droit à l'aide médicale urgente (AMU) : c'est une prise en charge des frais médicaux nécessaires (soins urgents ou de prévention), via le CPAS, sur attestation d'un médecin. D'autres aides peuvent exister selon la situation (notamment pour les familles avec enfants). Renseignez-vous auprès du CPAS ou d'une association spécialisée.",
+      "reference_legale": "Arrêté royal du 12 décembre 1996 relatif à l'aide médicale urgente ; loi organique des CPAS du 8 juillet 1976",
+      "contacts": [
+        {
+          "nom": "CPAS de votre commune",
+          "pour": "aide médicale urgente (AMU)"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.mi-is.be/fr/themes/aide-medicale/aide-medicale-urgente",
+          "intitule": "SPP Intégration Sociale — Aide médicale urgente"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://www.bruxelles-j.be/droits-sociaux/obtenir-de-laide-du-cpas/comment-le-cpas-peut-il-aider-les-personnes-qui-sont-en-sejour-illegal-en-belgique-les-sans-papiers/",
+          "intitule": "Bruxelles-J — CPAS et personnes sans papiers"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "URG-DANGER-001",
+      "question": "Je me sens en danger : où aller (selon mon âge / ma situation) ?",
+      "reponse": "En danger immédiat : 112 (secours) ou 101 (police), pour tout le monde. Si tu es un enfant ou un jeune : le 103 (Écoute-Enfants), ou un adulte de confiance. En cas de violences (notamment conjugales ou intrafamiliales), des lignes d'écoute et des structures d'accueil/refuges existent pour mettre les victimes en sécurité — voir la catégorie « Harcèlement & violences » pour les contacts. Tu n'as pas à rester seul·e face au danger.",
+      "reference_legale": "Code pénal (protection des personnes) ; arrêté royal relatif aux numéros d'urgence (112/101)",
+      "contacts": [
+        {
+          "nom": "Urgences",
+          "numero": "112",
+          "pour": "danger immédiat"
+        },
+        {
+          "nom": "Police",
+          "numero": "101",
+          "pour": "danger / plainte"
+        },
+        {
+          "nom": "Écoute-Enfants",
+          "numero": "103",
+          "pour": "enfants & jeunes"
+        }
+      ],
+      "alerte_delai": "Si tu es en danger, n'attends pas : mets-toi d'abord en sécurité, puis appelle.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.belgium.be/fr/sante/aide_et_assistance",
+          "intitule": "Belgium.be — Aide et assistance"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.belgium.be/fr/famille/aide_sociale/cpas",
+          "intitule": "Belgium.be — CPAS"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    }
+  ]
+}

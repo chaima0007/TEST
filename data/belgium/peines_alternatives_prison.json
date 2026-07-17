@@ -1,0 +1,101 @@
+{
+  "module": "peines_alternatives_prison",
+  "titre": "Peines alternatives à la prison",
+  "domaine": "Justice pénale",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code pénal et lois spécifiques : peine de travail (loi du 17 avril 2002), probation autonome (loi du 10 avril 2014), surveillance électronique comme peine autonome (loi du 7 février 2014)",
+    "portee": "Peines non privatives de liberté que le juge peut prononcer",
+    "source_officielle": "https://justice.belgium.be/fr/themes_et_dossiers/jugement_penal_et_consequences/types_de_peines/que_decide_le_juge/peine_de_travail"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Le choix de la peine appartient au juge ; un avocat peut plaider une peine alternative adaptée à votre situation.",
+  "faits": [
+    {
+      "id": "PEINEALT-TRAVAIL-001",
+      "question": "Qu'est-ce que la peine de travail ?",
+      "reponse": "La peine de travail est une peine autonome : au lieu d'une amende ou de la prison, le condamné effectue un nombre d'heures de travail non rémunéré, au profit de la collectivité (commune, ASBL, service public). Elle suppose en principe l'accord de l'intéressé et est encadrée par un assistant de justice qui en suit l'exécution. C'est une alternative qui permet de « réparer » envers la société tout en évitant l'incarcération. Si la peine de travail n'est pas exécutée, une peine de substitution (amende ou prison) prévue par le jugement peut s'appliquer.",
+      "reference_legale": "Code pénal — peine de travail (loi du 17 avril 2002)",
+      "contacts": [
+        {
+          "nom": "Assistant de justice (Maison de justice)",
+          "pour": "suivi de la peine de travail"
+        },
+        {
+          "nom": "Avocat",
+          "pour": "demander une peine de travail"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://justice.belgium.be/fr/themes_et_dossiers/jugement_penal_et_consequences/types_de_peines/que_decide_le_juge/peine_de_travail",
+          "intitule": "SPF Justice — Peine de travail"
+        }
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "PEINEALT-PROBATION-001",
+      "question": "Qu'est-ce que la probation autonome ?",
+      "reponse": "La probation autonome est une peine à part entière : le condamné n'est ni emprisonné ni amendé, mais doit respecter des conditions pendant une durée déterminée (par exemple suivre une formation ou une thérapie, indemniser la victime, ne pas fréquenter certaines personnes ou lieux). Le respect de ces conditions est suivi par un assistant de justice et contrôlé. L'objectif est d'agir sur les causes de la délinquance et de prévenir la récidive. En cas de non-respect des conditions, une peine de substitution peut être exécutée.",
+      "reference_legale": "Code pénal — probation autonome (loi du 10 avril 2014)",
+      "contacts": [
+        {
+          "nom": "Assistant de justice (Maison de justice)",
+          "pour": "suivi des conditions de probation"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://justice.belgium.be/fr/themes_et_dossiers/jugement_penal_et_consequences/types_de_peines/que_decide_le_juge/peine_de_travail",
+          "intitule": "SPF Justice — Peines autonomes (travail, probation)"
+        }
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "PEINEALT-SURVEILLANCE-001",
+      "question": "La surveillance électronique (bracelet) est-elle une peine ?",
+      "reponse": "Elle peut l'être. La surveillance électronique existe sous deux formes : comme peine autonome prononcée par le juge du fond (le condamné exécute sa peine à domicile sous bracelet électronique, avec des plages horaires de présence imposées), et comme modalité d'exécution d'une peine de prison (décidée plus tard). Elle vise à éviter la désocialisation liée à la détention, tout en assurant un contrôle. Le non-respect des règles (sortir hors des heures autorisées, manipuler le dispositif) peut entraîner la révocation et l'incarcération.",
+      "reference_legale": "Code pénal — surveillance électronique comme peine autonome (loi du 7 février 2014)",
+      "contacts": [
+        {
+          "nom": "Maison de justice / Centre national de surveillance électronique",
+          "pour": "mise en œuvre du bracelet"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://justice.belgium.be/fr/themes_et_dossiers/jugement_penal_et_consequences/types_de_peines/que_decide_le_juge/peine_de_travail",
+          "intitule": "SPF Justice — Surveillance électronique"
+        }
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "PEINEALT-INEXECUTION-001",
+      "question": "Que se passe-t-il si la peine alternative n'est pas respectée ?",
+      "reponse": "Le jugement qui prononce une peine de travail prévoit toujours une peine « subsidiaire » (emprisonnement ou amende). Si la peine de travail n'est pas exécutée dans les délais, ou si les conditions de la probation ne sont pas respectées, le ministère public peut faire appliquer cette peine subsidiaire — la prison redevient alors possible. Le suivi est assuré par les maisons de justice : en cas de difficulté réelle (santé, travail), parlez-en à votre assistant de justice AVANT l'échéance plutôt que de laisser la situation se dégrader.",
+      "reference_legale": "Loi du 17 avril 2002 instaurant la peine de travail (peine subsidiaire en cas d'inexécution)",
+      "contacts": [
+        {
+          "nom": "Maison de justice — votre assistant de justice",
+          "pour": "suivi de la peine et difficultés d'exécution"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://justice.belgium.be/fr/themes_et_dossiers/jugement_penal_et_consequences/types_de_peines/que_decide_le_juge/peine_de_travail",
+          "intitule": "SPF Justice — Peine de travail"
+        }
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

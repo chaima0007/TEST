@@ -1,0 +1,129 @@
+{
+  "module": "droits_resident_maison_repos",
+  "titre": "Droits du résident en maison de repos (MR/MRS)",
+  "domaine": "Aînés & hébergement",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Compétence régionale/communautaire des maisons de repos : Code wallon de l'action sociale et de la santé (AViQ) ; normes de la COCOM/Iriscare à Bruxelles ; réglementation flamande (woonzorgcentra)",
+    "portee": "Droits de la personne âgée hébergée : contrat, prix, libre choix, vie privée et recours",
+    "source_officielle": "https://www.iriscare.brussels/fr/citoyens/aines/"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les maisons de repos sont une compétence régionale/communautaire : les normes précises dépendent de la région. Vérifiez auprès de l'organisme compétent (AViQ, Iriscare, autorités flamandes).",
+  "faits": [
+    {
+      "id": "MR-CONTRAT-001",
+      "question": "Quels documents la maison de repos doit-elle me remettre ?",
+      "reponse": "Avant ou au moment de l'entrée, la maison de repos doit conclure avec le résident (ou son représentant) une convention d'hébergement écrite, qui précise notamment le prix journalier, ce qu'il comprend et ce qui est facturé en supplément (suppléments clairement listés), les conditions de séjour et de fin de séjour, et le préavis. Un règlement d'ordre intérieur encadre la vie dans l'établissement. Exigez ces documents et lisez-les attentivement AVANT de signer : c'est ce qui détermine vos droits et le coût réel. Le prix et les suppléments sont encadrés par la réglementation régionale.",
+      "reference_legale": "Code wallon de l'action sociale et de la santé (convention d'hébergement) ; normes COCOM/Iriscare (Bruxelles) ; réglementation flamande des woonzorgcentra",
+      "contacts": [
+        {
+          "nom": "Direction de la maison de repos",
+          "pour": "convention d'hébergement et prix"
+        },
+        {
+          "nom": "AViQ / Iriscare",
+          "pour": "normes applicables et suppléments autorisés"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.iriscare.brussels/fr/citoyens/aines/",
+          "intitule": "Iriscare — Aînés et maisons de repos (Bruxelles)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.aviq.be/fr",
+          "intitule": "AViQ — Hébergement des aînés (Wallonie)"
+        }
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "MR-DROITS-001",
+      "question": "Quels sont mes droits comme résident ?",
+      "reponse": "Le résident conserve ses droits fondamentaux : le respect de sa dignité, de sa vie privée et de son intimité, le libre choix de son médecin (et, en principe, de son pharmacien et de ses prestataires de soins), la liberté de recevoir des visites et de maintenir ses liens, la liberté de culte et d'opinion, et la participation aux décisions qui le concernent. Ses biens et son argent doivent être respectés (gestion encadrée). Une personne âgée n'abandonne pas ses droits en entrant en institution : la maison de repos doit les garantir. Un conseil des résidents permet de faire entendre la voix des résidents et de leurs familles.",
+      "reference_legale": "Code wallon de l'action sociale et de la santé / normes COCOM (droits du résident : dignité, libre choix du médecin, vie privée) ; loi du 22 août 2002 relative aux droits du patient",
+      "contacts": [
+        {
+          "nom": "Conseil des résidents / direction",
+          "pour": "faire valoir ses droits dans l'établissement"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.iriscare.brussels/fr/citoyens/aines/",
+          "intitule": "Iriscare — Droits des aînés en institution"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.aviq.be/fr",
+          "intitule": "AViQ — Droits du résident"
+        }
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "MR-PLAINTE-001",
+      "question": "Que faire en cas de problème ou de maltraitance en maison de repos ?",
+      "reponse": "Commencez par en parler à la direction et, le cas échéant, au conseil des résidents. Si cela ne suffit pas, vous pouvez signaler la situation à l'organisme régional qui agrée et contrôle les maisons de repos (AViQ en Wallonie, Iriscare/COCOM à Bruxelles, autorités flamandes), qui peut mener une inspection. En cas de maltraitance d'une personne âgée, contactez le service d'écoute spécialisé (Respect Seniors 0800 30 330 en Wallonie, Écoute Seniors 02 223 13 43 à Bruxelles, 1712 en Flandre) ; en cas de danger immédiat, le 112. Notez les faits et conservez les preuves (factures, échanges, photos).",
+      "reference_legale": "Code wallon de l'action sociale et de la santé / normes COCOM (contrôle des établissements et plaintes) ; Code pénal (abus de la situation de faiblesse, art. 442quater)",
+      "contacts": [
+        {
+          "nom": "AViQ / Iriscare",
+          "pour": "plainte sur un établissement (inspection)"
+        },
+        {
+          "nom": "Respect Seniors (0800 30 330) / Écoute Seniors (02 223 13 43) / 1712",
+          "pour": "maltraitance d'un aîné"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.iriscare.brussels/fr/citoyens/aines/",
+          "intitule": "Iriscare — Plaintes et contrôle (Bruxelles)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.aviq.be/fr",
+          "intitule": "AViQ — Plaintes maisons de repos (Wallonie)"
+        }
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "MR-PRIX-001",
+      "question": "La maison de repos peut-elle augmenter le prix ou facturer des suppléments ?",
+      "reponse": "Pas librement. Le prix d'hébergement et la liste de ce qu'il couvre doivent figurer dans la convention d'hébergement, tout comme les suppléments autorisés (et leur tarif) : un supplément qui n'est pas prévu dans la convention ne vous est pas dû. Les augmentations de prix sont encadrées : elles doivent respecter les règles régionales (notification, autorisation ou indexation contrôlée selon les cas) et être annoncées au résident dans les formes prévues. Les acomptes et la facturation doivent être détaillés, poste par poste, pour que vous puissiez vérifier. En cas de hausse ou de facture contestable, demandez la justification écrite, puis adressez-vous au service compétent : l'AViQ en Wallonie, Iriscare à Bruxelles — qui contrôlent les établissements et peuvent être saisis d'une plainte.",
+      "reference_legale": "Code wallon de l'action sociale et de la santé et ordonnance bruxelloise (normes Iriscare/COCOM) — prix d'hébergement, suppléments et contrôle des établissements",
+      "contacts": [
+        {
+          "nom": "Direction de la maison de repos",
+          "pour": "convention d'hébergement et prix"
+        },
+        {
+          "nom": "AViQ / Iriscare",
+          "pour": "normes applicables et suppléments autorisés"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.iriscare.brussels/fr/citoyens/aines/",
+          "intitule": "Iriscare — Aînés et maisons de repos (Bruxelles)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.aviq.be/fr",
+          "intitule": "AViQ — Hébergement des aînés (Wallonie)"
+        }
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

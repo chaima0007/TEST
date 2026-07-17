@@ -1,0 +1,21 @@
+{
+  "rapports": [
+    {
+      "projet": "La Loi Avec Moi",
+      "total": 416,
+      "conformes": 416,
+      "viabilite_pct": 100,
+      "label_item": "réponses",
+      "problemes": []
+    },
+    {
+      "projet": "Caelum",
+      "total": 13,
+      "conformes": 13,
+      "viabilite_pct": 100,
+      "label_item": "normes",
+      "problemes": []
+    }
+  ],
+  "global_ok": true
+}

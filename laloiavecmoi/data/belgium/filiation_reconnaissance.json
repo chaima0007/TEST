@@ -1,0 +1,72 @@
+{
+  "module": "filiation_reconnaissance",
+  "titre": "Filiation & reconnaissance d'un enfant",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code civil, art. 312 et suivants (établissement de la filiation) ; loi du 1er juillet 2006 réformant la filiation",
+    "portee": "Citoyens en Belgique",
+    "source_officielle": "https://www.belgium.be/fr/famille/enfants/naissance/reconnaissance"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information juridique générale, à jour à la date de revue. La filiation est une matière sensible : faites-vous accompagner (officier de l'état civil, notaire, avocat).",
+  "faits": [
+    {
+      "id": "FILIA-001",
+      "question": "Qu'est-ce que la reconnaissance d'un enfant ?",
+      "reponse": "La reconnaissance est un acte authentique par lequel une personne déclare qu'un lien de paternité, de maternité ou de comaternité existe entre elle et un enfant. Elle se fait auprès du service de l'état civil de la commune ou devant un notaire. Si la personne qui reconnaît est mariée, son conjoint en est informé.",
+      "reference_legale": "Code civil — établissement de la filiation par reconnaissance",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.belgium.be/fr/famille/enfants/naissance/reconnaissance",
+          "intitule": "Belgium.be — Reconnaissance d'un enfant"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "FILIA-002",
+      "question": "Quand peut-on reconnaître un enfant ?",
+      "reponse": "La reconnaissance peut avoir lieu avant la naissance (avec une attestation médicale confirmant la grossesse), lors de la déclaration de naissance, ou après. Si l'enfant a atteint 12 ans, son accord (et celui du parent dont la filiation est établie) est requis ; pour reconnaître un enfant majeur, l'accord de l'enfant suffit.",
+      "reference_legale": "Code civil — conditions et consentements à la reconnaissance",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.belgium.be/fr/famille/enfants/naissance/reconnaissance",
+          "intitule": "Belgium.be — Conditions de la reconnaissance"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "FILIA-003",
+      "question": "Que faire en l'absence d'accord sur la filiation ?",
+      "reponse": "À défaut de filiation établie par la loi ou par reconnaissance, une action en justice peut être introduite : l'établissement judiciaire de la filiation (action en recherche de paternité ou de maternité) devant le tribunal de la famille. Une filiation établie peut aussi, sous conditions, être contestée.",
+      "reference_legale": "Code civil, art. 312 et suivants (établissement et contestation judiciaires de la filiation)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.justice.belgium.be/fr/themes_et_dossiers/personnes_et_familles",
+          "intitule": "SPF Justice — Filiation"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "FILIA-EFFETS-001",
+      "question": "Quels sont les effets juridiques de la filiation pour l'enfant ?",
+      "reponse": "Établir la filiation crée un lien de droit complet entre le parent et l'enfant, avec des effets importants : le nom de l'enfant (les parents peuvent, dans le cadre légal, choisir le nom), l'exercice de l'autorité parentale (en principe conjointe entre les deux parents), une obligation réciproque d'entretien et d'éducation (le parent doit contribuer aux besoins de l'enfant, même séparé), et des droits successoraux (l'enfant hérite de son parent, et inversement). La filiation peut aussi avoir un effet sur la nationalité dans certains cas. C'est donc bien plus qu'une formalité : elle fonde les droits et devoirs entre parent et enfant.",
+      "reference_legale": "Code civil — effets de la filiation (nom, autorité parentale, obligation d'entretien, droits successoraux)",
+      "contacts": [
+        {"nom": "Officier de l'état civil / notaire", "pour": "nom de l'enfant et effets de la filiation"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/famille/enfants/naissance/reconnaissance", "intitule": "Belgium.be — Filiation et ses effets"},
+        {"type": "officiel", "url": "https://www.justice.belgium.be/fr/themes_et_dossiers/personnes_et_familles", "intitule": "SPF Justice — Personnes et familles"}
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

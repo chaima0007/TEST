@@ -1,0 +1,75 @@
+{
+  "module": "droit_image",
+  "titre": "Droit à l'image — photos & vidéos",
+  "domaine": "Droit à l'image",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code de droit économique, art. XI.174 (droit à l'image) ; Constitution art. 22 (vie privée) ; RGPD",
+    "portee": "Consentement pour être photographié/filmé et diffusé, recours en cas d'abus",
+    "source_officielle": "https://www.autoriteprotectiondonnees.be/citoyen"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les règles diffèrent selon le contexte (public/privé, mineur, presse) ; en cas de doute, demandez conseil.",
+  "faits": [
+    {
+      "id": "IMAGE-CONSENTEMENT-001",
+      "question": "Peut-on me photographier ou me filmer et publier mon image sans mon accord ?",
+      "reponse": "En principe non. Toute personne a un droit à l'image : il faut votre consentement pour vous photographier/filmer ET un consentement (distinct) pour diffuser ou publier cette image. Pour les enfants, l'accord des parents est requis. Il existe des nuances (foules/lieux publics où vous n'êtes pas le sujet principal, actualité, personnes publiques dans l'exercice de leurs fonctions), mais on ne peut pas vous mettre en avant ou vous exposer sans accord. Publier l'image de quelqu'un sans droit peut engager la responsabilité de l'auteur.",
+      "reference_legale": "Code de droit économique, art. XI.174 (droit de la personne représentée) ; Constitution art. 22 (vie privée)",
+      "contacts": [
+        {"nom": "Autorité de protection des données (APD)", "lien": "https://www.autoriteprotectiondonnees.be", "pour": "image = donnée personnelle (RGPD)"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.autoriteprotectiondonnees.be/citoyen/vie-privee/dans-quel-contexte/image", "intitule": "APD — Droit à l'image"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/justice/respect_de_la_vie_privee", "intitule": "Belgium.be — Respect de la vie privée"}
+      ],
+      "date_verification": "2026-06-28"
+    },
+    {
+      "id": "IMAGE-RETRAIT-001",
+      "question": "Une photo/vidéo de moi est publiée sans accord : comment la faire retirer ?",
+      "reponse": "Vous pouvez demander le retrait. 1) Contactez d'abord la personne ou le site qui a publié, par écrit, en demandant la suppression (et l'effacement des données, au titre du RGPD). 2) Sur un réseau social, utilisez l'outil de signalement de la plateforme. 3) En cas de refus ou de contenu grave (humiliant, intime, harcelant), vous pouvez porter plainte à la police et saisir l'Autorité de protection des données. Conservez les preuves (captures, URL, dates). Pour les images intimes diffusées sans consentement, des recours pénaux spécifiques existent.",
+      "reference_legale": "RGPD (droit à l'effacement) ; Code de droit économique art. XI.174 ; Code pénal (diffusion d'images sans consentement selon les cas)",
+      "contacts": [
+        {"nom": "Autorité de protection des données (APD)", "lien": "https://www.autoriteprotectiondonnees.be", "pour": "plainte vie privée / effacement"},
+        {"nom": "Police", "numero": "101", "pour": "contenu grave, images intimes (urgence : 112)"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.autoriteprotectiondonnees.be/citoyen/agir/introduire-une-plainte", "intitule": "APD — Introduire une plainte"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/justice/respect_de_la_vie_privee", "intitule": "Belgium.be — Vie privée"}
+      ],
+      "date_verification": "2026-06-28"
+    },
+    {
+      "id": "IMAGE-EXCEPTIONS-001",
+      "question": "Dans quels cas mon accord n'est-il pas nécessaire pour une photo ?",
+      "reponse": "Le consentement n'est pas toujours requis dans quelques situations : les personnes publiques (politiques, artistes…) photographiées dans l'exercice de leur fonction et dans ce contexte ; les images d'actualité ou d'événements publics, à des fins d'information ; et les photos de lieux publics ou de foules où vous n'êtes pas le sujet principal (vous apparaissez « noyé » dans la scène). Ces exceptions ont des limites : on ne peut pas vous isoler ou vous mettre en avant, l'image ne peut pas porter atteinte à votre dignité, et toute utilisation commerciale ou publicitaire reste soumise à votre accord explicite. En cas de doute, le plus prudent est de demander le consentement.",
+      "reference_legale": "Code de droit économique, art. XI.174 (droit de la personne représentée) ; Constitution art. 22 (vie privée)",
+      "contacts": [
+        {"nom": "Autorité de protection des données (APD)", "lien": "https://www.autoriteprotectiondonnees.be", "pour": "question sur l'usage d'une image"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.autoriteprotectiondonnees.be/citoyen/vie-privee/dans-quel-contexte/image", "intitule": "APD — Droit à l'image (exceptions)"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/justice/respect_de_la_vie_privee", "intitule": "Belgium.be — Respect de la vie privée"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "IMAGE-ENFANTS-001",
+      "question": "Peut-on publier des photos de mon enfant (école, club, réseaux sociaux) ?",
+      "reponse": "Pour un mineur, le consentement des parents (titulaires de l'autorité parentale) est nécessaire pour prendre et publier son image, et l'avis de l'enfant doit être pris en compte en fonction de son âge et de sa maturité. Une école, un club ou une crèche doit donc obtenir l'accord des parents avant de diffuser des photos d'enfants (par ex. sur son site ou ses réseaux), et un parent peut refuser ou retirer son accord. Pour les photos publiées par des proches (« sharenting »), la prudence s'impose aussi : une fois en ligne, une image est difficile à maîtriser. En cas de diffusion non souhaitée, demandez le retrait et, si besoin, saisissez l'Autorité de protection des données.",
+      "reference_legale": "Code de droit économique, art. XI.174 ; RGPD (consentement et droits de la personne concernée mineure)",
+      "contacts": [
+        {"nom": "École / club / organisation", "pour": "retirer ou refuser le consentement"},
+        {"nom": "Autorité de protection des données (APD)", "lien": "https://www.autoriteprotectiondonnees.be", "pour": "diffusion non consentie d'images d'enfant"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.autoriteprotectiondonnees.be/citoyen/vie-privee/dans-quel-contexte/image", "intitule": "APD — Droit à l'image et mineurs"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/justice/respect_de_la_vie_privee", "intitule": "Belgium.be — Vie privée"}
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

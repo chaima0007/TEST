@@ -1,0 +1,26 @@
+[
+  {
+    "probleme": "Démonstration : incohérence de source sur un fait juridique",
+    "categorie": "donnees",
+    "gravite": 4,
+    "urgence": 4,
+    "impact": 4,
+    "score_priorite": 64,
+    "niveau": "P0_CRITIQUE",
+    "routage": "scripts/data-integrity-origin-agent.py + legal_content_verifier.py",
+    "probabilite_resolution": 0.91,
+    "latence_ms": 0.024
+  },
+  {
+    "probleme": "fuite potentielle de credential dans le code",
+    "categorie": "securite",
+    "gravite": 5,
+    "urgence": 5,
+    "impact": 5,
+    "score_priorite": 125,
+    "niveau": "P0_CRITIQUE",
+    "routage": "scripts/security-audit-agent.py + charte R7 (zéro credential)",
+    "probabilite_resolution": 0.87,
+    "latence_ms": 0.03
+  }
+]

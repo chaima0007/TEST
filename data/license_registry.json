@@ -1,0 +1,35 @@
+[
+  {
+    "tier": "pro",
+    "customer": "ACME-Corp",
+    "issued": "2026-06-24T11:31:23.932394+00:00",
+    "expires": "2027-06-19T11:31:23.932394+00:00",
+    "max_engines": 50,
+    "max_seats": 10,
+    "seal": "SEAL-1E01B716D4B8CCD6",
+    "key": "CAEL-PRO-eyJjdXN0b21lciI6IkFDTUUtQ29ycCIsImV4cGlyZXMiOiIyMDI3LTA2LTE5VDExOjMxOjIzLjkzMjM5NCswMDowMCIsImlzc3VlZCI6IjIwMjYtMDYtMjRUMTE6MzE6MjMuOTMyMzk0KzAwOjAwIiwibWF4X2VuZ2luZXMiOjUwLCJtYXhfc2VhdHMiOjEwLCJzZWFsIjoiU0VBTC0xRTAxQjcxNkQ0QjhDQ0Q2IiwidGllciI6InBybyJ9-l59dlFo9d9iWurnFbhs5enTC",
+    "signed": false
+  },
+  {
+    "tier": "enterprise",
+    "customer": "Hopital-Bruxelles",
+    "issued": "2026-06-24T11:31:33.140699+00:00",
+    "expires": "2028-06-13T11:31:33.140699+00:00",
+    "max_engines": 500,
+    "max_seats": 100,
+    "seal": "SEAL-ABF764DB6261CC6E",
+    "key": "CAEL-ENTERPRISE-eyJjdXN0b21lciI6IkhvcGl0YWwtQnJ1eGVsbGVzIiwiZXhwaXJlcyI6IjIwMjgtMDYtMTNUMTE6MzE6MzMuMTQwNjk5KzAwOjAwIiwiaXNzdWVkIjoiMjAyNi0wNi0yNFQxMTozMTozMy4xNDA2OTkrMDA6MDAiLCJtYXhfZW5naW5lcyI6NTAwLCJtYXhfc2VhdHMiOjEwMCwic2VhbCI6IlNFQUwtQUJGNzY0REI2MjYxQ0M2RSIsInRpZXIiOiJlbnRlcnByaXNlIn0-dcl0fKBkNOIp_DOwcrcFojbj",
+    "signed": false
+  },
+  {
+    "tier": "enterprise",
+    "customer": "Hopital-Bruxelles",
+    "issued": "2026-06-24T11:31:50.045588+00:00",
+    "expires": "2028-06-13T11:31:50.045588+00:00",
+    "max_engines": 500,
+    "max_seats": 100,
+    "seal": "SEAL-69D591C62E4E0E95",
+    "key": "CAEL-ENTERPRISE-eyJjdXN0b21lciI6IkhvcGl0YWwtQnJ1eGVsbGVzIiwiZXhwaXJlcyI6IjIwMjgtMDYtMTNUMTE6MzE6NTAuMDQ1NTg4KzAwOjAwIiwiaXNzdWVkIjoiMjAyNi0wNi0yNFQxMTozMTo1MC4wNDU1ODgrMDA6MDAiLCJtYXhfZW5naW5lcyI6NTAwLCJtYXhfc2VhdHMiOjEwMCwic2VhbCI6IlNFQUwtNjlENTkxQzYyRTRFMEU5NSIsInRpZXIiOiJlbnRlcnByaXNlIn0-FTjBPQUnpF9VRnPO_VcZcUkh",
+    "signed": false
+  }
+]

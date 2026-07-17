@@ -1,0 +1,75 @@
+{
+  "module": "banque",
+  "titre": "Banque & compte de base",
+  "domaine": "Services bancaires",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code de droit économique, livre VII — services de paiement et service bancaire de base",
+    "portee": "Droit d'avoir un compte, refus de la banque, médiation",
+    "source_officielle": "https://economie.fgov.be/fr/themes/services-financiers/services-de-paiement/service-bancaire-de-base"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les conditions précises et les frais évoluent ; vérifiez auprès du SPF Économie ou de Wikifin pour votre situation.",
+  "faits": [
+    {
+      "id": "BANQ-COMPTE-BASE-001",
+      "question": "Une banque peut-elle me refuser un compte ? Ai-je droit à un compte ?",
+      "reponse": "Oui, vous avez en principe droit à un « service bancaire de base ». Toute personne résidant légalement dans l'Union européenne peut demander ce compte de base auprès d'une banque qui propose des comptes à vue aux particuliers. Il comprend un compte à vue avec carte de débit permettant dépôts, retraits, virements, ordres permanents, domiciliations et paiements par carte. La banque ne peut le refuser que dans des cas précis prévus par la loi (par exemple si vous avez déjà un tel compte ailleurs, ou en cas d'obligation anti-blanchiment).",
+      "reference_legale": "Code de droit économique, livre VII — service bancaire de base",
+      "contacts": [
+        {"nom": "SPF Économie", "lien": "https://economie.fgov.be", "pour": "service bancaire de base, refus de compte"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/services-financiers/services-de-paiement/service-bancaire-de-base", "intitule": "SPF Économie — Service bancaire de base"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/economie/commerce_et_consommation/protection_du_consommateur/services_financiers/service_bancaire_de_base", "intitule": "Belgium.be — Service bancaire de base"}
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "BANQ-LITIGE-001",
+      "question": "J'ai un litige avec ma banque, à qui m'adresser ?",
+      "reponse": "Adressez d'abord une plainte écrite au service de gestion des plaintes de votre banque. Si la réponse ne vous satisfait pas, vous pouvez saisir gratuitement Ombudsfin, le médiateur en conflits financiers, qui examine le différend de façon indépendante. Pour les questions générales sur vos droits de consommateur de services financiers, le SPF Économie informe également.",
+      "reference_legale": "Code de droit économique, livre VII et livre XVI (règlement extrajudiciaire des litiges de consommation)",
+      "contacts": [
+        {"nom": "Ombudsfin — Médiateur en conflits financiers", "lien": "https://www.ombudsfin.be", "pour": "litige avec une banque"},
+        {"nom": "SPF Économie", "lien": "https://economie.fgov.be", "pour": "droits du consommateur financier"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/services-financiers/services-de-paiement/service-bancaire-de-base", "intitule": "SPF Économie — Services de paiement"},
+        {"type": "secondaire", "url": "https://www.wikifin.be/fr/budget-payer-emprunter-et-assurer/compte-vue/le-service-bancaire-de-base", "intitule": "Wikifin (FSMA) — Service bancaire de base"}
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "BANQ-FRAIS-BASE-001",
+      "question": "Le compte bancaire de base est-il gratuit, et peut-on me le retirer ?",
+      "reponse": "Le service bancaire de base n'est pas forcément gratuit, mais son coût annuel est plafonné par la loi : la banque ne peut pas facturer plus que le maximum légal pour ce service. Il donne accès aux opérations essentielles (dépôts, retraits, virements, domiciliations, paiements par carte de débit). La banque ne peut le clôturer que dans des cas précis prévus par la loi (par exemple fraude, informations inexactes, ou si vous ouvrez un compte équivalent ailleurs) et doit alors motiver sa décision. Si on vous refuse ou retire ce service sans motif valable, vous pouvez saisir le SPF Économie ou Ombudsfin.",
+      "reference_legale": "Code de droit économique, livre VII — service bancaire de base (coût plafonné et clôture)",
+      "contacts": [
+        {"nom": "SPF Économie", "lien": "https://economie.fgov.be", "pour": "refus ou retrait abusif du service bancaire de base"},
+        {"nom": "Ombudsfin", "lien": "https://www.ombudsfin.be", "pour": "litige avec la banque"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/services-financiers/services-de-paiement/service-bancaire-de-base", "intitule": "SPF Économie — Service bancaire de base (coût)"},
+        {"type": "secondaire", "url": "https://www.wikifin.be/fr/budget-payer-emprunter-et-assurer/compte-vue/le-service-bancaire-de-base", "intitule": "Wikifin (FSMA) — Service bancaire de base"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "BANQ-MOBILITE-001",
+      "question": "Comment changer de banque sans tout reconfigurer ?",
+      "reponse": "Grâce au service de mobilité bancaire, changer de banque est simple et gratuit. Votre nouvelle banque se charge, à votre demande, de transférer vos ordres permanents et vos domiciliations depuis l'ancien compte, et d'informer les organismes qui vous paient (employeur, mutuelle…) de votre nouveau numéro de compte. La procédure est encadrée par des délais. Vous pouvez aussi demander la clôture de l'ancien compte. C'est l'occasion de comparer les frais : les tarifs des comptes et cartes varient sensiblement d'une banque à l'autre.",
+      "reference_legale": "Code de droit économique, livre VII — service de mobilité bancaire (changement de compte)",
+      "contacts": [
+        {"nom": "Votre nouvelle banque", "pour": "demander le service de mobilité bancaire (gratuit)"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/services-financiers/services-de-paiement", "intitule": "SPF Économie — Services de paiement et mobilité bancaire"},
+        {"type": "secondaire", "url": "https://www.wikifin.be/fr/budget-payer-emprunter-et-assurer/compte-vue", "intitule": "Wikifin (FSMA) — Changer de banque"}
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+# Specs waves 1161-1168 — 24 nouveaux moteurs de droits humains
+# Préfixes vérifiés : 0 collision externe, 0 doublon interne
+# Remplacements : sickle_cell_screening(existe)→thalassemia_treatment_access(TTAR) ;
+#                 predatory_for_profit_college(existe)→vocational_school_loan_discharge(VSLD)
+# (filename, title, wave, desc, prefix, idx)
+SPECS = [
+    # Wave 1161 — Santé: maladies rares & hématologiques (inédits)
+    ("gaucher_disease_treatment_access_rights_engine.py",
+     "Accès aux traitements de la maladie de Gaucher & refus de couverture pour thérapie enzymatique de remplacement", "Wave 1161",
+     "Patients atteints de la maladie de Gaucher refusés pour une couverture de la thérapie de remplacement enzymatique coûteuse.",
+     "GDTR", "gaucher_treat_access"),
+    ("hemophilia_factor_access_rights_engine.py",
+     "Accès aux facteurs de coagulation pour hémophiles & restrictions d'assurance sur les nouvelles thérapies géniques", "Wave 1161",
+     "Patients hémophiles limités à des facteurs de coagulation moins efficaces malgré des thérapies géniques remboursables ailleurs.",
+     "HFAR", "hemophilia_factor"),
+    ("thalassemia_treatment_access_rights_engine.py",
+     "Accès aux traitements de la thalassémie sévère & couverture des nouvelles thérapies par transfusion chronique", "Wave 1161",
+     "Patients atteints de bêta-thalassémie majeure refusés pour les nouvelles thérapies curatives géniques par critères d'assurance.",
+     "TTAR", "thalass_treat"),
+
+    # Wave 1162 — Justice: droits des victimes (inédits)
+    ("victim_impact_statement_rights_engine.py",
+     "Droits des victimes à déposer des déclarations d'impact & obstacles dans les systèmes judiciaires récalcitrants", "Wave 1162",
+     "Victimes de crimes graves empêchées de lire leurs déclarations d'impact lors de la détermination de la peine malgré le droit légal.",
+     "VISR", "victim_impact_stat"),
+    ("crime_victim_compensation_access_rights_engine.py",
+     "Accès aux compensations pour victimes de crimes & critères d'exclusion injustes dans les programmes d'État", "Wave 1162",
+     "Victimes de crimes violents refusées pour les programmes de compensation d'État en raison de critères trop restrictifs ou de co-victimisation.",
+     "CVCA", "crime_victim_comp"),
+    ("human_trafficking_victim_immunity_rights_engine.py",
+     "Immunité des victimes de traite humaine pour crimes commis sous contrainte & protection légale insuffisante", "Wave 1162",
+     "Victimes de traite humaine poursuivies pour des crimes commis pendant leur exploitation sans protection d'immunité effective.",
+     "HTVI", "traffic_victim_immun"),
+
+    # Wave 1163 — Travail: discriminations spécifiques (inédits)
+    ("lgbtq_religious_employer_exemption_rights_engine.py",
+     "Exemptions religieuses permettant la discrimination LGBTQ+ par des employeurs religieux recevant des fonds publics", "Wave 1163",
+     "Employés LGBTQ+ licenciés par des organisations religieuses recevant des financements publics sans protection légale fédérale.",
+     "LERE", "lgbtq_relig_exempt"),
+    ("disability_accommodation_denial_retaliation_rights_engine.py",
+     "Représailles contre les employés handicapés demandant des accommodements raisonnables & violations ADA sous-poursuivies", "Wave 1163",
+     "Employés handicapés rétrogradés ou licenciés peu après avoir demandé des accommodements raisonnables à leur employeur.",
+     "DRAD", "disab_accom_retalia"),
+    ("national_origin_accent_hiring_rights_engine.py",
+     "Discrimination à l'accent d'origine nationale lors de l'embauche & protection insuffisante du Titre VII", "Wave 1163",
+     "Candidats qualifiés rejetés en raison de leur accent étranger, forme illégale de discrimination par origine nationale.",
+     "NOAD", "nat_orig_accent"),
+
+    # Wave 1164 — Finance: banque & crédit spécifiques (inédits)
+    ("second_chance_banking_chexsystems_rights_engine.py",
+     "Accès aux comptes bancaires de seconde chance & exclusion de ChexSystems sans expiration automatique des données", "Wave 1164",
+     "Consommateurs avec antécédents bancaires négatifs bloqués par ChexSystems sans possibilité d'accéder à un compte de base.",
+     "SCBR", "second_chance_bank"),
+    ("credit_union_membership_rights_engine.py",
+     "Droits des membres de coopératives de crédit & protection contre les conversions à but lucratif sans vote équitable", "Wave 1164",
+     "Membres de credit unions dont les actifs mutualistes sont transférés à des banques commerciales sans compensation adéquate.",
+     "CUMR", "credit_union_member"),
+    ("sba_loan_minority_access_rights_engine.py",
+     "Accès inégal des entreprises minoritaires aux prêts SBA & discrimination indirecte dans les processus d'approbation", "Wave 1164",
+     "Propriétaires d'entreprises noirs et latinos approuvés moins souvent et pour des montants inférieurs aux mêmes profils blancs via SBA.",
+     "SBLR", "sba_minority_loan"),
+
+    # Wave 1165 — Éducation: droits des étudiants (inédits)
+    ("student_loan_borrower_defense_rights_engine.py",
+     "Défense de l'emprunteur étudiant & obstacles au décharge de prêts pour fraude scolaire démontrée", "Wave 1165",
+     "Étudiants victimes de fraude par des établissements fermés se voyant refuser la décharge de leurs prêts étudiants fédéraux.",
+     "SLBD", "student_borrow_def"),
+    ("vocational_school_loan_discharge_rights_engine.py",
+     "Annulation de prêts pour étudiants d'écoles professionnelles frauduleuses & délais excessifs de traitement", "Wave 1165",
+     "Anciens étudiants d'écoles professionnelles for-profit frauduleuses attendant des années l'annulation de leurs prêts approuvée.",
+     "VSLD", "vocat_loan_dischrg"),
+    ("student_privacy_ferpa_digital_rights_engine.py",
+     "Protection FERPA des données étudiantes à l'ère numérique & partage non consenti avec fournisseurs technologiques", "Wave 1165",
+     "Données personnelles et académiques d'étudiants partagées avec des entreprises EdTech sans consentement explicite FERPA.",
+     "SPFR", "student_ferpa_digit"),
+
+    # Wave 1166 — Santé: psychiatrie légale (inédits)
+    ("not_guilty_insanity_treatment_rights_engine.py",
+     "Droit au traitement psychiatrique après acquittement pour insanité & placement indéfini sans révision judiciaire", "Wave 1166",
+     "Personnes acquittées pour insanité maintenues en établissement psychiatrique plus longtemps que leur peine potentielle.",
+     "NGIT", "ngi_treatment"),
+    ("forensic_psychiatric_unit_overcrowding_rights_engine.py",
+     "Surpopulation des unités psychiatriques légales & attente indéfinie de placement pour les détenus incompétents", "Wave 1166",
+     "Détenus déclarés inaptes à comparaître attendant des mois en prison une place en unité psychiatrique légale overcrowdée.",
+     "FPUO", "forensic_psych_over"),
+    ("civil_psychiatric_hold_duration_rights_engine.py",
+     "Durée des hospitalisations psychiatriques civiles involontaires & droits à la révision judiciaire rapide", "Wave 1166",
+     "Patients maintenus en hospitalisation involontaire au-delà des délais légaux sans audience judiciaire de révision garantie.",
+     "CPHD", "civil_psych_hold"),
+
+    # Wave 1167 — Immigration: travailleurs invités (inédits)
+    ("h2a_worker_housing_rights_engine.py",
+     "Conditions de logement des travailleurs H-2A agricoles & violations des standards minimum par les employeurs", "Wave 1167",
+     "Travailleurs H-2A logés dans des conditions insalubres surpeuplées sans recours effectif contre les employeurs récalcitrants.",
+     "HAWH", "h2a_housing"),
+    ("h2b_worker_wage_theft_rights_engine.py",
+     "Vol de salaire des travailleurs non-agricoles H-2B & absence de protection efficace contre les déductions illégales", "Wave 1167",
+     "Travailleurs H-2B saisonniers victimes de vol de salaire et de déductions illégales par des employeurs sans risque de poursuite.",
+     "H2BW", "h2b_wage_theft"),
+    ("international_student_opt_rights_engine.py",
+     "Formation pratique optionnelle OPT pour étudiants internationaux & droits lors d'arrêts d'autorisation par l'employeur", "Wave 1167",
+     "Étudiants internationaux en OPT perdant leur statut et leur visa si l'employeur met fin au programme sans préavis suffisant.",
+     "ISOP", "intl_student_opt"),
+
+    # Wave 1168 — Droits des animaux & bien-être (inédits)
+    ("greyhound_racing_animal_welfare_rights_engine.py",
+     "Bien-être des lévriers dans les courses & persistance des abus dans les États n'ayant pas interdit la pratique", "Wave 1168",
+     "Lévriers de course subissant des blessures, des conditions d'hébergement inadéquates et des abandons dans les États autorisant encore les courses.",
+     "GRBR", "greyhound_racing"),
+    ("fur_farming_animal_welfare_rights_engine.py",
+     "Conditions d'élevage dans les fermes à fourrure & droits des animaux face à l'absence d'interdiction fédérale", "Wave 1168",
+     "Visons et renards élevés dans des cages exiguës pour la fourrure dans des États sans réglementation sur le bien-être animal.",
+     "FFBR", "fur_farm_welfare"),
+    ("factory_farm_whistleblower_rights_engine.py",
+     "Protection des lanceurs d'alerte en élevage industriel & lois Ag-Gag criminalisant la documentation des abus", "Wave 1168",
+     "Travailleurs et enquêteurs documentant des abus dans des élevages industriels poursuivis sous des lois Ag-Gag étatiques.",
+     "FFWR", "factory_farm_whistle"),
+]

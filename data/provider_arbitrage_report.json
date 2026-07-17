@@ -1,0 +1,30 @@
+{
+  "ponderation": {
+    "qualite": 0.5,
+    "prix": 0.3,
+    "latence": 0.2
+  },
+  "decisions": [
+    {
+      "service": "LLM",
+      "statut": "RECOMMANDATION",
+      "meilleur": "fournisseur_secours",
+      "score": 0.425,
+      "detail": "fournisseur_principal → fournisseur_secours (meilleur rapport)"
+    },
+    {
+      "service": "Hebergement",
+      "statut": "RECOMMANDATION",
+      "meilleur": "hebergeur_B",
+      "score": 0.24,
+      "detail": "hebergeur_A → hebergeur_B (meilleur rapport)"
+    },
+    {
+      "service": "Email",
+      "statut": "OPTIMAL",
+      "meilleur": "email_A",
+      "score": 0.45,
+      "detail": "email_A reste le meilleur choix"
+    }
+  ]
+}

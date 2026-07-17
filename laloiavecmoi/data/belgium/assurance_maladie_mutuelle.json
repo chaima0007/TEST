@@ -1,0 +1,87 @@
+{
+  "module": "assurance_maladie_mutuelle",
+  "titre": "Assurance maladie & mutualité",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi relative à l'assurance obligatoire soins de santé et indemnités, coordonnée le 14 juillet 1994",
+    "portee": "Toute personne assujettie à l'assurance soins de santé et indemnités en Belgique (compétence fédérale, INAMI)",
+    "source_officielle": "https://www.inami.fgov.be/fr/publications/reglementation/la-loi-coordonnee-du-14-juillet-1994"
+  },
+  "derniere_revue": "2026-06-29",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information juridique générale, à jour à la date de revue. Ne constitue pas un conseil individualisé. Pour vos droits concrets, contactez votre mutualité ou la CAAMI.",
+  "faits": [
+    {
+      "id": "AMM-001",
+      "question": "Pourquoi dois-je m'affilier à une mutualité ?",
+      "reponse": "Pour avoir droit au remboursement des soins de santé et aux indemnités (en cas d'incapacité de travail, de maternité, etc.), vous devez être affilié à une mutualité. Vous pouvez choisir librement votre mutualité, ou vous inscrire à la Caisse auxiliaire d'assurance maladie-invalidité (CAAMI), institution publique qui offre les mêmes prestations de l'assurance obligatoire.",
+      "reference_legale": "Loi coordonnée du 14 juillet 1994 (assurance obligatoire soins de santé et indemnités)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/assurabilite/s-affilier-a-une-mutualite",
+          "intitule": "INAMI — S'affilier à une mutualité"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/assurabilite",
+          "intitule": "INAMI — Assurabilité"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "AMM-002",
+      "question": "Que rembourse l'assurance soins de santé ?",
+      "reponse": "L'assurance obligatoire intervient, via votre mutualité, pour de nombreuses prestations : consultations chez le médecin généraliste ou spécialiste, soins dentaires, kinésithérapie, soins infirmiers, hospitalisation, accouchements, médicaments, etc. La part que la mutualité ne rembourse pas reste à votre charge : c'est la quote-part personnelle (ticket modérateur).",
+      "reference_legale": "Loi coordonnée du 14 juillet 1994 (nomenclature des prestations de santé)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/les-prestations-de-sante-que-vous-rembourse-votre-mutualite",
+          "intitule": "INAMI — Les prestations remboursées par votre mutualité"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "AMM-003",
+      "question": "Qu'est-ce que l'intervention majorée (BIM) ?",
+      "reponse": "Les personnes aux revenus modestes peuvent bénéficier de l'intervention majorée de l'assurance : elles paient alors une quote-part personnelle réduite pour de nombreux soins et médicaments. Renseignez-vous auprès de votre mutualité pour savoir si vous y avez droit (certaines situations l'ouvrent automatiquement).",
+      "reference_legale": "Loi coordonnée du 14 juillet 1994 (intervention majorée de l'assurance)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/les-prestations-de-sante-que-vous-rembourse-votre-mutualite",
+          "intitule": "INAMI — Intervention majorée"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/assurabilite",
+          "intitule": "INAMI — Assurabilité"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "AMM-004",
+      "question": "Je ne peux plus travailler pour raison médicale : ai-je droit à des indemnités ?",
+      "reponse": "Oui. En cas d'incapacité de travail reconnue, votre mutualité peut vous verser des indemnités, généralement après la période de salaire garanti payée par l'employeur. Vous devez déclarer votre incapacité à votre mutualité dans les délais et fournir les certificats demandés (le médecin-conseil évalue l'incapacité).",
+      "reference_legale": "Loi coordonnée du 14 juillet 1994 (assurance indemnités)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.inami.fgov.be/fr/themes/soins-de-sante-cout-et-remboursement/assurabilite",
+          "intitule": "INAMI — Assurabilité et indemnités"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.inami.fgov.be/fr/publications/reglementation/la-loi-coordonnee-du-14-juillet-1994",
+          "intitule": "INAMI — Loi coordonnée du 14 juillet 1994"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    }
+  ]
+}

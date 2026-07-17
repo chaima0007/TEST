@@ -1,0 +1,65 @@
+{
+  "module": "regroupement_familial",
+  "titre": "Regroupement familial",
+  "domaine": "Étrangers & séjour",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 15 décembre 1980 sur l'accès au territoire, le séjour, l'établissement et l'éloignement des étrangers (regroupement familial, art. 10 et 10bis) — modifiée par la loi du 18 juillet 2025",
+    "portee": "Permettre à un étranger de rejoindre un membre de sa famille séjournant légalement en Belgique",
+    "source_officielle": "https://dofi.ibz.be/fr/themes/third-country-nationals/regroupement-familial"
+  },
+  "derniere_revue": "2026-06-29",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les conditions varient selon la nationalité/le statut du regroupant et le lien familial : vérifiez votre cas auprès de l'Office des étrangers (IBZ) ou de votre commune.",
+  "faits": [
+    {
+      "id": "RGPF-001",
+      "question": "C'est quoi le regroupement familial et qui peut en bénéficier ?",
+      "reponse": "C'est la procédure qui permet à un étranger d'obtenir un titre de séjour pour rejoindre un membre de sa famille qui réside légalement en Belgique (le « regroupant »). Le droit doit être reconnu si le demandeur prouve, avec des documents, que les conditions sont réunies. Celles-ci dépendent de la nationalité, du statut de séjour du regroupant et du lien familial (conjoint, partenaire, enfant…).",
+      "reference_legale": "Loi du 15 décembre 1980 (art. 10 et 10bis — regroupement familial)",
+      "contacts": [
+        {"nom": "Office des étrangers (IBZ)", "pour": "conditions et décision"},
+        {"nom": "Administration communale", "pour": "introduction de la demande en Belgique"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://dofi.ibz.be/fr/themes/third-country-nationals/regroupement-familial", "intitule": "Office des étrangers (IBZ) — Regroupement familial"},
+        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/loi/2025/07/18/2025005990/justel", "intitule": "Loi du 18 juillet 2025 modifiant la loi du 15 décembre 1980 (Justel)"}
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "RGPF-002",
+      "question": "Quelles sont les conditions principales ?",
+      "reponse": "Elles dépendent du lien familial, mais le regroupant doit généralement disposer d'un logement suffisant (répondant aux conditions d'un bien loué à titre de résidence principale), et selon les cas de moyens de subsistance stables et d'une assurance maladie. Le demandeur doit prouver le lien familial (mariage, partenariat, filiation) par des documents. La loi du 18 juillet 2025 a modifié certaines conditions.",
+      "reference_legale": "Loi du 15 décembre 1980 (conditions du regroupement familial)",
+      "sources": [
+        {"type": "officiel", "url": "https://dofi.ibz.be/fr/themes/ressortissants-dun-pays-tiers/regroupement-familial/conditions-et-documents-justificatifs/le", "intitule": "IBZ — Conditions et documents justificatifs"}
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "RGPF-003",
+      "question": "Comment introduire la demande ?",
+      "reponse": "En règle générale, la demande se fait à l'étranger, auprès du poste diplomatique ou consulaire belge compétent. Dans certaines situations, elle peut être introduite en Belgique, à l'administration communale du lieu de résidence (qui remet une annexe 19ter). Le demandeur dispose alors de 3 mois pour présenter les documents ; l'Office des étrangers prend sa décision dans un délai de 6 mois.",
+      "reference_legale": "Loi du 15 décembre 1980 (procédure de demande)",
+      "sources": [
+        {"type": "officiel", "url": "https://dofi.ibz.be/fr/themes/third-country-nationals/family-reunification/demande-de-sejour", "intitule": "IBZ — Demande de séjour (regroupement familial)"}
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "RGPF-004",
+      "question": "Que faire en cas de décision négative ?",
+      "reponse": "Si le droit au regroupement familial n'est pas reconnu, le demandeur peut introduire un recours auprès du Conseil du Contentieux des Étrangers. Dans certains cas, il peut demander à l'Office des étrangers une révision de la décision, ou introduire une nouvelle demande. Lorsque la filiation n'a pas pu être établie par documents, l'Office peut proposer un test ADN.",
+      "reference_legale": "Loi du 15 décembre 1980 (recours devant le Conseil du Contentieux des Étrangers)",
+      "contacts": [
+        {"nom": "Conseil du Contentieux des Étrangers", "pour": "recours contre une décision négative"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://dofi.ibz.be/fr/themes/third-country-nationals/regroupement-familial", "intitule": "IBZ — Décision et recours"}
+      ],
+      "date_verification": "2026-06-29"
+    }
+  ]
+}

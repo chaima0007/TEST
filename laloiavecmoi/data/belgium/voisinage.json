@@ -1,0 +1,71 @@
+{
+  "module": "voisinage",
+  "titre": "Voisinage — bien s'entendre et régler les conflits",
+  "domaine": "Voisinage",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Troubles de voisinage (Code civil) ; conciliation devant le juge de paix (Code judiciaire) ; règlements communaux",
+    "portee": "Nuisances entre voisins (bruit, plantations) et solutions amiables",
+    "source_officielle": "https://www.belgium.be/fr/logement/problemes_de_logement/problemes_de_voisinage"
+  },
+  "derniere_revue": "2026-06-26",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les règles précises (distances de plantation, horaires de bruit) dépendent souvent du règlement de votre commune : vérifiez auprès d'elle.",
+  "faits": [
+    {
+      "id": "VOIS-AMIABLE-001",
+      "question": "Conflit avec un voisin : par quoi commencer ?",
+      "reponse": "Toujours par le dialogue, calmement : souvent, le voisin n'a pas conscience de la gêne. Exemple de terrain d'entente : convenir ensemble d'horaires pour les travaux bruyants (par ex. tondre en semaine en fin d'après-midi, pas le dimanche matin), ou se partager les frais et l'entretien d'une haie mitoyenne. Si le dialogue bloque, beaucoup de communes offrent une médiation gratuite. Garder une trace écrite (message courtois) aide aussi.",
+      "reference_legale": "Principe des troubles de voisinage (Code civil) ; médiation locale",
+      "contacts": [
+        {"nom": "Service de médiation de votre commune", "pour": "médiation gratuite (si disponible)"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/logement/problemes_de_logement/problemes_de_voisinage", "intitule": "Belgium.be — Problèmes de voisinage"},
+        {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr/question/comment-regler-mon-conflit-de-voisinage", "intitule": "Droits Quotidiens — Régler un conflit de voisinage"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "VOIS-BRUIT-001",
+      "question": "Mon voisin fait trop de bruit : que faire ?",
+      "reponse": "D'abord en parler. Si le bruit persiste et devient une nuisance, on peut s'adresser à la commune (règlement de police sur le bruit) et, en cas de tapage, à la police. Exemple de compromis : proposer une plage horaire de calme convenue ensemble, ou des aménagements simples (tapis, horaires). En dernier recours, la conciliation devant le juge de paix (gratuite) permet de trouver un accord sans procès.",
+      "reference_legale": "Règlements communaux sur le bruit ; tapage (Code pénal) ; troubles de voisinage (Code civil)",
+      "contacts": [
+        {"nom": "Commune (règlement bruit)", "pour": "nuisances sonores"},
+        {"nom": "Police", "numero": "101", "pour": "tapage / trouble persistant"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.wallonie.be/fr/demarches/denoncer-une-nuisance-sonore-qui-sadresser", "intitule": "Wallonie — Dénoncer une nuisance sonore"},
+        {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr/question/mon-voisin-fait-beaucoup-de-bruit-que-faire", "intitule": "Droits Quotidiens — Voisin bruyant"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "VOIS-PLANTATIONS-001",
+      "question": "Les arbres ou la haie du voisin me dérangent : quelles règles ?",
+      "reponse": "Il existe des distances de plantation à respecter, et chaque commune peut fixer ses propres règles : renseignez-vous auprès d'elle. On ne peut pas couper soi-même les branches qui dépassent, mais on peut demander au voisin de les élaguer. Exemple d'entente : convenir d'une date d'élagage commune et se partager éventuellement les frais d'une haie mitoyenne. À défaut d'accord, la conciliation chez le juge de paix est une bonne étape.",
+      "reference_legale": "Code civil — distances de plantation et branches ; règlements communaux",
+      "sources": [
+        {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr/question/larbre-de-mon-voisin-me-derange-quelles-sont-les-distances-de-plantation", "intitule": "Droits Quotidiens — Distances de plantation"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/logement/problemes_de_logement/problemes_de_voisinage", "intitule": "Belgium.be — Problèmes de voisinage"}
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "VOIS-CONCILIATION-001",
+      "question": "Comment fonctionne la conciliation devant le juge de paix ?",
+      "reponse": "C'est une étape amiable, rapide et gratuite, avant tout procès. Un des voisins écrit une lettre au greffe de la justice de paix ; l'autre est invité à venir. Le juge de paix tente de les concilier. S'ils trouvent un accord, le juge rédige un procès-verbal de conciliation qui a la valeur d'un jugement. C'est souvent le meilleur moyen de régler un conflit de voisinage sans l'envenimer ni payer un avocat.",
+      "reference_legale": "Code judiciaire — conciliation devant le juge de paix",
+      "contacts": [
+        {"nom": "Greffe de la justice de paix de votre canton", "pour": "demande de conciliation (gratuite)"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/logement/problemes_de_logement/problemes_de_voisinage", "intitule": "Belgium.be — Problèmes de voisinage"},
+        {"type": "secondaire", "url": "https://www.droitsquotidiens.be/fr/actualites/conflit-de-voisinage-quelles-solutions-negociees", "intitule": "Droits Quotidiens — Solutions négociées"}
+      ],
+      "date_verification": "2026-06-26"
+    }
+  ]
+}

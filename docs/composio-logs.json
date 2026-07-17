@@ -1,0 +1,37 @@
+[
+  {
+    "timestamp": "2026-06-22T07:48:17Z",
+    "workflow": "nouveau_appel_financement",
+    "status": "success",
+    "output_summary": {
+      "événement": "(dict, 4 clé(s))",
+      "email": "(dict, 2 clé(s))",
+      "rappels": "(list, 4 élément(s))",
+      "tracker_mis_à_jour": true
+    }
+  },
+  {
+    "timestamp": "2026-06-22T07:48:17Z",
+    "workflow": "suivi_hebdomadaire",
+    "status": "success",
+    "output_summary": {
+      "deadlines_urgentes": 0,
+      "deadlines_prochaines": 3,
+      "kpis": "(dict, 5 clé(s))"
+    }
+  },
+  {
+    "timestamp": "2026-06-22T07:48:17Z",
+    "workflow": "schedule_weekly_review",
+    "status": "scheduled",
+    "output_summary": {
+      "workflow": "suivi_hebdomadaire",
+      "récurrence": "hebdomadaire",
+      "jour": "lundi",
+      "heure": "09:00",
+      "fuseau": "Europe/Brussels",
+      "activation": "simulation — COMPOSIO_API_KEY requise pour l'automation réelle",
+      "prochaine_execution": "2026-06-29 09:00"
+    }
+  }
+]

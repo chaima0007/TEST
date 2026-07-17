@@ -1,0 +1,67 @@
+{
+  "version": "1.0",
+  "description": "CaelumSwarm™ — Estimations de Temps par Wave",
+  "total_estimates": 1,
+  "estimates": [
+    {
+      "wave": 489,
+      "domains": [
+        "domain1",
+        "domain2",
+        "domain3"
+      ],
+      "n_domains": 3,
+      "include_dashboards": false,
+      "estimated_at": "2026-06-22T22:39:04.604839+00:00",
+      "subtotals_minutes": {
+        "git_startup": 1.5,
+        "engines": 20.0,
+        "routes": 12.5,
+        "sidebar": 9.5,
+        "dashboards": 0.0,
+        "validation": 3.2
+      },
+      "total_minutes": 44.4,
+      "total_minutes_range": [
+        37.7,
+        53.3
+      ],
+      "confidence_level": "HAUTE",
+      "accuracy_probability": 98.76,
+      "risks_detected": [],
+      "agent_assignments": {
+        "engines": [
+          "EngineAgent",
+          "QAAgent"
+        ],
+        "routes": [
+          "SecurityAgent",
+          "QAAgent"
+        ],
+        "sidebar": [
+          "SidebarAgent",
+          "CoordAgent"
+        ],
+        "validation": [
+          "QAAgent",
+          "QuantumAgent"
+        ]
+      },
+      "estimated_completion": "23:23 UTC",
+      "mc_validation": {
+        "n_iterations": 1000000,
+        "accuracy_1min": 38.24,
+        "accuracy_5min": 98.76,
+        "overrun_probability": 0.0,
+        "accuracy_pct": 98.76,
+        "confidence": "HAUTE"
+      }
+    }
+  ],
+  "accuracy_stats": {
+    "avg_error_minutes": 0.0,
+    "within_1min_pct": 0.0,
+    "within_5min_pct": 0.0
+  },
+  "last_estimate": "2026-06-22T22:39:04.604839+00:00"
+}

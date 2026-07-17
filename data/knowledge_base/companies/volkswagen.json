@@ -1,0 +1,70 @@
+{
+  "id": "volkswagen",
+  "slug": "volkswagen",
+  "name": "Volkswagen AG",
+  "country": "Germany",
+  "city": "Wolfsburg",
+  "sector": "Automobile",
+  "size": {
+    "revenue_bn_eur": 322,
+    "employees": 675000,
+    "index": "DAX30"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": true,
+    "swiss_hrdd": false,
+    "sfdr": false,
+    "esg_rating": {
+      "msci": "A-",
+      "sustainalytics": "31.2 Medium Risk",
+      "target": "AA"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "Group Chief Procurement Officer / Chief Sustainability Officer",
+    "team": "Group Sustainability & Procurement Compliance (Wolfsburg + Bruxelles)",
+    "location": "Wolfsburg (siège), Berlin (lobbying/public affairs)",
+    "process": "Processus d'approbation par niveaux (Freigabeprozess) — validation supervisory board pour initiatives >1M EUR, comité de durabilité trimestriel"
+  },
+  "pain_points": [
+    "Conformité LkSG opérationnelle pour +40 000 fournisseurs directs, avec exigences d'audit documentées et recours effectifs",
+    "Chaîne d'approvisionnement en cobalt et lithium (batteries EV) : traçabilité jusqu'aux mines artisanales en RDC (travail des enfants documenté)",
+    "Risques DDH dans les usines en Xinjiang (Chine) : pression US (UFLPA) et européenne — partenariat Xinjiang SAIC controversé",
+    "Transition vers véhicules électriques : impact social sur 35 000 emplois en Allemagne, obligations de reclassement et dialogue syndical (IG Metall)",
+    "Complexité du reporting CSRD groupe vs. subsidiaires (Audi, Porsche, SEAT, Skoda) : harmonisation des méthodologies DDH",
+    "Gestion des risques de corruption dans les marchés émergents Amérique Latine et Afrique du Sud liés aux pratiques d'approvisionnement"
+  ],
+  "observed_failures": [
+    "Usine Urumqi (Xinjiang) : audit indépendant impossible selon rapport BHRRC 2023, exposition à l'UFLPA américaine menaçant les exportations",
+    "Dieselgate (2015-2023) : 35 Mrd EUR d'amendes globales — démontrant la faiblesse des systèmes de conformité interne malgré la taille",
+    "Fournisseur Bertrandt 2022 : conditions de travail dégradées dans l'usine de câblage en Roumanie documentées par CorA Netzwerk"
+  ],
+  "signals_of_risk": [
+    "Dépendance critique aux fournisseurs de batteries avec présence en zones à haut risque DDH (RDC, Xinjiang)",
+    "Pression réglementaire simultanée LkSG (Allemagne), CSDDD (UE) et UFLPA (USA) créant des obligations potentiellement conflictuelles",
+    "Restructuration interne en cours (réduction 35 000 postes) créant tensions sociales et risques de réputation"
+  ],
+  "signals_of_trust": [
+    "Système LkSG opérationnel déployé depuis janvier 2023 avec portail fournisseurs dédié (SupplyOn)",
+    "Membre fondateur de la Responsible Minerals Initiative (RMI) pour la traçabilité des minerais de batteries",
+    "Rapport de durabilité intégré selon GRI et TCFD, vérifié par KPMG",
+    "Investissement de 180 Mrd EUR sur 5 ans dans l'électrification avec volet social documenté"
+  ],
+  "recommended_actions": [
+    "Démontrer comment notre solution s'intègre avec SupplyOn pour enrichir le scoring DDH des fournisseurs Tier 1 et Tier 2",
+    "Proposer un module spécialisé traçabilité minerais critiques (cobalt, lithium, nickel) aligné RMI et OECD Due Diligence Guidance",
+    "Présenter une analyse de l'écart entre le système LkSG actuel et les exigences CSDDD 2026 pour identifier les investissements prioritaires",
+    "Organiser un workshop avec l'équipe Xinjiang compliance pour explorer des solutions d'audit à distance et de vérification documentaire"
+  ],
+  "local_tone": "Ton professionnel germanique : précis, structuré, factuel. Préparer des présentations Powerpoint détaillées avec tableaux comparatifs. Références aux normes DIN, ISO et réglementations allemandes prioritaires sur les directives UE. Ponctualité et rigueur sont des signaux de crédibilité.",
+  "cultural_notes": "Culture d'entreprise très hiérarchique avec fort rôle des syndicats (co-détermination). Les décisions prennent du temps mais sont durables. Privilégier les relations long terme. La notion de 'Gründlichkeit' (rigueur) est centrale — toute proposition doit être exhaustive et documentée. Éviter l'improvisation.",
+  "priority": 5,
+  "last_updated": "2026-06-21",
+  "source_links": [
+    "https://www.volkswagenag.com/en/sustainability/reporting.html",
+    "https://www.business-humanrights.org/en/companies/volkswagen-ag/",
+    "https://www.bafin.de/SharedDocs/Downloads/EN/Anlage/dl_lksg_guidance.html"
+  ]
+}

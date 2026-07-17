@@ -1,0 +1,198 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────────────────────────
+   La Loi Avec Moi — identité « journal de référence »
+   Papier crème · Encre navy froide · Or laiton (avec parcimonie)
+   Titres : Fraunces (serif, JAMAIS grasse) · Texte : Public Sans
+   Direction issue de l'étude GOV.UK / DSFR / Citizens Advice /
+   cabinets primés 2025-2026. Tokens centralisés : ajuster ICI.
+   ───────────────────────────────────────────────────────────── */
+
+:root {
+  --papier: #fbf8f2;          /* fond : papier crème, jamais blanc pur */
+  --encre: #1b2432;           /* texte : bleu-noir encre, jamais #000 */
+  --encre-hero: #0e1420;      /* fond des héros sombres (navy FROID) */
+  --or: #b08d3e;              /* or laiton mat — accents sur fond clair */
+  --or-clair: #d6b87c;        /* or clair — accents sur fond sombre */
+  --vert-sceau: #1f6f50;      /* vert sceau — gratuit / vérifié / succès */
+  --accent-froid: #2e3d5c;    /* bleu institution désaturé */
+  --bordure: #e7e0d3;         /* bordures hairline sur papier */
+
+  --background: var(--papier);
+  --foreground: var(--encre);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-papier: var(--papier);
+  --color-encre: var(--encre);
+  --color-or: var(--or);
+  --color-or-clair: var(--or-clair);
+  --color-sceau: var(--vert-sceau);
+  --font-sans: var(--font-sans-app);
+  --font-display: var(--font-display);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans-app), "Segoe UI", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.7;
+  text-rendering: optimizeLegibility;
+}
+
+/* Titres en Fraunces — le luxe éditorial, c'est la serif LÉGÈRE en grand corps.
+   Se propage aux 85 pages sans les retoucher. */
+h1, h2, h3 {
+  font-family: var(--font-display), Georgia, "Times New Roman", serif;
+  font-weight: 450;
+  letter-spacing: -0.015em;
+}
+h1 { line-height: 1.07; }
+h2 { line-height: 1.15; }
+
+/* Un mot en italique dans un titre = la signature éditoriale */
+h1 em, h2 em {
+  font-style: italic;
+  font-weight: 420;
+}
+
+/* Sélection de texte : or discret */
+::selection {
+  background: rgba(176, 141, 62, 0.22);
+  color: inherit;
+}
+
+/* Accessibilité : focus visible, élégant */
+:focus-visible {
+  outline: 2px solid var(--or);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+html { scroll-behavior: smooth; }
+:target { scroll-margin-top: 90px; }
+
+/* ── Composants éditoriaux réutilisables ─────────────────────── */
+
+/* Petites majuscules « eyebrow » au-dessus des titres */
+.eyebrow {
+  font-family: var(--font-sans-app), sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+/* Eyebrow + ligne qui file : <div class="eyebrow-filet"><span>…</span></div> */
+.eyebrow-filet {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.eyebrow-filet::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: var(--bordure);
+}
+
+/* Filet doré court, à poser sous un titre */
+.filet-or {
+  width: 56px;
+  height: 3px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--or), var(--or-clair));
+}
+
+/* Héros « encre et lampe » : navy froid + éclairage doré décentré */
+.hero-encre {
+  background:
+    radial-gradient(120% 90% at 78% -10%, rgba(214, 184, 124, 0.13), transparent 55%),
+    radial-gradient(80% 60% at 15% 110%, rgba(46, 61, 92, 0.45), transparent 60%),
+    linear-gradient(170deg, #131a2a 0%, #0e1420 55%, #0a0f19 100%);
+  border-top: 1px solid rgba(214, 184, 124, 0.25);
+}
+
+/* Ombre « encre » : la bordure porte l'élévation, l'ombre chuchote */
+.ombre-encre {
+  border: 1px solid var(--bordure);
+  box-shadow:
+    0 1px 2px rgba(14, 20, 32, 0.06),
+    0 12px 32px -12px rgba(14, 20, 32, 0.14);
+}
+
+/* Badge « sceau » (gratuit / vérifié) */
+.badge-sceau {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  border-radius: 9999px;
+  background: rgba(31, 111, 80, 0.09);
+  color: var(--vert-sceau);
+  padding: 0.2rem 0.7rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+/* ── Kit d'animation « UI-Animation » ─────────────────────────
+   Principes : n'animer QUE transform/opacity (60 fps), 200-300 ms
+   pour les micro-interactions, ~600 ms pour les entrées, courbes
+   naturelles, et respect de prefers-reduced-motion. ───────────── */
+
+@keyframes anim-fade-up {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes anim-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes anim-shimmer {
+  from { background-position: 200% 0; }
+  to   { background-position: -200% 0; }
+}
+
+/* Entrée douce d'un bloc (héros, titres) */
+.anim-fade-up { animation: anim-fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.anim-fade    { animation: anim-fade 0.5s ease-out both; }
+
+/* Cascade « staggered » : à poser sur un conteneur de grille */
+.stagger > * { animation: anim-fade-up 0.55s cubic-bezier(0.22, 1, 0.36, 1) both; }
+.stagger > *:nth-child(1)  { animation-delay: 0.04s; }
+.stagger > *:nth-child(2)  { animation-delay: 0.08s; }
+.stagger > *:nth-child(3)  { animation-delay: 0.12s; }
+.stagger > *:nth-child(4)  { animation-delay: 0.16s; }
+.stagger > *:nth-child(5)  { animation-delay: 0.20s; }
+.stagger > *:nth-child(6)  { animation-delay: 0.24s; }
+.stagger > *:nth-child(7)  { animation-delay: 0.28s; }
+.stagger > *:nth-child(8)  { animation-delay: 0.32s; }
+.stagger > *:nth-child(9)  { animation-delay: 0.36s; }
+.stagger > *:nth-child(10) { animation-delay: 0.40s; }
+.stagger > *:nth-child(n+11) { animation-delay: 0.44s; }
+
+/* Micro-interaction de carte : translation discrète, jamais de rebond */
+.carte-vive {
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.carte-vive:hover { transform: translateY(-2px); }
+
+/* Squelette de chargement (états d'attente) — tons papier */
+.skeleton {
+  background: linear-gradient(90deg, #efe9dc 25%, #f7f2e8 37%, #efe9dc 63%);
+  background-size: 200% 100%;
+  animation: anim-shimmer 1.4s linear infinite;
+  border-radius: 0.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-fade-up, .anim-fade, .stagger > *, .skeleton { animation: none !important; }
+  .carte-vive, .carte-vive:hover { transition: none; transform: none; }
+}

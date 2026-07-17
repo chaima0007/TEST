@@ -1,0 +1,175 @@
+{
+  "version": "1.0",
+  "timestamp": "2026-06-22T22:32:25.407659+00:00",
+  "global_score": 71.7,
+  "domains": {
+    "git": {
+      "expert": "GitMaster Expert",
+      "competence_score": 98,
+      "health_score": 75.0,
+      "combined_score": 86.5,
+      "known_problems": [
+        "P001",
+        "P002",
+        "P006",
+        "P007",
+        "P011"
+      ],
+      "future_trends": [
+        "Git sparse checkout pour repos très larges",
+        "Conventional Commits enforcement via hooks",
+        "Atomic commits par domaine fonctionnel"
+      ],
+      "rules": [
+        "TOUJOURS: git config user.email noreply@anthropic.com avant commit",
+        "TOUJOURS: git branch --show-current avant de travailler",
+        "JAMAIS: committer sur main/master (branche dédiée OBLIGATOIRE)",
+        "TOUJOURS: git pull avant de modifier Sidebar.tsx"
+      ]
+    },
+    "sidebar": {
+      "expert": "SidebarArchitect Expert",
+      "competence_score": 96,
+      "health_score": 100.0,
+      "combined_score": 98.0,
+      "known_problems": [
+        "P003",
+        "P008"
+      ],
+      "future_trends": [
+        "Tree-shaking automatique des icônes non-utilisées",
+        "Génération dynamique d'icônes SVG",
+        "Lazy loading des groupes sidebar"
+      ],
+      "rules": [
+        "TOUJOURS: grep -c '^export function IconXxx' avant d'ajouter",
+        "TOUJOURS: vérifier zéro doublons après modification",
+        "UN SEUL agent à la fois sur Sidebar.tsx",
+        "Créer sidebar-icons-5.tsx quand sidebar-icons-4.tsx > 5500 lignes"
+      ]
+    },
+    "security": {
+      "expert": "SecurityGuardian Expert",
+      "competence_score": 99,
+      "health_score": 100.0,
+      "combined_score": 99.5,
+      "known_problems": [
+        "P004"
+      ],
+      "future_trends": [
+        "Zero-Trust architecture pour API routes",
+        "Rate limiting intégré sur endpoints CSDDD",
+        "Audit log automatique pour chaque appel API",
+        "JWT rotation automatique"
+      ],
+      "rules": [
+        "TOUJOURS: import { sealResponse } dans chaque route.ts",
+        "TOUJOURS: if (!process.env.SWARM_API_URL) { console.warn(...) }",
+        "TOUJOURS: await sealResponse() sur NextResponse.json()",
+        "JAMAIS: credentials hardcodés dans le code",
+        "JAMAIS: status 503 — utiliser 502 (upstream failure)"
+      ]
+    },
+    "engine": {
+      "expert": "EngineCalculator Expert",
+      "competence_score": 97,
+      "health_score": 100.0,
+      "combined_score": 98.5,
+      "known_problems": [
+        "P005",
+        "P012"
+      ],
+      "future_trends": [
+        "Engines adaptatifs basés sur données réelles CSDDD",
+        "Monte Carlo calibration avec données terrain",
+        "Streaming output pour dashboards temps-réel"
+      ],
+      "rules": [
+        "8 entités FIXES: tuples (99,97,95,93)/(93,90,88,86)/... ",
+        "avg_composite DOIT être 61.03 (±0.01)",
+        "TOUJOURS: python3 engine.py avant commit",
+        "Format: avg_composite: XX.XX (avec deux points)"
+      ]
+    },
+    "ci_cd": {
+      "expert": "CICDMonitor Expert",
+      "competence_score": 95,
+      "health_score": 0.0,
+      "combined_score": 47.5,
+      "known_problems": [
+        "P010"
+      ],
+      "future_trends": [
+        "Build preview URLs pour chaque PR",
+        "Incremental builds (turbopack) pour réduction temps",
+        "Edge functions pour routes CSDDD latence < 50ms"
+      ],
+      "rules": [
+        "TOUJOURS: vérifier doublons icons AVANT push",
+        "TOUJOURS: python3 scripts/wave_validator.py après wave",
+        "JAMAIS: push sans valider typescript localement",
+        "En cas d'échec: identifier la ligne exacte dans les logs"
+      ]
+    },
+    "dashboard": {
+      "expert": "DashboardBuilder Expert",
+      "competence_score": 94,
+      "health_score": 0.0,
+      "combined_score": 47.0,
+      "known_problems": [
+        "P009"
+      ],
+      "future_trends": [
+        "Streaming data pour dashboards temps-réel CSDDD",
+        "Export PDF automatique des rapports compliance",
+        "Visualisations interactives supply chain maps"
+      ],
+      "rules": [
+        "TOUJOURS: 'use client' en première ligne",
+        "TOUJOURS: GaugeRing avec dimensions exactes",
+        "TOUJOURS: const d = await res.json(); return d.payload ?? d",
+        "JAMAIS: apostrophes directes dans JSX"
+      ]
+    },
+    "coordination": {
+      "expert": "SwarmCoordinator Expert",
+      "competence_score": 93,
+      "health_score": 0.0,
+      "combined_score": 46.5,
+      "known_problems": [
+        "P011"
+      ],
+      "future_trends": [
+        "Orchestration automatique des agents avec LangGraph",
+        "Queue management pour Sidebar.tsx (mutex distribué)",
+        "Dependency graph auto-calculé entre agents"
+      ],
+      "rules": [
+        "Ordre: engines → routes → sidebar → dashboards",
+        "Sidebar: UN AGENT à la fois (séquentiel obligatoire)",
+        "TOUJOURS: git pull juste avant modifier Sidebar",
+        "TOUJOURS: commit par groupe (pas tout à la fin)"
+      ]
+    },
+    "csddd": {
+      "expert": "CSDDDCompliance Expert",
+      "competence_score": 100,
+      "health_score": 0.0,
+      "combined_score": 50.0,
+      "known_problems": [],
+      "future_trends": [
+        "CSDDD 2025: extension aux PME (>250 employés)",
+        "Carbon Border Adjustment Mechanism (CBAM)",
+        "EU Taxonomy Regulation évolutions 2025-2026",
+        "Supply Chain Act Allemagne → modèle EU",
+        "AI Act impact sur systèmes compliance IA"
+      ],
+      "rules": [
+        "Tous les engines doivent couvrir des domaines CSDDD légalement pertinents",
+        "avg_composite = 61.03 = score de risque moyen EU réaliste",
+        "sealResponse = protection données confidentielles compliance",
+        "revalidate:30 = fraîcheur données légales (30s max)"
+      ]
+    }
+  }
+}

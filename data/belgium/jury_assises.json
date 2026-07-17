@@ -1,0 +1,58 @@
+{
+  "module": "jury_assises",
+  "titre": "Juré d'assises — le devoir de juré",
+  "domaine": "Justice & citoyenneté",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code judiciaire — composition et tirage au sort du jury de la cour d'assises (art. 217 et suivants)",
+    "portee": "Conditions, convocation et rôle du citoyen appelé comme juré",
+    "source_officielle": "https://justice.belgium.be/fr/themes_et_dossiers/que_faire_comme/membre_de_jury/qui_peut_etre_convoque"
+  },
+  "derniere_revue": "2026-06-29",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Pour une demande de dispense, adressez-vous au président de la cour d'assises mentionné sur votre convocation.",
+  "faits": [
+    {
+      "id": "JURY-001",
+      "question": "Qui peut être appelé comme juré d'assises ?",
+      "reponse": "La cour d'assises est composée de 3 magistrats professionnels, assistés d'un jury de 12 citoyens tirés au sort. Pour figurer sur la liste des candidats-jurés, il faut : être inscrit au registre des électeurs, jouir de ses droits civils et politiques, avoir entre 28 et 65 ans, savoir lire et écrire, et ne pas avoir subi de condamnation à plus de 4 mois de prison (ou plus de 60 heures de peine de travail). Une liste est établie tous les quatre ans.",
+      "reference_legale": "Code judiciaire — conditions pour être juré (art. 217 et suivants)",
+      "sources": [
+        {"type": "officiel", "url": "https://justice.belgium.be/fr/themes_et_dossiers/que_faire_comme/membre_de_jury/qui_peut_etre_convoque", "intitule": "SPF Justice — Qui peut être convoqué ?"},
+        {"type": "officiel", "url": "https://www.om-mp.be/fr/que-faire/membre-jury", "intitule": "Ministère public — Membre du jury"}
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "JURY-002",
+      "question": "Qui ne peut pas être juré ?",
+      "reponse": "Sont notamment exclus : les mandataires politiques, les magistrats et les hauts fonctionnaires. Les personnes qui ne parlent pas la langue du procès sont aussi écartées, de même que celles privées de leurs droits civils ou politiques. L'objectif est un jury impartial et capable de suivre les débats.",
+      "reference_legale": "Code judiciaire — incompatibilités et exclusions du jury (art. 217 et suivants)",
+      "sources": [
+        {"type": "officiel", "url": "https://justice.belgium.be/fr/themes_et_dossiers/que_faire_comme/membre_de_jury/qui_peut_etre_convoque", "intitule": "SPF Justice — Exclusions"}
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "JURY-003",
+      "question": "Comment se déroule la sélection et puis-je être dispensé ?",
+      "reponse": "Pour chaque procès, au moins 60 personnes de la liste des candidats-jurés sont convoquées. Le jour de l'audience, le président appelle les candidats un à un et le jury de 12 membres (plus des suppléants) est tiré au sort. Vous pouvez adresser une demande de dispense au président, qui décide de l'accepter ou non. Les candidats peuvent aussi être récusés (écartés) sans qu'on en indique la raison.",
+      "reference_legale": "Code judiciaire — tirage au sort et dispenses (art. 218 et suivants)",
+      "sources": [
+        {"type": "officiel", "url": "https://www.om-mp.be/fr/que-faire/membre-jury", "intitule": "Ministère public — Déroulement et dispense"}
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "JURY-004",
+      "question": "Quel est le rôle du juré pendant le procès ?",
+      "reponse": "Le jury décide si l'accusé est coupable ou non des faits reprochés. Après les auditions, les plaidoiries et le réquisitoire, les jurés répondent par « oui » ou « non » aux questions du président ; la décision se prend à la majorité (en cas de parité, l'accusé est acquitté). Si l'accusé est reconnu coupable, jurés et juges fixent ensemble la peine. Siéger comme juré est un devoir de citoyen.",
+      "reference_legale": "Code judiciaire — délibération et verdict du jury (art. 217 et suivants)",
+      "sources": [
+        {"type": "officiel", "url": "https://www.om-mp.be/fr/que-faire/membre-jury", "intitule": "Ministère public — Rôle du jury"}
+      ],
+      "date_verification": "2026-06-29"
+    }
+  ]
+}

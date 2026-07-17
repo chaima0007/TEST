@@ -1,0 +1,95 @@
+{
+  "module": "deces_demarches",
+  "titre": "Décès — démarches pratiques après le décès d'un proche",
+  "domaine": "Décès & démarches",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "État civil (déclaration de décès) ; blocage et déblocage des comptes (Code civil, acte d'hérédité) ; déclaration de succession (Code des droits de succession)",
+    "portee": "Formalités concrètes à accomplir après un décès en Belgique",
+    "source_officielle": "https://www.belgium.be/fr/famille/deces"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les pompes funèbres et le notaire peuvent vous accompagner dans ces démarches, dans un moment difficile.",
+  "faits": [
+    {
+      "id": "DECES-DECLARATION-001",
+      "question": "Que faire en premier après un décès ?",
+      "reponse": "Le décès doit être déclaré au service de l'état civil de la commune ; vous recevez un extrait d'acte de décès. Souvent, l'entreprise de pompes funèbres s'occupe de cette formalité. Conseil important : demandez plusieurs copies de l'acte de décès — elles seront nécessaires pour le notaire, les banques, les assurances, la mutuelle, l'employeur, etc.",
+      "reference_legale": "Code civil — état civil et déclaration de décès",
+      "contacts": [
+        {
+          "nom": "Administration communale (état civil)",
+          "pour": "déclaration et acte de décès"
+        },
+        {
+          "nom": "Pompes funèbres",
+          "pour": "peuvent gérer les formalités"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.belgium.be/fr/famille/deces",
+          "intitule": "Belgium.be — Décès"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "DECES-COMPTES-001",
+      "question": "Les comptes bancaires sont bloqués : comment les débloquer ?",
+      "reponse": "À l'annonce du décès, la banque bloque les comptes et coffres du défunt (et souvent ceux du conjoint) pour dresser la liste des avoirs. Pour débloquer, la banque doit connaître les héritiers : il faut en général un acte d'hérédité (ou un certificat d'hérédité) établi par le notaire (ou, dans les cas simples, par le bureau Sécurité juridique). Cela peut prendre quelques semaines. Des montants limités peuvent parfois être libérés pour les frais urgents (funérailles, dépenses du ménage).",
+      "reference_legale": "Code civil — acte/certificat d'hérédité ; règles de déblocage des comptes après décès",
+      "contacts": [
+        {
+          "nom": "Notaire",
+          "pour": "acte d'hérédité, déblocage"
+        },
+        {
+          "nom": "Banque du défunt",
+          "pour": "signaler le décès"
+        }
+      ],
+      "alerte_delai": "Prévoyez du temps (souvent ~4 semaines pour l'acte d'hérédité). Demandez la libération des frais urgents si besoin.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.belgium.be/fr/impots/succession/blocage_compte_et_coffre",
+          "intitule": "Belgium.be — Blocage des comptes et coffres"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "DECES-ORGANISMES-001",
+      "question": "Quels organismes prévenir, et dans quels délais ?",
+      "reponse": "Prévenez (avec une copie de l'acte de décès) : l'employeur ou l'organisme de revenus de remplacement (chômage, mutuelle, CPAS), les banques et assurances, la mutuelle, le propriétaire/locataire, les fournisseurs (énergie, télécom), le comptable le cas échéant. Côté succession : si le décès a eu lieu en Belgique, les héritiers ont en principe 4 mois pour déposer la déclaration de succession (voir la catégorie Successions).",
+      "reference_legale": "Code des droits de succession (déclaration) ; obligations contractuelles diverses",
+      "alerte_delai": "Déclaration de succession : ~4 mois après le décès. Prévenez vite l'employeur/organisme de revenus.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.belgium.be/fr/famille/deces",
+          "intitule": "Belgium.be — Décès (démarches)"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "DECES-OPTION-SUCCESSION-001",
+      "question": "Suis-je obligé d'accepter l'héritage (et les dettes) d'un proche ?",
+      "reponse": "Non. Face à une succession, l'héritier a trois choix. 1) Accepter purement et simplement : vous recevez l'actif mais aussi les dettes, même au-delà de ce que vous héritez. 2) Accepter sous bénéfice d'inventaire (acceptation à concurrence de l'actif net) : vous n'êtes tenu des dettes que jusqu'à hauteur de ce que vous recevez — c'est la prudence recommandée si vous ignorez l'état réel du patrimoine. 3) Renoncer : vous ne recevez rien et ne payez aucune dette. La renonciation et l'acceptation sous bénéfice d'inventaire se font par déclaration (via le notaire ou le tribunal). Prenez le temps de vous renseigner sur l'actif et le passif avant de décider : c'est une protection essentielle contre les dettes d'un héritage.",
+      "reference_legale": "Code civil — option successorale : acceptation, acceptation sous bénéfice d'inventaire, renonciation",
+      "contacts": [
+        {"nom": "Notaire", "pour": "déclaration d'acceptation sous bénéfice d'inventaire ou de renonciation"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/famille/deces/heritage", "intitule": "Belgium.be — Héritage et option successorale"},
+        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/loi/1804/03/21/1804032153/justel", "intitule": "Ancien Code civil — successions (option de l'héritier)"}
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

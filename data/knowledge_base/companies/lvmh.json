@@ -1,0 +1,70 @@
+{
+  "id": "lvmh",
+  "slug": "lvmh",
+  "name": "LVMH Moët Hennessy Louis Vuitton",
+  "country": "France",
+  "city": "Paris",
+  "sector": "Luxe",
+  "size": {
+    "revenue_bn_eur": 86,
+    "employees": 196000,
+    "index": "CAC40"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": false,
+    "swiss_hrdd": false,
+    "sfdr": false,
+    "esg_rating": {
+      "msci": "A",
+      "sustainalytics": "17.3 Low Risk",
+      "target": "AA"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "Directeur Développement Durable Groupe / Directeurs RSE par Maison",
+    "team": "Direction Environnement et Développement Durable LVMH, équipes RSE par maison (75 marques)",
+    "location": "Paris 8e (siège), New York, Tokyo, Hong Kong (operations régionales)",
+    "process": "LIFE 360 (programme durabilité) avec KPIs par maison, comité exécutif annuel, reporting consolidé groupe et décentralisé par marque"
+  },
+  "pain_points": [
+    "Filières matières premières luxe : cuir (Brésil/déforestation, Éthiopie/conditions d'abattage), soie (Chine/Ouïghours), coton (Égypte/Ouzbékistan), laine (Australie/bien-être animal)",
+    "Artisans et sous-traitants en Italie et France : travail non déclaré dans les ateliers de sous-traitance du secteur luxe (Toscane, Veneto)",
+    "Chaînes d'approvisionnement diamants et pierres précieuses : Kimberley Process insuffisant pour couvrir tous les risques DDH",
+    "Vignobles Moët & Chandon (Champagne) : conditions de travail des vendangeurs saisonniers — OCP (Office Champagne) sous pression",
+    "Expansion en Asie : joint-ventures et contrats de licence avec des partenaires locaux dans des contextes réglementaires moins protecteurs des droits humains",
+    "Règlement UE sur le devoir de vigilance (CSDDD) : structuration d'une approche groupe cohérente pour 75 marques très autonomes"
+  ],
+  "observed_failures": [
+    "Rapport Le Monde 2023 : sous-traitants italiens de maroquinerie de luxe (Louis Vuitton, Dior) utilisant du travail non déclaré de migrants dans des ateliers toscans",
+    "Cuir bovin brésilien : fournisseurs LVMH liés à de la déforestation amazonienne par des ONG (rapport Amnesty 2022 sur la chaîne cuir-luxe)",
+    "Soie Xinjiang : LVMH n'a pas publié de politique d'exclusion explicite jusqu'en 2023, contrairement à H&M et Burberry — retard signalé par Business of Fashion"
+  ],
+  "signals_of_risk": [
+    "Modèle décentralisé (75 maisons autonomes) crée des risques de fragmentation des pratiques DDH",
+    "Consommateur luxe de plus en plus sensible à l'éthique de production — risque réputation amplifié par les réseaux sociaux",
+    "Exposition aux risques géopolitiques liés à l'approvisionnement en matières premières rares (pierres précieuses, fourrures)"
+  ],
+  "signals_of_trust": [
+    "Programme LIFE 360 : cadre de durabilité structuré avec objectifs mesurables sur la créativité, l'artisanat et la traçabilité",
+    "Investissements dans la haute couture française : maintien de savoir-faire artisanaux avec conditions de travail élevées",
+    "Partenariat avec Rainforest Alliance pour la certification des vins et spiritueux (vignobles)",
+    "LVMH RE(SOURCES) : programme de traçabilité matières premières déployé sur 30 maisons prioritaires"
+  ],
+  "recommended_actions": [
+    "Présenter une solution de traçabilité matières premières luxe adaptée aux spécificités sectorielles (cuir, soie, pierres précieuses)",
+    "Proposer un cadre DDH groupe permettant une approche cohérente tout en respectant l'autonomie des 75 maisons",
+    "Développer un module spécialisé sur les risques dans l'artisanat sous-traité en Italie et en France",
+    "Organiser une session avec la Direction Développement Durable autour du LIFE 360 et des lacunes identifiées vs. CSDDD"
+  ],
+  "local_tone": "Ton élégant et raffiné, valorisant l'excellence et l'artisanat. LVMH est très sensible à son image de marque — les approches qui valorisent l'éthique comme vecteur de qualité et d'authenticité sont bien reçues. Éviter le vocabulaire austère de la conformité réglementaire — préférer 'excellence éthique' à 'audit de conformité'.",
+  "cultural_notes": "LVMH est dominé par la personnalité de Bernard Arnault et une culture de l'excellence absolue. Les équipes RSE sont sous pression pour concilier les attentes éthiques croissantes avec les impératifs commerciaux des maisons de luxe. La discrétion est valorisée — éviter les approches qui menacent de rendre publics des risques sensibles.",
+  "priority": 3,
+  "last_updated": "2026-06-21",
+  "source_links": [
+    "https://www.lvmh.com/news-documents/press-releases/lvmh-life-360-sustainability-program/",
+    "https://www.business-humanrights.org/en/companies/lvmh/",
+    "https://www.lemonde.fr/economie/article/2023/04/16/ateliers-sous-traitants-luxe-travail-non-declare_6169578_3234.html"
+  ]
+}

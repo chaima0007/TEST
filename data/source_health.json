@@ -1,0 +1,12 @@
+{
+  "genere_le": "2026-06-29T09:42:02.649425+00:00",
+  "total": 12,
+  "ok": 0,
+  "mortes": 0,
+  "indetermines": 12,
+  "pct_ok": 0.0,
+  "network_ok": false,
+  "verdict": "INDÉTERMINÉ",
+  "urls_mortes": [],
+  "note": "Réseau restreint détecté : aucune source déclarée morte à tort."
+}

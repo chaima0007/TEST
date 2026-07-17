@@ -1,0 +1,33 @@
+{
+  "registre": "Lexique en langage clair",
+  "but": "Expliquer simplement les termes juridiques utilisés sur le site. Sert la crédibilité ET l'accessibilité cognitive (handicap, langage simple). Définitions générales, à visée pédagogique.",
+  "date": "2026-06-26",
+  "termes": [
+    {"terme": "Bail de résidence principale", "definition": "Contrat par lequel on loue le logement où l'on habite principalement. Il est encadré par des règles protectrices propres à chaque Région.", "domaine": "Logement & bail"},
+    {"terme": "Garantie locative", "definition": "Somme bloquée au début de la location pour couvrir d'éventuels dégâts ou loyers impayés. Elle vous est rendue à la fin si tout est en ordre.", "domaine": "Logement & bail"},
+    {"terme": "Préavis", "definition": "Délai à respecter pour annoncer la fin d'un contrat (par ex. quitter un logement). Donné trop tard ou mal, il peut être reporté ou nul.", "domaine": "Logement & bail"},
+    {"terme": "Indexation du loyer", "definition": "Adaptation du loyer une fois par an, selon un indice officiel des prix. Elle suit des règles précises et n'est pas automatique.", "domaine": "Logement & bail"},
+    {"terme": "État des lieux", "definition": "Description détaillée du logement, faite à l'entrée (et à la sortie), pour comparer l'état avant/après et éviter les litiges.", "domaine": "Logement & bail"},
+    {"terme": "PEB / EPC", "definition": "Certificat de performance énergétique du logement : il indique sa consommation d'énergie. Souvent obligatoire à la location.", "domaine": "Logement & bail"},
+    {"terme": "Règlement collectif de dettes (RCD)", "definition": "Procédure judiciaire pour les personnes très endettées : un médiateur gère les revenus et négocie avec les créanciers, sous contrôle du tribunal du travail.", "domaine": "Surendettement"},
+    {"terme": "Médiateur de dettes", "definition": "Professionnel (souvent au CPAS) qui aide à trouver une solution aux dettes : il négocie avec les créanciers et organise les remboursements.", "domaine": "Surendettement"},
+    {"terme": "Pécule de médiation", "definition": "Montant insaisissable que le médiateur reverse chaque mois pour vivre (loyer, nourriture, énergie) pendant un règlement de dettes.", "domaine": "Surendettement"},
+    {"terme": "Quotité saisissable / insaisissable", "definition": "Part du salaire qui peut (saisissable) ou ne peut pas (insaisissable) être prélevée pour payer des dettes. Un minimum vital est toujours protégé.", "domaine": "Surendettement"},
+    {"terme": "Commandement de payer", "definition": "Acte d'huissier qui ordonne de payer une dette dans un délai. C'est souvent la première étape avant une saisie.", "domaine": "Surendettement"},
+    {"terme": "Saisie-exécution immobilière", "definition": "Procédure permettant de faire vendre un bien immobilier pour rembourser des créanciers. Elle est longue et très encadrée.", "domaine": "Surendettement"},
+    {"terme": "Adjudication", "definition": "Vente publique aux enchères d'un bien saisi, organisée par un notaire. Le prix sert à payer les créanciers.", "domaine": "Surendettement"},
+    {"terme": "Aide juridique de 2ᵉ ligne (ex « pro deo »)", "definition": "Assistance d'un avocat, gratuite ou partiellement gratuite selon vos revenus ou votre situation. On la demande au Bureau d'aide juridique.", "domaine": "Justice & pénal"},
+    {"terme": "Casier judiciaire", "definition": "Document officiel qui reprend (ou non) vos condamnations. On le demande en général à sa commune ; il existe plusieurs modèles selon l'usage.", "domaine": "Justice & pénal"},
+    {"terme": "Salduz (droits lors d'une audition)", "definition": "Règles garantissant, lors d'un interrogatoire, le droit d'être assisté d'un avocat et de garder le silence (art. 47bis du Code d'instruction criminelle).", "domaine": "Justice & pénal"},
+    {"terme": "Citation / comparution", "definition": "Convocation officielle à se présenter devant un tribunal à une date donnée. On peut s'y faire représenter par un avocat.", "domaine": "Justice & pénal"},
+    {"terme": "Partie civile", "definition": "Statut de la victime qui demande réparation de son préjudice dans le cadre d'un procès pénal.", "domaine": "Justice & pénal"},
+    {"terme": "Perception immédiate", "definition": "Paiement rapide proposé par la police pour une infraction (souvent routière) qui éteint l'affaire si on paie.", "domaine": "Justice & pénal"},
+    {"terme": "Ordre de paiement", "definition": "Document exécutoire envoyé en cas de non-paiement d'une amende : il permet le recouvrement forcé et le montant est majoré.", "domaine": "Justice & pénal"},
+    {"terme": "Prescription", "definition": "Délai au-delà duquel on ne peut plus agir en justice (par ex. porter plainte ou réclamer). Le délai et son point de départ varient selon les cas.", "domaine": "Justice & pénal"},
+    {"terme": "Harcèlement (art. 442bis)", "definition": "Comportement répété qui perturbe gravement la tranquillité d'une personne. C'est une infraction pénale, poursuivie sur plainte de la victime.", "domaine": "Harcèlement & violences"},
+    {"terme": "Conseiller en prévention (aspects psychosociaux)", "definition": "Personne spécialisée vers qui se tourner en cas de harcèlement ou de souffrance au travail ; il peut traiter une demande formelle.", "domaine": "Harcèlement & violences"},
+    {"terme": "Juge de paix", "definition": "Juge de proximité compétent notamment pour les litiges de bail et les expulsions.", "domaine": "Justice & pénal"},
+    {"terme": "Tribunal du travail", "definition": "Juridiction compétente notamment pour le règlement collectif de dettes et certains litiges sociaux.", "domaine": "Justice & pénal"},
+    {"terme": "CPAS", "definition": "Centre Public d'Action Sociale : service communal qui aide les personnes en difficulté (aide sociale, médiation de dettes, orientation).", "domaine": "Aide sociale"}
+  ]
+}

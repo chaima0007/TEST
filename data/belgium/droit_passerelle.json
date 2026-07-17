@@ -1,0 +1,108 @@
+{
+  "module": "droit_passerelle",
+  "titre": "Droit passerelle (indépendant en difficulté)",
+  "domaine": "Indépendants & sécurité sociale",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 22 décembre 2016 instaurant un droit passerelle en faveur des travailleurs indépendants",
+    "portee": "Revenu de remplacement et maintien de droits pour l'indépendant qui cesse ou interrompt son activité",
+    "source_officielle": "https://www.inasti.be/fr"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les conditions et durées sont précises et évolutives ; introduisez la demande via votre caisse d'assurances sociales.",
+  "faits": [
+    {
+      "id": "PASS-PRINCIPE-001",
+      "question": "Qu'est-ce que le droit passerelle ?",
+      "reponse": "Le droit passerelle est une forme de « filet social » propre aux indépendants : il accorde, sous conditions, une prestation financière mensuelle (revenu de remplacement) et le maintien de certains droits sociaux (notamment les soins de santé) pendant une période limitée, à l'indépendant qui doit cesser ou interrompre son activité. Il ne s'agit pas du chômage (réservé aux salariés) : c'est un dispositif spécifique géré via les caisses d'assurances sociales et l'INASTI. C'est une protection importante en cas de coup dur, à connaître quand on est indépendant.",
+      "reference_legale": "Loi du 22 décembre 2016 instaurant un droit passerelle en faveur des travailleurs indépendants",
+      "contacts": [
+        {
+          "nom": "Votre caisse d'assurances sociales",
+          "pour": "demande de droit passerelle"
+        },
+        {
+          "nom": "INASTI",
+          "lien": "https://www.inasti.be/fr",
+          "pour": "information sur le droit passerelle"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.inasti.be/fr",
+          "intitule": "INASTI — Droit passerelle"
+        }
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "PASS-CAS-001",
+      "question": "Dans quels cas peut-on en bénéficier ?",
+      "reponse": "Le droit passerelle vise plusieurs situations, notamment : la faillite ou le règlement collectif de dettes, la cessation forcée de l'activité (par exemple un sinistre, une décision d'un tiers, une catastrophe), ou des difficultés économiques sérieuses menant à interrompre l'activité. Des conditions s'appliquent : être en règle de cotisations sociales sur une période de référence, ne pas exercer d'autre activité ou bénéficier d'un autre revenu de remplacement incompatible, etc. La durée du bénéfice est plafonnée (en nombre de mois) sur la carrière. Vérifiez quelle situation correspond à la vôtre auprès de votre caisse.",
+      "reference_legale": "Loi du 22 décembre 2016 (situations ouvrant le droit passerelle)",
+      "contacts": [
+        {
+          "nom": "Votre caisse d'assurances sociales",
+          "pour": "vérifier votre éligibilité"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.inasti.be/fr",
+          "intitule": "INASTI — Conditions du droit passerelle"
+        }
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "PASS-DEMANDE-001",
+      "question": "Comment et quand introduire la demande ?",
+      "reponse": "La demande s'introduit auprès de votre caisse d'assurances sociales, qui examine votre situation et transmet à l'INASTI. Important : respectez les délais (la demande doit en général être introduite dans un certain délai à compter de la cessation/du fait déclencheur, sous peine de perdre des mensualités). Préparez les pièces utiles (preuve de la cessation, jugement de faillite, attestations). N'attendez pas : plus vite vous introduisez la demande, plus vite la prestation peut être versée. Un comptable ou un guichet d'entreprises peut vous aider dans la démarche.",
+      "reference_legale": "Loi du 22 décembre 2016 (procédure et délais de demande du droit passerelle)",
+      "alerte_delai": "Introduisez la demande dans le délai prévu après la cessation : un retard peut faire perdre des mensualités.",
+      "contacts": [
+        {
+          "nom": "Votre caisse d'assurances sociales",
+          "pour": "introduction et suivi de la demande"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.inasti.be/fr",
+          "intitule": "INASTI — Demander le droit passerelle"
+        }
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "PASS-EFFETS-001",
+      "question": "Que couvre concrètement le droit passerelle, et pendant combien de temps ?",
+      "reponse": "Le droit passerelle comporte deux volets : une prestation financière mensuelle (dont le montant diffère selon que vous avez ou non charge de famille) et le maintien de certains droits sociaux — notamment le remboursement des soins de santé — pendant plusieurs trimestres sans devoir payer de cotisations. Il s'agit d'un filet de sécurité temporaire : la durée de chaque octroi est limitée et la durée totale dont vous pouvez bénéficier sur l'ensemble de votre carrière est plafonnée (elle peut être plus longue si vous avez une longue carrière de cotisations). Le droit passerelle ne crée pas de droits à la pension pour la période couverte, sauf exceptions prévues par la loi : renseignez-vous auprès de votre caisse d'assurances sociales avant de compter dessus.",
+      "reference_legale": "Loi du 22 décembre 2016 instaurant un droit passerelle en faveur des travailleurs indépendants (prestation financière et maintien des droits sociaux)",
+      "contacts": [
+        {
+          "nom": "Votre caisse d'assurances sociales",
+          "pour": "demande de droit passerelle"
+        },
+        {
+          "nom": "INASTI",
+          "lien": "https://www.inasti.be/fr",
+          "pour": "information sur le droit passerelle"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.inasti.be/fr",
+          "intitule": "INASTI — Droit passerelle"
+        }
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

@@ -1,0 +1,843 @@
+{
+  "generated_at": "2026-06-22T07:39:30.342462+00:00",
+  "agent": "TaskDeduplicationAgent",
+  "version": "1.0.0",
+  "summary": {
+    "total_agents_evaluated": 110,
+    "total_pairs": 5995,
+    "high_similarity_alerts": 0,
+    "threshold": 0.7
+  },
+  "alerts": [],
+  "top_similar_pairs": [
+    {
+      "agent1": "cisco-certification-tracker-agent.py",
+      "agent2": "google-certification-tracker-agent.py",
+      "similarity": 0.5789,
+      "shared_tokens": [
+        "AGENT_NAME",
+        "BOLD",
+        "CYAN",
+        "GREEN",
+        "MEMORY_DIR",
+        "OUTPUT_PATH",
+        "RED",
+        "RESET",
+        "ROOT",
+        "VERSION",
+        "YELLOW"
+      ],
+      "alert": false
+    },
+    {
+      "agent1": "google-certification-tracker-agent.py",
+      "agent2": "source-integrity-monitor-agent.py",
+      "similarity": 0.55,
+      "shared_tokens": [
+        "AGENT_NAME",
+        "BOLD",
+        "CYAN",
+        "GREEN",
+        "MEMORY_DIR",
+        "OUTPUT_PATH",
+        "RED",
+        "RESET",
+        "ROOT",
+        "VERSION",
+        "YELLOW"
+      ],
+      "alert": false
+    },
+    {
+      "agent1": "google-certification-tracker-agent.py",
+      "agent2": "task-deduplication-agent.py",
+      "similarity": 0.55,
+      "shared_tokens": [
+        "AGENT_NAME",
+        "BOLD",
+        "CYAN",
+        "GREEN",
+        "MEMORY_DIR",
+        "OUTPUT_PATH",
+        "RED",
+        "RESET",
+        "ROOT",
+        "VERSION",
+        "YELLOW"
+      ],
+      "alert": false
+    },
+    {
+      "agent1": "cicd-pipeline-agent.py",
+      "agent2": "microservices-topology-agent.py",
+      "similarity": 0.5294,
+      "shared_tokens": [
+        "AGENT_NAME",
+        "BOLD",
+        "CYAN",
+        "GREEN",
+        "RED",
+        "RESET",
+        "VERSION",
+        "YELLOW",
+        "run_agent"
+      ],
+      "alert": false
+    },
+    {
+      "agent1": "cisco-certification-tracker-agent.py",
+      "agent2": "source-integrity-monitor-agent.py",
+      "similarity": 0.5,
+      "shared_tokens": [
+        "AGENT_NAME",
+        "BOLD",
+        "CYAN",
+        "GREEN",
+        "MEMORY_DIR",
+        "OUTPUT_PATH",
+        "RED",
+        "RESET",
+        "ROOT",
+        "VERSION",
+        "YELLOW"
+      ],
+      "alert": false
+    },
+    {
+      "agent1": "cisco-certification-tracker-agent.py",
+      "agent2": "task-deduplication-agent.py",
+      "similarity": 0.5,
+      "shared_tokens": [
+        "AGENT_NAME",
+        "BOLD",
+        "CYAN",
+        "GREEN",
+        "MEMORY_DIR",
+        "OUTPUT_PATH",
+        "RED",
+        "RESET",
+        "ROOT",
+        "VERSION",
+        "YELLOW"
+      ],
+      "alert": false
+    },
+    {
+      "agent1": "source-integrity-monitor-agent.py",
+      "agent2": "task-deduplication-agent.py",
+      "similarity": 0.4783,
+      "shared_tokens": [
+        "AGENT_NAME",
+        "BOLD",
+        "CYAN",
+        "GREEN",
+        "MEMORY_DIR",
+        "OUTPUT_PATH",
+        "RED",
+        "RESET",
+        "ROOT",
+        "VERSION",
+        "YELLOW"
+      ],
+      "alert": false
+    },
+    {
+      "agent1": "accessibility-checker-agent.py",
+      "agent2": "wave-consistency-checker-agent.py",
+      "similarity": 0.4737,
+      "shared_tokens": [
+        "AGENT_NAME",
+        "BOLD",
+        "CYAN",
+        "GREEN",
+        "RED",
+        "RESET",
+        "VERSION",
+        "YELLOW",
+        "run_checker"
+      ],
+      "alert": false
+    },
+    {
+      "agent1": "dependency-audit-agent.py",
+      "agent2": "security-audit-agent.py",
+      "similarity": 0.4737,
+      "shared_tokens": [
+        "AGENT_NAME",
+        "BOLD",
+        "CYAN",
+        "GREEN",
+        "RED",
+        "RESET",
+        "VERSION",
+        "YELLOW",
+        "run_audit"
+      ],
+      "alert": false
+    },
+    {
+      "agent1": "cache-optimization-agent.py",
+      "agent2": "cicd-pipeline-agent.py",
+      "similarity": 0.4706,
+      "shared_tokens": [
+        "AGENT_NAME",
+        "BOLD",
+        "CYAN",
+        "GREEN",
+        "RED",
+        "RESET",
+        "VERSION",
+        "YELLOW"
+      ],
+      "alert": false
+    },
+    {
+      "agent1": "cache-optimization-agent.py",
+      "agent2": "env-config-validator-agent.py",
+      "similarity": 0.4706,
+      "shared_tokens": [
+        "AGENT_NAME",
+        "BOLD",
+        "CYAN",
+        "GREEN",
+        "RED",
+        "RESET",
+        "VERSION",
+        "YELLOW"
+      ],
+      "alert": false
+    },
+    {
+      "agent1": "cache-optimization-agent.py",
+      "agent2": "error-tracking-agent.py",
+      "similarity": 0.4706,
+      "shared_tokens": [
+        "AGENT_NAME",
+        "BOLD",
+        "CYAN",
+        "GREEN",
+        "RED",
+        "RESET",
+        "VERSION",
+        "YELLOW"
+      ],
+      "alert": false
+    },
+    {
+      "agent1": "cache-optimization-agent.py",
+      "agent2": "microservices-topology-agent.py",
+      "similarity": 0.4706,
+      "shared_tokens": [
+        "AGENT_NAME",
+        "BOLD",
+        "CYAN",
+        "GREEN",
+        "RED",
+        "RESET",
+        "VERSION",
+        "YELLOW"
+      ],
+      "alert": false
+    },
+    {
+      "agent1": "cache-optimization-agent.py",
+      "agent2": "performance-profiler-agent.py",
+      "similarity": 0.4706,
+      "shared_tokens": [
+        "AGENT_NAME",
+        "BOLD",
+        "CYAN",
+        "GREEN",
+        "RED",
+        "RESET",
+        "VERSION",
+        "YELLOW"
+      ],
+      "alert": false
+    },
+    {
+      "agent1": "cache-optimization-agent.py",
+      "agent2": "security-audit-agent.py",
+      "similarity": 0.4706,
+      "shared_tokens": [
+        "AGENT_NAME",
+        "BOLD",
+        "CYAN",
+        "GREEN",
+        "RED",
+        "RESET",
+        "VERSION",
+        "YELLOW"
+      ],
+      "alert": false
+    },
+    {
+      "agent1": "design-system-audit-agent.py",
+      "agent2": "security-audit-agent.py",
+      "similarity": 0.45,
+      "shared_tokens": [
+        "AGENT_NAME",
+        "BOLD",
+        "CYAN",
+        "GREEN",
+        "RED",
+        "RESET",
+        "VERSION",
+        "YELLOW",
+        "run_audit"
+      ],
+      "alert": false
+    },
+    {
+      "agent1": "accessibility-checker-agent.py",
+      "agent2": "cache-optimization-agent.py",
+      "similarity": 0.4444,
+      "shared_tokens": [
+        "AGENT_NAME",
+        "BOLD",
+        "CYAN",
+        "GREEN",
+        "RED",
+        "RESET",
+        "VERSION",
+        "YELLOW"
+      ],
+      "alert": false
+    },
+    {
+      "agent1": "api-design-validator-agent.py",
+      "agent2": "env-config-validator-agent.py",
+      "similarity": 0.4444,
+      "shared_tokens": [
+        "AGENT_NAME",
+        "BOLD",
+        "GREEN",
+        "RED",
+        "RESET",
+        "VERSION",
+        "YELLOW",
+        "run_validator"
+      ],
+      "alert": false
+    },
+    {
+      "agent1": "cache-optimization-agent.py",
+      "agent2": "google-certification-tracker-agent.py",
+      "similarity": 0.4444,
+      "shared_tokens": [
+        "AGENT_NAME",
+        "BOLD",
+        "CYAN",
+        "GREEN",
+        "RED",
+        "RESET",
+        "VERSION",
+        "YELLOW"
+      ],
+      "alert": false
+    },
+    {
+      "agent1": "cache-optimization-agent.py",
+      "agent2": "wave-consistency-checker-agent.py",
+      "similarity": 0.4444,
+      "shared_tokens": [
+        "AGENT_NAME",
+        "BOLD",
+        "CYAN",
+        "GREEN",
+        "RED",
+        "RESET",
+        "VERSION",
+        "YELLOW"
+      ],
+      "alert": false
+    },
+    {
+      "agent1": "cicd-pipeline-agent.py",
+      "agent2": "env-config-validator-agent.py",
+      "similarity": 0.4444,
+      "shared_tokens": [
+        "AGENT_NAME",
+        "BOLD",
+        "CYAN",
+        "GREEN",
+        "RED",
+        "RESET",
+        "VERSION",
+        "YELLOW"
+      ],
+      "alert": false
+    },
+    {
+      "agent1": "cicd-pipeline-agent.py",
+      "agent2": "error-tracking-agent.py",
+      "similarity": 0.4444,
+      "shared_tokens": [
+        "AGENT_NAME",
+        "BOLD",
+        "CYAN",
+        "GREEN",
+        "RED",
+        "RESET",
+        "VERSION",
+        "YELLOW"
+      ],
+      "alert": false
+    },
+    {
+      "agent1": "cicd-pipeline-agent.py",
+      "agent2": "performance-profiler-agent.py",
+      "similarity": 0.4444,
+      "shared_tokens": [
+        "AGENT_NAME",
+        "BOLD",
+        "CYAN",
+        "GREEN",
+        "RED",
+        "RESET",
+        "VERSION",
+        "YELLOW"
+      ],
+      "alert": false
+    },
+    {
+      "agent1": "cicd-pipeline-agent.py",
+      "agent2": "security-audit-agent.py",
+      "similarity": 0.4444,
+      "shared_tokens": [
+        "AGENT_NAME",
+        "BOLD",
+        "CYAN",
+        "GREEN",
+        "RED",
+        "RESET",
+        "VERSION",
+        "YELLOW"
+      ],
+      "alert": false
+    },
+    {
+      "agent1": "env-config-validator-agent.py",
+      "agent2": "error-tracking-agent.py",
+      "similarity": 0.4444,
+      "shared_tokens": [
+        "AGENT_NAME",
+        "BOLD",
+        "CYAN",
+        "GREEN",
+        "RED",
+        "RESET",
+        "VERSION",
+        "YELLOW"
+      ],
+      "alert": false
+    },
+    {
+      "agent1": "env-config-validator-agent.py",
+      "agent2": "microservices-topology-agent.py",
+      "similarity": 0.4444,
+      "shared_tokens": [
+        "AGENT_NAME",
+        "BOLD",
+        "CYAN",
+        "GREEN",
+        "RED",
+        "RESET",
+        "VERSION",
+        "YELLOW"
+      ],
+      "alert": false
+    },
+    {
+      "agent1": "env-config-validator-agent.py",
+      "agent2": "performance-profiler-agent.py",
+      "similarity": 0.4444,
+      "shared_tokens": [
+        "AGENT_NAME",
+        "BOLD",
+        "CYAN",
+        "GREEN",
+        "RED",
+        "RESET",
+        "VERSION",
+        "YELLOW"
+      ],
+      "alert": false
+    },
+    {
+      "agent1": "env-config-validator-agent.py",
+      "agent2": "security-audit-agent.py",
+      "similarity": 0.4444,
+      "shared_tokens": [
+        "AGENT_NAME",
+        "BOLD",
+        "CYAN",
+        "GREEN",
+        "RED",
+        "RESET",
+        "VERSION",
+        "YELLOW"
+      ],
+      "alert": false
+    },
+    {
+      "agent1": "error-tracking-agent.py",
+      "agent2": "microservices-topology-agent.py",
+      "similarity": 0.4444,
+      "shared_tokens": [
+        "AGENT_NAME",
+        "BOLD",
+        "CYAN",
+        "GREEN",
+        "RED",
+        "RESET",
+        "VERSION",
+        "YELLOW"
+      ],
+      "alert": false
+    },
+    {
+      "agent1": "error-tracking-agent.py",
+      "agent2": "performance-profiler-agent.py",
+      "similarity": 0.4444,
+      "shared_tokens": [
+        "AGENT_NAME",
+        "BOLD",
+        "CYAN",
+        "GREEN",
+        "RED",
+        "RESET",
+        "VERSION",
+        "YELLOW"
+      ],
+      "alert": false
+    },
+    {
+      "agent1": "error-tracking-agent.py",
+      "agent2": "security-audit-agent.py",
+      "similarity": 0.4444,
+      "shared_tokens": [
+        "AGENT_NAME",
+        "BOLD",
+        "CYAN",
+        "GREEN",
+        "RED",
+        "RESET",
+        "VERSION",
+        "YELLOW"
+      ],
+      "alert": false
+    },
+    {
+      "agent1": "microservices-topology-agent.py",
+      "agent2": "performance-profiler-agent.py",
+      "similarity": 0.4444,
+      "shared_tokens": [
+        "AGENT_NAME",
+        "BOLD",
+        "CYAN",
+        "GREEN",
+        "RED",
+        "RESET",
+        "VERSION",
+        "YELLOW"
+      ],
+      "alert": false
+    },
+    {
+      "agent1": "microservices-topology-agent.py",
+      "agent2": "security-audit-agent.py",
+      "similarity": 0.4444,
+      "shared_tokens": [
+        "AGENT_NAME",
+        "BOLD",
+        "CYAN",
+        "GREEN",
+        "RED",
+        "RESET",
+        "VERSION",
+        "YELLOW"
+      ],
+      "alert": false
+    },
+    {
+      "agent1": "performance-profiler-agent.py",
+      "agent2": "security-audit-agent.py",
+      "similarity": 0.4444,
+      "shared_tokens": [
+        "AGENT_NAME",
+        "BOLD",
+        "CYAN",
+        "GREEN",
+        "RED",
+        "RESET",
+        "VERSION",
+        "YELLOW"
+      ],
+      "alert": false
+    },
+    {
+      "agent1": "accessibility-checker-agent.py",
+      "agent2": "cicd-pipeline-agent.py",
+      "similarity": 0.4211,
+      "shared_tokens": [
+        "AGENT_NAME",
+        "BOLD",
+        "CYAN",
+        "GREEN",
+        "RED",
+        "RESET",
+        "VERSION",
+        "YELLOW"
+      ],
+      "alert": false
+    },
+    {
+      "agent1": "accessibility-checker-agent.py",
+      "agent2": "env-config-validator-agent.py",
+      "similarity": 0.4211,
+      "shared_tokens": [
+        "AGENT_NAME",
+        "BOLD",
+        "CYAN",
+        "GREEN",
+        "RED",
+        "RESET",
+        "VERSION",
+        "YELLOW"
+      ],
+      "alert": false
+    },
+    {
+      "agent1": "accessibility-checker-agent.py",
+      "agent2": "error-tracking-agent.py",
+      "similarity": 0.4211,
+      "shared_tokens": [
+        "AGENT_NAME",
+        "BOLD",
+        "CYAN",
+        "GREEN",
+        "RED",
+        "RESET",
+        "VERSION",
+        "YELLOW"
+      ],
+      "alert": false
+    },
+    {
+      "agent1": "accessibility-checker-agent.py",
+      "agent2": "microservices-topology-agent.py",
+      "similarity": 0.4211,
+      "shared_tokens": [
+        "AGENT_NAME",
+        "BOLD",
+        "CYAN",
+        "GREEN",
+        "RED",
+        "RESET",
+        "VERSION",
+        "YELLOW"
+      ],
+      "alert": false
+    },
+    {
+      "agent1": "accessibility-checker-agent.py",
+      "agent2": "performance-profiler-agent.py",
+      "similarity": 0.4211,
+      "shared_tokens": [
+        "AGENT_NAME",
+        "BOLD",
+        "CYAN",
+        "GREEN",
+        "RED",
+        "RESET",
+        "VERSION",
+        "YELLOW"
+      ],
+      "alert": false
+    },
+    {
+      "agent1": "accessibility-checker-agent.py",
+      "agent2": "security-audit-agent.py",
+      "similarity": 0.4211,
+      "shared_tokens": [
+        "AGENT_NAME",
+        "BOLD",
+        "CYAN",
+        "GREEN",
+        "RED",
+        "RESET",
+        "VERSION",
+        "YELLOW"
+      ],
+      "alert": false
+    },
+    {
+      "agent1": "api-design-validator-agent.py",
+      "agent2": "api-response-validator-agent.py",
+      "similarity": 0.4211,
+      "shared_tokens": [
+        "AGENT_NAME",
+        "BOLD",
+        "GREEN",
+        "RED",
+        "RESET",
+        "VERSION",
+        "YELLOW",
+        "run_validator"
+      ],
+      "alert": false
+    },
+    {
+      "agent1": "api-response-validator-agent.py",
+      "agent2": "env-config-validator-agent.py",
+      "similarity": 0.4211,
+      "shared_tokens": [
+        "AGENT_NAME",
+        "BOLD",
+        "GREEN",
+        "RED",
+        "RESET",
+        "VERSION",
+        "YELLOW",
+        "run_validator"
+      ],
+      "alert": false
+    },
+    {
+      "agent1": "architecture-review-agent.py",
+      "agent2": "cache-optimization-agent.py",
+      "similarity": 0.4211,
+      "shared_tokens": [
+        "AGENT_NAME",
+        "BOLD",
+        "CYAN",
+        "GREEN",
+        "RED",
+        "RESET",
+        "VERSION",
+        "YELLOW"
+      ],
+      "alert": false
+    },
+    {
+      "agent1": "bundle-size-monitor-agent.py",
+      "agent2": "cache-optimization-agent.py",
+      "similarity": 0.4211,
+      "shared_tokens": [
+        "AGENT_NAME",
+        "BOLD",
+        "CYAN",
+        "GREEN",
+        "RED",
+        "RESET",
+        "VERSION",
+        "YELLOW"
+      ],
+      "alert": false
+    },
+    {
+      "agent1": "cache-optimization-agent.py",
+      "agent2": "dependency-audit-agent.py",
+      "similarity": 0.4211,
+      "shared_tokens": [
+        "AGENT_NAME",
+        "BOLD",
+        "CYAN",
+        "GREEN",
+        "RED",
+        "RESET",
+        "VERSION",
+        "YELLOW"
+      ],
+      "alert": false
+    },
+    {
+      "agent1": "cicd-pipeline-agent.py",
+      "agent2": "google-certification-tracker-agent.py",
+      "similarity": 0.4211,
+      "shared_tokens": [
+        "AGENT_NAME",
+        "BOLD",
+        "CYAN",
+        "GREEN",
+        "RED",
+        "RESET",
+        "VERSION",
+        "YELLOW"
+      ],
+      "alert": false
+    },
+    {
+      "agent1": "cicd-pipeline-agent.py",
+      "agent2": "wave-consistency-checker-agent.py",
+      "similarity": 0.4211,
+      "shared_tokens": [
+        "AGENT_NAME",
+        "BOLD",
+        "CYAN",
+        "GREEN",
+        "RED",
+        "RESET",
+        "VERSION",
+        "YELLOW"
+      ],
+      "alert": false
+    },
+    {
+      "agent1": "env-config-validator-agent.py",
+      "agent2": "google-certification-tracker-agent.py",
+      "similarity": 0.4211,
+      "shared_tokens": [
+        "AGENT_NAME",
+        "BOLD",
+        "CYAN",
+        "GREEN",
+        "RED",
+        "RESET",
+        "VERSION",
+        "YELLOW"
+      ],
+      "alert": false
+    },
+    {
+      "agent1": "env-config-validator-agent.py",
+      "agent2": "wave-consistency-checker-agent.py",
+      "similarity": 0.4211,
+      "shared_tokens": [
+        "AGENT_NAME",
+        "BOLD",
+        "CYAN",
+        "GREEN",
+        "RED",
+        "RESET",
+        "VERSION",
+        "YELLOW"
+      ],
+      "alert": false
+    },
+    {
+      "agent1": "error-tracking-agent.py",
+      "agent2": "google-certification-tracker-agent.py",
+      "similarity": 0.4211,
+      "shared_tokens": [
+        "AGENT_NAME",
+        "BOLD",
+        "CYAN",
+        "GREEN",
+        "RED",
+        "RESET",
+        "VERSION",
+        "YELLOW"
+      ],
+      "alert": false
+    }
+  ],
+  "recommendations": [
+    {
+      "priority": "INFO",
+      "action": "NO_ACTION",
+      "detail": "No significant duplication detected"
+    }
+  ]
+}

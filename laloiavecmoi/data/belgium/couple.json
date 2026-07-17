@@ -1,0 +1,85 @@
+{
+  "module": "couple",
+  "titre": "Couple — mariage, cohabitation légale, union libre",
+  "domaine": "Couple & vie commune",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code civil — mariage et cohabitation légale (déclaration devant l'officier de l'état civil)",
+    "portee": "Formes de vie commune en Belgique et protection du partenaire",
+    "source_officielle": "https://www.belgium.be/fr/famille/couple"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Pour protéger au mieux votre couple (logement, héritage, enfants), un notaire peut vous conseiller selon votre situation.",
+  "faits": [
+    {
+      "id": "COUP-COHAB-001",
+      "question": "C'est quoi la cohabitation légale et comment la faire ?",
+      "reponse": "La cohabitation légale est la vie commune de deux personnes qui font une déclaration écrite devant l'officier de l'état civil de leur domicile commun. Elle donne une certaine protection légale, sans être un mariage. Pour la faire : se présenter ensemble à la commune et y déposer la déclaration (actée dans les registres). On peut y mettre fin par déclaration également.",
+      "reference_legale": "Code civil — cohabitation légale (déclaration à l'état civil)",
+      "contacts": [
+        {
+          "nom": "Administration communale (état civil)",
+          "pour": "déclaration de cohabitation légale"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.belgium.be/fr/famille/couple",
+          "intitule": "Belgium.be — Couple / cohabitation"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "COUP-DIFFERENCE-001",
+      "question": "Quelle différence entre mariage, cohabitation légale et union libre ?",
+      "reponse": "Trois situations très différentes en droits : le mariage offre la protection la plus complète (régime des biens, héritage, pension). La cohabitation légale donne une protection intermédiaire (assimilée au mariage sur certains points fiscaux et de succession, mais pas tous ; en principe chacun garde ses biens). L'union libre (cohabitation de fait, sans déclaration) n'offre presque aucune protection légale automatique entre partenaires. Plus on est protégé, plus il y a d'engagements.",
+      "reference_legale": "Code civil — mariage, cohabitation légale ; absence de cadre pour l'union de fait",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.belgium.be/fr/famille/couple",
+          "intitule": "Belgium.be — Couple"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "COUP-PROTECTION-001",
+      "question": "Comment mon logement et mon partenaire sont-ils protégés ?",
+      "reponse": "Pour le logement familial, une protection existe : un cohabitant légal (comme un époux) ne peut pas, seul, vendre, donner ou hypothéquer le logement de la famille sans l'accord de l'autre. Les cohabitants légaux doivent aussi contribuer aux dépenses communes selon leurs revenus, et le partenaire survivant a droit à l'usufruit du logement familial. Le mariage va plus loin encore. Un notaire peut renforcer la protection (contrat, testament).",
+      "reference_legale": "Code civil — protection du logement familial (cohabitation légale et mariage)",
+      "contacts": [
+        {
+          "nom": "Notaire",
+          "pour": "protéger le logement, le partenaire, l'héritage"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.belgium.be/fr/famille/couple",
+          "intitule": "Belgium.be — Couple"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "COUP-FIN-001",
+      "question": "Comment se termine chaque forme de vie commune ?",
+      "reponse": "Cela dépend de la forme. La cohabitation légale prend fin de façon simple : d'un commun accord, ou même par décision d'un seul des partenaires, via une déclaration écrite remise à l'officier de l'état civil (l'autre en est informé). L'union libre (cohabitation de fait) ne suppose aucune formalité pour se séparer, mais attention aux biens achetés ensemble (indivision) et au bail commun. Le mariage, lui, ne se dissout que par un divorce (procédure judiciaire). Dans tous les cas, en présence d'enfants, les questions d'hébergement et de contribution alimentaire se règlent au besoin devant le tribunal de la famille, et le sort du logement doit être organisé. Un notaire ou un avocat aide à liquider les biens proprement.",
+      "reference_legale": "Code civil — fin de la cohabitation légale et dissolution du mariage (divorce)",
+      "contacts": [
+        {"nom": "Administration communale (état civil)", "pour": "fin de la cohabitation légale"},
+        {"nom": "Notaire / avocat", "pour": "partage des biens, logement, enfants"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/famille/couple", "intitule": "Belgium.be — Couple (fin de la vie commune)"}
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

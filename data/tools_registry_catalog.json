@@ -1,0 +1,741 @@
+{
+  "generated": "2026-06-23T01:20:29.955335+00:00",
+  "total_tools": 89,
+  "seal": "SEAL-E5DA3C69E63A88CC",
+  "categories": {
+    "DEV": {
+      "git": {
+        "desc": "Contrôle de version distribué",
+        "url": "https://git-scm.com",
+        "priority": "CRITIQUE",
+        "linux": "sudo apt install git",
+        "windows": "winget install Git.Git",
+        "check": "git --version"
+      },
+      "python3": {
+        "desc": "Langage Python 3.x + pip",
+        "url": "https://python.org",
+        "priority": "CRITIQUE",
+        "linux": "sudo apt install python3 python3-pip python3-venv",
+        "windows": "winget install Python.Python.3",
+        "check": "python3 --version"
+      },
+      "nodejs": {
+        "desc": "Runtime JavaScript + npm",
+        "url": "https://nodejs.org",
+        "priority": "CRITIQUE",
+        "linux": "curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - && sudo apt install nodejs",
+        "windows": "winget install OpenJS.NodeJS.LTS",
+        "check": "node --version"
+      },
+      "rust": {
+        "desc": "Langage Rust + Cargo (outils système ultra-performants)",
+        "url": "https://rust-lang.org",
+        "priority": "ÉLEVÉ",
+        "linux": "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh",
+        "windows": "winget install Rustlang.Rustup",
+        "check": "rustc --version"
+      },
+      "go": {
+        "desc": "Langage Go (microservices, CLI tools)",
+        "url": "https://go.dev",
+        "priority": "MOYEN",
+        "linux": "sudo apt install golang",
+        "windows": "winget install GoLang.Go",
+        "check": "go version"
+      },
+      "deno": {
+        "desc": "Runtime TypeScript/JS moderne (Next.js edge)",
+        "url": "https://deno.land",
+        "priority": "MOYEN",
+        "linux": "curl -fsSL https://deno.land/install.sh | sh",
+        "windows": "winget install DenoLand.Deno",
+        "check": "deno --version"
+      },
+      "bun": {
+        "desc": "Runtime JS ultra-rapide (alternative Node.js)",
+        "url": "https://bun.sh",
+        "priority": "MOYEN",
+        "linux": "curl -fsSL https://bun.sh/install | bash",
+        "windows": "winget install Oven-sh.Bun",
+        "check": "bun --version"
+      },
+      "pnpm": {
+        "desc": "Gestionnaire packages Node.js rapide + économe",
+        "url": "https://pnpm.io",
+        "priority": "ÉLEVÉ",
+        "linux": "npm install -g pnpm",
+        "windows": "winget install pnpm.pnpm",
+        "check": "pnpm --version"
+      },
+      "uv": {
+        "desc": "Gestionnaire packages Python ultra-rapide (remplace pip)",
+        "url": "https://github.com/astral-sh/uv",
+        "priority": "ÉLEVÉ",
+        "linux": "curl -LsSf https://astral.sh/uv/install.sh | sh",
+        "windows": "winget install astral-sh.uv",
+        "check": "uv --version"
+      },
+      "ruff": {
+        "desc": "Linter Python ultra-rapide (remplace flake8/pylint)",
+        "url": "https://github.com/astral-sh/ruff",
+        "priority": "MOYEN",
+        "linux": "pip install ruff",
+        "windows": "winget install Astral.Ruff",
+        "check": "ruff --version"
+      },
+      "just": {
+        "desc": "Gestionnaire de commandes (Makefile moderne)",
+        "url": "https://github.com/casey/just",
+        "priority": "FAIBLE",
+        "linux": "sudo apt install just",
+        "windows": "winget install Casey.Just",
+        "check": "just --version"
+      }
+    },
+    "IA_ML": {
+      "ollama": {
+        "desc": "LLM local (Llama3, Mistral, Gemma) — GRATUIT sans API",
+        "url": "https://ollama.com",
+        "priority": "CRITIQUE",
+        "linux": "curl -fsSL https://ollama.com/install.sh | sh",
+        "windows": "winget install Ollama.Ollama",
+        "check": "ollama --version"
+      },
+      "llama_cpp": {
+        "desc": "Inférence LLM optimisée CPU/GPU (bindings Python)",
+        "url": "https://github.com/ggerganov/llama.cpp",
+        "priority": "ÉLEVÉ",
+        "linux": "pip install llama-cpp-python",
+        "windows": "pip install llama-cpp-python",
+        "check": "python3 -c 'import llama_cpp; print(\"ok\")'"
+      },
+      "whisper": {
+        "desc": "Transcription audio → texte (OpenAI Whisper, gratuit local)",
+        "url": "https://github.com/openai/whisper",
+        "priority": "MOYEN",
+        "linux": "pip install openai-whisper",
+        "windows": "pip install openai-whisper",
+        "check": "whisper --help"
+      },
+      "transformers": {
+        "desc": "Hugging Face Transformers (milliers de modèles gratuits)",
+        "url": "https://huggingface.co/docs/transformers",
+        "priority": "ÉLEVÉ",
+        "linux": "pip install transformers torch",
+        "windows": "pip install transformers torch",
+        "check": "python3 -c 'import transformers; print(transformers.__version__)'"
+      },
+      "langchain": {
+        "desc": "Framework LLM orchestration multi-agents",
+        "url": "https://python.langchain.com",
+        "priority": "ÉLEVÉ",
+        "linux": "pip install langchain langchain-community",
+        "windows": "pip install langchain langchain-community",
+        "check": "python3 -c 'import langchain; print(langchain.__version__)'"
+      },
+      "crewai": {
+        "desc": "Framework multi-agents IA (utilisé dans CaelumSwarm)",
+        "url": "https://crewai.com",
+        "priority": "CRITIQUE",
+        "linux": "pip install crewai crewai-tools",
+        "windows": "pip install crewai crewai-tools",
+        "check": "python3 -c 'import crewai; print(\"ok\")'"
+      },
+      "autogen": {
+        "desc": "Microsoft AutoGen — agents IA conversationnels",
+        "url": "https://github.com/microsoft/autogen",
+        "priority": "ÉLEVÉ",
+        "linux": "pip install pyautogen",
+        "windows": "pip install pyautogen",
+        "check": "python3 -c 'import autogen; print(\"ok\")'"
+      },
+      "litellm": {
+        "desc": "Proxy unifié pour 100+ LLMs (Anthropic/OpenAI/Ollama)",
+        "url": "https://litellm.ai",
+        "priority": "CRITIQUE",
+        "linux": "pip install litellm",
+        "windows": "pip install litellm",
+        "check": "python3 -c 'import litellm; print(\"ok\")'"
+      },
+      "sentence_transformers": {
+        "desc": "Embeddings sémantiques gratuits (recherche vectorielle)",
+        "url": "https://sbert.net",
+        "priority": "ÉLEVÉ",
+        "linux": "pip install sentence-transformers",
+        "windows": "pip install sentence-transformers",
+        "check": "python3 -c 'from sentence_transformers import SentenceTransformer; print(\"ok\")'"
+      },
+      "jupyter": {
+        "desc": "Notebooks interactifs Python/TypeScript",
+        "url": "https://jupyter.org",
+        "priority": "MOYEN",
+        "linux": "pip install jupyterlab",
+        "windows": "pip install jupyterlab",
+        "check": "jupyter --version"
+      },
+      "mlflow": {
+        "desc": "Tracking expériences ML (métriques, modèles, artefacts)",
+        "url": "https://mlflow.org",
+        "priority": "MOYEN",
+        "linux": "pip install mlflow",
+        "windows": "pip install mlflow",
+        "check": "mlflow --version"
+      }
+    },
+    "SÉCURITÉ": {
+      "ufw": {
+        "desc": "Pare-feu simple Linux (Uncomplicated Firewall)",
+        "url": "https://help.ubuntu.com/community/UFW",
+        "priority": "CRITIQUE",
+        "linux": "sudo apt install ufw && sudo ufw enable",
+        "windows": "# Intégré Windows Defender Firewall",
+        "check": "sudo ufw status"
+      },
+      "fail2ban": {
+        "desc": "Protection contre brute-force (SSH, nginx, etc.)",
+        "url": "https://fail2ban.org",
+        "priority": "CRITIQUE",
+        "linux": "sudo apt install fail2ban",
+        "windows": "# Non applicable (utiliser Windows Firewall + EventLog)",
+        "check": "fail2ban-client version"
+      },
+      "certbot": {
+        "desc": "Certificats SSL/TLS gratuits Let's Encrypt",
+        "url": "https://certbot.eff.org",
+        "priority": "CRITIQUE",
+        "linux": "sudo apt install certbot python3-certbot-nginx",
+        "windows": "winget install Certbot.Certbot",
+        "check": "certbot --version"
+      },
+      "wireguard": {
+        "desc": "VPN moderne ultra-sécurisé (tunnel chiffré)",
+        "url": "https://wireguard.com",
+        "priority": "ÉLEVÉ",
+        "linux": "sudo apt install wireguard",
+        "windows": "winget install WireGuard.WireGuard",
+        "check": "wg --version"
+      },
+      "trivy": {
+        "desc": "Scanner vulnérabilités containers/images Docker",
+        "url": "https://trivy.dev",
+        "priority": "ÉLEVÉ",
+        "linux": "curl -sfL https://raw.githubusercontent.com/aquasecurity/trivy/main/contrib/install.sh | sh -s -- -b /usr/local/bin",
+        "windows": "winget install AquaSecurity.Trivy",
+        "check": "trivy --version"
+      },
+      "snyk": {
+        "desc": "Scan sécurité dépendances npm/pip/docker (tier gratuit)",
+        "url": "https://snyk.io",
+        "priority": "ÉLEVÉ",
+        "linux": "npm install -g snyk",
+        "windows": "npm install -g snyk",
+        "check": "snyk --version"
+      },
+      "ossec": {
+        "desc": "HIDS — Détection intrusion basée host (SIEM léger)",
+        "url": "https://www.ossec.net",
+        "priority": "MOYEN",
+        "linux": "sudo apt install ossec-hids",
+        "windows": "# Installer depuis ossec.net/downloads",
+        "check": "ossec-control status"
+      },
+      "vault": {
+        "desc": "HashiCorp Vault — gestion secrets sécurisée (tier dev gratuit)",
+        "url": "https://vaultproject.io",
+        "priority": "CRITIQUE",
+        "linux": "sudo apt install vault",
+        "windows": "winget install Hashicorp.Vault",
+        "check": "vault version"
+      },
+      "age": {
+        "desc": "Chiffrement fichiers moderne simple (remplace GPG pour fichiers)",
+        "url": "https://github.com/FiloSottile/age",
+        "priority": "ÉLEVÉ",
+        "linux": "sudo apt install age",
+        "windows": "winget install FiloSottile.age",
+        "check": "age --version"
+      },
+      "sops": {
+        "desc": "Chiffrement fichiers secrets (.env, YAML, JSON) — intègre age/GPG",
+        "url": "https://github.com/getsops/sops",
+        "priority": "ÉLEVÉ",
+        "linux": "sudo apt install sops",
+        "windows": "winget install Mozilla.SOPS",
+        "check": "sops --version"
+      },
+      "nmap": {
+        "desc": "Scanner réseau et audit ports (détection vulnérabilités)",
+        "url": "https://nmap.org",
+        "priority": "MOYEN",
+        "linux": "sudo apt install nmap",
+        "windows": "winget install Insecure.Nmap",
+        "check": "nmap --version"
+      },
+      "lynis": {
+        "desc": "Audit sécurité système Linux (hardening)",
+        "url": "https://cisofy.com/lynis",
+        "priority": "ÉLEVÉ",
+        "linux": "sudo apt install lynis",
+        "windows": "# Linux uniquement",
+        "check": "lynis --version"
+      }
+    },
+    "INFRASTRUCTURE": {
+      "docker": {
+        "desc": "Containerisation applications",
+        "url": "https://docker.com",
+        "priority": "CRITIQUE",
+        "linux": "curl -fsSL https://get.docker.com | sh",
+        "windows": "winget install Docker.DockerDesktop",
+        "check": "docker --version"
+      },
+      "k3s": {
+        "desc": "Kubernetes léger (1 nœud, gratuit, production-ready)",
+        "url": "https://k3s.io",
+        "priority": "MOYEN",
+        "linux": "curl -sfL https://get.k3s.io | sh -",
+        "windows": "# WSL2 requis : curl -sfL https://get.k3s.io | sh -",
+        "check": "k3s --version"
+      },
+      "terraform": {
+        "desc": "Infrastructure as Code (IaC) multi-cloud",
+        "url": "https://terraform.io",
+        "priority": "ÉLEVÉ",
+        "linux": "sudo apt install terraform",
+        "windows": "winget install Hashicorp.Terraform",
+        "check": "terraform --version"
+      },
+      "ansible": {
+        "desc": "Automatisation configuration serveurs (agentless)",
+        "url": "https://ansible.com",
+        "priority": "ÉLEVÉ",
+        "linux": "sudo apt install ansible",
+        "windows": "pip install ansible",
+        "check": "ansible --version"
+      },
+      "nginx": {
+        "desc": "Serveur web + reverse proxy haute performance",
+        "url": "https://nginx.org",
+        "priority": "CRITIQUE",
+        "linux": "sudo apt install nginx",
+        "windows": "winget install NGINXInc.NGINX",
+        "check": "nginx -v"
+      },
+      "caddy": {
+        "desc": "Serveur web HTTPS automatique (Let's Encrypt intégré)",
+        "url": "https://caddyserver.com",
+        "priority": "ÉLEVÉ",
+        "linux": "sudo apt install caddy",
+        "windows": "winget install CaddyServer.Caddy",
+        "check": "caddy version"
+      },
+      "traefik": {
+        "desc": "Reverse proxy cloud-native (Docker labels, auto SSL)",
+        "url": "https://traefik.io",
+        "priority": "MOYEN",
+        "linux": "sudo apt install traefik",
+        "windows": "winget install TraefikLabs.TraefikProxy",
+        "check": "traefik version"
+      },
+      "act": {
+        "desc": "Runner GitHub Actions en local (tester CI sans push)",
+        "url": "https://github.com/nektos/act",
+        "priority": "ÉLEVÉ",
+        "linux": "sudo apt install act",
+        "windows": "winget install nektos.act",
+        "check": "act --version"
+      },
+      "gitea": {
+        "desc": "Forge Git auto-hébergée (alternative GitHub gratuite)",
+        "url": "https://gitea.io",
+        "priority": "MOYEN",
+        "linux": "docker run -d -p 3000:3000 gitea/gitea",
+        "windows": "winget install Gitea.Gitea",
+        "check": "gitea --version"
+      }
+    },
+    "DONNÉES": {
+      "sqlite3": {
+        "desc": "Base de données embarquée (zéro config, parfait dev)",
+        "url": "https://sqlite.org",
+        "priority": "CRITIQUE",
+        "linux": "sudo apt install sqlite3",
+        "windows": "winget install SQLite.SQLite",
+        "check": "sqlite3 --version"
+      },
+      "postgresql": {
+        "desc": "Base de données relationnelle production-grade",
+        "url": "https://postgresql.org",
+        "priority": "ÉLEVÉ",
+        "linux": "sudo apt install postgresql",
+        "windows": "winget install PostgreSQL.PostgreSQL",
+        "check": "psql --version"
+      },
+      "redis": {
+        "desc": "Cache/store in-memory ultra-rapide (sessions, queues)",
+        "url": "https://redis.io",
+        "priority": "ÉLEVÉ",
+        "linux": "sudo apt install redis",
+        "windows": "winget install Redis.Redis",
+        "check": "redis-cli --version"
+      },
+      "turso": {
+        "desc": "SQLite distribuée edge (utilisée dans CaelumSwarm via LibSQL)",
+        "url": "https://turso.tech",
+        "priority": "CRITIQUE",
+        "linux": "curl -sSfL https://get.tur.so/install.sh | bash",
+        "windows": "winget install ChiselStrike.Turso",
+        "check": "turso --version"
+      },
+      "chroma": {
+        "desc": "Base vectorielle IA (RAG, embeddings, recherche sémantique)",
+        "url": "https://trychroma.com",
+        "priority": "ÉLEVÉ",
+        "linux": "pip install chromadb",
+        "windows": "pip install chromadb",
+        "check": "python3 -c 'import chromadb; print(chromadb.__version__)'"
+      },
+      "qdrant": {
+        "desc": "Base vectorielle haute performance (alternative Chroma)",
+        "url": "https://qdrant.tech",
+        "priority": "MOYEN",
+        "linux": "docker pull qdrant/qdrant && docker run -p 6333:6333 qdrant/qdrant",
+        "windows": "docker pull qdrant/qdrant && docker run -p 6333:6333 qdrant/qdrant",
+        "check": "curl http://localhost:6333/health"
+      },
+      "duckdb": {
+        "desc": "Analytique SQL in-process ultra-rapide (OLAP local)",
+        "url": "https://duckdb.org",
+        "priority": "ÉLEVÉ",
+        "linux": "pip install duckdb",
+        "windows": "pip install duckdb",
+        "check": "python3 -c 'import duckdb; print(duckdb.__version__)'"
+      }
+    },
+    "MONITORING": {
+      "prometheus": {
+        "desc": "Collecte métriques + alerting (standard industrie)",
+        "url": "https://prometheus.io",
+        "priority": "ÉLEVÉ",
+        "linux": "sudo apt install prometheus",
+        "windows": "docker run -p 9090:9090 prom/prometheus",
+        "check": "promtool --version"
+      },
+      "grafana": {
+        "desc": "Dashboards monitoring (visualisation Prometheus/Loki)",
+        "url": "https://grafana.com",
+        "priority": "ÉLEVÉ",
+        "linux": "sudo apt install grafana",
+        "windows": "winget install GrafanaLabs.Grafana",
+        "check": "grafana-server -v"
+      },
+      "netdata": {
+        "desc": "Monitoring temps réel système (CPU, RAM, réseau) — zero config",
+        "url": "https://netdata.cloud",
+        "priority": "MOYEN",
+        "linux": "curl https://my-netdata.io/kickstart.sh > /tmp/netdata-kickstart.sh && sh /tmp/netdata-kickstart.sh",
+        "windows": "# WSL2 ou docker run -d --name=netdata -p 19999:19999 netdata/netdata",
+        "check": "netdata --version"
+      },
+      "loki": {
+        "desc": "Agrégation logs (comme Elasticsearch mais léger)",
+        "url": "https://grafana.com/oss/loki",
+        "priority": "MOYEN",
+        "linux": "sudo apt install loki",
+        "windows": "docker run -p 3100:3100 grafana/loki",
+        "check": "loki --version"
+      },
+      "uptime_kuma": {
+        "desc": "Monitoring uptime services (self-hosted, interface web)",
+        "url": "https://github.com/louislam/uptime-kuma",
+        "priority": "ÉLEVÉ",
+        "linux": "docker run -d -p 3001:3001 louislam/uptime-kuma",
+        "windows": "docker run -d -p 3001:3001 louislam/uptime-kuma",
+        "check": "curl http://localhost:3001"
+      }
+    },
+    "CLI_MODERNES": {
+      "fzf": {
+        "desc": "Fuzzy finder interactif (recherche fichiers/historique)",
+        "url": "https://github.com/junegunn/fzf",
+        "priority": "ÉLEVÉ",
+        "linux": "sudo apt install fzf",
+        "windows": "winget install junegunn.fzf",
+        "check": "fzf --version"
+      },
+      "ripgrep": {
+        "desc": "grep ultra-rapide (rg) — recherche dans code 10x plus vite",
+        "url": "https://github.com/BurntSushi/ripgrep",
+        "priority": "CRITIQUE",
+        "linux": "sudo apt install ripgrep",
+        "windows": "winget install BurntSushi.ripgrep.MSVC",
+        "check": "rg --version"
+      },
+      "fd": {
+        "desc": "find moderne ultra-rapide (fd-find)",
+        "url": "https://github.com/sharkdp/fd",
+        "priority": "ÉLEVÉ",
+        "linux": "sudo apt install fd-find",
+        "windows": "winget install sharkdp.fd",
+        "check": "fd --version"
+      },
+      "bat": {
+        "desc": "cat amélioré avec coloration syntaxique",
+        "url": "https://github.com/sharkdp/bat",
+        "priority": "MOYEN",
+        "linux": "sudo apt install bat",
+        "windows": "winget install sharkdp.bat",
+        "check": "bat --version"
+      },
+      "eza": {
+        "desc": "ls moderne avec icônes et couleurs (remplace exa)",
+        "url": "https://github.com/eza-community/eza",
+        "priority": "FAIBLE",
+        "linux": "sudo apt install eza",
+        "windows": "winget install eza-community.eza",
+        "check": "eza --version"
+      },
+      "zoxide": {
+        "desc": "cd intelligent (mémorise les dossiers fréquents)",
+        "url": "https://github.com/ajeetdsouza/zoxide",
+        "priority": "MOYEN",
+        "linux": "sudo apt install zoxide",
+        "windows": "winget install ajeetdsouza.zoxide",
+        "check": "zoxide --version"
+      },
+      "htop": {
+        "desc": "Moniteur processus interactif (mieux que top)",
+        "url": "https://htop.dev",
+        "priority": "CRITIQUE",
+        "linux": "sudo apt install htop",
+        "windows": "# WSL2 : sudo apt install htop",
+        "check": "htop --version"
+      },
+      "dust": {
+        "desc": "Analyse utilisation disque (mieux que du)",
+        "url": "https://github.com/bootandy/dust",
+        "priority": "MOYEN",
+        "linux": "sudo apt install du-dust",
+        "windows": "winget install bootandy.dust",
+        "check": "dust --version"
+      },
+      "jq": {
+        "desc": "Traitement JSON en ligne de commande",
+        "url": "https://jqlang.github.io/jq",
+        "priority": "CRITIQUE",
+        "linux": "sudo apt install jq",
+        "windows": "winget install jqlang.jq",
+        "check": "jq --version"
+      },
+      "yq": {
+        "desc": "Traitement YAML en ligne de commande (comme jq pour YAML)",
+        "url": "https://github.com/mikefarah/yq",
+        "priority": "ÉLEVÉ",
+        "linux": "sudo apt install yq",
+        "windows": "winget install MikeFarah.yq",
+        "check": "yq --version"
+      },
+      "tmux": {
+        "desc": "Multiplexeur terminal (sessions persistantes, panneaux)",
+        "url": "https://github.com/tmux/tmux",
+        "priority": "CRITIQUE",
+        "linux": "sudo apt install tmux",
+        "windows": "# WSL2 : sudo apt install tmux",
+        "check": "tmux -V"
+      },
+      "zsh": {
+        "desc": "Shell avancé + Oh-My-Zsh (autocomplétion, plugins)",
+        "url": "https://zsh.org",
+        "priority": "ÉLEVÉ",
+        "linux": "sudo apt install zsh && sh -c \"$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)\"",
+        "windows": "# WSL2 uniquement",
+        "check": "zsh --version"
+      }
+    },
+    "ANALYSE": {
+      "pandas": {
+        "desc": "Manipulation données tabulaires (DataFrames Python)",
+        "url": "https://pandas.pydata.org",
+        "priority": "CRITIQUE",
+        "linux": "pip install pandas",
+        "windows": "pip install pandas",
+        "check": "python3 -c 'import pandas; print(pandas.__version__)'"
+      },
+      "polars": {
+        "desc": "DataFrames ultra-rapides Rust/Python (remplace pandas 10x)",
+        "url": "https://pola.rs",
+        "priority": "ÉLEVÉ",
+        "linux": "pip install polars",
+        "windows": "pip install polars",
+        "check": "python3 -c 'import polars; print(polars.__version__)'"
+      },
+      "numpy": {
+        "desc": "Calcul numérique Python (base de l'IA)",
+        "url": "https://numpy.org",
+        "priority": "CRITIQUE",
+        "linux": "pip install numpy",
+        "windows": "pip install numpy",
+        "check": "python3 -c 'import numpy; print(numpy.__version__)'"
+      },
+      "matplotlib": {
+        "desc": "Graphiques et visualisations Python",
+        "url": "https://matplotlib.org",
+        "priority": "ÉLEVÉ",
+        "linux": "pip install matplotlib",
+        "windows": "pip install matplotlib",
+        "check": "python3 -c 'import matplotlib; print(matplotlib.__version__)'"
+      },
+      "plotly": {
+        "desc": "Graphiques interactifs (intégration Next.js facile)",
+        "url": "https://plotly.com",
+        "priority": "ÉLEVÉ",
+        "linux": "pip install plotly",
+        "windows": "pip install plotly",
+        "check": "python3 -c 'import plotly; print(plotly.__version__)'"
+      },
+      "scipy": {
+        "desc": "Calcul scientifique (stats, signaux, optimisation)",
+        "url": "https://scipy.org",
+        "priority": "MOYEN",
+        "linux": "pip install scipy",
+        "windows": "pip install scipy",
+        "check": "python3 -c 'import scipy; print(scipy.__version__)'"
+      }
+    },
+    "MICROSOFT": {
+      "wsl2": {
+        "desc": "Windows Subsystem for Linux 2 (Ubuntu/Debian sur Windows)",
+        "url": "https://docs.microsoft.com/en-us/windows/wsl",
+        "priority": "CRITIQUE",
+        "linux": "# Natif Linux",
+        "windows": "wsl --install -d Ubuntu",
+        "check": "wsl --version"
+      },
+      "powershell7": {
+        "desc": "PowerShell 7 cross-platform (scripts Windows modernes)",
+        "url": "https://github.com/PowerShell/PowerShell",
+        "priority": "CRITIQUE",
+        "linux": "sudo apt install powershell",
+        "windows": "winget install Microsoft.PowerShell",
+        "check": "pwsh --version"
+      },
+      "windows_terminal": {
+        "desc": "Terminal Windows moderne (tabs, GPU, themes)",
+        "url": "https://github.com/microsoft/terminal",
+        "priority": "ÉLEVÉ",
+        "linux": "# Non applicable",
+        "windows": "winget install Microsoft.WindowsTerminal",
+        "check": "wt --version"
+      },
+      "vscode": {
+        "desc": "Éditeur de code universel Microsoft (gratuit)",
+        "url": "https://code.visualstudio.com",
+        "priority": "CRITIQUE",
+        "linux": "sudo apt install code",
+        "windows": "winget install Microsoft.VisualStudioCode",
+        "check": "code --version"
+      },
+      "winget": {
+        "desc": "Gestionnaire packages Windows (intégré Win11)",
+        "url": "https://github.com/microsoft/winget-cli",
+        "priority": "CRITIQUE",
+        "linux": "# Non applicable",
+        "windows": "# Intégré Windows 10/11 (App Installer)",
+        "check": "winget --version"
+      },
+      "azure_cli": {
+        "desc": "CLI Azure (tier gratuit Azure disponible)",
+        "url": "https://docs.microsoft.com/cli/azure",
+        "priority": "MOYEN",
+        "linux": "curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash",
+        "windows": "winget install Microsoft.AzureCLI",
+        "check": "az --version"
+      },
+      "bicep": {
+        "desc": "Azure IaC (Infrastructure as Code déclaratif Microsoft)",
+        "url": "https://learn.microsoft.com/azure/azure-resource-manager/bicep",
+        "priority": "FAIBLE",
+        "linux": "sudo az bicep install",
+        "windows": "winget install Microsoft.Bicep",
+        "check": "az bicep version"
+      }
+    },
+    "COLLABORATION": {
+      "obsidian": {
+        "desc": "Base de connaissances Markdown locale (graph de notes)",
+        "url": "https://obsidian.md",
+        "priority": "MOYEN",
+        "linux": "sudo apt install obsidian",
+        "windows": "winget install Obsidian.Obsidian",
+        "check": "# Interface graphique"
+      },
+      "mkdocs": {
+        "desc": "Documentation sites statiques depuis Markdown",
+        "url": "https://mkdocs.org",
+        "priority": "ÉLEVÉ",
+        "linux": "pip install mkdocs mkdocs-material",
+        "windows": "pip install mkdocs mkdocs-material",
+        "check": "mkdocs --version"
+      },
+      "pandoc": {
+        "desc": "Convertisseur universel documents (MD→PDF/DOCX/HTML)",
+        "url": "https://pandoc.org",
+        "priority": "ÉLEVÉ",
+        "linux": "sudo apt install pandoc",
+        "windows": "winget install JohnMacFarlane.Pandoc",
+        "check": "pandoc --version"
+      },
+      "mermaid": {
+        "desc": "Diagrammes en texte (flowcharts, séquences, gantt)",
+        "url": "https://mermaid.js.org",
+        "priority": "ÉLEVÉ",
+        "linux": "npm install -g @mermaid-js/mermaid-cli",
+        "windows": "npm install -g @mermaid-js/mermaid-cli",
+        "check": "mmdc --version"
+      },
+      "excalidraw": {
+        "desc": "Schémas collaboratifs style dessin à la main (self-host)",
+        "url": "https://excalidraw.com",
+        "priority": "MOYEN",
+        "linux": "docker run -p 80:80 excalidraw/excalidraw",
+        "windows": "docker run -p 80:80 excalidraw/excalidraw",
+        "check": "curl http://localhost:80"
+      }
+    },
+    "DESIGN": {
+      "inkscape": {
+        "desc": "Édition vectorielle SVG (alternative Illustrator gratuite)",
+        "url": "https://inkscape.org",
+        "priority": "MOYEN",
+        "linux": "sudo apt install inkscape",
+        "windows": "winget install Inkscape.Inkscape",
+        "check": "inkscape --version"
+      },
+      "gimp": {
+        "desc": "Édition photos raster (alternative Photoshop gratuite)",
+        "url": "https://gimp.org",
+        "priority": "FAIBLE",
+        "linux": "sudo apt install gimp",
+        "windows": "winget install GIMP.GIMP",
+        "check": "gimp --version"
+      },
+      "ffmpeg": {
+        "desc": "Traitement audio/vidéo CLI (conversion, compression, stream)",
+        "url": "https://ffmpeg.org",
+        "priority": "ÉLEVÉ",
+        "linux": "sudo apt install ffmpeg",
+        "windows": "winget install Gyan.FFmpeg",
+        "check": "ffmpeg -version"
+      },
+      "imagemagick": {
+        "desc": "Manipulation images CLI (resize, convert, composite)",
+        "url": "https://imagemagick.org",
+        "priority": "MOYEN",
+        "linux": "sudo apt install imagemagick",
+        "windows": "winget install ImageMagick.ImageMagick",
+        "check": "convert --version"
+      }
+    }
+  }
+}

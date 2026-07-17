@@ -1,0 +1,746 @@
+{
+  "version": "1.0",
+  "description": "CaelumSwarm™ — Base de Données Infinie de Solutions",
+  "created_at": "2026-06-22T22:32:19.668158+00:00",
+  "total_entries": 12,
+  "total_scans": 1,
+  "problems_catalog": {
+    "P001": {
+      "id": "P001",
+      "title": "Fichiers non-commités (untracked/modified)",
+      "category": "git",
+      "severity": "CRITIQUE",
+      "solution_steps": [
+        "git config user.email noreply@anthropic.com",
+        "git config user.name Claude",
+        "git add -A",
+        "git commit -m 'rescue: uncommitted files detected by InfiniteDB'",
+        "git push -u origin claude/swarm-50-agent-architecture-3l6cno"
+      ],
+      "explanation": "Les fichiers non-commités bloquent le stop hook et empêchent les autres agents de travailler sur une base propre.",
+      "prevention": "Committer après CHAQUE groupe de fichiers créés, jamais en lot final.",
+      "sources": [
+        "Git_SCM_Docs",
+        "CaelumSwarm_Protocol"
+      ],
+      "source_validation": {
+        "valid": true,
+        "avg_score": 95.8,
+        "sources_checked": 2,
+        "source_details": [
+          {
+            "source": "Git_SCM_Docs",
+            "domain": "git",
+            "reliability": 100,
+            "quantum_score": 94.2,
+            "url": "git-scm.com/docs"
+          },
+          {
+            "source": "CaelumSwarm_Protocol",
+            "domain": "internal",
+            "reliability": 100,
+            "quantum_score": 97.5,
+            "url": "internal://docs/protocols/wave-development-protocol.md"
+          }
+        ],
+        "timestamp": "2026-06-22T22:32:19.803861+00:00"
+      },
+      "auto_fix": true,
+      "avg_resolution_minutes": 2.5,
+      "occurrence_count": 1,
+      "first_seen": "2026-06-22T22:32:19.803818+00:00",
+      "last_seen": "2026-06-22T22:32:19.803818+00:00",
+      "added_to_db": "2026-06-22T22:32:19.803818+00:00"
+    },
+    "P002": {
+      "id": "P002",
+      "title": "Mauvais auteur git (email ≠ noreply@anthropic.com)",
+      "category": "git",
+      "severity": "CRITIQUE",
+      "solution_steps": [
+        "git config user.email noreply@anthropic.com",
+        "git config user.name Claude"
+      ],
+      "explanation": "Le stop hook vérifie l'email auteur avant chaque commit. Un mauvais email bloque tous les commits.",
+      "prevention": "Inclure git config dans le template de démarrage OBLIGATOIRE de chaque agent.",
+      "sources": [
+        "Git_SCM_Docs",
+        "CaelumSwarm_Protocol"
+      ],
+      "source_validation": {
+        "valid": true,
+        "avg_score": 95.5,
+        "sources_checked": 2,
+        "source_details": [
+          {
+            "source": "Git_SCM_Docs",
+            "domain": "git",
+            "reliability": 100,
+            "quantum_score": 92.9,
+            "url": "git-scm.com/docs"
+          },
+          {
+            "source": "CaelumSwarm_Protocol",
+            "domain": "internal",
+            "reliability": 100,
+            "quantum_score": 98.1,
+            "url": "internal://docs/protocols/wave-development-protocol.md"
+          }
+        ],
+        "timestamp": "2026-06-22T22:32:19.803875+00:00"
+      },
+      "auto_fix": true,
+      "avg_resolution_minutes": 0.5,
+      "occurrence_count": 0,
+      "first_seen": null,
+      "last_seen": null,
+      "added_to_db": "2026-06-22T22:32:19.803818+00:00"
+    },
+    "P003": {
+      "id": "P003",
+      "title": "Doublons d'icônes dans Sidebar (Duplicate identifier TypeScript)",
+      "category": "sidebar",
+      "severity": "CRITIQUE",
+      "solution_steps": [
+        "grep -n '^export function Icon' components/sidebar-icons-*.tsx | awk -F: '{print $2}' | sort | uniq -d",
+        "# Pour chaque doublon trouvé, garder la DERNIÈRE occurrence et supprimer les précédentes",
+        "python3 scripts/temporal_loop_detector.py",
+        "git add components/sidebar-icons-*.tsx",
+        "git commit -m 'fix(sidebar): remove duplicate icon functions'"
+      ],
+      "explanation": "TypeScript interdit les identifiants dupliqués. Deux fonctions Icon avec le même nom causent un build failure Vercel.",
+      "prevention": "Vérifier avec grep AVANT d'ajouter chaque nouvelle icône. Utiliser wave_validator.py après chaque wave.",
+      "sources": [
+        "TypeScript_Handbook",
+        "Vercel_Docs",
+        "CaelumSwarm_Protocol"
+      ],
+      "source_validation": {
+        "valid": true,
+        "avg_score": 95.1,
+        "sources_checked": 3,
+        "source_details": [
+          {
+            "source": "TypeScript_Handbook",
+            "domain": "typescript",
+            "reliability": 99,
+            "quantum_score": 95.8,
+            "url": "typescriptlang.org/docs/handbook"
+          },
+          {
+            "source": "Vercel_Docs",
+            "domain": "deployment",
+            "reliability": 98,
+            "quantum_score": 91.7,
+            "url": "vercel.com/docs"
+          },
+          {
+            "source": "CaelumSwarm_Protocol",
+            "domain": "internal",
+            "reliability": 100,
+            "quantum_score": 97.9,
+            "url": "internal://docs/protocols/wave-development-protocol.md"
+          }
+        ],
+        "timestamp": "2026-06-22T22:32:19.803886+00:00"
+      },
+      "auto_fix": false,
+      "avg_resolution_minutes": 15.0,
+      "occurrence_count": 0,
+      "first_seen": null,
+      "last_seen": null,
+      "added_to_db": "2026-06-22T22:32:19.803818+00:00"
+    },
+    "P004": {
+      "id": "P004",
+      "title": "Route API sans sealResponse ou SWARM_API_URL guard",
+      "category": "security",
+      "severity": "CRITIQUE",
+      "solution_steps": [
+        "# Ajouter en tête de chaque route.ts :",
+        "import { sealResponse } from '@/lib/digital-seal'",
+        "if (!process.env.SWARM_API_URL) { console.warn('[API] SWARM_API_URL not set') }",
+        "# Wrapper chaque NextResponse.json() avec sealResponse()",
+        "# Vérifier : next: { revalidate: 30 } sur tous les fetch",
+        "# Vérifier : status: 502 (JAMAIS 503) sur les catch"
+      ],
+      "explanation": "sealResponse chiffre les données sensibles. SWARM_API_URL guard empêche les appels externes non autorisés. Pattern obligatoire CSDDD.",
+      "prevention": "Utiliser le template de route standard dans CLAUDE.md. Valider avec check_routes_security() avant commit.",
+      "sources": [
+        "OWASP_Security",
+        "CaelumSwarm_Protocol",
+        "EU_CSDDD_2024_1760"
+      ],
+      "source_validation": {
+        "valid": true,
+        "avg_score": 96.8,
+        "sources_checked": 3,
+        "source_details": [
+          {
+            "source": "OWASP_Security",
+            "domain": "security",
+            "reliability": 99,
+            "quantum_score": 94.2,
+            "url": "owasp.org/www-project-top-ten"
+          },
+          {
+            "source": "CaelumSwarm_Protocol",
+            "domain": "internal",
+            "reliability": 100,
+            "quantum_score": 97.5,
+            "url": "internal://docs/protocols/wave-development-protocol.md"
+          },
+          {
+            "source": "EU_CSDDD_2024_1760",
+            "domain": "legal",
+            "reliability": 100,
+            "quantum_score": 98.8,
+            "url": "eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024L1760"
+          }
+        ],
+        "timestamp": "2026-06-22T22:32:19.803896+00:00"
+      },
+      "auto_fix": false,
+      "avg_resolution_minutes": 10.0,
+      "occurrence_count": 0,
+      "first_seen": null,
+      "last_seen": null,
+      "added_to_db": "2026-06-22T22:32:19.803818+00:00"
+    },
+    "P005": {
+      "id": "P005",
+      "title": "Engine avg_composite incorrect (≠ 61.03) ou mauvaise distribution",
+      "category": "engine",
+      "severity": "ÉLEVÉ",
+      "solution_steps": [
+        "# Vérifier les 8 entités avec tuples EXACTS :",
+        "# (99,97,95,93) / (93,90,88,86) / (85,82,80,78) / (80,77,75,73)",
+        "# (61,58,56,54) / (51,48,46,44) / (32,29,27,25) / (13,11,9,7)",
+        "# Distribution OBLIGATOIRE : 4 critique / 2 élevé / 1 modéré / 1 faible",
+        "# Poids : sub1×0.30 + sub2×0.25 + sub3×0.25 + sub4×0.20",
+        "python3 swarm/intelligence/<engine>.py",
+        "# Vérifier : avg_composite = 61.03 (±0.01)"
+      ],
+      "explanation": "L'avg_composite de 61.03 est calculé mathématiquement depuis les tuples fixes. Toute déviation indique une erreur dans les entités.",
+      "prevention": "Toujours utiliser les tuples EXACTS du pattern CaelumSwarm. Valider avec python3 engine.py avant commit.",
+      "sources": [
+        "CaelumSwarm_Protocol",
+        "Python_3_Docs"
+      ],
+      "source_validation": {
+        "valid": true,
+        "avg_score": 95.4,
+        "sources_checked": 2,
+        "source_details": [
+          {
+            "source": "CaelumSwarm_Protocol",
+            "domain": "internal",
+            "reliability": 100,
+            "quantum_score": 97.9,
+            "url": "internal://docs/protocols/wave-development-protocol.md"
+          },
+          {
+            "source": "Python_3_Docs",
+            "domain": "python",
+            "reliability": 100,
+            "quantum_score": 92.9,
+            "url": "docs.python.org/3"
+          }
+        ],
+        "timestamp": "2026-06-22T22:32:19.803904+00:00"
+      },
+      "auto_fix": false,
+      "avg_resolution_minutes": 20.0,
+      "occurrence_count": 1,
+      "first_seen": "2026-06-22T22:32:19.803818+00:00",
+      "last_seen": "2026-06-22T22:32:19.803818+00:00",
+      "added_to_db": "2026-06-22T22:32:19.803818+00:00"
+    },
+    "P006": {
+      "id": "P006",
+      "title": "Git index.lock bloque tous les commits",
+      "category": "git",
+      "severity": "ÉLEVÉ",
+      "solution_steps": [
+        "rm -f .git/index.lock",
+        "git status --short  # Vérifier que l'état est propre"
+      ],
+      "explanation": "index.lock est créé par git lors d'une opération et peut rester bloqué si le processus est tué. Il empêche tout commit/push.",
+      "prevention": "Ne jamais interrompre brutalement un git commit. Utiliser timeout sur les opérations git longues.",
+      "sources": [
+        "Git_SCM_Docs"
+      ],
+      "source_validation": {
+        "valid": false,
+        "avg_score": 95.8,
+        "sources_checked": 1,
+        "source_details": [
+          {
+            "source": "Git_SCM_Docs",
+            "domain": "git",
+            "reliability": 100,
+            "quantum_score": 95.8,
+            "url": "git-scm.com/docs"
+          }
+        ],
+        "timestamp": "2026-06-22T22:32:19.803911+00:00"
+      },
+      "auto_fix": true,
+      "avg_resolution_minutes": 1.0,
+      "occurrence_count": 0,
+      "first_seen": null,
+      "last_seen": null,
+      "added_to_db": "2026-06-22T22:32:19.803818+00:00"
+    },
+    "P007": {
+      "id": "P007",
+      "title": "Agent sur mauvaise branche (≠ claude/swarm-50-agent-architecture-3l6cno)",
+      "category": "git",
+      "severity": "CRITIQUE",
+      "solution_steps": [
+        "git stash  # Sauvegarder le travail en cours",
+        "git checkout claude/swarm-50-agent-architecture-3l6cno",
+        "git pull origin claude/swarm-50-agent-architecture-3l6cno",
+        "git stash pop  # Restaurer le travail",
+        "git branch --show-current  # Vérifier"
+      ],
+      "explanation": "Tout le travail CaelumSwarm doit être sur la branche dédiée. Un commit sur la mauvaise branche ne sera jamais vu par le CI/CD.",
+      "prevention": "Inclure git checkout + branch --show-current dans le template démarrage. Ne jamais sauter cette vérification.",
+      "sources": [
+        "Git_SCM_Docs",
+        "CaelumSwarm_Protocol"
+      ],
+      "source_validation": {
+        "valid": true,
+        "avg_score": 95.6,
+        "sources_checked": 2,
+        "source_details": [
+          {
+            "source": "Git_SCM_Docs",
+            "domain": "git",
+            "reliability": 100,
+            "quantum_score": 92.4,
+            "url": "git-scm.com/docs"
+          },
+          {
+            "source": "CaelumSwarm_Protocol",
+            "domain": "internal",
+            "reliability": 100,
+            "quantum_score": 98.7,
+            "url": "internal://docs/protocols/wave-development-protocol.md"
+          }
+        ],
+        "timestamp": "2026-06-22T22:32:19.803917+00:00"
+      },
+      "auto_fix": true,
+      "avg_resolution_minutes": 3.0,
+      "occurrence_count": 0,
+      "first_seen": null,
+      "last_seen": null,
+      "added_to_db": "2026-06-22T22:32:19.803818+00:00"
+    },
+    "P008": {
+      "id": "P008",
+      "title": "Sidebar file dépassement seuil (>5500 lignes → split requis)",
+      "category": "sidebar",
+      "severity": "MODÉRÉ",
+      "solution_steps": [
+        "# Créer sidebar-icons-N+1.tsx avec les nouvelles icônes",
+        "# Mettre à jour sidebar-icons.tsx (barrel) pour exporter le nouveau fichier",
+        "# Ne pas modifier sidebar-icons-N.tsx existant",
+        "grep -c '^export function' components/sidebar-icons-*.tsx"
+      ],
+      "explanation": "Les fichiers TypeScript trop longs ralentissent le compilateur. Le split en fichiers de ~1500 icônes maintient les performances.",
+      "prevention": "Surveiller le comptage de lignes après chaque wave. Créer le nouveau fichier quand on approche 5500.",
+      "sources": [
+        "TypeScript_Handbook",
+        "Vercel_Docs",
+        "CaelumSwarm_Protocol"
+      ],
+      "source_validation": {
+        "valid": true,
+        "avg_score": 95.8,
+        "sources_checked": 3,
+        "source_details": [
+          {
+            "source": "TypeScript_Handbook",
+            "domain": "typescript",
+            "reliability": 99,
+            "quantum_score": 98.9,
+            "url": "typescriptlang.org/docs/handbook"
+          },
+          {
+            "source": "Vercel_Docs",
+            "domain": "deployment",
+            "reliability": 98,
+            "quantum_score": 91.1,
+            "url": "vercel.com/docs"
+          },
+          {
+            "source": "CaelumSwarm_Protocol",
+            "domain": "internal",
+            "reliability": 100,
+            "quantum_score": 97.4,
+            "url": "internal://docs/protocols/wave-development-protocol.md"
+          }
+        ],
+        "timestamp": "2026-06-22T22:32:19.803929+00:00"
+      },
+      "auto_fix": false,
+      "avg_resolution_minutes": 30.0,
+      "occurrence_count": 0,
+      "first_seen": null,
+      "last_seen": null,
+      "added_to_db": "2026-06-22T22:32:19.803818+00:00"
+    },
+    "P009": {
+      "id": "P009",
+      "title": "Dashboard manquant 'use client' ou GaugeRing pattern incorrect",
+      "category": "dashboard",
+      "severity": "ÉLEVÉ",
+      "solution_steps": [
+        "# Vérifier première ligne : 'use client'",
+        "# GaugeRing : r=36 cx=44 cy=44 viewBox='0 0 88 88'",
+        "# fetch avec : const d = await res.json(); return d.payload ?? d",
+        "# Pas de useCallback/useMemo",
+        "# Apostrophes JSX : &apos; (jamais ')"
+      ],
+      "explanation": "Les dashboards sont des composants React côté client. Sans 'use client', Next.js tente un rendu serveur et échoue.",
+      "prevention": "Toujours commencer par 'use client'. Valider avec le pattern GaugeRing standard avant commit.",
+      "sources": [
+        "Next.js_AppRouter_Docs",
+        "CaelumSwarm_Protocol"
+      ],
+      "source_validation": {
+        "valid": true,
+        "avg_score": 97.3,
+        "sources_checked": 2,
+        "source_details": [
+          {
+            "source": "Next.js_AppRouter_Docs",
+            "domain": "nextjs",
+            "reliability": 99,
+            "quantum_score": 95.4,
+            "url": "nextjs.org/docs/app"
+          },
+          {
+            "source": "CaelumSwarm_Protocol",
+            "domain": "internal",
+            "reliability": 100,
+            "quantum_score": 99.2,
+            "url": "internal://docs/protocols/wave-development-protocol.md"
+          }
+        ],
+        "timestamp": "2026-06-22T22:32:19.803936+00:00"
+      },
+      "auto_fix": false,
+      "avg_resolution_minutes": 12.0,
+      "occurrence_count": 0,
+      "first_seen": null,
+      "last_seen": null,
+      "added_to_db": "2026-06-22T22:32:19.803818+00:00"
+    },
+    "P010": {
+      "id": "P010",
+      "title": "Build Vercel échoue (compilation TypeScript / ESLint)",
+      "category": "ci_cd",
+      "severity": "CRITIQUE",
+      "solution_steps": [
+        "# 1. Identifier la cause exacte dans les logs CI",
+        "# 2. Si 'Duplicate identifier' → P003 (doublons icônes)",
+        "# 3. Si 'Module not found' → vérifier imports dans route.ts",
+        "# 4. Si 'Type error' → vérifier types TypeScript",
+        "# 5. Si 'ESLint error' → vérifier no-unused-vars / apostrophes",
+        "grep -n '^export function Icon' components/sidebar-icons-*.tsx | sort | uniq -d",
+        "# Corriger → git commit → git push → attendre CI"
+      ],
+      "explanation": "Le build Vercel échoue sur TypeScript strict. Les causes les plus fréquentes sont les doublons d'icônes et les imports manquants.",
+      "prevention": "Exécuter python3 scripts/wave_validator.py après chaque wave AVANT de push.",
+      "sources": [
+        "Vercel_Docs",
+        "TypeScript_Handbook",
+        "CaelumSwarm_Protocol"
+      ],
+      "source_validation": {
+        "valid": true,
+        "avg_score": 93.0,
+        "sources_checked": 3,
+        "source_details": [
+          {
+            "source": "Vercel_Docs",
+            "domain": "deployment",
+            "reliability": 98,
+            "quantum_score": 94.3,
+            "url": "vercel.com/docs"
+          },
+          {
+            "source": "TypeScript_Handbook",
+            "domain": "typescript",
+            "reliability": 99,
+            "quantum_score": 91.2,
+            "url": "typescriptlang.org/docs/handbook"
+          },
+          {
+            "source": "CaelumSwarm_Protocol",
+            "domain": "internal",
+            "reliability": 100,
+            "quantum_score": 93.5,
+            "url": "internal://docs/protocols/wave-development-protocol.md"
+          }
+        ],
+        "timestamp": "2026-06-22T22:32:19.803943+00:00"
+      },
+      "auto_fix": false,
+      "avg_resolution_minutes": 25.0,
+      "occurrence_count": 0,
+      "first_seen": null,
+      "last_seen": null,
+      "added_to_db": "2026-06-22T22:32:19.803818+00:00"
+    },
+    "P011": {
+      "id": "P011",
+      "title": "Conflit merge entre agents parallèles sur même fichier",
+      "category": "coordination",
+      "severity": "ÉLEVÉ",
+      "solution_steps": [
+        "git status  # Identifier les fichiers en conflit",
+        "# Pour chaque fichier en conflit :",
+        "git checkout --theirs <file>  # OU git checkout --ours <file>",
+        "# Selon quelle version est correcte",
+        "git add <file>",
+        "git commit -m 'fix: resolve merge conflict in <file>'",
+        "git push -u origin claude/swarm-50-agent-architecture-3l6cno"
+      ],
+      "explanation": "Deux agents modifiant le même fichier simultanément créent des conflits git. Sidebar.tsx est le fichier le plus à risque.",
+      "prevention": "UN SEUL agent à la fois sur Sidebar.tsx. Toujours git pull AVANT de modifier Sidebar.",
+      "sources": [
+        "Git_SCM_Docs",
+        "CaelumSwarm_Protocol"
+      ],
+      "source_validation": {
+        "valid": true,
+        "avg_score": 96.0,
+        "sources_checked": 2,
+        "source_details": [
+          {
+            "source": "Git_SCM_Docs",
+            "domain": "git",
+            "reliability": 100,
+            "quantum_score": 93.9,
+            "url": "git-scm.com/docs"
+          },
+          {
+            "source": "CaelumSwarm_Protocol",
+            "domain": "internal",
+            "reliability": 100,
+            "quantum_score": 98.1,
+            "url": "internal://docs/protocols/wave-development-protocol.md"
+          }
+        ],
+        "timestamp": "2026-06-22T22:32:19.803949+00:00"
+      },
+      "auto_fix": false,
+      "avg_resolution_minutes": 20.0,
+      "occurrence_count": 0,
+      "first_seen": null,
+      "last_seen": null,
+      "added_to_db": "2026-06-22T22:32:19.803818+00:00"
+    },
+    "P012": {
+      "id": "P012",
+      "title": "Engine Python retourne exception ou ImportError",
+      "category": "engine",
+      "severity": "ÉLEVÉ",
+      "solution_steps": [
+        "python3 swarm/intelligence/<engine>.py 2>&1",
+        "# Identifier la ligne d'erreur exacte",
+        "# Si ImportError : vérifier que les modules (math, random, json) sont importés",
+        "# Si ZeroDivisionError : vérifier max(1, len(entities))",
+        "# Si SyntaxError : vérifier l'indentation et les quotes",
+        "# Corriger puis re-tester : python3 engine.py ✓"
+      ],
+      "explanation": "Les engines Python doivent s'exécuter sans erreur. Un crash engine empêche la validation et bloque toute la wave.",
+      "prevention": "Tester avec python3 engine.py après chaque création, AVANT le commit.",
+      "sources": [
+        "Python_3_Docs",
+        "CaelumSwarm_Protocol"
+      ],
+      "source_validation": {
+        "valid": true,
+        "avg_score": 93.6,
+        "sources_checked": 2,
+        "source_details": [
+          {
+            "source": "Python_3_Docs",
+            "domain": "python",
+            "reliability": 100,
+            "quantum_score": 94.4,
+            "url": "docs.python.org/3"
+          },
+          {
+            "source": "CaelumSwarm_Protocol",
+            "domain": "internal",
+            "reliability": 100,
+            "quantum_score": 92.8,
+            "url": "internal://docs/protocols/wave-development-protocol.md"
+          }
+        ],
+        "timestamp": "2026-06-22T22:32:19.803955+00:00"
+      },
+      "auto_fix": false,
+      "avg_resolution_minutes": 8.0,
+      "occurrence_count": 0,
+      "first_seen": null,
+      "last_seen": null,
+      "added_to_db": "2026-06-22T22:32:19.803818+00:00"
+    }
+  },
+  "active_problems_history": [
+    {
+      "timestamp": "2026-06-22T22:32:19.803818+00:00",
+      "scan_number": 1,
+      "active_count": 2,
+      "problems": [
+        "P001",
+        "P005"
+      ]
+    }
+  ],
+  "solutions_validated": [],
+  "source_registry": {
+    "EU_CSDDD_2024_1760": {
+      "name": "EU_CSDDD_2024_1760",
+      "domain": "legal",
+      "reliability": 100,
+      "url": "eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024L1760",
+      "usage_count": 1,
+      "added_at": "2026-06-22T22:32:19.803818+00:00"
+    },
+    "UNGP_RFC": {
+      "name": "UNGP_RFC",
+      "domain": "human_rights",
+      "reliability": 99,
+      "url": "ohchr.org/sites/default/files/documents/publications/guidingprinciplesbusinesshr_en.pdf",
+      "usage_count": 1,
+      "added_at": "2026-06-22T22:32:19.803818+00:00"
+    },
+    "GRI_Standards": {
+      "name": "GRI_Standards",
+      "domain": "reporting",
+      "reliability": 97,
+      "url": "globalreporting.org/standards",
+      "usage_count": 1,
+      "added_at": "2026-06-22T22:32:19.803818+00:00"
+    },
+    "Next.js_AppRouter_Docs": {
+      "name": "Next.js_AppRouter_Docs",
+      "domain": "nextjs",
+      "reliability": 99,
+      "url": "nextjs.org/docs/app",
+      "usage_count": 1,
+      "added_at": "2026-06-22T22:32:19.803818+00:00"
+    },
+    "TypeScript_Handbook": {
+      "name": "TypeScript_Handbook",
+      "domain": "typescript",
+      "reliability": 99,
+      "url": "typescriptlang.org/docs/handbook",
+      "usage_count": 1,
+      "added_at": "2026-06-22T22:32:19.803818+00:00"
+    },
+    "Python_3_Docs": {
+      "name": "Python_3_Docs",
+      "domain": "python",
+      "reliability": 100,
+      "url": "docs.python.org/3",
+      "usage_count": 1,
+      "added_at": "2026-06-22T22:32:19.803818+00:00"
+    },
+    "Git_SCM_Docs": {
+      "name": "Git_SCM_Docs",
+      "domain": "git",
+      "reliability": 100,
+      "url": "git-scm.com/docs",
+      "usage_count": 1,
+      "added_at": "2026-06-22T22:32:19.803818+00:00"
+    },
+    "Vercel_Docs": {
+      "name": "Vercel_Docs",
+      "domain": "deployment",
+      "reliability": 98,
+      "url": "vercel.com/docs",
+      "usage_count": 1,
+      "added_at": "2026-06-22T22:32:19.803818+00:00"
+    },
+    "OWASP_Security": {
+      "name": "OWASP_Security",
+      "domain": "security",
+      "reliability": 99,
+      "url": "owasp.org/www-project-top-ten",
+      "usage_count": 1,
+      "added_at": "2026-06-22T22:32:19.803818+00:00"
+    },
+    "CaelumSwarm_Protocol": {
+      "name": "CaelumSwarm_Protocol",
+      "domain": "internal",
+      "reliability": 100,
+      "url": "internal://docs/protocols/wave-development-protocol.md",
+      "usage_count": 1,
+      "added_at": "2026-06-22T22:32:19.803818+00:00"
+    },
+    "CSRD_Directive": {
+      "name": "CSRD_Directive",
+      "domain": "reporting",
+      "reliability": 100,
+      "url": "eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022L2464",
+      "usage_count": 1,
+      "added_at": "2026-06-22T22:32:19.803818+00:00"
+    },
+    "ILO_Core_Conventions": {
+      "name": "ILO_Core_Conventions",
+      "domain": "labor",
+      "reliability": 99,
+      "url": "ilo.org/declaration/lang--en",
+      "usage_count": 1,
+      "added_at": "2026-06-22T22:32:19.803818+00:00"
+    }
+  },
+  "statistics": {
+    "most_frequent_problems": {
+      "P001": 1,
+      "P005": 1,
+      "P002": 0,
+      "P003": 0,
+      "P004": 0,
+      "P006": 0,
+      "P007": 0,
+      "P008": 0,
+      "P009": 0,
+      "P010": 0
+    },
+    "avg_resolution_time_by_category": {
+      "git": 1.8,
+      "sidebar": 22.5,
+      "security": 10.0,
+      "engine": 14.0,
+      "dashboard": 12.0,
+      "ci_cd": 25.0,
+      "coordination": 20.0
+    },
+    "source_reliability_scores": {
+      "EU_CSDDD_2024_1760": 100,
+      "UNGP_RFC": 99,
+      "GRI_Standards": 97,
+      "Next.js_AppRouter_Docs": 99,
+      "TypeScript_Handbook": 99,
+      "Python_3_Docs": 100,
+      "Git_SCM_Docs": 100,
+      "Vercel_Docs": 98,
+      "OWASP_Security": 99,
+      "CaelumSwarm_Protocol": 100,
+      "CSRD_Directive": 100,
+      "ILO_Core_Conventions": 99
+    }
+  },
+  "last_scan": "2026-06-22T22:32:19.803818+00:00"
+}

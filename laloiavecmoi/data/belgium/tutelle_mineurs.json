@@ -1,0 +1,78 @@
+{
+  "module": "tutelle_mineurs",
+  "titre": "Tutelle d'un enfant mineur",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code civil — tutelle des mineurs (art. 389 et suivants)",
+    "portee": "Citoyens en Belgique",
+    "source_officielle": "https://www.ejustice.just.fgov.be/eli/loi/1804/03/21/1804032150/justel"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information juridique générale, à jour à la date de revue. Pour une situation concrète, consultez le juge de paix ou un notaire.",
+  "faits": [
+    {
+      "id": "TUT-001",
+      "question": "Quand un enfant mineur est-il mis sous tutelle ?",
+      "reponse": "La tutelle protège un enfant mineur lorsque ses parents ne peuvent plus exercer l'autorité parentale : par exemple en cas de décès des deux parents, lorsqu'ils sont durablement dans l'impossibilité d'exercer cette autorité, ou lorsqu'ils ne sont pas légalement connus.",
+      "reference_legale": "Code civil — ouverture de la tutelle des mineurs (art. 389 et suivants)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://justice.belgium.be/fr",
+          "intitule": "SPF Justice — autorite competente (droit civil et de la famille)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/loi/1804/03/21/1804032150/justel",
+          "intitule": "Ancien Code civil — Livre I : Des personnes (tutelle des mineurs)"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "TUT-002",
+      "question": "Qui désigne le tuteur ?",
+      "reponse": "Les parents peuvent désigner à l'avance un tuteur, notamment par testament. À défaut d'une telle désignation, c'est le juge de paix qui désigne le tuteur. Un subrogé tuteur peut aussi être nommé pour contrôler la gestion.",
+      "reference_legale": "Code civil — désignation du tuteur (testament ou juge de paix)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/loi/1804/03/21/1804032150/justel",
+          "intitule": "Ancien Code civil — Livre I : Des personnes (tutelle des mineurs)"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "TUT-003",
+      "question": "Quel est le rôle du tuteur et comment est-il contrôlé ?",
+      "reponse": "Le tuteur prend soin du mineur, veille à son éducation et gère ses biens en bon père de famille. Il représente le mineur dans les actes de la vie civile. Pour les actes importants (vendre un bien, faire une donation, accepter ou renoncer à une succession…), il doit obtenir l'autorisation du juge de paix. Des mécanismes de contrôle sont prévus.",
+      "reference_legale": "Code civil — pouvoirs du tuteur et autorisations du juge de paix",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/loi/1804/03/21/1804032150/justel",
+          "intitule": "Ancien Code civil — Livre I : Des personnes (tutelle des mineurs)"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "TUT-MAJORITE-COMPTES-001",
+      "question": "Que deviennent les biens du mineur, et que se passe-t-il à ses 18 ans ?",
+      "reponse": "Pendant la tutelle, le tuteur gère les biens du mineur dans son seul intérêt et doit en rendre compte : il établit un inventaire au début, tient une comptabilité et présente un rapport (en principe annuel) au juge de paix ; le subrogé tuteur veille à cette bonne gestion. Les actes importants (vendre un immeuble, faire une donation, accepter ou renoncer à une succession, placer des capitaux) nécessitent l'autorisation préalable du juge de paix. À 18 ans, la tutelle prend fin automatiquement : le jeune devient pleinement capable, et le tuteur doit lui remettre les comptes de sa gestion ainsi que les biens. Un jeune sans soutien familial peut être accompagné par les services d'aide à la jeunesse.",
+      "reference_legale": "Code civil — gestion des biens du mineur, comptes de tutelle et autorisations du juge de paix ; fin de la tutelle à la majorité",
+      "contacts": [
+        {"nom": "Juge de paix", "pour": "contrôle des comptes et autorisations"},
+        {"nom": "Subrogé tuteur", "pour": "surveillance de la gestion du tuteur"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/loi/1804/03/21/1804032150/justel", "intitule": "Ancien Code civil — Tutelle (gestion et comptes)"},
+        {"type": "officiel", "url": "https://justice.belgium.be/fr", "intitule": "SPF Justice — Tutelle des mineurs"}
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+[
+  {
+    "action": "audit",
+    "installed": 16,
+    "missing": 48,
+    "ts": "2026-06-23T01:20:14.723788+00:00"
+  },
+  {
+    "action": "install_prompt",
+    "tool": "ollama",
+    "platform": "linux",
+    "seal_id": "SEAL-3EC310829B1868E3",
+    "ts": "2026-06-23T01:20:30.035225+00:00"
+  }
+]

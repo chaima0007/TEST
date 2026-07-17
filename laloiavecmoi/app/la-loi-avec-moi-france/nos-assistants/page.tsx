@@ -1,0 +1,149 @@
+"use client";
+
+import Link from "next/link";
+import AgentAvocat from "@/components/AgentAvocat";
+
+// Page transparence — « Qui sont nos assistants ? » (édition France).
+// Honnêteté totale, sans exception : personnages virtuels (IA + supervision humaine),
+// jamais de vrais avocats. « Avocat » / « Maître » = titres protégés, jamais utilisés ici.
+
+const assistants = [
+  { name: "Thomas", role: "Assistant · droit du logement", accent: "teal" as const },
+  { name: "Karim", role: "Assistant · droit du travail", accent: "indigo" as const },
+  { name: "Inès", role: "Assistante · droit de la famille", accent: "rose" as const },
+  { name: "Hugo", role: "Assistant · démarches administratives", accent: "sky" as const },
+  { name: "Sofia", role: "Assistante · accès au droit", accent: "amber" as const },
+  { name: "Léa", role: "Assistante · quiz juridique", accent: "blue" as const },
+];
+
+const principes = [
+  {
+    titre: "Ce sont des personnages virtuels",
+    texte:
+      "Chaque assistant (Thomas, Inès, Hugo…) est une illustration animée, pas une personne réelle. Les prénoms et les visages servent à rendre le juridique plus humain et moins intimidant.",
+  },
+  {
+    titre: "Ce ne sont PAS des avocats",
+    texte:
+      "« Avocat » et « Maître » sont des titres protégés par la loi, réservés aux professionnels inscrits à un barreau. Nos assistants ne portent jamais ces titres et ne donnent jamais de conseil juridique personnalisé.",
+  },
+  {
+    titre: "IA + supervision humaine",
+    texte:
+      "Les contenus sont préparés par des agents d'intelligence artificielle spécialisés, puis relus et validés par des humains. Chaque information renvoie vers sa source officielle (service-public.fr, Légifrance…) pour que vous puissiez vérifier.",
+  },
+  {
+    titre: "Information, pas conseil",
+    texte:
+      "Nous expliquons vos droits en termes clairs et nous vous orientons. Pour une décision importante ou un litige, nous vous dirigeons vers le bon professionnel agréé (avocat, notaire, conciliateur).",
+  },
+];
+
+export default function NosAssistantsFrancePage() {
+  return (
+    <main className="min-h-screen bg-white text-slate-900">
+      {/* Hero */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-blue-950 to-slate-900 text-white">
+        <div
+          className="absolute inset-0 opacity-40"
+          style={{
+            background:
+              "radial-gradient(60% 60% at 50% 0%, rgba(37,99,235,0.25) 0%, rgba(15,23,42,0) 70%)",
+          }}
+        />
+        <div className="relative max-w-3xl mx-auto px-6 py-20 text-center">
+          <Link
+            href="/la-loi-avec-moi-france"
+            className="inline-block text-blue-200 hover:text-white text-sm font-medium mb-6"
+          >
+            ← La Loi Avec Moi · France
+          </Link>
+          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight">
+            Qui sont nos assistants&nbsp;?
+          </h1>
+          <p className="mt-5 text-lg text-blue-100 leading-relaxed">
+            En toute honnêteté&nbsp;: nos guides sont des <strong>assistants virtuels</strong>, pas
+            de vrais avocats. Voici exactement qui ils sont, et ce qu&apos;ils font (et ne font pas).
+          </p>
+        </div>
+      </section>
+
+      {/* Mise en avant honnêteté */}
+      <section className="px-6 py-14 max-w-3xl mx-auto">
+        <div className="rounded-2xl border border-amber-200 bg-amber-50 p-6">
+          <h2 className="font-semibold text-amber-900 text-lg">⚖️ La règle, sans exception</h2>
+          <p className="text-amber-800 mt-2 leading-relaxed">
+            Sur chaque page, l&apos;avatar de l&apos;assistant affiche automatiquement la mention
+            «&nbsp;<strong>Assistant virtuel · pas un avocat réel</strong>&nbsp;». C&apos;est volontaire&nbsp;:
+            nous préférons être clairs trop souvent que pas assez. Vous savez toujours à qui vous parlez.
+          </p>
+        </div>
+      </section>
+
+      {/* Les principes */}
+      <section className="px-6 pb-6 max-w-3xl mx-auto">
+        <div className="grid sm:grid-cols-2 gap-5">
+          {principes.map((p) => (
+            <div key={p.titre} className="rounded-2xl border border-slate-200 bg-white p-6">
+              <h3 className="font-semibold text-slate-900">{p.titre}</h3>
+              <p className="text-slate-600 text-sm mt-2 leading-relaxed">{p.texte}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Galerie des assistants */}
+      <section className="px-6 py-14 max-w-3xl mx-auto">
+        <h2 className="text-2xl font-bold tracking-tight text-center">
+          Faites connaissance avec l&apos;équipe
+        </h2>
+        <p className="text-slate-500 text-center mt-3">
+          Des prénoms chaleureux pour vous mettre à l&apos;aise — chacun spécialisé sur un domaine.
+        </p>
+        <div className="mt-8 grid sm:grid-cols-2 gap-6">
+          {assistants.map((a) => (
+            <div key={a.name} className="rounded-2xl border border-slate-200 bg-slate-50 p-5">
+              <AgentAvocat name={a.name} role={a.role} accent={a.accent} size={72} />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Pourquoi ce choix */}
+      <section className="px-6 pb-14 max-w-3xl mx-auto">
+        <div className="rounded-2xl border border-blue-200 bg-blue-50 p-6">
+          <h2 className="font-semibold text-blue-900 text-lg">
+            Pourquoi des assistants virtuels&nbsp;?
+          </h2>
+          <p className="text-blue-800/90 mt-2 leading-relaxed text-sm">
+            Le droit fait peur et coûte cher. Beaucoup de gens renoncent à faire valoir leurs droits
+            simplement parce qu&apos;ils ne savent pas par où commencer. Nos assistants rendent
+            l&apos;information juridique <strong>claire, gratuite et accessible 24h/24</strong>, sans
+            jugement. Quand votre situation dépasse l&apos;information générale, nous vous orientons vers
+            un <strong>vrai professionnel agréé</strong> — c&apos;est là que commence le conseil juridique.
+          </p>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="px-6 pb-24 text-center">
+        <h2 className="text-2xl font-bold tracking-tight">Une question vous bloque&nbsp;?</h2>
+        <p className="text-slate-500 mt-3">
+          Posez-la simplement — un assistant vous répond clairement, gratuitement.
+        </p>
+        <Link
+          href="/la-loi-avec-moi-france"
+          className="inline-block mt-7 bg-blue-700 hover:bg-blue-800 text-white font-semibold px-8 py-3.5 rounded-xl transition-colors shadow-lg shadow-blue-700/20"
+        >
+          Explorer mes droits
+        </Link>
+      </section>
+
+      <footer className="border-t border-slate-100 py-8 px-6 text-center text-sm text-slate-500">
+        <Link href="/la-loi-avec-moi-france" className="hover:text-slate-900">
+          ← Retour à « La Loi Avec Moi · France »
+        </Link>
+      </footer>
+    </main>
+  );
+}

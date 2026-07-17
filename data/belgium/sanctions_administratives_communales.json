@@ -1,0 +1,80 @@
+{
+  "module": "sanctions_administratives_communales",
+  "titre": "Sanctions administratives communales (SAC)",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 24 juin 2013 relative aux sanctions administratives communales",
+    "portee": "Citoyens en Belgique",
+    "source_officielle": "https://www.ejustice.just.fgov.be/cgi_loi/article.pl?language=fr&numac_search=2013000441"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information juridique générale, à jour à la date de revue. Les incivilités sanctionnables figurent dans le règlement de police de votre commune.",
+  "faits": [
+    {
+      "id": "SAC-001",
+      "question": "Qu'est-ce qu'une sanction administrative communale (SAC) ?",
+      "reponse": "Une commune peut sanctionner certaines incivilités (dépôts sauvages, tapage, dégradations…) par une amende administrative, sur la base de son règlement de police. L'amende administrative s'élève au maximum à 175 € pour les mineurs (à partir de 14 ans) et à 500 € pour les majeurs.",
+      "reference_legale": "Loi du 24 juin 2013 relative aux sanctions administratives communales (montants maximaux)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/cgi_loi/article.pl?language=fr&numac_search=2013000441",
+          "intitule": "Justel — Loi du 24 juin 2013 (SAC)"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://www.besafe.be/fr/sanctions-administratives-communales-sac/legislation-sac",
+          "intitule": "BeSafe — Législation SAC"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "SAC-002",
+      "question": "L'amende est-elle la seule sanction possible ?",
+      "reponse": "Non. La loi prévoit aussi des alternatives : la médiation (réparer ou indemniser le dommage, apaiser le conflit), une prestation citoyenne, ou encore la suspension/le retrait d'une autorisation délivrée par la commune. Pour les mineurs, la médiation est privilégiée.",
+      "reference_legale": "Loi du 24 juin 2013 (médiation, prestation citoyenne, mesures administratives)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/cgi_loi/article.pl?language=fr&numac_search=2013000441",
+          "intitule": "Justel — Loi du 24 juin 2013 (mesures)"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "SAC-003",
+      "question": "Comment contester une amende SAC ?",
+      "reponse": "Vous pouvez contester l'amende administrative en introduisant un recours par requête écrite auprès du tribunal de police, selon la procédure civile, dans le mois de la notification de la décision. Pensez à respecter ce délai, sous peine de perdre votre droit de recours.",
+      "reference_legale": "Loi du 24 juin 2013, art. 31 (recours devant le tribunal de police dans le mois)",
+      "alerte_delai": "Recours devant le tribunal de police dans le mois de la notification de la décision.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/cgi_loi/article.pl?language=fr&numac_search=2013000441",
+          "intitule": "Justel — Loi du 24 juin 2013, art. 31 (recours)"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "SAC-PROCEDURE-DROITS-001",
+      "question": "Comment se déroule la procédure, et puis-je me défendre avant d'être sanctionné ?",
+      "reponse": "Tout part d'un constat dressé par un agent constatateur, transmis au fonctionnaire sanctionnateur de la commune. Celui-ci vous notifie les faits par écrit. Avant toute décision, vous avez le droit de présenter votre défense : par écrit dans le délai indiqué, et — lorsque l'amende envisagée dépasse un certain montant — vous pouvez demander à être entendu oralement. Vous pouvez vous faire assister par un avocat. Ce n'est qu'ensuite que le fonctionnaire décide de l'amende (ou d'une alternative). Pour un mineur (à partir de 14 ans), les parents sont informés et impliqués, et une médiation est proposée en priorité. Si vous n'êtes pas d'accord avec la décision finale, vous pouvez la contester devant le tribunal (de police, ou de la jeunesse pour un mineur) dans le mois.",
+      "reference_legale": "Loi du 24 juin 2013 relative aux sanctions administratives communales (procédure, droit d'être entendu et recours)",
+      "alerte_delai": "Répondez dans le délai de la notification pour présenter votre défense ; recours contre la décision dans le mois.",
+      "contacts": [
+        {"nom": "Fonctionnaire sanctionnateur de la commune", "pour": "présenter sa défense avant la décision"},
+        {"nom": "Tribunal de police (ou de la jeunesse)", "pour": "contester l'amende"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/cgi_loi/article.pl?language=fr&numac_search=2013000441", "intitule": "Justel — Loi du 24 juin 2013 (procédure et défense)"},
+        {"type": "secondaire", "url": "https://www.besafe.be/fr/sanctions-administratives-communales-sac/legislation-sac", "intitule": "BeSafe — Procédure SAC"}
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

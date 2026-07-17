@@ -1,0 +1,105 @@
+{
+  "module": "precompte_immobilier",
+  "titre": "Précompte immobilier",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code des impôts sur les revenus 1992 (précompte immobilier) — impôt régionalisé calculé sur le revenu cadastral indexé",
+    "portee": "Citoyens en Belgique",
+    "source_officielle": "https://finances.wallonie.be/home/fiscalite/precompte-immobilier.html"
+  },
+  "derniere_revue": "2026-06-29",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information juridique générale, à jour à la date de revue. Le précompte immobilier est régionalisé : vérifiez les règles et réductions de votre Région.",
+  "faits": [
+    {
+      "id": "PRECI-001",
+      "question": "Qu'est-ce que le précompte immobilier ?",
+      "reponse": "Le précompte immobilier est un impôt régional annuel sur les biens immobiliers (que vous y habitiez ou que vous en tiriez des revenus). Il est perçu par la Région : le SPW Finances en Wallonie, le Vlaamse Belastingdienst en Flandre, et l'administration compétente à Bruxelles.",
+      "reference_legale": "Code des impôts sur les revenus 1992 (précompte immobilier, compétence régionale)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://finances.wallonie.be/home/fiscalite/precompte-immobilier.html",
+          "intitule": "SPW Finances — Précompte immobilier"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.vlaanderen.be/fr/demenager-et-se-loger/precompte-immobilier",
+          "intitule": "Flandre.be — Précompte immobilier"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "PRECI-002",
+      "question": "Comment est-il calculé ?",
+      "reponse": "La base de calcul est le revenu cadastral indexé du bien, fixé par le SPF Finances. S'y applique un taux régional (par exemple 1,25 % du revenu cadastral indexé en Wallonie), auquel s'ajoutent les centimes additionnels fixés par la commune et la province : c'est ce qui explique les différences d'un endroit à l'autre.",
+      "reference_legale": "Code des impôts sur les revenus 1992 (base = revenu cadastral indexé ; taux régional + additionnels)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://finances.wallonie.be/home/fiscalite/precompte-immobilier.html",
+          "intitule": "SPW Finances — Calcul du précompte immobilier"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "PRECI-003",
+      "question": "Existe-t-il des réductions, et comment contester ?",
+      "reponse": "Des réductions ou exonérations existent selon la nature du bien ou votre situation familiale (certaines automatiques, d'autres sur demande). Pour contester, vous introduisez une réclamation contre l'avertissement-extrait de rôle auprès de la Région ; si vous contestez le revenu cadastral lui-même, la réclamation se fait auprès du SPF Finances. Respectez le délai indiqué sur l'avertissement-extrait de rôle.",
+      "reference_legale": "Code des impôts sur les revenus 1992 (réductions du précompte immobilier et procédure de réclamation)",
+      "alerte_delai": "Réclamation à introduire dans le délai mentionné sur l'avertissement-extrait de rôle.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://finances.wallonie.be/home/fiscalite/precompte-immobilier.html",
+          "intitule": "SPW Finances — Réductions et réclamation"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "PRECI-REGIONAL-001",
+      "question": "Quelle administration gère mon précompte immobilier selon ma région ?",
+      "reponse": "Le précompte immobilier est un impôt RÉGIONAL : l'administration compétente, les taux additionnels et les réductions (revenus modestes, enfants à charge, handicap…) dépendent de la région où se trouve le bien. En WALLONIE : le SPW Fiscalité (finances.wallonie.be). En FLANDRE : le Vlaamse Belastingdienst (onroerende voorheffing, via vlaanderen.be). À BRUXELLES : Bruxelles Fiscalité (fiscalite.brussels). Adressez vos questions, réclamations et demandes de réduction à l'administration fiscale de votre région.",
+      "reference_legale": "Compétence régionale du précompte immobilier : Code des impôts sur les revenus (régionalisé) et décret wallon (SPW Fiscalité) ; Vlaamse Codex Fiscaliteit (Vlaamse Belastingdienst) ; ordonnance bruxelloise relative à la fiscalité (Bruxelles Fiscalité)",
+      "contacts": [
+        {
+          "nom": "SPW Fiscalité (Wallonie)",
+          "lien": "https://finances.wallonie.be/",
+          "pour": "précompte immobilier en Wallonie"
+        },
+        {
+          "nom": "Vlaamse Belastingdienst (Flandre)",
+          "lien": "https://www.vlaanderen.be/",
+          "pour": "onroerende voorheffing en Flandre"
+        },
+        {
+          "nom": "Bruxelles Fiscalité (Bruxelles)",
+          "lien": "https://fiscalite.brussels/fr",
+          "pour": "précompte immobilier à Bruxelles"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://finances.wallonie.be/",
+          "intitule": "SPW Fiscalité — précompte immobilier (Wallonie)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.vlaanderen.be/",
+          "intitule": "Vlaanderen — onroerende voorheffing (Flandre)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://fiscalite.brussels/fr",
+          "intitule": "Bruxelles Fiscalité — précompte immobilier (Bruxelles)"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    }
+  ]
+}

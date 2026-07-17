@@ -1,0 +1,397 @@
+{
+  "module": "conformite_entreprises",
+  "projet": "Caelum Partners",
+  "titre": "Veille conformité entreprises — les normes ont changé",
+  "but": "Source unique des normes entreprises récentes/modifiées. Pour chaque norme : ce qui change, qui est concerné (seuils), la sanction chiffrée, l'échéance, et la solution Caelum (dont la part automatisable par la plateforme).",
+  "juridiction": "BE/UE",
+  "langue": "fr",
+  "separation": "Projet ENTREPRISES (B2B). Ne pas mélanger avec La Loi Avec Moi (citoyens).",
+  "derniere_revue": "2026-06-29",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale à but commercial/pédagogique, à jour à la date de revue. Les seuils et montants évoluent ; toute décision importante est validée avec notre réseau d'experts (avocats, comptables). Sources officielles citées pour chaque norme.",
+  "normes": [
+    {
+      "id": "EFACT-2026",
+      "norme": "Facturation électronique structurée B2B obligatoire",
+      "changement": "Depuis le 1er janvier 2026, toute entreprise assujettie à la TVA et établie en Belgique doit émettre ET recevoir ses factures B2B en format électronique structuré (Peppol BIS / norme EN 16931). La facture papier ou le simple PDF perdent leur validité fiscale.",
+      "concernes": "TOUTES les entreprises et indépendants assujettis à la TVA en Belgique (marché de masse, pas seulement les grands groupes).",
+      "sanction": "Amendes pour non-conformité et surtout remise en cause de la déduction de la TVA. Période de tolérance prévue de janvier à mars 2026, puis application pleine.",
+      "echeance": "Obligation depuis le 01/01/2026 (tolérance jan→mars 2026).",
+      "reference_legale": "Loi du 6 février 2024 (art. 53, §2bis du Code de la TVA) ; arrêté royal du 8 juillet 2025 d'exécution",
+      "solution_caelum": "Onboarding Peppol guidé, connexion du logiciel de facturation, vérification du format EN 16931, et bascule assistée. Produit d'appel accessible à toutes les PME.",
+      "automatisation": "ÉLEVÉE — détection du statut TVA, génération/validation automatique du format, alerte si une facture sortante n'est pas conforme.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://efacture.belgium.be/fr/article/pour-qui-la-facturation-electronique-deviendra-t-elle-obligatoire",
+          "intitule": "SPF Finances — e-facture : pour qui ?"
+        },
+        {
+          "type": "officiel",
+          "url": "https://finances.wallonie.be/accueil-entreprises/actualites/actualites/facturation-electronique-une-obligation-des-le-1er-janvier-2026-etes-vous-prets.html",
+          "intitule": "SPW Finances — Obligation 1er janvier 2026"
+        }
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "NIS2-BE",
+      "norme": "NIS2 — cybersécurité des entités essentielles et importantes",
+      "changement": "La loi NIS2 impose des mesures de cybersécurité, une gestion des incidents, un enregistrement auprès du CCB et renforce fortement la responsabilité personnelle des dirigeants.",
+      "concernes": "Entités « essentielles » et « importantes » : moyennes et grandes entreprises de secteurs critiques (énergie, transport, santé, eau, numérique, fabrication, etc.). Le CCB peut aussi classer de plus petites entités.",
+      "sanction": "Amendes administratives jusqu'à 10 millions € ou 2 % du chiffre d'affaires annuel mondial pour les entités essentielles ; 7 millions € ou 1,4 % pour les entités importantes (le montant le plus élevé s'applique).",
+      "echeance": "Loi en vigueur depuis le 18 octobre 2024 ; enregistrement auprès du CCB attendu pour le 18 mars 2025.",
+      "reference_legale": "Loi du 26 avril 2024 établissant un cadre pour la cybersécurité (transposition de la directive (UE) 2022/2555 — NIS2)",
+      "solution_caelum": "Diagnostic « suis-je concerné ? », accompagnement à l'enregistrement CCB, mise en place des mesures de base et plan de gestion des incidents. Argument fort : protéger le dirigeant.",
+      "automatisation": "MOYENNE — auto-évaluation du périmètre, checklist de mesures, rappels d'échéances ; mise en œuvre technique escaladée à des partenaires.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://ccb.belgium.be/fr/nis2",
+          "intitule": "Centre pour la Cybersécurité Belgique — NIS2"
+        },
+        {
+          "type": "officiel",
+          "url": "https://ccb.belgium.be/fr/news/mesures-administratives-et-amendes-sous-nis2",
+          "intitule": "CCB — Mesures administratives et amendes NIS2"
+        }
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "CSRD-OMNIBUS",
+      "norme": "CSRD — rapport de durabilité (revu par l'Omnibus)",
+      "changement": "Le paquet « Omnibus » a fortement réduit le champ d'application de la CSRD et reporté les échéances. Beaucoup d'entreprises qui pensaient être concernées ne le sont plus directement — mais leurs grands clients, eux, le restent.",
+      "concernes": "Désormais : entités de l'UE de plus de 1 000 salariés ET plus de 450 millions € de chiffre d'affaires net. En dessous : reporting non obligatoire (mais souvent demandé par les donneurs d'ordre).",
+      "sanction": "Sanctions fixées par chaque État membre lors de la transposition ; risque réputationnel et perte de marchés en cas d'absence de données fiables.",
+      "echeance": "Application aux exercices ouverts à partir du 1er janvier 2027 (premiers rapports en 2028) ; transposition par les États pour le 19 mars 2027.",
+      "reference_legale": "Directive (UE) 2026/470 (« Omnibus I ») modifiant la directive (UE) 2022/2464 (CSRD)",
+      "solution_caelum": "Test de périmètre à jour (suis-je encore dans le scope ?), préparation des données ESG, et surtout aide aux PME pour répondre aux exigences ESG de leurs grands clients.",
+      "automatisation": "MOYENNE — test d'éligibilité automatique, collecte guidée des indicateurs, modèles de réponses ESG.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://commission.europa.eu/topics/business-and-industry/doing-business-eu/sustainability-due-diligence-responsible-business/corporate-sustainability-due-diligence_en",
+          "intitule": "Commission européenne — Due diligence durabilité"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://accountancyeurope.eu/publications/omnibus-explained-key-changes-to-the-csrd-and-csddd/",
+          "intitule": "Accountancy Europe — Omnibus : changements CSRD/CSDDD"
+        }
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "CSDDD-OMNIBUS",
+      "norme": "CSDDD — devoir de vigilance (revu par l'Omnibus)",
+      "changement": "L'Omnibus I (Directive (UE) 2026/470, publiée au JO le 26/02/2026, en vigueur le 18/03/2026) a réduit le champ, retiré l'obligation de plan de transition climatique, et modifié l'art. 27(4) : l'ancien plancher « au moins 5 % du CA » (CSDDD 2024/1760) a été ABAISSÉ à un plafond maximal de 3 % du chiffre d'affaires mondial net. ⚠️ Le 5 % est donc la valeur ANCIENNE (pré-Omnibus) ; le 3 % est la valeur EN VIGUEUR (vérifié : Noerr, DLA Piper, Weil, Latham & Watkins).",
+      "concernes": "Très grandes entreprises : plus de 5 000 salariés ET plus de 1,5 milliard € de CA (UE) ; entreprises hors UE réalisant plus de 1,5 milliard € de CA dans l'UE.",
+      "sanction": "Amendes plafonnées à 3 % du chiffre d'affaires mondial net (le détail est fixé à la transposition nationale + lignes directrices de la Commission).",
+      "echeance": "Transposition par les États pour le 26 juillet 2028 ; application à partir du 26 juillet 2029 (obligations de reporting de l'art. 16 : exercices à partir du 1er janvier 2030).",
+      "reference_legale": "Directive (UE) 2026/470 (« Omnibus I ») modifiant la directive (UE) 2024/1760 (CSDDD)",
+      "solution_caelum": "Pour les grands groupes : cartographie du devoir de vigilance. Pour les PME fournisseurs : se préparer à l'effet de cascade (les grands donneurs d'ordre répercutent leurs obligations le long de la chaîne de valeur).",
+      "automatisation": "MOYENNE — cartographie de la chaîne de valeur, questionnaires fournisseurs, suivi des actions.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://commission.europa.eu/topics/business-and-industry/doing-business-eu/sustainability-due-diligence-responsible-business/corporate-sustainability-due-diligence_en",
+          "intitule": "Commission européenne — Due diligence durabilité"
+        },
+        {
+          "type": "officiel",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32024L1760",
+          "intitule": "EUR-Lex — Directive (UE) 2024/1760 (CSDDD), art. 27 (sanctions)"
+        }
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "RGPD",
+      "norme": "RGPD — protection des données personnelles",
+      "changement": "Cadre stable mais largement sous-appliqué par les PME. Toute entreprise qui traite des données (clients, employés, prospects, cookies) est concernée. Les contrôles et plaintes augmentent.",
+      "concernes": "TOUTES les entreprises, quelle que soit leur taille, qui traitent des données personnelles.",
+      "sanction": "Amendes jusqu'à 20 millions € ou 4 % du chiffre d'affaires annuel mondial (le montant le plus élevé), prononcées par l'Autorité de protection des données.",
+      "echeance": "En vigueur (applicable depuis 2018, contrôles renforcés).",
+      "reference_legale": "Règlement (UE) 2016/679 (RGPD) ; loi du 30 juillet 2018 relative à la protection des personnes physiques à l'égard des traitements de données",
+      "solution_caelum": "Audit RGPD express, registre des traitements, politique de confidentialité et bandeau cookies conformes, plan de mise en conformité priorisé.",
+      "automatisation": "ÉLEVÉE — questionnaire d'audit, génération automatique du registre et des mentions, détection des manquements fréquents.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.autoriteprotectiondonnees.be/citoyen",
+          "intitule": "Autorité de protection des données (APD)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32016R0679",
+          "intitule": "EUR-Lex — Règlement (UE) 2016/679 (RGPD)"
+        }
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "LANCEURS-ALERTE",
+      "norme": "Lanceurs d'alerte — canal de signalement interne",
+      "changement": "Les entreprises du secteur privé d'une certaine taille doivent mettre en place un canal de signalement interne sécurisé et protéger les lanceurs d'alerte contre les représailles.",
+      "concernes": "Entreprises du secteur privé à partir de 50 travailleurs (avec un calendrier selon la taille).",
+      "sanction": "Sanctions pénales et administratives en cas d'absence de canal ou de représailles contre un lanceur d'alerte.",
+      "echeance": "En vigueur (loi de transposition de 2022).",
+      "reference_legale": "Loi du 28 novembre 2022 sur la protection des personnes qui signalent des violations (transposition de la directive (UE) 2019/1937)",
+      "solution_caelum": "Mise en place d'un canal de signalement conforme, procédure de traitement, et information du personnel.",
+      "automatisation": "ÉLEVÉE — canal de signalement fourni en ligne, accusés de réception et suivi des délais automatisés.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://economie.fgov.be/fr/themes/line-business/protection-des-lanceurs-dalerte",
+          "intitule": "SPF Économie — Protection des lanceurs d'alerte"
+        },
+        {
+          "type": "officiel",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32019L1937",
+          "intitule": "EUR-Lex — Directive (UE) 2019/1937"
+        }
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "AI-ACT",
+      "norme": "AI Act — règlement européen sur l'intelligence artificielle",
+      "changement": "Le règlement encadre la conception, la fourniture ET l'usage de systèmes d'IA, avec des obligations graduées selon le risque (interdits, haut risque, IA générative, transparence).",
+      "concernes": "Toute entreprise qui développe, fournit ou UTILISE des systèmes d'IA dans l'UE (large : RH, crédit, marketing, support…).",
+      "sanction": "Amendes jusqu'à 35 millions € ou 7 % du chiffre d'affaires mondial (pratiques interdites) ; jusqu'à 15 millions € ou 3 % pour les autres manquements (le montant le plus élevé s'applique).",
+      "echeance": "Pratiques interdites applicables depuis le 2 février 2025 ; modèles d'IA générale depuis le 2 août 2025 ; gros des obligations le 2 août 2026 ; systèmes à haut risque (annexe III) au 2 décembre 2027.",
+      "reference_legale": "Règlement (UE) 2024/1689 du 13 juin 2024 établissant des règles harmonisées sur l'intelligence artificielle (AI Act)",
+      "solution_caelum": "Inventaire des usages d'IA, classement par niveau de risque, mise en conformité (transparence, documentation, supervision humaine) et veille des échéances.",
+      "automatisation": "MOYENNE — auto-questionnaire de classification des usages IA, checklist par niveau de risque, rappels d'échéances.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32024R1689",
+          "intitule": "EUR-Lex — Règlement (UE) 2024/1689 (AI Act)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://digital-strategy.ec.europa.eu/fr/policies/regulatory-framework-ai",
+          "intitule": "Commission européenne — Cadre réglementaire de l'IA"
+        }
+      ],
+      "date_verification": "2026-06-28"
+    },
+    {
+      "id": "EAA",
+      "norme": "Accessibilité numérique — European Accessibility Act",
+      "changement": "Les produits et services numériques destinés aux consommateurs doivent être accessibles (sites, applis, e-commerce, banque en ligne, télécoms, distributeurs, e-books…), avec une déclaration d'accessibilité publiée.",
+      "concernes": "Entreprises offrant ces produits/services aux consommateurs en Belgique (e-commerce, banques, télécoms…). Exemption pour les micro-entreprises de moins de 10 salariés ET moins de 2 M€ de CA.",
+      "sanction": "Amendes (jusqu'à environ 200 000 € par manquement selon gravité et taille) ; produits non conformes pouvant être retirés/rappelés du marché.",
+      "echeance": "Applicable depuis le 28 juin 2025 ; période de transition pour certains produits physiques jusqu'au 28 juin 2030.",
+      "reference_legale": "Directive (UE) 2019/882 (European Accessibility Act) et sa transposition en droit belge",
+      "solution_caelum": "Audit d'accessibilité (WCAG 2.2 AA / EN 301 549), plan de correction priorisé et rédaction de la déclaration d'accessibilité.",
+      "automatisation": "MOYENNE — pré-scan d'accessibilité, checklist WCAG, génération de la déclaration d'accessibilité.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://commission.europa.eu/strategy-and-policy/policies/justice-and-fundamental-rights/disability/european-accessibility-act-eaa_en",
+          "intitule": "Commission européenne — European Accessibility Act"
+        },
+        {
+          "type": "officiel",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32019L0882",
+          "intitule": "EUR-Lex — Directive (UE) 2019/882"
+        }
+      ],
+      "date_verification": "2026-06-28"
+    },
+    {
+      "id": "UBO",
+      "norme": "Registre UBO — bénéficiaires effectifs",
+      "changement": "Toute entité juridique doit déclarer ses bénéficiaires effectifs au registre UBO et CONFIRMER ces données chaque année (même sans changement), en plus de toute mise à jour.",
+      "concernes": "Toutes les sociétés (SRL, SA, SC…), ASBL, fondations et constructions juridiques. Un bénéficiaire effectif = personne détenant, directement ou non, plus de 25 % des parts/droits de vote.",
+      "sanction": "Amende administrative de 250 € à 50 000 € (à charge solidaire des dirigeants) ; risque de radiation de la Banque-Carrefour des Entreprises.",
+      "echeance": "Déclaration dans les 30 jours suivant la constitution ; confirmation ANNUELLE obligatoire.",
+      "reference_legale": "Loi du 18 septembre 2017 (prévention du blanchiment — registre UBO) et arrêté royal du 30 juillet 2018",
+      "solution_caelum": "Identification des bénéficiaires effectifs, dépôt initial et mise en place d'un rappel de confirmation annuelle.",
+      "automatisation": "ÉLEVÉE — détection de l'obligation, rappel annuel automatique, checklist de dépôt.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://finances.belgium.be/fr/E-services/ubo-register",
+          "intitule": "SPF Finances — Registre UBO"
+        },
+        {
+          "type": "officiel",
+          "url": "https://economie.fgov.be/fr/themes/entreprises/creer-une-entreprise/demarches-pour-creer-une/enregistrement-des",
+          "intitule": "SPF Économie — Enregistrement des bénéficiaires effectifs"
+        }
+      ],
+      "date_verification": "2026-06-28"
+    },
+    {
+      "id": "DORA-2025",
+      "norme": "DORA — résilience opérationnelle numérique du secteur financier",
+      "changement": "Depuis le 17 janvier 2025, les entités financières doivent disposer d'un cadre robuste de gestion du risque informatique (TIC) : gouvernance du risque, tests de résilience, notification des incidents majeurs et maîtrise du risque lié aux prestataires informatiques tiers.",
+      "concernes": "Les entités du secteur financier (banques, assurances, entreprises d'investissement, sociétés de gestion, établissements de paiement, prestataires de services sur crypto-actifs, etc.) ainsi que leurs prestataires TIC critiques.",
+      "sanction": "Mesures et sanctions administratives des autorités de contrôle financières (BNB/FSMA) selon la gravité ; obligation de remédiation.",
+      "echeance": "En application depuis le 17/01/2025.",
+      "reference_legale": "Règlement (UE) 2022/2554 du 14 décembre 2022 (DORA)",
+      "solution_caelum": "Cartographie du risque TIC, registre des prestataires, procédure de notification d'incident et plan de tests de résilience prêts à l'emploi pour les entités financières et leurs sous-traitants.",
+      "automatisation": "MOYENNE — modèles de registre et d'incident automatisés, veille réglementaire ; l'évaluation du risque reste accompagnée par un expert.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://eur-lex.europa.eu/eli/reg/2022/2554/oj",
+          "intitule": "EUR-Lex — Règlement (UE) 2022/2554 (DORA)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.fsma.be/fr/dora",
+          "intitule": "FSMA — DORA"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "PAYEQUITY-2026",
+      "norme": "Transparence salariale (égalité de rémunération F/H)",
+      "changement": "La directive européenne sur la transparence salariale impose, dès le recrutement, d'indiquer la rémunération ou une fourchette et interdit de demander l'historique salarial du candidat. En interne : critères de rémunération objectifs, droit à l'information sur les écarts, et renversement de la charge de la preuve en cas de litige. Les employeurs d'au moins 100 travailleurs devront publier régulièrement leur écart de rémunération F/H.",
+      "concernes": "Tous les employeurs pour la transparence à l'embauche ; les obligations de reporting de l'écart salarial visent les employeurs d'au moins 100 travailleurs (échéances échelonnées).",
+      "sanction": "Sanctions prévues par la transposition nationale ; un écart injustifié de plus de 5 % impose une évaluation conjointe avec les représentants des travailleurs.",
+      "echeance": "Transposition par les États membres au plus tard le 07/06/2026 ; premiers reportings (≥150 travailleurs) au plus tard le 07/06/2027.",
+      "reference_legale": "Directive (UE) 2023/970 du 10 mai 2023 (transparence des rémunérations)",
+      "solution_caelum": "Audit des écarts de rémunération, grilles et critères objectifs, modèles d'offres d'emploi conformes et tableau de reporting prêt pour l'échéance.",
+      "automatisation": "MOYENNE — calcul automatisé de l'écart salarial et alertes de seuil ; le plan d'action reste accompagné.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX%3A32023L0970",
+          "intitule": "EUR-Lex — Directive (UE) 2023/970"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "DAC7-2024",
+      "norme": "DAC7 — déclaration des opérateurs de plateformes numériques",
+      "changement": "Les opérateurs de plateformes numériques qui mettent en relation des vendeurs/prestataires avec des clients doivent appliquer des procédures de diligence raisonnable, collecter les données des vendeurs (location de biens, services, vente de biens, location de moyens de transport) et les déclarer chaque année au SPF Finances, qui les échange avec les autres États membres.",
+      "concernes": "Les opérateurs de plateformes numériques (places de marché, plateformes de location, de services, de mobilité) ayant des vendeurs à déclarer.",
+      "sanction": "Amendes administratives en cas de non-déclaration ou de déclaration tardive/incomplète au SPF Finances.",
+      "echeance": "En vigueur (déclaration annuelle via MyMinfin DPI-DAC7).",
+      "reference_legale": "Directive (UE) 2021/514 du 22 mars 2021 (DAC7) ; loi du 21 décembre 2022",
+      "solution_caelum": "Mise en place des procédures de due diligence, collecte structurée des données vendeurs et génération du fichier de déclaration DPI-DAC7 prêt pour MyMinfin.",
+      "automatisation": "ÉLEVÉE — collecte et validation automatisées des données vendeurs, génération du fichier XML de déclaration, rappel de l'échéance annuelle.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://finances.belgium.be/fr/E-services/dac7/presentation",
+          "intitule": "SPF Finances — DPI/DAC7"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/loi/2022/12/21/2022043134/justel",
+          "intitule": "Justel — Loi du 21 décembre 2022 (DAC7)"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "PPWR-2026",
+      "norme": "PPWR — règlement sur les emballages et déchets d'emballages",
+      "changement": "À partir du 12 août 2026, le règlement européen sur les emballages (PPWR) s'applique directement dans tous les États membres : réduction du suremballage, exigences de recyclabilité, taux minimal de contenu recyclé (par étapes), étiquetage harmonisé du tri, et documentation/déclaration UE de conformité pour les emballages mis sur le marché.",
+      "concernes": "Tous les opérateurs économiques qui mettent des emballages ou des produits emballés sur le marché de l'UE : fabricants, producteurs de produits emballés, importateurs, distributeurs, e-commerce et HORECA.",
+      "sanction": "Mesures et sanctions prévues par le cadre de surveillance du marché (retrait/rappel possible des emballages non conformes).",
+      "echeance": "Application à partir du 12/08/2026 (objectifs de contenu recyclé et de réemploi échelonnés 2028→2035).",
+      "reference_legale": "Règlement (UE) 2025/40 du 19 décembre 2024 relatif aux emballages et aux déchets d'emballages (PPWR)",
+      "solution_caelum": "Diagnostic des emballages (recyclabilité, suremballage, étiquetage), constitution de la documentation de conformité et feuille de route vers les seuils de contenu recyclé.",
+      "automatisation": "MOYENNE — check-list de conformité et veille des échéances automatisées ; l'analyse matière reste accompagnée.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://eur-lex.europa.eu/eli/reg/2025/40/oj/fra",
+          "intitule": "EUR-Lex — Règlement (UE) 2025/40 (PPWR)"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "DELAIS-PAIEMENT",
+      "norme": "Délais de paiement B2B (lutte contre le retard de paiement)",
+      "changement": "Entre entreprises, le délai de paiement légal est de 30 jours ; un délai plus long peut être convenu mais ne peut en principe pas dépasser 60 jours calendrier (durcissement depuis le 1er février 2022). Les clauses abusives peuvent être écartées par le juge.",
+      "concernes": "Toutes les entreprises qui facturent ou paient des fournisseurs (B2B). Impacte la trésorerie et les conditions générales de vente.",
+      "sanction": "Intérêts de retard légaux + indemnité forfaitaire de recouvrement ; clause de délai abusive réputée non écrite.",
+      "echeance": "En vigueur depuis le 01/02/2022.",
+      "reference_legale": "Loi du 14 août 2021 (retard de paiement dans les transactions commerciales) modifiant la loi du 2 août 2002",
+      "solution_caelum": "Audit des conditions générales et des contrats fournisseurs/clients, mise en conformité des délais (≤ 60 jours) et clauses d'intérêts/indemnité.",
+      "automatisation": "MOYENNE — modèles de CGV conformes + alertes sur les contrats à délai > 60 jours.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/loi/2021/08/14/2021032597/justel",
+          "intitule": "Justel — Loi du 14 août 2021"
+        },
+        {
+          "type": "officiel",
+          "url": "https://justice.belgium.be/fr/nouvelles/communiques_de_presse/lutte_contre_le_retard_de_paiement_dans_les_transactions_0",
+          "intitule": "SPF Justice — Retard de paiement"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "CBAM-2026",
+      "norme": "CBAM / MACF — mécanisme d'ajustement carbone aux frontières",
+      "changement": "Depuis le 1er janvier 2026, l'importation dans l'UE de certaines marchandises à forte intensité carbone (fer/acier, ciment, aluminium, engrais, électricité, hydrogène) est conditionnée au statut de « déclarant MACF autorisé », avec déclaration des émissions et restitution de certificats. La phase de simple rapportage trimestriel s'est terminée fin 2025.",
+      "concernes": "Les importateurs (dans l'UE) des marchandises listées à l'annexe I du règlement, au-delà d'un seuil de valeur par envoi.",
+      "sanction": "Sanctions en cas de défaut de déclaration ou de certificats ; blocage possible à l'importation (statut requis comme une licence).",
+      "echeance": "Régime définitif depuis le 01/01/2026 ; 1re déclaration annuelle (année 2026) au plus tard le 31/05/2027.",
+      "reference_legale": "Règlement (UE) 2023/956 du 10 mai 2023 (mécanisme d'ajustement carbone aux frontières, MACF/CBAM)",
+      "solution_caelum": "Identification des marchandises concernées, demande du statut de déclarant autorisé, mise en place du suivi des émissions et du calendrier déclaratif.",
+      "automatisation": "MOYENNE — détection des codes douaniers concernés + rappels d'échéances déclaratives.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/TXT/PDF/?uri=CELEX%3A32023R0956",
+          "intitule": "EUR-Lex — Règlement (UE) 2023/956 (CBAM)"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "EUDR",
+      "norme": "EUDR — règlement contre la déforestation importée",
+      "changement": "Les opérateurs et commerçants qui mettent sur le marché de l'UE (ou exportent) certains produits — bovins, cacao, café, palmier à huile, caoutchouc, soja et bois (et produits dérivés) — doivent exercer une diligence raisonnée « zéro déforestation » : informations de traçabilité (géolocalisation), évaluation/atténuation du risque et déclaration de diligence raisonnée.",
+      "concernes": "Importateurs, producteurs et commerçants de bois, cacao, café, soja, caoutchouc, huile de palme, bovins et produits dérivés. Allègements prévus pour les micro/petits opérateurs.",
+      "sanction": "Sanctions des autorités compétentes ; impossibilité de mettre le produit sur le marché si le risque n'est pas négligeable.",
+      "echeance": "Application échelonnée (règlement modifié par le règlement (UE) 2025/2650 — simplifications et calendrier).",
+      "reference_legale": "Règlement (UE) 2023/1115 (déforestation) — produits concernés à l'annexe I",
+      "solution_caelum": "Cartographie des produits concernés, mise en place du système de diligence raisonnée (traçabilité, évaluation du risque) et des déclarations.",
+      "automatisation": "MOYENNE — check-list de diligence + suivi documentaire ; l'analyse fournisseurs reste accompagnée.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://eur-lex.europa.eu/legal-content/FR/ALL/?uri=CELEX%3A32023R1115",
+          "intitule": "EUR-Lex — Règlement (UE) 2023/1115 (EUDR)"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "AML-LBC",
+      "norme": "Anti-blanchiment (LBC/FT)",
+      "changement": "Les « entités assujetties » doivent appliquer une vigilance à l'égard de leurs clients et opérations (identification, conservation des données), et déclarer les opérations suspectes à la CTIF. Au-delà du secteur financier, sont aussi visés notaires, experts-comptables, agents immobiliers et certains commerçants (paiements en espèces).",
+      "concernes": "Entités assujetties au sens de l'article 5 de la loi : banques, assurances, mais aussi professions non financières désignées (comptables, notaires, immobilier, etc.).",
+      "sanction": "Sanctions administratives des autorités de contrôle (BNB, FSMA…) ; sanctions pénales pour manquements graves.",
+      "echeance": "En vigueur.",
+      "reference_legale": "Loi du 18 septembre 2017 relative à la prévention du blanchiment de capitaux (LBC/FT)",
+      "solution_caelum": "Mise en place du dispositif de vigilance (KYC), des procédures internes, de la conservation des données et du canal de déclaration CTIF.",
+      "automatisation": "MOYENNE — modèles de procédures KYC + registre ; l'évaluation des risques reste accompagnée.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.fsma.be/fr/lutte-contre-le-blanchiment-de-capitaux-et-le-financement-du-terrorisme",
+          "intitule": "FSMA — LBC/FT (loi du 18 septembre 2017)"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    }
+  ]
+}

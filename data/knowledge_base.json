@@ -1,0 +1,87 @@
+{
+  "version": "1.0",
+  "description": "CaelumSwarm™ — Base de connaissances experte (mise à jour continue)",
+  "total_evaluations": 6,
+  "history": [
+    {
+      "timestamp": "2026-06-22T22:09:44.418535+00:00",
+      "avg_score": 87.1,
+      "consensus_pct": 33.8,
+      "experts": [
+        {
+          "name": "Expert Sécurité",
+          "score": 98.0,
+          "quantum_amplitude": 0.9897
+        },
+        {
+          "name": "Expert Architecture",
+          "score": 38.9,
+          "quantum_amplitude": 0.6233
+        },
+        {
+          "name": "Expert Git",
+          "score": 92.5,
+          "quantum_amplitude": 0.9614
+        },
+        {
+          "name": "Expert Icônes",
+          "score": 100.0,
+          "quantum_amplitude": 0.9999
+        },
+        {
+          "name": "Expert Vélocité",
+          "score": 100.0,
+          "quantum_amplitude": 1.0
+        },
+        {
+          "name": "Expert Erreurs",
+          "score": 93.0,
+          "quantum_amplitude": 0.9638
+        }
+      ],
+      "issues": [
+        "Architecture saine"
+      ]
+    }
+  ],
+  "aggregated_scores": {
+    "security": {
+      "scores": [
+        98.0
+      ],
+      "avg": 98.0
+    },
+    "architecture": {
+      "scores": [
+        38.9
+      ],
+      "avg": 38.9
+    },
+    "git_quality": {
+      "scores": [
+        92.5
+      ],
+      "avg": 92.5
+    },
+    "icon_integrity": {
+      "scores": [
+        100.0
+      ],
+      "avg": 100.0
+    },
+    "wave_velocity": {
+      "scores": [
+        100.0
+      ],
+      "avg": 100.0
+    },
+    "error_patterns": {
+      "scores": [
+        93.0
+      ],
+      "avg": 93.0
+    }
+  },
+  "recurring_issues": [],
+  "last_updated": "2026-06-22T22:09:44.418600+00:00"
+}

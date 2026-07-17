@@ -1,0 +1,50 @@
+{
+  "charte": "Experts Accessibilité — La Loi Avec Moi",
+  "version": "1.0",
+  "date": "2026-06-27",
+  "principe_honnete": "Ces 'experts' sont des RÔLES de gouvernance + des contrôles automatisés, pas des personnes. L'audit automatique attrape les erreurs mécaniques ; il NE remplace PAS un test par de vraies personnes en situation de handicap. La décision finale revient à Chaima Mhadbi.",
+  "pourquoi": "L'accès à l'information juridique doit être universel — c'est une question de dignité, et c'est le cœur de la mission (penser à ceux qu'on oublie). C'est aussi une obligation légale en Europe.",
+  "cadre_legal": [
+    {"intitule": "European Accessibility Act — directive (UE) 2019/882", "note": "Applicable depuis le 28 juin 2025 ; de nombreux services numériques doivent être accessibles."},
+    {"intitule": "WCAG 2.2 (niveau AA visé)", "note": "Référentiel international d'accessibilité du web."},
+    {"intitule": "EN 301 549", "note": "Norme européenne d'accessibilité des produits et services TIC."}
+  ],
+  "experts": [
+    {
+      "id": "ACC-VISION",
+      "titre": "Expert Déficience visuelle (lecteurs d'écran & basse vision)",
+      "mandat": "Garantir l'usage au lecteur d'écran et en basse vision.",
+      "controles": ["langue déclarée", "structure par titres", "alternatives textuelles des images", "liens explicites", "contrastes suffisants", "mode sombre"],
+      "criteres_wcag": ["1.1.1", "1.3.1", "1.4.3", "1.4.4", "2.4.4"]
+    },
+    {
+      "id": "ACC-MOTEUR",
+      "titre": "Expert Handicap moteur (navigation clavier)",
+      "mandat": "Tout faire sans souris, au clavier seul.",
+      "controles": ["lien d'évitement", "focus visible", "ordre de tabulation logique", "cibles tactiles ≥ 24px"],
+      "criteres_wcag": ["2.1.1", "2.4.1", "2.4.7", "2.5.8"]
+    },
+    {
+      "id": "ACC-COGNITIF",
+      "titre": "Expert Handicap cognitif (langage clair / FALC)",
+      "mandat": "Rendre le droit compréhensible : phrases courtes, vocabulaire simple, pas de jargon non expliqué.",
+      "controles": ["langage clair", "définitions des termes juridiques", "structure prévisible", "mouvement réduit respecté"],
+      "criteres_wcag": ["3.1.5", "3.2.3", "2.3.3"]
+    },
+    {
+      "id": "ACC-AUDITION",
+      "titre": "Expert Déficience auditive (médias)",
+      "mandat": "Si un média audio/vidéo est ajouté un jour : sous-titres et transcription obligatoires.",
+      "controles": ["sous-titres", "transcription textuelle"],
+      "criteres_wcag": ["1.2.2", "1.2.3"]
+    },
+    {
+      "id": "ACC-AUDIT",
+      "titre": "Expert Audit & Conformité accessibilité",
+      "mandat": "Lancer l'audit automatique à chaque génération et tenir la déclaration d'accessibilité à jour ; planifier les tests humains.",
+      "controles": ["audit automatique WCAG à chaque build", "page déclaration d'accessibilité", "journal des limites"],
+      "criteres_wcag": ["—"]
+    }
+  ],
+  "limite_honnete": "Prochaine étape indispensable : tests réels (NVDA/VoiceOver, navigation 100% clavier, relecture en langage simple). L'automatique ne suffit pas seul."
+}

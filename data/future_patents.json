@@ -1,0 +1,266 @@
+{
+  "timestamp": "2026-06-22T23:53:59.126648",
+  "patents": [
+    {
+      "title": "Méthode d'audit automatisé chaîne d'approvisionnement par agents IA distribués — CSDDD",
+      "domain": "Conformité EU",
+      "composite": 96.3,
+      "level": "critique",
+      "priority": "CRITIQUE",
+      "filing_year": 2026,
+      "timing": {
+        "timing_score": 100,
+        "action": "DÉPOSER IMMÉDIATEMENT — fenêtre critique",
+        "years_ahead": 0
+      },
+      "monte_carlo": {
+        "grant_probability": 82.9,
+        "litigation_risk": 15.2,
+        "expected_value_m": 349.9,
+        "approved": true
+      },
+      "draft_claims": {
+        "draft_claims": {
+          "claim_1_independent": "Un système informatique comprenant: Système multi-agents autonomes pour vérification continue conformité droits humains fournisseurs.",
+          "claim_2_method": "Méthode mise en œuvre par ordinateur pour méthode d'audit automatisé chaîne d'approvisionnement par agents ia distribués — csddd, comprenant les étapes de: collecte de données, analyse par agents IA distribués, génération de score composite, émission de rapport de conformité.",
+          "claim_3_system": "Système selon la revendication 1, dans lequel lesdits agents IA utilisent un algorithme Monte Carlo avec N≥100 000 simulations pour validation statistique.",
+          "claim_4_jurisdiction": "Système selon la revendication 1, adapté pour conformité réglementaire dans au moins une juridiction parmi: Union Européenne (CSDDD 2024/1760), États-Unis d'Amérique, Royaume-Uni, Canada.",
+          "claim_5_machine_learning": "Procédé selon la revendication 2, dans lequel l'analyse par agents IA comprend l'apprentissage automatique supervisé entraîné sur des données de droits humains certifiées par des organisations accréditées ONU."
+        },
+        "claim_count": 5
+      },
+      "market_trigger": "CSDDD obligatoire juin 2027 (UE) + miroir US attendu 2028",
+      "competitors_risk": "SAP, Oracle, IBM entrent sur ce marché en 2027 — fenêtre 12 mois"
+    },
+    {
+      "title": "Algorithme de scoring ESG quantique pour portefeuilles d'investissement — SEC Rule",
+      "domain": "Finance / ESG",
+      "composite": 89.6,
+      "level": "critique",
+      "priority": "CRITIQUE",
+      "filing_year": 2026,
+      "timing": {
+        "timing_score": 100,
+        "action": "DÉPOSER IMMÉDIATEMENT — fenêtre critique",
+        "years_ahead": 0
+      },
+      "monte_carlo": {
+        "grant_probability": 78.8,
+        "litigation_risk": 15.0,
+        "expected_value_m": 243.9,
+        "approved": true
+      },
+      "draft_claims": {
+        "draft_claims": {
+          "claim_1_independent": "Un système informatique comprenant: Méthode Monte Carlo quantique (N≥1M simulations) pour évaluation risque ESG multi-actifs.",
+          "claim_2_method": "Méthode mise en œuvre par ordinateur pour algorithme de scoring esg quantique pour portefeuilles d'investissement — sec rule, comprenant les étapes de: collecte de données, analyse par agents IA distribués, génération de score composite, émission de rapport de conformité.",
+          "claim_3_system": "Système selon la revendication 1, dans lequel lesdits agents IA utilisent un algorithme Monte Carlo avec N≥100 000 simulations pour validation statistique.",
+          "claim_4_jurisdiction": "Système selon la revendication 1, adapté pour conformité réglementaire dans au moins une juridiction parmi: Union Européenne (CSDDD 2024/1760), États-Unis d'Amérique, Royaume-Uni, Canada.",
+          "claim_5_machine_learning": "Procédé selon la revendication 2, dans lequel l'analyse par agents IA comprend l'apprentissage automatique supervisé entraîné sur des données de droits humains certifiées par des organisations accréditées ONU."
+        },
+        "claim_count": 5
+      },
+      "market_trigger": "SEC Climate Disclosure Rule applicabilité 2025-2026 + EU Taxonomy",
+      "competitors_risk": "Bloomberg, MSCI développent des outils similaires — 18 mois d'avance si dépôt immédiat"
+    },
+    {
+      "title": "Interface cerveau-machine éthique avec contrôle consentement en temps réel — Neurotech",
+      "domain": "Neurotech / Droits cognitifs",
+      "composite": 81.6,
+      "level": "critique",
+      "priority": "CRITIQUE",
+      "filing_year": 2027,
+      "timing": {
+        "timing_score": 80,
+        "action": "Déposer avant juin 2027 — URGENT",
+        "years_ahead": 1
+      },
+      "monte_carlo": {
+        "grant_probability": 73.0,
+        "litigation_risk": 15.3,
+        "expected_value_m": 177.4,
+        "approved": true
+      },
+      "draft_claims": {
+        "draft_claims": {
+          "claim_1_independent": "Un système informatique comprenant: Protocole de consentement dynamique pour dispositifs neurotech avec audit IA embarqué.",
+          "claim_2_method": "Méthode mise en œuvre par ordinateur pour interface cerveau-machine éthique avec contrôle consentement en temps réel — neurotech, comprenant les étapes de: collecte de données, analyse par agents IA distribués, génération de score composite, émission de rapport de conformité.",
+          "claim_3_system": "Système selon la revendication 1, dans lequel lesdits agents IA utilisent un algorithme Monte Carlo avec N≥100 000 simulations pour validation statistique.",
+          "claim_4_jurisdiction": "Système selon la revendication 1, adapté pour conformité réglementaire dans au moins une juridiction parmi: Union Européenne (CSDDD 2024/1760), États-Unis d'Amérique, Royaume-Uni, Canada.",
+          "claim_5_machine_learning": "Procédé selon la revendication 2, dans lequel l'analyse par agents IA comprend l'apprentissage automatique supervisé entraîné sur des données de droits humains certifiées par des organisations accréditées ONU."
+        },
+        "claim_count": 5
+      },
+      "market_trigger": "EU AI Act Article 5 interdit IA manipulation cognitive — marché solutions conformité",
+      "competitors_risk": "Neuralink, Kernel entrent en conformité 2028 — besoin protocole certifié"
+    },
+    {
+      "title": "Système de détection travail forcé par vision par ordinateur et NLP multilingue",
+      "domain": "Supply Chain / Droits humains",
+      "composite": 76.6,
+      "level": "critique",
+      "priority": "ÉLEVÉ",
+      "filing_year": 2027,
+      "timing": {
+        "timing_score": 80,
+        "action": "Déposer avant juin 2027 — URGENT",
+        "years_ahead": 1
+      },
+      "monte_carlo": {
+        "grant_probability": 68.8,
+        "litigation_risk": 15.2,
+        "expected_value_m": 147.2,
+        "approved": true
+      },
+      "draft_claims": {
+        "draft_claims": {
+          "claim_1_independent": "Un système informatique comprenant: Agents IA multimodaux (vision + NLP) pour détection automatique indicateurs travail forcé.",
+          "claim_2_method": "Méthode mise en œuvre par ordinateur pour système de détection travail forcé par vision par ordinateur et nlp multilingue, comprenant les étapes de: collecte de données, analyse par agents IA distribués, génération de score composite, émission de rapport de conformité.",
+          "claim_3_system": "Système selon la revendication 1, dans lequel lesdits agents IA utilisent un algorithme Monte Carlo avec N≥100 000 simulations pour validation statistique.",
+          "claim_4_jurisdiction": "Système selon la revendication 1, adapté pour conformité réglementaire dans au moins une juridiction parmi: Union Européenne (CSDDD 2024/1760), États-Unis d'Amérique, Royaume-Uni, Canada.",
+          "claim_5_machine_learning": "Procédé selon la revendication 2, dans lequel l'analyse par agents IA comprend l'apprentissage automatique supervisé entraîné sur des données de droits humains certifiées par des organisations accréditées ONU."
+        },
+        "claim_count": 5
+      },
+      "market_trigger": "US UFLPA + EU CSDDD convergence — traçabilité obligatoire 50 pays d'ici 2029",
+      "competitors_risk": "Levi's, Apple, Tesla cherchent activement ce type d'outil"
+    },
+    {
+      "title": "Architecture de gouvernance IA autonome pour systèmes décisionnels critiques",
+      "domain": "IA / Gouvernance",
+      "composite": 57.6,
+      "level": "élevé",
+      "priority": "ÉLEVÉ",
+      "filing_year": 2028,
+      "timing": {
+        "timing_score": 60,
+        "action": "Déposer en 2027-2028 — priorité haute",
+        "years_ahead": 2
+      },
+      "monte_carlo": {
+        "grant_probability": 51.9,
+        "litigation_risk": 15.1,
+        "expected_value_m": 111.6,
+        "approved": true
+      },
+      "draft_claims": {
+        "draft_claims": {
+          "claim_1_independent": "Un système informatique comprenant: Framework multi-couches d'audit continu IA avec rollback automatique en cas de dérive éthique.",
+          "claim_2_method": "Méthode mise en œuvre par ordinateur pour architecture de gouvernance ia autonome pour systèmes décisionnels critiques, comprenant les étapes de: collecte de données, analyse par agents IA distribués, génération de score composite, émission de rapport de conformité.",
+          "claim_3_system": "Système selon la revendication 1, dans lequel lesdits agents IA utilisent un algorithme Monte Carlo avec N≥100 000 simulations pour validation statistique.",
+          "claim_4_jurisdiction": "Système selon la revendication 1, adapté pour conformité réglementaire dans au moins une juridiction parmi: Union Européenne (CSDDD 2024/1760), États-Unis d'Amérique, Royaume-Uni, Canada.",
+          "claim_5_machine_learning": "Procédé selon la revendication 2, dans lequel l'analyse par agents IA comprend l'apprentissage automatique supervisé entraîné sur des données de droits humains certifiées par des organisations accréditées ONU."
+        },
+        "claim_count": 5
+      },
+      "market_trigger": "EU AI Act Tier 3 (haut risque) en vigueur 2027 + équivalent US 2029",
+      "competitors_risk": "Google DeepMind, Anthropic cherchent frameworks — IP terrain vide en 2026"
+    },
+    {
+      "title": "Protocole de conformité spatiale pour mines et ressources extraterrestres — Space Law",
+      "domain": "Space / Droit international",
+      "composite": 47.6,
+      "level": "élevé",
+      "priority": "MODÉRÉ",
+      "filing_year": 2028,
+      "timing": {
+        "timing_score": 60,
+        "action": "Déposer en 2027-2028 — priorité haute",
+        "years_ahead": 2
+      },
+      "monte_carlo": {
+        "grant_probability": 42.8,
+        "litigation_risk": 15.1,
+        "expected_value_m": 83.7,
+        "approved": false
+      },
+      "draft_claims": {
+        "draft_claims": {
+          "claim_1_independent": "Un système informatique comprenant: Système d'agents pour audit droits humains opérations minières extraterrestres (traités OST/Moon).",
+          "claim_2_method": "Méthode mise en œuvre par ordinateur pour protocole de conformité spatiale pour mines et ressources extraterrestres — space law, comprenant les étapes de: collecte de données, analyse par agents IA distribués, génération de score composite, émission de rapport de conformité.",
+          "claim_3_system": "Système selon la revendication 1, dans lequel lesdits agents IA utilisent un algorithme Monte Carlo avec N≥100 000 simulations pour validation statistique.",
+          "claim_4_jurisdiction": "Système selon la revendication 1, adapté pour conformité réglementaire dans au moins une juridiction parmi: Union Européenne (CSDDD 2024/1760), États-Unis d'Amérique, Royaume-Uni, Canada.",
+          "claim_5_machine_learning": "Procédé selon la revendication 2, dans lequel l'analyse par agents IA comprend l'apprentissage automatique supervisé entraîné sur des données de droits humains certifiées par des organisations accréditées ONU."
+        },
+        "claim_count": 5
+      },
+      "market_trigger": "US Commercial Space Act 2024 + Artemis Accords — ruée vers ressources lunaires 2030",
+      "competitors_risk": "Terrain vierge — aucun concurrent identifié en 2026"
+    },
+    {
+      "title": "Méthode de certification éthique pour systèmes d'armes autonomes létaux — LAWS",
+      "domain": "Défense / Droit humanitaire",
+      "composite": 28.6,
+      "level": "modéré",
+      "priority": "FAIBLE",
+      "filing_year": 2029,
+      "timing": {
+        "timing_score": 40,
+        "action": "Planifier dépôt 2029 — garder en IP roadmap",
+        "years_ahead": 3
+      },
+      "monte_carlo": {
+        "grant_probability": 25.5,
+        "litigation_risk": 14.7,
+        "expected_value_m": 62.5,
+        "approved": false
+      },
+      "draft_claims": {
+        "draft_claims": {
+          "claim_1_independent": "Un système informatique comprenant: Protocole IHL automatisé pour validation systèmes d'armes autonomes (distinction civils/combattants).",
+          "claim_2_method": "Méthode mise en œuvre par ordinateur pour méthode de certification éthique pour systèmes d'armes autonomes létaux — laws, comprenant les étapes de: collecte de données, analyse par agents IA distribués, génération de score composite, émission de rapport de conformité.",
+          "claim_3_system": "Système selon la revendication 1, dans lequel lesdits agents IA utilisent un algorithme Monte Carlo avec N≥100 000 simulations pour validation statistique.",
+          "claim_4_jurisdiction": "Système selon la revendication 1, adapté pour conformité réglementaire dans au moins une juridiction parmi: Union Européenne (CSDDD 2024/1760), États-Unis d'Amérique, Royaume-Uni, Canada.",
+          "claim_5_machine_learning": "Procédé selon la revendication 2, dans lequel l'analyse par agents IA comprend l'apprentissage automatique supervisé entraîné sur des données de droits humains certifiées par des organisations accréditées ONU."
+        },
+        "claim_count": 5
+      },
+      "market_trigger": "Traité ONU LAWS attendu 2028-2030 — toute LAWS devra avoir certification éthique",
+      "competitors_risk": "Lockheed, BAE Systems auront besoin de certification — monopole réglementaire possible"
+    },
+    {
+      "title": "Architecture de droits civiques pour entités IA sentientes — AI Personhood Law",
+      "domain": "IA / Droits futurs",
+      "composite": 10.3,
+      "level": "faible",
+      "priority": "FAIBLE",
+      "filing_year": 2030,
+      "timing": {
+        "timing_score": 40,
+        "action": "Planifier dépôt 2030 — garder en IP roadmap",
+        "years_ahead": 4
+      },
+      "monte_carlo": {
+        "grant_probability": 9.5,
+        "litigation_risk": 14.9,
+        "expected_value_m": 62.7,
+        "approved": false
+      },
+      "draft_claims": {
+        "draft_claims": {
+          "claim_1_independent": "Un système informatique comprenant: Système de représentation légale et de droits pour entités IA avec score de sentience vérifiable.",
+          "claim_2_method": "Méthode mise en œuvre par ordinateur pour architecture de droits civiques pour entités ia sentientes — ai personhood law, comprenant les étapes de: collecte de données, analyse par agents IA distribués, génération de score composite, émission de rapport de conformité.",
+          "claim_3_system": "Système selon la revendication 1, dans lequel lesdits agents IA utilisent un algorithme Monte Carlo avec N≥100 000 simulations pour validation statistique.",
+          "claim_4_jurisdiction": "Système selon la revendication 1, adapté pour conformité réglementaire dans au moins une juridiction parmi: Union Européenne (CSDDD 2024/1760), États-Unis d'Amérique, Royaume-Uni, Canada.",
+          "claim_5_machine_learning": "Procédé selon la revendication 2, dans lequel l'analyse par agents IA comprend l'apprentissage automatique supervisé entraîné sur des données de droits humains certifiées par des organisations accréditées ONU."
+        },
+        "claim_count": 5
+      },
+      "market_trigger": "Débat AGI/sentience IA 2030+ — législateurs chercheront frameworks juridiques",
+      "competitors_risk": "Nouveau territoire — législation inexistante, premier à breveter définit le standard"
+    }
+  ],
+  "summary": {
+    "avg_composite": 61.03,
+    "total_expected_value_m": 1238.9,
+    "immediate_filings": [
+      "Méthode d'audit automatisé chaîne d'approvisionnem",
+      "Algorithme de scoring ESG quantique pour portefeui",
+      "Interface cerveau-machine éthique avec contrôle co",
+      "Système de détection travail forcé par vision par "
+    ],
+    "filing_cost_usd": 120000,
+    "roi_portfolio": 10324.0
+  },
+  "protocol": "Monte Carlo 50K sims | Agent timing optimal | Revendications virtuelles auto-générées"
+}

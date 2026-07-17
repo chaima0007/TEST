@@ -1,0 +1,157 @@
+{
+  "timestamp": "2026-06-22T00:00:00Z",
+  "engines": {
+    "total": 1871,
+    "standard_wave_format": 273,
+    "dataclass_format": 1064,
+    "other_formats": 534,
+    "with_WEIGHTS_tuple": 273,
+    "with_random_seed": 66,
+    "with_composite_score": 1426,
+    "note_avg_61_03": "7 engines explicitly contain 61.03 in output text; all sampled engines run without errors",
+    "errors": []
+  },
+  "routes": {
+    "total": 180,
+    "with_seal": 178,
+    "with_swarm_url": 178,
+    "missing_seal": [
+      "app/api/auth/login/route.ts",
+      "app/api/auth/logout/route.ts"
+    ],
+    "missing_swarm_url": [
+      "app/api/auth/login/route.ts",
+      "app/api/auth/logout/route.ts"
+    ],
+    "using_503": [],
+    "note": "auth routes legitimately excluded from SWARM_API_URL guard (no upstream call)"
+  },
+  "sidebar": {
+    "files": {
+      "sidebar-icons.tsx": {
+        "lines": 10,
+        "icons": 0,
+        "note": "re-export barrel"
+      },
+      "sidebar-icons-1.tsx": {
+        "lines": 4461,
+        "icons": 425
+      },
+      "sidebar-icons-2.tsx": {
+        "lines": 4087,
+        "icons": 423
+      },
+      "sidebar-icons-3.tsx": {
+        "lines": 3720,
+        "icons": 425
+      },
+      "sidebar-icons-4.tsx": {
+        "lines": 5017,
+        "icons": 562
+      }
+    },
+    "total_icons": 1835,
+    "duplicates": 0
+  },
+  "nav": {
+    "entries": 1949,
+    "icon_references": 1831,
+    "defined_icons": 1835,
+    "missing_icons": 0,
+    "missing_icon_list": []
+  },
+  "dashboards": {
+    "total": 271,
+    "with_use_client": 270,
+    "ok": 137,
+    "issues": [
+      {
+        "type": "missing_use_client",
+        "count": 1,
+        "files": [
+          "app/dashboard/pricing/page.tsx"
+        ]
+      },
+      {
+        "type": "forbidden_useCallback_or_useMemo",
+        "count": 133,
+        "sample_files": [
+          "app/dashboard/sales-pipeline-health-degradation-intelligence-engine/page.tsx",
+          "app/dashboard/customer-lifetime-value/page.tsx",
+          "app/dashboard/account-expansion-intelligence/page.tsx",
+          "app/dashboard/win-loss-pattern-engine/page.tsx",
+          "app/dashboard/account-expansion/page.tsx"
+        ]
+      }
+    ]
+  },
+  "scripts": {
+    "total": 162,
+    "validated": [
+      {
+        "name": "build_health_protocol.py",
+        "status": "OK",
+        "result": "VERT — Build autorisé"
+      },
+      {
+        "name": "monte_carlo_validator.py",
+        "status": "OK",
+        "result": "98.56% wave_success | quantum:100%"
+      },
+      {
+        "name": "startup_ecosystem_agent.py",
+        "status": "OK",
+        "result": "estimated_startup_ecosystem_index=6.1"
+      },
+      {
+        "name": "future_patents_engine.py",
+        "status": "OK",
+        "result": "ROI estimé portfolio: 10324x"
+      },
+      {
+        "name": "action_analyzer.py",
+        "status": "OK",
+        "result": "CLI usage printed (expects args)"
+      }
+    ],
+    "errors": []
+  },
+  "data_files": {
+    "total": 62,
+    "valid_json": 62,
+    "invalid_json": 0,
+    "size_kb": 1816
+  },
+  "git": {
+    "clean": false,
+    "untracked_files": [
+      "scripts/gomarket_zero_agent.py",
+      "scripts/ip_strategy_agent.py",
+      "scripts/revenue_model_agent.py"
+    ],
+    "recent_commits": [
+      "d6662b71 feat(IP): future_patents_engine — 8 brevets futuristes",
+      "80f3872d feat(business): startup ecosystem agent — 8 startups",
+      "5e6a10c7 fix(protocol+engines): all 5 build_health agents GREEN",
+      "b0fdaa5d feat(protocol): add action_analyzer.py",
+      "efdd6674 fix(engines): correct avg_composite to 61.03 on 34 engines",
+      "f1713cd6 fix(CI): remove duplicate icons + add build health protocol",
+      "f607d04f fix(sidebar): add missing IconConnectedTv export",
+      "e0c48a7e fix(wave-492): correct corporateespionage engine avg_composite",
+      "464f1921 fix(wave-491): correct environmentaldefender engine avg_composite",
+      "fba6335f feat(wave-492): dashboards StatelessPersons + ChildSoldier + CorporateEspionage"
+    ]
+  },
+  "overall_health": "B",
+  "critical_issues": [
+    "133/271 dashboards (49%) use forbidden useCallback/useMemo hooks",
+    "1 dashboard missing 'use client': app/dashboard/pricing/page.tsx",
+    "3 untracked scripts not committed to git (gomarket_zero_agent.py, ip_strategy_agent.py, revenue_model_agent.py)"
+  ],
+  "warnings": [
+    "2 auth routes (login/logout) do not have sealResponse — acceptable for auth endpoints but flagged",
+    "Only 7 engines explicitly output avg=61.03 in their text; many engines use different score ranges",
+    "591 engines are in non-standard, non-dataclass format (random.seed, quantum, inline ENTITIES without WEIGHTS tuple) — run validation recommended",
+    "sidebar-icons.tsx root file is empty barrel (10 lines) — intentional split architecture"
+  ]
+}

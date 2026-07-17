@@ -1,0 +1,72 @@
+{
+  "module": "casier_judiciaire",
+  "titre": "Extrait de casier judiciaire",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code d'instruction criminelle, art. 595 et 596 (extrait de casier judiciaire) ; arrêté royal du 21 novembre 2016 fixant les modalités de délivrance des extraits aux particuliers",
+    "portee": "Toute personne souhaitant obtenir un extrait de casier judiciaire en Belgique (compétence fédérale)",
+    "source_officielle": "https://justice.belgium.be/fr/themes_et_dossiers/documents/demander_des_documents/extrait_de_casier_judiciaire"
+  },
+  "derniere_revue": "2026-06-29",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information juridique générale, à jour à la date de revue. Les modalités pratiques (tarif, délai) peuvent varier selon la commune.",
+  "faits": [
+    {
+      "id": "CASIER-001",
+      "question": "Qu'est-ce que l'extrait de casier judiciaire et où le demander ?",
+      "reponse": "L'extrait de casier judiciaire (anciennement « certificat de bonne vie et mœurs ») est un document officiel reprenant les éventuelles condamnations d'une personne. Si vous êtes inscrit dans une commune belge, vous le demandez à votre administration communale (souvent aussi en ligne, selon la commune).",
+      "reference_legale": "Code d'instruction criminelle, art. 595 ; AR du 21 novembre 2016",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://justice.belgium.be/fr/themes_et_dossiers/documents/demander_des_documents/extrait_de_casier_judiciaire",
+          "intitule": "SPF Justice — Extrait de casier judiciaire"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "CASIER-002",
+      "question": "Quels sont les différents modèles d'extrait (595, 596-1, 596-2) ?",
+      "reponse": "Il existe trois modèles : le modèle 595 (modèle de base, pour la plupart des situations) ; le modèle 596-1 (pour exercer une activité réglementée, p. ex. chauffeur de taxi, détective privé, ou pour une autorisation d'arme ou un permis de pêche) ; le modèle 596-2 (pour une activité en contact avec des mineurs : éducation, aide à la jeunesse, animation, encadrement). Le modèle dépend du motif de la demande.",
+      "reference_legale": "Code d'instruction criminelle, art. 595 et 596, alinéas 1er et 2",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://justice.belgium.be/fr/themes_et_dossiers/documents/demander_des_documents/extrait_de_casier_judiciaire",
+          "intitule": "SPF Justice — Les trois modèles d'extraits"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "CASIER-003",
+      "question": "Je ne suis plus inscrit dans une commune belge : comment obtenir un extrait ?",
+      "reponse": "Si vous n'êtes plus (ou pas) inscrit dans une commune belge, ou si vous avez été radié d'office, vous demandez votre extrait directement au service du Casier judiciaire central du SPF Justice, à l'aide du formulaire approprié à renvoyer par e-mail ou par courrier. Les personnes morales et les diplomates non inscrits passent aussi par ce service.",
+      "reference_legale": "AR du 21 novembre 2016 ; Code d'instruction criminelle, art. 595-596",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://justice.belgium.be/fr/themes_et_dossiers/documents/demander_des_documents/extrait_de_casier_judiciaire",
+          "intitule": "SPF Justice — Casier judiciaire central"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "CASIER-004",
+      "question": "Une ancienne condamnation reste-t-elle toujours sur mon extrait ?",
+      "reponse": "Pas nécessairement. Certaines condamnations légères disparaissent de l'extrait par l'effet de l'effacement automatique après un certain délai. Pour les condamnations qui ne s'effacent pas automatiquement, il faut introduire une demande de réhabilitation. Les règles dépendent du type et de la gravité de la condamnation.",
+      "reference_legale": "Code d'instruction criminelle (effacement) ; Code d'instruction criminelle, art. 621 et suivants (réhabilitation)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://justice.belgium.be/fr/themes_et_dossiers/documents/demander_des_documents/extrait_de_casier_judiciaire",
+          "intitule": "SPF Justice — Effacement et réhabilitation"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    }
+  ]
+}

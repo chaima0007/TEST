@@ -1,0 +1,77 @@
+{
+  "module": "loi_breyne",
+  "titre": "Achat sur plan / clé-sur-porte (loi Breyne)",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 9 juillet 1971 réglementant la construction d'habitations et la vente d'habitations à construire ou en voie de construction (loi Breyne)",
+    "portee": "Citoyens en Belgique",
+    "source_officielle": "https://economie.fgov.be/fr/themes/protection-des-consommateurs/faire-construire/loi-breyne"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information juridique générale, à jour à la date de revue. Avant de signer un achat sur plan, faites relire le contrat par un notaire ou un avocat.",
+  "faits": [
+    {
+      "id": "BREYNE-001",
+      "question": "Qu'est-ce que la loi Breyne et qui protège-t-elle ?",
+      "reponse": "La loi Breyne protège l'acheteur ou le maître d'ouvrage qui achète/fait construire un logement encore à construire ou en cours de construction (vente sur plan, « clé sur porte »). Elle s'applique dès qu'un paiement est demandé avant l'achèvement et impose des règles strictes au vendeur/entrepreneur.",
+      "reference_legale": "Loi du 9 juillet 1971 (loi Breyne) — champ d'application",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://economie.fgov.be/fr/themes/protection-des-consommateurs/faire-construire/loi-breyne",
+          "intitule": "SPF Economie — Loi Breyne"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/loi/1971/07/09/1971070904/justel",
+          "intitule": "Justel — Loi du 9 juillet 1971"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "BREYNE-002",
+      "question": "Quelles protections concrètes pour l'acheteur ?",
+      "reponse": "La loi encadre notamment : les paiements échelonnés selon l'avancement réel des travaux (et un acompte limité à la signature), une garantie d'achèvement (ou de remboursement), des mentions obligatoires dans le contrat, et la réception des travaux en deux phases (provisoire et définitive). Le transfert de risques est aussi réglé.",
+      "reference_legale": "Loi du 9 juillet 1971 (paiements par tranches, garantie d'achèvement, réception)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://economie.fgov.be/fr/themes/protection-des-consommateurs/faire-construire/loi-breyne",
+          "intitule": "SPF Economie — Garanties de la loi Breyne"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "BREYNE-003",
+      "question": "Que faire en cas de problème avec le promoteur ?",
+      "reponse": "Les clauses contraires à la loi Breyne (au détriment de l'acheteur) sont nulles : vous pouvez les contester. En cas de manquement, faites-vous conseiller (notaire, avocat) avant de payer une tranche non justifiée par l'avancement, et conservez tous les documents (contrat, états d'avancement, procès-verbaux de réception).",
+      "reference_legale": "Loi du 9 juillet 1971 (nullité des clauses contraires, protection d'ordre public)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/loi/1971/07/09/1971070904/justel",
+          "intitule": "Justel — Loi du 9 juillet 1971 (dispositions impératives)"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "BREYNE-RECEPTION-001",
+      "question": "Comment fonctionne la réception des travaux dans un achat sur plan ?",
+      "reponse": "La loi Breyne impose une réception en deux temps, qui vous protège. La réception provisoire constate que les travaux sont terminés et conformes : c'est le moment de lister par écrit les défauts visibles à corriger (réserves). La réception définitive intervient en principe au moins un an après la provisoire : elle vérifie que les corrections ont été faites et que le bâtiment tient dans le temps ; c'est aussi le point de départ de la responsabilité décennale (10 ans pour les vices graves de stabilité). Conseils : ne signez pas une réception qui vaudrait emménagement automatique, retenez la dernière tranche de paiement tant que des défauts importants subsistent, et faites-vous éventuellement assister par un architecte. Ne confondez pas réception provisoire et définitive : leurs effets sont très différents.",
+      "reference_legale": "Loi du 9 juillet 1971 (loi Breyne) — réception provisoire et définitive ; Code civil — responsabilité décennale (art. 1792)",
+      "contacts": [
+        {"nom": "Architecte / avocat en construction", "pour": "assistance à la réception et aux réserves"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://economie.fgov.be/fr/themes/protection-des-consommateurs/faire-construire/loi-breyne", "intitule": "SPF Économie — Loi Breyne (réception)"},
+        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/loi/1971/07/09/1971070904/justel", "intitule": "Justel — Loi du 9 juillet 1971"}
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

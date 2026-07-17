@@ -1,0 +1,95 @@
+openapi: "3.1.0"
+info:
+  title: Caelum Knowledge Base API
+  version: "1.0.0"
+  description: Read-only API pour agents internes
+
+servers:
+  - url: https://kb.caelumpartners.eu/v1
+
+security:
+  - BearerAuth: []
+
+paths:
+  /kb/search:
+    get:
+      summary: Recherche sémantique
+      parameters:
+        - name: q
+          in: query
+          required: true
+          schema: { type: string }
+          example: "CCO automobile LkSG compliance"
+        - name: type
+          in: query
+          schema:
+            type: string
+            enum: [company, persona, playbook, all]
+          default: all
+        - name: limit
+          in: query
+          schema: { type: integer, default: 5, maximum: 20 }
+        - name: min_score
+          in: query
+          schema: { type: number, default: 0.7 }
+      responses:
+        "200":
+          description: Résultats
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  results:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id: { type: string }
+                        type: { type: string }
+                        score: { type: number }
+                        excerpt: { type: string }
+                        path: { type: string }
+                  total: { type: integer }
+                  query_ms: { type: number }
+
+  /kb/companies/{slug}:
+    get:
+      summary: Fiche entreprise
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: Fiche complète
+        "404":
+          description: Non trouvée
+
+  /kb/personas/{slug}:
+    get:
+      summary: Persona
+      parameters:
+        - name: slug
+          in: path
+          required: true
+          schema: { type: string }
+      responses:
+        "200":
+          description: Profil persona
+
+  /kb/health:
+    get:
+      summary: Health check
+      security: []
+      responses:
+        "200":
+          description: OK
+
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: "Token via env KB_TOKEN"

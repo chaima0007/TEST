@@ -1,0 +1,67 @@
+{
+  "objet": "Registre des anomalies — documentations/données obsolètes ou contradictoires (P-DOC-OBSOLETE). Capturer, signaler, dépasser par la source officielle, sans jamais stopper l'agent.",
+  "revue": "2026-06-29",
+  "regle_or": "Une donnée obsolète ne stoppe JAMAIS un agent : elle est capturée, signalée, et dépassée par la preuve juridique/technique officielle. Seule la SORTIE affectée est gelée, pas la mission.",
+  "anomalies": [
+    {
+      "id": "ANO-001",
+      "date_constat": "2026-06-29",
+      "source_litigieuse": "Page de synthèse Commission CSDDD (mention 3 %) vs croyance interne « 5 % » ; risque de citer 5 % comme valeur en vigueur",
+      "nature": "obsolescence/contradiction temporelle",
+      "ecart": "Le plafond des sanctions CSDDD « au moins 5 % » (Directive 2024/1760) a été ABAISSÉ à 3 % par l'Omnibus I (Directive (UE) 2026/470, en vigueur 18/03/2026). Citer 5 % comme actuel = obsolète.",
+      "source_canonique": "EUR-Lex (Directive (UE) 2024/1760, art. 27) + Commission européenne",
+      "action": "Données alignées sur 3 % (en vigueur) avec le 5 % marqué comme ancien ; garde norm_hierarchy ajoutée.",
+      "statut": "resolu"
+    },
+    {
+      "id": "ANO-002",
+      "date_constat": "2026-06-29",
+      "source_litigieuse": "/ai-act — échéance unique « 2 août 2026 » sans distinguer l'art. 50(2)",
+      "nature": "imprécision/échéance incomplète",
+      "ecart": "Manquait la distinction : transparence générale (art. 50) au 02/08/2026 vs marquage machine-readable (art. 50(2), fournisseurs, systèmes pré-existants) au 02/12/2026 (Digital Omnibus).",
+      "source_canonique": "EUR-Lex (Règlement (UE) 2024/1689) + Commission / Office européen pour l'IA (digital-strategy.ec.europa.eu)",
+      "action": "/ai-act corrigée (échéances 02/08/2026, 02/12/2026, 02/02/2027).",
+      "statut": "resolu"
+    },
+    {
+      "id": "ANO-003",
+      "date_constat": "2026-06-29",
+      "source_litigieuse": "Fiches citoyennes ajoutées cette session via Exa (localisation de sources officielles)",
+      "nature": "provenance non conforme P-NO-MOTEUR-GENERALISTE",
+      "ecart": "Données localisées via moteur généraliste Exa; les références légales pointent vers des instruments officiels (AR, lois) mais la consultation directe du portail canonique n'a pas pu être faite (proxy 403). À re-vérifier sur EUR-Lex/fgov.be/régional dès canal sanctionné.",
+      "source_canonique": "EUR-Lex + portails .fgov.be / régionaux + Moniteur belge",
+      "action": "RÉSOLU (partiel) : 8 fiches re-vérifiées canoniquement par fetch d URL officielles le 2026-06-29 (pension_alimentaire_secal, changement_mention_sexe, regroupement_familial, procreation_medicalement_assistee, jury_assises, conge_deuil, reclassement_professionnel, medecine_travail). Sous-issue notaire.be -> ANO-006. funerailles_sepulture = domaine wallon officiel (PDF non re-lu en profondeur).",
+      "statut": "resolu"
+    },
+    {
+      "id": "ANO-004",
+      "date_constat": "2026-06-29",
+      "source_litigieuse": "EUR-Lex CELEX:32011L0098 (directive permis unique) — citée comme base alors que périmée",
+      "nature": "obsolescence temporelle (abrogation)",
+      "ecart": "Directive 2011/98/UE n'est PLUS en vigueur (fin validité 21/05/2026, abrogée par 32024L1233). Base UE actuelle = Directive (UE) 2024/1233 du 24/04/2024 (refonte, in force). Piégé via canal de résilience EUR-Lex AVANT toute publication.",
+      "source_canonique": "EUR-Lex CELEX:32024L1233 (in force)",
+      "action": "RÉSOLU : la fiche permis_unique cite désormais la Directive (UE) 2024/1233 (en vigueur) comme base ; la directive périmée 2011/98 n'est citée nulle part. Watchlist temporel armée (PERMIS-UNIQUE-DIR) pour bloquer toute citation future de 2011/98 comme en vigueur.",
+      "statut": "resolu"
+    },
+    {
+      "id": "ANO-005",
+      "date_constat": "2026-06-29",
+      "source_litigieuse": "phare.irisnet.be — ancien site du Service PHARE (Bruxelles)",
+      "nature": "obsolescence (site fermé/migré)",
+      "ecart": "Le site phare.irisnet.be est FERMÉ et redirige: l'information handicap RBC est désormais sur handicap.brussels (aides/services) et sur le site de la COCOF (compétences PHARE, formulaires). Ne pas citer phare.irisnet.be comme source officielle en vigueur.",
+      "source_canonique": "handicap.brussels + site COCOF",
+      "action": "RÉSOLU : la fiche handicap (HAND-REGIONAL-001) cite handicap.brussels (source actuelle) et le Service PHARE/COCOF ; phare.irisnet.be n est plus cité comme source en vigueur (uniquement domaine officiel en tier1). Migration prise en compte.",
+      "statut": "resolu"
+    },
+    {
+      "id": "ANO-006",
+      "date_constat": "2026-06-29",
+      "source_litigieuse": "notaire.be typé 'officiel' dans 8 fiches (achat_logement, changement_regime_matrimonial, divorce, donation, emancipation, saisie_immobiliere, testament, tutelle_mineurs)",
+      "nature": "qualification de source (fédération pro vs législateur)",
+      "ecart": "notaire.be (Fédération du Notariat) n'est pas le législateur: au sens du §16, la source officielle doit être le texte canonique (Code civil sur ejustice / SPF Justice). Requalifier notaire.be en 'secondaire' et ajouter la source canonique (à vérifier sur ejustice: régimes matrimoniaux loi 22/07/2018; émancipation Code civil) avant de retirer notaire.be de tier1.",
+      "source_canonique": "ejustice.just.fgov.be (Code civil) + justice.belgium.be",
+      "action": "RÉSOLU : notaire.be requalifié 'officiel'->'secondaire' dans TOUTES les fiches et RETIRÉ de tier1. Bases légales repointées vers sources officielles réelles (SPF Justice, belgium.be, finances). Pour changement_regime_matrimonial/emancipation/tutelle_mineurs (sans autre source officielle), ajout de justice.belgium.be (SPF Justice, autorité compétente). Reste à enrichir: articles précis du Code civil sur ejustice quand vérifiables (non bloquant).",
+      "statut": "resolu"
+    }
+  ]
+}

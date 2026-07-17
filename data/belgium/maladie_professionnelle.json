@@ -1,0 +1,74 @@
+{
+  "module": "maladie_professionnelle",
+  "titre": "Maladie professionnelle",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Lois relatives à la prévention des maladies professionnelles et à la réparation des dommages résultant de celles-ci, coordonnées le 3 juin 1970",
+    "portee": "Citoyens en Belgique",
+    "source_officielle": "https://www.fedris.be/fr/themes/demande-et-procedure-mp/introduire-une-demande"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information juridique générale, à jour à la date de revue. Pour votre dossier, contactez Fedris ou votre médecin.",
+  "faits": [
+    {
+      "id": "MALPRO-001",
+      "question": "Qu'est-ce qu'une maladie professionnelle et qui l'indemnise ?",
+      "reponse": "Une maladie professionnelle est une maladie causée par l'exercice de votre travail (exposition à un risque professionnel). En Belgique, c'est Fedris (Agence fédérale des risques professionnels) qui examine la demande et indemnise les victimes du secteur privé et des administrations provinciales et locales.",
+      "reference_legale": "Loi du 3 juin 1970 relative à la réparation des maladies professionnelles (lois coordonnées)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.fedris.be/fr/themes/demande-et-procedure-mp/introduire-une-demande",
+          "intitule": "Fedris — Maladies professionnelles"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "MALPRO-002",
+      "question": "Comment introduire une demande de reconnaissance ?",
+      "reponse": "Vous (ou vos ayants droit) introduisez une demande auprès de Fedris, de préférence par voie électronique. Pour le secteur privé : le formulaire 501 (demande d'indemnisation) que vous complétez, et le formulaire 503 (certificat médical) à faire compléter par votre médecin. Joignez les pièces médicales justificatives.",
+      "reference_legale": "Loi du 3 juin 1970 relative à la réparation des maladies professionnelles (lois coordonnées) — procédure de demande auprès de Fedris",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.fedris.be/fr/themes/demande-et-procedure-mp/introduire-une-demande",
+          "intitule": "Fedris — Introduire une demande"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "MALPRO-003",
+      "question": "Que couvre l'indemnisation ?",
+      "reponse": "Selon le dossier, Fedris peut indemniser l'incapacité de travail (temporaire ou permanente), intervenir dans les frais de soins de santé liés à la maladie, et indemniser les ayants droit en cas de décès. Les indemnités sont liées à l'index (adaptées à l'évolution des prix).",
+      "reference_legale": "Loi du 3 juin 1970 relative à la réparation des maladies professionnelles (lois coordonnées) — réparation des dommages",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.fedris.be/fr/themes/demande-et-procedure-mp/introduire-une-demande",
+          "intitule": "Fedris — Indemnisation"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "MALPRO-RECONNAISSANCE-RECOURS-001",
+      "question": "Comment une maladie est-elle reconnue, et que faire si Fedris refuse ?",
+      "reponse": "Il existe deux voies de reconnaissance. Le « système de liste » : si votre maladie figure sur la liste officielle des maladies professionnelles et que vous avez été exposé au risque correspondant, le lien avec le travail est présumé (c'est plus simple à faire reconnaître). Le « système ouvert » : pour une maladie hors liste, vous pouvez quand même être indemnisé, mais vous devez prouver le lien direct entre la maladie et votre exposition professionnelle. Si Fedris refuse votre demande ou fixe un taux d'incapacité que vous contestez, vous pouvez introduire un recours devant le tribunal du travail (la procédure est gratuite en frais de rôle, et l'aide juridique est possible). Conservez tous les éléments médicaux et la preuve de votre exposition.",
+      "reference_legale": "Loi du 3 juin 1970 (lois coordonnées) relative à la réparation des maladies professionnelles (système de liste et système ouvert ; recours devant le tribunal du travail)",
+      "alerte_delai": "Un recours contre une décision de Fedris se fait devant le tribunal du travail dans le délai indiqué : ne tardez pas.",
+      "contacts": [
+        {"nom": "Fedris", "lien": "https://www.fedris.be/fr", "pour": "demande et reconnaissance"},
+        {"nom": "Tribunal du travail / Bureau d'aide juridique", "pour": "contester un refus ou un taux"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.fedris.be/fr/themes/demande-et-procedure-mp/introduire-une-demande", "intitule": "Fedris — Reconnaissance et procédure"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/justice", "intitule": "Belgium.be — Recours et aide juridique"}
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

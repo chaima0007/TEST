@@ -1,0 +1,56 @@
+{
+  "objet": "Hiérarchie des normes + répartition des compétences (Belgique) + liste de surveillance des conflits temporels/territoriaux. Lu par scripts/norm_hierarchy_guard.py.",
+  "revue": "2026-06-29",
+  "hierarchie": [
+    "1. Droit de l'Union européenne (règlements directement applicables ; directives à transposer) — primauté (EUR-Lex).",
+    "2. Législation fédérale belge (Constitution, lois, AR) pour les compétences fédérales.",
+    "3. Réglementations régionales/communautaires (Wallonie, Bruxelles, Flandre, Communautés) pour les compétences régionalisées."
+  ],
+  "regle": "En cas de CONFLIT temporel (texte périmé vs en vigueur) ou TERRITORIAL (compétence fédérale traitée comme régionale ou inversement) → GEL immédiat des décisions + audit croisé sur sources officielles (EUR-Lex / Commission / AI Office ; portails fédéraux/régionaux) avant toute poursuite.",
+  "competences_federales": [
+    "TVA",
+    "impôt des sociétés",
+    "impôt des personnes physiques",
+    "précompte professionnel",
+    "droit comptable (Code de droit économique livre III, CNC/CBN)",
+    "RGPD (cadre UE/fédéral)",
+    "droit du travail (contrats, congés, petit chômage)",
+    "sécurité sociale",
+    "droit pénal",
+    "état civil (Code civil)",
+    "séjour des étrangers (loi 15/12/1980)"
+  ],
+  "competences_regionales": [
+    "droits d'enregistrement (achat immobilier)",
+    "droits de succession et donation",
+    "précompte immobilier",
+    "taxe de circulation / mise en circulation",
+    "aides aux entreprises (chèques Wallonie, kmo-portefeuille Flandre, primes Bruxelles)",
+    "permis d'environnement / d'urbanisme",
+    "logement (bail régionalisé)",
+    "emploi régionalisé (Forem/VDAB/Actiris)"
+  ],
+  "watchlist_temporel": [
+    {
+      "id": "CSDDD-SANCTION",
+      "domaine": "CSDDD",
+      "motif_perime": "5 %",
+      "motif_actuel": "3 %",
+      "note": "L'Omnibus I (Directive (UE) 2026/470, en vigueur 18/03/2026) a abaissé le plafond de l'art. 27(4) de « au moins 5 % » à 3 %. Citer 5 % comme valeur EN VIGUEUR = conflit temporel."
+    },
+    {
+      "id": "PERMIS-UNIQUE-DIR",
+      "domaine": "Permis unique (travailleur pays tiers)",
+      "motif_perime": "Directive 2011/98/UE",
+      "motif_actuel": "Directive (UE) 2024/1233 (refonte)",
+      "note": "La directive permis unique 2011/98/UE n'est PLUS en vigueur (fin de validité 21/05/2026, abrogée par 32024L1233). La base UE actuelle est la Directive (UE) 2024/1233 du 24/04/2024 (refonte, in force). Citer 2011/98 comme en vigueur = conflit temporel. Source canonique : EUR-Lex CELEX:32024L1233."
+    }
+  ],
+  "watchlist_territorial": [
+    {
+      "id": "COMPTA-TVA-FEDERAL",
+      "motif_interdit": "(tva|comptabilit[ée]|impôt des sociétés).{0,40}(régional|par région|wallonne|bruxelloise|flamande)",
+      "note": "TVA/comptabilité/ISoc sont FÉDÉRALES — ne pas les présenter comme régionales."
+    }
+  ]
+}

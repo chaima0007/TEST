@@ -1,0 +1,70 @@
+{
+  "id": "inditex",
+  "slug": "inditex",
+  "name": "Inditex SA",
+  "country": "Spain",
+  "city": "Arteixo",
+  "sector": "Fashion/Textile",
+  "size": {
+    "revenue_bn_eur": 35,
+    "employees": 165000,
+    "index": "IBEX35"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": false,
+    "swiss_hrdd": false,
+    "sfdr": false,
+    "esg_rating": {
+      "msci": "BB",
+      "sustainalytics": "18.9 Low Risk",
+      "target": "BBB"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "Chief Sustainability Officer / Director of External Relations",
+    "team": "Sustainability Department, Supply Chain & Compliance Team",
+    "location": "Arteixo (Galice, siège), Madrid (relations institutionnelles), Amsterdam (opérations nord-européennes)",
+    "process": "Approbation par le conseil d'administration pour les politiques majeures, revue annuelle des fournisseurs avec scoring social, processus d'escalade pour incidents fournisseurs"
+  },
+  "pain_points": [
+    "Modèle fast fashion : délais de production ultra-courts (2-3 semaines) incompatibles avec des audits sociaux rigoureux chez les 1 800+ fournisseurs actifs",
+    "Traçabilité textile multimatiéraux : coton (Inde, Pakistan, Turkménistan), viscose (Indonésie), polyester (Chine) — risques cumulatifs travail forcé",
+    "Pressions sur les prix fournisseurs incompatibles avec les obligations de salaire décent dans les pays de production (Bangladesh, Cambodge, Maroc)",
+    "Règlement européen sur la durabilité des produits textiles (ESPR) : exigences de traçabilité matière qui révèlent les angles morts de la supply chain",
+    "Gestion des sous-traitants non déclarés (shadow factories) : incidents récurrents dans les filières Bangladesh et Cambodge",
+    "Conformité CSDDD pour les filières agricoles en amont (coton OGM Inde, risques pesticides et droits des agriculteurs)"
+  ],
+  "observed_failures": [
+    "Audit Bangladesh 2023 (rapport CCC - Clean Clothes Campaign) : heures supplémentaires forcées et salaires impayés chez 3 fournisseurs Zara identifiés",
+    "Turkménistan cotton : Inditex figurait dans la liste des marques sans politique d'exclusion vérifiable du coton turkmène jusqu'en 2022 (rapport Cotton Campaign)",
+    "Incendie usine Maroc 2021 (sous-traitant Tanger) : conditions de sécurité non conformes, 2 travailleurs blessés, couverture médiatique internationale"
+  ],
+  "signals_of_risk": [
+    "Modèle économique basé sur la vitesse et le volume crée une pression structurelle sur les conditions de travail des fournisseurs",
+    "Exposition au marché américain avec risque UFLPA sur les matières textiles chinoises",
+    "Note MSCI BB inférieure aux attentes pour une entreprise de cette taille — signal de retard dans la gestion des risques DDH"
+  ],
+  "signals_of_trust": [
+    "Programme Join Life : label matières durables avec critères sociaux et environnementaux vérifiés par des tiers",
+    "Transparence sur la liste des fournisseurs Tier 1 publiée depuis 2016 (pionnière dans le secteur)",
+    "Objectif 100% coton durable (organique, recyclé ou Better Cotton) d'ici 2025, en cours de vérification",
+    "Collaboration avec Fair Wear Foundation pour l'amélioration des conditions de travail en Asie du Sud"
+  ],
+  "recommended_actions": [
+    "Proposer une solution d'audit dynamique et continu (vs. audits annuels statiques) adaptée au rythme de la fast fashion",
+    "Démontrer comment notre outil de traçabilité matière répond aux exigences ESPR et CSDDD simultanément pour les textiles",
+    "Présenter un module de détection des sous-traitants non déclarés via analyse de données et intelligence terrain",
+    "Organiser une session avec l'équipe Supply Chain Compliance autour du cas Bangladesh pour identifier les leviers d'amélioration"
+  ],
+  "local_tone": "Ton direct et concret, adapté à la culture galicienne d'entreprise : pragmatique, orientée résultats, peu formaliste dans la communication. Zara/Inditex est très sensible à sa réputation médiatique — aborder les risques comme des opportunités de différenciation concurrentielle.",
+  "cultural_notes": "Inditex a une culture d'entreprise très discrète et centralisée autour de la famille Ortega. Les équipes sont loyales mais résistent aux changements imposés de l'extérieur. Favoriser les approches collaboratives qui respectent l'autonomie interne. L'espagnol est la langue de travail au siège — un interlocuteur hispanophone est un avantage.",
+  "priority": 5,
+  "last_updated": "2026-06-21",
+  "source_links": [
+    "https://www.inditex.com/en/sustainability/our-model/supply-chain",
+    "https://cleanclothes.org/news/2023/zara-supplier-audit-failures",
+    "https://cottoncampaign.org/brands/inditex/"
+  ]
+}

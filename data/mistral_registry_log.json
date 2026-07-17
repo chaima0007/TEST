@@ -1,0 +1,16 @@
+[
+  {
+    "timestamp": "2026-06-23T01:33:49.114773+00:00",
+    "action": "verify",
+    "target": "all",
+    "result": "3 adoptés",
+    "seal_id": "SEAL-927AF2CEE9DDFD98"
+  },
+  {
+    "timestamp": "2026-06-23T01:33:49.165766+00:00",
+    "action": "export",
+    "target": "catalog",
+    "result": "data/mistral_catalog.json",
+    "seal_id": "SEAL-927AF2CEE9DDFD98"
+  }
+]

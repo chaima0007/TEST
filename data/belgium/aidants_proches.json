@@ -1,0 +1,103 @@
+{
+  "module": "aidants_proches",
+  "titre": "Aidants proches — reconnaissance, congé, droits",
+  "domaine": "Aidants proches",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Reconnaissance de l'aidant proche et octroi de droits sociaux (compétence fédérale, SPF Sécurité sociale)",
+    "portee": "Personnes qui aident de manière régulière un proche en situation de dépendance (maladie, handicap, âge)",
+    "source_officielle": "https://socialsecurity.belgium.be/fr/elaboration-de-la-politique-sociale/aidant-proche"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Ne remplace pas un conseil individualisé. Pour une demande, contactez votre mutualité, qui examine votre situation.",
+  "faits": [
+    {
+      "id": "AID-RECONNAISSANCE-001",
+      "question": "Qu'est-ce qu'un aidant proche et comment être reconnu ?",
+      "reponse": "L'aidant proche est la personne qui apporte, gratuitement et de façon régulière, un soutien et une aide à un proche en situation de dépendance, avec le concours d'au moins un professionnel de la santé. Il existe deux reconnaissances : une reconnaissance simple (sans droits sociaux) et une reconnaissance spécifique ouvrant des droits sociaux (notamment le congé). Conditions générales : aide gratuite et régulière, relation de proximité, personne réellement dépendante, résider en Belgique et être inscrit au registre. La demande passe par la mutualité.",
+      "reference_legale": "Loi relative à la reconnaissance de l'aidant proche et à l'octroi de droits sociaux",
+      "contacts": [
+        {
+          "nom": "Votre mutualité",
+          "pour": "introduire la demande de reconnaissance"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://socialsecurity.belgium.be/fr/elaboration-de-la-politique-sociale/aidant-proche",
+          "intitule": "SPF Sécurité sociale — Aidant proche"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://www.droitsquotidiens.be/fr/question/comment-obtenir-la-reconnaissance-daidant-proche",
+          "intitule": "Droits Quotidiens — Reconnaissance d'aidant proche"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "AID-CONGE-001",
+      "question": "Ai-je droit à un congé en tant qu'aidant proche ?",
+      "reponse": "Oui, si vous avez la reconnaissance spécifique ouvrant des droits sociaux. Pour celle-ci, vous devez consacrer au moins 50 heures par mois (ou 600 heures par an) à aider la personne. Le travailleur reconnu peut alors prendre un congé pour aidant proche, assorti d'une allocation : en principe jusqu'à 3 mois à temps plein (ou 6 mois à temps partiel) par personne aidée. Renseignez-vous tôt, car les conditions et la procédure passent par la mutualité et l'employeur.",
+      "reference_legale": "Loi du 17 mai 2019 reconnaissant les aidants proches ; arrêté royal relatif au congé pour aidants proches (interruption de carrière)",
+      "contacts": [
+        {
+          "nom": "Votre mutualité",
+          "pour": "reconnaissance avec droits sociaux"
+        },
+        {
+          "nom": "ONEM",
+          "lien": "https://www.onem.be",
+          "pour": "allocation d'interruption (congé)"
+        }
+      ],
+      "alerte_delai": "Anticipez : la reconnaissance avec droits sociaux et le congé demandent des démarches (mutualité + employeur). N'attendez pas le dernier moment.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://socialsecurity.belgium.be/fr/elaboration-de-la-politique-sociale/aidant-proche",
+          "intitule": "SPF Sécurité sociale — Aidant proche"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://www.droitsquotidiens.be/fr/question/ai-je-droit-un-conge-en-tant-quaidant-proche",
+          "intitule": "Droits Quotidiens — Congé pour aidant proche"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "AID-MULTI-001",
+      "question": "Peut-on être plusieurs à aider la même personne, ou aider plusieurs proches ?",
+      "reponse": "Oui dans les deux cas. Une même personne en situation de dépendance peut avoir plusieurs aidants proches reconnus (par exemple un conjoint et un enfant). Et une même personne peut être reconnue comme aidant proche de plusieurs personnes dépendantes. Le droit au congé pour aidant proche se compte par personne aidée : si vous aidez deux personnes différentes, vous pouvez en principe ouvrir un crédit de congé pour chacune. La personne aidée ne doit pas obligatoirement être un membre de votre famille : ce qui compte, c'est une relation de proximité durable et une situation de dépendance réelle.",
+      "reference_legale": "Loi du 17 mai 2019 reconnaissant les aidants proches et octroyant des droits sociaux à l'aidant proche",
+      "contacts": [
+        {"nom": "Votre mutualité", "pour": "reconnaissance pour chaque personne aidée"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://socialsecurity.belgium.be/fr/elaboration-de-la-politique-sociale/aidant-proche", "intitule": "SPF Sécurité sociale — Aidant proche (reconnaissance)"},
+        {"type": "officiel", "url": "https://www.onem.be", "intitule": "ONEM — Congé pour aidants proches"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "AID-CONGE-DEMARCHE-001",
+      "question": "Concrètement, comment poser mon congé pour aidant proche ?",
+      "reponse": "La démarche se fait en deux temps. D'abord, obtenez la reconnaissance spécifique (ouvrant des droits sociaux) auprès de votre mutualité. Ensuite, pour le congé lui-même : prévenez votre employeur dans les délais prévus et introduisez votre demande d'allocation d'interruption auprès de l'ONEM (formulaire dédié, accompagné de l'attestation de reconnaissance). Le congé peut être pris à temps plein ou à temps partiel selon votre situation. Comme chaque étape prend du temps (mutualité, employeur, ONEM), anticipez plusieurs semaines avant la date souhaitée.",
+      "reference_legale": "Arrêté royal relatif au congé pour aidants proches (interruption de carrière) ; loi du 17 mai 2019 reconnaissant les aidants proches",
+      "alerte_delai": "Comptez plusieurs semaines entre la reconnaissance (mutualité) et le début effectif du congé (employeur + ONEM).",
+      "contacts": [
+        {"nom": "Votre employeur", "pour": "annonce du congé dans les délais"},
+        {"nom": "ONEM / organisme de paiement", "lien": "https://www.onem.be", "pour": "demande d'allocation d'interruption"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.onem.be", "intitule": "ONEM — Demande de congé pour aidants proches"},
+        {"type": "officiel", "url": "https://socialsecurity.belgium.be/fr/elaboration-de-la-politique-sociale/aidant-proche", "intitule": "SPF Sécurité sociale — Aidant proche"}
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

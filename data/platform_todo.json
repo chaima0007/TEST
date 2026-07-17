@@ -1,0 +1,48 @@
+{
+  "genere_le": "2026-07-17T16:03:11.417022+00:00",
+  "total": 4,
+  "par_priorite": {
+    "haute": 0,
+    "moyenne": 3,
+    "basse": 1
+  },
+  "taches": [
+    {
+      "id": "T01",
+      "titre": "Déploiement · Webhook leads non configuré",
+      "categorie": "état",
+      "priorite": "moyenne",
+      "action_suggeree": "Configurer la variable d'env LEADS_WEBHOOK_URL (réception des leads).",
+      "humain": true,
+      "organe": "scénario"
+    },
+    {
+      "id": "T02",
+      "titre": "Données · Identité légale Caelum",
+      "categorie": "état",
+      "priorite": "moyenne",
+      "action_suggeree": "Compléter data/identite.ts (dénomination, BCE, TVA, forme juridique).",
+      "humain": true,
+      "organe": "scénario"
+    },
+    {
+      "id": "T03",
+      "titre": "Plan stratégique · Avancement",
+      "categorie": "état",
+      "priorite": "moyenne",
+      "action_suggeree": "Avancer le plan : Valider la grille de prix grands comptes (proposition prête : A/B/C) (avant le 2026-07-02)",
+      "humain": true,
+      "organe": "scénario"
+    },
+    {
+      "id": "T04",
+      "titre": "Fragilité : Sources · Panne large",
+      "categorie": "résilience",
+      "priorite": "basse",
+      "action_suggeree": "Exécuter le capteur en réseau ouvert + planifier source_change_detector (cron).",
+      "humain": false,
+      "organe": "stress"
+    }
+  ],
+  "note": "Soins auto-générés à partir des organes. La plateforme propose ; l'humain décide et exécute."
+}

@@ -1,0 +1,79 @@
+{
+  "module": "malfacons_travaux",
+  "titre": "Malfaçons & garantie décennale (travaux)",
+  "domaine": "Construction & travaux",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code civil — responsabilité décennale (art. 1792 et 2270) ; loi du 31 mai 2017 sur l'assurance obligatoire de la responsabilité décennale",
+    "portee": "Vos recours en cas de défauts après des travaux de construction/rénovation",
+    "source_officielle": "https://www.belgium.be/fr/logement/construire_et_renover"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. En cas de litige important, un avocat en droit de la construction ou un expert peut vous aider.",
+  "faits": [
+    {
+      "id": "MALF-RECEPTION-001",
+      "question": "Des défauts après mes travaux : que faire selon le moment ?",
+      "reponse": "Tout se joue autour de la réception (le moment où vous acceptez les travaux). Les vices APPARENTS (visibles à un examen normal) doivent être signalés AU PLUS TARD à la réception : émettez des réserves écrites, sinon ils sont réputés acceptés. Les vices CACHÉS (non décelables à la réception) peuvent être invoqués ensuite, dans un délai raisonnable après leur découverte. Pour les défauts GRAVES qui menacent la solidité du bâtiment, la responsabilité décennale s'applique pendant 10 ans. Signalez toujours par écrit (recommandé) et gardez les preuves (photos, devis, échanges).",
+      "reference_legale": "Code civil — réception des travaux et vices ; responsabilité décennale (art. 1792 et 2270)",
+      "alerte_delai": "Signalez les vices apparents AVANT/à la réception (réserves écrites) ; un défaut grave relève de la garantie décennale (10 ans).",
+      "contacts": [
+        {"nom": "Entrepreneur / architecte", "pour": "mise en demeure écrite de réparer"},
+        {"nom": "Avocat en droit de la construction / expert", "pour": "litige important, expertise"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/logement/construire_et_renover", "intitule": "Belgium.be — Construire et rénover"},
+        {"type": "secondaire", "url": "https://www.droitbelge.be/fiches_detail.asp?idcat=9&id=680", "intitule": "Droitbelge.be — Responsabilité de l'entrepreneur"}
+      ],
+      "date_verification": "2026-06-28"
+    },
+    {
+      "id": "MALF-ASSURANCE-001",
+      "question": "L'entrepreneur doit-il être assuré, et est-ce utile pour moi ?",
+      "reponse": "Oui. Depuis la loi du 31 mai 2017, les entrepreneurs, architectes et autres prestataires de la construction doivent souscrire une assurance couvrant leur responsabilité décennale (pour les travaux relatifs à l'habitation). C'est une vraie protection pour vous : si l'entreprise fait faillite, l'assurance peut intervenir pour les défauts graves couverts. Avant de signer un chantier, demandez l'attestation d'assurance décennale de l'entrepreneur — c'est un bon réflexe et un signe de sérieux.",
+      "reference_legale": "Loi du 31 mai 2017 relative à l'assurance obligatoire de la responsabilité civile décennale (construction)",
+      "contacts": [
+        {"nom": "Entrepreneur / architecte", "pour": "demander l'attestation d'assurance décennale"},
+        {"nom": "Son assureur décennale", "pour": "intervention en cas de défaut grave couvert"}
+      ],
+      "sources": [
+        {"type": "secondaire", "url": "https://www.federale.be/fr/construction/vos-chantiers/nouvelle-loi---responsabilit%C3%A9-d%C3%A9cennale", "intitule": "Fédérale Assurance — Loi responsabilité décennale"},
+        {"type": "officiel", "url": "https://www.belgium.be/fr/logement/construire_et_renover", "intitule": "Belgium.be — Construire et rénover"}
+      ],
+      "date_verification": "2026-06-28"
+    },
+    {
+      "id": "MALF-DECENNALE-PORTEE-001",
+      "question": "Que couvre exactement la garantie décennale, et qui est responsable ?",
+      "reponse": "La responsabilité décennale couvre les vices GRAVES : ceux qui affectent la solidité ou la stabilité du bâtiment, ou qui le rendent impropre à sa destination (par exemple de gros problèmes de structure, d'étanchéité majeure, de fondations). Elle ne concerne pas les petits défauts esthétiques. Elle pèse, en principe solidairement, sur l'entrepreneur ET l'architecte, chacun pour sa part de responsabilité. Le délai est de 10 ans à compter de la réception (agréation) des travaux. Point important : cette garantie est d'ordre public, on ne peut donc pas y renoncer ni la réduire par une clause du contrat. Pour les défauts moins graves, ce sont les règles des vices cachés véniels ou des vices apparents qui s'appliquent.",
+      "reference_legale": "Code civil — responsabilité décennale de l'entrepreneur et de l'architecte (art. 1792 et 2270)",
+      "contacts": [
+        {"nom": "Entrepreneur et architecte", "pour": "mise en cause de la responsabilité décennale"},
+        {"nom": "Expert / avocat en droit de la construction", "pour": "évaluer si le vice est de nature décennale"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/logement/construire_et_renover", "intitule": "Belgium.be — Construire et rénover (responsabilité décennale)"},
+        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/loi/1804/03/21/1804032154/justel", "intitule": "Ancien Code civil — responsabilité de l'entrepreneur (art. 1792)"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "MALF-RECOURS-001",
+      "question": "Mon entrepreneur refuse de réparer : quelles étapes suivre ?",
+      "reponse": "Procédez par étapes, en gardant des traces écrites. 1) Envoyez une mise en demeure par courrier recommandé décrivant précisément les défauts et demandant la réparation dans un délai raisonnable, photos à l'appui. 2) En l'absence de réaction, faites constater les défauts par un expert (expertise amiable, ou expertise judiciaire demandée au juge). 3) Si nécessaire, engagez une action en justice devant le tribunal compétent. Avant d'en arriver là, pensez aux solutions amiables : conciliation gratuite devant le juge de paix ou médiation. Surveillez les délais (notamment les 10 ans de la décennale) et, si l'entrepreneur est assuré ou en faillite, sollicitez son assureur décennale.",
+      "reference_legale": "Code civil — responsabilité contractuelle et décennale de l'entrepreneur (art. 1792 et 2270)",
+      "alerte_delai": "Agissez sans tarder : la responsabilité décennale est limitée à 10 ans après la réception, et les vices cachés véniels doivent être invoqués dans un délai raisonnable après leur découverte.",
+      "contacts": [
+        {"nom": "Entrepreneur / architecte (et leur assureur)", "pour": "mise en demeure de réparer"},
+        {"nom": "Juge de paix", "pour": "conciliation gratuite ou litige selon le montant"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/logement/construire_et_renover", "intitule": "Belgium.be — Construire et rénover (recours)"},
+        {"type": "secondaire", "url": "https://www.droitbelge.be/fiches_detail.asp?idcat=9&id=680", "intitule": "Droitbelge.be — Responsabilité de l'entrepreneur"}
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

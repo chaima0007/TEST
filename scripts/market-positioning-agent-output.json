@@ -1,0 +1,288 @@
+{
+  "agent": "market-positioning-agent",
+  "generated_at": "2026-06-22T07:38:38.126981",
+  "swot": {
+    "forces": [
+      {
+        "id": "F1",
+        "texte": "Architecture IA multi-agents (CaelumSwarm) — 42+ engines spécialisés",
+        "poids": 10
+      },
+      {
+        "id": "F2",
+        "texte": "Seule plateforme CSDDD/CS3D native sur le marché EU",
+        "poids": 9
+      },
+      {
+        "id": "F3",
+        "texte": "Couverture ultra-granulaire droits humains (50+ domaines)",
+        "poids": 9
+      },
+      {
+        "id": "F4",
+        "texte": "Stack Next.js + Python moderne, API temps réel (<200ms)",
+        "poids": 7
+      },
+      {
+        "id": "F5",
+        "texte": "Pricing accessible vs concurrents (ETI + grands groupes)",
+        "poids": 8
+      },
+      {
+        "id": "F6",
+        "texte": "Fondée en Belgique — hub UE, accès institutionnel facilité",
+        "poids": 6
+      }
+    ],
+    "faiblesses": [
+      {
+        "id": "W1",
+        "texte": "Notoriété marché encore limitée (phase early startup)",
+        "poids": 8
+      },
+      {
+        "id": "W2",
+        "texte": "Équipe commerciale à développer",
+        "poids": 7
+      },
+      {
+        "id": "W3",
+        "texte": "Base clients initiale restreinte (proof-of-concept à démontrer)",
+        "poids": 6
+      },
+      {
+        "id": "W4",
+        "texte": "Dépendance à l'écosystème cloud pour la scalabilité",
+        "poids": 4
+      },
+      {
+        "id": "W5",
+        "texte": "Pas encore de certifications ISO 27001 / SOC2",
+        "poids": 5
+      }
+    ],
+    "opportunites": [
+      {
+        "id": "O1",
+        "texte": "CSDDD obligatoire 2026-2027 pour +500 salariés EU → marché captif",
+        "poids": 10
+      },
+      {
+        "id": "O2",
+        "texte": "CSRD reporting non-financier obligatoire dès 2024 — demande exploser",
+        "poids": 9
+      },
+      {
+        "id": "O3",
+        "texte": "Fonds ESG en croissance exponentielle (+40%/an en EU)",
+        "poids": 7
+      },
+      {
+        "id": "O4",
+        "texte": "Règlement EU déforestation, minerais de conflit → nouveaux modules",
+        "poids": 7
+      },
+      {
+        "id": "O5",
+        "texte": "Cabinets d'audit Big4 cherchent des outils IA à white-labeler",
+        "poids": 8
+      },
+      {
+        "id": "O6",
+        "texte": "Expansion géographique naturelle : BE→FR→LU→NL→DE",
+        "poids": 7
+      }
+    ],
+    "menaces": [
+      {
+        "id": "T1",
+        "texte": "EcoVadis (80k clients) peut lancer module CSDDD en 6 mois",
+        "poids": 8
+      },
+      {
+        "id": "T2",
+        "texte": "Consolidation marché (M&A) — rachat de startups concurrentes",
+        "poids": 6
+      },
+      {
+        "id": "T3",
+        "texte": "Délai ou assouplissement de la transposition CSDDD dans certains États",
+        "poids": 5
+      },
+      {
+        "id": "T4",
+        "texte": "Grands éditeurs ERP (SAP, Oracle) intégrant des modules ESG natifs",
+        "poids": 7
+      },
+      {
+        "id": "T5",
+        "texte": "Risque de commoditisation des LLM → avantage IA érodable",
+        "poids": 4
+      }
+    ]
+  },
+  "swot_scores": {
+    "forces_total": 49,
+    "faiblesses_total": 30,
+    "opportunites_total": 48,
+    "menaces_total": 30,
+    "bilan_net": 37,
+    "verdict": "FAVORABLE"
+  },
+  "matrice_positionnement": [
+    {
+      "acteur": "Caelum Partners",
+      "prix_relatif": 8,
+      "sophistication_ia": 9.5,
+      "couverture_csddd": 9.8,
+      "facilite_utilisation": 7.5,
+      "est_caelum": true
+    },
+    {
+      "acteur": "EcoVadis",
+      "prix_relatif": 3,
+      "sophistication_ia": 4,
+      "couverture_csddd": 3,
+      "facilite_utilisation": 7,
+      "est_caelum": false
+    },
+    {
+      "acteur": "IntegrityNext",
+      "prix_relatif": 6,
+      "sophistication_ia": 3.5,
+      "couverture_csddd": 6,
+      "facilite_utilisation": 6.5,
+      "est_caelum": false
+    },
+    {
+      "acteur": "Sedex",
+      "prix_relatif": 8,
+      "sophistication_ia": 1.5,
+      "couverture_csddd": 2,
+      "facilite_utilisation": 5,
+      "est_caelum": false
+    },
+    {
+      "acteur": "Datamaran",
+      "prix_relatif": 2,
+      "sophistication_ia": 6,
+      "couverture_csddd": 4,
+      "facilite_utilisation": 4,
+      "est_caelum": false
+    },
+    {
+      "acteur": "Sustainalytics",
+      "prix_relatif": 1,
+      "sophistication_ia": 5,
+      "couverture_csddd": 1,
+      "facilite_utilisation": 5.5,
+      "est_caelum": false
+    },
+    {
+      "acteur": "Sourcemap",
+      "prix_relatif": 2.5,
+      "sophistication_ia": 4.5,
+      "couverture_csddd": 2.5,
+      "facilite_utilisation": 6,
+      "est_caelum": false
+    }
+  ],
+  "segments_cibles": [
+    {
+      "segment": "Grands groupes belges/français obligés CSDDD (>500 salariés)",
+      "taille_marche_eu_entreprises": 50000,
+      "pouvoir_achat_mensuel_eur": 2500,
+      "urgence_achat": "CRITIQUE",
+      "argument_principal": "Conformité légale obligatoire CSDDD 2026-2027",
+      "cycle_vente_mois": 4,
+      "score_priorite": 9.5
+    },
+    {
+      "segment": "Cabinets d'audit (Big4, Mid-tier, boutiques ESG)",
+      "taille_marche_eu_entreprises": 12000,
+      "pouvoir_achat_mensuel_eur": 4800,
+      "urgence_achat": "ÉLEVÉE",
+      "argument_principal": "White-label IA + génération de rapports CSDDD automatisée",
+      "cycle_vente_mois": 6,
+      "score_priorite": 8.7
+    },
+    {
+      "segment": "Juristes / cabinets avocats compliance & droits humains",
+      "taille_marche_eu_entreprises": 8500,
+      "pouvoir_achat_mensuel_eur": 1800,
+      "urgence_achat": "ÉLEVÉE",
+      "argument_principal": "Documentation juridique automatisée + veille réglementaire",
+      "cycle_vente_mois": 3,
+      "score_priorite": 8.2
+    },
+    {
+      "segment": "Fonds ESG / asset managers",
+      "taille_marche_eu_entreprises": 3200,
+      "pouvoir_achat_mensuel_eur": 6500,
+      "urgence_achat": "MODÉRÉE",
+      "argument_principal": "Scoring droits humains portefeuille + SFDR alignment",
+      "cycle_vente_mois": 8,
+      "score_priorite": 7.4
+    }
+  ],
+  "scenarios_gtm": [
+    {
+      "id": "A",
+      "nom": "Niche droits humains CSDDD",
+      "description": "Se positionner comme la plateforme de référence droits humains et CSDDD en EU. Marketing éducatif ciblé direction juridique et RSE des grands groupes belges/français.",
+      "cible_principale": "Responsables compliance + DRH grands groupes",
+      "prix_entry_eur": 599,
+      "prix_enterprise_eur": 3500,
+      "investissement_12m_eur": 280000,
+      "mrr_cible_12m_eur": 85000,
+      "criteres": {
+        "roi_score": 8.5,
+        "delai_score": 8,
+        "risque_score": 8,
+        "differenciation_score": 10
+      },
+      "score_global": 8.67
+    },
+    {
+      "id": "B",
+      "nom": "Plateforme ESG généraliste",
+      "description": "Élargir la couverture à l'ensemble des dimensions ESG (E+S+G) pour rivaliser frontalement avec EcoVadis. Nécessite un investissement produit plus important.",
+      "cible_principale": "Directions achats + RSE tous secteurs",
+      "prix_entry_eur": 299,
+      "prix_enterprise_eur": 5000,
+      "investissement_12m_eur": 620000,
+      "mrr_cible_12m_eur": 140000,
+      "criteres": {
+        "roi_score": 7,
+        "delai_score": 4,
+        "risque_score": 5,
+        "differenciation_score": 5
+      },
+      "score_global": 5.5
+    },
+    {
+      "id": "C",
+      "nom": "White-label pour cabinets d'audit",
+      "description": "Vendre la plateforme en marque blanche aux Big4 et cabinets mid-tier. Accélère l'adoption via des réseaux commerciaux établis, sans effort de brand building direct.",
+      "cible_principale": "Big4, cabinets compliance, boutiques ESG",
+      "prix_entry_eur": 0,
+      "prix_enterprise_eur": 18000,
+      "investissement_12m_eur": 160000,
+      "mrr_cible_12m_eur": 65000,
+      "criteres": {
+        "roi_score": 8,
+        "delai_score": 7,
+        "risque_score": 7,
+        "differenciation_score": 6
+      },
+      "score_global": 7.1
+    }
+  ],
+  "recommandation": {
+    "scenario_gagnant": "A",
+    "nom": "Niche droits humains CSDDD",
+    "score": 8.67,
+    "investissement_eur": 280000,
+    "mrr_cible_12m_eur": 85000
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "module": "medecine_travail",
+  "titre": "Médecine du travail & surveillance de la santé",
+  "domaine": "Travail & santé",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 4 août 1996 relative au bien-être des travailleurs lors de l'exécution de leur travail (Code du bien-être au travail, livre Ier, titre 4)",
+    "portee": "Surveillance de la santé des travailleurs par le conseiller en prévention-médecin du travail",
+    "source_officielle": "https://emploi.belgique.be/fr/themes/bien-etre-au-travail/la-surveillance-de-la-sante-des-travailleurs"
+  },
+  "derniere_revue": "2026-06-29",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Pour votre situation précise (aptitude, réintégration), adressez-vous au conseiller en prévention-médecin du travail de votre service de prévention.",
+  "faits": [
+    {
+      "id": "MEDT-001",
+      "question": "C'est quoi la médecine du travail et qui est concerné ?",
+      "reponse": "La surveillance de la santé (médecine du travail) vise à protéger votre santé au travail par la prévention des risques. Elle est assurée par le conseiller en prévention-médecin du travail. Elle est obligatoire pour les travailleurs qui occupent un poste de sécurité, un poste de vigilance ou exercent une activité à risque défini (par ex. exposition à des agents chimiques). Tous les travailleurs ne sont donc pas systématiquement soumis aux examens, mais l'employeur doit organiser cette surveillance pour ceux qui le sont.",
+      "reference_legale": "Loi du 4 août 1996 (bien-être au travail) — Code du bien-être, livre Ier, titre 4",
+      "sources": [
+        {"type": "officiel", "url": "https://emploi.belgique.be/fr/themes/bien-etre-au-travail/la-surveillance-de-la-sante-des-travailleurs", "intitule": "SPF Emploi — Surveillance de la santé des travailleurs"},
+        {"type": "officiel", "url": "https://www.ejustice.just.fgov.be/eli/loi/1996/08/04/1996012650/justel", "intitule": "Loi du 4 août 1996 (Justel)"}
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "MEDT-002",
+      "question": "Quels examens médicaux peut-on me demander ?",
+      "reponse": "Selon votre poste, le médecin du travail peut réaliser une évaluation de santé préalable (avant l'affectation), une surveillance de santé périodique, un examen de reprise du travail (après une absence pour maladie/accident), ou un examen dans le cadre de la protection de la maternité. Ces examens visent à vérifier votre aptitude au poste et à adapter le travail si nécessaire — ils ne servent pas à fouiller votre vie privée.",
+      "reference_legale": "Code du bien-être au travail, livre Ier, titre 4 (art. I.4-10 et suivants)",
+      "sources": [
+        {"type": "officiel", "url": "https://emploi.belgique.be/fr/themes/bien-etre-au-travail/la-surveillance-de-la-sante-des-travailleurs", "intitule": "SPF Emploi — Examens médicaux de prévention"}
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "MEDT-003",
+      "question": "Puis-je voir le médecin du travail de ma propre initiative ?",
+      "reponse": "Oui. Tout travailleur, qu'il soit ou non soumis à la surveillance de santé, peut demander une consultation spontanée directement au conseiller en prévention-médecin du travail pour des plaintes de santé qu'il estime liées au travail. Votre médecin traitant peut aussi le faire avec votre accord. C'est un droit, indépendant de l'employeur.",
+      "reference_legale": "Code du bien-être au travail, livre Ier, titre 4 (art. I.4-37, consultation spontanée)",
+      "contacts": [
+        {"nom": "Conseiller en prévention-médecin du travail (service interne ou externe de prévention)", "pour": "consultation spontanée"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://emploi.belgique.be/fr/themes/bien-etre-au-travail/la-surveillance-de-la-sante-des-travailleurs", "intitule": "SPF Emploi — Consultation spontanée"}
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "MEDT-004",
+      "question": "Je reprends après une longue maladie : que se passe-t-il ?",
+      "reponse": "Après une incapacité, un examen de reprise du travail peut être prévu. Si votre état rend difficile la reprise de votre poste, un trajet de réintégration peut être lancé pour examiner un travail adapté ou un autre poste. Si le médecin du travail rend une décision d'inaptitude que vous contestez, une procédure de recours existe (sauf pour les décisions prises dans le cadre d'une évaluation de réintégration).",
+      "reference_legale": "Code du bien-être au travail, livre Ier, titre 4 (examen de reprise et recours, art. I.4-45)",
+      "sources": [
+        {"type": "officiel", "url": "https://emploi.belgique.be/fr/themes/bien-etre-au-travail/la-surveillance-de-la-sante-des-travailleurs", "intitule": "SPF Emploi — Reprise du travail et recours"}
+      ],
+      "date_verification": "2026-06-29"
+    }
+  ]
+}

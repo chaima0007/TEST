@@ -1,0 +1,120 @@
+{
+  "module": "achat_logement",
+  "titre": "Acheter un logement — compromis & notaire",
+  "domaine": "Achat immobilier",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code civil (vente) ; Code des droits d'enregistrement ; loi de ventôse sur le notariat",
+    "portee": "Étapes de l'achat, valeur du compromis, rôle du notaire et délais",
+    "source_officielle": "https://www.belgium.be/fr/logement/achat_d_un_logement"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les droits d'enregistrement et abattements varient selon la Région ; faites-vous accompagner par un notaire avant de signer.",
+  "faits": [
+    {
+      "id": "ACHAT-COMPROMIS-001",
+      "question": "Le compromis de vente, est-ce déjà un engagement définitif ?",
+      "reponse": "Oui : en Belgique, « compromis vaut vente ». Dès que vendeur et acheteur signent un compromis reprenant les éléments essentiels (bien, prix), ils sont engagés — même si une meilleure offre arrive ensuite. Pour vous protéger, on y insère des conditions suspensives (la plus fréquente : la vente n'a lieu que si vous obtenez votre prêt hypothécaire). Lisez bien le compromis AVANT de signer : c'est lui qui fixe vos droits. En cas de doute, faites-le relire par un notaire.",
+      "reference_legale": "Code civil — formation et effets de la vente (le compromis lie les parties)",
+      "contacts": [
+        {
+          "nom": "Notaire",
+          "lien": "https://www.notaire.be",
+          "pour": "relecture du compromis, conditions suspensives"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.ejustice.just.fgov.be/eli/loi/1804/03/21/1804032154/justel",
+          "intitule": "Ancien Code civil — Livre III, De la vente (art. 1582 et s.)"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://www.droitbelge.be/fiches_detail.asp?idcat=9&id=3",
+          "intitule": "Droitbelge.be — Compromis vaut vente"
+        }
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "ACHAT-NOTAIRE-001",
+      "question": "Que fait le notaire et dans quel délai signe-t-on l'acte ?",
+      "reponse": "Après le compromis, le notaire réalise toutes les vérifications (hypothèques, urbanisme, état du sol, dettes éventuelles) et prépare l'acte authentique. Cet acte doit en principe être signé, et les droits d'enregistrement payés, dans les quatre mois suivant le compromis. C'est à la signature de l'acte que vous devenez officiellement propriétaire et que vous payez le prix et les frais (droits d'enregistrement + honoraires). Le notaire est neutre et garant de la sécurité juridique de la vente.",
+      "reference_legale": "Code des droits d'enregistrement (enregistrement et paiement dans les 4 mois) ; loi de ventôse sur le notariat",
+      "alerte_delai": "L'acte authentique et le paiement des droits d'enregistrement doivent intervenir dans les 4 mois suivant le compromis.",
+      "contacts": [
+        {
+          "nom": "Notaire",
+          "pour": "vérifications, acte authentique, frais"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.belgium.be/fr/logement/achat_d_un_logement",
+          "intitule": "Belgium.be — Achat d'un logement"
+        }
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "ACHAT-DROITS-REGIONAL-001",
+      "question": "Quels droits d'enregistrement vais-je payer à l'achat, selon ma région ?",
+      "reponse": "À l'achat d'un bien existant, vous payez des DROITS D'ENREGISTREMENT — un impôt RÉGIONAL, perçu via le notaire, dont le taux et les avantages (abattement, taux réduit pour l'habitation propre et unique) varient fortement selon la région où se situe le bien. En WALLONIE : SPW Fiscalité. En FLANDRE : Vlaamse Belastingdienst (registratiebelasting, taux réduit pour l'habitation propre et unique). À BRUXELLES : Bruxelles Fiscalité (avec un abattement sur une première habitation). Pour un logement neuf vendu sous TVA, c'est la TVA (fédérale) qui s'applique à la place. Renseignez-vous tôt : ces droits pèsent lourd dans le budget d'achat.",
+      "reference_legale": "Compétence régionale des droits d'enregistrement : Code des droits d'enregistrement (régionalisé) en Wallonie et à Bruxelles ; Vlaamse Codex Fiscaliteit (registratiebelasting) en Flandre ; TVA sur le neuf relevant du Code de la TVA (fédéral)",
+      "alerte_delai": "Anticipez : abattements et taux réduits sont soumis à conditions (habitation propre et unique, domiciliation, délais). Vérifiez auprès de l'administration fiscale de votre région et de votre notaire AVANT l'achat.",
+      "contacts": [
+        {
+          "nom": "SPW Fiscalité (Wallonie)",
+          "lien": "https://finances.wallonie.be/",
+          "pour": "droits d enregistrement en Wallonie"
+        },
+        {
+          "nom": "Vlaamse Belastingdienst (Flandre)",
+          "lien": "https://www.vlaanderen.be/",
+          "pour": "registratiebelasting en Flandre"
+        },
+        {
+          "nom": "Bruxelles Fiscalité (Bruxelles)",
+          "lien": "https://fiscalite.brussels/fr",
+          "pour": "droits d enregistrement à Bruxelles"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://finances.wallonie.be/",
+          "intitule": "SPW Fiscalité — droits d enregistrement (Wallonie)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.vlaanderen.be/",
+          "intitule": "Vlaamse Belastingdienst — registratiebelasting (Flandre)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://fiscalite.brussels/fr",
+          "intitule": "Bruxelles Fiscalité — droits d enregistrement (Bruxelles)"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "ACHAT-FRAIS-001",
+      "question": "À quoi correspondent les « frais de notaire » en plus du prix ?",
+      "reponse": "Ce qu'on appelle communément les « frais de notaire » ne va pas dans la poche du notaire : il s'agit surtout d'impôts et de frais que le notaire perçoit et reverse. On y trouve : les droits d'enregistrement (impôt régional, la part la plus importante pour un bien existant) ou la TVA pour un logement neuf, les honoraires du notaire (fixés par un tarif légal, donc identiques d'un notaire à l'autre), et divers frais administratifs et hypothécaires (recherches, inscription de l'hypothèque…). Prévoyez ces frais EN PLUS du prix d'achat dans votre budget. Le notaire peut vous remettre un décompte estimatif détaillé avant la signature : demandez-le.",
+      "reference_legale": "Code des droits d'enregistrement (droits d'enregistrement) ; loi de ventôse sur le notariat (honoraires tarifés)",
+      "contacts": [
+        {"nom": "Notaire", "pour": "décompte estimatif des frais avant la signature"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.belgium.be/fr/logement/achat_d_un_logement", "intitule": "Belgium.be — Achat d'un logement (frais)"},
+        {"type": "officiel", "url": "https://finances.belgium.be/fr/particuliers/habitation/achat-vente", "intitule": "SPF Finances — Achat d'une habitation"}
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

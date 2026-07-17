@@ -1,0 +1,70 @@
+{
+  "id": "unilever",
+  "slug": "unilever",
+  "name": "Unilever PLC",
+  "country": "UK/Netherlands",
+  "city": "Rotterdam",
+  "sector": "FMCG",
+  "size": {
+    "revenue_bn_eur": 60,
+    "employees": 127000,
+    "index": "FTSE100"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": false,
+    "swiss_hrdd": false,
+    "sfdr": false,
+    "esg_rating": {
+      "msci": "AA",
+      "sustainalytics": "16.2 Low Risk",
+      "target": "AAA"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "Chief Sustainability Officer / Chief Procurement Officer",
+    "team": "Sustainable Business & Communications, Procurement Sustainability",
+    "location": "Rotterdam (siège légal), Londres (direction générale), Port Sunlight (R&D)",
+    "process": "Sustainability Steering Group mensuel, validation CEO pour engagements matériels, Responsible Sourcing Policy review annuelle"
+  },
+  "pain_points": [
+    "Filière huile de palme : traçabilité jusqu'à la plantation pour 1,5 million de tonnes/an, risques déforestation et droits des peuples autochtones en Indonésie",
+    "Conditions de travail des récoltants saisonniers (tomates, thé, sucre) dans les pays de sourcing : Inde, Kenya, Pakistan",
+    "Living wage engagement : garantir un salaire décent (pas seulement minimum) pour les 300 000+ travailleurs dans la supply chain directe d'ici 2030",
+    "Règlement UE déforestation (EUDR) : conformité pour thé, cacao, soja, huile de palme avec géolocalisation des parcelles",
+    "Tensions entre objectifs de rentabilité post-crise d'approvisionnement et engagements Living Wage",
+    "Cartographie Scope 3 émissions liées aux matières agricoles avec implications droits humains intégrées"
+  ],
+  "observed_failures": [
+    "Rapport Amnesty International 2016 sur l'huile de palme Unilever (Indonésie) : travail des enfants et conditions dégradées chez des fournisseurs Wilmar — suivi insuffisant 7 ans après",
+    "Audit thé Kericho (Kenya) 2023 : rapport sur les conditions de logement et accès aux soins des travailleurs Unilever Tea Kenya jugées insuffisantes par IHRB",
+    "Allégations de greenwashing sur les emballages 'durables' : ASA (UK) a contraint Unilever à retirer des publicités sur 4 produits en 2022"
+  ],
+  "signals_of_risk": [
+    "Ambitions ESG très élevées (Unilever Compass) créant un risque de 'purpose washing' si les résultats terrain ne suivent pas",
+    "Pression des actionnaires activistes (Nelson Peltz/Trian) pour réduire les ambitions ESG au profit de la rentabilité",
+    "Transition post-Brexit complexifiant la gouvernance DDH entre entités UK et UE"
+  ],
+  "signals_of_trust": [
+    "Note MSCI AA — parmi les meilleures dans le secteur FMCG mondial",
+    "Unilever Compass : cadre de durabilité avec 30+ KPIs mesurables publiés annuellement",
+    "Membre fondateur de la Consumer Goods Forum et du RSPO (huile de palme)",
+    "Programme Enhancing Livelihoods Fund : 100M EUR pour améliorer les revenus des agriculteurs fournisseurs"
+  ],
+  "recommended_actions": [
+    "Proposer une solution de cartographie géospatiale pour la conformité EUDR (huile de palme, cacao, thé) intégrant les risques DDH",
+    "Démontrer comment notre plateforme peut documenter les progrès Living Wage avec des données vérifiables par des tiers",
+    "Présenter un module d'audit continu pour les filières agricoles à haut risque remplaçant les audits annuels ponctuels",
+    "Explorer un partenariat sur la formation DDH pour les équipes procurement dans les pays de sourcing (anglophone prioritaire)"
+  ],
+  "local_tone": "Ton professionnel anglophone, direct et orienté impact. Unilever apprécie les partenaires qui parlent le même langage ESG avancé. Référencer les frameworks internationaux (UNGP, OECD Guidelines, SDGs). Éviter le jargon français ou les références réglementaires exclusivement européennes.",
+  "cultural_notes": "Culture anglo-néerlandaise : pragmatisme, ouverture aux partenariats externes, valorisation de l'innovation. Les équipes ESG sont très sophistiquées et informées — éviter les explications trop basiques. Le débat interne entre 'purpose' et rentabilité est sensible depuis l'arrivée des actionnaires activistes.",
+  "priority": 4,
+  "last_updated": "2026-06-21",
+  "source_links": [
+    "https://www.unilever.com/planet-and-society/responsible-business/human-rights/",
+    "https://www.amnesty.org/en/latest/campaigns/2016/11/palm-oil-global-brands-profiting-from-child-and-forced-labour/",
+    "https://www.business-humanrights.org/en/companies/unilever/"
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "module": "citoyen_europeen",
+  "titre": "Citoyen européen — vivre, travailler, étudier dans l'UE",
+  "domaine": "Droits dans l'Union européenne",
+  "juridiction": "UE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Directive 2004/38/CE (libre circulation des citoyens de l'Union) ; Règlement (CE) 883/2004 (coordination de la sécurité sociale)",
+    "portee": "Droits de circuler, séjourner, travailler et étudier dans un autre pays de l'UE",
+    "source_officielle": "https://europa.eu/youreurope/citizens/"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale au niveau de l'UE, à jour à la date de revue. Chaque pays peut avoir des formalités locales ; vérifiez via Your Europe et l'administration du pays d'accueil.",
+  "faits": [
+    {
+      "id": "UE-CIRCULATION-001",
+      "question": "Puis-je aller vivre, travailler ou étudier dans un autre pays de l'UE ?",
+      "reponse": "Oui. En tant que citoyen de l'Union, vous pouvez vous installer dans n'importe quel pays de l'UE pour y vivre, travailler (salarié ou indépendant, sans permis de travail), étudier, chercher un emploi ou prendre votre retraite. Vous pouvez séjourner jusqu'à 3 mois avec une carte d'identité ou un passeport valides ; au-delà, une inscription/enregistrement auprès des autorités locales peut être exigée (et, selon les cas, prouver des ressources et une assurance maladie).",
+      "reference_legale": "Directive 2004/38/CE relative au droit des citoyens de l'Union de circuler et séjourner librement",
+      "contacts": [
+        {"nom": "Your Europe (Commission européenne)", "lien": "https://europa.eu/youreurope/citizens/", "pour": "droits de séjour, formalités par pays"},
+        {"nom": "Europe Direct", "lien": "https://european-union.europa.eu/contact-eu_fr", "pour": "questions sur vos droits dans l'UE"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://europa.eu/youreurope/citizens/residence/residence-rights/index_fr.htm", "intitule": "Your Europe — Droits de séjour dans l'UE"},
+        {"type": "officiel", "url": "https://european-union.europa.eu/live-work-study/living-eu_en", "intitule": "Union européenne — Vivre dans l'UE"}
+      ],
+      "date_verification": "2026-06-28"
+    },
+    {
+      "id": "UE-SANTE-DIPLOMES-001",
+      "question": "Et ma santé et mes diplômes quand je bouge en Europe ?",
+      "reponse": "Santé : demandez la Carte européenne d'assurance maladie (CEAM) à votre mutualité — elle couvre les soins médicalement nécessaires lors d'un séjour temporaire dans l'UE. Si vous vous installez durablement, vos droits de sécurité sociale sont coordonnés entre pays (règlement européen). Diplômes : pour exercer une profession réglementée dans un autre pays de l'UE, vous pouvez demander la reconnaissance de vos qualifications professionnelles. Your Europe explique la marche à suivre par pays et par métier.",
+      "reference_legale": "Règlement (CE) 883/2004 (coordination de la sécurité sociale) ; Directive 2005/36/CE (reconnaissance des qualifications professionnelles)",
+      "contacts": [
+        {"nom": "Votre mutualité", "pour": "Carte européenne d'assurance maladie (CEAM)"},
+        {"nom": "Your Europe", "lien": "https://europa.eu/youreurope/citizens/", "pour": "reconnaissance des diplômes, sécurité sociale"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://europa.eu/youreurope/citizens/work/professional-qualifications/recognition-of-professional-qualifications/index_fr.htm", "intitule": "Your Europe — Reconnaissance des qualifications"},
+        {"type": "officiel", "url": "https://european-union.europa.eu/live-work-study/working-eu_en", "intitule": "Union européenne — Travailler dans l'UE"}
+      ],
+      "date_verification": "2026-06-28"
+    },
+    {
+      "id": "UE-FAMILLE-001",
+      "question": "Ma famille peut-elle me rejoindre dans un autre pays de l'UE ?",
+      "reponse": "Oui. Lorsque vous exercez votre droit de circuler et séjourner dans un autre pays de l'UE, les membres de votre famille peuvent vous accompagner ou vous rejoindre, même s'ils ne sont pas eux-mêmes citoyens de l'Union. Sont notamment concernés votre conjoint (et, sous conditions, votre partenaire enregistré), vos enfants (et ceux de votre conjoint) de moins de 21 ans ou à charge, ainsi que vos parents ou ceux de votre conjoint s'ils sont à votre charge. Les membres de la famille non-UE peuvent devoir demander une carte de séjour dans le pays d'accueil, mais ils tirent un droit de séjour de votre statut de citoyen européen. Vérifiez les formalités exactes via Your Europe.",
+      "reference_legale": "Directive 2004/38/CE relative au droit des citoyens de l'Union et des membres de leur famille de circuler et séjourner librement",
+      "contacts": [
+        {"nom": "Your Europe (Commission européenne)", "lien": "https://europa.eu/youreurope/citizens/", "pour": "regroupement familial et cartes de séjour"},
+        {"nom": "Administration du pays d'accueil", "pour": "formalités de séjour des membres de la famille"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://europa.eu/youreurope/citizens/residence/family-residence-rights/index_fr.htm", "intitule": "Your Europe — Séjour des membres de la famille"},
+        {"type": "officiel", "url": "https://europa.eu/youreurope/citizens/residence/residence-rights/index_fr.htm", "intitule": "Your Europe — Droits de séjour dans l'UE"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "UE-DROITS-CITOYEN-001",
+      "question": "Quels droits me donne la citoyenneté européenne au quotidien ?",
+      "reponse": "La citoyenneté de l'Union (qui s'ajoute à votre nationalité, sans la remplacer) ouvre plusieurs droits concrets. Dans le pays de l'UE où vous résidez sans en avoir la nationalité, vous pouvez voter et vous présenter aux élections municipales et européennes. Hors de l'UE, si votre pays n'a pas d'ambassade, vous pouvez demander la protection consulaire d'un autre État membre. Vous pouvez aussi adresser une pétition au Parlement européen, saisir le Médiateur européen, soutenir une initiative citoyenne européenne, et vous adresser aux institutions de l'UE dans l'une des langues officielles. Ces droits sont garantis par les traités européens.",
+      "reference_legale": "Traité sur le fonctionnement de l'Union européenne (citoyenneté de l'Union, art. 20 à 24) ; directive 2004/38/CE",
+      "contacts": [
+        {"nom": "Your Europe / Europe Direct", "lien": "https://europa.eu/youreurope/citizens/", "pour": "droits liés à la citoyenneté européenne"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://european-union.europa.eu/live-work-study/living-eu_en", "intitule": "Union européenne — Citoyenneté et droits"},
+        {"type": "officiel", "url": "https://europa.eu/youreurope/citizens/", "intitule": "Your Europe — Droits des citoyens de l'UE"}
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

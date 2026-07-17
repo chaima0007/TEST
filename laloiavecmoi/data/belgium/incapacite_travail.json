@@ -1,0 +1,80 @@
+{
+  "module": "incapacite_travail",
+  "titre": "Maladie & incapacité de travail",
+  "domaine": "Maladie & incapacité",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi relative à l'assurance obligatoire soins de santé et indemnités, coordonnée le 14 juillet 1994 ; loi du 3 juillet 1978 relative aux contrats de travail (salaire garanti)",
+    "portee": "Que faire en cas de maladie, salaire garanti et indemnités de la mutualité",
+    "source_officielle": "https://www.socialsecurity.be/citizen/fr/incapacite-de-travail-accident-du-travail-et-maladies-professionnelles/incapacite-de-travail"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les délais et montants peuvent varier (statut, ancienneté) ; vérifiez auprès de votre mutualité ou de l'INAMI.",
+  "faits": [
+    {
+      "id": "INCAP-DECLARER-001",
+      "question": "Je suis malade et ne peux pas travailler : que dois-je faire ?",
+      "reponse": "Trois réflexes : 1) prévenez immédiatement votre employeur ; 2) faites établir un certificat médical par votre médecin et remettez-le à l'employeur dans le délai prévu (souvent précisé dans le règlement de travail ou la convention) ; 3) si l'incapacité se prolonge, envoyez un certificat à votre mutualité dans le délai imparti pour ouvrir vos indemnités. Attention : déclarer en retard à la mutualité peut réduire vos indemnités. Depuis 2026, un certificat pour la mutualité couvre au maximum 3 mois (renouvelable).",
+      "reference_legale": "Loi coordonnée du 14 juillet 1994 (assurance indemnités) ; loi du 3 juillet 1978 relative aux contrats de travail",
+      "alerte_delai": "Remettez le certificat à l'employeur sans tarder, et à la mutualité dans le délai prévu : un retard peut réduire vos indemnités.",
+      "contacts": [
+        {"nom": "Votre mutualité", "pour": "déclaration d'incapacité, indemnités"},
+        {"nom": "Votre médecin", "pour": "certificat médical d'incapacité"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.socialsecurity.be/citizen/fr/incapacite-de-travail-accident-du-travail-et-maladies-professionnelles/incapacite-de-travail", "intitule": "Sécurité sociale — Incapacité de travail"},
+        {"type": "officiel", "url": "https://www.inami.fgov.be/fr/themes/incapacite-de-travail/salaries-et-chomeurs/declarer-son-incapacite-de-travail", "intitule": "INAMI — Déclarer son incapacité de travail"}
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "INCAP-REVENU-001",
+      "question": "Vais-je continuer à être payé pendant ma maladie ?",
+      "reponse": "Au début, oui : l'employeur verse le « salaire garanti » pendant une période déterminée (sa durée dépend de votre statut, ouvrier ou employé, et de votre ancienneté). Ensuite, c'est votre mutualité qui prend le relais avec une indemnité d'incapacité (un pourcentage de votre salaire brut plafonné). Pour les indépendants, il n'y a pas de salaire garanti : l'indemnité de la mutualité peut intervenir dès le début de l'incapacité reconnue. Renseignez-vous tôt pour éviter tout trou de revenu.",
+      "reference_legale": "Loi du 3 juillet 1978 (salaire garanti) ; loi coordonnée du 14 juillet 1994 (indemnités d'incapacité)",
+      "contacts": [
+        {"nom": "Votre mutualité", "pour": "calcul et versement de l'indemnité"},
+        {"nom": "INAMI", "lien": "https://www.inami.fgov.be", "pour": "règles d'indemnisation"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.inami.fgov.be/fr/themes/incapacite-de-travail/salaries-et-chomeurs/calculer-votre-indemnite", "intitule": "INAMI — Calcul de l'indemnité d'incapacité"},
+        {"type": "officiel", "url": "https://www.inami.fgov.be/fr/themes/incapacite-de-travail/independants/declarer-son-incapacite-de-travail", "intitule": "INAMI — Incapacité de travail des indépendants"}
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "INCAP-MEDECIN-CONSEIL-001",
+      "question": "Qui décide si je suis (encore) en incapacité de travail ?",
+      "reponse": "C'est le médecin-conseil de votre mutualité qui reconnaît et contrôle votre incapacité. On distingue deux périodes : l'incapacité primaire (en principe la première année) puis, au-delà, l'invalidité. Le médecin-conseil peut vous convoquer pour évaluer l'évolution de votre état et votre capacité à reprendre une activité. Si vous n'êtes pas d'accord avec une décision (fin d'incapacité, refus), vous pouvez introduire un recours devant le tribunal du travail dans le délai indiqué. Respectez les convocations : ne pas s'y présenter sans justification peut entraîner la suspension des indemnités.",
+      "reference_legale": "Loi relative à l'assurance obligatoire soins de santé et indemnités, coordonnée le 14 juillet 1994 (reconnaissance de l'incapacité, invalidité)",
+      "alerte_delai": "Respectez les convocations du médecin-conseil ; un recours contre une décision se fait devant le tribunal du travail dans un délai limité.",
+      "contacts": [
+        {"nom": "Médecin-conseil de votre mutualité", "pour": "reconnaissance et contrôle de l'incapacité"},
+        {"nom": "Tribunal du travail", "pour": "contester une décision du médecin-conseil"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.socialsecurity.be/citizen/fr/incapacite-de-travail-accident-du-travail-et-maladies-professionnelles/incapacite-de-travail", "intitule": "Sécurité sociale — Reconnaissance de l'incapacité"},
+        {"type": "officiel", "url": "https://www.inami.fgov.be/fr/themes/incapacite-de-travail/salaries-et-chomeurs/declarer-son-incapacite-de-travail", "intitule": "INAMI — Incapacité et invalidité"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "INCAP-REPRISE-001",
+      "question": "Puis-je reprendre le travail à temps partiel sans perdre mes indemnités ?",
+      "reponse": "Oui, c'est la reprise progressive (ou reprise de travail autorisée). Si vous êtes reconnu en incapacité, vous pouvez reprendre une activité adaptée — par exemple à temps partiel — à condition d'obtenir l'autorisation PRÉALABLE du médecin-conseil de votre mutualité. Vous conservez alors une partie de vos indemnités, en complément de votre rémunération, selon des règles de cumul. Il existe aussi des trajets de réintégration pour aider au retour au travail. Important : ne reprenez jamais une activité, même bénévole, sans l'accord du médecin-conseil, sous peine de devoir rembourser des indemnités.",
+      "reference_legale": "Loi relative à l'assurance obligatoire soins de santé et indemnités, coordonnée le 14 juillet 1994 (reprise autorisée du travail)",
+      "alerte_delai": "Demandez l'autorisation du médecin-conseil AVANT toute reprise, même partielle.",
+      "contacts": [
+        {"nom": "Médecin-conseil de votre mutualité", "pour": "autorisation de reprise progressive"},
+        {"nom": "Conseiller en prévention-médecin du travail", "pour": "trajet de réintégration"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.inami.fgov.be/fr/themes/incapacite-de-travail/salaries-et-chomeurs/calculer-votre-indemnite", "intitule": "INAMI — Reprise du travail et cumul"},
+        {"type": "officiel", "url": "https://www.socialsecurity.be/citizen/fr/incapacite-de-travail-accident-du-travail-et-maladies-professionnelles/incapacite-de-travail", "intitule": "Sécurité sociale — Reprise du travail"}
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

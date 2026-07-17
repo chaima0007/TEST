@@ -1,0 +1,35 @@
+{
+  "charte": "Cadre stable de gouvernance des agents",
+  "but": "Garantir que chaque agent travaille avec les sources les plus fiables et délivre une expertise de niveau professionnel, reproductible et auditable.",
+  "version": "1.0",
+  "derniere_revue": "2026-06-26",
+  "hierarchie_sources_fiabilite": [
+    {"tier": 1, "nom": "Officiel primaire", "exemples": ["WALLEX", "Moniteur belge / Belgisch Staatsblad", "EUR-Lex", "SPF / portails .gov .be", "textes de loi publiés"], "usage": "Source autorisée pour tout fait juridique publié."},
+    {"tier": 2, "nom": "Institutionnel reconnu", "exemples": ["UVCW", "ordres professionnels", "universités", "organismes publics régionaux"], "usage": "Appui et clarification ; jamais seul pour un fait critique."},
+    {"tier": 3, "nom": "Secondaire spécialisé", "exemples": ["cabinets juridiques", "médias spécialisés reconnus"], "usage": "Contexte uniquement ; à recouper avec tier 1."},
+    {"tier": 4, "nom": "Non fiable", "exemples": ["forums", "contenu non daté", "IA non vérifiée"], "usage": "INTERDIT comme source publiée."}
+  ],
+  "regles_obligatoires": [
+    "R1 — Aucune affirmation publiée sans source de tier 1 ou 2 vérifiée et datée.",
+    "R2 — Toute donnée porte sa date de vérification ; re-sourcer si > 365 jours (protocole de latence).",
+    "R3 — Indiquer la juridiction et la langue (en Belgique : régions + FR/NL).",
+    "R4 — Avertissement systématique : information générale, pas un conseil individualisé.",
+    "R5 — Ne jamais inventer une source, un chiffre ou une référence légale. En cas de doute : ne pas publier.",
+    "R6 — Respecter le registre des projets : ne pas mélanger les données entre projets.",
+    "R7 — Zéro credential dans le code (secrets via variables d'environnement uniquement)."
+  ],
+  "standard_expertise": {
+    "principe": "Niveau attendu : équivalent d'un praticien expérimenté du domaine, vérifiable par un tiers.",
+    "exigences": ["raisonnement traçable", "sources citées", "cas limites couverts", "mise à jour régulière"]
+  },
+  "veille_continue": {
+    "principe": "Rechercher en continu les meilleures sources et les évolutions (lois, jurisprudence, pratiques).",
+    "cadence": "Revue des modules à forte demande au moins trimestrielle ; alerte automatique de fraîcheur via les protocoles."
+  },
+  "protocoles_lies": [
+    "scripts/certification_protocol.py (certification + probabilité)",
+    "scripts/legal_content_verifier.py (sources obligatoires)",
+    "scripts/backup_protocol.py (sauvegarde intègre)",
+    "data/lessons_learned/business_failures.json (éviter les erreurs connues)"
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "module": "allocation_aide_personnes_agees",
+  "titre": "Allocation pour l'aide aux personnes âgées (APA / THAB / Beihilfe für Betagte)",
+  "domaine": "Allocation pour l'aide aux personnes âgées",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Allocation pour l'aide aux personnes âgées — APA (compétence régionalisée). Une même aide selon la langue/entité : APA (fr), tegemoetkoming voor hulp aan bejaarden / THAB (nl), Beihilfe für Betagte / BUB (de) ; la Flandre l'a renommée « zorgbudget voor ouderen met een zorgnood »",
+    "portee": "Personnes âgées (en principe 65 ans et plus) en perte d'autonomie et disposant de revenus limités",
+    "source_officielle": "https://www.vlaamsesocialebescherming.be/zorgbudget-voor-ouderen-met-een-zorgnood"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. L'APA est régionalisée : l'organisme compétent et certains paramètres (âge d'accès, montants) dépendent de votre RÉGION/COMMUNAUTÉ de résidence. À ne pas confondre avec la GRAPA (revenu garanti). Ne remplace pas un conseil individualisé.",
+  "faits": [
+    {
+      "id": "APA-PRINCIPE-001",
+      "question": "Qu'est-ce que l'allocation pour l'aide aux personnes âgées (APA) et qui peut l'obtenir ?",
+      "reponse": "L'APA est une aide destinée aux personnes âgées (en principe à partir de 65 ans) dont l'autonomie est réduite et dont les revenus sont limités ; elle vise à couvrir les frais supplémentaires liés à la perte d'autonomie. C'est une seule et même aide, désignée différemment selon la langue : APA en français, tegemoetkoming voor hulp aan bejaarden (THAB) en néerlandais, Beihilfe für Betagte (BUB) en allemand. Elle a été régionalisée : son octroi dépend désormais de votre région ou communauté de résidence, et certains paramètres (âge, montants, dénomination) peuvent varier — la Flandre l'a par exemple renommée « zorgbudget voor ouderen met een zorgnood ».",
+      "reference_legale": "Loi du 27 février 1987 relative aux allocations aux personnes handicapées (allocation pour l'aide aux personnes âgées, compétence aujourd'hui régionalisée)",
+      "contacts": [
+        {
+          "nom": "Votre mutualité / commune / CPAS",
+          "pour": "aide à l'introduction de la demande"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.vlaamsesocialebescherming.be/zorgbudget-voor-ouderen-met-een-zorgnood",
+          "intitule": "Vlaamse Sociale Bescherming — Zorgbudget voor ouderen met een zorgnood (APA en Flandre)"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "APA-REGIONAL-001",
+      "question": "À quel organisme dois-je m'adresser selon ma région ?",
+      "reponse": "L'organisme compétent dépend de votre lieu de résidence : en WALLONIE, l'AVIQ (Agence pour une Vie de Qualité) ; à BRUXELLES, Iriscare ; en FLANDRE, la Vlaamse sociale bescherming (demande via votre caisse de soins / zorgkas) — où l'aide s'appelle « zorgbudget voor ouderen met een zorgnood », accessible dès 66 ans, d'un montant pouvant atteindre environ 739 € par mois, non imposable ; en COMMUNAUTÉ GERMANOPHONE, la Dienststelle für Selbstbestimmtes Leben (DSL), qui octroie la Beihilfe für Betagte. Les montants et conditions exacts (hors le cas flamand vérifié ci-dessus) sont fixés par chaque entité : renseignez-vous auprès de l'organisme de votre région.",
+      "reference_legale": "Compétence régionalisée de l'APA : Code wallon de l'action sociale et de la santé (AViQ), ordonnance bruxelloise (Iriscare), décret flamand relatif à la protection sociale flamande (zorgbudget) et décret de la Communauté germanophone (DSL)",
+      "contacts": [
+        {
+          "nom": "AVIQ (Wallonie)",
+          "lien": "https://www.aviq.be/fr",
+          "pour": "APA en Wallonie"
+        },
+        {
+          "nom": "Iriscare (Bruxelles)",
+          "lien": "https://www.iriscare.brussels/fr/",
+          "pour": "APA à Bruxelles"
+        },
+        {
+          "nom": "Vlaamse sociale bescherming / zorgkas (Flandre)",
+          "lien": "https://www.vlaamsesocialebescherming.be/zorgbudget-voor-ouderen-met-een-zorgnood",
+          "pour": "zorgbudget voor ouderen (APA en Flandre)"
+        },
+        {
+          "nom": "DSL (Communauté germanophone)",
+          "lien": "https://www.selbstbestimmt.be/de/finanzielle-beihilfe/",
+          "pour": "Beihilfe für Betagte (APA en région de langue allemande)"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.vlaamsesocialebescherming.be/zorgbudget-voor-ouderen-met-een-zorgnood",
+          "intitule": "Vlaamse Sociale Bescherming — zorgbudget ouderen (conditions, montant, demande)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.iriscare.brussels/fr/",
+          "intitule": "Iriscare — organisme compétent pour les aînés à Bruxelles"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.selbstbestimmt.be/de/finanzielle-beihilfe/",
+          "intitule": "DSL — Finanzielle Beihilfe (dont Beihilfe für Betagte)"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "APA-VS-GRAPA-001",
+      "question": "Quelle est la différence entre l'APA et la GRAPA ?",
+      "reponse": "Ce sont deux aides distinctes, souvent confondues. La GRAPA (garantie de revenus aux personnes âgées) est un revenu minimum garanti pour les personnes âgées aux ressources insuffisantes : elle est FÉDÉRALE et gérée par le Service fédéral des Pensions. L'APA (allocation pour l'aide aux personnes âgées) vise au contraire à compenser une PERTE D'AUTONOMIE et les frais qui en découlent : elle est RÉGIONALISÉE (AViQ, Iriscare, Vlaamse sociale bescherming, DSL). On peut, selon sa situation, avoir droit à l'une, à l'autre, ou aux deux. Pour la GRAPA, adressez-vous au Service fédéral des Pensions ; pour l'APA, à l'organisme de votre région.",
+      "reference_legale": "Loi instituant la garantie de revenus aux personnes âgées (GRAPA, compétence fédérale) ; loi du 27 février 1987 relative aux allocations aux personnes handicapées (APA, régionalisée)",
+      "contacts": [
+        {
+          "nom": "Service fédéral des Pensions",
+          "lien": "https://www.sfpd.fgov.be/fr",
+          "pour": "GRAPA (revenu garanti, fédéral)"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.vlaamsesocialebescherming.be/zorgbudget-voor-ouderen-met-een-zorgnood",
+          "intitule": "Vlaamse Sociale Bescherming — zorgbudget ouderen (APA, aide liée à la perte d'autonomie)"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "APA-DEMANDE-001",
+      "question": "Comment introduire une demande d'APA et comment est évaluée ma perte d'autonomie ?",
+      "reponse": "La demande s'introduit auprès de l'organisme compétent de votre région (souvent avec l'aide de votre commune, de votre mutualité ou du CPAS). L'évaluation repose sur deux volets : un examen de la PERTE D'AUTONOMIE (capacité à se déplacer, se laver, s'habiller, préparer les repas, faire le ménage, etc.), traduite en « points » par un médecin ou un évaluateur, et un examen des REVENUS (les revenus du demandeur, et selon les cas du ménage, sont pris en compte). Plus la perte d'autonomie est élevée et les revenus faibles, plus l'allocation est importante. Conservez vos documents médicaux et fiscaux : ils accélèrent le traitement. En cas de refus, un recours devant le tribunal du travail est possible.",
+      "reference_legale": "Loi du 27 février 1987 relative aux allocations aux personnes handicapées (évaluation de la réduction d'autonomie, compétence régionalisée)",
+      "contacts": [
+        {"nom": "Organisme régional (AViQ, Iriscare, zorgkas, DSL)", "pour": "introduction et suivi de la demande"},
+        {"nom": "Mutualité / commune / CPAS", "pour": "aide au dossier"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.vlaamsesocialebescherming.be/zorgbudget-voor-ouderen-met-een-zorgnood", "intitule": "Vlaamse Sociale Bescherming — demande et évaluation"},
+        {"type": "officiel", "url": "https://www.aviq.be/fr", "intitule": "AViQ — Allocation pour l'aide aux personnes âgées"}
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

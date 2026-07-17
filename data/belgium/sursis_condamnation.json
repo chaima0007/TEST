@@ -1,0 +1,101 @@
+{
+  "module": "sursis_condamnation",
+  "titre": "Sursis & suspension du prononcé",
+  "domaine": "Justice pénale",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 29 juin 1964 concernant la suspension, le sursis et la probation",
+    "portee": "Mesures qui évitent ou suspendent l'exécution d'une peine sous conditions",
+    "source_officielle": "https://justice.belgium.be/fr/themes_et_dossiers/jugement_penal_et_consequences/types_de_peines/que_decide_le_juge/sursis"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. L'octroi dépend du juge et de conditions légales ; un avocat peut les plaider.",
+  "faits": [
+    {
+      "id": "SURSIS-PRINCIPE-001",
+      "question": "Qu'est-ce que le sursis à l'exécution d'une peine ?",
+      "reponse": "Le sursis permet au juge de prononcer une peine (amende ou prison) mais d'en suspendre l'exécution pendant un délai d'épreuve : concrètement, vous n'exécutez pas la peine tant que vous ne commettez pas de nouvelle infraction (et que vous respectez d'éventuelles conditions) durant ce délai. Si vous « tenez » pendant la période d'épreuve, la peine n'est pas exécutée. Le sursis peut être total ou partiel. C'est une seconde chance encadrée, fréquente pour les primo-délinquants. Si vous récidivez pendant le délai, le sursis peut être révoqué et la peine exécutée.",
+      "reference_legale": "Loi du 29 juin 1964 concernant la suspension, le sursis et la probation (sursis)",
+      "contacts": [
+        {
+          "nom": "Avocat / Bureau d'aide juridique",
+          "pour": "demander le sursis"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://justice.belgium.be/fr/themes_et_dossiers/jugement_penal_et_consequences/types_de_peines/que_decide_le_juge/sursis",
+          "intitule": "SPF Justice — Le sursis"
+        }
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "SURSIS-SUSPENSION-001",
+      "question": "Et la suspension du prononcé de la condamnation ?",
+      "reponse": "La suspension du prononcé va plus loin : le juge constate la culpabilité mais ne prononce PAS de peine, et la condamnation n'est pas inscrite de la même manière. Là aussi, un délai d'épreuve s'applique : si vous ne commettez pas de nouvelle infraction (et respectez d'éventuelles conditions), la mesure produit pleinement ses effets. L'intérêt majeur est d'éviter les conséquences d'une condamnation « classique » (notamment sur le casier judiciaire), ce qui peut être déterminant pour l'emploi ou certaines démarches. Comme pour le sursis, un manquement peut entraîner la révocation.",
+      "reference_legale": "Loi du 29 juin 1964 concernant la suspension, le sursis et la probation (suspension du prononcé)",
+      "contacts": [
+        {
+          "nom": "Avocat",
+          "pour": "plaider la suspension du prononcé"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://justice.belgium.be/fr/themes_et_dossiers/jugement_penal_et_consequences/types_de_peines/que_decide_le_juge/sursis",
+          "intitule": "SPF Justice — Suspension du prononcé"
+        }
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "SURSIS-PROBATOIRE-001",
+      "question": "Le sursis ou la suspension peuvent-ils être assortis de conditions ?",
+      "reponse": "Oui : on parle alors de sursis probatoire ou de suspension probatoire. Le bénéfice de la mesure est subordonné au respect de conditions individualisées pendant le délai d'épreuve (par exemple suivre une thérapie, une formation, indemniser la victime, ne pas fréquenter certains lieux). Le respect de ces conditions est suivi par un assistant de justice. C'est une manière d'agir sur les causes du comportement tout en évitant la prison. Le non-respect des conditions peut entraîner la révocation de la mesure et l'exécution de la peine.",
+      "reference_legale": "Loi du 29 juin 1964 concernant la suspension, le sursis et la probation (mesures probatoires)",
+      "contacts": [
+        {
+          "nom": "Assistant de justice (Maison de justice)",
+          "pour": "suivi des conditions probatoires"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://justice.belgium.be/fr/themes_et_dossiers/jugement_penal_et_consequences/types_de_peines/que_decide_le_juge/sursis",
+          "intitule": "SPF Justice — Sursis et suspension probatoires"
+        }
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "SURSIS-REVOCATION-001",
+      "question": "Le sursis peut-il être perdu (révoqué) ?",
+      "reponse": "Oui. Le sursis est une confiance sous condition : si vous commettez une nouvelle infraction pendant le délai d'épreuve et qu'elle entraîne une condamnation d'une certaine gravité, le sursis peut être révoqué — la peine initialement suspendue devient alors exécutable, en plus de la nouvelle. De même, le sursis probatoire peut être révoqué si les conditions imposées (formation, interdiction, suivi…) ne sont pas respectées. À l'inverse, si le délai d'épreuve se passe sans incident, la peine ne sera jamais exécutée.",
+      "reference_legale": "Loi du 29 juin 1964 concernant la suspension, le sursis et la probation (révocation)",
+      "contacts": [
+        {
+          "nom": "Votre avocat",
+          "pour": "évaluer un risque de révocation"
+        },
+        {
+          "nom": "Maison de justice",
+          "pour": "suivi des conditions probatoires"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://justice.belgium.be/fr/themes_et_dossiers/jugement_penal_et_consequences/types_de_peines/que_decide_le_juge/sursis",
+          "intitule": "SPF Justice — Le sursis"
+        }
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

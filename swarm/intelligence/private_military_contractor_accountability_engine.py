@@ -1,0 +1,123 @@
+#!/usr/bin/env python3
+from dataclasses import dataclass, field
+import json
+
+@dataclass
+class EntityScore:
+    entity_id: str
+    name: str
+    sub1: float  # Impunité & absence de poursuites
+    sub2: float  # Violations documentées des droits humains
+    sub3: float  # Opacité contractuelle & supervision
+    sub4: float  # Protection des victimes & réparations
+    composite_score: float = field(init=False)
+    risk_level: str = field(init=False)
+    estimated_index: float = field(init=False)
+
+    def __post_init__(self):
+        self.composite_score = round(
+            (self.sub1 * 0.30 + self.sub2 * 0.25 + self.sub3 * 0.25 + self.sub4 * 0.20) * 10, 2
+        )
+        if self.composite_score >= 60:
+            self.risk_level = "critique"
+        elif self.composite_score >= 40:
+            self.risk_level = "élevé"
+        elif self.composite_score >= 20:
+            self.risk_level = "modéré"
+        else:
+            self.risk_level = "faible"
+        self.estimated_index = round(self.composite_score / 100 * 10, 2)
+
+
+def run_private_military_contractor_accountability_analysis():
+    entities = [
+        EntityScore(
+            entity_id="pmca_001",
+            name="Wagner Group / Africa Corps (Russie)",
+            sub1=9.8, sub2=9.7, sub3=9.9, sub4=9.5
+        ),
+        EntityScore(
+            entity_id="pmca_002",
+            name="Blackwater/Academi — Iraq (Nisour Square)",
+            sub1=8.9, sub2=9.3, sub3=8.5, sub4=9.1
+        ),
+        EntityScore(
+            entity_id="pmca_003",
+            name="PMC Redut & Patriot (Russie/Ukraine)",
+            sub1=9.4, sub2=9.0, sub3=9.6, sub4=8.8
+        ),
+        EntityScore(
+            entity_id="pmca_004",
+            name="Saracen International / STTEP (Afrique subsaharienne)",
+            sub1=8.5, sub2=8.2, sub3=8.7, sub4=8.0
+        ),
+        EntityScore(
+            entity_id="pmca_005",
+            name="DynCorp International (Balkans & Afghanistan)",
+            sub1=5.5, sub2=5.2, sub3=5.8, sub4=4.8
+        ),
+        EntityScore(
+            entity_id="pmca_006",
+            name="MPRI (Military Professional Resources Inc. — Croatie/Bosnie)",
+            sub1=4.8, sub2=4.5, sub3=5.0, sub4=4.2
+        ),
+        EntityScore(
+            entity_id="pmca_007",
+            name="G4S / Allied Universal (détention & escorte)",
+            sub1=3.8, sub2=3.5, sub3=4.0, sub4=3.2
+        ),
+        EntityScore(
+            entity_id="pmca_008",
+            name="Cadre Montreux Document (États signataires UE/Suisse)",
+            sub1=1.2, sub2=1.0, sub3=1.5, sub4=1.8
+        ),
+    ]
+
+    results = []
+    for e in entities:
+        results.append({
+            "entity_id": e.entity_id,
+            "name": e.name,
+            "sub1_impunity": e.sub1,
+            "sub2_violations": e.sub2,
+            "sub3_opacity": e.sub3,
+            "sub4_victim_protection": e.sub4,
+            "composite_score": e.composite_score,
+            "risk_level": e.risk_level,
+            "estimated_pmc_accountability_index": e.estimated_index,
+        })
+
+    results.sort(key=lambda x: x["composite_score"], reverse=True)
+
+    avg_composite = round(sum(r["composite_score"] for r in results) / len(results), 2)
+    distribution = {}
+    for r in results:
+        distribution[r["risk_level"]] = distribution.get(r["risk_level"], 0) + 1
+
+    output = {
+        "engine": "private_military_contractor_accountability_engine",
+        "wave": 146,
+        "domain": "Responsabilité des sociétés militaires privées & droits humains",
+        "avg_composite": avg_composite,
+        "distribution": distribution,
+        "entities": results,
+    }
+
+    print(json.dumps(output, ensure_ascii=False, indent=2))
+
+    print(f"\n--- VALIDATION ---")
+    print(f"avg_composite : {avg_composite}")
+    print(f"Distribution  : {distribution}")
+    for r in results:
+        print(f"  [{r['risk_level']:8s}] {r['composite_score']:5.2f}  {r['name']}")
+
+    assert distribution.get("critique", 0) == 4, f"Attendu 4 critique, obtenu {distribution.get('critique', 0)}"
+    assert distribution.get("élevé", 0) == 2, f"Attendu 2 élevé, obtenu {distribution.get('élevé', 0)}"
+    assert distribution.get("modéré", 0) == 1, f"Attendu 1 modéré, obtenu {distribution.get('modéré', 0)}"
+    assert distribution.get("faible", 0) == 1, f"Attendu 1 faible, obtenu {distribution.get('faible', 0)}"
+    assert 58 <= avg_composite <= 68, f"avg_composite hors plage [58-68]: {avg_composite}"
+    print("✓ Toutes les assertions passent.")
+
+
+if __name__ == "__main__":
+    run_private_military_contractor_accountability_analysis()

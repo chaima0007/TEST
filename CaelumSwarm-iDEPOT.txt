@@ -1,0 +1,31 @@
+TITRE : CaelumSwarm(TM) Plateforme IA CSDDD 2024
+
+PROPRIÉTAIRE : Caelum Partners SPRL
+AUTEURE : Chaima Mhadbi
+DATE DE CRÉATION : 2024
+CONTACT : legal@caelumpartners.eu
+
+DESCRIPTION :
+Plateforme IA CSDDD — Caelum Partners SPRL.
+Algorithme scoring, 340+ moteurs Python, dashboard React.
+Chaima Mhadbi 2024. legal@caelumpartners.eu
+
+ÉLÉMENTS PROTÉGÉS :
+1. Algorithme scoring 8 entités (4 niveaux de risque)
+   Poids : sub1x0.30 + sub2x0.25 + sub3x0.25 + sub4x0.20
+   Score moyen calibré : 61.02/100
+
+2. Architecture multi-agents CaelumSwarm(TM)
+   340+ moteurs Python sectoriels CSDDD 2024/1760
+   Domaines : droits humains, travail des enfants, environnement, gouvernance
+
+3. Interface dashboard React propriétaire
+   Visualisations GaugeRing SVG, DetailModal 4 onglets
+   Couche certification : ISO 26000, SA8000, Fair Trade, CSDDD, OIT C182
+
+4. Méthodologie analyse sectorielle conformité EU 2024/1760
+
+5. Corpus données chaînes d'approvisionnement
+
+JURISDICTION : Droit belge — Bruxelles
+© 2024-2026 Caelum Partners SPRL — Tous droits réservés

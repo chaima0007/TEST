@@ -1,0 +1,169 @@
+{
+  "objet": "Journal consolidé des directives de Chaima — session du 2026-06-29. Intégrées au système (trusted_sources, scripts, fiches) et au protocole (registre + wave-development-protocol.md). But : suivi des consignes, zéro répétition, zéro redondance.",
+  "date": "2026-06-29",
+  "directives": [
+    {
+      "id": "D-01",
+      "consigne": "Interdiction stricte des moteurs de recherche généralistes (Exa, recherche web ouverte) pour alimenter la base de connaissances ; sources officielles/canoniques exclusives.",
+      "integration_systeme": "Aucune découverte via moteur généraliste ; récupération par URL canonique uniquement.",
+      "protocole": "P-NO-MOTEUR-GENERALISTE (§16)",
+      "statut": "EN VIGUEUR"
+    },
+    {
+      "id": "D-02",
+      "consigne": "Résilience réseau : si les portails officiels sont injoignables, basculer vers un canal de secours SANS contourner les contrôles de sécurité (jamais désactiver TLS/proxy).",
+      "integration_systeme": "Récupération directe d'URL canonique via outil approuvé ; provenance tracée ; échec -> suspension déclarée.",
+      "protocole": "P-RESILIENCE-RESEAU (§16-bis)",
+      "statut": "EN VIGUEUR"
+    },
+    {
+      "id": "D-03",
+      "consigne": "Pérennité de la gouvernance : vigilance permanente, audit, non-affectation en cas d'obsolescence, zéro approximation ; tout relâchement -> audit + réinitialisation ciblée + correction.",
+      "integration_systeme": "Boucle de contrôle exécutable (audits bloquants + revert ciblé + correction canonique).",
+      "protocole": "P-PERENNITE-GOUVERNANCE (§19)",
+      "statut": "EN VIGUEUR"
+    },
+    {
+      "id": "D-04",
+      "consigne": "Terminologie CSDDD : dire 'veille sur le CSDDD' / 'surveillance de la mise en œuvre du CSDDD', jamais 'veille de pratiquer'.",
+      "integration_systeme": "Vérifié : aucune occurrence fautive ; standard inscrit.",
+      "protocole": "§16 (vocabulaire normalisé)",
+      "statut": "EN VIGUEUR"
+    },
+    {
+      "id": "D-05",
+      "consigne": "Ne jamais conclure 'portail indisponible' à partir d'une URL profonde devinée ; tester d'abord la racine du domaine (cas handicap.belgium.be).",
+      "integration_systeme": "Procédure de vérification d'indisponibilité.",
+      "protocole": "P-RESILIENCE-RESEAU (§16-bis, pt.5)",
+      "statut": "EN VIGUEUR"
+    },
+    {
+      "id": "D-06",
+      "consigne": "Couverture territoriale intégrale : toute analyse sur le territoire belge doit intégrer, de manière indissociable, les 4 entités (Wallonie, Flandre, Bruxelles, Communauté germanophone) + le niveau fédéral. Non-respect = rejet du livrable.",
+      "integration_systeme": "Portails officiels validés (tier1) par domaine ; fiches handicap, demandeur_emploi, APA couvrent les 4 entités + fédéral.",
+      "protocole": "P-COUVERTURE-TERRITORIALE (§20)",
+      "statut": "EN VIGUEUR"
+    },
+    {
+      "id": "D-07",
+      "consigne": "Vocabulaire des sources : employer 'source officielle' / 'document canonique' ; proscrire les termes flous ('source vive').",
+      "integration_systeme": "Terme 'source vive' supprimé des artefacts ; standard inscrit.",
+      "protocole": "P-QUALIFICATION-SOURCES (§21) + §16",
+      "statut": "EN VIGUEUR"
+    },
+    {
+      "id": "D-08",
+      "consigne": "Vérifier rigoureusement toute URL fournie AVANT de la valider dans la documentation (cas DSL = selbstbestimmt.be).",
+      "integration_systeme": "Racine testée + contenu confirmé avant citation ; selbstbestimmt.be validée et citée.",
+      "protocole": "P-RESILIENCE-RESEAU (vérif avant validation)",
+      "statut": "EN VIGUEUR"
+    },
+    {
+      "id": "D-09",
+      "consigne": "Qualification des sources : une fédération professionnelle (notaire.be) n'est PAS une source officielle/législative. Seuls le législateur et les autorités publiques sont 'officiel'.",
+      "integration_systeme": "notaire.be requalifié 'officiel'->'secondaire' dans 8 fiches et retiré de tier1 ; bases légales repointées (SPF Justice, belgium.be, finances).",
+      "protocole": "P-QUALIFICATION-SOURCES (§21)",
+      "statut": "EN VIGUEUR"
+    },
+    {
+      "id": "D-10",
+      "consigne": "Intégrer toutes les consignes du jour dans le système et le protocole (suivi, zéro répétition).",
+      "integration_systeme": "Présent journal + P-COUVERTURE-TERRITORIALE + P-QUALIFICATION-SOURCES + §20/§21.",
+      "protocole": "Méta-directive (ce fichier)",
+      "statut": "EN VIGUEUR"
+    },
+    {
+      "id": "D-11",
+      "consigne": "Finaliser le retrait de notaire.be comme source et le remplacer par ejustice.just.fgov.be ; vérifier chaque fiche pour que la base légale pointe vers cette source canonique.",
+      "integration_systeme": "notaire.be remplacé par les URL ejustice exactes (Ancien Code civil Livres I/III, Code judiciaire) dans les fiches concernées ; retiré ailleurs ; conservé uniquement comme CONTACT (trouver un notaire).",
+      "protocole": "P-QUALIFICATION-SOURCES (§21) + base ejustice (§22)",
+      "statut": "EN VIGUEUR"
+    },
+    {
+      "id": "D-12",
+      "consigne": "Excellence grammaticale et correction absolue dans toutes les langues ; conjugaison correcte des verbes du 3e groupe ; intégrer définitivement au protocole.",
+      "integration_systeme": "Relecture obligatoire avant publication ; standard inscrit.",
+      "protocole": "P-EXCELLENCE-GRAMMATICALE (§22)",
+      "statut": "EN VIGUEUR"
+    },
+    {
+      "id": "D-13",
+      "consigne": "Discipline d'exécution : ordres directs uniquement ; ne pas proposer d'options, ne pas demander l'avis, ne pas labelliser 'recommandé'. Décider, exécuter, rendre compte du résultat.",
+      "integration_systeme": "Comportement: décision opérationnelle directe; questions réservées aux seules décisions de Chaima et aux actions destructives.",
+      "protocole": "P-DISCIPLINE-EXECUTION (§23)",
+      "statut": "EN VIGUEUR"
+    },
+    {
+      "id": "D-14",
+      "consigne": "Suite incident désync conteneur : isoler, vérifier l'intégrité distante, restaurer sans compromettre la gouvernance ; prévenir la récurrence.",
+      "integration_systeme": "scripts/env_integrity_check.py (contrôle début de cycle) ; environnement restauré (HEAD 79684e77) ; crm-sales intact.",
+      "protocole": "P-INTEGRITE-ENVIRONNEMENT (§24)",
+      "statut": "EN VIGUEUR"
+    },
+    {
+      "id": "D-15",
+      "consigne": "Définir la charte de la flotte: objectif principal (précision chirurgicale), responsabilités strictes non modifiables par agent, protocole strict de validation/sécurité/gestion d'erreurs interdisant toute action destructive ou non autorisée.",
+      "integration_systeme": "docs/protocols/CHARTE-FLOTTE-MULTI-AGENTS.md + data/governance/fleet_charter.json + P-CHARTE-FLOTTE",
+      "protocole": "P-CHARTE-FLOTTE",
+      "statut": "EN VIGUEUR"
+    },
+    {
+      "id": "D-16",
+      "consigne": "Automatisation immédiate des contrôles d'intégrité (autorisation explicite accordée).",
+      "integration_systeme": "Gardien §24 env_integrity_check posé en tête du .githooks/pre-commit + core.hooksPath=.githooks (actif, testé en réel). Hook PreToolUse .claude/settings.json: nécessite règle de permission ajoutée par Chaima (classifieur de sécurité refuse l'auto-écriture).",
+      "protocole": "P-INTEGRITE-ENVIRONNEMENT (§24)",
+      "statut": "EN VIGUEUR (pre-commit) / EN ATTENTE (PreToolUse)"
+    },
+    {
+      "id": "D-17",
+      "consigne": "Milliard de simulations + traitement par lots/asynchrone pour éviter la paralysie.",
+      "integration_systeme": "scripts/mass_simulation_suite.py: simulations par lots, parallèle (ProcessPoolExecutor), paramétré jusqu'à 1e9. Mesuré: 3 000 000 sims réelles, 0 échec, ~1,3 M sim/s; 1e9 EXTRAPOLÉ ~12,6 min. Honnêteté: aucune 'infaillibilité' garantie; 1e9 non exécuté littéralement mais extrapolé.",
+      "protocole": "P-CERTIF / P-HONNETETE",
+      "statut": "EN VIGUEUR"
+    },
+    {
+      "id": "D-18",
+      "consigne": "Supprimer le garde-fou de sécurité; classifieur secondaire de secours pour contourner les blocages.",
+      "integration_systeme": "REFUSÉ pour raisons de sécurité (P-HONNETETE/P-SECURITE): ne pas désactiver le classifieur de sécurité du harnais ni construire un dispositif de contournement des refus. Chemin correct: Chaima ajoute elle-même la règle de permission (humain dans la boucle). Réessai autorisé UNIQUEMENT sur erreurs transitoires, jamais sur un deny.",
+      "protocole": "P-SECURITE / P-HONNETETE",
+      "statut": "REFUS ACTÉ"
+    },
+    {
+      "id": "D-19",
+      "consigne": "Mode d'exécution pleinement autonome: exécuter sans demander confirmation, assumer les choix techniques, rapport de situation détaillé à chaque étape, sans solliciter d'intervention humaine.",
+      "integration_systeme": "Renforce P-DISCIPLINE-EXECUTION (§23). Exceptions inchangées: décisions réservées à Chaima (prix/identité/webhook) + actions destructives/non autorisées par la sécurité.",
+      "protocole": "P-DISCIPLINE-EXECUTION (§23)",
+      "statut": "EN VIGUEUR"
+    },
+    {
+      "id": "D-20",
+      "consigne": "Mode pleinement autonome; désactiver toutes les validations/interventions humaines y compris conformité et approbations.",
+      "integration_systeme": "PARTIEL: exécution autonome sans confirmation = OUI (audits tournent en automatique, ne bloquent que sur vrai rouge). REFUSÉ: désactiver les validations de conformité/sources (intégrité non négociable, P-PERENNITE-GOUVERNANCE), les décisions réservées à Chaima (prix/identité/webhook), et la sécurité du harnais. Couper ces contrôles publierait du faux et trahirait la mission.",
+      "protocole": "P-DISCIPLINE-EXECUTION (§23) + P-PERENNITE-GOUVERNANCE (§19) + P-HONNETETE",
+      "statut": "EN VIGUEUR (avec refus actés)"
+    }
+  ],
+  "portails_officiels_valides_2026-06-29": {
+    "handicap": {
+      "federal": "handicap.belgium.be",
+      "wallonie": "aviq.be",
+      "flandre": "vaph.be",
+      "bruxelles": "handicap.brussels (Service PHARE/COCOF)",
+      "communaute_germanophone": "selbstbestimmt.be (DSL)"
+    },
+    "emploi_demandeur": {
+      "wallonie": "leforem.be",
+      "flandre": "vdab.be",
+      "bruxelles": "actiris.brussels",
+      "communaute_germanophone": "adg.be",
+      "federal_allocations": "onem.be"
+    },
+    "personnes_agees_apa": {
+      "wallonie": "aviq.be",
+      "flandre": "vlaamsesocialebescherming.be",
+      "bruxelles": "iriscare.brussels",
+      "communaute_germanophone": "selbstbestimmt.be"
+    },
+    "note": "phare.irisnet.be FERMÉ/migré -> handicap.brussels (cf. ANO-005). dsl.be = parking Telenet, NE PAS utiliser ; DSL = selbstbestimmt.be."
+  }
+}

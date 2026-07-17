@@ -1,0 +1,188 @@
+{
+  "module": "bail_residence_principale_flandre",
+  "titre": "Bail de résidence principale — Région flamande",
+  "juridiction": "BE-VLG",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Vlaams Woninghuurdecreet (décret du 9 novembre 2018)",
+    "entree_en_vigueur": "2019-01-01",
+    "portee": "Baux d'habitation à titre de résidence principale en Région flamande",
+    "source_officielle": "https://codex.vlaanderen.be/PrintDocument.ashx?id=1029963&geannoteerd=true"
+  },
+  "derniere_revue": "2026-06-26",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information juridique générale, à jour à la date de revue. Ne constitue pas un conseil juridique individualisé. Vérifier la version en vigueur du Vlaams Woninghuurdecreet (Vlaamse Codex) avant toute démarche.",
+  "faits": [
+    {
+      "id": "BVLG-DUREE-001",
+      "question": "Quelle est la durée par défaut d'un bail de résidence principale en Flandre ?",
+      "reponse": "En Flandre, le bail de résidence principale est en principe conclu pour 9 ans. Un bail de courte durée a une durée maximale de 3 ans (renouvelable une fois sans dépasser 3 ans au total).",
+      "reference_legale": "Vlaams Woninghuurdecreet (décret du 9 novembre 2018)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://codex.vlaanderen.be/PrintDocument.ashx?id=1029963&geannoteerd=true",
+          "intitule": "Vlaamse Codex — Vlaams Woninghuurdecreet"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://www.dewaele.com/nl/advies/vlaams-huurdecreet-nieuw",
+          "intitule": "Dewaele — Vlaams Woninghuurdecreet (depuis le 01/01/2019)"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "BVLG-GARANTIE-001",
+      "question": "Quel est le montant maximum de la garantie locative en Flandre ?",
+      "reponse": "En Région flamande, la garantie locative (huurwaarborg) peut atteindre un maximum de 3 mois de loyer. Un prêt de garantie locative sans intérêt peut être sollicité auprès du Vlaams Woningfonds pour les locataires qui en remplissent les conditions.",
+      "reference_legale": "Vlaams Woninghuurdecreet — dispositions sur la huurwaarborg",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://codex.vlaanderen.be/PrintDocument.ashx?id=1029963&geannoteerd=true",
+          "intitule": "Vlaamse Codex — Vlaams Woninghuurdecreet (huurwaarborg)"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://callmepower.be/nl/verhuizen/huurcontract/vlaams-woninghuurdecreet",
+          "intitule": "Callmepower — Vlaams Woninghuurdecreet expliqué"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "BVLG-PREAVIS-001",
+      "question": "Comment résilier un bail de résidence principale en Flandre ?",
+      "reponse": "Pour un bail de 9 ans, le preneur peut résilier à tout moment moyennant un préavis de 3 mois (avec indemnité dégressive en cas de rupture durant les 3 premières années). Pour un bail de courte durée (≤ 3 ans), la résiliation se fait en principe au terme moyennant un préavis de 3 mois.",
+      "reference_legale": "Vlaams Woninghuurdecreet — fin du bail (opzegging)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://codex.vlaanderen.be/PrintDocument.ashx?id=1029963&geannoteerd=true",
+          "intitule": "Vlaamse Codex — Vlaams Woninghuurdecreet"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://www.mijnhabitat.be/nl/nieuws/einde-of-opzeg-van-de-huurovereenkomst",
+          "intitule": "Habitat — Fin ou résiliation du bail"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "BVLG-INDEX-001",
+      "question": "Quand le loyer peut-il être indexé en Flandre ?",
+      "reponse": "L'indexation du loyer est possible une fois par an, au plus tôt à la date anniversaire de l'entrée en vigueur du bail, selon la formule légale basée sur l'indice santé. Elle n'est pas automatique : le bailleur doit la demander.",
+      "reference_legale": "Vlaams Woninghuurdecreet — indexation du loyer",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://codex.vlaanderen.be/PrintDocument.ashx?id=1029963&geannoteerd=true",
+          "intitule": "Vlaamse Codex — Vlaams Woninghuurdecreet"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://www.mijnhabitat.be/nl/nieuws/het-vlaams-woninghuurdecreet-van-a-tot-z",
+          "intitule": "Habitat — Le Vlaams Woninghuurdecreet de A à Z"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "BVLG-EDL-001",
+      "question": "L'état des lieux est-il obligatoire en Flandre ?",
+      "reponse": "Un état des lieux détaillé (plaatsbeschrijving) et contradictoire est obligatoire. Il est annexé au bail et déposé avec celui-ci lors de l'enregistrement (gratuit via MyRent du SPF Finances). Les frais d'expert éventuels sont en principe partagés entre les parties.",
+      "reference_legale": "Vlaams Woninghuurdecreet — plaatsbeschrijving ; enregistrement : SPF Finances",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://codex.vlaanderen.be/PrintDocument.ashx?id=1029963&geannoteerd=true",
+          "intitule": "Vlaamse Codex — Vlaams Woninghuurdecreet"
+        },
+        {
+          "type": "officiel",
+          "url": "https://fin.belgium.be/en/private-individuals/property/renting-letting/lease-agreement",
+          "intitule": "SPF Finances — Enregistrement du bail (MyRent)"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "BVLG-REP-001",
+      "question": "Qui paie les réparations en Flandre : locataire ou bailleur ?",
+      "reponse": "Le bailleur assume les grosses réparations (toiture, chauffage, canalisations, remplacement d'appareils vétustes), le locataire l'entretien courant et les petites réparations. La Flandre a publié une liste (Moniteur belge du 19 décembre 2018), applicable aux baux conclus depuis le 01/01/2019 ; le bail peut prévoir d'autres dispositions si elles sont plus favorables au locataire.",
+      "reference_legale": "Vlaams Woninghuurdecreet + liste des réparations (M.B. 19/12/2018)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://codex.vlaanderen.be/PrintDocument.ashx?id=1029963&geannoteerd=true",
+          "intitule": "Vlaamse Codex — Vlaams Woninghuurdecreet"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://www.wikifin.be/fr/logement-et-emprunt-hypothecaire/louer-un-logement/quels-sont-les-frais-de-reparation-ou-dentretien",
+          "intitule": "Wikifin (FSMA) — Frais de réparation/entretien"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "BVLG-SALUB-001",
+      "question": "Quelles sont les normes de qualité d'un logement loué en Flandre ?",
+      "reponse": "En Flandre, le logement loué doit respecter les normes de qualité (woningkwaliteitsnormen) en matière de sécurité, de santé et de qualité de base ; la surface doit être suffisante pour une occupation normale. Un certificat de conformité (conformiteitsattest) peut attester du respect de ces normes. Le non-respect entraîne des sanctions.",
+      "reference_legale": "Vlaamse Wooncode / Vlaams Woninghuurdecreet — normes de qualité du logement",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://codex.vlaanderen.be/PrintDocument.ashx?id=1029963&geannoteerd=true",
+          "intitule": "Vlaamse Codex — Vlaams Woninghuurdecreet"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://flora.insure/fr/blog/normes-habitabilite-guide/",
+          "intitule": "Guide normes d'habitabilité en Belgique (3 régions)"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "BVLG-EXP-001",
+      "question": "Comment se déroule une expulsion en Flandre ?",
+      "reponse": "Une expulsion n'est possible qu'avec une décision du juge de paix ; le bailleur doit introduire une procédure et le CPAS/OCMW est informé. Après jugement, le locataire dispose en principe d'un mois pour quitter (délai modulable par le juge). Contrairement à Bruxelles et à la Wallonie, la Flandre ne prévoit pas de trêve hivernale spécifique des expulsions.",
+      "reference_legale": "Code judiciaire (juge de paix) + Vlaams Woninghuurdecreet — expulsion",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://codex.vlaanderen.be/PrintDocument.ashx?id=1029963&geannoteerd=true",
+          "intitule": "Vlaamse Codex — Vlaams Woninghuurdecreet"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://www.jeminforme.be/l-expulsion-d-un-locataire/",
+          "intitule": "Infor Jeunes — L'expulsion d'un locataire"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "BVLG-PEB-001",
+      "question": "Quelles sont les obligations EPC/PEB (énergie) pour louer en Flandre ?",
+      "reponse": "En Flandre, un certificat de performance énergétique (EPC) valide est obligatoire pour louer un logement et le label énergétique doit figurer dans les annonces. La Flandre renforce progressivement ses exigences de rénovation énergétique : vérifiez les obligations en vigueur auprès de l'agence flamande de l'énergie avant toute mise en location.",
+      "reference_legale": "Décret flamand sur l'énergie (Energiedecreet) et arrêté énergie (EPC)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.energiesparen.be/",
+          "intitule": "Vlaams Energie- en Klimaatagentschap — EPC"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://weinvest.be/fr-BE/blog/b2c/peb-calendar-by-region",
+          "intitule": "We Invest — Échéances PEB par région"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    }
+  ]
+}

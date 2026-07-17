@@ -1,0 +1,73 @@
+{
+  "module": "changement_nom_prenom",
+  "titre": "Changement de nom ou de prénom",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 15 mai 1987 relative aux noms et prénoms ; loi du 18 juin 2018 (compétence communale pour le changement de prénom)",
+    "portee": "Citoyens en Belgique",
+    "source_officielle": "https://www.justice.belgium.be/fr/themes_et_dossiers/personnes_et_familles/changement_de_nom"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information juridique générale, à jour à la date de revue. Les modalités et coûts (prénom) varient selon la commune.",
+  "faits": [
+    {
+      "id": "NOMPRE-001",
+      "question": "Comment changer de prénom ?",
+      "reponse": "Depuis 2018, la demande de changement de prénom se fait auprès de l'administration communale de votre domicile (et non plus au SPF Justice). La commune statue sur la demande ; le coût (droits) est fixé au niveau communal. Des règles particulières, plus souples, existent notamment pour les personnes transgenres.",
+      "reference_legale": "Loi du 18 juin 2018 (changement de prénom décentralisé vers les communes)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.justice.belgium.be/fr/themes_et_dossiers/personnes_et_familles/changement_de_nom",
+          "intitule": "SPF Justice — Changement de nom et de prénom"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "NOMPRE-002",
+      "question": "Comment changer de nom de famille ?",
+      "reponse": "Le changement de nom de famille relève du SPF Justice : vous introduisez une demande motivée. Le changement n'est pas un droit automatique ; il est accordé par décision (arrêté) lorsque les motifs sont jugés suffisants. Un droit d'enregistrement est dû.",
+      "reference_legale": "Loi du 15 mai 1987 relative aux noms et prénoms (changement de nom)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.justice.belgium.be/fr/themes_et_dossiers/personnes_et_familles/changement_de_nom",
+          "intitule": "SPF Justice — Changement de nom"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "NOMPRE-003",
+      "question": "Quels sont les effets du changement ?",
+      "reponse": "Une fois le changement accordé et acté, le nouveau nom/prénom figure à l'état civil et sur vos documents officiels. Le changement peut, dans certains cas, s'étendre aux enfants mineurs. Renseignez-vous sur les pièces à mettre à jour (carte d'identité, etc.).",
+      "reference_legale": "Loi du 15 mai 1987 relative aux noms et prénoms (effets de la décision)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.justice.belgium.be/fr/themes_et_dossiers/personnes_et_familles/changement_de_nom",
+          "intitule": "SPF Justice — Effets du changement"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "NOMPRE-TRANS-001",
+      "question": "Existe-t-il des règles particulières pour les personnes transgenres ?",
+      "reponse": "Oui. Pour les personnes transgenres, le changement de prénom bénéficie d'une procédure simplifiée et d'un coût fortement réduit (souvent quasi gratuit), à la commune, afin que le prénom corresponde à l'identité de genre vécue. Parallèlement, il existe une procédure spécifique, distincte, pour modifier l'enregistrement du sexe (la « mention du sexe ») à l'état civil, également auprès de la commune, fondée sur une déclaration de la personne (sans condition médicale ou chirurgicale). Ces démarches sont personnelles ; pour un mineur, des règles particulières et un accompagnement sont prévus. Renseignez-vous auprès de votre commune et, au besoin, d'une association spécialisée.",
+      "reference_legale": "Loi du 15 mai 1987 relative aux noms et prénoms ; dispositions spécifiques relatives au changement de prénom et à l'enregistrement du sexe des personnes transgenres",
+      "contacts": [
+        {"nom": "Administration communale (état civil)", "pour": "changement de prénom et de mention du sexe"},
+        {"nom": "Association spécialisée (accompagnement des personnes trans)", "pour": "information et soutien"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.justice.belgium.be/fr/themes_et_dossiers/personnes_et_familles/changement_de_nom", "intitule": "SPF Justice — Changement de prénom (personnes transgenres)"},
+        {"type": "officiel", "url": "https://igvm-iefh.belgium.be/fr", "intitule": "Institut pour l'égalité des femmes et des hommes — Transgenres"}
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

@@ -1,0 +1,123 @@
+{
+  "module": "logement_social",
+  "titre": "Logement social — conditions, inscription, attribution",
+  "domaine": "Logement social",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Réglementation régionale du logement social (Code wallon de l'Habitation durable ; Code bruxellois du Logement ; réglementation flamande) — sociétés de logement de service public",
+    "portee": "Accès au logement social en Belgique (compétence régionale)",
+    "source_officielle": "https://www.belgium.be/fr/logement/logement_social/inscription_et_attribution"
+  },
+  "derniere_revue": "2026-06-26",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les conditions et plafonds varient selon la Région : adressez-vous à la société de logement de votre région.",
+  "faits": [
+    {
+      "id": "LOGSOC-CONDITIONS-001",
+      "question": "Qui peut demander un logement social ?",
+      "reponse": "Les conditions varient un peu selon la Région, mais en général il faut : être inscrit au registre de la population ou des étrangers d'une commune belge, avoir des revenus nets imposables sous certains plafonds d'admission, et ne pas être propriétaire d'un autre logement. On ne peut s'inscrire qu'en tant que membre d'un seul ménage. Renseignez-vous sur les plafonds exacts de votre région.",
+      "reference_legale": "Réglementation régionale du logement social (Code wallon de l'Habitation durable ; Code bruxellois du Logement)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.belgium.be/fr/logement/logement_social/inscription_et_attribution",
+          "intitule": "Belgium.be — Logement social : inscription et attribution"
+        },
+        {
+          "type": "officiel",
+          "url": "https://slrb-bghm.brussels/fr/devenir-locataire/conditions-dadmission",
+          "intitule": "SLRB — Conditions d'admission"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "LOGSOC-INSCRIPTION-001",
+      "question": "Comment s'inscrire pour un logement social ?",
+      "reponse": "L'inscription se fait au moyen d'un formulaire, et c'est gratuit. Vous l'envoyez ou le déposez auprès de la société de logement de votre région (en Wallonie : une Société de logement de service public ; à Bruxelles : une SISP). Vous recevez un accusé de réception : la date de réception du formulaire complet fait foi pour votre place. Ne payez jamais pour vous inscrire.",
+      "reference_legale": "Code wallon de l'Habitation durable ; Code bruxellois du Logement — inscription auprès des sociétés de logement",
+      "contacts": [
+        {
+          "nom": "Société de logement de votre région (SLSP / SISP)",
+          "lien": "https://www.wallonie.be/fr/demarches/sinscrire-comme-candidat-aupres-dune-societe-de-logement-de-service-public-slsp",
+          "pour": "s'inscrire (gratuit)"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://slrb-bghm.brussels/fr/devenir-locataire/sinscrire-un-logement-social",
+          "intitule": "SLRB — S'inscrire à un logement social"
+        },
+        {
+          "type": "secondaire",
+          "url": "https://www.droitsquotidiens.be/fr/question/comment-demander-un-logement-social-wallonie",
+          "intitule": "Droits Quotidiens — Demander un logement social (Wallonie)"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "LOGSOC-ATTENTE-001",
+      "question": "Comment fonctionne la liste d'attente, et dois-je confirmer ma demande ?",
+      "reponse": "L'attribution se fait généralement selon une liste chronologique des candidatures (ordre d'inscription, avec des priorités possibles selon la situation). Les délais d'attente peuvent être longs. Important : il faut en principe confirmer/renouveler sa candidature chaque année (souvent avant une date fixée, par ex. mi-février) — sinon vous risquez de perdre votre place. Vérifiez la date auprès de votre société de logement.",
+      "reference_legale": "Code wallon de l'Habitation durable ; Code bruxellois du Logement — attribution et renouvellement des candidatures",
+      "alerte_delai": "Confirmez votre candidature chaque année (souvent avant la mi-février) pour ne pas perdre votre place sur la liste.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.belgium.be/fr/logement/logement_social/inscription_et_attribution",
+          "intitule": "Belgium.be — Inscription et attribution"
+        },
+        {
+          "type": "officiel",
+          "url": "https://slrb-bghm.brussels/fr/devenir-locataire",
+          "intitule": "SLRB — Devenir locataire"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "LOGSOC-REGIONAL-001",
+      "question": "À quel opérateur de logement social m'adresser selon ma région ?",
+      "reponse": "Le logement social est une compétence régionale, avec un opérateur faîtier par région. En WALLONIE : la Société wallonne du Logement (SWL) et les 62 sociétés de logement de service public (SLSP) qui gèrent le parc public local. En FLANDRE : la VMSW (Vlaamse Maatschappij voor Sociaal Wonen) avec Wonen in Vlaanderen et les sociétés de logement locales (woonmaatschappijen). À BRUXELLES : la SLRB-BGHM (Société du Logement de la Région de Bruxelles-Capitale) et les sociétés immobilières de service public (SISP). Pour la région de langue allemande, le logement relève du cadre régional avec des sociétés de logement locales en Ostbelgien. Adressez votre candidature à la société de logement de votre commune.",
+      "reference_legale": "Compétence régionale du logement : Code wallon de l'Habitation durable (SWL/SLSP) ; Code flamand du logement / réglementation flamande (VMSW — Wonen in Vlaanderen) ; Code bruxellois du Logement (SLRB-BGHM)",
+      "contacts": [
+        {
+          "nom": "SWL (Wallonie)",
+          "lien": "https://www.swl.be/",
+          "pour": "logement public en Wallonie (via les SLSP)"
+        },
+        {
+          "nom": "VMSW / Wonen in Vlaanderen (Flandre)",
+          "lien": "https://www.vmsw.be/",
+          "pour": "sociaal wonen en Flandre"
+        },
+        {
+          "nom": "SLRB-BGHM (Bruxelles)",
+          "lien": "https://slrb-bghm.brussels/fr/devenir-locataire",
+          "pour": "logement social à Bruxelles (via les SISP)"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.swl.be/",
+          "intitule": "Société wallonne du Logement (SWL) — portail du logement public wallon"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.vmsw.be/",
+          "intitule": "VMSW — Vlaamse Maatschappij voor Sociaal Wonen (Flandre)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://slrb-bghm.brussels/fr/devenir-locataire",
+          "intitule": "SLRB-BGHM — logement social à Bruxelles"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    }
+  ]
+}

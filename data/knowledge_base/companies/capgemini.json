@@ -1,0 +1,70 @@
+{
+  "id": "capgemini",
+  "slug": "capgemini",
+  "name": "Capgemini SE",
+  "country": "France",
+  "city": "Paris",
+  "sector": "Tech/Consulting",
+  "size": {
+    "revenue_bn_eur": 22,
+    "employees": 360000,
+    "index": "CAC40"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": false,
+    "swiss_hrdd": false,
+    "sfdr": false,
+    "esg_rating": {
+      "msci": "A",
+      "sustainalytics": "16.4 Low Risk",
+      "target": "AA"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "Chief CSR Officer / Chief Procurement Officer",
+    "team": "Corporate Social Responsibility (CSR) department, Responsible Business Unit",
+    "location": "Paris (siège), Mumbai (Inde operations - 180K employés), Pune, Hyderabad, Bengaluru, Varsovie, Cracovie",
+    "process": "ESG Steering Committee mensuel, Supplier Code of Conduct review annuelle, processus de reporting ESG intégré au rapport financier"
+  },
+  "pain_points": [
+    "Modèle de delivery offshore massif : 180 000+ consultants en Inde avec questions sur les conditions de travail (heures, mobilité forcée, pression sur les performances)",
+    "Sous-traitance et staffing IT : recruteurs intermédiaires en Inde et en Europe de l'Est pratiquant des frais de recrutement abusifs pour les travailleurs migrants",
+    "Droits humains dans les projets clients : Capgemini délivre des solutions pour des gouvernements et des entreprises dont les projets peuvent affecter des droits humains",
+    "Conditions de travail en nearshore Europe (Pologne, Roumanie, Maroc) : standards sociaux inférieurs aux pratiques françaises malgré les engagements groupe",
+    "Intelligence artificielle et droits humains : développement de solutions IA pour des clients dont les usages peuvent violer des droits (surveillance, discrimination algorithmique)",
+    "Conformité CSDDD pour les achats indirects : prestations de facilities, transport, catering dans les 50+ pays d'opération"
+  ],
+  "observed_failures": [
+    "Enquête journalistique The Guardian 2022 : conditions de travail dégradées dans les centres de delivery Capgemini en Inde (pression, heures excessives, management toxique)",
+    "Plainte syndicale (UGICT-CGT France, 2021) : discrimination sur les mobilités et les promotions des consultants français vs. profiles étrangers",
+    "Projet gouvernemental controversé (anonymisé) : Capgemini a délivré un système de surveillance biométrique pour un État client sans évaluation d'impact droits humains préalable"
+  ],
+  "signals_of_risk": [
+    "Modèle économique reposant sur la main-d'œuvre à bas coût en Inde expose Capgemini à des risques DDH directs (pas indirects via la supply chain)",
+    "Croissance de l'IA et du digital crée de nouveaux risques DDH difficiles à anticiper sans framework dédié",
+    "Pression des clients grands comptes pour des engagements ESG Capgemini vérifiables dans les appels d'offres"
+  ],
+  "signals_of_trust": [
+    "Note MSCI A — parmi les meilleurs de son secteur Tech/Consulting",
+    "Programme Capgemini Invent for Society : projets à impact social avec mesure des résultats",
+    "Code de conduite fournisseurs avec critères sociaux, distribué à 10 000+ fournisseurs",
+    "Engagement Net Zero 2030 (opérations propres) avec rapport carbone certifié Science Based Targets"
+  ],
+  "recommended_actions": [
+    "Positionner notre offre comme réponse aux risques DDH spécifiques au secteur IT/Consulting (workforce offshore, IA, projets clients sensibles)",
+    "Proposer un module d'évaluation d'impact droits humains (HRIA) pour les projets clients impliquant des systèmes de surveillance ou d'IA",
+    "Démontrer comment notre solution peut s'intégrer dans les appels d'offres grands comptes où Capgemini doit prouver ses propres engagements DDH",
+    "Organiser un workshop avec le CSR Office autour des spécificités DDH du modèle offshore-nearshore"
+  ],
+  "local_tone": "Ton professionnel et dynamique, adapté à une entreprise de conseil. Capgemini comprend le langage des frameworks et des méthodologies — utiliser des approches structurées (matrice de risques, scoring, roadmap). La dimension internationale et la croissance sont des valeurs importantes.",
+  "cultural_notes": "Capgemini a une culture de consulting avec valorisation de l'expertise et de l'innovation. Les équipes CSR sont compétentes mais souvent perçues comme en marge des activités commerciales centrales. Il faut démontrer comment les engagements DDH deviennent un avantage commercial dans les appels d'offres grands comptes.",
+  "priority": 3,
+  "last_updated": "2026-06-21",
+  "source_links": [
+    "https://www.capgemini.com/about-us/sustainability/",
+    "https://www.theguardian.com/technology/2022/capgemini-india-working-conditions",
+    "https://www.business-humanrights.org/en/companies/capgemini/"
+  ]
+}

@@ -1,0 +1,356 @@
+{
+  "agent": "kpi-dashboard-agent",
+  "generated_at": "2026-06-22T07:39:53.983562",
+  "periode": "Juin 2026",
+  "periode_precedente": "Mai 2026",
+  "health_score_global": 45.9,
+  "nb_alertes": 0,
+  "nb_objectifs_atteints": 0,
+  "kpis": {
+    "mrr_eur": {
+      "label": "MRR (Monthly Recurring Revenue)",
+      "unite": "EUR",
+      "categorie": "Financier",
+      "valeur_actuelle": 38450,
+      "valeur_precedente": 31200,
+      "seuil_alerte": 20000,
+      "seuil_objectif": 100000,
+      "description": "Revenus récurrents mensuels consolidés",
+      "trend": {
+        "delta_abs": 7250,
+        "delta_pct": 23.2,
+        "tendance": "HAUSSE",
+        "symbole": "▲",
+        "est_positif": true
+      },
+      "progress": 23.1,
+      "status": "OK",
+      "valeur_formatee": "38.5k EUR"
+    },
+    "arr_eur": {
+      "label": "ARR (Annual Recurring Revenue)",
+      "unite": "EUR",
+      "categorie": "Financier",
+      "valeur_actuelle": 461400,
+      "valeur_precedente": 374400,
+      "seuil_alerte": 240000,
+      "seuil_objectif": 1200000,
+      "description": "Projection annuelle des revenus récurrents",
+      "trend": {
+        "delta_abs": 87000,
+        "delta_pct": 23.2,
+        "tendance": "HAUSSE",
+        "symbole": "▲",
+        "est_positif": true
+      },
+      "progress": 23.1,
+      "status": "OK",
+      "valeur_formatee": "461.4k EUR"
+    },
+    "chiffre_affaires_ytd_eur": {
+      "label": "CA cumulé YTD",
+      "unite": "EUR",
+      "categorie": "Financier",
+      "valeur_actuelle": 182300,
+      "valeur_precedente": 143850,
+      "seuil_alerte": 50000,
+      "seuil_objectif": 500000,
+      "description": "Chiffre d'affaires cumulé depuis janvier 2026",
+      "trend": {
+        "delta_abs": 38450,
+        "delta_pct": 26.7,
+        "tendance": "HAUSSE",
+        "symbole": "▲",
+        "est_positif": true
+      },
+      "progress": 29.4,
+      "status": "OK",
+      "valeur_formatee": "182.3k EUR"
+    },
+    "nb_clients_actifs": {
+      "label": "Clients actifs",
+      "unite": "clients",
+      "categorie": "Clients",
+      "valeur_actuelle": 47,
+      "valeur_precedente": 38,
+      "seuil_alerte": 20,
+      "seuil_objectif": 200,
+      "description": "Nombre de clients avec abonnement actif ce mois",
+      "trend": {
+        "delta_abs": 9,
+        "delta_pct": 23.7,
+        "tendance": "HAUSSE",
+        "symbole": "▲",
+        "est_positif": true
+      },
+      "progress": 15.0,
+      "status": "OK",
+      "valeur_formatee": "47 clients"
+    },
+    "nb_clients_enterprise": {
+      "label": "Clients Enterprise (>2500 EUR/mois)",
+      "unite": "clients",
+      "categorie": "Clients",
+      "valeur_actuelle": 8,
+      "valeur_precedente": 6,
+      "seuil_alerte": 3,
+      "seuil_objectif": 30,
+      "description": "Grands comptes plan Enterprise actifs",
+      "trend": {
+        "delta_abs": 2,
+        "delta_pct": 33.3,
+        "tendance": "HAUSSE",
+        "symbole": "▲",
+        "est_positif": true
+      },
+      "progress": 18.5,
+      "status": "OK",
+      "valeur_formatee": "8 clients"
+    },
+    "taux_churn_mensuel_pct": {
+      "label": "Taux de churn mensuel",
+      "unite": "%",
+      "categorie": "Clients",
+      "valeur_actuelle": 2.1,
+      "valeur_precedente": 3.4,
+      "seuil_alerte": 5.0,
+      "seuil_objectif": 1.0,
+      "description": "% clients perdus par rapport au mois précédent",
+      "inverser_tendance": true,
+      "trend": {
+        "delta_abs": -1.2999999999999998,
+        "delta_pct": -38.2,
+        "tendance": "AMÉLIORATION",
+        "symbole": "▲",
+        "est_positif": true
+      },
+      "progress": 72.5,
+      "status": "OK",
+      "valeur_formatee": "2.10%"
+    },
+    "nps_score": {
+      "label": "NPS (Net Promoter Score)",
+      "unite": "/100",
+      "categorie": "Clients",
+      "valeur_actuelle": 61,
+      "valeur_precedente": 54,
+      "seuil_alerte": 30,
+      "seuil_objectif": 80,
+      "description": "Indice de recommandation client (enquête mensuelle)",
+      "trend": {
+        "delta_abs": 7,
+        "delta_pct": 13.0,
+        "tendance": "HAUSSE",
+        "symbole": "▲",
+        "est_positif": true
+      },
+      "progress": 62.0,
+      "status": "OK",
+      "valeur_formatee": "61 /100"
+    },
+    "ltv_moyen_eur": {
+      "label": "LTV moyen par client",
+      "unite": "EUR",
+      "categorie": "Clients",
+      "valeur_actuelle": 22800,
+      "valeur_precedente": 19500,
+      "seuil_alerte": 5000,
+      "seuil_objectif": 50000,
+      "description": "Valeur vie client moyenne (LTV = ARPU / churn)",
+      "trend": {
+        "delta_abs": 3300,
+        "delta_pct": 16.9,
+        "tendance": "HAUSSE",
+        "symbole": "▲",
+        "est_positif": true
+      },
+      "progress": 39.6,
+      "status": "OK",
+      "valeur_formatee": "22.8k EUR"
+    },
+    "nb_engines_actifs": {
+      "label": "Engines swarm actifs",
+      "unite": "engines",
+      "categorie": "Produit",
+      "valeur_actuelle": 42,
+      "valeur_precedente": 39,
+      "seuil_alerte": 20,
+      "seuil_objectif": 60,
+      "description": "Engines Python actifs dans CaelumSwarm (Wave 209)",
+      "trend": {
+        "delta_abs": 3,
+        "delta_pct": 7.7,
+        "tendance": "HAUSSE",
+        "symbole": "▲",
+        "est_positif": true
+      },
+      "progress": 55.0,
+      "status": "OK",
+      "valeur_formatee": "42 engines"
+    },
+    "nb_agents_support_actifs": {
+      "label": "Agents support actifs",
+      "unite": "agents",
+      "categorie": "Produit",
+      "valeur_actuelle": 18,
+      "valeur_precedente": 15,
+      "seuil_alerte": 5,
+      "seuil_objectif": 30,
+      "description": "Agents IA de support client actifs dans le système",
+      "trend": {
+        "delta_abs": 3,
+        "delta_pct": 20.0,
+        "tendance": "HAUSSE",
+        "symbole": "▲",
+        "est_positif": true
+      },
+      "progress": 52.0,
+      "status": "OK",
+      "valeur_formatee": "18 agents"
+    },
+    "couverture_csddd_pct": {
+      "label": "Couverture CSDDD",
+      "unite": "%",
+      "categorie": "Produit",
+      "valeur_actuelle": 84,
+      "valeur_precedente": 78,
+      "seuil_alerte": 60,
+      "seuil_objectif": 100,
+      "description": "% des 50 domaines CSDDD couverts par un engine dédié",
+      "trend": {
+        "delta_abs": 6,
+        "delta_pct": 7.7,
+        "tendance": "HAUSSE",
+        "symbole": "▲",
+        "est_positif": true
+      },
+      "progress": 60.0,
+      "status": "OK",
+      "valeur_formatee": "84.00%"
+    },
+    "api_latency_p95_ms": {
+      "label": "Latence API P95",
+      "unite": "ms",
+      "categorie": "Technique",
+      "valeur_actuelle": 142,
+      "valeur_precedente": 198,
+      "seuil_alerte": 500,
+      "seuil_objectif": 100,
+      "description": "Latence au 95ème percentile des appels API",
+      "inverser_tendance": true,
+      "trend": {
+        "delta_abs": -56,
+        "delta_pct": -28.3,
+        "tendance": "AMÉLIORATION",
+        "symbole": "▲",
+        "est_positif": true
+      },
+      "progress": 89.5,
+      "status": "OK",
+      "valeur_formatee": "142 ms"
+    },
+    "uptime_pct": {
+      "label": "Disponibilité plateforme",
+      "unite": "%",
+      "categorie": "Technique",
+      "valeur_actuelle": 99.87,
+      "valeur_precedente": 99.61,
+      "seuil_alerte": 99.0,
+      "seuil_objectif": 99.95,
+      "description": "Uptime mensuel de la plateforme CaelumSwarm",
+      "trend": {
+        "delta_abs": 0.2600000000000051,
+        "delta_pct": 0.3,
+        "tendance": "STABLE",
+        "symbole": "→",
+        "est_positif": true
+      },
+      "progress": 91.6,
+      "status": "OK",
+      "valeur_formatee": "99.87%"
+    },
+    "nb_appels_api_mois": {
+      "label": "Appels API / mois",
+      "unite": "appels",
+      "categorie": "Technique",
+      "valeur_actuelle": 2847000,
+      "valeur_precedente": 2103000,
+      "seuil_alerte": 500000,
+      "seuil_objectif": 10000000,
+      "description": "Volume total d'appels API sur la période",
+      "trend": {
+        "delta_abs": 744000,
+        "delta_pct": 35.4,
+        "tendance": "HAUSSE",
+        "symbole": "▲",
+        "est_positif": true
+      },
+      "progress": 24.7,
+      "status": "OK",
+      "valeur_formatee": "2847k"
+    },
+    "score_conformite_moyen_clients": {
+      "label": "Score conformité moyen portefeuille",
+      "unite": "/10",
+      "categorie": "Compliance",
+      "valeur_actuelle": 6.84,
+      "valeur_precedente": 6.31,
+      "seuil_alerte": 5.0,
+      "seuil_objectif": 8.0,
+      "description": "Score de conformité CSDDD moyen sur l'ensemble des clients",
+      "trend": {
+        "delta_abs": 0.5300000000000002,
+        "delta_pct": 8.4,
+        "tendance": "HAUSSE",
+        "symbole": "▲",
+        "est_positif": true
+      },
+      "progress": 61.3,
+      "status": "OK",
+      "valeur_formatee": "6.84 /10"
+    },
+    "nb_fournisseurs_analyses": {
+      "label": "Fournisseurs analysés (cumulé)",
+      "unite": "fournisseurs",
+      "categorie": "Compliance",
+      "valeur_actuelle": 14820,
+      "valeur_precedente": 11350,
+      "seuil_alerte": 1000,
+      "seuil_objectif": 50000,
+      "description": "Nombre total de fournisseurs évalués via CaelumSwarm",
+      "trend": {
+        "delta_abs": 3470,
+        "delta_pct": 30.6,
+        "tendance": "HAUSSE",
+        "symbole": "▲",
+        "est_positif": true
+      },
+      "progress": 28.2,
+      "status": "OK",
+      "valeur_formatee": "14,820"
+    },
+    "nb_alertes_droits_humains_emises": {
+      "label": "Alertes droits humains émises",
+      "unite": "alertes",
+      "categorie": "Compliance",
+      "valeur_actuelle": 387,
+      "valeur_precedente": 298,
+      "seuil_alerte": 50,
+      "seuil_objectif": 1000,
+      "description": "Alertes automatiques émises aux clients sur risques droits humains",
+      "trend": {
+        "delta_abs": 89,
+        "delta_pct": 29.9,
+        "tendance": "HAUSSE",
+        "symbole": "▲",
+        "est_positif": true
+      },
+      "progress": 35.5,
+      "status": "OK",
+      "valeur_formatee": "387 alertes"
+    }
+  },
+  "alertes_actives": [],
+  "objectifs_atteints": [],
+  "verdict": "SANTÉ MOYENNE — Actions prioritaires requises"
+}

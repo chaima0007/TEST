@@ -1,0 +1,78 @@
+{
+  "module": "infractions_routieres",
+  "titre": "Infractions routières — vitesse, alcool, amendes",
+  "domaine": "Circulation & sanctions",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 16 mars 1968 relative à la police de la circulation routière (sanctions) ; arrêté royal du 1er décembre 1975 portant règlement général sur la police de la circulation routière (Code de la route)",
+    "portee": "Excès de vitesse, conduite sous influence, GSM au volant : sanctions, perception immédiate et recours",
+    "source_officielle": "https://mobilit.belgium.be/fr"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les montants d'amende et de perception immédiate sont régulièrement indexés/relevés : vérifiez le montant exact sur votre document ou auprès du SPF Mobilité / de la Justice.",
+  "faits": [
+    {
+      "id": "INFRA-VITESSE-001",
+      "question": "Que se passe-t-il en cas d'excès de vitesse ?",
+      "reponse": "Tout dépend de l'ampleur du dépassement. Pour un excès limité, la police ou le parquet peut vous proposer une perception immédiate ou une transaction (une somme à payer, indexée) ; en payant, l'affaire est en principe close. Pour un excès plus important, ou en cas de non-paiement, vous êtes convoqué devant le tribunal de police, qui peut prononcer une amende plus lourde et, selon les cas, une déchéance du droit de conduire. Les sanctions sont renforcées dans les zones où la vitesse est plus basse (agglomération, zone 30, abords d'école). Vous pouvez toujours contester : ne payez pas une perception que vous estimez injustifiée sans vous renseigner, car payer vaut souvent reconnaissance.",
+      "reference_legale": "Loi du 16 mars 1968 relative à la police de la circulation routière (excès de vitesse et sanctions) ; arrêté royal du 1er décembre 1975 (Code de la route)",
+      "contacts": [
+        {"nom": "SPF Mobilité et Transports", "lien": "https://mobilit.belgium.be/fr", "pour": "règles de vitesse et sanctions"},
+        {"nom": "Tribunal de police", "pour": "contestation / convocation"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://mobilit.belgium.be/fr", "intitule": "SPF Mobilité — Infractions et sanctions"},
+        {"type": "officiel", "url": "https://justice.belgium.be/fr", "intitule": "SPF Justice — Circulation routière"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "INFRA-ALCOOL-001",
+      "question": "Quelle est la limite d'alcool au volant et que risque-t-on ?",
+      "reponse": "La limite générale est de 0,5 gramme d'alcool par litre de sang, soit 0,22 milligramme par litre d'air alvéolaire expiré (ce que mesure l'éthylomètre lors d'un contrôle). Pour les conducteurs professionnels (camions, bus…), la limite est plus stricte : 0,2 g/L de sang (0,09 mg/L d'air). Les sanctions sont graduées selon le taux : interdiction immédiate de conduire pour quelques heures, perception immédiate ou amende, et au-delà d'un certain taux, retrait immédiat du permis et comparution devant le tribunal de police (amende plus lourde, déchéance, voire éthylotest antidémarrage). Refuser le test est sanctionné comme une infraction grave. En cas de récidive, les peines s'alourdissent fortement.",
+      "reference_legale": "Loi du 16 mars 1968 relative à la police de la circulation routière (conduite sous l'influence de l'alcool, art. 34 et 35)",
+      "alerte_delai": "En cas de test positif, l'interdiction de conduire est immédiate (plusieurs heures) ; au-delà d'un certain taux, le permis peut être retiré sur-le-champ.",
+      "contacts": [
+        {"nom": "SPF Mobilité", "lien": "https://mobilit.belgium.be/fr", "pour": "règles sur la conduite sous influence"},
+        {"nom": "Avocat (droit de la circulation) / Bureau d'aide juridique", "pour": "défense devant le tribunal de police"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://mobilit.belgium.be/fr", "intitule": "SPF Mobilité — Alcool au volant"},
+        {"type": "officiel", "url": "https://be.brussels/fr/transport-mobilite/securite-routiere/conseils-pour-la-securite-routiere/alcool-drogues-medicaments-au-volant", "intitule": "be.brussels — Alcool, drogues et médicaments au volant"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "INFRA-DROGUE-GSM-001",
+      "question": "Drogue au volant et téléphone en main : quelles règles ?",
+      "reponse": "Conduire sous l'influence de drogues est interdit et se contrôle par un test salivaire (puis, le cas échéant, une analyse) ; les sanctions sont comparables à celles de l'alcool (interdiction de conduire, amende, déchéance). Tenir son téléphone en main en conduisant est également interdit et constitue une infraction sévèrement sanctionnée (perception immédiate plus élevée, et pour les cas les plus graves, possible retrait de permis). Le principe : un conducteur doit rester maître de son véhicule et attentif. Utilisez un support et un kit mains libres, ou arrêtez-vous pour téléphoner.",
+      "reference_legale": "Loi du 16 mars 1968 relative à la police de la circulation routière (conduite sous influence de drogues) ; arrêté royal du 1er décembre 1975 (Code de la route — usage du téléphone)",
+      "contacts": [
+        {"nom": "SPF Mobilité", "lien": "https://mobilit.belgium.be/fr", "pour": "règles drogues et distraction au volant"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://be.brussels/fr/transport-mobilite/securite-routiere/conseils-pour-la-securite-routiere/alcool-drogues-medicaments-au-volant", "intitule": "be.brussels — Drogues et médicaments au volant"},
+        {"type": "officiel", "url": "https://mobilit.belgium.be/fr", "intitule": "SPF Mobilité — Distraction au volant"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "INFRA-PAYER-CONTESTER-001",
+      "question": "J'ai reçu une amende routière : faut-il payer ou puis-je contester ?",
+      "reponse": "Après une infraction, vous recevez généralement une perception immédiate, puis, à défaut de paiement, une proposition de transaction du parquet, et enfin, si rien n'est payé ou si l'infraction est grave, une convocation au tribunal de police. Important : payer une perception ou une transaction met fin aux poursuites mais vaut, en pratique, reconnaissance de l'infraction. Si vous contestez (vous n'étiez pas le conducteur, erreur de mesure, circonstances), ne payez pas et indiquez votre contestation dans les délais (souvent via le document reçu), en conservant vos preuves. Attention : ignorer une amende ne la fait pas disparaître — elle augmente (majorations) et peut mener à une condamnation et à des poursuites de recouvrement.",
+      "reference_legale": "Loi du 16 mars 1968 relative à la police de la circulation routière (perception immédiate, transaction et poursuites)",
+      "alerte_delai": "Respectez le délai de paiement OU de contestation indiqué sur le document : passé ce délai, le montant augmente et les poursuites suivent.",
+      "contacts": [
+        {"nom": "Parquet / Tribunal de police", "pour": "paiement, transaction ou contestation"},
+        {"nom": "Avocat / Bureau d'aide juridique", "pour": "contester une amende ou une déchéance"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://justice.belgium.be/fr", "intitule": "SPF Justice — Perception immédiate et transaction"},
+        {"type": "officiel", "url": "https://mobilit.belgium.be/fr", "intitule": "SPF Mobilité — Sanctions de circulation"}
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "mission": "Notre étoile du Nord",
+  "but": "Donner un cap clair et durable à tout ce que le système construit. Chaque ligne de code, chaque source vérifiée, chaque protocole sert ce but.",
+  "derniere_revue": "2026-06-26",
+  "raison_d_etre": "Bâtir une entreprise fiable et reconnue, dont les revenus financent des projets qui comptent vraiment.",
+  "objectifs_de_coeur": [
+    {
+      "id": "M1-FONDATION-ENFANTS",
+      "titre": "Une fondation pour les enfants placés par le juge de la jeunesse",
+      "description": "Leur offrir un lieu unique : les meilleurs éducateurs, le meilleur matériel, un cadre digne et chaleureux.",
+      "priorite": "coeur"
+    },
+    {
+      "id": "M2-FAMILLE",
+      "titre": "Prendre soin de la famille",
+      "description": "Une maison complète et meublée pour maman, le frère et la sœur ; rapprocher la tata pour prendre soin d'elle.",
+      "priorite": "coeur"
+    },
+    {
+      "id": "M3-STABILITE-PERSONNELLE",
+      "titre": "Sécurité et fierté personnelle",
+      "description": "Ne manquer de rien, accéder à un logement de qualité, et surtout être fière du chemin accompli — légitimement.",
+      "priorite": "coeur"
+    }
+  ],
+  "principes": [
+    "Honnêteté d'abord : pas de promesses magiques, des étapes réelles et tenues.",
+    "Fiabilité : tout savoir publié est sourcé, daté, vérifié.",
+    "Vitesse maîtrisée : résoudre vite SANS sacrifier la qualité (protocole de résolution rapide).",
+    "Durabilité : construire pour tenir des décennies, pas pour briller un jour."
+  ],
+  "chemin_vers_les_reves": "Produit fiable (La Loi Avec Moi, sourcé) → confiance → utilisateurs → revenus → réinvestissement → fondation & projets de coeur. Chaque étape est mesurée et racontée dans les comptes-rendus."
+}

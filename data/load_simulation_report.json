@@ -1,0 +1,84 @@
+{
+  "cible": "http://127.0.0.1:3220",
+  "concurrence": 60,
+  "requetes_par_route": 200,
+  "seuils_ms": {
+    "alerte": 300,
+    "critique": 800
+  },
+  "verdict_global": "OK",
+  "routes": [
+    {
+      "route": "/loi-avec-moi",
+      "requetes": 200,
+      "succes": 200,
+      "taux_erreur_pct": 0.0,
+      "p50_ms": 74.8,
+      "p95_ms": 82.4,
+      "p99_ms": 86.3,
+      "max_ms": 86.5,
+      "debit_req_s": 668.8,
+      "statut": "OK"
+    },
+    {
+      "route": "/base-juridique",
+      "requetes": 200,
+      "succes": 200,
+      "taux_erreur_pct": 0.0,
+      "p50_ms": 89.0,
+      "p95_ms": 95.7,
+      "p99_ms": 97.5,
+      "max_ms": 97.7,
+      "debit_req_s": 635.6,
+      "statut": "OK"
+    },
+    {
+      "route": "/transparence",
+      "requetes": 200,
+      "succes": 200,
+      "taux_erreur_pct": 0.0,
+      "p50_ms": 45.4,
+      "p95_ms": 67.0,
+      "p99_ms": 67.1,
+      "max_ms": 67.2,
+      "debit_req_s": 934.1,
+      "statut": "OK"
+    },
+    {
+      "route": "/loi-avec-moi/urgences",
+      "requetes": 200,
+      "succes": 200,
+      "taux_erreur_pct": 0.0,
+      "p50_ms": 108.6,
+      "p95_ms": 110.3,
+      "p99_ms": 110.4,
+      "max_ms": 110.5,
+      "debit_req_s": 530.8,
+      "statut": "OK"
+    },
+    {
+      "route": "/loi-avec-moi/contacts",
+      "requetes": 200,
+      "succes": 200,
+      "taux_erreur_pct": 0.0,
+      "p50_ms": 92.2,
+      "p95_ms": 96.0,
+      "p99_ms": 96.0,
+      "max_ms": 96.1,
+      "debit_req_s": 616.3,
+      "statut": "OK"
+    },
+    {
+      "route": "/loi/citoyen_europeen",
+      "requetes": 200,
+      "succes": 200,
+      "taux_erreur_pct": 0.0,
+      "p50_ms": 57.6,
+      "p95_ms": 67.0,
+      "p99_ms": 67.1,
+      "max_ms": 68.7,
+      "debit_req_s": 886.9,
+      "statut": "OK"
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "module": "hebergement_enfants_separation",
+  "titre": "Hébergement des enfants après séparation",
+  "domaine": "Famille & enfants",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code civil — autorité parentale et hébergement de l'enfant ; loi du 18 juillet 2006 tendant à privilégier l'hébergement égalitaire",
+    "portee": "Organiser la garde, l'hébergement et l'autorité parentale après la séparation des parents",
+    "source_officielle": "https://www.justice.belgium.be/fr"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Chaque situation familiale est particulière ; le tribunal de la famille décide dans l'intérêt de l'enfant. Un avocat ou un médiateur familial peut aider.",
+  "faits": [
+    {
+      "id": "HEBERG-AUTORITE-001",
+      "question": "Qui exerce l'autorité parentale après une séparation ?",
+      "reponse": "La séparation des parents ne change rien au principe : l'autorité parentale reste en principe CONJOINTE. Les deux parents continuent à prendre ensemble les décisions importantes concernant l'enfant (santé, école, choix religieux ou philosophiques, déplacements importants), même s'ils ne vivent plus ensemble et même si l'enfant est hébergé surtout chez l'un d'eux. Ce n'est qu'exceptionnellement, et dans l'intérêt de l'enfant, que le tribunal de la famille peut confier l'autorité parentale à un seul parent (autorité exclusive). Communiquer et se concerter reste la règle.",
+      "reference_legale": "Code civil — exercice conjoint de l'autorité parentale après séparation (art. 373 et suivants)",
+      "contacts": [
+        {
+          "nom": "Médiateur familial",
+          "pour": "organiser l'exercice de l'autorité parentale"
+        },
+        {
+          "nom": "Tribunal de la famille",
+          "pour": "désaccord sur l'autorité parentale"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.justice.belgium.be/fr",
+          "intitule": "SPF Justice — Autorité parentale"
+        }
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "HEBERG-EGALITAIRE-001",
+      "question": "L'hébergement « égalitaire » (une semaine sur deux) est-il obligatoire ?",
+      "reponse": "Non, mais c'est la formule que le juge doit examiner en priorité quand un parent le demande. La loi de 2006 privilégie l'hébergement égalitaire (le temps réparti de façon équilibrée entre les deux parents) lorsque c'est possible et conforme à l'intérêt de l'enfant. Mais le juge peut décider d'un autre mode (hébergement principal chez un parent avec droit aux relations pour l'autre) si l'égalitaire n'est pas adapté (distance, âge de l'enfant, conflit, organisation). L'idéal est de trouver un accord entre parents (éventuellement par médiation) et de le faire homologuer ; à défaut, le tribunal de la famille tranche au cas par cas.",
+      "reference_legale": "Loi du 18 juillet 2006 tendant à privilégier l'hébergement égalitaire de l'enfant ; Code civil",
+      "contacts": [
+        {
+          "nom": "Médiateur familial",
+          "pour": "accord sur l'hébergement"
+        },
+        {
+          "nom": "Tribunal de la famille",
+          "pour": "fixer le mode d'hébergement"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.justice.belgium.be/fr",
+          "intitule": "SPF Justice — Hébergement de l'enfant"
+        }
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "HEBERG-ENFANT-VOIX-001",
+      "question": "L'enfant a-t-il son mot à dire, et que faire si l'autre parent ne respecte pas l'accord ?",
+      "reponse": "L'enfant a le droit d'être entendu : à partir d'un certain âge (en pratique autour de 12 ans, mais possible avant selon sa maturité), le juge de la famille peut l'inviter à exprimer son avis sur les questions qui le concernent (sans que l'enfant ait à « choisir » entre ses parents). Si l'autre parent ne respecte pas l'hébergement ou le droit aux relations fixés, vous pouvez saisir le tribunal de la famille : il existe des mesures pour faire respecter les décisions (rappel à l'ordre, astreinte, voire en dernier recours exécution forcée encadrée). Gardez des traces des manquements et privilégiez d'abord le dialogue ou la médiation.",
+      "reference_legale": "Code civil — audition de l'enfant et exécution des décisions relatives à l'hébergement ; loi du 18 juillet 2006",
+      "contacts": [
+        {
+          "nom": "Tribunal de la famille",
+          "pour": "non-respect de l'hébergement, audition de l'enfant"
+        },
+        {
+          "nom": "Médiateur familial / avocat",
+          "pour": "résoudre le conflit"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.justice.belgium.be/fr",
+          "intitule": "SPF Justice — Droits de l'enfant et hébergement"
+        }
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "HEBERG-REVISION-001",
+      "question": "Peut-on changer l'organisation de l'hébergement plus tard ?",
+      "reponse": "Oui. L'hébergement n'est jamais figé pour toujours : si la situation évolue (déménagement, nouveaux horaires de travail, besoins de l'enfant qui grandit…), les parents peuvent convenir d'une nouvelle organisation — idéalement homologuée — ou saisir à nouveau le tribunal de la famille, qui reste compétent pour adapter les modalités en fonction de l'intérêt de l'enfant. La médiation familiale est souvent une voie plus rapide et plus apaisée pour reconstruire un accord ; le juge peut d'ailleurs la proposer.",
+      "reference_legale": "Code civil — autorité parentale et hébergement (adaptation des modalités par le tribunal de la famille)",
+      "contacts": [
+        {
+          "nom": "Tribunal de la famille",
+          "pour": "révision des modalités d'hébergement"
+        },
+        {
+          "nom": "Médiateur familial agréé",
+          "pour": "reconstruire un accord entre parents"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.justice.belgium.be/fr",
+          "intitule": "SPF Justice — Autorité parentale"
+        }
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

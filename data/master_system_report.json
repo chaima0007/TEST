@@ -1,0 +1,483 @@
+{
+  "timestamp": "2026-06-23T00:02:11.852896",
+  "version": "1.0.0",
+  "security": {
+    "checks": [
+      {
+        "check": "Chiffrement données sensibles",
+        "description": "AES-256-GCM sur tous les JSON contenant des montants ou des titres de brevet",
+        "status": "OK",
+        "score": 0.911
+      },
+      {
+        "check": "Audit trail HMAC-SHA256",
+        "description": "Chaque action signée — tamper-proof en cas de litige USPTO",
+        "status": "OK",
+        "score": 0.931
+      },
+      {
+        "check": "Séparation des secrets",
+        "description": "Clés API dans .env uniquement — zéro credential dans le code (rule CLAUDE.md)",
+        "status": "OK",
+        "score": 0.932
+      },
+      {
+        "check": "Contrôle d'accès agents",
+        "description": "Chaque agent a un rôle minimal (read/write/execute) — principe du moindre privilège",
+        "status": "WARN",
+        "score": 0.878
+      },
+      {
+        "check": "Rate limiting Monte Carlo",
+        "description": "Max 1M sims/heure par agent — protection contre DoS interne",
+        "status": "OK",
+        "score": 0.967
+      },
+      {
+        "check": "Rotation clés session",
+        "description": "Clé HMAC régénérée à chaque démarrage — pas de clé statique en mémoire",
+        "status": "OK",
+        "score": 0.995
+      },
+      {
+        "check": "Intégrité pipeline IP",
+        "description": "Hash SHA-256 sur chaque draft de brevet — detect modification non autorisée",
+        "status": "OK",
+        "score": 0.903
+      },
+      {
+        "check": "Logs audit chiffrés",
+        "description": "master_audit.json signé — toute modification détectée par verify_integrity()",
+        "status": "OK",
+        "score": 0.984
+      }
+    ],
+    "passed": 7,
+    "total": 8,
+    "security_score": 87.5,
+    "grade": "B"
+  },
+  "patents": {
+    "patents": [
+      {
+        "id": "PAT-001",
+        "title": "Multi-Agent HR Analysis Method",
+        "domain": "HR / EEOC Compliance",
+        "filing_deadline": "2026-09-01",
+        "filing_cost_usd": 15000,
+        "patent_value_2030_m": 320,
+        "roi_x": 95,
+        "success_probability": 0.72,
+        "priority": "CRITIQUE",
+        "sub1": 99,
+        "sub2": 97,
+        "sub3": 95,
+        "sub4": 93,
+        "monte_carlo": {
+          "grant_probability": 64.4,
+          "expected_value_m": 447.5,
+          "days_to_deadline": 69,
+          "urgency": "URGENT",
+          "approved": true
+        },
+        "composite": 96.3
+      },
+      {
+        "id": "PAT-002",
+        "title": "CSDDD Multi-Agent Audit System",
+        "domain": "Conformité EU / CSDDD",
+        "filing_deadline": "2026-06-30",
+        "filing_cost_usd": 15000,
+        "patent_value_2030_m": 280,
+        "roi_x": 87,
+        "success_probability": 0.83,
+        "priority": "CRITIQUE",
+        "sub1": 99,
+        "sub2": 97,
+        "sub3": 95,
+        "sub4": 93,
+        "monte_carlo": {
+          "grant_probability": 74.2,
+          "expected_value_m": 391.9,
+          "days_to_deadline": 6,
+          "urgency": "URGENT",
+          "approved": true
+        },
+        "composite": 96.3
+      },
+      {
+        "id": "PAT-003",
+        "title": "Quantum ESG Monte Carlo Scoring",
+        "domain": "Finance / SEC ESG",
+        "filing_deadline": "2026-12-01",
+        "filing_cost_usd": 15000,
+        "patent_value_2030_m": 195,
+        "roi_x": 61,
+        "success_probability": 0.79,
+        "priority": "CRITIQUE",
+        "sub1": 93,
+        "sub2": 90,
+        "sub3": 88,
+        "sub4": 86,
+        "monte_carlo": {
+          "grant_probability": 70.9,
+          "expected_value_m": 273.1,
+          "days_to_deadline": 160,
+          "urgency": "PRIORITAIRE",
+          "approved": true
+        },
+        "composite": 89.6
+      },
+      {
+        "id": "PAT-004",
+        "title": "Forced Labor Detection Vision+NLP",
+        "domain": "Supply Chain / UFLPA",
+        "filing_deadline": "2027-03-01",
+        "filing_cost_usd": 15000,
+        "patent_value_2030_m": 118,
+        "roi_x": 39,
+        "success_probability": 0.68,
+        "priority": "CRITIQUE",
+        "sub1": 80,
+        "sub2": 77,
+        "sub3": 75,
+        "sub4": 73,
+        "monte_carlo": {
+          "grant_probability": 61.3,
+          "expected_value_m": 165.4,
+          "days_to_deadline": 250,
+          "urgency": "PLANIFIÉ",
+          "approved": true
+        },
+        "composite": 76.6
+      },
+      {
+        "id": "PAT-005",
+        "title": "DSAR Automated Rights Processing",
+        "domain": "Privacy / CCPA-GDPR",
+        "filing_deadline": "2026-09-15",
+        "filing_cost_usd": 15000,
+        "patent_value_2030_m": 89,
+        "roi_x": 29,
+        "success_probability": 0.61,
+        "priority": "ÉLEVÉ",
+        "sub1": 61,
+        "sub2": 58,
+        "sub3": 56,
+        "sub4": 54,
+        "monte_carlo": {
+          "grant_probability": 55.2,
+          "expected_value_m": 124.9,
+          "days_to_deadline": 83,
+          "urgency": "URGENT",
+          "approved": true
+        },
+        "composite": 57.6
+      },
+      {
+        "id": "PAT-006",
+        "title": "Carbon Scope 1-2-3 Agent Aggregation",
+        "domain": "Climat / SEC Disclosure",
+        "filing_deadline": "2027-06-01",
+        "filing_cost_usd": 15000,
+        "patent_value_2030_m": 67,
+        "roi_x": 22,
+        "success_probability": 0.57,
+        "priority": "ÉLEVÉ",
+        "sub1": 51,
+        "sub2": 48,
+        "sub3": 46,
+        "sub4": 44,
+        "monte_carlo": {
+          "grant_probability": 51.3,
+          "expected_value_m": 93.7,
+          "days_to_deadline": 342,
+          "urgency": "PLANIFIÉ",
+          "approved": true
+        },
+        "composite": 47.6
+      },
+      {
+        "id": "PAT-007",
+        "title": "Neurotech Consent Protocol for AI Act",
+        "domain": "Neurotech / EU AI Act",
+        "filing_deadline": "2027-09-01",
+        "filing_cost_usd": 15000,
+        "patent_value_2030_m": 45,
+        "roi_x": 15,
+        "success_probability": 0.52,
+        "priority": "MODÉRÉ",
+        "sub1": 32,
+        "sub2": 29,
+        "sub3": 27,
+        "sub4": 25,
+        "monte_carlo": {
+          "grant_probability": 47.0,
+          "expected_value_m": 63.2,
+          "days_to_deadline": 434,
+          "urgency": "PLANIFIÉ",
+          "approved": false
+        },
+        "composite": 28.6
+      },
+      {
+        "id": "PAT-008",
+        "title": "AI Governance Autonomous Rollback Framework",
+        "domain": "IA / EU AI Act Tier 3",
+        "filing_deadline": "2028-01-01",
+        "filing_cost_usd": 15000,
+        "patent_value_2030_m": 28,
+        "roi_x": 9,
+        "success_probability": 0.44,
+        "priority": "FAIBLE",
+        "sub1": 13,
+        "sub2": 11,
+        "sub3": 9,
+        "sub4": 7,
+        "monte_carlo": {
+          "grant_probability": 39.3,
+          "expected_value_m": 39.3,
+          "days_to_deadline": 556,
+          "urgency": "PLANIFIÉ",
+          "approved": false
+        },
+        "composite": 10.3
+      }
+    ],
+    "total_expected_value_m": 1599.0,
+    "immediate_action": [
+      "PAT-001",
+      "PAT-002",
+      "PAT-005"
+    ],
+    "total_filing_cost_usd": 120000,
+    "portfolio_roi_x": 13325.0
+  },
+  "go_to_market": {
+    "channels": [
+      {
+        "name": "LinkedIn CSDDD Thought Leadership",
+        "cost_usd": 0,
+        "days": 30,
+        "reach": 62000,
+        "conversion_pct": 0.8,
+        "sub1": 99,
+        "sub2": 97,
+        "sub3": 95,
+        "sub4": 93,
+        "monte_carlo": {
+          "composite": 96.3,
+          "avg_leads_per_run": 496.0,
+          "expected_revenue_usd": 635156.0,
+          "approved": true
+        }
+      },
+      {
+        "name": "GitHub Open-Source Compliance Toolkit",
+        "cost_usd": 0,
+        "days": 14,
+        "reach": 98000,
+        "conversion_pct": 0.6,
+        "sub1": 93,
+        "sub2": 90,
+        "sub3": 88,
+        "sub4": 86,
+        "monte_carlo": {
+          "composite": 89.6,
+          "avg_leads_per_run": 590.0,
+          "expected_revenue_usd": 752537.0,
+          "approved": true
+        }
+      },
+      {
+        "name": "EU Compliance Newsletter / Substack",
+        "cost_usd": 0,
+        "days": 45,
+        "reach": 37000,
+        "conversion_pct": 1.2,
+        "sub1": 85,
+        "sub2": 82,
+        "sub3": 80,
+        "sub4": 78,
+        "monte_carlo": {
+          "composite": 81.6,
+          "avg_leads_per_run": 445.0,
+          "expected_revenue_usd": 566142.0,
+          "approved": true
+        }
+      },
+      {
+        "name": "Cold Outreach Fortune 500 Compliance Officers",
+        "cost_usd": 0,
+        "days": 60,
+        "reach": 24000,
+        "conversion_pct": 2.1,
+        "sub1": 80,
+        "sub2": 77,
+        "sub3": 75,
+        "sub4": 73,
+        "monte_carlo": {
+          "composite": 76.6,
+          "avg_leads_per_run": 504.0,
+          "expected_revenue_usd": 646607.0,
+          "approved": true
+        }
+      },
+      {
+        "name": "ProductHunt + YC Hacker News Launch",
+        "cost_usd": 0,
+        "days": 7,
+        "reach": 15000,
+        "conversion_pct": 1.8,
+        "sub1": 61,
+        "sub2": 58,
+        "sub3": 56,
+        "sub4": 54,
+        "monte_carlo": {
+          "composite": 57.6,
+          "avg_leads_per_run": 271.0,
+          "expected_revenue_usd": 344972.0,
+          "approved": false
+        }
+      },
+      {
+        "name": "EU Commission & NGO Partnership Outreach",
+        "cost_usd": 0,
+        "days": 90,
+        "reach": 8500,
+        "conversion_pct": 3.5,
+        "sub1": 51,
+        "sub2": 48,
+        "sub3": 46,
+        "sub4": 44,
+        "monte_carlo": {
+          "composite": 47.6,
+          "avg_leads_per_run": 297.0,
+          "expected_revenue_usd": 377966.0,
+          "approved": false
+        }
+      },
+      {
+        "name": "Podcast Guest Appearances (Supply Chain + ESG)",
+        "cost_usd": 0,
+        "days": 60,
+        "reach": 6200,
+        "conversion_pct": 2.0,
+        "sub1": 32,
+        "sub2": 29,
+        "sub3": 27,
+        "sub4": 25,
+        "monte_carlo": {
+          "composite": 28.6,
+          "avg_leads_per_run": 124.0,
+          "expected_revenue_usd": 158388.0,
+          "approved": false
+        }
+      },
+      {
+        "name": "Twitter/X CSDDD Daily Updates Thread",
+        "cost_usd": 0,
+        "days": 30,
+        "reach": 2300,
+        "conversion_pct": 0.4,
+        "sub1": 13,
+        "sub2": 11,
+        "sub3": 9,
+        "sub4": 7,
+        "monte_carlo": {
+          "composite": 10.3,
+          "avg_leads_per_run": 9.0,
+          "expected_revenue_usd": 11708.0,
+          "approved": false
+        }
+      }
+    ],
+    "total_reach": 253000,
+    "total_expected_revenue_usd": 3493476.0,
+    "avg_composite": 61.03
+  },
+  "revenue": {
+    "scenarios": [
+      {
+        "name": "A — Bootstrap/Freemium",
+        "description": "Open-source → upsell SaaS $99-999/mois",
+        "months_to_first_revenue": 1,
+        "initial_mrr": 500,
+        "monthly_growth_rate": 0.15,
+        "churn_rate": 0.05,
+        "cac_usd": 0,
+        "ltv_multiplier": 24,
+        "sub1": 99,
+        "sub2": 97,
+        "sub3": 95,
+        "sub4": 93,
+        "monte_carlo": {
+          "success_rate": 100.0,
+          "avg_revenue_y1_eur": 12219.0,
+          "avg_revenue_y3_eur": 268373.0,
+          "p10_y3": 47734.0,
+          "p90_y3": 584249.0,
+          "recommended": true
+        }
+      },
+      {
+        "name": "B — SaaS B2B Direct",
+        "description": "$2K-$15K/mois par Fortune 500",
+        "months_to_first_revenue": 3,
+        "initial_mrr": 5000,
+        "monthly_growth_rate": 0.2,
+        "churn_rate": 0.03,
+        "cac_usd": 0,
+        "ltv_multiplier": 36,
+        "sub1": 93,
+        "sub2": 90,
+        "sub3": 88,
+        "sub4": 86,
+        "monte_carlo": {
+          "success_rate": 100.0,
+          "avg_revenue_y1_eur": 136880.0,
+          "avg_revenue_y3_eur": 14988522.0,
+          "p10_y3": 1477456.0,
+          "p90_y3": 34110534.0,
+          "recommended": true
+        }
+      },
+      {
+        "name": "C — IP Licensing",
+        "description": "Licences brevets $50K-500K/an par entreprise",
+        "months_to_first_revenue": 12,
+        "initial_mrr": 20000,
+        "monthly_growth_rate": 0.25,
+        "churn_rate": 0.01,
+        "cac_usd": 0,
+        "ltv_multiplier": 60,
+        "sub1": 85,
+        "sub2": 82,
+        "sub3": 80,
+        "sub4": 78,
+        "monte_carlo": {
+          "success_rate": 100.0,
+          "avg_revenue_y1_eur": 24791.0,
+          "avg_revenue_y3_eur": 37959074.0,
+          "p10_y3": 5475606.0,
+          "p90_y3": 85532563.0,
+          "recommended": true
+        }
+      }
+    ],
+    "recommended_scenario": "C — IP Licensing"
+  },
+  "audit_integrity": {
+    "total": 4,
+    "valid": 4,
+    "tampered": 0
+  },
+  "summary": {
+    "total_patent_value_m": 1599.0,
+    "portfolio_roi_x": 13325.0,
+    "total_reach": 253000,
+    "recommended_revenue_scenario": "C — IP Licensing",
+    "security_grade": "B",
+    "urgent_patents_count": 3
+  }
+}

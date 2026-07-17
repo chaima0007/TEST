@@ -214,6 +214,63 @@ async function main() {
     ],
   });
 
+  // ── Swarm seed data ────────────────────────────────────────────────────────
+  console.log("Seeding swarm data...");
+
+  const cycle = await prisma.swarmCycle.upsert({
+    where: { cycleKey: "cycle_20260617_demo" },
+    update: {},
+    create: {
+      cycleKey: "cycle_20260617_demo",
+      startedAt: new Date("2026-06-17T06:00:00Z"),
+      completedAt: new Date("2026-06-17T06:04:32Z"),
+      prospectsFound: 847,
+      emailsSent: 312,
+      revenueEur: 2237,
+      divisionStatuses: JSON.stringify({
+        "1": "success", "2": "success", "3": "success", "4": "success", "5": "success",
+      }),
+    },
+  });
+
+  await prisma.swarmJob.deleteMany({ where: { cycleId: cycle.id } });
+  await prisma.swarmJob.createMany({
+    data: [
+      { companyId: "rest_girard_001", companyName: "Restaurant Le Bouchon Lyonnais", sector: "Restauration", website: "https://bouchon-lyonnais.fr", stage: "paid", assignedAgent: "4.1", quoteEur: 149, paymentConfirmed: true, status: "success", cycleId: cycle.id },
+      { companyId: "med_moreau_002", companyName: "Cabinet Dr. Moreau", sector: "Médical", website: "https://dr-moreau-paris.fr", stage: "paid", assignedAgent: "4.4", quoteEur: 189, paymentConfirmed: true, status: "success", cycleId: cycle.id },
+      { companyId: "sport_elite_003", companyName: "Gymnase Sport Elite", sector: "Associations", website: "https://sport-elite-lyon.fr", stage: "paid", assignedAgent: "4.1", quoteEur: 129, paymentConfirmed: true, status: "success", cycleId: cycle.id },
+      { companyId: "plomb_durand_004", companyName: "Plomberie Durand Frères", sector: "Artisans", website: "https://durand-plomberie.fr", stage: "negotiation", assignedAgent: "3.5", status: "running", cycleId: cycle.id },
+      { companyId: "immo_cote_005", companyName: "Agence Immo Côte d'Azur", sector: "Immobilier", website: "https://immo-cotedazur.fr", stage: "outreach", assignedAgent: "2.2", status: "pending", cycleId: cycle.id },
+      { companyId: "auto_marseille_006", companyName: "Auto École Marseille Centre", sector: "Formation", website: "https://autoecole-marseille.fr", stage: "negotiation", assignedAgent: "3.2", status: "running", cycleId: cycle.id },
+      { companyId: "boulangerie_perrin_007", companyName: "Boulangerie Artisanale Perrin", sector: "Artisans", website: "https://perrin-boulangerie.fr", stage: "detection", assignedAgent: "1.1", status: "pending", cycleId: cycle.id },
+      { companyId: "compta_petit_008", companyName: "Comptabilité Petit & Associés", sector: "Juridique", website: "https://petit-associes.fr", stage: "outreach", assignedAgent: "2.1", status: "pending", cycleId: cycle.id },
+      { companyId: "garage_moto_009", companyName: "Garage Moto Azur", sector: "Garages", website: "https://moto-azur.fr", stage: "paid", assignedAgent: "4.1", quoteEur: 159, paymentConfirmed: true, status: "success", cycleId: cycle.id },
+      { companyId: "cabinet_kine_010", companyName: "Cabinet Kinésithérapie Leblanc", sector: "Médical", website: "https://kine-leblanc.fr", stage: "outreach", assignedAgent: "2.3", status: "pending", cycleId: cycle.id },
+    ],
+  });
+
+  await prisma.swarmTransaction.deleteMany({});
+  await prisma.swarmTransaction.createMany({
+    data: [
+      { companyId: "rest_girard_001", companyName: "Restaurant Le Bouchon Lyonnais", sector: "Restauration", amountEur: 149, stripeChargeId: "ch_demo_001_girard" },
+      { companyId: "med_moreau_002", companyName: "Cabinet Dr. Moreau", sector: "Médical", amountEur: 189, stripeChargeId: "ch_demo_002_moreau" },
+      { companyId: "sport_elite_003", companyName: "Gymnase Sport Elite", sector: "Associations", amountEur: 129, stripeChargeId: "ch_demo_003_sport" },
+      { companyId: "garage_moto_009", companyName: "Garage Moto Azur", sector: "Garages", amountEur: 159, stripeChargeId: "ch_demo_009_moto" },
+    ],
+  });
+
+  await prisma.swarmProspect.deleteMany({});
+  const sectorProspects = [
+    { companyId: "art_001", name: "Électricité Bonneau", sector: "Artisans & Bâtiment", website: "https://electricite-bonneau.fr", pagespeedScore: 28, loadTimeMs: 6200, agentSource: "1.1" },
+    { companyId: "rest_002", name: "Crêperie Bretonne Morvan", sector: "Restauration", website: "https://creperie-morvan.fr", pagespeedScore: 19, loadTimeMs: 8100, agentSource: "1.2" },
+    { companyId: "med_003", name: "Cabinet Dentaire Rossi", sector: "Médical", website: "https://dentaire-rossi.fr", pagespeedScore: 35, loadTimeMs: 5400, agentSource: "1.3" },
+    { companyId: "eco_004", name: "Boutique Bio Primeurs", sector: "E-commerce Local", website: "https://primeurs-bio.fr", pagespeedScore: 22, loadTimeMs: 7300, agentSource: "1.4" },
+    { companyId: "immo_005", name: "Agence Immobilière Duval", sector: "Immobilier", website: "https://agence-duval.fr", pagespeedScore: 41, loadTimeMs: 4800, agentSource: "1.5" },
+  ];
+  for (const p of sectorProspects) {
+    await prisma.swarmProspect.upsert({ where: { companyId: p.companyId }, update: {}, create: { ...p, mobileResponsive: false } });
+  }
+
   console.log("Seeding complete!");
 }
 

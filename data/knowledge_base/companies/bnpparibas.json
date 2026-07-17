@@ -1,0 +1,70 @@
+{
+  "id": "bnpparibas",
+  "slug": "bnpparibas",
+  "name": "BNP Paribas SA",
+  "country": "France",
+  "city": "Paris",
+  "sector": "Finance/Bank",
+  "size": {
+    "revenue_bn_eur": 45,
+    "employees": 190000,
+    "index": "CAC40"
+  },
+  "regulatory_exposure": {
+    "csddd": true,
+    "csrd": true,
+    "lksg": false,
+    "swiss_hrdd": false,
+    "sfdr": true,
+    "esg_rating": {
+      "msci": "A",
+      "sustainalytics": "21.3 Medium Risk",
+      "target": "AA"
+    }
+  },
+  "org_structure": {
+    "decision_maker": "Chief Sustainability Officer / Chief Risk Officer / Head of ESG Finance",
+    "team": "Sustainable Finance Hub, Compliance & Conduct, Chief Compliance Officer",
+    "location": "Paris (siège), Londres (marchés), Luxembourg (fonds SFDR)",
+    "process": "Comité ESG groupe mensuel, validation conseil d'administration pour politiques sectorielles, processus KYC ESG intégré à l'onboarding client"
+  },
+  "pain_points": [
+    "Intégration des risques DDH dans les décisions de financement : évaluation des droits humains pour les prêts aux industries extractives et infrastructure",
+    "SFDR Article 8/9 : preuves documentées des mécanismes de due diligence sociale pour les fonds labellisés, pression AMF sur les green claims",
+    "Financement de projets en zones sensibles : Équateur Principles application dans les financements de projets >10M USD avec impacts communautaires",
+    "Risques de réputation liés au financement d'entreprises sous sanctions ou impliquées dans des violations DDH (Myanmar, Russie post-2022)",
+    "Conformité loi de vigilance française pour les activités propres et les filiales : cartographie des impacts droits humains dans les opérations bancaires directes",
+    "Pression croissante sur le financement des énergies fossiles et risques de contentieux climatiques liés aux droits des générations futures"
+  ],
+  "observed_failures": [
+    "Rapport Reclaim Finance 2023 : BNP Paribas classé parmi les principaux financeurs d'expansion des énergies fossiles en Europe — 32 Mrd USD depuis 2016",
+    "Fonds ESG article 9 déclassé en article 8 en 2023 suite à révision AMF sur la matérialité des critères sociaux — impact réputation avec investisseurs institutionnels",
+    "Financement du terminal GNL Mozambique (TotalEnergies) : implications dans les déplacements de population, interpellation par ONG et actionnaires lors de l'AG 2023"
+  ],
+  "signals_of_risk": [
+    "Exposition significative aux secteurs extractifs dans le portefeuille de prêts corporate (pétrole, gaz, mines)",
+    "Risque de contentieux 'fossil fuel litigation' similaire au cas ING Pays-Bas",
+    "Complexité réglementaire croissante SFDR niveau 2 avec exigences PAI (Principal Adverse Impacts) insuffisamment documentées"
+  ],
+  "signals_of_trust": [
+    "Politique charbon la plus stricte des banques françaises : sortie totale du financement charbon d'ici 2030 (OCDE) et 2040 (monde)",
+    "Membre fondateur des Principes de l'Équateur et signataire des UNEP FI Principles for Responsible Banking",
+    "Publication des émissions financées (Scope 3 catégorie 15) selon PCAF depuis 2021",
+    "Engagements Net Zero Banking Alliance avec jalons sectoriels vérifiés par des tiers"
+  ],
+  "recommended_actions": [
+    "Présenter une solution d'intégration DDH dans le processus KYC/KYT pour les clients corporate des secteurs à risque élevé",
+    "Proposer un outil de scoring DDH pour les portefeuilles de prêts permettant d'identifier et de documenter les risques PAI sociaux (SFDR)",
+    "Développer une offre d'accompagnement pour les équipes de financement de projets sur l'application des Principes de l'Équateur dimension droits humains",
+    "Organiser un atelier avec le Sustainable Finance Hub sur l'évolution des exigences CSDDD pour les institutions financières"
+  ],
+  "local_tone": "Ton formel et rigoureux, adapté à la culture bancaire parisienne. Utiliser le vocabulaire technique financier (PAI, SFDR, Équateur Principles). Éviter les formulations militantes. Se positionner comme partenaire de conformité réglementaire avec une approche gestion des risques.",
+  "cultural_notes": "Culture bancaire française : hiérarchique, très sensible à la réputation institutionnelle et aux relations régulateurs. Les équipes ESG sont souvent sous pression entre ambitions de durabilité et objectifs commerciaux. Valoriser la discrétion et le sérieux. Les références aux pairs (Société Générale, Crédit Agricole) peuvent être utiles avec précaution.",
+  "priority": 5,
+  "last_updated": "2026-06-21",
+  "source_links": [
+    "https://invest.bnpparibas/en/sustainability/responsible-business",
+    "https://reclaimfinance.org/site/en/2023/06/01/bnp-paribas-fossil-fuel-finance/",
+    "https://www.unepfi.org/banking/bankingprinciples/"
+  ]
+}

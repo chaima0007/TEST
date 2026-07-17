@@ -1,0 +1,138 @@
+{
+  "module": "voiture_occasion",
+  "titre": "Acheter une voiture d'occasion",
+  "domaine": "Achat véhicule d'occasion",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code civil — vices cachés (art. 1641) ; Code de droit économique — garantie légale ; loi du 11 juin 2004 (Car-Pass)",
+    "portee": "Garantie, vices cachés et documents obligatoires lors de l'achat d'une occasion",
+    "source_officielle": "https://www.wikifin.be/fr/budget-payer-emprunter-et-assurer/achat-et-financement-dune-voiture"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Vos droits diffèrent selon que le vendeur est un professionnel ou un particulier.",
+  "faits": [
+    {
+      "id": "VOIT-GARANTIE-001",
+      "question": "Quelle garantie ai-je pour une voiture d'occasion ?",
+      "reponse": "Cela dépend du vendeur. Chez un VENDEUR PROFESSIONNEL, vous avez une garantie légale obligatoire d'au moins un an (la garantie légale de conformité est en principe de 2 ans, mais le pro peut la réduire à 1 an pour une occasion). Entre PARTICULIERS, il n'y a pas de garantie légale obligatoire, MAIS le vendeur reste responsable des vices cachés. Dans tous les cas, exigez les documents : le Car-Pass (kilométrage certifié, obligatoire) et le certificat de contrôle technique « occasion » valide.",
+      "reference_legale": "Code de droit économique — garantie légale de conformité ; Code civil — vices cachés (art. 1641)",
+      "contacts": [
+        {
+          "nom": "Vendeur",
+          "pour": "faire jouer la garantie / signaler le défaut par écrit"
+        },
+        {
+          "nom": "SPF Économie",
+          "lien": "https://economie.fgov.be",
+          "pour": "litige avec un vendeur professionnel"
+        }
+      ],
+      "sources": [
+        {
+          "type": "secondaire",
+          "url": "https://www.test-achats.be/famille-prive/droits-des-consommateurs/dossier/garantie/produits-de-seconde-main",
+          "intitule": "Test Achats — Garantie produits de seconde main"
+        },
+        {
+          "type": "officiel",
+          "url": "https://economie.fgov.be/fr/themes/protection-des-consommateurs/garantie",
+          "intitule": "SPF Économie — La garantie"
+        }
+      ],
+      "date_verification": "2026-06-28"
+    },
+    {
+      "id": "VOIT-VICE-CACHE-001",
+      "question": "La voiture a un défaut grave non signalé : que faire ?",
+      "reponse": "S'il s'agit d'un vice caché (un défaut indécelable à l'achat, qui rend la voiture impropre à l'usage et que vous n'auriez pas acheté en le connaissant), vous pouvez agir contre le vendeur — même un particulier. Réagissez vite après la découverte : prévenez le vendeur par écrit (recommandé), faites constater le défaut (garage, expert) et conservez toutes les preuves. Selon le cas, vous pouvez demander une réduction du prix ou l'annulation de la vente. Le Car-Pass falsifié ou l'absence de documents obligatoires renforcent vos droits.",
+      "reference_legale": "Code civil — garantie des vices cachés (art. 1641 et suivants) ; loi du 11 juin 2004 réprimant la fraude au compteur kilométrique (Car-Pass)",
+      "alerte_delai": "Agissez à bref délai après la découverte du vice : signalez par écrit recommandé et faites constater le défaut sans tarder.",
+      "contacts": [
+        {
+          "nom": "Garage / expert automobile",
+          "pour": "constat du vice caché"
+        },
+        {
+          "nom": "Car-Pass",
+          "lien": "https://www.car-pass.be",
+          "pour": "vérifier le kilométrage certifié"
+        },
+        {
+          "nom": "Juge de paix",
+          "pour": "litige (conciliation possible, gratuite)"
+        }
+      ],
+      "sources": [
+        {
+          "type": "secondaire",
+          "url": "https://www.justifit.be/b/vices-caches/",
+          "intitule": "Justifit — Les vices cachés pour une voiture"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.car-pass.be",
+          "intitule": "Car-Pass — Kilométrage certifié"
+        }
+      ],
+      "date_verification": "2026-06-28"
+    },
+    {
+      "id": "VOIT-TAXES-REGIONAL-001",
+      "question": "Quelles taxes auto vais-je payer, et qui les perçoit ?",
+      "reponse": "Deux taxes automobiles sont des impôts RÉGIONAUX, dont le montant varie selon la région où vous êtes domicilié : la TAXE DE MISE EN CIRCULATION (TMC), due une seule fois lors de l'immatriculation, et la TAXE DE CIRCULATION annuelle. Leur calcul (puissance, cylindrée, émissions/critères écologiques) diffère d'une région à l'autre. Administrations : SPW Fiscalité en WALLONIE, Vlaamse Belastingdienst (verkeersbelasting et BIV) en FLANDRE, Bruxelles Fiscalité à BRUXELLES. Anticipez ces coûts dans votre budget d'achat ; vous recevrez l'invitation à payer après l'immatriculation.",
+      "reference_legale": "Compétence régionale des taxes de circulation et de mise en circulation : Code des taxes assimilées aux impôts sur les revenus (régionalisé) en Wallonie et à Bruxelles ; Vlaamse Codex Fiscaliteit (verkeersbelasting / belasting op de inverkeerstelling) en Flandre",
+      "contacts": [
+        {
+          "nom": "SPW Fiscalité (Wallonie)",
+          "lien": "https://finances.wallonie.be/",
+          "pour": "taxes auto en Wallonie"
+        },
+        {
+          "nom": "Vlaamse Belastingdienst (Flandre)",
+          "lien": "https://www.vlaanderen.be/",
+          "pour": "verkeersbelasting / BIV en Flandre"
+        },
+        {
+          "nom": "Bruxelles Fiscalité (Bruxelles)",
+          "lien": "https://fiscalite.brussels/fr",
+          "pour": "taxes auto à Bruxelles"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://finances.wallonie.be/",
+          "intitule": "SPW Fiscalité — taxes de circulation (Wallonie)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.vlaanderen.be/",
+          "intitule": "Vlaamse Belastingdienst — verkeersbelasting/BIV (Flandre)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://fiscalite.brussels/fr",
+          "intitule": "Bruxelles Fiscalité — taxes auto (Bruxelles)"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "VOIT-VERIFS-001",
+      "question": "Que vérifier AVANT d'acheter une voiture d'occasion ?",
+      "reponse": "Quelques contrôles évitent bien des ennuis. Exigez le Car-Pass : ce document officiel et obligatoire certifie le kilométrage réel (un compteur trafiqué est une fraude). Demandez un contrôle technique valable « en vue de la vente » (ou faites passer le véhicule au contrôle). Vérifiez les documents : certificat d'immatriculation, certificat de conformité, carnet et factures d'entretien. Faites un essai et, idéalement, un examen par un garage de confiance. Méfiez-vous d'un prix anormalement bas, d'un vendeur pressé ou sans documents. Mettez par écrit ce qui est convenu (état, équipements, garantie) : en cas de litige ultérieur, ces éléments font la différence.",
+      "reference_legale": "Loi du 11 juin 2004 réprimant la fraude au compteur kilométrique des véhicules (Car-Pass) ; réglementation du contrôle technique automobile",
+      "contacts": [
+        {"nom": "Car-Pass", "lien": "https://www.car-pass.be", "pour": "kilométrage certifié"},
+        {"nom": "Centre de contrôle technique", "pour": "contrôle en vue de la vente"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://mobilit.belgium.be/fr", "intitule": "SPF Mobilité — Contrôle technique et documents du véhicule"},
+        {"type": "officiel", "url": "https://www.car-pass.be", "intitule": "Car-Pass — Kilométrage certifié"}
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

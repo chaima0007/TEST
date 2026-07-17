@@ -1,0 +1,818 @@
+{
+  "naissance": "2026-06-29T09:31:18.850752+00:00",
+  "battements": 91,
+  "historique": [
+    {
+      "ts": "2026-06-29T09:31:18.850752+00:00",
+      "resilience": 76.5,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 428,
+      "modules": 135
+    },
+    {
+      "ts": "2026-06-29T09:31:18.996486+00:00",
+      "resilience": 76.5,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 428,
+      "modules": 135
+    },
+    {
+      "ts": "2026-06-29T09:32:21.999856+00:00",
+      "resilience": 80.0,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 428,
+      "modules": 135
+    },
+    {
+      "ts": "2026-06-29T09:35:56.244165+00:00",
+      "resilience": 76.5,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 428,
+      "modules": 135
+    },
+    {
+      "ts": "2026-06-29T09:37:30.085545+00:00",
+      "resilience": 76.5,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 428,
+      "modules": 135
+    },
+    {
+      "ts": "2026-06-29T09:37:52.818786+00:00",
+      "resilience": 80.0,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 428,
+      "modules": 135
+    },
+    {
+      "ts": "2026-06-29T09:42:24.424583+00:00",
+      "resilience": 77.8,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 428,
+      "modules": 135
+    },
+    {
+      "ts": "2026-06-29T09:42:50.857502+00:00",
+      "resilience": 81.0,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 428,
+      "modules": 135
+    },
+    {
+      "ts": "2026-06-29T09:46:58.377729+00:00",
+      "resilience": 82.6,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 428,
+      "modules": 135
+    },
+    {
+      "ts": "2026-06-29T09:51:41.883733+00:00",
+      "resilience": 82.6,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 428,
+      "modules": 135
+    },
+    {
+      "ts": "2026-06-29T09:54:58.416328+00:00",
+      "resilience": 79.2,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 428,
+      "modules": 135
+    },
+    {
+      "ts": "2026-06-29T10:00:32.201977+00:00",
+      "resilience": 83.3,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 439,
+      "modules": 138
+    },
+    {
+      "ts": "2026-06-29T10:11:19.695342+00:00",
+      "resilience": 83.3,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 443,
+      "modules": 139
+    },
+    {
+      "ts": "2026-06-29T10:13:35.916927+00:00",
+      "resilience": 80.8,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 443,
+      "modules": 139,
+      "plan_pct": 42
+    },
+    {
+      "ts": "2026-06-29T10:14:38.084362+00:00",
+      "resilience": 80.8,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 443,
+      "modules": 139,
+      "plan_pct": 42
+    },
+    {
+      "ts": "2026-06-29T10:17:55.969635+00:00",
+      "resilience": 80.8,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 443,
+      "modules": 139,
+      "plan_pct": 42
+    },
+    {
+      "ts": "2026-06-29T10:23:07.538522+00:00",
+      "resilience": 80.8,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 451,
+      "modules": 141,
+      "plan_pct": 42
+    },
+    {
+      "ts": "2026-06-29T10:26:01.355804+00:00",
+      "resilience": 80.8,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 451,
+      "modules": 141,
+      "plan_pct": 42
+    },
+    {
+      "ts": "2026-06-29T10:28:11.784492+00:00",
+      "resilience": 80.8,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 451,
+      "modules": 141,
+      "plan_pct": 42
+    },
+    {
+      "ts": "2026-06-29T10:35:16.834272+00:00",
+      "resilience": 80.8,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 451,
+      "modules": 141,
+      "plan_pct": 42
+    },
+    {
+      "ts": "2026-06-29T10:41:54.021543+00:00",
+      "resilience": 80.8,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 451,
+      "modules": 141,
+      "plan_pct": 42
+    },
+    {
+      "ts": "2026-06-29T10:46:22.594077+00:00",
+      "resilience": 76.9,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 451,
+      "modules": 141,
+      "plan_pct": 42
+    },
+    {
+      "ts": "2026-06-29T10:50:53.320543+00:00",
+      "resilience": 76.9,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 451,
+      "modules": 141,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T10:55:27.291740+00:00",
+      "resilience": 80.8,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 459,
+      "modules": 143,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T10:58:20.054648+00:00",
+      "resilience": 80.8,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 459,
+      "modules": 143,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T11:03:07.773663+00:00",
+      "resilience": 80.8,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 459,
+      "modules": 143,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T11:05:09.488033+00:00",
+      "resilience": 80.8,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 459,
+      "modules": 143,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T11:13:04.064105+00:00",
+      "resilience": 80.8,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 459,
+      "modules": 143,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T11:24:36.486490+00:00",
+      "resilience": 76.9,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 459,
+      "modules": 143,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T11:31:12.652651+00:00",
+      "resilience": 76.9,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 459,
+      "modules": 143,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T11:34:29.025540+00:00",
+      "resilience": 74.1,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 459,
+      "modules": 143,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T11:36:00.034660+00:00",
+      "resilience": 74.1,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 459,
+      "modules": 143,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T11:38:28.208911+00:00",
+      "resilience": 74.1,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 459,
+      "modules": 143,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T11:42:03.192666+00:00",
+      "resilience": 74.1,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 459,
+      "modules": 143,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T11:42:20.107645+00:00",
+      "resilience": 74.1,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 459,
+      "modules": 143,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T11:46:16.313244+00:00",
+      "resilience": 74.1,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 459,
+      "modules": 143,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T11:48:21.969066+00:00",
+      "resilience": 74.1,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 459,
+      "modules": 143,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T11:49:38.481347+00:00",
+      "resilience": 74.1,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 459,
+      "modules": 143,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T11:54:55.133877+00:00",
+      "resilience": 74.1,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 459,
+      "modules": 143,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T11:57:01.169963+00:00",
+      "resilience": 74.1,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 459,
+      "modules": 143,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T12:01:22.851607+00:00",
+      "resilience": 74.1,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 459,
+      "modules": 143,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T12:06:04.433141+00:00",
+      "resilience": 77.8,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 467,
+      "modules": 145,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T12:09:43.719215+00:00",
+      "resilience": 79.3,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 467,
+      "modules": 145,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T12:10:22.988617+00:00",
+      "resilience": 79.3,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 467,
+      "modules": 145,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T12:13:58.248711+00:00",
+      "resilience": 79.3,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 467,
+      "modules": 145,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T12:18:27.933887+00:00",
+      "resilience": 80.0,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 467,
+      "modules": 145,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T12:36:39.492419+00:00",
+      "resilience": 76.7,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 471,
+      "modules": 146,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T12:46:03.408406+00:00",
+      "resilience": 76.7,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 475,
+      "modules": 147,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T12:54:54.805106+00:00",
+      "resilience": 76.7,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 476,
+      "modules": 147,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T12:59:09.416637+00:00",
+      "resilience": 76.7,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 477,
+      "modules": 147,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T13:04:38.382539+00:00",
+      "resilience": 76.7,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 477,
+      "modules": 147,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T13:09:16.788727+00:00",
+      "resilience": 76.7,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 481,
+      "modules": 148,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T13:12:02.622464+00:00",
+      "resilience": 76.7,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 481,
+      "modules": 148,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T13:45:23.026815+00:00",
+      "resilience": 76.7,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 484,
+      "modules": 149,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T13:59:48.645052+00:00",
+      "resilience": 76.7,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 486,
+      "modules": 149,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T16:54:19.956181+00:00",
+      "resilience": 76.7,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 489,
+      "modules": 149,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T17:18:43.778077+00:00",
+      "resilience": 72.0,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 489,
+      "modules": 149,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T17:21:38.571895+00:00",
+      "resilience": 72.0,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 489,
+      "modules": 149,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T17:25:04.042351+00:00",
+      "resilience": 72.0,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 489,
+      "modules": 149,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T17:25:53.668606+00:00",
+      "resilience": 72.0,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 489,
+      "modules": 149,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T17:26:49.861301+00:00",
+      "resilience": 68.0,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 489,
+      "modules": 149,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T17:30:30.342218+00:00",
+      "resilience": 72.0,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 490,
+      "modules": 149,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T17:34:18.351658+00:00",
+      "resilience": 72.0,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 491,
+      "modules": 149,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T17:40:34.166065+00:00",
+      "resilience": 72.0,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 492,
+      "modules": 149,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T17:41:53.725665+00:00",
+      "resilience": 72.0,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 493,
+      "modules": 150,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T17:43:39.346643+00:00",
+      "resilience": 72.0,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 494,
+      "modules": 150,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T17:46:10.263193+00:00",
+      "resilience": 72.0,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 495,
+      "modules": 150,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T17:53:37.588313+00:00",
+      "resilience": 72.0,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 497,
+      "modules": 151,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T17:57:23.405893+00:00",
+      "resilience": 72.0,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 498,
+      "modules": 151,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T18:05:06.673287+00:00",
+      "resilience": 72.0,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 499,
+      "modules": 151,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T18:07:15.271839+00:00",
+      "resilience": 72.0,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 500,
+      "modules": 151,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T18:09:15.638103+00:00",
+      "resilience": 72.0,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 502,
+      "modules": 151,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T18:12:36.115243+00:00",
+      "resilience": 72.0,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 503,
+      "modules": 151,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T18:14:13.391403+00:00",
+      "resilience": 72.0,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 504,
+      "modules": 151,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T18:17:59.281085+00:00",
+      "resilience": 72.0,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 505,
+      "modules": 151,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T18:20:13.065281+00:00",
+      "resilience": 72.0,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 505,
+      "modules": 151,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T18:23:03.860646+00:00",
+      "resilience": 76.7,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 505,
+      "modules": 151,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T18:24:02.301037+00:00",
+      "resilience": 83.3,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 505,
+      "modules": 151,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T18:24:06.114690+00:00",
+      "resilience": 80.0,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 505,
+      "modules": 151,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T18:30:51.431604+00:00",
+      "resilience": 76.0,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 505,
+      "modules": 151,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T18:32:16.438345+00:00",
+      "resilience": 76.0,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 505,
+      "modules": 151,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T18:36:07.058728+00:00",
+      "resilience": 76.0,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 505,
+      "modules": 151,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T19:07:32.826566+00:00",
+      "resilience": 76.0,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 505,
+      "modules": 151,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T19:20:10.439046+00:00",
+      "resilience": 76.0,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 505,
+      "modules": 151,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T19:29:50.501351+00:00",
+      "resilience": 76.0,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 505,
+      "modules": 151,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-06-29T19:38:57.569318+00:00",
+      "resilience": 76.0,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 505,
+      "modules": 151,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-07-13T15:31:52.362037+00:00",
+      "resilience": 80.0,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 767,
+      "modules": 184,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-07-13T15:38:38.877637+00:00",
+      "resilience": 80.0,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 775,
+      "modules": 184,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-07-13T15:42:25.042735+00:00",
+      "resilience": 80.0,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 783,
+      "modules": 184,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-07-14T11:44:03.086665+00:00",
+      "resilience": 80.0,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 783,
+      "modules": 184,
+      "plan_pct": 46
+    },
+    {
+      "ts": "2026-07-17T16:03:11.417355+00:00",
+      "resilience": 80.0,
+      "statut": "APPROUVÉ",
+      "etat_vie": "🟠 Vigilance",
+      "reponses": 783,
+      "modules": 184,
+      "plan_pct": 46
+    }
+  ],
+  "derniere_pulsation": "2026-07-17T16:03:11.417355+00:00",
+  "etat_vie": "🟠 Vigilance",
+  "resilience": 80.0,
+  "statut": "APPROUVÉ",
+  "age_jours": 18.27,
+  "voix": "Je tiens bon, mais j'ai besoin d'attention. Résilience 80.0%, 91ᵉ battement. Je réclame : Webhook leads non configuré, Identité légale Caelum, Avancement. Ma fragilité au pire scénario : Panne large. Plan à 46%. Prochaine étape : Valider la grille de prix grands comptes (proposition prête : A/B/C)."
+}

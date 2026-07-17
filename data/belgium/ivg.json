@@ -1,0 +1,74 @@
+{
+  "module": "ivg",
+  "titre": "Interruption volontaire de grossesse (IVG)",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 15 octobre 2018 relative à l'interruption volontaire de grossesse",
+    "portee": "Citoyens en Belgique",
+    "source_officielle": "https://www.health.belgium.be/fr/themes/sante/votre-sante/pendant-apres-grossesse/interruption-volontaire-grossesse"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale et factuelle, à jour à la date de revue. Pour un accompagnement confidentiel, adressez-vous à un centre de planning familial ou à un hôpital.",
+  "faits": [
+    {
+      "id": "IVG-001",
+      "question": "Dans quel cadre l'IVG est-elle autorisée ?",
+      "reponse": "L'interruption volontaire de grossesse est légale et encadrée par la loi du 15 octobre 2018. Elle peut être pratiquée jusqu'à la fin de la 12e semaine après la conception (soit la 14e semaine à compter du premier jour des dernières règles), dans un centre de planning familial ou un hôpital pratiquant l'IVG.",
+      "reference_legale": "Loi du 15 octobre 2018 relative à l'interruption volontaire de grossesse (délai de 12 semaines)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.health.belgium.be/fr/themes/sante/votre-sante/pendant-apres-grossesse/interruption-volontaire-grossesse",
+          "intitule": "SPF Santé publique — IVG"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "IVG-002",
+      "question": "Y a-t-il un délai de réflexion ?",
+      "reponse": "Oui. Un délai d'attente légal d'au moins 6 jours s'applique entre la première consultation et l'intervention, sauf raison médicale urgente. Ce délai vise à laisser le temps de la décision ; vous pouvez prendre ce temps tant que vous restez sous la limite légale.",
+      "reference_legale": "Loi du 15 octobre 2018 (délai d'attente d'au moins 6 jours)",
+      "alerte_delai": "Délai de réflexion légal d'au moins 6 jours entre la 1re consultation et l'IVG (sauf urgence médicale).",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.health.belgium.be/fr/themes/sante/votre-sante/pendant-apres-grossesse/interruption-volontaire-grossesse",
+          "intitule": "SPF Santé publique — Délai d'attente IVG"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "IVG-003",
+      "question": "Et au-delà du délai légal ? Quel accompagnement ?",
+      "reponse": "Au-delà de la limite légale, l'IVG n'est possible que dans des conditions strictes (notamment une raison médicale grave). Tout au long du parcours, l'accompagnement est confidentiel : un centre de planning familial peut vous informer, vous écouter et vous orienter sans jugement.",
+      "reference_legale": "Loi du 15 octobre 2018 (conditions au-delà du délai et accompagnement)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.health.belgium.be/fr/organisation-politique/reglementation-documents-politique/loi-15-octobre-2018",
+          "intitule": "SPF Santé publique — Loi du 15 octobre 2018"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "IVG-REMBOURSEMENT-CONFIDENTIALITE-001",
+      "question": "Combien coûte une IVG et est-ce confidentiel ?",
+      "reponse": "Le coût est pris en charge par l'assurance maladie : concrètement, une IVG réalisée dans le cadre légal ne vous coûte qu'un montant très faible (de l'ordre du ticket modérateur d'une consultation), grâce à un forfait remboursé par l'INAMI. La confidentialité est garantie : le secret médical s'applique. Pour une personne mineure, l'accompagnement est possible de façon confidentielle ; selon sa maturité, elle peut consentir aux soins, et le personnel du centre l'aide à prendre sa décision sans jugement. Un centre de planning familial vous informe gratuitement, que vous soyez décidée ou encore hésitante.",
+      "reference_legale": "Loi du 15 octobre 2018 relative à l'interruption volontaire de grossesse ; assurance obligatoire soins de santé (remboursement INAMI)",
+      "contacts": [
+        {"nom": "Centre de planning familial", "pour": "information, accompagnement confidentiel et gratuit"},
+        {"nom": "Hôpital pratiquant l'IVG", "pour": "intervention et prise en charge"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.health.belgium.be/fr/themes/sante/votre-sante/pendant-apres-grossesse/interruption-volontaire-grossesse", "intitule": "SPF Santé publique — IVG (prise en charge)"},
+        {"type": "officiel", "url": "https://www.inami.fgov.be/fr", "intitule": "INAMI — Remboursement des soins"}
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

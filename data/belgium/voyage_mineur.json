@@ -1,0 +1,79 @@
+{
+  "module": "voyage_mineur",
+  "titre": "Voyage d'un mineur — Kids-ID & autorisation parentale",
+  "domaine": "Voyage d'un enfant",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 19 juillet 1991 (cartes d'identité, Kids-ID) ; Code civil — autorité parentale (art. 371 et suivants)",
+    "portee": "Documents et autorisations pour qu'un enfant voyage",
+    "source_officielle": "https://diplomatie.belgium.be/fr/conseils-aux-voyageurs/voyager-avec-des-enfants-mineurs"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les exigences varient selon le pays de destination ; vérifiez auprès du SPF Affaires étrangères et de l'ambassade du pays visité.",
+  "faits": [
+    {
+      "id": "VOYMIN-KIDSID-001",
+      "question": "Quel document d'identité pour faire voyager mon enfant ?",
+      "reponse": "Pour un enfant belge de moins de 12 ans, il existe une carte d'identité spécifique, la Kids-ID, à demander à l'administration communale (présence de l'enfant et d'un parent requise ; prévoyez un délai de fabrication d'environ 3 semaines, plus en urgence). Au-delà de 12 ans, l'enfant a une carte d'identité classique. Selon la destination, un passeport peut être nécessaire. Anticipez : vérifiez la validité des documents bien avant le départ.",
+      "reference_legale": "Loi du 19 juillet 1991 relative aux registres de la population et aux cartes d'identité (Kids-ID)",
+      "alerte_delai": "Comptez environ 3 semaines de délai pour la Kids-ID : demandez-la bien avant le voyage.",
+      "contacts": [
+        {"nom": "Administration communale", "pour": "demande de Kids-ID"},
+        {"nom": "SPF Affaires étrangères", "lien": "https://diplomatie.belgium.be", "pour": "conditions selon la destination"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.ibz.rrn.fgov.be/fr/citoyen/documents-didentite/kids-id", "intitule": "IBZ — Kids-ID"},
+        {"type": "officiel", "url": "https://diplomatie.belgium.be/fr/conseils-aux-voyageurs/voyager-avec-des-enfants-mineurs", "intitule": "SPF Affaires étrangères — Voyager avec des mineurs"}
+      ],
+      "date_verification": "2026-06-28"
+    },
+    {
+      "id": "VOYMIN-AUTORISATION-001",
+      "question": "Mon enfant voyage sans moi (ou avec un seul parent) : faut-il une autorisation ?",
+      "reponse": "Il n'existe pas de formulaire belge unique obligatoire, mais c'est fortement recommandé. Si l'enfant voyage seul, avec un tiers, ou avec un seul de ses parents, rédigez une autorisation parentale écrite et faites légaliser la signature à votre commune (le parent qui autorise s'y rend avec sa carte d'identité). Emportez ce document en voyage. Si l'enfant et le parent n'ont pas le même nom, ajoutez une copie de l'acte de naissance pour prouver le lien. Les deux parents exercent l'autorité parentale : l'accord de l'autre parent est important.",
+      "reference_legale": "Code civil — exercice conjoint de l'autorité parentale (art. 371 et suivants)",
+      "contacts": [
+        {"nom": "Administration communale", "pour": "légalisation de la signature de l'autorisation"},
+        {"nom": "SPF Affaires étrangères", "lien": "https://diplomatie.belgium.be", "pour": "exigences du pays de destination"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://diplomatie.belgium.be/fr/conseils-aux-voyageurs/voyager-avec-des-enfants-mineurs", "intitule": "SPF Affaires étrangères — Voyager avec des mineurs"},
+        {"type": "officiel", "url": "https://www.bruxelles.be/autorisation-parentale", "intitule": "Ville de Bruxelles — Autorisation parentale"}
+      ],
+      "date_verification": "2026-06-28"
+    },
+    {
+      "id": "VOYMIN-DESACCORD-001",
+      "question": "Que faire en cas de désaccord entre parents ou de risque d'enlèvement à l'étranger ?",
+      "reponse": "L'autorité parentale s'exerce en principe conjointement : un parent ne devrait pas emmener durablement l'enfant à l'étranger contre l'avis de l'autre. En cas de désaccord, c'est le tribunal de la famille qui tranche dans l'intérêt de l'enfant. Si vous craignez qu'un parent emmène l'enfant à l'étranger sans retour (enlèvement parental), réagissez vite : signalez-le aux autorités et, si l'enfant a déjà été emmené dans un pays signataire, la Convention de La Haye de 1980 permet de demander son retour via l'autorité centrale (SPF Justice). En cas d'urgence (départ imminent), contactez la police et un avocat sans attendre.",
+      "reference_legale": "Code civil — exercice conjoint de l'autorité parentale (art. 371 et suivants) ; Convention de La Haye du 25 octobre 1980 sur les aspects civils de l'enlèvement international d'enfants",
+      "alerte_delai": "En cas de risque de départ imminent sans retour, contactez immédiatement la police et un avocat ; le tribunal de la famille peut être saisi en urgence.",
+      "contacts": [
+        {"nom": "Tribunal de la famille", "pour": "désaccord sur un voyage / mesure urgente"},
+        {"nom": "SPF Justice — Autorité centrale (enlèvement international)", "lien": "https://justice.belgium.be/fr", "pour": "demande de retour (Convention de La Haye 1980)"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://justice.belgium.be/fr", "intitule": "SPF Justice — Enlèvement parental international"},
+        {"type": "officiel", "url": "https://diplomatie.belgium.be/fr/conseils-aux-voyageurs/voyager-avec-des-enfants-mineurs", "intitule": "SPF Affaires étrangères — Voyager avec des mineurs"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "VOYMIN-SEUL-001",
+      "question": "Mon enfant voyage seul (sans adulte) : comment ça se passe ?",
+      "reponse": "Un enfant peut voyager seul, mais les règles dépendent du transporteur. Beaucoup de compagnies aériennes proposent (ou imposent, en dessous d'un certain âge) un service « mineur non accompagné » (UM) : un membre du personnel prend l'enfant en charge de l'enregistrement jusqu'à la personne désignée à l'arrivée, moyennant un supplément. Renseignez-vous tôt sur l'âge minimum, le coût et les documents exigés. Prévoyez : le document d'identité de l'enfant (et passeport si nécessaire), une autorisation parentale (signature légalisée à la commune), et les coordonnées complètes de la personne qui accueille l'enfant à destination. Vérifiez aussi les exigences du pays d'arrivée auprès du SPF Affaires étrangères.",
+      "reference_legale": "Loi du 19 juillet 1991 relative aux cartes d'identité (documents de l'enfant) ; Code civil — autorité parentale (art. 371 et suivants)",
+      "contacts": [
+        {"nom": "Compagnie de transport (service mineur non accompagné)", "pour": "conditions, âge minimum, supplément"},
+        {"nom": "Administration communale", "pour": "légalisation de l'autorisation parentale"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://diplomatie.belgium.be/fr/conseils-aux-voyageurs/voyager-avec-des-enfants-mineurs", "intitule": "SPF Affaires étrangères — Voyager avec des mineurs"},
+        {"type": "officiel", "url": "https://www.ibz.rrn.fgov.be/fr/citoyen/documents-didentite/kids-id", "intitule": "IBZ — Kids-ID"}
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

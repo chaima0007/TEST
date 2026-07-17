@@ -1,0 +1,62 @@
+{
+  "decisions": [
+    {
+      "id": "DEC-ee9636527c61",
+      "timestamp": "2026-06-22 23:04:45",
+      "action_type": "wave_launch",
+      "description": "Lancement wave 491 — 3 nouveaux domaines CSDDD",
+      "n_simulations": 1000000,
+      "sim_success_rate": 0.960065,
+      "agents_checked": [
+        "ProtocolGuardian",
+        "QuantumValidator",
+        "QualityController",
+        "ComplianceOfficer",
+        "GitSupervisor",
+        "SecurityAuditor"
+      ],
+      "vetoes": [
+        "QuantumValidator",
+        "SecurityAuditor"
+      ],
+      "approvals": [
+        "ProtocolGuardian",
+        "QualityController",
+        "ComplianceOfficer",
+        "GitSupervisor"
+      ],
+      "final_approved": false
+    }
+  ],
+  "vetoes": [
+    {
+      "id": "DEC-ee9636527c61",
+      "timestamp": "2026-06-22 23:04:45",
+      "action_type": "wave_launch",
+      "description": "Lancement wave 491 — 3 nouveaux domaines CSDDD",
+      "n_simulations": 1000000,
+      "sim_success_rate": 0.960065,
+      "agents_checked": [
+        "ProtocolGuardian",
+        "QuantumValidator",
+        "QualityController",
+        "ComplianceOfficer",
+        "GitSupervisor",
+        "SecurityAuditor"
+      ],
+      "vetoes": [
+        "QuantumValidator",
+        "SecurityAuditor"
+      ],
+      "approvals": [
+        "ProtocolGuardian",
+        "QualityController",
+        "ComplianceOfficer",
+        "GitSupervisor"
+      ],
+      "final_approved": false
+    }
+  ],
+  "approvals": [],
+  "total_simulations": 1000000
+}

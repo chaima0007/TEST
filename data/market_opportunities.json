@@ -1,0 +1,76 @@
+{
+  "objet": "Radar d'opportunités marché — veille continue (Reddit/forums/presse). Détecte frustrations émergentes et besoins non satisfaits pour adapter vite les projets.",
+  "revue": "2026-06-29",
+  "note": "Mis à jour à chaque passe de veille (scripts/market_watch.py). statut: nouveau | en_cours | traite | suivi. La plateforme autonome signale les opportunités 'nouveau' non traitées.",
+  "opportunites": [
+    {
+      "id": "OPP-AI-ACT",
+      "signal": "Confusion massive PME sur l'AI Act : beaucoup croient avoir jusqu'en 2027, or la transparence (Art. 50) s'applique dès le 02/08/2026. 48,6% des entreprises pas engagées ; notoriété AI Act ~56/100. Marché 'inondé' de plateformes 5-30k€ qui ne sont que des wrappers de templates.",
+      "source": "flintbrief.com, superkind.ai, buinsoft, aiineurope (2026)",
+      "douleur": "Besoin de CLARTÉ (suis-je concerné ? qu'est-ce qui est urgent ?), pas d'un outil cher.",
+      "projet": "Caelum",
+      "opportunite": "Outil honnête 'AI Act : suis-je concerné ?' (transparence chatbot/contenu IA dès août 2026) — on a déjà la norme AI-ACT.",
+      "effort": "moyen",
+      "priorite": "haute",
+      "statut": "traite",
+      "livre": "Page /ai-act (clarté dates + 4 catégories + sanctions + porte de sortie honnête) — 2026-06-29"
+    },
+    {
+      "id": "OPP-PEPPOL-COMPARATEUR",
+      "signal": "Peppol s'est révélé plus simple que craint (La Libre) ; la vraie question n'est plus 'si' mais 'QUEL OUTIL me convient'. Self-billing : tolérance jusqu'au 30/06/2026. ~60k entreprises encore à migrer.",
+      "source": "lalibre.be, dhnet.be, fidelium.eu (2026)",
+      "douleur": "Choisir l'outil/access point adapté à sa taille, sans devenir expert.",
+      "projet": "Caelum",
+      "opportunite": "Comparateur NEUTRE des solutions/access points Peppol + check-list 'prêt en émission ET réception'.",
+      "effort": "moyen",
+      "priorite": "haute",
+      "statut": "traite",
+      "livre": "Page /peppol (guide neutre de choix + check-list) — 2026-06-29"
+    },
+    {
+      "id": "OPP-ADMIN-WALLON",
+      "signal": "Cri du terrain industriels wallons : 'on est coupable avant de travailler', 'le langage de l'admin et celui de l'entrepreneur sont 2 langages différents', permis passé de 15 à 300 pages.",
+      "source": "aktus-cci.be (25/06/2026)",
+      "douleur": "Traduire/rendre lisible la complexité administrative ; prévisibilité.",
+      "projet": "Caelum + La Loi Avec Moi",
+      "opportunite": "Positionnement 'on rend la loi lisible' ; côté citoyen : démarches expliquées ; côté pro : décodeur d'obligations.",
+      "effort": "faible",
+      "priorite": "moyenne",
+      "statut": "en_cours",
+      "traitement": "Côté citoyen (La Loi Avec Moi) : traité par le travail de clarté territoriale — fiches \"qui fait quoi\" fédéral/régional/communautaire (handicap, emploi, logement, fiscalité, urbanisme/permis par région). Côté pro (Caelum, décodeur d obligations) : axe stratégique, gelé tant que les décisions humaines (prix/identité) ne sont pas prises."
+    },
+    {
+      "id": "OPP-FRACTURE-NUMERIQUE",
+      "signal": "Des indépendants âgés / peu à l'aise avec l'informatique arrêtent leur activité à cause de l'e-facture ('jamais touché un ordinateur').",
+      "source": "dhnet.be (12/2025)",
+      "douleur": "Accessibilité réelle pour les non-technophiles et allophones.",
+      "projet": "La Loi Avec Moi",
+      "opportunite": "Accessibilité radicale (audio déjà livré) + langage clair ; côté Caelum : accompagnement humain.",
+      "effort": "faible",
+      "priorite": "moyenne",
+      "statut": "en_cours"
+    },
+    {
+      "id": "OPP-GRC-OVERLAP",
+      "signal": "NIS2 : '5 outils, 3 contrats, 2 logs qui se chevauchent, 1 trou qu'on ne peut pas combler'.",
+      "source": "rediacc.com (2026)",
+      "douleur": "Trop d'outils qui se chevauchent, registre fournisseurs lourd.",
+      "projet": "Caelum",
+      "opportunite": "Position 'porte d'entrée unique' (diagnostic+veille) ; ne pas refaire le GRC, orienter.",
+      "effort": "faible",
+      "priorite": "basse",
+      "statut": "suivi"
+    },
+    {
+      "id": "OPP-FEAR-PRICING",
+      "signal": "'On vous vend une solution à 50 000€ pour un problème à 99€' — tarification par la peur (NIS2/GDPR).",
+      "source": "nuvm.cloud, startuptribunal (2026)",
+      "douleur": "Rejet de la peur commerciale et des prix opaques.",
+      "projet": "Caelum",
+      "opportunite": "Honnêteté radicale + conformité finançable + 'pourquoi agir' non anxiogène.",
+      "effort": "faible",
+      "priorite": "basse",
+      "statut": "traite"
+    }
+  ]
+}

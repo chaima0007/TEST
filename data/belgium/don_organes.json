@@ -1,0 +1,72 @@
+{
+  "module": "don_organes",
+  "titre": "Don d'organes",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Loi du 13 juin 1986 sur le prélèvement et la transplantation d'organes",
+    "portee": "Citoyens en Belgique",
+    "source_officielle": "https://www.health.belgium.be/fr/themes/sante/votre-sante/don-dorganes"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information juridique générale, à jour à la date de revue. Parlez-en à vos proches et enregistrez votre volonté pour qu'elle soit respectée.",
+  "faits": [
+    {
+      "id": "DONORG-001",
+      "question": "Suis-je automatiquement donneur d'organes en Belgique ?",
+      "reponse": "Oui, en principe. La Belgique applique le « consentement présumé » (opting out) : toute personne domiciliée en Belgique depuis au moins 6 mois est considérée comme donneur potentiel après son décès, sauf si elle a explicitement exprimé son opposition de son vivant.",
+      "reference_legale": "Loi du 13 juin 1986 (consentement présumé au prélèvement d'organes)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.health.belgium.be/fr/themes/sante/votre-sante/don-dorganes",
+          "intitule": "SPF Santé publique — Don d'organes"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "DONORG-002",
+      "question": "Comment exprimer mon choix (opposition ou accord) ?",
+      "reponse": "Vous pouvez enregistrer votre volonté (opposition au don, ou au contraire accord explicite) en ligne via Ma Santé, à l'administration communale de votre domicile, ou via votre médecin généraliste. Les personnes non inscrites au Registre national/des étrangers depuis au moins 6 mois doivent, elles, exprimer un accord explicite pour pouvoir être donneuses.",
+      "reference_legale": "Loi du 13 juin 1986 (enregistrement de la volonté)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.health.belgium.be/fr/themes/sante/votre-sante/don-dorganes",
+          "intitule": "SPF Santé publique — Enregistrer sa volonté"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "DONORG-003",
+      "question": "Quelles sont les garanties éthiques ?",
+      "reponse": "La loi garantit la gratuité du don (le commerce d'organes est interdit), l'anonymat entre donneur et receveur, et le respect de la dépouille. À noter : à 18 ans, l'opposition que des parents avaient enregistrée pour leur enfant est automatiquement annulée — le jeune doit la réenregistrer s'il veut la maintenir.",
+      "reference_legale": "Loi du 13 juin 1986 (gratuité, anonymat, respect du corps)",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.health.belgium.be/fr/themes/sante/votre-sante/don-dorganes",
+          "intitule": "SPF Santé publique — Principes du don d'organes"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "DONORG-VIVANT-001",
+      "question": "Peut-on donner un organe de son vivant ?",
+      "reponse": "Oui, c'est possible et encadré par la loi. Un donneur vivant peut donner un organe ou une partie d'organe régénérable (par exemple un rein, ou une partie du foie), le plus souvent au profit d'un proche, mais aussi parfois de manière altruiste (don anonyme). Conditions strictes : le don doit être libre, gratuit (toute rémunération est interdite) et précédé d'une information complète et d'un consentement éclairé, après une évaluation médicale et psychologique du donneur pour s'assurer que sa santé le permet. Le donneur peut revenir sur sa décision jusqu'au dernier moment. Renseignez-vous auprès d'un centre de transplantation.",
+      "reference_legale": "Loi du 13 juin 1986 sur le prélèvement et la transplantation d'organes (don entre personnes vivantes)",
+      "contacts": [
+        {"nom": "Centre de transplantation (hôpital)", "pour": "information et évaluation d'un don du vivant"},
+        {"nom": "Votre médecin", "pour": "première information"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.health.belgium.be/fr/themes/sante/votre-sante/don-dorganes", "intitule": "SPF Santé publique — Don d'organes entre vivants"}
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

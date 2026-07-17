@@ -1,0 +1,171 @@
+{
+  "module": "handicap",
+  "titre": "Handicap — reconnaissance, allocations, carte de stationnement",
+  "domaine": "Handicap",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Reconnaissance du handicap et octroi de droits (DG Personnes handicapées, SPF Sécurité sociale)",
+    "portee": "Personnes en situation de handicap : reconnaissance, aides, mobilité",
+    "source_officielle": "https://handicap.belgium.be/fr/reconnaissance-de-votre-handicap/procedure-reconnaissance"
+  },
+  "derniere_revue": "2026-06-29",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Les démarches passent par la DG Personnes handicapées (plateforme My Handicap) et, souvent, votre commune ou mutualité.",
+  "faits": [
+    {
+      "id": "HAND-RECONNAISSANCE-001",
+      "question": "Comment faire reconnaître mon handicap ?",
+      "reponse": "La reconnaissance se demande à la DG Personnes handicapées (SPF Sécurité sociale), en principe via la plateforme « My Handicap ». Vous introduisez une demande et décrivez précisément l'impact du handicap sur votre vie quotidienne (donnez beaucoup d'exemples concrets : cela compte). Cette reconnaissance ouvre l'accès à des aides sociales et fiscales selon votre situation.",
+      "reference_legale": "Loi du 27 février 1987 relative aux allocations aux personnes handicapées (reconnaissance et octroi de droits)",
+      "contacts": [
+        {
+          "nom": "DG Personnes handicapées (My Handicap)",
+          "lien": "https://handicap.belgium.be/fr/myhandicap/manuel-myhandicap",
+          "pour": "introduire la demande"
+        },
+        {
+          "nom": "Service social de votre commune / mutualité",
+          "pour": "aide à la demande"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://handicap.belgium.be/fr/reconnaissance-de-votre-handicap/procedure-reconnaissance",
+          "intitule": "Handicap Belgium — Procédure de reconnaissance"
+        },
+        {
+          "type": "officiel",
+          "url": "https://handicap.belgium.be/fr/reconnaissance-de-votre-handicap/conditions-de-reconnaissance",
+          "intitule": "Handicap Belgium — Conditions"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "HAND-ALLOCATIONS-001",
+      "question": "À quelles allocations puis-je avoir droit ?",
+      "reponse": "Deux allocations principales existent : l'allocation de remplacement de revenus (ARR), pour les personnes dont l'état réduit fortement la capacité de gain, et l'allocation d'intégration (AI), pour celles qui doivent supporter des frais supplémentaires à cause d'une perte d'autonomie. L'octroi et le montant dépendent d'une évaluation et de conditions (revenus, degré d'autonomie). La demande se fait via la DG Personnes handicapées.",
+      "reference_legale": "Loi relative aux allocations aux personnes handicapées (ARR / AI)",
+      "contacts": [
+        {
+          "nom": "DG Personnes handicapées",
+          "lien": "https://handicap.belgium.be",
+          "pour": "demande d'allocations"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://socialsecurity.belgium.be/fr/octroi-de-droits-aux-personnes-handicapees",
+          "intitule": "SPF Sécurité sociale — Octroi de droits aux personnes handicapées"
+        },
+        {
+          "type": "officiel",
+          "url": "https://handicap.belgium.be/fr/contact/faq",
+          "intitule": "Handicap Belgium — FAQ"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "HAND-STATIONNEMENT-001",
+      "question": "Comment obtenir une carte de stationnement pour personne handicapée ?",
+      "reponse": "La carte de stationnement permet de se garer sur les emplacements réservés en Belgique (et, dans certaines communes, gratuitement). On peut y avoir droit notamment en cas d'incapacité permanente d'un certain degré (par ex. 50 % pour un handicap des jambes, 80 % pour d'autres handicaps), de paralysie ou d'amputation des deux bras, ou d'une réduction d'autonomie/mobilité. La demande passe par la DG Personnes handicapées.",
+      "reference_legale": "Arrêté ministériel du 7 mai 1999 relatif à la carte de stationnement pour personnes handicapées",
+      "contacts": [
+        {
+          "nom": "DG Personnes handicapées",
+          "lien": "https://handicap.belgium.be/fr/autres-aides/carte-stationnement",
+          "pour": "demande de carte de stationnement"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://handicap.belgium.be/fr/autres-aides/carte-stationnement",
+          "intitule": "Handicap Belgium — Carte de stationnement"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.belgium.be/fr/mobilite/vehicules/personnes_handicapees/parking_fr",
+          "intitule": "Belgium.be — Parking personnes handicapées"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "HAND-CONTACT-001",
+      "question": "Comment contacter la DG Personnes handicapées et suivre mon dossier ?",
+      "reponse": "La DG Personnes handicapées (DG HAN, SPF Sécurité sociale) évalue les demandes de reconnaissance, octroie les allocations et fournit conseils et réponses sur mesure. Vous pouvez suivre votre dossier et introduire vos demandes en ligne via la plateforme « My Handicap ». Pour les questions, un formulaire de contact et des permanences existent, et depuis le 15 avril 2026 un nouveau numéro de téléphone est en service : 02/202 02 02. Si vous recevez votre allocation par chèque circulaire, une foire aux questions dédiée est disponible sur le portail.",
+      "reference_legale": "Loi du 27 février 1987 relative aux allocations aux personnes handicapées (missions de la DG Personnes handicapées)",
+      "contacts": [
+        {
+          "nom": "DG Personnes handicapées (DG HAN)",
+          "lien": "https://handicap.belgium.be/fr",
+          "pour": "contact, suivi de dossier, permanences — tél. 02/202 02 02 (depuis le 15/04/2026)"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://handicap.belgium.be/fr",
+          "intitule": "Handicap Belgium — DG Personnes handicapées (accueil, contact, My Handicap)"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    },
+    {
+      "id": "HAND-REGIONAL-001",
+      "question": "Fédéral ou régional : à qui m'adresser selon le type d'aide liée au handicap ?",
+      "reponse": "Les compétences sont partagées entre le fédéral et les trois Régions. Au niveau FÉDÉRAL, la DG Personnes handicapées (handicap.belgium.be) gère la reconnaissance du handicap, les allocations de revenus (allocation de remplacement de revenus et allocation d'intégration), la carte de stationnement et divers avantages sociaux et fiscaux. Pour l'AIDE, l'ACCOMPAGNEMENT et les BUDGETS de soutien (aide matérielle, aménagements, services, budget personnel), c'est RÉGIONAL : en WALLONIE, l'AVIQ — Agence pour une Vie de Qualité (aviq.be) ; en FLANDRE, le VAPH — Vlaams Agentschap voor Personen met een Handicap (vaph.be), qui octroie des budgets et interventions et une aide directement accessible (RTH) ; à BRUXELLES, l'information sur l'offre d'aides et de services est centralisée sur handicap.brussels, le Service PHARE (COCOF) gérant notamment les aides à l'emploi, l'accès aux entreprises de travail adapté, aux centres de jour et aux logements adaptés (Iriscare intervient aussi) ; en COMMUNAUTÉ GERMANOPHONE (Ostbelgien), la Dienststelle für Selbstbestimmtes Leben (DSL, selbstbestimmt.be) est l'organisme compétent pour l'aide et l'accompagnement au handicap (logement, aides financières, aides matérielles, accessibilité, etc. ; n° gratuit 0800 900 11), tandis que l'Arbeitsamt der Deutschsprachigen Gemeinschaft (ADG, www.adg.be) accompagne spécifiquement l'emploi des personnes en situation de handicap (conseil aux demandeurs d'emploi ayant un besoin de soutien et à leurs employeurs). Adressez-vous à l'organisme de votre région ou communauté de résidence.",
+      "reference_legale": "Répartition des compétences : loi du 27 février 1987 relative aux allocations aux personnes handicapées (fédéral) ; décret de la Communauté flamande relatif au VAPH, Code wallon de l'action sociale et de la santé et décret de la Commission communautaire française (COCOF) relatif au Service PHARE (aides régionales)",
+      "contacts": [
+        {
+          "nom": "AVIQ (Wallonie)",
+          "lien": "https://www.aviq.be/fr",
+          "pour": "aide, accompagnement et budgets handicap en Wallonie"
+        },
+        {
+          "nom": "VAPH (Flandre)",
+          "lien": "https://www.vaph.be",
+          "pour": "budgets, interventions et aide directement accessible (RTH) en Flandre"
+        },
+        {
+          "nom": "handicap.brussels / Service PHARE (Bruxelles)",
+          "lien": "https://handicap.brussels/fr/",
+          "pour": "aides et services handicap en Région bruxelloise"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.aviq.be/fr",
+          "intitule": "AVIQ — Agence pour une Vie de Qualité (Wallonie)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.vaph.be",
+          "intitule": "VAPH — Vlaams Agentschap voor Personen met een Handicap (Flandre)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://handicap.brussels/fr/",
+          "intitule": "handicap.brussels — aides et services handicap en Région bruxelloise (Service PHARE / COCOF)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.adg.be/desktopdefault.aspx",
+          "intitule": "ADG (Arbeitsamt der Deutschsprachigen Gemeinschaft) — accompagnement à l'emploi des personnes en situation de handicap (Communauté germanophone)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.selbstbestimmt.be/",
+          "intitule": "DSL — Dienststelle für Selbstbestimmtes Leben (aide générale au handicap, Communauté germanophone)"
+        }
+      ],
+      "date_verification": "2026-06-29"
+    }
+  ]
+}

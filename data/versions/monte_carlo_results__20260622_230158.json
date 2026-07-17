@@ -1,0 +1,78 @@
+{
+  "db_key": "monte_carlo_results",
+  "timestamp": "20260622_230158",
+  "reason": "scheduled_report",
+  "checksum": "1f8057c317a992c3",
+  "data": {
+    "version": "2.0",
+    "description": "CaelumSwarm™ — Résultats Monte Carlo",
+    "timestamp": "2026-06-22T22:32:24.970397+00:00",
+    "n_iterations_per_scenario": 500000,
+    "total_simulations": 2000000,
+    "global_score": 99.4086,
+    "global_aval": true,
+    "scenarios": {
+      "build_integrity": {
+        "scenario": "build_integrity",
+        "n_iterations": 500000,
+        "duplicate_icons": 0,
+        "failure_reason": null,
+        "p_success": 0.989218,
+        "quantum_score": 100.0,
+        "final_score": 99.1374,
+        "aval": true,
+        "timestamp": "2026-06-22T22:32:24.002850+00:00"
+      },
+      "security_integrity": {
+        "scenario": "security_integrity",
+        "n_iterations": 500000,
+        "routes_checked": 161,
+        "routes_secure": 161,
+        "secure_rate": 100.0,
+        "p_success": 0.998,
+        "quantum_score": 100.0,
+        "final_score": 99.94,
+        "aval": true,
+        "timestamp": "2026-06-22T22:32:24.028808+00:00"
+      },
+      "engine_validity": {
+        "scenario": "engine_validity",
+        "n_iterations": 250000,
+        "engines_found": 1855,
+        "engines_with_composite": 13,
+        "target_avg_composite": 61.03,
+        "p_valid": 1.0,
+        "quantum_score": 100.0,
+        "final_score": 100.0,
+        "aval": true,
+        "timestamp": "2026-06-22T22:32:24.846068+00:00"
+      },
+      "wave_success": {
+        "scenario": "wave_success",
+        "wave": 487,
+        "domains": [
+          "domain1",
+          "domain2",
+          "domain3"
+        ],
+        "n_iterations": 500000,
+        "p_success": 0.979386,
+        "p_partial": 0.010138,
+        "p_failure": 0.010476,
+        "confidence_interval_99": [
+          0.978868,
+          0.979904
+        ],
+        "quantum_score": 100.0,
+        "final_score": 98.557,
+        "aval": true,
+        "timestamp": "2026-06-22T22:32:24.969660+00:00"
+      }
+    },
+    "quantum_simulator": {
+      "n_qubits": 16,
+      "algorithm": "Hadamard + Amplitude Collapse",
+      "validated": true
+    }
+  }
+}

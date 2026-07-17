@@ -1,0 +1,96 @@
+{
+  "generated": "2026-06-23T01:37:47.775172+00:00",
+  "total": 10,
+  "results": [
+    {
+      "category": "agents",
+      "key": "microsoft-agent-governance",
+      "name": "microsoft/agent-governance-toolkit",
+      "score": 92.45,
+      "verdict": "ADOPTÉ",
+      "licence": "MIT",
+      "stars": 71
+    },
+    {
+      "category": "agents",
+      "key": "octopoda-os",
+      "name": "RyjoxTechnologies/Octopoda-OS",
+      "score": 92.0,
+      "verdict": "ADOPTÉ",
+      "licence": "MIT",
+      "stars": 346
+    },
+    {
+      "category": "dashboards",
+      "key": "next-shadcn-dashboard",
+      "name": "Kiranism/next-shadcn-dashboard-starter",
+      "score": 92.0,
+      "verdict": "ADOPTÉ",
+      "licence": "MIT",
+      "stars": 6590
+    },
+    {
+      "category": "securite",
+      "key": "brain-cli",
+      "name": "victorsabino/brain-cli",
+      "score": 87.65,
+      "verdict": "ADOPTÉ",
+      "licence": "MIT",
+      "stars": 2
+    },
+    {
+      "category": "agents",
+      "key": "multi-agent-rag",
+      "name": "The-Swarm-Corporation/Multi-Agent-RAG-Template",
+      "score": 87.4,
+      "verdict": "ADOPTÉ",
+      "licence": "MIT",
+      "stars": 58
+    },
+    {
+      "category": "analyse",
+      "key": "multi-agents-from-scratch",
+      "name": "AIAnytime/Multi-Agents-System-from-Scratch",
+      "score": 84.75,
+      "verdict": "ADOPTÉ",
+      "licence": "MIT",
+      "stars": 71
+    },
+    {
+      "category": "agents",
+      "key": "langcrew",
+      "name": "01-ai/langcrew",
+      "score": 84.4,
+      "verdict": "ADOPTÉ",
+      "licence": "Apache-2.0",
+      "stars": 116
+    },
+    {
+      "category": "dashboards",
+      "key": "materio-nextjs-free",
+      "name": "themeselection/materio-mui-nextjs-admin-template-free",
+      "score": 84.35,
+      "verdict": "ADOPTÉ",
+      "licence": "MIT",
+      "stars": 1945
+    },
+    {
+      "category": "agents",
+      "key": "ecosupply-ai",
+      "name": "pritom169/EcoSupplyAI",
+      "score": 84.25,
+      "verdict": "ADOPTÉ",
+      "licence": "MIT",
+      "stars": 0
+    },
+    {
+      "category": "agents",
+      "key": "crewai-gmail",
+      "name": "tonykipkemboi/crewai-gmail-automation",
+      "score": 75.0,
+      "verdict": "CONDITIONNEL",
+      "licence": "MIT",
+      "stars": 191
+    }
+  ]
+}

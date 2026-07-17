@@ -1,0 +1,248 @@
+{
+  "agent": "world_builder_agent",
+  "version": "1.0.0",
+  "us_market_opportunity_score": 55.09,
+  "sub_agent_summaries": {
+    "ip_strategy": {
+      "n_axes": 5,
+      "portfolio_value_M_usd": 28.0
+    },
+    "gomarket": {
+      "avg_composite": 61.03,
+      "n_channels": 8,
+      "total_reach": 253000,
+      "distribution": {
+        "critique": 4,
+        "élevé": 2,
+        "modéré": 1,
+        "faible": 1
+      }
+    },
+    "revenue": {
+      "n_scenarios": 3,
+      "scenario_success_rates": {
+        "A": 0.3627,
+        "B": 0.2484,
+        "C": 0.1776
+      }
+    }
+  },
+  "actions_ranked_by_roi": [
+    {
+      "rank": 1,
+      "action": "File provisional patent on Multi-Agent Human Rights Analysis Method",
+      "category": "IP",
+      "roi_score": 95.0,
+      "delay_days": 7,
+      "cost_usd": 1500,
+      "expected_value_usd": 4500000,
+      "base_success_prob": 0.72,
+      "monte_carlo": {
+        "success_rate": 0.72,
+        "avg_net_value_usd": 3398796.65,
+        "p10_usd": -1500,
+        "p50_usd": 3775954.95,
+        "p90_usd": 6464773.3,
+        "n_simulations": 100000
+      }
+    },
+    {
+      "rank": 2,
+      "action": "Launch LinkedIn CSDDD content series (3 posts/week)",
+      "category": "GTM",
+      "roi_score": 92.0,
+      "delay_days": 1,
+      "cost_usd": 0,
+      "expected_value_usd": 200000,
+      "base_success_prob": 0.85,
+      "monte_carlo": {
+        "success_rate": 0.8498,
+        "avg_net_value_usd": 178252.46,
+        "p10_usd": 0,
+        "p50_usd": 186574.58,
+        "p90_usd": 295992.6,
+        "n_simulations": 100000
+      }
+    },
+    {
+      "rank": 3,
+      "action": "Submit ProductHunt launch (CaelumSwarm™ CSDDD compliance agent)",
+      "category": "GTM",
+      "roi_score": 88.5,
+      "delay_days": 14,
+      "cost_usd": 0,
+      "expected_value_usd": 150000,
+      "base_success_prob": 0.7,
+      "monte_carlo": {
+        "success_rate": 0.7002,
+        "avg_net_value_usd": 110219.81,
+        "p10_usd": 0,
+        "p50_usd": 123205.43,
+        "p90_usd": 214857.84,
+        "n_simulations": 100000
+      }
+    },
+    {
+      "rank": 4,
+      "action": "File provisional patent on Composite ESG/CSDDD Scoring Algorithm",
+      "category": "IP",
+      "roi_score": 87.0,
+      "delay_days": 14,
+      "cost_usd": 1500,
+      "expected_value_usd": 6200000,
+      "base_success_prob": 0.68,
+      "monte_carlo": {
+        "success_rate": 0.6791,
+        "avg_net_value_usd": 4423166.27,
+        "p10_usd": -1500,
+        "p50_usd": 4970650.45,
+        "p90_usd": 8854377.95,
+        "n_simulations": 100000
+      }
+    },
+    {
+      "rank": 5,
+      "action": "Publish open-source CSDDD toolkit on GitHub with CaelumSwarm branding",
+      "category": "GTM",
+      "roi_score": 85.0,
+      "delay_days": 7,
+      "cost_usd": 0,
+      "expected_value_usd": 300000,
+      "base_success_prob": 0.8,
+      "monte_carlo": {
+        "success_rate": 0.8017,
+        "avg_net_value_usd": 252808.61,
+        "p10_usd": 0,
+        "p50_usd": 271426.52,
+        "p90_usd": 439803.61,
+        "n_simulations": 100000
+      }
+    },
+    {
+      "rank": 6,
+      "action": "Build ICP list: 200 US Fortune 500 compliance officers (LinkedIn Sales Nav)",
+      "category": "Sales",
+      "roi_score": 82.0,
+      "delay_days": 3,
+      "cost_usd": 0,
+      "expected_value_usd": 500000,
+      "base_success_prob": 0.6,
+      "monte_carlo": {
+        "success_rate": 0.6001,
+        "avg_net_value_usd": 314656.2,
+        "p10_usd": 0,
+        "p50_usd": 354129.57,
+        "p90_usd": 696555.77,
+        "n_simulations": 100000
+      }
+    },
+    {
+      "rank": 7,
+      "action": "Post 'Show HN' on Hacker News for CaelumSwarm™ technical architecture",
+      "category": "GTM",
+      "roi_score": 80.0,
+      "delay_days": 2,
+      "cost_usd": 0,
+      "expected_value_usd": 120000,
+      "base_success_prob": 0.55,
+      "monte_carlo": {
+        "success_rate": 0.5524,
+        "avg_net_value_usd": 69639.93,
+        "p10_usd": 0,
+        "p50_usd": 75557.69,
+        "p90_usd": 164679.78,
+        "n_simulations": 100000
+      }
+    },
+    {
+      "rank": 8,
+      "action": "Submit CFP to RSA Conference 2026 (AI for Supply Chain Compliance track)",
+      "category": "GTM",
+      "roi_score": 75.0,
+      "delay_days": 30,
+      "cost_usd": 0,
+      "expected_value_usd": 400000,
+      "base_success_prob": 0.4,
+      "monte_carlo": {
+        "success_rate": 0.3978,
+        "avg_net_value_usd": 167068.49,
+        "p10_usd": 0,
+        "p50_usd": 0,
+        "p90_usd": 510825.76,
+        "n_simulations": 100000
+      }
+    },
+    {
+      "rank": 9,
+      "action": "Negotiate Scenario B pilot with 1 US enterprise (50K€ ACV)",
+      "category": "Sales",
+      "roi_score": 72.0,
+      "delay_days": 21,
+      "cost_usd": 0,
+      "expected_value_usd": 500000,
+      "base_success_prob": 0.42,
+      "monte_carlo": {
+        "success_rate": 0.4221,
+        "avg_net_value_usd": 221768.1,
+        "p10_usd": 0,
+        "p50_usd": 0,
+        "p90_usd": 648650.5,
+        "n_simulations": 100000
+      }
+    },
+    {
+      "rank": 10,
+      "action": "Launch Substack 'Compliance Intelligence Brief' (weekly, bilingual)",
+      "category": "GTM",
+      "roi_score": 68.0,
+      "delay_days": 5,
+      "cost_usd": 0,
+      "expected_value_usd": 80000,
+      "base_success_prob": 0.75,
+      "monte_carlo": {
+        "success_rate": 0.7506,
+        "avg_net_value_usd": 62984.18,
+        "p10_usd": 0,
+        "p50_usd": 69126.33,
+        "p90_usd": 115966.43,
+        "n_simulations": 100000
+      }
+    },
+    {
+      "rank": 11,
+      "action": "File patents on Quantum Simulation Engine + Supply Chain Audit System",
+      "category": "IP",
+      "roi_score": 65.0,
+      "delay_days": 30,
+      "cost_usd": 3000,
+      "expected_value_usd": 14200000,
+      "base_success_prob": 0.5,
+      "monte_carlo": {
+        "success_rate": 0.4988,
+        "avg_net_value_usd": 7444151.26,
+        "p10_usd": -3000,
+        "p50_usd": -3000,
+        "p90_usd": 19121146.27,
+        "n_simulations": 100000
+      }
+    },
+    {
+      "rank": 12,
+      "action": "Initiate IP licensing conversations with 3 US ESG data vendors",
+      "category": "Licensing",
+      "roi_score": 60.0,
+      "delay_days": 45,
+      "cost_usd": 0,
+      "expected_value_usd": 1000000,
+      "base_success_prob": 0.31,
+      "monte_carlo": {
+        "success_rate": 0.309,
+        "avg_net_value_usd": 323510.27,
+        "p10_usd": 0,
+        "p50_usd": 0,
+        "p90_usd": 1190241.6,
+        "n_simulations": 100000
+      }
+    }
+  ]
+}

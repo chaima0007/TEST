@@ -1,0 +1,273 @@
+{
+  "version": "1.0",
+  "description": "CaelumSwarm™ — Capacités Publiques Anthropic",
+  "sources": [
+    "docs.anthropic.com",
+    "github.com/anthropics",
+    "anthropic.com/research"
+  ],
+  "created_at": "2026-06-22T22:43:33.426729+00:00",
+  "total_capabilities": 11,
+  "capabilities": {
+    "messages_api": {
+      "name": "Claude Messages API",
+      "category": "core_api",
+      "source": "docs.anthropic.com/en/api/messages",
+      "availability": "PUBLIC",
+      "description": "API principale pour conversations multi-tours avec Claude",
+      "models": [
+        "claude-sonnet-4-6",
+        "claude-opus-4-8",
+        "claude-haiku-4-5"
+      ],
+      "max_tokens": 200000,
+      "features": [
+        "System prompts pour rôles spécialisés",
+        "Multi-turn conversations avec historique",
+        "Streaming responses (SSE)",
+        "Temperature + top_p + top_k controls",
+        "Stop sequences personnalisées"
+      ],
+      "caelum_use": "Chaque agent CaelumSwarm peut utiliser Messages API pour raisonnement",
+      "integration_pattern": "\nimport anthropic\nclient = anthropic.Anthropic(api_key=\"...\")\nmessage = client.messages.create(\n    model=\"claude-sonnet-4-6\",\n    max_tokens=4096,\n    system=\"Tu es un expert CSDDD EU 2024/1760\",\n    messages=[{\"role\": \"user\", \"content\": \"Analyse le risque supply chain...\"}]\n)\nprint(message.content[0].text)\n",
+      "agents_concerned": [
+        "QAAgent",
+        "ComplianceAgent",
+        "EngineAgent"
+      ],
+      "utility_score": 95.03,
+      "priority": "HAUTE",
+      "indexed_at": "2026-06-22T22:43:33.426729+00:00"
+    },
+    "tool_use": {
+      "name": "Tool Use / Function Calling",
+      "category": "agentic",
+      "source": "docs.anthropic.com/en/docs/tool-use",
+      "availability": "PUBLIC",
+      "description": "Claude appelle des fonctions externes et reçoit leurs résultats",
+      "features": [
+        "Définition de tools en JSON Schema",
+        "Parallel tool calling",
+        "Force tool choice (any/auto/specific)",
+        "Tool result injection dans conversation"
+      ],
+      "caelum_use": "Les agents CaelumSwarm appellent les APIs CSDDD, GRI, ILO via tool_use",
+      "integration_pattern": "\ntools = [{\n    \"name\": \"check_csddd_compliance\",\n    \"description\": \"Vérifie la conformité CSDDD d'une entreprise\",\n    \"input_schema\": {\n        \"type\": \"object\",\n        \"properties\": {\n            \"company_id\": {\"type\": \"string\"},\n            \"domains\": {\"type\": \"array\", \"items\": {\"type\": \"string\"}}\n        },\n        \"required\": [\"company_id\"]\n    }\n}]\nresponse = client.messages.create(\n    model=\"claude-sonnet-4-6\",\n    tools=tools,\n    messages=[{\"role\": \"user\", \"content\": \"Analyse Entreprise XYZ\"}]\n)\n",
+      "agents_concerned": [
+        "QAAgent",
+        "SecurityAgent",
+        "ComplianceAgent"
+      ],
+      "utility_score": 92.94,
+      "priority": "HAUTE",
+      "indexed_at": "2026-06-22T22:43:33.426729+00:00"
+    },
+    "claude_code_sdk": {
+      "name": "Claude Code SDK",
+      "category": "agentic",
+      "source": "github.com/anthropics/claude-code",
+      "availability": "PUBLIC_OPEN_SOURCE",
+      "description": "SDK pour automatiser Claude Code en mode non-interactif",
+      "features": [
+        "query() — exécution de tâches de code autonomes",
+        "Streaming des messages en temps réel",
+        "Gestion des tools (Bash, Read, Write, Edit, Grep)",
+        "Multi-turn conversations automatisées",
+        "Session resumption"
+      ],
+      "caelum_use": "CaelumSwarm utilise Claude Code SDK pour lancer des agents wave",
+      "integration_pattern": "\n# Python SDK\nimport asyncio\nfrom claude_code_sdk import query, ClaudeCodeOptions\n\nasync def run_agent(task: str):\n    options = ClaudeCodeOptions(\n        max_turns=10,\n        system_prompt=\"Agent CaelumSwarm — Expert CSDDD\",\n    )\n    async for message in query(prompt=task, options=options):\n        print(message)\n\nasyncio.run(run_agent(\"Crée les engines pour wave 491\"))\n",
+      "agents_concerned": [
+        "GitAgent",
+        "CoordAgent",
+        "QAAgent"
+      ],
+      "utility_score": 95.02,
+      "priority": "HAUTE",
+      "indexed_at": "2026-06-22T22:43:33.426729+00:00"
+    },
+    "extended_thinking": {
+      "name": "Extended Thinking (claude-opus-4-8)",
+      "category": "reasoning",
+      "source": "docs.anthropic.com/en/docs/extended-thinking",
+      "availability": "PUBLIC",
+      "description": "Claude pense longuement avant de répondre (budget_tokens)",
+      "features": [
+        "thinking blocks visibles dans la réponse",
+        "Budget tokens: 1024 à 100 000+",
+        "Meilleur sur problèmes complexes multi-étapes",
+        "Mathématiques, logique, planification long-terme"
+      ],
+      "caelum_use": "QuantumAgent + ComplianceAgent utilisent extended_thinking pour décisions complexes CSDDD",
+      "integration_pattern": "\nresponse = client.messages.create(\n    model=\"claude-opus-4-8\",\n    max_tokens=16000,\n    thinking={\"type\": \"enabled\", \"budget_tokens\": 10000},\n    messages=[{\"role\": \"user\", \"content\": \"Stratégie CSDDD 5 ans pour Caelum Partners\"}]\n)\nfor block in response.content:\n    if block.type == \"thinking\":\n        print(\"Raisonnement:\", block.thinking)\n    elif block.type == \"text\":\n        print(\"Réponse:\", block.text)\n",
+      "agents_concerned": [
+        "QuantumAgent",
+        "ComplianceAgent",
+        "QAAgent"
+      ],
+      "utility_score": 93.04,
+      "priority": "HAUTE",
+      "indexed_at": "2026-06-22T22:43:33.426729+00:00"
+    },
+    "computer_use": {
+      "name": "Computer Use (Beta)",
+      "category": "agentic",
+      "source": "docs.anthropic.com/en/docs/computer-use",
+      "availability": "PUBLIC_BETA",
+      "description": "Claude contrôle un ordinateur (screenshots, clavier, souris)",
+      "features": [
+        "screenshot tool — voir l'écran",
+        "computer tool — clic, frappe, scroll",
+        "bash tool — exécuter des commandes",
+        "Automation de workflows UI complexes"
+      ],
+      "caelum_use": "Potentiel: scraping legal EU CSDDD docs, remplissage formulaires compliance",
+      "integration_pattern": "\n# Modèle spécifique avec computer use\nresponse = client.messages.create(\n    model=\"claude-opus-4-8\",\n    tools=[{\"type\": \"computer_20241022\", \"name\": \"computer\", \"display_width_px\": 1920, \"display_height_px\": 1080}],\n    messages=[{\"role\": \"user\", \"content\": \"Va sur eur-lex.europa.eu et télécharge CSDDD 2024/1760\"}]\n)\n",
+      "agents_concerned": [
+        "ComplianceAgent",
+        "GitAgent"
+      ],
+      "utility_score": 88.01,
+      "priority": "MOYENNE",
+      "indexed_at": "2026-06-22T22:43:33.426729+00:00"
+    },
+    "batch_api": {
+      "name": "Message Batches API",
+      "category": "scale",
+      "source": "docs.anthropic.com/en/docs/message-batches",
+      "availability": "PUBLIC",
+      "description": "Traiter des milliers de requêtes Claude en parallèle (50% moins cher)",
+      "features": [
+        "Jusqu'à 10 000 requêtes par batch",
+        "Résultats en fichier JSONL",
+        "Traitement asynchrone (pas de timeout)",
+        "50% de réduction sur le coût des tokens"
+      ],
+      "caelum_use": "Analyser 1000 fournisseurs en batch pour compliance CSDDD simultanément",
+      "integration_pattern": "\nbatch = client.messages.batches.create(\n    requests=[\n        {\"custom_id\": f\"supplier-{i}\", \"params\": {\n            \"model\": \"claude-haiku-4-5\",\n            \"max_tokens\": 1024,\n            \"messages\": [{\"role\": \"user\", \"content\": f\"Évalue fournisseur {i} CSDDD\"}]\n        }}\n        for i in range(1000)\n    ]\n)\n",
+      "agents_concerned": [
+        "QAAgent",
+        "ComplianceAgent",
+        "EngineAgent"
+      ],
+      "utility_score": 92.99,
+      "priority": "HAUTE",
+      "indexed_at": "2026-06-22T22:43:33.426729+00:00"
+    },
+    "files_api": {
+      "name": "Files API",
+      "category": "data",
+      "source": "docs.anthropic.com/en/docs/files",
+      "availability": "PUBLIC",
+      "description": "Upload et réutilisation de fichiers (PDF, images, texte) entre requêtes",
+      "features": [
+        "Upload de PDF CSDDD, rapports GRI, contrats fournisseurs",
+        "Référencer le même fichier dans N requêtes (économie tokens)",
+        "Support: PDF, TXT, CSV, images",
+        "Expiration configurable"
+      ],
+      "caelum_use": "Upload des directives EU CSDDD PDF une fois, analyser dans toutes les requêtes agents",
+      "integration_pattern": "\n# Upload une fois\nwith open(\"CSDDD_2024_1760.pdf\", \"rb\") as f:\n    file = client.beta.files.upload(file=(\"csddd.pdf\", f, \"application/pdf\"))\n\n# Référencer dans chaque requête\nresponse = client.messages.create(\n    model=\"claude-sonnet-4-6\",\n    messages=[{\n        \"role\": \"user\",\n        \"content\": [\n            {\"type\": \"document\", \"source\": {\"type\": \"file\", \"file_id\": file.id}},\n            {\"type\": \"text\", \"text\": \"Extrais toutes les obligations article 3\"}\n        ]\n    }]\n)\n",
+      "agents_concerned": [
+        "ComplianceAgent",
+        "QAAgent"
+      ],
+      "utility_score": 88.08,
+      "priority": "MOYENNE",
+      "indexed_at": "2026-06-22T22:43:33.426729+00:00"
+    },
+    "prompt_caching": {
+      "name": "Prompt Caching",
+      "category": "performance",
+      "source": "docs.anthropic.com/en/docs/prompt-caching",
+      "availability": "PUBLIC",
+      "description": "Cache les parties statiques du prompt (90% moins cher, 85% plus rapide)",
+      "features": [
+        "cache_control: {type: 'ephemeral'} sur sections longues",
+        "Cache valide 5 minutes (ephemeral) ou 1 heure (standard)",
+        "90% réduction coût sur tokens cachés",
+        "85% réduction latence"
+      ],
+      "caelum_use": "Cacher le contexte CSDDD + toutes les règles CaelumSwarm entre requêtes agents",
+      "integration_pattern": "\nresponse = client.messages.create(\n    model=\"claude-sonnet-4-6\",\n    system=[{\n        \"type\": \"text\",\n        \"text\": \"...(10 000 tokens de contexte CSDDD + règles swarm)...\",\n        \"cache_control\": {\"type\": \"ephemeral\"}\n    }],\n    messages=[{\"role\": \"user\", \"content\": \"Analyse wave 491\"}]\n)\n",
+      "agents_concerned": [
+        "QAAgent",
+        "QuantumAgent",
+        "CoordAgent"
+      ],
+      "utility_score": 93.06,
+      "priority": "HAUTE",
+      "indexed_at": "2026-06-22T22:43:33.426729+00:00"
+    },
+    "anthropic_sdk_python": {
+      "name": "Anthropic Python SDK",
+      "category": "sdk",
+      "source": "github.com/anthropics/anthropic-sdk-python",
+      "availability": "OPEN_SOURCE (MIT)",
+      "description": "SDK Python officiel pour l'API Anthropic",
+      "features": [
+        "pip install anthropic",
+        "Client sync + async",
+        "Retry automatique avec backoff",
+        "Streaming natif",
+        "Types Pydantic complets"
+      ],
+      "caelum_use": "Base de tous les agents Python CaelumSwarm qui appellent Claude",
+      "integration_pattern": "\npip install anthropic\n\nfrom anthropic import Anthropic\nclient = Anthropic()  # ANTHROPIC_API_KEY depuis env\n\n# Sync\nmessage = client.messages.create(\n    model=\"claude-sonnet-4-6\", max_tokens=1024,\n    messages=[{\"role\": \"user\", \"content\": \"Bonjour\"}]\n)\n\n# Async\nfrom anthropic import AsyncAnthropic\nasync_client = AsyncAnthropic()\n",
+      "agents_concerned": [
+        "GitAgent",
+        "EngineAgent",
+        "QAAgent"
+      ],
+      "utility_score": 47.51,
+      "priority": "FAIBLE",
+      "indexed_at": "2026-06-22T22:43:33.426729+00:00"
+    },
+    "constitutional_ai": {
+      "name": "Constitutional AI (CAI)",
+      "category": "safety",
+      "source": "anthropic.com/papers/constitutional-ai-harmlessness-from-ai-feedback",
+      "availability": "PUBLIC_RESEARCH",
+      "description": "Méthode d'entraînement IA avec feedback IA basé sur des principes",
+      "features": [
+        "Principes explicites guidant le comportement",
+        "RLAIF: RL from AI Feedback",
+        "Harmless + Helpful + Honest (3H)",
+        "Critique et révision itérative"
+      ],
+      "caelum_use": "Les agents CaelumSwarm suivent des principes constitutionnels CSDDD (équité, transparence)",
+      "integration_pattern": "Déjà intégré dans Claude — utiliser des system prompts avec principes explicites",
+      "agents_concerned": [
+        "ComplianceAgent",
+        "QAAgent"
+      ],
+      "utility_score": 87.93,
+      "priority": "MOYENNE",
+      "indexed_at": "2026-06-22T22:43:33.426729+00:00"
+    },
+    "model_card": {
+      "name": "Claude Model Card & Safety",
+      "category": "transparency",
+      "source": "anthropic.com/claude/model-card",
+      "availability": "PUBLIC",
+      "description": "Documentation complète des capacités, limites et biais de Claude",
+      "features": [
+        "Benchmark performances (MMLU, HumanEval, etc.)",
+        "Known limitations explicites",
+        "Red team findings",
+        "Bias assessments"
+      ],
+      "caelum_use": "Calibrer les agents sur les vraies capacités de Claude (ne pas surestimer)",
+      "integration_pattern": "Documentation de référence pour calibrer les prompts agents",
+      "agents_concerned": [
+        "QAAgent",
+        "ComplianceAgent"
+      ],
+      "utility_score": 87.99,
+      "priority": "MOYENNE",
+      "indexed_at": "2026-06-22T22:43:33.426729+00:00"
+    }
+  },
+  "avg_utility_score": 87.42,
+  "high_priority_count": 6
+}

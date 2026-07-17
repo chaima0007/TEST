@@ -1,0 +1,75 @@
+{
+  "module": "chomage",
+  "titre": "Chômage — droits, démarches et sanctions",
+  "domaine": "Chômage & emploi",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Arrêté royal du 25 novembre 1991 portant réglementation du chômage",
+    "portee": "Conditions, demande et maintien des allocations de chômage",
+    "source_officielle": "https://www.onem.be/citoyens"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. La réglementation du chômage fait l'objet de réformes ; vérifiez votre situation auprès de l'ONEM ou de votre organisme de paiement.",
+  "faits": [
+    {
+      "id": "CHOM-DEMANDE-001",
+      "question": "Comment demander mes allocations de chômage ?",
+      "reponse": "Deux étapes : 1) inscrivez-vous comme demandeur d'emploi auprès du service régional (Forem en Wallonie, Actiris à Bruxelles, VDAB en Flandre, ADG en communauté germanophone) ; 2) introduisez votre demande d'allocations auprès d'un organisme de paiement : un syndicat, OU la CAPAC si vous ne voulez pas être syndiqué. Gardez bien votre C4 (remis par l'employeur à la fin du contrat), qui sert à constituer le dossier. C'est l'ONEM qui décide du droit, l'organisme de paiement qui verse.",
+      "reference_legale": "Arrêté royal du 25 novembre 1991 portant réglementation du chômage",
+      "contacts": [
+        {"nom": "CAPAC", "lien": "https://www.capac.fgov.be", "pour": "payer les allocations sans être syndiqué"},
+        {"nom": "Forem / Actiris / VDAB", "pour": "inscription comme demandeur d'emploi"},
+        {"nom": "ONEM", "lien": "https://www.onem.be", "pour": "information sur le droit aux allocations"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.onem.be/citoyens", "intitule": "ONEM — Citoyens"},
+        {"type": "secondaire", "url": "https://www.bruxelles-j.be/droits-sociaux/tes-droits-au-chomage/a-qui-tadresser/", "intitule": "Bruxelles-J — À qui s'adresser pour le chômage"}
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "CHOM-DEMISSION-001",
+      "question": "Si je démissionne, ai-je quand même droit au chômage ?",
+      "reponse": "Attention : quitter volontairement son emploi sans motif légitime peut entraîner une sanction de l'ONEM. Selon les cas, cela va de l'avertissement à une exclusion temporaire du droit aux allocations (la réglementation prévoit des fourchettes en semaines selon la situation : démission, abandon d'emploi, licenciement pour faute). À la fin de la période de sanction, vous pouvez à nouveau demander des allocations si vous remplissez les conditions. Avant de démissionner, renseignez-vous auprès de votre organisme de paiement.",
+      "reference_legale": "Arrêté royal du 25 novembre 1991 portant réglementation du chômage (chômage volontaire et sanctions)",
+      "contacts": [
+        {"nom": "Votre organisme de paiement (syndicat ou CAPAC)", "pour": "vérifier l'impact d'une démission AVANT de l'envoyer"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.onem.be/citoyens/chomage-complet/pouvez-vous-perdre-votre-droit-aux-allocations-/dans-quels-cas-pouvez-vous-etre-sanctionnee-chomage-complet", "intitule": "ONEM — Dans quels cas pouvez-vous être sanctionné ?"},
+        {"type": "secondaire", "url": "https://www.bruxelles-j.be/droits-sociaux/tes-droits-au-chomage/quelles-sont-les-sanctions-de-lonem/", "intitule": "Bruxelles-J — Les sanctions de l'ONEM"}
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "CHOM-LIMITE-TEMPS-001",
+      "question": "Mes allocations de chômage sont-elles limitées dans le temps ?",
+      "reponse": "Oui : la réglementation du chômage a été réformée pour instaurer une limitation du droit aux allocations dans le temps, avec des mesures transitoires. Les personnes qui bénéficiaient déjà d'allocations avant le 1er mars 2026 font l'objet de règles transitoires spécifiques, et les allocations d'insertion (après les études) sont également réformées. Comme les modalités précises (durée, exceptions, calendrier) dépendent de votre situation et continuent d'évoluer, vérifiez impérativement votre cas sur le site de l'ONEM ou auprès de votre organisme de paiement avant toute décision.",
+      "reference_legale": "Arrêté royal du 25 novembre 1991 portant réglementation du chômage (réforme — limitation du droit dans le temps et mesures transitoires)",
+      "alerte_delai": "Réforme en cours avec mesures transitoires liées à la date du 1er mars 2026 : faites vérifier votre situation personnelle par l'ONEM ou votre organisme de paiement.",
+      "contacts": [
+        {"nom": "ONEM", "lien": "https://www.onem.be/citoyens/chomage-complet", "pour": "réforme et limitation du droit dans le temps"},
+        {"nom": "Votre organisme de paiement (syndicat ou CAPAC)", "pour": "impact concret sur votre dossier"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.onem.be/citoyens/chomage-complet", "intitule": "ONEM — Chômage complet (réforme : limitation du droit dans le temps)"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "CHOM-OBLIGATIONS-001",
+      "question": "Quelles sont mes obligations pour garder mes allocations de chômage ?",
+      "reponse": "Comme chômeur complet indemnisé, vous devez notamment rester disponible sur le marché de l'emploi, chercher activement du travail, répondre aux convocations du service régional de l'emploi (Forem, Actiris, VDAB, ADG) et accepter un emploi convenable. Certaines situations peuvent donner lieu à une dispense (études, formation, rôle d'aidant proche). Le non-respect de ces obligations peut entraîner une sanction de l'ONEM. Si vous contestez une décision de l'ONEM, vous pouvez introduire un recours devant le tribunal du travail.",
+      "reference_legale": "Arrêté royal du 25 novembre 1991 portant réglementation du chômage (obligations du chômeur indemnisé)",
+      "contacts": [
+        {"nom": "ONEM", "lien": "https://www.onem.be/citoyens/chomage-complet", "pour": "obligations pendant le chômage et dispenses"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://www.onem.be/citoyens/chomage-complet", "intitule": "ONEM — Obligations comme chômeur complet indemnisé"}
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

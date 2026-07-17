@@ -1,0 +1,64 @@
+#!/usr/bin/env bash
+# pre-commit — Gardiens qualité AVANT chaque commit (défense en profondeur, couche 1)
+set -e
+
+# Ne bloque que si les scripts existent
+fail=0
+
+# §24 — Intégrité de l'environnement (anti-désync conteneur) : gardien PRIORITAIRE.
+# Refuse tout commit depuis un checkout étranger / mauvaise branche / dossiers clés manquants.
+if [ -f scripts/env_integrity_check.py ]; then
+  echo "🧭 Contrôle d'intégrité de l'environnement (§24)…"
+  if ! python3 scripts/env_integrity_check.py >/tmp/_env.log 2>&1; then
+    echo "🛑 DÉSYNCHRONISATION DE L'ENVIRONNEMENT — commit REFUSÉ :"; tail -8 /tmp/_env.log
+    echo "   → git fetch puis réaligner (sur autorisation) avant de commiter."
+    echo "   → Ne jamais commiter depuis un checkout étranger (§24)."
+    exit 1
+  fi
+fi
+
+if [ -f scripts/build_guard.py ]; then
+  echo "🔧 Gardien build…"
+  python3 scripts/build_guard.py --scan >/tmp/_bg.log 2>&1 || { echo "🛑 build_guard a détecté un problème :"; tail -5 /tmp/_bg.log; fail=1; }
+fi
+
+if [ -f scripts/site_guard.py ]; then
+  echo "✨ Gardien cohérence du site…"
+  python3 scripts/site_guard.py --scan --quiet || { echo "🛑 site_guard a détecté une incohérence."; fail=1; }
+fi
+
+if [ -f scripts/legal_content_verifier.py ]; then
+  echo "📚 Vérificateur de contenu (sources officielles + dates)…"
+  python3 scripts/legal_content_verifier.py >/tmp/_lcv.log 2>&1 || { echo "🛑 Contenu non sourcé/daté :"; tail -6 /tmp/_lcv.log; fail=1; }
+fi
+
+if [ -f scripts/source_trust_protocol.py ]; then
+  echo "🔒 Confiance des sources…"
+  python3 scripts/source_trust_protocol.py >/tmp/_st.log 2>&1 || { echo "🛑 Source 'officiel' hors liste de confiance :"; tail -6 /tmp/_st.log; fail=1; }
+fi
+
+if [ -f scripts/control_gates_protocol.py ]; then
+  echo "🚪 Sas de contrôle (pré-vol)…"
+  python3 scripts/control_gates_protocol.py >/tmp/_gates.log 2>&1 || { echo "🛑 Un sas de contrôle est rouge :"; tail -8 /tmp/_gates.log; fail=1; }
+fi
+
+# Battement de cœur de la plateforme autonome (respiration continue, forme de vie).
+if [ -f scripts/autonomous_platform.py ]; then
+  echo "🫀 Battement de la plateforme autonome…"
+  if python3 scripts/autonomous_platform.py --fast --n 20000 >/tmp/_heart.log 2>&1; then
+    grep "🗣️" /tmp/_heart.log | tail -1
+    git add data/platform_vitals.json data/autonomous_platform_report.json data/platform_todo.json data/certification_report.json 2>/dev/null || true
+  else
+    grep "🗣️" /tmp/_heart.log | tail -1
+    echo "🛑 Plateforme en état CRITIQUE :"; tail -6 /tmp/_heart.log; fail=1
+  fi
+fi
+
+if [ "$fail" = "1" ]; then
+  echo ""
+  echo "🛑 COMMIT BLOQUÉ par les gardiens. Corrige les problèmes ci-dessus."
+  echo "   (Pour forcer en connaissance de cause : git commit --no-verify)"
+  exit 1
+fi
+echo "✅ Gardiens OK — commit autorisé."
+exit 0

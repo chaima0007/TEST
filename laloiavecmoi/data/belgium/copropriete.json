@@ -1,0 +1,78 @@
+{
+  "module": "copropriete",
+  "titre": "Copropriété — vivre en appartement",
+  "domaine": "Copropriété",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Code civil — copropriété forcée des immeubles ou groupes d'immeubles bâtis (art. 577-3 et suivants)",
+    "portee": "Syndic, assemblée générale, charges et droits des copropriétaires",
+    "source_officielle": "https://justice.belgium.be"
+  },
+  "derniere_revue": "2026-06-30",
+  "statut_fiabilite": "verifie",
+  "avertissement": "Information générale, à jour à la date de revue. Le règlement de copropriété de votre immeuble précise beaucoup de règles ; consultez-le et, en cas de litige, un avocat ou le juge de paix peut aider.",
+  "faits": [
+    {
+      "id": "COPRO-SYNDIC-001",
+      "question": "C'est quoi le syndic et l'assemblée générale dans un immeuble ?",
+      "reponse": "Quand un immeuble est divisé en appartements appartenant à plusieurs propriétaires, la loi organise une copropriété. L'assemblée générale (réunion de tous les copropriétaires) est l'organe de décision : elle vote, selon l'importance des décisions, à des majorités définies par la loi. Le syndic est le gestionnaire (administratif, financier, technique) qui exécute ces décisions et entretient les parties communes. Chaque copropriétaire est membre de droit de l'assemblée et peut y voter selon ses quotes-parts.",
+      "reference_legale": "Code civil — copropriété forcée (art. 577-3 et suivants ; rôle du syndic et de l'assemblée générale)",
+      "contacts": [
+        {"nom": "Syndic de votre immeuble", "pour": "gestion, convocation de l'assemblée générale"},
+        {"nom": "Juge de paix", "pour": "litige de copropriété"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://justice.belgium.be/sites/default/files/Mede-Eigendom%20FR.pdf", "intitule": "SPF Justice — La copropriété"},
+        {"type": "secondaire", "url": "https://www.justifit.be/b/coproprietaires-quels-sont-vos-droits-et-obligations/", "intitule": "Justifit — Droits et obligations des copropriétaires"}
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "COPRO-CHARGES-001",
+      "question": "Comment sont calculées mes charges de copropriété ?",
+      "reponse": "Vos charges (entretien, nettoyage, ascenseur, assurance de l'immeuble, réserve…) sont réparties selon vos quotes-parts, c'est-à-dire la part que représente votre appartement dans l'ensemble de l'immeuble. Ces quotes-parts figurent dans l'acte de base et déterminent aussi votre poids de vote. Vous avez le droit de consulter les comptes et de contester une décision de l'assemblée générale devant le juge de paix dans un délai légal si elle vous paraît irrégulière ou abusive.",
+      "reference_legale": "Code civil — copropriété forcée (quotes-parts, art. 577-3 et suivants ; recours contre les décisions de l'assemblée)",
+      "alerte_delai": "Une décision de l'assemblée générale peut être contestée devant le juge de paix dans un délai légal (en principe 4 mois) ; ne tardez pas.",
+      "contacts": [
+        {"nom": "Syndic", "pour": "comptes, décompte des charges"},
+        {"nom": "Juge de paix", "pour": "contester une décision de l'assemblée générale"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://justice.belgium.be/sites/default/files/Mede-Eigendom%20FR.pdf", "intitule": "SPF Justice — La copropriété"},
+        {"type": "secondaire", "url": "https://www.choisirunsyndic.be/dossiers/quotites-en-copropriete/", "intitule": "Choisir un syndic — Quotités en copropriété"}
+      ],
+      "date_verification": "2026-06-27"
+    },
+    {
+      "id": "COPRO-MAJORITES-001",
+      "question": "Quelles majorités faut-il pour faire voter des travaux ou des décisions ?",
+      "reponse": "La loi prévoit des majorités graduées selon l'importance de la décision (les voix se comptent selon les quotes-parts). À la majorité absolue des copropriétaires présents ou représentés : la gestion courante, les travaux conservatoires et d'administration provisoire, et les travaux imposés par la loi. À la majorité des 2/3 : les travaux affectant les parties communes (autres que ceux que le syndic peut décider) et les modifications des statuts portant sur la jouissance, l'usage ou l'administration des communs. À la majorité des 4/5 : les décisions les plus lourdes — modification de la répartition des charges, changement de destination de l'immeuble, reconstruction, ou actes de disposition de biens communs. Enfin, certaines décisions exigent l'unanimité dans les cas prévus par la loi. Vérifiez toujours la majorité requise avant l'assemblée.",
+      "reference_legale": "Code civil — décisions de l'assemblée générale et majorités (art. 577-7)",
+      "contacts": [
+        {"nom": "Syndic", "pour": "inscription d'un point à l'ordre du jour et majorité applicable"},
+        {"nom": "Juge de paix", "pour": "contester une décision irrégulière"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://justice.belgium.be/sites/default/files/Mede-Eigendom%20FR.pdf", "intitule": "SPF Justice — La copropriété (majorités de l'assemblée générale)"},
+        {"type": "secondaire", "url": "https://www.choisirunsyndic.be/dossiers/quotites-en-copropriete/", "intitule": "Choisir un syndic — Majorités et quotités"}
+      ],
+      "date_verification": "2026-06-30"
+    },
+    {
+      "id": "COPRO-SYNDIC-MANDAT-001",
+      "question": "Comment le syndic est-il désigné, et peut-on s'en séparer ?",
+      "reponse": "Le syndic est en principe nommé par la première assemblée générale (ou, à défaut, par le juge de paix à la demande de tout copropriétaire ou tiers intéressé). Son mandat ne peut pas dépasser 3 ans, mais il peut être renouvelé par une décision expresse de l'assemblée générale (le simple fait de ne pas renouveler ne donne droit à aucune indemnité). Important : l'assemblée générale peut toujours révoquer le syndic, et peut au besoin lui adjoindre un syndic provisoire. Un contrat écrit fixe ses pouvoirs, sa rémunération et la durée de sa mission.",
+      "reference_legale": "Code civil — désignation, mandat (max. 3 ans) et révocation du syndic (art. 577-8)",
+      "contacts": [
+        {"nom": "Assemblée générale des copropriétaires", "pour": "nomination, renouvellement ou révocation du syndic"},
+        {"nom": "Juge de paix", "pour": "désignation d'un syndic à défaut d'accord"}
+      ],
+      "sources": [
+        {"type": "officiel", "url": "https://justice.belgium.be/sites/default/files/Mede-Eigendom%20FR.pdf", "intitule": "SPF Justice — La copropriété (rôle et mandat du syndic)"},
+        {"type": "secondaire", "url": "https://www.justifit.be/b/coproprietaires-quels-sont-vos-droits-et-obligations/", "intitule": "Justifit — Droits et obligations des copropriétaires"}
+      ],
+      "date_verification": "2026-06-30"
+    }
+  ]
+}

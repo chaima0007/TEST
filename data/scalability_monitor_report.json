@@ -1,0 +1,114 @@
+{
+  "protocole": "P-SCALABILITE",
+  "verdict_global": "OK",
+  "dimensions": [
+    {
+      "plateforme": "Flotte d'agents",
+      "dimension": "Agents IA (scripts .py)",
+      "valeur": 239,
+      "seuil_alerte": 320,
+      "seuil_critique": 450,
+      "pct_du_critique": 53.1,
+      "statut": "OK"
+    },
+    {
+      "plateforme": "La Loi Avec Moi",
+      "dimension": "Modules juridiques",
+      "valeur": 132,
+      "seuil_alerte": 400,
+      "seuil_critique": 600,
+      "pct_du_critique": 22.0,
+      "statut": "OK"
+    },
+    {
+      "plateforme": "La Loi Avec Moi",
+      "dimension": "Plus gros JSON (lignes)",
+      "valeur": 265,
+      "seuil_alerte": 40000,
+      "seuil_critique": 50000,
+      "pct_du_critique": 0.5,
+      "statut": "OK"
+    },
+    {
+      "plateforme": "Caelum",
+      "dimension": "Modules conformité",
+      "valeur": 3,
+      "seuil_alerte": 60,
+      "seuil_critique": 120,
+      "pct_du_critique": 2.5,
+      "statut": "OK"
+    },
+    {
+      "plateforme": "Site (Next.js)",
+      "dimension": "Routes (page.tsx)",
+      "valeur": 317,
+      "seuil_alerte": 380,
+      "seuil_critique": 480,
+      "pct_du_critique": 66.0,
+      "statut": "OK"
+    },
+    {
+      "plateforme": "Site (Next.js)",
+      "dimension": "Composants (.tsx)",
+      "valeur": 15,
+      "seuil_alerte": 600,
+      "seuil_critique": 900,
+      "pct_du_critique": 1.7,
+      "statut": "OK"
+    },
+    {
+      "plateforme": "Gouvernance",
+      "dimension": "Fichiers de données (governance)",
+      "valeur": 33,
+      "seuil_alerte": 80,
+      "seuil_critique": 150,
+      "pct_du_critique": 22.0,
+      "statut": "OK"
+    }
+  ],
+  "latence_proxies": [
+    {
+      "plateforme": "Site (Next.js)",
+      "proxy": "Routes (coût de build/cold-start)",
+      "valeur": 317,
+      "statut": "OK"
+    },
+    {
+      "plateforme": "Données",
+      "proxy": "Plus gros JSON (coût de parse/SSR, lignes)",
+      "valeur": 316,
+      "statut": "OK"
+    }
+  ],
+  "cout": {
+    "devise": "EUR",
+    "periode": "mensuel",
+    "plateformes": {
+      "la_loi_avec_moi": {
+        "total_connu": 0,
+        "postes_manquants": [
+          "hebergement",
+          "base_de_donnees",
+          "nom_de_domaine",
+          "api_ia",
+          "autres"
+        ]
+      },
+      "caelum": {
+        "total_connu": 0,
+        "postes_manquants": [
+          "hebergement",
+          "base_de_donnees",
+          "nom_de_domaine",
+          "api_ia",
+          "autres"
+        ]
+      }
+    },
+    "postes_a_completer": 10
+  },
+  "prevision": {
+    "note": "rythme observé : 4.5 nouveau(x) module(s)/passage sur 37 passages",
+    "runway_passages_avant_saturation_modules": 103
+  }
+}

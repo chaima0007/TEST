@@ -1,0 +1,17 @@
+{
+  "registre": "Suivi des revenus — à la trace",
+  "but": "Suivre chaque étape vers les revenus, avec son indicateur et son état. Honnête : pas de revenu garanti ; on mesure et on ajuste.",
+  "date": "2026-06-26",
+  "etapes": [
+    {"n": 1, "etape": "Site en ligne (hébergement + domaine)", "qui": "Chaima", "indicateur": "site accessible 24/7", "etat": "a_faire"},
+    {"n": 2, "etape": "Analytics activé", "qui": "Chaima", "indicateur": "visiteurs/mois", "etat": "a_faire"},
+    {"n": 3, "etape": "Compte Stripe créé", "qui": "Chaima", "indicateur": "paiement test réussi", "etat": "a_faire"},
+    {"n": 4, "etape": "3 documents payants en ligne", "qui": "Claude", "indicateur": "ventes/mois", "etat": "a_faire"},
+    {"n": 5, "etape": "Page B2B + 1er contact CPAS/commune", "qui": "Chaima+Claude", "indicateur": "rendez-vous B2B", "etat": "a_faire"},
+    {"n": 6, "etape": "2 demandes de subvention déposées", "qui": "Chaima", "indicateur": "dossiers déposés", "etat": "a_faire"},
+    {"n": 7, "etape": "Bouton don (mission)", "qui": "Claude", "indicateur": "dons/mois", "etat": "a_faire"},
+    {"n": 8, "etape": "Versions NL", "qui": "Claude", "indicateur": "trafic NL", "etat": "a_faire"},
+    {"n": 9, "etape": "SEO 20 pages", "qui": "Claude", "indicateur": "positions Google", "etat": "a_faire"},
+    {"n": 10, "etape": "1er partenariat mise en relation", "qui": "Chaima", "indicateur": "commissions", "etat": "a_faire"}
+  ]
+}

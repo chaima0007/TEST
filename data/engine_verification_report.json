@@ -1,0 +1,12 @@
+{
+  "total_engines": 24,
+  "passed": 24,
+  "warnings": 0,
+  "failed": 0,
+  "duplicate_prefixes": {},
+  "duplicate_filenames": [],
+  "semantic_duplicates": {},
+  "all_green": true,
+  "failures": [],
+  "warning_details": []
+}

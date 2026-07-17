@@ -1,0 +1,26 @@
+{
+  "analyse_marche": "Marché réel — information juridique locative en Belgique",
+  "derniere_revue": "2026-06-26",
+  "note_honnete": "Basé sur une recherche web de sources réelles. Vue indicative, à réactualiser régulièrement (le marché bouge).",
+  "acteurs_identifies": [
+    {"nom": "LeBonBail (lebonbail.be)", "type": "Legaltech belge (depuis 2015)",
+     "offre": "Création de baux personnalisés en ligne (gratuit), suivi juridique, rappels d'échéances, articles sur les droits du locataire (sous-location, assurance, fin de bail).",
+     "force": "Incumbent connu, génération de contrats automatisée, contenu d'info déjà riche.",
+     "source": "https://www.lebonbail.be/"},
+    {"nom": "Droits Quotidiens (droitsquotidiens.be)", "type": "Service d'info juridique en langage clair",
+     "offre": "Questions-réponses juridiques claires, par région.",
+     "force": "Vulgarisation juridique reconnue.",
+     "source": "https://www.droitsquotidiens.be/"},
+    {"nom": "Répertoire legaltech (droitbelge.be)", "type": "Annuaire",
+     "offre": "Recense les legaltechs belges.",
+     "force": "Cartographie du secteur.",
+     "source": "https://www.droitbelge.be/legaltech.asp"}
+  ],
+  "constat": "Le créneau 'info locative + génération de contrats' est DÉJÀ occupé par des acteurs établis (LeBonBail en tête). Proposer 'de l'info gratuite' seule n'est donc PAS différenciant.",
+  "differenciateurs_possibles": [
+    "Comparateur inter-régional clair (Wallonie/Bruxelles/Flandre côte à côte) — peu mis en avant ailleurs.",
+    "Rigueur de sourçage + fraîcheur + transparence (décharge, sources officielles datées) comme marque de confiance.",
+    "Élargir au-delà du bail vers des niches sous-servies (ex. surendettement, séjour) à forte demande / faible offre fiable."
+  ],
+  "verdict_expert": "Idée VALABLE mais PAS en frontal sur la génération de contrats (déjà pris). Gagner par la DIFFÉRENCIATION : comparateur + fiabilité + niches sous-servies. Sinon, risque de se battre contre un incumbent installé."
+}

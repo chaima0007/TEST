@@ -1,0 +1,10 @@
+{
+  "name": "caelum-composio-agent",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "description": "Agent Composio + Vercel AI SDK (Claude Opus 4.8) — Caelum",
+  "scripts": {
+    "start": "tsx agent.ts"
+  }
+}

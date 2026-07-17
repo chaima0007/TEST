@@ -1,0 +1,160 @@
+{
+  "module": "enfants_places",
+  "titre": "Enfants placés — tes droits, tes devoirs, ta parole",
+  "domaine": "Enfants placés & aide à la jeunesse",
+  "juridiction": "BE",
+  "langue": "fr",
+  "base_legale_principale": {
+    "intitule": "Aide à la jeunesse et protection de la jeunesse (Fédération Wallonie-Bruxelles) ; droits de l'enfant (Convention internationale des droits de l'enfant)",
+    "portee": "Droits et parole des enfants et jeunes pris en charge ou placés",
+    "source_officielle": "https://www.aidealajeunesse.cfwb.be/index.php?id=332"
+  },
+  "derniere_revue": "2026-06-26",
+  "statut_fiabilite": "verifie",
+  "mission": "Protéger, sensibiliser, informer — et donner une voix à ceux qu'on n'écoute pas assez.",
+  "avertissement": "Information générale, écrite pour les jeunes. Si tu vis une situation difficile, tu n'es pas seul·e : tu peux appeler le 103 (Écoute-Enfants) ou parler à ton avocat. En cas de danger immédiat, appelle le 112.",
+  "faits": [
+    {
+      "id": "EP-DROITS-001",
+      "question": "Quels sont mes droits quand je suis placé·e ?",
+      "reponse": "Tu as des droits, toujours. Tu as le droit d'être informé·e de ce qui te concerne, d'être respecté·e, de garder des contacts avec ta famille selon ce que la décision prévoit, d'être aidé·e dans de bonnes conditions, et surtout d'être écouté·e. Tes droits viennent de la loi sur l'aide et la protection de la jeunesse et de la Convention des droits de l'enfant. Tu n'es pas « un dossier » : ta parole compte.",
+      "reference_legale": "Décret de la Fédération Wallonie-Bruxelles sur l'aide à la jeunesse ; Convention internationale des droits de l'enfant",
+      "contacts": [
+        {
+          "nom": "Écoute-Enfants",
+          "numero": "103",
+          "pour": "parler, être écouté·e",
+          "dispo": "tous les jours 10h–minuit"
+        },
+        {
+          "nom": "Ton avocat",
+          "pour": "défendre tes droits"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.aidealajeunesse.cfwb.be/index.php?id=332",
+          "intitule": "Aide à la jeunesse (FW-B) — SPJ et aide imposée"
+        },
+        {
+          "type": "officiel",
+          "url": "https://justice.belgium.be/fr/themes/enfants_et_jeunes",
+          "intitule": "SPF Justice — Enfants et jeunes"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "EP-ETRE-ENTENDU-001",
+      "question": "Est-ce que j'ai le droit de parler au juge et d'être entendu·e ?",
+      "reponse": "Oui. Tu as le droit de donner ton avis sur ce qui te concerne et de parler au juge. À partir de 12 ans, le juge doit en principe t'entendre (et tu peux demander à être entendu·e même avant). Au tribunal de la jeunesse, un avocat t'est automatiquement désigné pour t'aider et te représenter. Ta parole ne décide pas tout, mais elle doit être écoutée et prise au sérieux.",
+      "reference_legale": "Article 22bis de la Constitution ; décret du 18 janvier 2018 portant le Code de la prévention, de l'Aide à la jeunesse et de la protection de la Jeunesse (FW-B)",
+      "contacts": [
+        {
+          "nom": "Ton avocat (jeunesse)",
+          "pour": "t'accompagner devant le juge"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://justice.belgium.be/fr/nouvelles/communiques_de_presse/le_juge_et_lenfant_une_parole_qui_compte",
+          "intitule": "SPF Justice — Le juge et l'enfant : une parole qui compte"
+        },
+        {
+          "type": "officiel",
+          "url": "https://justice.belgium.be/fr/themes/enfants_et_jeunes",
+          "intitule": "SPF Justice — Enfants et jeunes"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "EP-SEXPRIMER-001",
+      "question": "Comment apprendre à m'exprimer et à me faire entendre ?",
+      "reponse": "Quelques conseils simples : prépare ce que tu veux dire à l'avance (tu peux l'écrire et l'apporter) ; dis les choses calmement, avec des exemples concrets ; tu as le droit de dire « je ne sais pas » ou « je ne veux pas répondre » ; demande qu'on t'explique ce que tu ne comprends pas. Ton avocat est là pour porter ta voix : parle-lui en confiance avant l'audience. Et si tu n'oses pas, le service d'écoute (103) peut t'aider à mettre des mots.",
+      "reference_legale": "Droit de participation et d'expression de l'enfant (Convention des droits de l'enfant, art. 12)",
+      "contacts": [
+        {
+          "nom": "Écoute-Enfants",
+          "numero": "103",
+          "pour": "t'aider à préparer ta parole"
+        },
+        {
+          "nom": "Ton avocat",
+          "pour": "porter ta voix devant le juge"
+        }
+      ],
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://justice.belgium.be/fr/themes/enfants_et_jeunes",
+          "intitule": "SPF Justice — Enfants et jeunes (droit d'être entendu)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.aidealajeunesse.cfwb.be/index.php?id=332",
+          "intitule": "Aide à la jeunesse (FW-B)"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "EP-DEVOIRS-001",
+      "question": "Est-ce que j'ai aussi des devoirs ?",
+      "reponse": "Oui, comme tout le monde, et c'est normal : respecter les autres (éducateurs, famille d'accueil, autres jeunes), respecter les règles du lieu où tu vis, et participer du mieux que tu peux à ce qui est mis en place pour t'aider. Ces devoirs ne réduisent pas tes droits : ils vont avec. Si une règle te semble injuste, tu as le droit d'en parler et de la contester calmement, avec ton avocat ou un adulte de confiance.",
+      "reference_legale": "Décret du 18 janvier 2018 — Code de l'Aide à la jeunesse (FW-B) ; règlements d'ordre intérieur des institutions",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.aidealajeunesse.cfwb.be/index.php?id=332",
+          "intitule": "Aide à la jeunesse (FW-B) — mesures et suivi"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.belgium.be/fr/famille/enfants/familles_d_accueil",
+          "intitule": "Belgium.be — Familles d'accueil"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    },
+    {
+      "id": "EP-AIDE-001",
+      "question": "À qui parler si quelque chose ne va pas (ou si on ne respecte pas mes droits) ?",
+      "reponse": "Plusieurs portes existent : ton avocat (il défend TES intérêts), le 103 Écoute-Enfants (anonyme), et le Délégué général aux droits de l'enfant, dont le rôle est justement de veiller au respect des droits des enfants et de recevoir les situations où ils ne sont pas respectés. En cas de danger immédiat, appelle le 112. Demander de l'aide n'est jamais « cafter » : c'est ton droit.",
+      "reference_legale": "Décret instituant le Délégué général aux droits de l'enfant (FW-B) ; Convention internationale des droits de l'enfant",
+      "contacts": [
+        {
+          "nom": "Délégué général aux droits de l'enfant",
+          "lien": "https://www.dgde.cfwb.be",
+          "pour": "droits non respectés"
+        },
+        {
+          "nom": "Écoute-Enfants",
+          "numero": "103",
+          "pour": "écoute anonyme"
+        },
+        {
+          "nom": "Urgences",
+          "numero": "112",
+          "pour": "danger immédiat"
+        }
+      ],
+      "alerte_delai": "Si tu es en danger ou si tes droits ne sont pas respectés, parles-en vite : n'attends pas que la situation s'aggrave.",
+      "sources": [
+        {
+          "type": "officiel",
+          "url": "https://www.dgde.cfwb.be",
+          "intitule": "Délégué général aux droits de l'enfant (FW-B)"
+        },
+        {
+          "type": "officiel",
+          "url": "https://www.aidealajeunesse.cfwb.be/index.php?id=332",
+          "intitule": "Aide à la jeunesse (FW-B)"
+        }
+      ],
+      "date_verification": "2026-06-26"
+    }
+  ]
+}
