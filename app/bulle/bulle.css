@@ -1,0 +1,67 @@
+/* Thème "Bulle" — chaleureux, accessible, hors-ligne.
+   Accessibilité : grandes cibles tactiles, focus visibles, contrastes soignés,
+   respect de prefers-reduced-motion. Aucune ressource externe (privacy by design). */
+
+.bulle {
+  --b-bg: #fdf7f0;
+  --b-ink: #2b2440;
+  --b-muted: #6b6480;
+  --b-primary: #6d5ae6;
+  --b-primary-ink: #ffffff;
+  --b-card: #ffffff;
+  --b-ring: #6d5ae6;
+  min-height: 100dvh;
+  background:
+    radial-gradient(1200px 600px at 10% -10%, #fce7d6 0%, transparent 55%),
+    radial-gradient(1000px 500px at 100% 0%, #e7e0ff 0%, transparent 50%),
+    var(--b-bg);
+  color: var(--b-ink);
+  font-family: "Geist", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/* Grandes cibles tactiles (côté enfant) — min 56px, texte lisible. */
+.bulle .tap {
+  min-height: 56px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 1rem;
+  font-weight: 600;
+  line-height: 1.2;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+}
+.bulle .tap:active { transform: translateY(1px) scale(0.99); }
+
+/* Focus toujours visible, au clavier comme au tactile. */
+.bulle :focus-visible {
+  outline: 3px solid var(--b-ring);
+  outline-offset: 3px;
+  border-radius: 0.5rem;
+}
+
+/* Option « gros texte » (bascule ajoutée sur <html data-bulle-large>) */
+:root[data-bulle-large="true"] .bulle { font-size: 1.15rem; }
+
+/* Cercle de respiration — s'agrandit/rétrécit doucement. */
+.bulle .breathe {
+  animation: bulle-breathe 8s ease-in-out infinite;
+}
+@keyframes bulle-breathe {
+  0%, 100% { transform: scale(0.7); opacity: 0.75; }
+  50% { transform: scale(1.08); opacity: 1; }
+}
+
+/* Respect strict des préférences de mouvement réduit. */
+@media (prefers-reduced-motion: reduce) {
+  .bulle .breathe { animation: none; transform: scale(0.95); }
+  .bulle .tap { transition: none; }
+}
+
+.bulle .card {
+  background: var(--b-card);
+  border-radius: 1.25rem;
+  box-shadow: 0 8px 30px rgba(43, 36, 64, 0.08);
+}
