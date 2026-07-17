@@ -133,9 +133,13 @@ This version has breaking changes — APIs, conventions, and file structure may 
    adversariale (vérité, droit, RGPD, langue) → critique de la critique (corrections fondées ? défaut
    raté ? sur-correction ?). Validé seulement ≥ 90/100, sinon retour avec liste exacte. Action mineure :
    auto-contrôle documenté (audits/grep/read-back), déclaré honnêtement.
-3. **JOURNALISATION** — chaque action significative → UN document dans le dossier Drive concerné :
-   titre « N°/AAAA-MM-JJ — TYPE — sujet », en-tête date+heure UTC + auteur + SYNOPSIS complet,
-   corps FAIT (preuves) / VÉRIFIÉ / RESTE / DÉPEND DE CHAIMA, read-back après création.
-   Propre et concis ; un événement = un document ; jamais de modification rétroactive.
+3. **JOURNALISATION — protocole de livraison v2 (directive Chaima, 17-07-2026)** — à CHAQUE livraison :
+   date/heure réelles via `TZ="Europe/Brussels" date`, utilisées partout ; chaque document COMMENCE
+   par un SYNOPSIS (2-3 lignes : quoi, pourquoi, état) ; titre « AAAA-MM-JJ-HHhMM — [auteur] — [sujet] » ;
+   audit FAIT / VÉRIFIÉ (avec preuve : test, capture, commande) / RESTE — ne JAMAIS dire qu'une chose
+   est finie si elle ne tourne pas ; copie du rapport dans le Drive « COMPILATION & SYNOPSIS — Empire
+   Chaima » (ID 1qXUj9D9r7HSmIMzMcsScz4Ynlv4auP4G), et sans accès Drive : le dire et déposer dans
+   `reports/` du dépôt ; mettre à jour la passation (00-LIRE-D-ABORD.md / ETAT.md selon le dépôt) ;
+   un document = un événement, AJOUT jamais d'écrasement ; read-back après création.
 4. **FIN DE SESSION** — mettre à jour la source locale (ETAT.md / registres) + rapport de session
    dans le Drive. Une session non journalisée n'a « rien fait » aux yeux du protocole.

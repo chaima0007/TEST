@@ -31,7 +31,8 @@
     "SÉPARATION DES PROJETS : un journal La Loi Avec Moi ne va pas dans le dossier Caelum, et inversement. Un récapitulatif transversal va dans le dossier du projet principal concerné, en un seul exemplaire.",
     "DRIVE D'ABORD : lire le dernier rapport + titres + décisions en attente du dossier concerné AVANT toute action ; repartir des versions déjà critiquées/corrigées.",
     "CRITIQUE DES CRITIQUES : production → critique adversariale → critique de la critique ; validé ≥ 90/100 ; action mineure = auto-contrôle documenté déclaré.",
-    "AUDIT COMPLET par document : en-tête date+heure UTC + auteur + SYNOPSIS ; corps FAIT (preuves) / VÉRIFIÉ / RESTE / DÉPEND DE CHAIMA."
+    "AUDIT COMPLET par document : en-tête date+heure UTC + auteur + SYNOPSIS ; corps FAIT (preuves) / VÉRIFIÉ / RESTE / DÉPEND DE CHAIMA.",
+    "LIVRAISON v2 (17-07-2026) : heure réelle Europe/Brussels partout ; synopsis (2-3 lignes) en tête de chaque document ; titre « AAAA-MM-JJ-HHhMM — [auteur] — [sujet] » ; audit FAIT/VÉRIFIÉ (preuve)/RESTE — jamais « fini » sans preuve que ça tourne ; copie du rapport dans le dossier COMPILATION (sinon reports/ du dépôt, en le déclarant) ; passation mise à jour ; ajout jamais d'écrasement."
   ],
   "documents_de_reference": [
     {
