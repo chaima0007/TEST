@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "test": "vitest run",
+    "postinstall": "prisma generate",
     "db:seed": "npx tsx prisma/seed.ts",
     "db:seed:pipeline": "npx tsx prisma/seed-pipeline.ts",
     "db:push": "npx prisma db push"
