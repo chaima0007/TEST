@@ -120,3 +120,22 @@ Sceaux enregistrés dans data/decision_seals_log.json (500 max, FIFO).
 
 This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
 <!-- END:nextjs-agent-rules -->
+
+## 25. Protocole universel « Drive d'abord » (§25, P-DRIVE-D-ABORD) — doc 19 du Drive
+
+**Directive (Chaima, 2026-07-17)** : TOUT agent, TOUTE session, TOUT projet applique ce protocole.
+
+1. **DRIVE D'ABORD** — avant toute action : ouvrir le dossier Drive du projet concerné et lire le DERNIER
+   rapport + les titres existants + les décisions en attente. Ne jamais refaire un travail déjà fait ;
+   ne jamais créer de doublon ; repartir des versions déjà critiquées/corrigées. Dossiers officiels :
+   voir `data/governance/drive_registry.json` (source unique des IDs).
+2. **CRITIQUE DES CRITIQUES** — qualité en 3 couches : production (agent spécialisé) → critique
+   adversariale (vérité, droit, RGPD, langue) → critique de la critique (corrections fondées ? défaut
+   raté ? sur-correction ?). Validé seulement ≥ 90/100, sinon retour avec liste exacte. Action mineure :
+   auto-contrôle documenté (audits/grep/read-back), déclaré honnêtement.
+3. **JOURNALISATION** — chaque action significative → UN document dans le dossier Drive concerné :
+   titre « N°/AAAA-MM-JJ — TYPE — sujet », en-tête date+heure UTC + auteur + SYNOPSIS complet,
+   corps FAIT (preuves) / VÉRIFIÉ / RESTE / DÉPEND DE CHAIMA, read-back après création.
+   Propre et concis ; un événement = un document ; jamais de modification rétroactive.
+4. **FIN DE SESSION** — mettre à jour la source locale (ETAT.md / registres) + rapport de session
+   dans le Drive. Une session non journalisée n'a « rien fait » aux yeux du protocole.

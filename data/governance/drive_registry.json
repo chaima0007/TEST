@@ -14,6 +14,11 @@
       "nom": "🗂️ Caelum — Journal d'Audit (Travaux techniques)",
       "folder_id": "1npTlFufVU03luocJIw365Sd3evziZGg_",
       "usage": "Journaux d'audit techniques du projet Caelum (et sessions liées KMM/CompeteIQ)."
+    },
+    {
+      "nom": "🗂️ COMPILATION & SYNOPSIS — Empire Chaima",
+      "folder_id": "1qXUj9D9r7HSmIMzMcsScz4Ynlv4auP4G",
+      "usage": "Stratégie et compilation transversale (docs numérotés 00, 01, 02… en continu). Contient le protocole universel P-DRIVE-D-ABORD (doc 19)."
     }
   ],
   "regles": [
@@ -23,7 +28,10 @@
     "UN DOCUMENT = UN ÉVÉNEMENT : jamais de modification rétroactive d'un journal ; un nouveau fait = un nouveau document daté.",
     "SIGNATURE DE SESSION : chaque journal indique la branche git et le(s) commit(s) concernés, pour relier Drive et dépôt.",
     "READ-BACK : relire le document après création (protocole de vérification avant envoi) avant de l'annoncer.",
-    "SÉPARATION DES PROJETS : un journal La Loi Avec Moi ne va pas dans le dossier Caelum, et inversement. Un récapitulatif transversal va dans le dossier du projet principal concerné, en un seul exemplaire."
+    "SÉPARATION DES PROJETS : un journal La Loi Avec Moi ne va pas dans le dossier Caelum, et inversement. Un récapitulatif transversal va dans le dossier du projet principal concerné, en un seul exemplaire.",
+    "DRIVE D'ABORD : lire le dernier rapport + titres + décisions en attente du dossier concerné AVANT toute action ; repartir des versions déjà critiquées/corrigées.",
+    "CRITIQUE DES CRITIQUES : production → critique adversariale → critique de la critique ; validé ≥ 90/100 ; action mineure = auto-contrôle documenté déclaré.",
+    "AUDIT COMPLET par document : en-tête date+heure UTC + auteur + SYNOPSIS ; corps FAIT (preuves) / VÉRIFIÉ / RESTE / DÉPEND DE CHAIMA."
   ],
   "documents_de_reference": [
     {
@@ -35,6 +43,11 @@
       "titre": "📖 LISEZ-MOI — Règles du journal (nommage, format, zéro doublon)",
       "doc_id": "1X8vSSV-Ymsyrh4QNcfOBXbE6wP4UHWw40NAXa_q2Eg8",
       "role": "Règles rédigées par une autre session dans le dossier Caelum — complémentaires, à respecter aussi."
+    },
+    {
+      "titre": "19 — PROTOCOLE UNIVERSEL « DRIVE D'ABORD » — vérifier l'existant · critique des critiques · audit daté (prompt à coller)",
+      "doc_id": "1KsM29Ftv9puCy53fiuPT4i0VXD0wgO8a3OpEwQYXEbU",
+      "role": "Protocole obligatoire pour toutes les sessions/tous les agents (P-DRIVE-D-ABORD), adopté le 2026-07-17."
     }
   ],
   "note_honnete": "Le Drive ne permet pas (via les outils actuels) de modifier un document existant : c'est pour cela que la convention est « un document daté par événement » plutôt qu'un journal unique mis à jour."
