@@ -6,15 +6,32 @@
 > appliqué par l'orchestrateur et vérifié par les experts au même titre que
 > les huit autres règles d'or.
 
+## 0. Rôle de l'orchestrateur : regarder le Drive et agir en conséquence
+
+Plusieurs agents travaillent en parallèle sur des services différents
+(Libre & Accomplis, Caelum, La Loi Avec Moi, KMM/CompeteIQ…). Le Drive est
+leur point de coordination. **Première action obligatoire de toute session,
+pilotée par l'orchestrateur :**
+
+1. Lister les fichiers récents du Drive.
+2. Lire les LISEZ-MOI, fichiers d'erreurs et journaux **du service concerné**
+   par la session (pas besoin de tout lire — chaque synopsis dit si le
+   document concerne la session ou non, c'est son rôle).
+3. Agir en conséquence : appliquer les règles déjà établies, reprendre les
+   problèmes en attente, ne jamais refaire un travail déjà journalisé.
+
 ## 1. Arborescence Drive (unique, jamais dupliquée)
 
 ```
 LibreEtAccomplis/
-├── audit/           # journaux d'audit, un fichier par session, datés
+├── audit/           # journaux d'audit, un fichier par travail effectué, datés
 ├── presentation/    # présentation du projet pour un tiers (qualité "grande entreprise")
 └── problemes/       # copies des problèmes signalés, à traiter dans l'ordre
 ```
 
+- Chaque **service** a son propre dossier racine sur le Drive (celui-ci est
+  celui de Libre & Accomplis) ; on n'écrit jamais l'audit d'un service dans
+  le dossier d'un autre.
 - **Avant toute création de dossier ou de fichier : rechercher s'il existe déjà.**
   On ne crée jamais un second dossier ou un second fichier pour le même usage.
 - L'arborescence est plate et stable : on n'ajoute un dossier que pour un
@@ -22,10 +39,20 @@ LibreEtAccomplis/
 
 ## 2. Journal d'audit (dossier `audit/`)
 
-- **Nommage** : `AAAA-MM-JJ — Journal d'audit (sujet de la session)`.
-  Si une session doit produire un second fichier le même jour (le connecteur
-  ne permet pas d'éditer un document existant), le suffixer : `— partie 2`.
+- **Un audit par travail effectué** : chaque mission terminée (ou étape
+  significative d'une longue session) est déposée sur le Drive pour que les
+  collègues (Chaima et les autres agents — personne d'autre, le Drive est
+  interne) sachent ce qui a été fait sans avoir à le redécouvrir.
+- **Nommage** : `AAAA-MM-JJ HH:MM UTC — Type — Sujet (Service)`.
+  Exemple : `2026-07-13 15:31 UTC — Journal d'audit — Session complète (Libre & Accomplis)`.
+  Si un second fichier est nécessaire le même jour (le connecteur ne permet
+  pas d'éditer un document existant), le suffixer : `— partie 2`.
   Deux fichiers ne couvrent **jamais** les mêmes actions.
+- **Synopsis obligatoire** : chaque document commence par un bloc
+  `Synopsis :` de 2 à 4 lignes — ce que contient le document, quel service
+  est concerné, l'état (terminé / en cours / bloqué), et ce que le lecteur
+  doit en faire. C'est le synopsis qui permet aux autres agents de savoir,
+  sans ouvrir le document en entier, s'il les concerne.
 - **Horodatage** : chaque entrée commence par l'heure à la minute, en UTC,
   dans l'ordre chronologique strict.
 - **Contenu d'une entrée** : ce qui a été fait, pourquoi, la preuve
