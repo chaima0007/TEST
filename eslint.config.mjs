@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Scripts d'orchestration Claude (agents & workflows) — hors app.
+    ".claude/**",
   ]),
 ]);
 
