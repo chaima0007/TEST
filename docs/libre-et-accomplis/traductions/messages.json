@@ -1,0 +1,26 @@
+{
+  "fr": {
+    "welcome": "Bienvenue dans Libre & Accomplis !",
+    "goal_reached": "Félicitations ! Tu as atteint ton objectif.",
+    "allergy_warning": "Attention : Cette recette contient des allergènes.",
+    "stress_detected": "Nous avons détecté un niveau de stress élevé. Veux-tu faire une méditation ?"
+  },
+  "en": {
+    "welcome": "Welcome to Libre & Accomplis!",
+    "goal_reached": "Congratulations! You've reached your goal.",
+    "allergy_warning": "Warning: This recipe contains allergens.",
+    "stress_detected": "We detected a high stress level. Would you like to meditate?"
+  },
+  "es": {
+    "welcome": "¡Bienvenido a Libre & Accomplis!",
+    "goal_reached": "¡Felicidades! Has alcanzado tu objetivo.",
+    "allergy_warning": "Advertencia: Esta receta contiene alérgenos.",
+    "stress_detected": "Hemos detectado un nivel alto de estrés. ¿Te gustaría meditar?"
+  },
+  "de": {
+    "welcome": "Willkommen bei Libre & Accomplis!",
+    "goal_reached": "Glückwunsch! Du hast dein Ziel erreicht.",
+    "allergy_warning": "Achtung: Dieses Rezept enthält Allergene.",
+    "stress_detected": "Wir haben ein hohes Stresslevel erkannt. Möchtest du meditieren?"
+  }
+}

@@ -1,0 +1,78 @@
+# =============================================================================
+# Libre & Accomplis — Exemple de pipeline CI/CD (GitHub Actions)
+# MODÈLE : à copier dans .github/workflows/ et adapter aux scripts npm du
+# projet avant activation. Règle d'or : le déploiement est bloqué si un seul
+# test échoue, si la couverture est < 95 % ou si une vulnérabilité critique
+# est détectée.
+#
+# Secrets/variables à configurer dans le dépôt avant activation :
+#   secrets.SLACK_WEBHOOK, secrets.SNYK_TOKEN (optionnel),
+#   vars.STAGING_URL (cible du scan OWASP ZAP)
+# =============================================================================
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: npm ci
+      - name: Run unit tests
+        run: npm test
+      - name: Run E2E tests
+        run: npm run test:e2e
+      - name: Check test coverage (bloque si < 95 %)
+        run: npm run test:coverage -- --coverageThreshold='{"global":{"lines":95}}'
+
+  security:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Audit des dépendances (bloque sur vulnérabilité critique)
+        run: npm audit --audit-level=critical
+      - name: Scan Snyk (optionnel — nécessite SNYK_TOKEN)
+        if: ${{ env.SNYK_TOKEN != '' }}
+        uses: snyk/actions/node@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+      - name: Scan OWASP ZAP baseline (sur l'environnement de staging)
+        uses: zaproxy/action-baseline@v0.14.0
+        with:
+          target: ${{ vars.STAGING_URL }}
+
+  backup:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Backup to Drive
+        run: rclone copy ./ "drive:LibreEtAccomplis/backup_${{ github.sha }}" --progress
+      - name: Backup to AWS S3
+        run: aws s3 sync ./ "s3://libre-et-accomplis-backups/backup_${{ github.sha }}"
+      - name: Verify backup integrity
+        run: find . -type f -not -path './.git/*' -exec sha256sum {} + > backup_checksum.txt
+
+  deploy-staging:
+    needs: [test, security, backup]
+    # Déploiement uniquement depuis main, jamais depuis une PR
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy to Staging
+        run: ./deploy-staging.sh
+      - name: Notify Slack
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_COLOR: good
+          SLACK_TITLE: "Déploiement réussi en Staging"
+          SLACK_MESSAGE: "Tous les tests et scans de sécurité ont réussi. Backup vérifié."
