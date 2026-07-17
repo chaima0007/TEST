@@ -29,11 +29,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # Le client Prisma est généré dans lib/generated/prisma (gitignoré).
-      # prisma/seed.ts l'importe, donc il doit exister avant le typecheck.
-      - name: Generate Prisma client
-        run: npx prisma generate
-
       - name: Lint (ESLint)
         run: npm run lint
 
