@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-26T10:27:34.724377",
+  "timestamp": "2026-08-10T09:19:31.936746",
   "sidebar_icons": {
     "sidebar-icons-1.tsx": {
       "lines": 2126,
@@ -55,26 +55,31 @@
       "lines": 4920,
       "status": "OK"
     },
+    "learning_ledger.json": {
+      "size_kb": 174.7,
+      "lines": 4627,
+      "status": "OK"
+    },
     "library_index.json": {
       "size_kb": 1058.9,
       "lines": 22101,
       "status": "OK"
     },
     "study_attempts_log.json": {
-      "size_kb": 363.5,
-      "lines": 15542,
+      "size_kb": 380.9,
+      "lines": 16282,
       "status": "OK"
     }
   },
   "engines": {
-    "count": 4384,
-    "size_mb": 19.4,
-    "pct_max": 87.7,
+    "count": 4480,
+    "size_mb": 19.6,
+    "pct_max": 89.6,
     "status": "ALERTE"
   },
   "api_routes": {
-    "count": 228,
-    "pct_max": 65.1,
+    "count": 229,
+    "pct_max": 65.4,
     "status": "OK"
   },
   "dashboards": {
@@ -106,6 +111,6 @@
     "global_status": "ALERTE",
     "critique_count": 0,
     "alerte_count": 2,
-    "ok_count": 15
+    "ok_count": 16
   }
 }

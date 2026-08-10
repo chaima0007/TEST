@@ -1,6 +1,6 @@
 # Base unique — catalogue central
 
-*Généré le 2026-07-13. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
+*Généré le 2026-08-10. Une seule base, organisée par domaine. Chaque module reste séparé (rien n'est mélangé).*
 
 **783 réponses · 184 modules · 1150 sources officielles · 514 fiches avec contacts · 153 alertes de délai**
 

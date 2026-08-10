@@ -1,7 +1,7 @@
 {
   "registre": "Questions de la communauté — index public navigable",
   "principe": "Questions issues du corpus officiel vérifié ; réponse complète dans la fiche liée. Les futures questions d'utilisateurs seront anonymisées et modérées avant publication.",
-  "genere_le": "2026-07-13",
+  "genere_le": "2026-08-10",
   "total_questions": 783,
   "categories": {
     "Autres": 221,
@@ -7558,7 +7558,7 @@
       "module": "premier_emploi",
       "titre_fiche": "Jeunes — premier emploi & stage d'insertion",
       "reponse_resume": "Vérifiez plusieurs points. Le type de contrat (à durée indéterminée, déterminée, intérim) : un contrat à durée déterminée ou à temps partiel doit être écrit. La commission paritaire dont vous dépendez : elle fixe le salaire minimum et de…",
-      "reference_legale": "Loi du 3 juillet 1978 relative aux contrats de travail",
+      "reference_legale": "Loi du 3 juillet 1978 relative aux contrats de travail ; loi du 3 juin 2026 (préavis durant les six premiers mois, en vigueur le 1er août 2026)",
       "lien_fiche": "/fiche/premier_emploi#JEUNE-CONTRAT-001",
       "source_officielle": "https://emploi.belgique.be/fr/themes/contrats-de-travail",
       "popularite": null,
