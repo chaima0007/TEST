@@ -6,6 +6,25 @@ Toute entrée de plus de 14 jours est mise en évidence en tête de fichier par 
 
 **⚠️ Rien de plus de 14 jours à ce jour.**
 
+**🔴 PRIORITÉ HAUTE — 2026-09-06 : la session n'est pas authentifiante.**
+Constat vérifié en écrivant les tests. `app/api/auth/login/route.ts` pose le cookie
+`ciq_session` avec la valeur constante `"authenticated"`, et `middleware.ts` ne vérifie que
+la **présence** du cookie, jamais sa valeur ni sa signature. Conséquence : n'importe quel
+visiteur peut poser `ciq_session=n-importe-quoi` dans son navigateur et atteindre
+`/dashboard`, `/api/competitors`, `/api/alerts`, `/api/reports`, `/api/stats`. Aucun mot de
+passe requis. Le test `tests/auth.test.ts` documente ce comportement dans un bloc nommé
+« FAILLE CONNUE » : il échouera le jour où la session sera signée, ce qui est voulu.
+
+Second constat lié : `next-auth`, `bcryptjs` et le modèle `User` de Prisma (avec champ
+`password`) sont présents dans le projet mais **ne sont pas utilisés** par la route de
+login, qui compare à `DEMO_EMAIL` / `DEMO_PASSWORD` (valeurs par défaut
+`demo@competeiq.com` / `demo123`, en clair dans le code). Trois dépendances installées
+pour une authentification qui n'existe pas encore.
+
+Décision attendue de Chaima : brancher `next-auth` (déjà payé en poids de dépendances)
+ou signer nous-mêmes le cookie de session. Tant que ce n'est pas tranché, tout accès
+« protégé » de CompeteIQ est public. À passer par `/debat` avant de coder.
+
 ---
 
 | Quoi | Projet | Type | En attente depuis | Résumé en 1 ligne |

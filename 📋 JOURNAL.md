@@ -48,3 +48,19 @@ l'arbitrage « FAIRE MAIS RÉDUIT » du même jour. Création de `scout`, `carto
 
 Garde-fou inchangé et reporté tel quel : **2026-10-06**, comptage des fichiers dans
 `/codex/candidates/` et `/codex/expertise/`.
+
+---
+
+## 2026-09-06 (4)
+
+Changement : premier filet de tests du dépôt. `tests/auth.test.ts` — 16 tests sur le
+parcours d'authentification (login, logout, middleware), lanceur natif `node:test` exécuté
+par `tsx`, **aucune dépendance ajoutée** (donc aucune fiche candidate requise, §7).
+Script `npm test` ajouté et branché dans `.github/workflows/ci.yml`.
+
+Vérifications avant push : lint 0 erreur (3 avertissements préexistants), build OK,
+typecheck OK, 16/16 tests passent.
+
+Constat majeur remonté en priorité haute dans `A-DECIDER.md` : **la session n'authentifie
+personne** — cookie à valeur constante, middleware qui n'en vérifie que la présence.
+Non corrigé ici : c'est une décision d'architecture (§8), pas une correction de test.
