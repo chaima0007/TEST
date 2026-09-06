@@ -64,3 +64,13 @@ typecheck OK, 16/16 tests passent.
 Constat majeur remonté en priorité haute dans `A-DECIDER.md` : **la session n'authentifie
 personne** — cookie à valeur constante, middleware qui n'en vérifie que la présence.
 Non corrigé ici : c'est une décision d'architecture (§8), pas une correction de test.
+
+---
+
+## 2026-09-06 (5)
+
+Changement : `/codex/PROMPT-UNIVERSEL.md` créé — 146 lignes, autonome, project-agnostique,
+à coller en tête du CLAUDE.md de chaque projet existant. Comble le manque réel du
+protocole : il disait QUI sont les rôles, jamais COMMENT ils se passent l'information.
+Apporte le vocabulaire commun (B), le format de passation obligatoire (C) et les 4 parcours
+standards (D).
