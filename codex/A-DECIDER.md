@@ -13,7 +13,6 @@ Toute entrée de plus de 14 jours est mise en évidence en tête de fichier par 
 | Portée réelle de A-DECIDER.md et EVOLUTION.md | Empire | Protocole | 2026-09-06 | Le §6 dit "un seul fichier tous projets confondus", le §12 dit "structure identique dans chaque projet" — les deux ensemble produisent N copies divergentes ; désigner un dépôt canonique ou assumer une copie par projet. |
 | Noms de fichiers avec emoji + espace | Empire | Technique | 2026-09-06 | `🔴 ERREURS.md` / `📋 JOURNAL.md` fonctionnent sous Linux/git mais cassent sur certains outils Windows, CI et scripts shell non quotés ; garder tel quel pour la cohérence de l'Empire, ou passer à `ERREURS.md` / `JOURNAL.md` partout. |
 | Absence totale de tests automatisés | CompeteIQ | Technique | 2026-09-06 | `package.json` n'a aucun script `test` ; TESTEUR-ADVERSE recommande d'en ajouter un avant toute nouvelle fonctionnalité facturable. Décision : quand, et avec quel budget de temps. |
-| Implémenter les 5 rôles §1 restants | Empire | Protocole | 2026-09-06 | SCOUT, CARTOGRAPHE, SCRIBE-EMPIRE, ÉCLAIREUR-OPPORTUNITÉS, ARCHITECTE-INTÉGRATION : aucun déclencheur réel aujourd'hui ; arbitrage du 2026-09-06 = ATTENDRE le déclencheur, pas une date. |
 
 ---
 
@@ -87,5 +86,18 @@ PITCH_EMAIL.md ; absence de `/codex/` avant ce jour. **NON VÉRIFIÉ :** l'absen
 client — déduite de l'absence de trace dans le dépôt, ce qui n'est pas une preuve ; Chaima
 seule peut confirmer. Aucun chiffre de marché n'est avancé dans cette fiche.
 
-**Statut : PROPOSÉ.** Aucun agent n'a tranché ; les 3 rôles créés l'ont été sur accord
-explicite de Chaima du 2026-09-06.
+**Statut : TRANCHÉ PAR CHAIMA le 2026-09-06 — les 21 rôles sont implémentés.**
+
+Chaima a écarté la réduction proposée par l'Arbitre et retenu la position de l'Avocat dans
+sa version pleine : les 5 rôles restants (SCOUT, CARTOGRAPHE, SCRIBE-EMPIRE,
+ÉCLAIREUR-OPPORTUNITÉS, ARCHITECTE-INTÉGRATION) sont créés. Le système compte 21 agents.
+
+Ce que devient l'objection du Contradicteur : elle n'est pas annulée par cette décision,
+elle est **reportée sur le garde-fou daté**, qui reste en vigueur et gagne en importance —
+au **2026-10-06**, si `/codex/candidates/` et `/codex/expertise/` sont toujours vides,
+CROQUE-MORT est invoqué sur le protocole lui-même, pas sur le produit. C'est le seul point
+du débat qui départage réellement les deux camps, et il se mesure par un comptage de
+fichiers, pas par une opinion.
+
+_Note du 2026-09-06 : le débat avait recommandé FAIRE MAIS RÉDUIT ; la décision humaine
+prime (§10). Consigné tel quel pour qu'on puisse, dans un mois, savoir qui avait raison._

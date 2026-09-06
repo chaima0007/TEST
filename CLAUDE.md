@@ -184,35 +184,35 @@ re-débattre de leur absence dans six mois.
 
 ## 14. ÉTAT D'IMPLÉMENTATION DES AGENTS
 
-Les rôles ne sont pas que décrits : ils existent comme **sous-agents invocables** dans
+Les rôles ne sont pas que décrits : les **21 existent comme sous-agents invocables** dans
 `.claude/agents/`, et le pipeline §8 est orchestré par la compétence `/debat`
 (`.claude/skills/debat/`).
 
-**Cœur délibératif (§8) — implémenté :** `avocat`, `contradicteur`,
-`simulateur-scenarios`, `arbitre-expert`, `verificateur-verite`.
-`avocat` et `contradicteur` doivent être lancés **en parallèle, dans un seul message** :
-lancés l'un après l'autre, le second répond au premier, les positions convergent et le
-désaccord réel — la seule information utile du débat — disparaît.
+**Les 13 rôles du §1 — tous implémentés.**
+- *Chaîne d'entrée :* `scout` → `guardian-licences` + `sentinel-securite` →
+  `architecte-integration`. Aucune dépendance n'entre dans `package.json` sans ce passage.
+- *Cœur délibératif (§8) :* `avocat`, `contradicteur`, `simulateur-scenarios`,
+  `arbitre-expert`, `verificateur-verite`.
+- *Tenue de l'Empire :* `cartographe` (A-DECIDER + EVOLUTION), `superviseur-vigie`
+  (snapshot §5, premier agent de chaque session), `scribe-empire` (contenu et
+  présentations), `eclaireur-opportunites` (fiches PROPOSÉ).
 
-**Chaîne d'entrée (§0, §2, §3) — implémentée :** `guardian-licences`,
-`sentinel-securite`. Toute dépendance passe par eux avant `package.json`.
+**Les 8 rôles complémentaires du §13 — tous implémentés :** `gardien-donnees`,
+`intendant-couts`, `conservateur-secrets`, `testeur-adverse`, `avocat-du-client`,
+`croque-mort`, `responsable-continuite`, `archiviste-preuves`.
 
-**Vigie (§5, §12) — implémentée :** `superviseur-vigie`, premier agent de chaque session.
+**Règle d'invocation la plus importante :** `avocat` et `contradicteur` se lancent
+**en parallèle, dans un seul message**. Lancés l'un après l'autre, le second répond au
+premier, les positions convergent, et le désaccord réel — la seule information utile du
+débat — disparaît. La compétence `/debat` impose cet ordre, ainsi que l'obligation pour
+l'arbitrage de dire ce que **chaque** camp a gagné : une objection écartée sans garde-fou
+qui la reprenne signifie que la décision n'a pas été arbitrée, seulement gagnée.
 
-**Rôles complémentaires (§13) — implémentés :** les 8.
-
-**Rôles §1 non encore implémentés, volontairement :** SCOUT, CARTOGRAPHE, SCRIBE-EMPIRE,
-ÉCLAIREUR-OPPORTUNITÉS, ARCHITECTE-INTÉGRATION. Aucun n'a de déclencheur réel aujourd'hui
-(aucune recherche active, 3 lignes dans A-DECIDER.md, aucun composant validé à intégrer).
-Décision déposée dans `/codex/A-DECIDER.md`, statut PROPOSÉ — à rouvrir quand le
-déclencheur existe, pas avant.
-
-**Garde-fou issu du débat du 2026-09-06 :** au 2026-10-06, si `/codex/candidates/` et
-`/codex/expertise/` sont toujours vides, c'est CROQUE-MORT qui est invoqué **sur le
-protocole lui-même**, pas sur le produit. Un système de décision qui ne produit aucune
-décision est un décor, quel que soit le nombre d'agents.
-
----
+**Garde-fou maintenu, issu du débat du 2026-09-06 :** au **2026-10-06**, comptage des
+fichiers dans `/codex/candidates/` et `/codex/expertise/`. S'ils sont vides, CROQUE-MORT
+est invoqué **sur le protocole lui-même**, pas sur le produit. Ce garde-fou est plus
+important à 21 agents qu'à 16, pas moins : un système de décision qui ne produit aucune
+décision est un décor, quel que soit le nombre de rôles.
 
 ---
 ---

@@ -36,3 +36,15 @@ de déclencheur réel. Total : 16 agents.
 Garde-fou retenu de la plaidoirie du Contradicteur, à ne pas oublier : **2026-10-06,
 comptage des fichiers dans `/codex/candidates/` et `/codex/expertise/`.** Si les deux
 dossiers sont vides, CROQUE-MORT est invoqué sur le protocole, pas sur le produit.
+
+---
+
+## 2026-09-06 (3)
+
+Changement : décision de Chaima — implémentation complète des 13 rôles du §1, contre
+l'arbitrage « FAIRE MAIS RÉDUIT » du même jour. Création de `scout`, `cartographe`,
+`scribe-empire`, `eclaireur-opportunites`, `architecte-integration`. **Total : 21 agents**
+(13 du §1 + 8 du §13), plus la compétence `/debat`.
+
+Garde-fou inchangé et reporté tel quel : **2026-10-06**, comptage des fichiers dans
+`/codex/candidates/` et `/codex/expertise/`.
