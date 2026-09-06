@@ -1,6 +1,6 @@
 # ETAT — projet Patchou (état vivant)
 
-> Mis à jour à chaque événement. Dernier point : **2026-07-17 21h52 CEST**.
+> Mis à jour à chaque événement. Dernier point : **2026-09-06 23h11 CEST**.
 > Lire d'abord `00-LIRE-D-ABORD.md`.
 
 ## SYNOPSIS
@@ -24,6 +24,7 @@
 | 2026-07-17 21h46 | Claude | Copie de l'audit déposée sur le Drive « Empire Chaima » | docs.google.com/document/d/1M0RKDE53preiE4zjfZvnnSwZeLCTTBo1KQFHPDq4ScA |
 | 2026-07-17 21h46 | Claude | Passation créée (`00-LIRE-D-ABORD.md`, `ETAT.md`) | ce dépôt |
 | 2026-07-17 21h52 | Claude | Doublon Drive tranché : « Empire Chaima » canonique, ancien dossier obsolète (non détruit) | `ETAT.md` §Convention Drive |
+| 2026-09-06 23h11 | Claude | PROTOCOLE CODEX EMPIRE CHAIMA (v.2026-09-06) installé (additif) : `CLAUDE.md` + `/codex/` (§12) + 21 agents de gouvernance + skill `debat`. 17 agents opérationnels conservés (total 38). | `📋 JOURNAL.md`, `codex/EVOLUTION.md` |
 
 ## Point de vigilance connu
 - **Décalage d'horloge** : les commits Git portent `2026-07-03` (horloge du bac à sable). L'heure réelle des rapports est prise via `TZ="Europe/Brussels" date` et recoupée avec le `createdTime` Drive. Chronologie relative des commits = exacte.
