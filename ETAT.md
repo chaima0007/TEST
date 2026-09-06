@@ -2,6 +2,20 @@
 
 > Journal chronologique. **Ajout uniquement**, jamais d'écrasement. Entrée la plus récente en haut.
 
+> ⚠️ **2026-09-06 — MIGRATION :** la passation canonique de ce dépôt est désormais le protocole
+> CODEX → `📋 JOURNAL.md` (snapshots §5) + `/codex/EVOLUTION.md` (jalons) + `/codex/A-DECIDER.md`
+> (décisions en attente). Ce fichier `ETAT.md` est conservé pour l'historique (add-only), plus alimenté.
+
+---
+
+## 2026-09-06-23h18 CEST — Claude (Opus 4.8) — Installation protocole CODEX
+
+- Bloc CODEX (v. 2026-09-06) collé en tête de `CLAUDE.md` + spécificités projet ; `@AGENTS.md` conservé.
+- Structure §12 créée (`/codex/*`, `📋 JOURNAL.md`, `🔴 ERREURS.md`, `.claude/*`).
+- Commité + poussé sur `claude/chaima-patent-audit-ytcxq3` (`c2dab9b`, HEAD == origin).
+- **RESTE :** 21 agents + skill `debat` NON fournis (non fabriqués volontairement) → à déposer par Chaima.
+- Suite → voir `📋 JOURNAL.md` et `/codex/EVOLUTION.md`.
+
 ---
 
 ## 2026-07-17-21h34 CEST — Claude (Opus 4.8) — Audit brevets + livraison protocole
