@@ -232,15 +232,13 @@ Rien n'est « breveté » tant que rien n'est déposé.
 
 ## 12. STRUCTURE DE FICHIERS — identique partout, aucune variante
 
-```
-/CLAUDE.md                  ← ce bloc + les spécificités du projet
-/🔴 ERREURS.md              /📋 JOURNAL.md
-/codex/candidates/          /codex/expertise/        ← transverse
-/codex/opportunites/        /codex/licences-sortantes/
-/codex/A-DECIDER.md         /codex/EVOLUTION.md
-/.claude/agents/            ← les 21 agents
-/.claude/skills/debat/      ← orchestre le parcours 2
-```
+    /CLAUDE.md                  ← ce bloc + les spécificités du projet
+    /🔴 ERREURS.md              /📋 JOURNAL.md
+    /codex/candidates/          /codex/expertise/        ← transverse
+    /codex/opportunites/        /codex/licences-sortantes/
+    /codex/A-DECIDER.md         /codex/EVOLUTION.md
+    /.claude/agents/            ← les 21 agents
+    /.claude/skills/debat/      ← orchestre le parcours 2
 
 ---
 
@@ -272,14 +270,12 @@ sourcer.
 Sans format commun, chaque agent produit une prose que le suivant doit réinterpréter, et
 l'information se dégrade à chaque étape.
 
-```
-DE : [agent]                   POUR : [agent suivant, ou CHAIMA]
-OBJET : [une phrase décidable — une action précise, pas un thème]
-VERDICT : [mot du §13]
-PARCE QUE : [le fait qui a emporté la décision — fichier:ligne, ou source datée]
-NON VÉRIFIÉ : [ce que je n'ai pas pu établir, ou « rien »]
-CE QUI CHANGERAIT MON AVIS : [le fait précis qui inverserait ce verdict]
-```
+    DE : [agent]                   POUR : [agent suivant, ou CHAIMA]
+    OBJET : [une phrase décidable — une action précise, pas un thème]
+    VERDICT : [mot du §13]
+    PARCE QUE : [le fait qui a emporté la décision — fichier:ligne, ou source datée]
+    NON VÉRIFIÉ : [ce que je n'ai pas pu établir, ou « rien »]
+    CE QUI CHANGERAIT MON AVIS : [le fait précis qui inverserait ce verdict]
 
 Les deux dernières lignes ne sont pas décoratives : un agent sans « NON VÉRIFIÉ » ment par
 omission, un agent sans condition de réfutation ne raisonne pas, il conclut.
