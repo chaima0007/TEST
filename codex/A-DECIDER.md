@@ -10,3 +10,4 @@
 | ⏳ Canal d'envoi des alertes personnalisées | La Loi Avec Moi | Outil | 2026-07-13 | Les alertes sont calculées mais ne peuvent être envoyées à personne |
 | ⏳ Audit du dépôt droit-citoyen-app | La Loi Avec Moi | Technique | 2026-08-10 | Dépôt inaccessible depuis cette session ; audit à faire par la session qui y a accès |
 | ⏳ Seuils de scalabilité en zone orange | Dépôt partagé | Technique | 2026-08-10 | Routes 319/350, dashboards 388/400, engines 4570/5000 : split à planifier avant saturation |
+| Où journaliser : Drive ou dépôt ? | Tous | Protocole | 2026-09-06 | Le CODEX (§5, §6.5) place le journal dans le dépôt (JOURNAL.md / EVOLUTION.md) et ne mentionne pas le Drive ; les deux sont tenus en attendant ton arbitrage |
