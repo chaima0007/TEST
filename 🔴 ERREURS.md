@@ -19,3 +19,13 @@ Le clone local retombe parfois sur un état ancien et divergent ; les fichiers s
 **Correction :** vérifier l'état réel par `git ls-remote` avant toute conclusion, puis réaligner sur
 origin. Le travail poussé n'a jamais été perdu.
 **Leçon :** §5.1 — état réel vérifié, jamais de mémoire. Cette règle vient d'un fait, pas d'un principe.
+
+## 2026-09-06 — Une affirmation recopiée d'un projet à l'autre sans vérifier
+En installant le CODEX, j'ai écrit dans le message de commit et dans A-DECIDER que « 24 agents
+antérieurs coexistent avec les 21 du Codex » — vrai pour le dépôt Caelum (29 agents antérieurs,
+50 au total), **faux pour ce dépôt-ci**, dont le dossier `.claude/agents/` était vide (21/21).
+**Détection :** le contrôle de comptage exécuté juste après l'écriture a affiché « total 21 fichiers ».
+**Correction :** ligne retirée d'A-DECIDER, erreur consignée ici plutôt que réécrite en silence.
+**Leçon :** un fait vrai dans un projet devient une invention dans un autre. Le §13 impose VÉRIFIÉ
+par observation directe **dans le projet concerné** — pas par transposition. Le commit précédent
+garde la formulation fautive dans son message : on n'efface pas l'historique, on le corrige au grand jour.
