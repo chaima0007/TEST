@@ -22,3 +22,17 @@ création de la structure `/codex/` conforme au §12, et ajout de 8 rôles compl
 (§13) implémentés comme sous-agents réels dans `.claude/agents/`.
 
 Trois questions ouvertes déposées dans `/codex/A-DECIDER.md` — aucune tranchée seule.
+
+---
+
+## 2026-09-06 (2)
+
+Changement : le pipeline §8 passe de décrit à exécutable. 5 agents délibératifs +
+compétence `/debat` créés ; premier débat réel mené sur la question « faut-il compléter les
+21 rôles ? ». Arbitrage FAIRE MAIS RÉDUIT appliqué : 3 rôles §1 créés
+(`guardian-licences`, `sentinel-securite`, `superviseur-vigie`), 5 laissés en PROPOSÉ faute
+de déclencheur réel. Total : 16 agents.
+
+Garde-fou retenu de la plaidoirie du Contradicteur, à ne pas oublier : **2026-10-06,
+comptage des fichiers dans `/codex/candidates/` et `/codex/expertise/`.** Si les deux
+dossiers sont vides, CROQUE-MORT est invoqué sur le protocole, pas sur le produit.

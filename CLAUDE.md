@@ -182,6 +182,38 @@ Négociateur-Fournisseurs (aucun fournisseur à négocier aujourd'hui), Communit
 (doublon de l'auto-audit trimestriel du §9). Ils sont listés ici pour qu'on n'ait pas à
 re-débattre de leur absence dans six mois.
 
+## 14. ÉTAT D'IMPLÉMENTATION DES AGENTS
+
+Les rôles ne sont pas que décrits : ils existent comme **sous-agents invocables** dans
+`.claude/agents/`, et le pipeline §8 est orchestré par la compétence `/debat`
+(`.claude/skills/debat/`).
+
+**Cœur délibératif (§8) — implémenté :** `avocat`, `contradicteur`,
+`simulateur-scenarios`, `arbitre-expert`, `verificateur-verite`.
+`avocat` et `contradicteur` doivent être lancés **en parallèle, dans un seul message** :
+lancés l'un après l'autre, le second répond au premier, les positions convergent et le
+désaccord réel — la seule information utile du débat — disparaît.
+
+**Chaîne d'entrée (§0, §2, §3) — implémentée :** `guardian-licences`,
+`sentinel-securite`. Toute dépendance passe par eux avant `package.json`.
+
+**Vigie (§5, §12) — implémentée :** `superviseur-vigie`, premier agent de chaque session.
+
+**Rôles complémentaires (§13) — implémentés :** les 8.
+
+**Rôles §1 non encore implémentés, volontairement :** SCOUT, CARTOGRAPHE, SCRIBE-EMPIRE,
+ÉCLAIREUR-OPPORTUNITÉS, ARCHITECTE-INTÉGRATION. Aucun n'a de déclencheur réel aujourd'hui
+(aucune recherche active, 3 lignes dans A-DECIDER.md, aucun composant validé à intégrer).
+Décision déposée dans `/codex/A-DECIDER.md`, statut PROPOSÉ — à rouvrir quand le
+déclencheur existe, pas avant.
+
+**Garde-fou issu du débat du 2026-09-06 :** au 2026-10-06, si `/codex/candidates/` et
+`/codex/expertise/` sont toujours vides, c'est CROQUE-MORT qui est invoqué **sur le
+protocole lui-même**, pas sur le produit. Un système de décision qui ne produit aucune
+décision est un décor, quel que soit le nombre d'agents.
+
+---
+
 ---
 ---
 
