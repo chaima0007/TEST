@@ -42,3 +42,9 @@ en réalité public. Remonté en priorité haute dans A-DECIDER.md, non corrigé
 ce qui manquait au protocole pour que les agents circulent entre projets — un vocabulaire
 commun sans variante, un **format de passation** unique que tout agent doit émettre, et les
 4 parcours standards (entrée d'un composant, décision, publication, push de code).
+
+### 2026-09-06 — Un seul bloc pour tout l'Empire
+Protocole et prompt universel fusionnés en `codex/BLOC-UNIQUE.md` : un unique copier-coller
+par projet au lieu de deux. Vocabulaire commun (§13) et format de passation (§14) intégrés,
+les 21 rôles regroupés au §1 avec leur déclencheur, toutes les références internes des
+agents et de la compétence `/debat` réalignées.

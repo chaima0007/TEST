@@ -1,9 +1,9 @@
 ---
 name: debat
-description: Lance le pipeline de décision §8 du PROTOCOLE CODEX sur un sujet — Avocat et Contradicteur plaident indépendamment et EN PARALLÈLE, Simulateur stress-teste les deux, Arbitre-Expert synthétise en intégrant les deux plaidoiries, la fiche part dans /codex/A-DECIDER.md. À utiliser avant toute décision engageante : nouvelle dépendance, nouvelle fonctionnalité, changement de prix, opportunité, changement de protocole.
+description: Lance le parcours 2 du §8 du PROTOCOLE CODEX (pipeline de décision) sur un sujet — Avocat et Contradicteur plaident indépendamment et EN PARALLÈLE, Simulateur stress-teste les deux, Arbitre-Expert synthétise en intégrant les deux plaidoiries, la fiche part dans /codex/A-DECIDER.md. À utiliser avant toute décision engageante : nouvelle dépendance, nouvelle fonctionnalité, changement de prix, opportunité, changement de protocole.
 ---
 
-# Pipeline de décision §8
+# Parcours 2 du §8 — pipeline de décision
 
 Aucune étape n'est sautée, **même pour une idée évidente**. Une idée évidente qui survit au
 débat est une idée solide ; une idée évidente qui n'y survit pas vient d'être évitée.

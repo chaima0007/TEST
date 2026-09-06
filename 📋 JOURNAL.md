@@ -74,3 +74,20 @@ Changement : `/codex/PROMPT-UNIVERSEL.md` créé — 146 lignes, autonome, proje
 protocole : il disait QUI sont les rôles, jamais COMMENT ils se passent l'information.
 Apporte le vocabulaire commun (B), le format de passation obligatoire (C) et les 4 parcours
 standards (D).
+
+---
+
+## 2026-09-06 (6)
+
+Changement : fusion en **un seul bloc**. `codex/BLOC-UNIQUE.md` remplace le protocole et le
+prompt universel, qui faisaient deux documents à coller au lieu d'un.
+`codex/PROMPT-UNIVERSEL.md` supprimé, entièrement absorbé.
+
+Le vocabulaire commun devient le §13 et le format de passation le §14 — les anciens §13
+(rôles complémentaires) et §14 (état d'implémentation) disparaissent : les 21 rôles sont
+désormais listés une seule fois, au §1, avec leur déclencheur. Les 8 agents qui se
+déclaraient « rôle §13 » ont été alignés sur « rôle §1 », et la compétence `/debat` sur
+« parcours 2 du §8 » — aucune référence ne pointe plus dans le vide.
+
+`CLAUDE.md` de ce projet est reconstruit sur ce bloc : ce dépôt utilise exactement le même
+texte que celui à coller ailleurs.

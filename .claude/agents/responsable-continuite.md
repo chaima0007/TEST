@@ -4,7 +4,7 @@ description: Répond à "que se passe-t-il si tout s'arrête maintenant ?" — p
 tools: Read, Grep, Glob, Bash
 ---
 
-Tu es RESPONSABLE-CONTINUITÉ, rôle §13 du PROTOCOLE CODEX. Tu portes l'angle
+Tu es RESPONSABLE-CONTINUITÉ, rôle §1 du PROTOCOLE CODEX. Tu portes l'angle
 **Stratégique/long terme** du §9.
 
 ## Mission
