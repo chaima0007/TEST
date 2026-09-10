@@ -11,9 +11,15 @@ if (!m) { console.error("Bloc CORE introuvable dans le fichier HTML"); process.e
 const ctx = { console };
 vm.createContext(ctx);
 vm.runInContext(m[1], ctx);
-const { WORLDS, EX, expandSol, accepted, acceptedStrings, tokenPool, isCorrect, diagnose,
+const { WORLDS, EX, BOSS, expandSol, accepted, acceptedStrings, tokenPool, isCorrect, diagnose,
         normalizeFree, freeTokens, checkFree, nextBox, dueAt, isMastered, levelInfo,
-        xpTotalForLevel, worldStats, isWorldUnlocked, buildQueue, DAY, MASTER_BOX } = ctx;
+        xpTotalForLevel, worldStats, isWorldUnlocked, buildQueue, DAY, MASTER_BOX,
+        bossFor, isBossOpen, BOSS_UNLOCK, weakList, weakQueue, examQueue, examWorlds,
+        buildReport, worldByN, ALLBY } = ctx;
+
+/* exercices + étapes de boss : mêmes règles de qualité et de validation */
+const STEPS = BOSS.reduce((a, b) => a.concat(b.steps), []);
+const ITEMS = EX.concat(STEPS);
 
 let pass = 0, fail = 0;
 const errs = [];
@@ -38,7 +44,7 @@ function sameSet(a, b) {
 
 /* ---------- 1. intégrité du contenu ---------- */
 const ids = new Set();
-for (const ex of EX) {
+for (const ex of ITEMS) {
   const id = ex.id;
   ok(!ids.has(id), `id dupliqué : ${id}`); ids.add(id);
   ok(typeof ex.w === "number" && WORLDS.some(w => w.n === ex.w), `${id} : monde inconnu`);
@@ -52,7 +58,7 @@ for (const ex of EX) {
 }
 
 /* ---------- 2. blocs / pièges cohérents ---------- */
-for (const ex of EX) {
+for (const ex of ITEMS) {
   const accs = accepted(ex);
   const used = new Set();
   accs.forEach(s => s.forEach(t => used.add(t)));
@@ -81,7 +87,7 @@ for (const ex of EX) {
 }
 
 /* ---------- 3. toute réponse correcte est reconnue ---------- */
-for (const ex of EX) {
+for (const ex of ITEMS) {
   for (const seq of accepted(ex)) {
     ok(isCorrect(ex, seq), `${ex.id} : réponse valable refusée -> ${seq.join(" ")}`);
     // même séquence obtenue via le plateau mélangé
@@ -98,7 +104,7 @@ for (const ex of EX) {
 }
 
 /* ---------- 4. toute réponse fausse est refusée, avec un message ciblé ---------- */
-for (const ex of EX) {
+for (const ex of ITEMS) {
   const accs = accepted(ex);
   const base = accs[0];
 
@@ -170,14 +176,14 @@ let threw = false; try { expandSol([{ zz: 1 }]); } catch (e) { threw = true; }
 ok(threw, "expandSol : une partie invalide doit lever une erreur");
 
 /* ---------- 7. clavier libre / dictée ---------- */
-function variants(x) { return ctx.freeVariants(x); }
+function variants(x) { return [ctx.freeGroups(x).join(" ")]; }
 ok(variants("ls  -l   /home").includes("ls -l /home"), "espaces multiples normalisés");
 ok(variants("ls tiret l").includes("ls -l"), "« tiret » recollé à l'option");
 ok(variants("ls - l").includes("ls -l"), "tiret détaché recollé à l'option");
 ok(variants("cat slash etc slash passwd").includes("cat /etc/passwd"), "« slash » converti et recollé");
 ok(variants("cat / etc / passwd").includes("cat /etc/passwd"), "slashs espacés recollés");
 ok(variants("cat notes point txt").includes("cat notes.txt"), "« point » converti et recollé");
-ok(variants("cd point point").includes("cd .."), "« point point » = ..");
+ok(checkFree(EX.find(e => e.id === "w1-cd-parent"), "cd point point") === "ok", "« point point » dicté = cd ..");
 ok(variants("su tiret paul").includes("su - paul"), "un tiret isolé peut rester séparé");
 ok(variants("scp tiret P 2222 f").includes("scp -P 2222 f"), "casse préservée (-P)");
 ok(variants("mv rapport-final.txt archives").includes("mv rapport-final.txt archives"), "tiret interne préservé");
@@ -197,7 +203,7 @@ const shEx = EX.find(e => e.id === "w3-shadow");
 ok(checkFree(shEx, "sudo cat slash etc slash shadow") === "ok", "clavier libre : chemin dicté");
 ok(checkFree(shEx, "cat /etc/shadow") === "non", "clavier libre : sudo manquant refusé");
 // aucune réponse valable ne doit être refusée, quelle que soit la façon de la saisir
-for (const ex of EX) {
+for (const ex of ITEMS) {
   if (ex.quiz) continue;
   for (const s of acceptedStrings(ex)) {
     ok(checkFree(ex, s) === "ok", `${ex.id} : clavier libre refuse une réponse valable (${s})`);
@@ -207,7 +213,7 @@ for (const ex of EX) {
   }
 }
 // et aucune réponse fausse ne doit passer à cause de la tolérance
-for (const ex of EX) {
+for (const ex of ITEMS) {
   if (ex.quiz) continue;
   const base = accepted(ex)[0];
   for (const b of (ex.blocks || [])) {
@@ -269,12 +275,107 @@ ok(!isWorldUnlocked(2, p2), "50% ne suffit pas à ouvrir le monde 2");
 list1.slice(0, Math.ceil(list1.length * 0.6)).forEach(e => { p2[e.id] = { b: 1, due: 0, n: 1, ok: 1, ko: 0 }; });
 ok(isWorldUnlocked(2, p2), "60% ouvre le monde 2");
 ok(worldStats(1, p2).total === list1.length, "worldStats : total correct");
-ok(worldStats(9, p2).total === 0, "worldStats : monde vide toléré");
+ok(worldStats(99, p2).total === 0, "worldStats : monde inexistant toléré");
+
+/* ---------- 11. boss de fin de monde ---------- */
+for (const b of BOSS) {
+  ok(worldByN(b.w) && !worldByN(b.w).soon, `boss du monde ${b.w} : monde inconnu`);
+  ok(typeof b.name === "string" && b.name.length > 4, `boss ${b.w} : nom manquant`);
+  ok(typeof b.intro === "string" && b.intro.length > 60, `boss ${b.w} : mise en situation trop courte`);
+  ok(typeof b.xp === "number" && b.xp > 0, `boss ${b.w} : récompense manquante`);
+  ok(b.steps.length >= 4, `boss ${b.w} : moins de 4 étapes (${b.steps.length})`);
+  for (const st of b.steps) {
+    ok(st.w === b.w, `étape ${st.id} : monde incohérent avec son boss`);
+    ok(/^Étape \d/.test(st.sc), `étape ${st.id} : la narration ne situe pas l'étape`);
+    ok(EX.every(e => e.id !== st.id), `étape ${st.id} : identifiant en conflit avec un exercice`);
+  }
+  // les commandes du boss doivent appartenir au vocabulaire du monde
+  const vocab = new Set();
+  EX.filter(e => e.w === b.w).forEach(e => accepted(e).forEach(sq => sq.forEach(t => vocab.add(t))));
+  for (const st of b.steps) {
+    const first = accepted(st)[0][0];
+    ok(vocab.has(first), `étape ${st.id} : « ${first} » n'apparaît dans aucun exercice du monde ${b.w}`);
+  }
+}
+ok(BOSS.length === 9, `un boss par monde rempli attendu, ${BOSS.length} trouvés`);
+{
+  const p = {};
+  ok(!isBossOpen(1, p), "le boss du monde 1 est fermé au départ");
+  const l1 = EX.filter(e => e.w === 1);
+  l1.slice(0, Math.ceil(l1.length * 0.6)).forEach(e => { p[e.id] = { b: 1, due: 0, n: 1, ok: 1, ko: 0 }; });
+  ok(!isBossOpen(1, p), "60% ne suffit pas à ouvrir le boss");
+  l1.slice(0, Math.ceil(l1.length * BOSS_UNLOCK)).forEach(e => { p[e.id] = { b: 1, due: 0, n: 1, ok: 1, ko: 0 }; });
+  ok(isBossOpen(1, p), "70% ouvre le boss du monde 1");
+  ok(!isBossOpen(2, p), "le boss d'un monde verrouillé reste fermé");
+  ok(bossFor(99) === null, "aucun boss pour un monde inexistant");
+}
+
+/* ---------- 12. monde bonus ---------- */
+{
+  const p = {};
+  ok(!isWorldUnlocked(10, p), "le monde bonus est fermé au départ");
+  const l1 = EX.filter(e => e.w === 1);
+  l1.slice(0, Math.ceil(l1.length * 0.6)).forEach(e => { p[e.id] = { b: 1, due: 0, n: 1, ok: 1, ko: 0 }; });
+  ok(isWorldUnlocked(10, p), "le monde bonus s'ouvre avec le monde 1, sans dépendre du monde 9");
+  ok(!isWorldUnlocked(9, p), "le monde 9 reste soumis à la chaîne principale");
+}
+
+/* ---------- 13. fiche des points faibles ---------- */
+{
+  const prog = {};
+  const a = EX[0], b2 = EX[1], c = EX[2];
+  prog[a.id] = { b: 0, due: 0, n: 5, ok: 1, ko: 4, last: 1700000000000 };
+  prog[b2.id] = { b: 1, due: 0, n: 3, ok: 2, ko: 1, last: 1700000100000 };
+  prog[c.id] = { b: 3, due: 0, n: 3, ok: 3, ko: 0, last: 1700000200000 };
+  const w = weakList(prog, 0);
+  ok(w.length === 2, "seules les commandes ratées entrent dans la fiche");
+  ok(w[0].ex.id === a.id, "la commande la plus ratée arrive en tête");
+  ok(w[0].cmd === accepted(a)[0].join(" "), "la fiche montre la commande attendue");
+  ok(weakList(prog, 1).length === 1, "la fiche se limite au nombre demandé");
+  const q = weakQueue(prog, Date.now(), 8);
+  ok(q.length === 2 && q[0].id === a.id, "l'entraînement ciblé reprend les commandes ratées");
+  prog[a.id].b = MASTER_BOX;
+  ok(weakQueue(prog, Date.now(), 8).every(e => e.id !== a.id), "une commande ancrée sort de l'entraînement ciblé");
+  ok(weakList(prog, 0).some(e => e.ex.id === a.id), "mais son historique d'erreurs reste dans la fiche");
+
+  const state = { xp: 300, streak: 4, best: 6, prog: prog, boss: { 1: { done: true, best: "4/4" } },
+                  log: [{ t: 1700000000000, id: a.id, mode: "série" }, { t: 1700000100000, id: "b1-1", mode: "boss" }] };
+  const rep = buildReport(state, 1700000300000);
+  ok(rep.indexOf("FICHE — MES POINTS FAIBLES") === 0, "la fiche exportée a un en-tête");
+  ok(rep.includes("RÉSUMÉ PAR MONDE") && rep.includes("COMMANDES À RETRAVAILLER") && rep.includes("JOURNAL DES ERREURS"),
+     "la fiche exportée contient ses trois sections");
+  ok(rep.includes("boss vaincu (4/4)"), "la fiche exportée mentionne les boss vaincus");
+  ok(rep.includes(accepted(a)[0].join(" ")), "la fiche exportée cite la commande ratée");
+  ok(rep.includes(a.why.slice(0, 40)), "la fiche exportée rappelle le concept");
+  ok(!rep.includes("undefined") && !rep.includes("NaN"), "la fiche exportée ne contient ni undefined ni NaN");
+  ok(buildReport({ xp: 0, prog: {}, log: [] }, Date.now()).includes("Aucune erreur enregistrée"),
+     "la fiche fonctionne sur une progression vierge");
+}
+
+/* ---------- 14. mode examen ---------- */
+{
+  const prog = {};
+  EX.forEach(e => { prog[e.id] = { b: 2, due: 0, n: 2, ok: 2, ko: 0 }; });
+  const worlds = examWorlds(prog);
+  ok(worlds.length >= 9, `tous les mondes débloqués alimentent l'examen (${worlds.length})`);
+  let seed = 42;
+  const rnd = () => { seed = (seed * 1103515245 + 12345) & 0x7fffffff; return seed / 0x7fffffff; };
+  const q = examQueue(prog, 12, rnd);
+  ok(q.length === 12, `l'examen tire 12 questions (${q.length})`);
+  ok(new Set(q.map(e => e.id)).size === q.length, "aucune question en double dans l'examen");
+  const per = {};
+  q.forEach(e => per[e.w] = (per[e.w] || 0) + 1);
+  ok(Object.values(per).every(v => v <= 6), "pas plus de la moitié des questions dans un même monde");
+  ok(Object.keys(per).length >= 3, "l'examen mélange plusieurs mondes");
+  const vierge = examQueue({}, 12, rnd);
+  ok(vierge.every(e => e.w === 1), "sur une progression vierge, l'examen ne pioche que dans le monde 1");
+}
 
 /* ---------- résultat ---------- */
 const counts = {};
 EX.forEach(e => counts[e.w] = (counts[e.w] || 0) + 1);
 console.log("Exercices par monde :", JSON.stringify(counts), "— total", EX.length);
+console.log("Boss :", BOSS.length, "— étapes de boss :", STEPS.length);
 console.log(`${pass} assertions passées, ${fail} échec(s).`);
 if (fail) {
   const uniq = [...new Set(errs)];

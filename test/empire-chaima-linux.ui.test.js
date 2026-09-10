@@ -130,7 +130,7 @@ const ok = (c, l) => { if (c) pass++; else { fail++; errs.push(l); } };
     save(); renderHome();
   });
   const cards = await page.locator(".world").count();
-  ok(cards === 3, "les 3 mondes remplis sont proposés, les autres non (" + cards + ")");
+  ok(cards === 10, "les 9 mondes + le monde bonus sont proposés (" + cards + ")");
   const w2locked = await page.evaluate(() => document.querySelectorAll(".world")[1].className.includes("locked"));
   ok(!w2locked, "le monde 2 se débloque une fois le seuil du monde 1 atteint");
   await page.evaluate(() => document.querySelectorAll(".world")[1].click());
@@ -146,6 +146,97 @@ const ok = (c, l) => { if (c) pass++; else { fail++; errs.push(l); } };
     const data = JSON.parse(fs.readFileSync(p, "utf8"));
     ok(typeof data.xp === "number" && data.prog && typeof data.prog === "object", "le fichier exporté contient bien la progression");
   }
+
+  /* --- boss de fin de monde --- */
+  await page.click("#btnBack2");
+  await page.evaluate(() => {
+    EX.filter(e => e.w === 1).forEach(e => { S.prog[e.id] = { b: 2, due: 0, n: 1, ok: 1, ko: 0 }; });
+    save(); renderHome();
+  });
+  ok(await page.locator(".bossbtn").first().isVisible(), "le bouton de boss apparaît sur le monde 1");
+  const bossLabel = await page.locator(".bossbtn").first().innerText();
+  ok(bossLabel.includes("Boss"), "le bouton annonce le boss : " + bossLabel.trim());
+  await page.locator(".bossbtn").first().click();
+  ok(await page.evaluate(() => !!(SES && SES.boss)), "le boss se lance");
+  const bossSteps = await page.evaluate(() => SES.queue.length);
+  ok(bossSteps >= 4, "le boss enchaîne au moins 4 étapes (" + bossSteps + ")");
+  ok(await page.locator("#btnHint").isHidden(), "aucun indice pendant un boss");
+  ok((await page.locator("#hintZone").innerText()).length > 40, "la mise en situation du boss est affichée");
+  for (let k = 0; k < bossSteps + 2; k++) {
+    if (await page.locator("#scRecap").isVisible()) break;
+    await page.evaluate(() => {
+      accepted(SES.queue[SES.idx])[0].forEach(t => {
+        for (let i = 0; i < POOL.length; i++) if (POOL[i] === t && !BUILT.some(b => b.i === i)) { addTok(i); return; }
+      });
+    });
+    if (!(await page.locator("#feedbackZone .feedback.ok").isVisible())) await page.click("#btnCheck");
+    ok(await page.locator(".feedback.ok").isVisible(), "étape de boss validée");
+    await page.waitForTimeout(400);
+    if (await page.locator("#lvlOverlay.on").isVisible()) await page.click("#ovClose");
+    await page.click("#btnNext");
+    await page.waitForTimeout(80);
+  }
+  await page.waitForTimeout(500);
+  if (await page.locator("#lvlOverlay.on").isVisible()) await page.click("#ovClose");
+  ok(await page.locator("#scRecap").isVisible(), "le boss se termine sur un récapitulatif");
+  ok((await page.locator("#recapTitle").innerText()).includes("Boss"), "le récapitulatif annonce la victoire");
+  ok(await page.evaluate(() => !!(S.boss && S.boss[1] && S.boss[1].done)), "la victoire sur le boss est enregistrée");
+  await page.click("#btnHome");
+  ok((await page.locator(".bossbtn").first().innerText()).includes("vaincu"), "le monde 1 affiche son boss vaincu");
+
+  /* --- fiche des points faibles --- */
+  await page.evaluate(() => {
+    const e = EX.find(x => x.w === 1);
+    S.prog[e.id] = { b: 0, due: 0, n: 6, ok: 1, ko: 5, last: Date.now() };
+    S.log = [{ t: Date.now(), id: e.id, mode: "série" }];
+    save();
+  });
+  await page.click("#btnWeak");
+  ok(await page.locator("#scWeak").isVisible(), "la fiche des points faibles s'ouvre");
+  const weakTxt = await page.locator("#weakList").innerText();
+  ok(weakTxt.includes("5×"), "la fiche compte les erreurs par commande");
+  const firstWeak = await page.evaluate(() => accepted(weakList(S.prog, 1)[0].ex)[0].join(" "));
+  ok(weakTxt.includes(firstWeak), "la fiche cite la commande la plus ratée : " + firstWeak);
+  ok((await page.locator("#weakWorlds").innerText()).includes("Monde 1"), "la fiche résume chaque monde");
+  const dl2 = await Promise.all([page.waitForEvent("download", { timeout: 4000 }).catch(() => null), page.click("#btnWeakExport")]);
+  ok(dl2[0] && /empire-chaima-points-faibles-.*\.txt/.test(dl2[0].suggestedFilename()), "la fiche s'exporte en .txt");
+  if (dl2[0]) {
+    const fs = require("fs");
+    const txt = fs.readFileSync(await dl2[0].path(), "utf8");
+    ok(txt.includes("COMMANDES À RETRAVAILLER") && txt.includes(firstWeak), "le fichier exporté contient la fiche complète");
+  }
+  await page.click("#btnWeakTrain");
+  ok(await page.evaluate(() => !!(SES && SES.weak)), "l'entraînement ciblé démarre depuis la fiche");
+  ok(await page.evaluate(() => accepted(SES.queue[0])[0].join(" ")) === firstWeak, "il commence par la commande la plus ratée");
+  await page.click("#btnBack");
+
+  /* --- mode examen --- */
+  await page.evaluate(() => { EX.forEach(e => { S.prog[e.id] = { b: 1, due: 0, n: 1, ok: 1, ko: 0 }; }); save(); renderHome(); });
+  await page.click("#btnExam");
+  ok(await page.evaluate(() => !!(SES && SES.exam)), "l'examen démarre");
+  ok(await page.locator("#examTimer").isVisible(), "le minuteur est affiché");
+  ok(/^\d+:\d\d$/.test((await page.locator("#examTimer").innerText()).trim()), "le minuteur affiche un décompte");
+  ok(await page.locator("#btnHint").isHidden(), "aucun indice pendant l'examen");
+  const examN = await page.evaluate(() => SES.queue.length);
+  ok(examN === 12, "l'examen compte 12 questions (" + examN + ")");
+  // une réponse fausse : pas de seconde chance, la réponse attendue est montrée
+  await page.evaluate(() => {
+    const ex = SES.queue[SES.idx];
+    const bad = (ex.blocks || [])[0];
+    addTok(POOL.indexOf(bad));
+  });
+  if (await page.locator("#actionRow").isVisible()) await page.click("#btnCheck");
+  await page.waitForTimeout(200);
+  const examFb = await page.locator("#feedbackZone").innerText();
+  ok(examFb.includes("Réponse attendue"), "en examen, la réponse attendue est révélée immédiatement");
+  ok(await page.locator("#btnNext").isVisible(), "on passe directement à la question suivante");
+  ok(await page.locator("#actionRow").isHidden(), "aucune seconde tentative en examen");
+  await page.evaluate(() => { SES.deadline = Date.now() + 500; });
+  await page.waitForTimeout(1600);
+  ok(await page.locator("#scRecap").isVisible(), "l'examen s'arrête quand le temps est écoulé");
+  ok((await page.locator("#recapTitle").innerText()).includes("Temps"), "le récapitulatif signale le temps écoulé");
+  ok(await page.locator("#examTimer").isHidden(), "le minuteur s'arrête avec l'examen");
+  await page.click("#btnHome");
 
   /* --- affichage large --- */
   await page.setViewportSize({ width: 900, height: 800 });
