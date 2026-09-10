@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Scripts de test Node autonomes (jeu Empire Chaima), hors application Next.
+    "test/**",
   ]),
 ]);
 

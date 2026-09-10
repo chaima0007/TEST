@@ -1,0 +1,1927 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f1521">
+<title>Empire Chaima — Terminal</title>
+<style>
+:root{
+  --bg:#0f1521; --bg2:#131b29; --panel:#1a2233; --panel2:#212c42;
+  --line:#26314a; --line2:#33415f;
+  --txt:#f0f3fa; --dim:#5b6a85;
+  --ok:#2ecc71; --ok2:#27ae60; --okdim:rgba(46,204,113,.10);
+  --err:#e74c3c; --err2:#c0392b; --errdim:rgba(231,76,60,.10);
+  --gold:#f0b429; --gold2:#d4a017;
+  --mono: ui-monospace,"Cascadia Code","Fira Code","SF Mono",Consolas,"Liberation Mono",monospace;
+  --sans: system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0;max-width:100%;overflow-x:hidden}
+body{
+  background:var(--bg); color:var(--txt); font-family:var(--sans);
+  font-size:16px; line-height:1.5; -webkit-text-size-adjust:100%;
+}
+button{font-family:inherit;font-size:inherit;color:inherit;cursor:pointer}
+.wrap{max-width:760px;margin:0 auto;padding:16px 16px 110px}
+.mono{font-family:var(--mono)}
+
+/* ---------- HUD ---------- */
+header.top{position:sticky;top:0;z-index:30;background:linear-gradient(180deg,#141c2b,#0f1521);
+  border-bottom:1px solid var(--line);box-shadow:0 4px 18px rgba(0,0,0,.35)}
+.topin{max-width:760px;margin:0 auto;padding:9px 16px 10px}
+.hud{display:flex;align-items:center;gap:10px}
+.lvlbadge{display:flex;flex-direction:column;align-items:center;justify-content:center;
+  min-width:46px;height:46px;border-radius:12px;background:#141d2e;border:1px solid var(--gold2);
+  color:var(--gold);flex:0 0 auto}
+.lvlbadge b{font-size:19px;line-height:1;font-weight:800}
+.lvlbadge span{font-size:9px;letter-spacing:.10em;text-transform:uppercase;color:var(--gold2)}
+.lvlbadge.pop{animation:badgepop .7s cubic-bezier(.2,1.4,.4,1)}
+@keyframes badgepop{0%{transform:scale(1)}35%{transform:scale(1.35);box-shadow:0 0 0 8px rgba(240,180,41,.16)}100%{transform:scale(1)}}
+.xpzone{flex:1;min-width:0}
+.xprow{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:5px}
+.xpnum{font-family:var(--mono);font-size:14px;font-weight:700;color:var(--ok)}
+.xpnum small{color:var(--dim);font-weight:400}
+.xptitle{font-size:11px;color:var(--dim);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.xpbar{height:9px;border-radius:99px;background:#0a0f18;border:1px solid var(--line);overflow:hidden}
+.xpfill{height:100%;width:0%;border-radius:99px;background:linear-gradient(90deg,var(--ok2),var(--ok));
+  transition:width .65s cubic-bezier(.22,.9,.28,1)}
+.xpgain{position:fixed;left:50%;top:56px;transform:translateX(-50%);z-index:60;pointer-events:none;
+  font-family:var(--mono);font-weight:800;color:var(--ok);font-size:20px;opacity:0}
+.xpgain.go{animation:xpfly 1.1s ease-out}
+@keyframes xpfly{0%{opacity:0;transform:translate(-50%,10px) scale(.8)}20%{opacity:1;transform:translate(-50%,0) scale(1.1)}100%{opacity:0;transform:translate(-50%,-26px) scale(1)}}
+.streak{display:flex;align-items:center;gap:5px;padding:6px 9px;border-radius:11px;
+  background:#141d2e;border:1px solid var(--line2);font-family:var(--mono);font-size:14px;font-weight:700;flex:0 0 auto}
+.streak.off{color:var(--dim);border-color:var(--line)}
+.flame{font-size:15px;display:inline-block;animation:flame 2.4s ease-in-out infinite;transform-origin:50% 90%}
+@keyframes flame{0%,100%{transform:scale(1) rotate(-2deg);filter:brightness(1)}50%{transform:scale(1.14) rotate(2deg);filter:brightness(1.25)}}
+.iconbtn{width:44px;height:44px;border-radius:11px;background:#141d2e;border:1px solid var(--line2);
+  display:flex;align-items:center;justify-content:center;flex:0 0 auto;padding:0}
+.iconbtn:active{transform:translateY(1px)}
+.iconbtn svg{width:20px;height:20px;stroke:var(--dim);fill:none;stroke-width:1.8}
+
+/* ---------- écrans ---------- */
+.screen{display:none}
+.screen.on{display:block;animation:fadein .26s ease both}
+@keyframes fadein{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+h1{font-size:23px;margin:16px 0 4px;letter-spacing:-.01em}
+h2{font-size:17px;margin:26px 0 10px;color:var(--txt)}
+.sub{color:var(--dim);font-size:14px;margin:0 0 18px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px}
+.card+.card{margin-top:12px}
+
+/* ---------- boutons ---------- */
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;min-height:52px;
+  padding:12px 18px;border-radius:12px;border:1px solid var(--line2);background:var(--panel2);
+  color:var(--txt);font-weight:600;transition:transform .08s ease,filter .15s ease}
+.btn:active{transform:translateY(2px)}
+.btn+.btn{margin-top:10px}
+.btn.primary{background:linear-gradient(180deg,#31d675,#27ae60);border-color:#27ae60;color:#062513;
+  font-weight:800;font-size:17px;box-shadow:0 3px 0 #1e8449}
+.btn.primary:active{box-shadow:0 1px 0 #1e8449}
+.btn.ghost{background:transparent;border-color:var(--line)}
+.btn.small{min-height:46px;font-size:15px;font-weight:600}
+.btn[disabled]{opacity:.4;pointer-events:none}
+.btnrow{display:flex;gap:10px}
+.btnrow .btn{margin-top:0}
+
+/* ---------- cartes de monde ---------- */
+.world{display:flex;align-items:center;gap:13px;width:100%;text-align:left;padding:14px;
+  background:var(--panel);border:1px solid var(--line);border-radius:14px;margin-bottom:10px;
+  transition:transform .08s ease,border-color .2s ease}
+.world:active{transform:translateY(2px)}
+.world .ico{width:44px;height:44px;flex:0 0 auto;border-radius:12px;background:#141d2e;
+  border:1px solid var(--line2);display:flex;align-items:center;justify-content:center;font-size:20px}
+.world .meta{flex:1;min-width:0}
+.world .nm{font-weight:700;font-size:15px;display:flex;align-items:center;gap:7px}
+.world .nm{flex-wrap:wrap}
+.world .nm .num{font-family:var(--mono);color:var(--dim);font-size:12px;font-weight:600;white-space:nowrap}
+.world .cmds{font-family:var(--mono);font-size:11.5px;color:var(--dim);margin:3px 0 7px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.wbar{height:6px;border-radius:99px;background:#0a0f18;overflow:hidden;border:1px solid var(--line)}
+.wfill{height:100%;background:linear-gradient(90deg,var(--ok2),var(--ok));width:0%;transition:width .6s ease}
+.world .pct{font-family:var(--mono);font-size:12px;color:var(--dim);flex:0 0 auto;min-width:34px;text-align:right}
+.world.locked{opacity:.55;border-style:dashed}
+.world.locked .ico{color:var(--dim)}
+.world.done{border-color:var(--ok2)}
+.world.soon{opacity:.4;border-style:dashed;pointer-events:none}
+.lockmsg{font-size:12px;color:var(--dim);margin-top:5px}
+
+/* ---------- jeu ---------- */
+.gamehead{display:flex;align-items:center;gap:10px;margin:4px 0 14px}
+.backbtn{width:44px;height:44px;border-radius:11px;background:var(--panel);border:1px solid var(--line2);
+  display:flex;align-items:center;justify-content:center;padding:0;flex:0 0 auto;font-size:19px;color:var(--dim)}
+.gamehead .info{flex:1;min-width:0}
+.gamehead .wname{font-size:14px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dots{display:flex;gap:4px;margin-top:6px}
+.dot{width:100%;height:5px;border-radius:99px;background:#0a0f18;border:1px solid var(--line)}
+.dot.ok{background:var(--ok2);border-color:var(--ok2)}
+.dot.ko{background:var(--err2);border-color:var(--err2)}
+.dot.now{background:var(--dim);border-color:var(--dim)}
+
+.tagrow{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:10px}
+.tag{font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;padding:4px 8px;border-radius:6px;
+  background:#141d2e;border:1px solid var(--line2);color:var(--dim);font-weight:600}
+.tag.cours{color:var(--ok);border-color:rgba(46,204,113,.35)}
+.tag.rev{color:var(--gold);border-color:rgba(240,180,41,.35)}
+.scenario{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--gold2);
+  border-radius:12px;padding:14px 15px;font-size:15px}
+.scenario .ask{display:block;margin-top:10px;font-weight:700;color:var(--txt)}
+.hintbox{margin-top:10px;padding:10px 12px;border-radius:10px;background:#141d2e;border:1px dashed var(--line2);
+  font-size:13.5px;color:var(--gold);animation:fadein .25s ease both}
+
+.cmdlabel{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--dim);margin:18px 0 6px}
+.cmdline{background:#070b12;border:1px solid var(--line2);border-radius:11px;padding:13px 14px;
+  min-height:58px;display:flex;align-items:center;flex-wrap:wrap;gap:7px;
+  font-family:var(--mono);font-size:15px;overflow-wrap:anywhere}
+.cmdline .prompt{color:var(--ok2);flex:0 0 auto}
+.cmdline.shake{animation:shake .38s cubic-bezier(.36,.07,.19,.97)}
+@keyframes shake{10%,90%{transform:translateX(-2px)}20%,80%{transform:translateX(4px)}30%,50%,70%{transform:translateX(-6px)}40%,60%{transform:translateX(6px)}}
+.cmdline.flash{animation:flashok .5s ease}
+@keyframes flashok{0%{box-shadow:0 0 0 0 rgba(46,204,113,0)}30%{box-shadow:0 0 0 4px rgba(46,204,113,.28);border-color:var(--ok)}100%{box-shadow:0 0 0 0 rgba(46,204,113,0)}}
+.chip{background:#1c2740;border:1px solid var(--line2);border-radius:7px;padding:4px 9px;
+  font-family:var(--mono);font-size:14px;display:inline-flex;align-items:center;gap:6px;
+  animation:chipin .16s ease both}
+.chip .x{color:var(--dim);font-size:15px;line-height:1}
+@keyframes chipin{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:none}}
+.chip.q{font-family:var(--sans);font-size:13.5px}
+.caret{display:inline-block;width:9px;height:17px;background:var(--ok);vertical-align:-3px;
+  animation:blink 1.15s step-end infinite;flex:0 0 auto}
+@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+.placeholder{color:var(--dim);font-size:13.5px;font-family:var(--sans)}
+
+.tiles{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.tile{background:linear-gradient(180deg,#25304a,#1e2839);border:1px solid var(--line2);
+  border-bottom:3px solid #141c2b;border-radius:10px;min-height:48px;padding:11px 15px;
+  font-family:var(--mono);font-size:15px;font-weight:600;color:var(--txt);
+  transition:transform .07s ease,opacity .2s ease,background .2s ease}
+.tile:active{transform:translateY(2px);border-bottom-width:1px;margin-bottom:2px;background:#2c3852}
+.tile.q{font-family:var(--sans);font-size:14.5px;font-weight:500;text-align:left}
+.tile.used{opacity:.22;pointer-events:none}
+
+.feedback{margin-top:14px;border-radius:12px;padding:14px 15px;border:1px solid var(--line);
+  animation:fadein .22s ease both;font-size:14.5px}
+.feedback.ok{background:var(--okdim);border-color:rgba(46,204,113,.45)}
+.feedback.ko{background:var(--errdim);border-color:rgba(231,76,60,.45)}
+.feedback .head{font-weight:800;margin-bottom:7px;display:flex;align-items:center;gap:8px}
+.feedback.ok .head{color:var(--ok)}
+.feedback.ko .head{color:var(--err)}
+.feedback code{font-family:var(--mono);background:#0a1019;border:1px solid var(--line);
+  border-radius:5px;padding:1px 5px;font-size:13.5px;overflow-wrap:anywhere}
+.feedback .why{margin-top:9px;color:#cdd6e6;font-size:14px}
+.term{margin-top:12px;background:#04070c;border:1px solid #1b2438;border-radius:10px;padding:12px 13px;
+  font-family:var(--mono);font-size:13px;line-height:1.55;white-space:pre-wrap;overflow-wrap:anywhere;color:#d3e4d8}
+.term .p{color:var(--ok2)}
+.note{margin-top:12px;font-size:13.5px;color:var(--dim);border-top:1px solid var(--line);padding-top:11px}
+.note b{color:var(--gold)}
+
+/* clavier libre */
+.freein{width:100%;min-height:52px;background:#070b12;border:1px solid var(--line2);border-radius:11px;
+  padding:13px 14px;font-family:var(--mono);font-size:16px;color:var(--txt)}
+.freein:focus{outline:none;border-color:var(--ok2)}
+
+/* ---------- récap / level up ---------- */
+.recap{text-align:center;padding:26px 18px}
+.recap .big{font-family:var(--mono);font-size:44px;font-weight:800;color:var(--ok);line-height:1}
+.recap .lbl{color:var(--dim);font-size:14px;margin-top:6px}
+.statgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0}
+.stat{background:#141d2e;border:1px solid var(--line);border-radius:11px;padding:12px}
+.stat .v{font-family:var(--mono);font-size:21px;font-weight:800}
+.stat .k{font-size:11.5px;color:var(--dim);text-transform:uppercase;letter-spacing:.06em;margin-top:2px}
+
+.overlay{position:fixed;inset:0;z-index:80;background:rgba(8,12,20,.88);display:none;
+  align-items:center;justify-content:center;padding:24px}
+.overlay.on{display:flex;animation:fadein .2s ease both}
+.lvlcard{background:var(--panel);border:1px solid var(--gold2);border-radius:18px;padding:28px 24px;
+  text-align:center;max-width:340px;width:100%;animation:lvlin .55s cubic-bezier(.2,1.3,.4,1) both}
+@keyframes lvlin{from{opacity:0;transform:scale(.7)}to{opacity:1;transform:none}}
+.lvlcard .ring{width:92px;height:92px;margin:0 auto 14px;border-radius:50%;border:3px solid var(--gold);
+  display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:34px;
+  font-weight:800;color:var(--gold);animation:ring 1.5s ease-in-out infinite}
+@keyframes ring{0%,100%{box-shadow:0 0 0 0 rgba(240,180,41,.35)}50%{box-shadow:0 0 0 14px rgba(240,180,41,0)}}
+.lvlcard h3{margin:0 0 6px;font-size:20px;color:var(--gold)}
+.lvlcard p{margin:0 0 18px;color:var(--dim);font-size:14px}
+.conf{position:fixed;top:-14px;width:9px;height:14px;z-index:90;pointer-events:none;border-radius:2px}
+@keyframes fall{to{transform:translateY(104vh) rotate(760deg);opacity:.15}}
+
+/* ---------- réglages ---------- */
+.row{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 0;
+  border-bottom:1px solid var(--line)}
+.row:last-child{border-bottom:none}
+.row .lab{font-size:15px;font-weight:600}
+.desc{font-size:12.5px;color:var(--dim);line-height:1.55}
+.row .desc{margin-top:3px}
+.sw{width:56px;height:32px;border-radius:99px;background:#0a0f18;border:1px solid var(--line2);
+  position:relative;flex:0 0 auto;padding:0;transition:background .2s ease,border-color .2s ease}
+.sw i{position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:var(--dim);
+  transition:transform .2s cubic-bezier(.2,1,.3,1),background .2s ease}
+.sw.on{background:rgba(46,204,113,.18);border-color:var(--ok2)}
+.sw.on i{transform:translateX(24px);background:var(--ok)}
+.foot{text-align:center;color:var(--dim);font-size:11.5px;margin-top:28px;letter-spacing:.05em}
+.foot b{color:var(--gold2);font-weight:600}
+.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);z-index:70;background:#141d2e;
+  border:1px solid var(--line2);border-radius:11px;padding:12px 18px;font-size:14px;
+  box-shadow:0 8px 26px rgba(0,0,0,.5);opacity:0;pointer-events:none;transition:opacity .25s ease,transform .25s ease;
+  max-width:calc(100% - 32px);text-align:center}
+.toast.on{opacity:1;transform:translate(-50%,-6px)}
+body.noanim *,body.noanim *::before,body.noanim *::after{animation:none!important;transition:none!important}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="topin">
+    <div class="hud">
+      <div class="lvlbadge" id="lvlBadge"><b id="lvlNum">1</b><span>niv</span></div>
+      <div class="xpzone">
+        <div class="xprow">
+          <div class="xpnum"><span id="xpNow">0</span> <small>XP</small></div>
+          <div class="xptitle" id="lvlTitle">Novice du terminal</div>
+        </div>
+        <div class="xpbar"><div class="xpfill" id="xpFill"></div></div>
+      </div>
+      <div class="streak off" id="streakBox"><span class="flame">&#128293;</span><span id="streakNum">0</span></div>
+      <button class="iconbtn" id="btnSettings" aria-label="Réglages">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M12 2.6v2.2M12 19.2v2.2M21.4 12h-2.2M4.8 12H2.6M18.6 5.4l-1.5 1.5M6.9 17.1l-1.5 1.5M18.6 18.6l-1.5-1.5M6.9 6.9L5.4 5.4"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="xpgain" id="xpGain"></div>
+
+<div class="wrap">
+
+<!-- ============ ACCUEIL ============ -->
+<section class="screen on" id="scHome">
+  <h1>Empire Chaima — Terminal</h1>
+  <p class="sub" id="homeSub">Entraînement Linux · Rocky 9</p>
+
+  <button class="btn primary" id="btnPlay">▸ Jouer</button>
+  <div id="resumeLine" class="lockmsg" style="text-align:center;margin-top:8px"></div>
+
+  <h2>Mondes</h2>
+  <div id="worldList"></div>
+
+  <div id="soonList"></div>
+
+  <div class="card" style="margin-top:18px">
+    <div class="row">
+      <div><div class="lab">Ta progression</div><div class="desc" id="globalStats">—</div></div>
+    </div>
+  </div>
+
+  <div class="foot">EMPIRE <b>CHAIMA</b> · ASR2025</div>
+</section>
+
+<!-- ============ JEU ============ -->
+<section class="screen" id="scPlay">
+  <div class="gamehead">
+    <button class="backbtn" id="btnBack" aria-label="Retour">←</button>
+    <div class="info">
+      <div class="wname" id="playWorld">—</div>
+      <div class="dots" id="dots"></div>
+    </div>
+  </div>
+
+  <div class="tagrow" id="tagRow"></div>
+
+  <div class="scenario" id="scenario">
+    <span id="scText"></span>
+    <span class="ask" id="scAsk"></span>
+  </div>
+  <div id="hintZone"></div>
+
+  <div class="cmdlabel">Ta commande</div>
+  <div class="cmdline" id="cmdLine"></div>
+
+  <div id="buildZone">
+    <div class="cmdlabel">Blocs disponibles</div>
+    <div class="tiles" id="tiles"></div>
+  </div>
+
+  <div id="freeZone" style="display:none">
+    <input class="freein" id="freeInput" autocapitalize="off" autocomplete="off" autocorrect="off"
+           spellcheck="false" placeholder="tape la commande…">
+  </div>
+
+  <div id="feedbackZone"></div>
+
+  <div class="btnrow" style="margin-top:14px" id="actionRow">
+    <button class="btn small ghost" id="btnClear">Effacer</button>
+    <button class="btn small ghost" id="btnHint">Indice</button>
+    <button class="btn small primary" id="btnCheck">Valider</button>
+  </div>
+  <button class="btn primary" id="btnNext" style="display:none;margin-top:14px">Suivant ▸</button>
+</section>
+
+<!-- ============ RÉCAP ============ -->
+<section class="screen" id="scRecap">
+  <div class="card recap">
+    <div class="big" id="recapScore">0/0</div>
+    <div class="lbl" id="recapTitle">Session terminée</div>
+    <div class="statgrid">
+      <div class="stat"><div class="v" style="color:var(--ok)" id="recapXp">+0</div><div class="k">XP gagnés</div></div>
+      <div class="stat"><div class="v" style="color:var(--gold)" id="recapMastered">0</div><div class="k">Ancrées</div></div>
+    </div>
+    <div class="lockmsg" id="recapMsg"></div>
+  </div>
+  <div style="margin-top:14px">
+    <button class="btn primary" id="btnAgain">Continuer l'entraînement</button>
+    <button class="btn ghost" id="btnHome">Retour aux mondes</button>
+  </div>
+</section>
+
+<!-- ============ RÉGLAGES ============ -->
+<section class="screen" id="scSettings">
+  <div class="gamehead">
+    <button class="backbtn" id="btnBack2" aria-label="Retour">←</button>
+    <div class="info"><div class="wname">Réglages</div></div>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <div>
+        <div class="lab">Mode clavier libre</div>
+        <div class="desc">Taper la commande au lieu d'assembler des blocs. Tolère les déformations de dictée (« tiret », « slash »…).</div>
+      </div>
+      <button class="sw" id="swFree"><i></i></button>
+    </div>
+    <div class="row">
+      <div>
+        <div class="lab">Animations réduites</div>
+        <div class="desc">Coupe les animations si l'affichage rame sur la tablette.</div>
+      </div>
+      <button class="sw" id="swAnim"><i></i></button>
+    </div>
+    <div class="row">
+      <div>
+        <div class="lab">Longueur d'une session</div>
+        <div class="desc" id="lenDesc">8 questions par série</div>
+      </div>
+      <button class="btn small ghost" id="btnLen" style="width:auto;min-width:74px">8</button>
+    </div>
+  </div>
+
+  <h2>Sauvegarde</h2>
+  <div class="card">
+    <div class="desc" style="margin-bottom:12px">Ta progression est enregistrée dans ce navigateur. Exporte-la de temps en temps : si le cache est vidé, elle est perdue sinon.</div>
+    <button class="btn small" id="btnExport">⬇ Exporter ma progression (JSON)</button>
+    <button class="btn small ghost" id="btnImport">⬆ Importer un fichier</button>
+    <input type="file" id="fileInput" accept="application/json,.json" style="display:none">
+    <button class="btn small ghost" id="btnReset" style="color:var(--err)">Réinitialiser tout</button>
+  </div>
+
+  <div class="foot">EMPIRE <b>CHAIMA</b> · fonctionne hors-ligne</div>
+</section>
+
+</div><!-- /wrap -->
+
+<div class="overlay" id="lvlOverlay">
+  <div class="lvlcard">
+    <div class="ring" id="ovLvl">2</div>
+    <h3 id="ovTitle">Niveau 2</h3>
+    <p id="ovSub">Nouveau palier atteint</p>
+    <button class="btn primary" id="ovClose">Continuer</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<script>
+/* ==================== CORE:START ==================== */
+/* Données + logique pure de validation. Testé par test/empire-chaima-linux.test.js */
+
+var WORLDS = [
+  {n:1, ico:"📁", name:"Navigation et fichiers",
+   cmds:"pwd ls cd cat less mkdir cp mv rm ln"},
+  {n:2, ico:"🔐", name:"Permissions",
+   cmds:"ls -l chmod chown umask octal"},
+  {n:3, ico:"👥", name:"Utilisateurs, groupes, sudo",
+   cmds:"id groups useradd usermod passwd su sudo"},
+  {n:4, ico:"⚙️", name:"Processus et services", cmds:"ps top kill jobs systemctl", soon:true},
+  {n:5, ico:"📦", name:"Paquets et dépôts", cmds:"dnf epel crb repolist", soon:true},
+  {n:6, ico:"🌐", name:"Réseau", cmds:"nmcli ip ping ss ssh scp", soon:true},
+  {n:7, ico:"🔍", name:"Traitement de texte", cmds:"grep sed awk find cut sort wc", soon:true},
+  {n:8, ico:"🗜️", name:"Archivage et logs", cmds:"tar gzip journalctl", soon:true},
+  {n:9, ico:"💽", name:"Disques et montage", cmds:"lsblk fdisk mkfs mount fstab swap", soon:true}
+];
+
+var EX = [
+
+/* ---------------- MONDE 1 : navigation et fichiers ---------------- */
+{id:"w1-whoami", w:1, src:"cours",
+ sc:"Tu reprends une session déjà ouverte sur un poste du labo. L'invite affiche seulement $ et tu ne sais pas sous quel compte tu travailles.",
+ ask:"Affiche uniquement le nom du compte actif.",
+ sol:["whoami"],
+ blocks:["id","hostname","pwd","who"],
+ traps:{
+   id:"« id » répond aussi, mais il affiche uid, gid ET tous les groupes. Ici on veut UNIQUEMENT le nom du compte : c'est « whoami ».",
+   hostname:"« hostname » donne le nom de la MACHINE, pas celui de l'utilisateur.",
+   pwd:"« pwd » donne le dossier courant, pas l'identité du compte.",
+   who:"« who » liste les sessions ouvertes sur la machine ; pour ton propre compte, le réflexe est « whoami »."},
+ why:"« whoami » répond à une seule question : quel compte utilise ce shell. C'est le premier réflexe quand tu reprends une session inconnue.",
+ out:"chaima",
+ note:"L'invite te donne déjà un indice : <b>$</b> = utilisateur standard, <b>#</b> = root."},
+
+{id:"w1-id", w:1, src:"cours",
+ sc:"Avant de lancer une commande avec sudo, tu veux vérifier ton identité numérique complète et les groupes secondaires auxquels ton compte appartient.",
+ ask:"Affiche ton uid, ton gid et tous tes groupes.",
+ sol:["id"],
+ blocks:["whoami","groups","cat","/etc/group","hostname"],
+ traps:{
+   whoami:"« whoami » ne donne que le nom du compte : ni uid, ni gid, ni groupes.",
+   groups:"« groups » liste bien les groupes, mais pas l'uid ni le gid qui sont demandés ici.",
+   cat:"Lire un fichier avec « cat » n'est pas nécessaire : « id » interroge directement ton identité.",
+   "/etc/group":"« /etc/group » contient TOUS les groupes du système, pas seulement les tiens.",
+   hostname:"« hostname » concerne la machine, pas ton compte."},
+ why:"« id » affiche d'un coup uid=…, gid=… et la liste des groupes. C'est la commande qui prouve si ton compte est dans le groupe qui autorise sudo (wheel sur Rocky).",
+ out:"uid=1000(chaima) gid=1000(chaima) groupes=1000(chaima),10(wheel)",
+ note:"Sur Rocky/RHEL, le groupe qui donne sudo s'appelle <b>wheel</b> (et non sudo comme sur Debian)."},
+
+{id:"w1-pwd", w:1, src:"cours",
+ sc:"Tu as enchaîné plusieurs cd sans regarder, et l'invite est trop courte pour montrer le chemin complet.",
+ ask:"Affiche le chemin absolu du dossier où tu te trouves.",
+ sol:["pwd"],
+ blocks:["ls","cd","dir","path"],
+ traps:{
+   ls:"« ls » montre ce qu'il y a DANS le dossier, pas le chemin du dossier lui-même.",
+   cd:"« cd » sert à se déplacer, pas à afficher où tu es.",
+   dir:"« dir » n'est pas le réflexe Linux attendu ; le chemin courant s'affiche avec « pwd ».",
+   path:"« path » n'est pas une commande : le chemin courant s'affiche avec « pwd »."},
+ why:"« pwd » = print working directory. Elle affiche le chemin ABSOLU, celui qui part de la racine /.",
+ out:"/home/chaima/ASR2025",
+ note:"Méthode de base : observer (<b>pwd</b>, <b>ls</b>) → agir → vérifier (<b>ls</b>)."},
+
+{id:"w1-ls", w:1, src:"cours",
+ sc:"Tu viens d'entrer dans un dossier de travail et tu veux juste savoir quels fichiers il contient, sans détail.",
+ ask:"Liste les noms des fichiers du dossier courant.",
+ sol:["ls"],
+ blocks:["-l","-a","cat","pwd"],
+ traps:{
+   "-l":"« -l » ajoute les détails (droits, propriétaire, taille, date). Ici on veut la liste simple, donc « ls » seul.",
+   "-a":"« -a » ajoute les fichiers cachés (ceux qui commencent par un point). Pas demandé ici.",
+   cat:"« cat » affiche le CONTENU d'un fichier, il ne liste pas un dossier.",
+   pwd:"« pwd » donne le chemin, pas le contenu."},
+ why:"« ls » (list) affiche le contenu du dossier courant. Sans option, elle donne uniquement les noms.",
+ out:"archives  config.txt  notes.txt  script.sh",
+ note:""},
+
+{id:"w1-ls-l", w:1, src:"cours",
+ sc:"Un script refuse de se lancer. Avant tout, tu veux voir les droits, le propriétaire et la taille des fichiers du dossier.",
+ ask:"Affiche le contenu du dossier au format détaillé.",
+ sol:["ls","-l"],
+ blocks:["-a","-h","-i","cat"],
+ traps:{
+   "-a":"« -a » affiche les fichiers cachés : utile, mais ce n'est pas l'option qui montre les droits.",
+   "-h":"« -h » rend seulement les tailles lisibles (K, M, G) ; sans « -l » il n'y a pas de colonne de droits.",
+   "-i":"« -i » affiche le numéro d'inode, pas les droits.",
+   cat:"« cat » lit un fichier, il ne montre pas les droits d'un dossier."},
+ miss:{"-l":"Sans « -l », « ls » ne montre que les noms : aucune colonne de droits."},
+ why:"C'est « -l » (long) qui déplie chaque ligne en : type + droits, propriétaire, groupe, taille, date, nom.",
+ out:"total 16\ndrwxr-xr-x. 2 chaima chaima   6 12 mars  09:14 archives\n-rw-r--r--. 1 chaima chaima 284 12 mars  09:20 config.txt\n-rw-r--r--. 1 chaima chaima  51 12 mars  09:21 notes.txt\n-rw-r--r--. 1 chaima chaima 118 12 mars  09:22 script.sh",
+ note:"Ici <b>script.sh</b> est en -rw-r--r-- : aucun x, donc il ne peut pas s'exécuter. C'est le monde 2."},
+
+{id:"w1-ls-la", w:1, src:"cours",
+ sc:"Un fichier de configuration caché (.bashrc) pose problème dans ton dossier personnel. Tu veux voir absolument tout, avec les droits.",
+ ask:"Affiche le contenu complet du dossier, fichiers cachés inclus, au format détaillé.",
+ sol:["ls",{p:["-l","-a"]}],
+ alt:[["ls","-la"],["ls","-al"]],
+ blocks:["-h","-i","-R"],
+ traps:{
+   "-h":"« -h » ne fait que rendre les tailles lisibles ; ça ne révèle aucun fichier caché.",
+   "-i":"« -i » affiche les inodes, pas les fichiers cachés.",
+   "-R":"« -R » descend récursivement dans les sous-dossiers : ce n'est pas ce qui affiche les fichiers cachés."},
+ miss:{"-a":"Sans « -a », les fichiers qui commencent par un point (.bashrc) restent invisibles.",
+       "-l":"Sans « -l », tu vois les fichiers cachés mais sans leurs droits."},
+ why:"Deux options se cumulent : « -a » (all) montre les fichiers cachés, « -l » (long) montre les droits. L'ordre entre elles est libre, et elles peuvent se coller : -la, -al, -l -a, -a -l sont équivalents.",
+ out:"total 28\ndrwx------. 4 chaima chaima 4096 12 mars  09:31 .\ndrwxr-xr-x. 3 root   root     20 10 mars  14:02 ..\n-rw-r--r--. 1 chaima chaima  492 12 mars  09:05 .bashrc\ndrwxr-xr-x. 2 chaima chaima    6 12 mars  09:14 archives\n-rw-r--r--. 1 chaima chaima  284 12 mars  09:20 config.txt",
+ note:"Les deux premières lignes : <b>.</b> = le dossier courant, <b>..</b> = le dossier parent."},
+
+{id:"w1-cd-root", w:1, src:"cours",
+ sc:"Ton formateur te demande d'aller à la racine du système de fichiers pour observer l'arborescence de Rocky Linux.",
+ ask:"Déplace-toi vers la racine du système.",
+ sol:["cd","/"],
+ blocks:["/root","~",".."],
+ traps:{
+   "/root":"« /root » est le dossier personnel de l'administrateur root, ce n'est PAS la racine du système. La racine, c'est « / ».",
+   "~":"« ~ » est un raccourci vers TON dossier personnel (/home/chaima), pas la racine.",
+   "..":"« .. » remonte d'un seul cran ; depuis /home/chaima ça t'amène dans /home, pas à la racine."},
+ why:"La racine du système s'écrit avec un simple slash : « / ». Piège classique : confondre / (racine) et /root (maison de root).",
+ out:"",
+ outCmd:"cd /\n$ pwd\n/",
+ note:""},
+
+{id:"w1-cd-parent", w:1, src:"cours",
+ sc:"Tu es dans /home/chaima/ASR2025/labo et tu veux revenir d'un seul cran, dans ASR2025.",
+ ask:"Remonte dans le dossier parent.",
+ sol:["cd",".."],
+ blocks:[".","/","~","-"],
+ traps:{
+   ".":"« . » désigne le dossier COURANT : « cd . » ne bouge pas.",
+   "/":"« / » t'envoie à la racine du système, bien plus haut que le parent.",
+   "~":"« ~ » t'envoie dans ton dossier personnel, pas dans le parent.",
+   "-":"« cd - » revient au dossier PRÉCÉDENT (celui d'avant ton dernier cd), ce qui n'est pas forcément le parent."},
+ why:"« .. » désigne toujours le dossier parent, quel que soit l'endroit où tu te trouves.",
+ outCmd:"cd ..\n$ pwd\n/home/chaima/ASR2025",
+ note:""},
+
+{id:"w1-cd-abs", w:1, src:"cours",
+ sc:"Tu es actuellement dans /var/log. Ton dossier de cours se trouve dans /home/chaima/ASR2025.",
+ ask:"Va directement dans ton dossier de cours.",
+ sol:["cd","/home/chaima/ASR2025"],
+ blocks:["ASR2025","home/chaima/ASR2025","..","~"],
+ traps:{
+   ASR2025:"« ASR2025 » est un chemin RELATIF : il serait cherché dans /var/log, où il n'existe pas → « Aucun fichier ou dossier de ce type ».",
+   "home/chaima/ASR2025":"Sans le slash de départ, c'est aussi un chemin relatif : il serait cherché dans /var/log/home/chaima/…",
+   "..":"« .. » ne remonte que d'un cran, jusqu'à /var.",
+   "~":"« ~ » mène à /home/chaima, il manque encore le sous-dossier ASR2025."},
+ why:"Un chemin qui commence par « / » est ABSOLU : il fonctionne depuis n'importe où. Sans le slash initial, le chemin est relatif au dossier courant.",
+ outCmd:"cd /home/chaima/ASR2025\n$ pwd\n/home/chaima/ASR2025",
+ note:""},
+
+{id:"w1-cd-home", w:1, src:"cours",
+ sc:"Tu es perdue quelque part dans /etc et tu veux simplement rentrer chez toi, dans ton dossier personnel.",
+ ask:"Retourne dans ton dossier personnel.",
+ sol:["cd"],
+ alt:[["cd","~"],["cd","/home/chaima"]],
+ blocks:["/root","..","/"],
+ traps:{
+   "/root":"« /root » est la maison de l'administrateur, pas la tienne : accès refusé pour un compte standard.",
+   "..":"« .. » remonte d'un cran seulement.",
+   "/":"« / » est la racine du système, pas ton dossier personnel."},
+ why:"« cd » sans argument ramène toujours à ton dossier personnel. « cd ~ » et « cd /home/chaima » font la même chose.",
+ outCmd:"cd\n$ pwd\n/home/chaima",
+ note:""},
+
+{id:"w1-clear", w:1, src:"cours",
+ sc:"Ton écran est saturé de sorties de commandes et tu n'y vois plus rien. Tu veux repartir sur un écran propre, sans rien supprimer.",
+ ask:"Nettoie l'affichage du terminal.",
+ sol:["clear"],
+ blocks:["rm","reset","cls","exit"],
+ traps:{
+   rm:"« rm » SUPPRIME des fichiers. Danger : ça n'a rien à voir avec nettoyer l'écran.",
+   cls:"« cls » est la commande Windows. Sous Linux c'est « clear ».",
+   reset:"« reset » réinitialise complètement le terminal (utile s'il est cassé), c'est plus lourd que ce qui est demandé.",
+   exit:"« exit » ferme la session au lieu de nettoyer l'écran."},
+ why:"« clear » efface uniquement l'AFFICHAGE. Aucun fichier n'est touché, l'historique reste disponible.",
+ outCmd:"clear\n(écran vidé)",
+ note:""},
+
+{id:"w1-cat", w:1, src:"cours",
+ sc:"Tu as un petit fichier notes.txt de 5 lignes et tu veux voir tout son contenu d'un coup.",
+ ask:"Affiche le contenu de notes.txt.",
+ sol:["cat","notes.txt"],
+ blocks:["less","head","tail","ls"],
+ traps:{
+   less:"« less » ouvre une lecture paginée : c'est parfait pour un fichier LONG, mais lourd pour 5 lignes.",
+   head:"« head » n'affiche que le début (10 lignes par défaut), pas tout le fichier.",
+   tail:"« tail » n'affiche que la fin du fichier (10 dernières lignes), pas la totalité.",
+   ls:"« ls » liste des noms de fichiers, il n'affiche pas leur contenu."},
+ why:"« cat » déverse tout le fichier d'un coup dans le terminal : idéal pour les fichiers COURTS.",
+ out:"Rappels ASR2025\n- pwd avant d'agir\n- cp duplique, mv deplace\n- ln sans -s = lien physique",
+ note:"Règle simple : court → <b>cat</b>, long → <b>less</b>."},
+
+{id:"w1-less", w:1, src:"cours",
+ sc:"Tu dois parcourir /var/log/messages qui fait plusieurs milliers de lignes. Avec cat, tout défile et tu ne peux rien lire.",
+ ask:"Ouvre ce fichier en lecture paginée.",
+ sol:["less","/var/log/messages"],
+ blocks:["cat","head","tail","more"],
+ traps:{
+   cat:"« cat » est justement le problème : il déverse les milliers de lignes d'un coup.",
+   head:"« head » ne montre que les 10 premières lignes, tu ne peux pas parcourir le reste.",
+   tail:"« tail » ne montre que la fin, sans navigation.",
+   more:"« more » ne permet de descendre que vers le bas ; « less » est le standard car il navigue dans les deux sens."},
+ why:"« less » ouvre le fichier page par page : flèches pour naviguer, « q » pour quitter. C'est l'outil des fichiers LONGS.",
+ outCmd:"less /var/log/messages\nmars 12 09:02:11 rocky9 systemd[1]: Started Session 12 of user chaima.\nmars 12 09:02:11 rocky9 sshd[2214]: Accepted password for chaima from 192.168.0.42\n:",
+ note:"Dans less : <b>q</b> pour quitter, <b>/mot</b> pour chercher."},
+
+{id:"w1-tail", w:1, src:"cours",
+ sc:"Un service vient de planter. Ce qui t'intéresse dans le fichier de log, ce sont les toutes dernières lignes écrites.",
+ ask:"Affiche la fin du fichier /var/log/messages.",
+ sol:["tail","/var/log/messages"],
+ blocks:["head","cat","less","end"],
+ traps:{
+   head:"« head » affiche le DÉBUT du fichier : ce sont les événements les plus anciens, pas le plantage qui vient d'arriver.",
+   cat:"« cat » affiche tout, y compris des milliers de lignes inutiles.",
+   less:"« less » fonctionne, mais pour voir tout de suite les dernières lignes le réflexe direct est « tail ».",
+   end:"« end » n'est pas une commande Linux ; la fin d'un fichier s'affiche avec « tail »."},
+ why:"« tail » affiche la FIN du fichier (10 dernières lignes par défaut) : c'est le réflexe après un incident, car les logs s'écrivent en bas.",
+ out:"mars 12 10:41:02 rocky9 httpd[3120]: (98)Address already in use: AH00072: make_sock: could not bind to address [::]:80\nmars 12 10:41:02 rocky9 systemd[1]: httpd.service: Failed with result 'exit-code'.",
+ note:"Sa jumelle : <b>head</b> pour le début du fichier."},
+
+{id:"w1-head", w:1, src:"cours",
+ sc:"Tu veux vérifier l'en-tête d'un gros fichier de configuration : seules les premières lignes t'intéressent.",
+ ask:"Affiche le début du fichier /etc/passwd.",
+ sol:["head","/etc/passwd"],
+ blocks:["tail","cat","less","top"],
+ traps:{
+   tail:"« tail » montre la fin, pas le début.",
+   cat:"« cat » afficherait tout le fichier.",
+   less:"« less » ouvre une navigation ; ici on veut juste jeter un œil aux premières lignes.",
+   top:"« top » est le moniteur de processus en temps réel, rien à voir avec la lecture d'un fichier."},
+ why:"« head » affiche les 10 premières lignes par défaut : idéal pour vérifier l'en-tête d'un fichier sans l'ouvrir entièrement.",
+ out:"root:x:0:0:root:/root:/bin/bash\nbin:x:1:1:bin:/bin:/sbin/nologin\ndaemon:x:2:2:daemon:/sbin:/sbin/nologin",
+ note:""},
+
+{id:"w1-mkdir", w:1, src:"cours",
+ sc:"Tu commences un nouveau labo et tu veux ranger tes fichiers dans un dossier dédié, dans ton dossier courant.",
+ ask:"Crée un dossier nommé labo3.",
+ sol:["mkdir","labo3"],
+ blocks:["touch","cp","rmdir","cd"],
+ traps:{
+   touch:"« touch » crée un FICHIER vide, pas un dossier.",
+   cp:"« cp » copie quelque chose qui existe déjà.",
+   rmdir:"« rmdir » SUPPRIME un dossier vide : c'est l'inverse de ce qui est demandé.",
+   cd:"« cd » entre dans un dossier existant, il n'en crée aucun."},
+ why:"« mkdir » = make directory. Elle crée le dossier dans le répertoire courant.",
+ outCmd:"mkdir labo3\n$ ls\narchives  config.txt  labo3  notes.txt",
+ note:"Réflexe : après avoir créé, vérifie avec <b>ls</b>."},
+
+{id:"w1-touch", w:1, src:"cours",
+ sc:"Tu prépares ton compte rendu mais tu n'as encore rien à écrire dedans : tu veux juste que le fichier existe.",
+ ask:"Crée un fichier vide nommé rapport.txt.",
+ sol:["touch","rapport.txt"],
+ blocks:["mkdir","cat","nano","rm"],
+ traps:{
+   mkdir:"« mkdir » crée un DOSSIER, pas un fichier.",
+   cat:"« cat » lit un fichier existant.",
+   nano:"« nano » ouvre un éditeur : ça marche, mais ce n'est pas la commande directe pour créer un fichier vide.",
+   rm:"« rm » supprime : danger, c'est l'inverse."},
+ why:"« touch » crée un fichier vide s'il n'existe pas (et met à jour sa date s'il existe déjà).",
+ outCmd:"touch rapport.txt\n$ ls -l rapport.txt\n-rw-r--r--. 1 chaima chaima 0 12 mars  10:58 rapport.txt",
+ note:"Taille <b>0</b> : le fichier existe bien, il est vide."},
+
+{id:"w1-cp", w:1, src:"cours",
+ sc:"Tu vas modifier config.txt et tu veux une copie de sauvegarde avant de toucher quoi que ce soit. L'original doit rester en place.",
+ ask:"Duplique config.txt sous le nom config.txt.bak.",
+ sol:["cp","config.txt","config.txt.bak"],
+ blocks:["mv","ln","rm"],
+ traps:{
+   mv:"« mv » DÉPLACE ou renomme : l'original disparaîtrait. Pour garder les deux fichiers, c'est « cp ».",
+   ln:"« ln » crée un lien vers le même contenu : si tu modifies l'un via un lien physique, l'autre change aussi. Ce n'est pas une sauvegarde indépendante.",
+   rm:"« rm » supprime le fichier : tu perdrais justement ce que tu voulais sauvegarder."},
+ order:"L'ordre est imposé : d'abord la SOURCE, ensuite la DESTINATION. « cp config.txt.bak config.txt » écraserait ton fichier de travail avec la sauvegarde.",
+ why:"« cp source destination » DUPLIQUE : après la commande les deux fichiers existent. C'est la différence fondamentale avec « mv ».",
+ outCmd:"cp config.txt config.txt.bak\n$ ls\nconfig.txt  config.txt.bak  notes.txt",
+ note:"Réflexe d'admin : <b>cp</b> avant toute modification d'un fichier de configuration."},
+
+{id:"w1-mv-rename", w:1, src:"cours",
+ sc:"Ton fichier s'appelle encore brouillon.txt alors que le travail est terminé. Tu veux qu'il s'appelle rapport-final.txt, au même endroit.",
+ ask:"Renomme brouillon.txt en rapport-final.txt.",
+ sol:["mv","brouillon.txt","rapport-final.txt"],
+ blocks:["cp","rename","touch"],
+ traps:{
+   cp:"« cp » laisserait les DEUX fichiers : brouillon.txt existerait encore. Ici on veut un simple changement de nom.",
+   rename:"« rename » existe mais sert au renommage en masse par motif ; le renommage simple se fait avec « mv ».",
+   touch:"« touch » créerait un nouveau fichier vide à côté."},
+ order:"La source vient toujours en premier, la destination en second.",
+ why:"Sous Linux, renommer et déplacer sont la MÊME opération : « mv ancien nouveau ». Si la destination est un nom de fichier dans le même dossier, c'est un renommage.",
+ outCmd:"mv brouillon.txt rapport-final.txt\n$ ls\nrapport-final.txt",
+ note:""},
+
+{id:"w1-mv-move", w:1, src:"cours",
+ sc:"Ton rapport est terminé et tu veux le ranger dans le dossier /home/chaima/archives, sans en garder de copie ici.",
+ ask:"Déplace rapport-final.txt vers /home/chaima/archives/.",
+ sol:["mv","rapport-final.txt","/home/chaima/archives/"],
+ blocks:["cp","archives","rm"],
+ traps:{
+   cp:"« cp » garderait une copie dans le dossier courant. On demande un déplacement.",
+   archives:"« archives » seul est un chemin relatif : il ne fonctionne que si ce dossier est dans le répertoire courant. Ici on donne le chemin complet.",
+   rm:"« rm » supprimerait le fichier au lieu de le ranger."},
+ order:"Fichier à déplacer d'abord, dossier de destination ensuite.",
+ why:"« mv fichier /chemin/dossier/ » déplace le fichier : il disparaît de l'endroit d'origine et apparaît dans la destination.",
+ outCmd:"mv rapport-final.txt /home/chaima/archives/\n$ ls /home/chaima/archives/\nrapport-final.txt",
+ note:""},
+
+{id:"w1-rm", w:1, src:"cours",
+ sc:"Un vieux fichier de log inutile traîne dans ton dossier et tu veux t'en débarrasser définitivement.",
+ ask:"Supprime le fichier vieux.log.",
+ sol:["rm","vieux.log"],
+ blocks:["rmdir","mv","del","-r"],
+ traps:{
+   rmdir:"« rmdir » ne supprime que des DOSSIERS vides, jamais un fichier.",
+   mv:"« mv » déplacerait le fichier ailleurs, il existerait toujours.",
+   del:"« del » est la commande Windows ; sous Linux c'est « rm ».",
+   "-r":"« -r » sert à supprimer récursivement un DOSSIER et son contenu. Pour un simple fichier, elle est inutile (et dangereuse par habitude)."},
+ why:"« rm » supprime le fichier immédiatement : il n'y a pas de corbeille sous Linux. D'où le réflexe : vérifier avec « ls » avant de supprimer.",
+ outCmd:"rm vieux.log\n$ ls\nconfig.txt  notes.txt",
+ note:"Pas de corbeille : <b>rm</b> est définitif."},
+
+{id:"w1-ln-hard", w:1, src:"cours",
+ sc:"Tu veux qu'un fichier de données reste accessible sous un second nom, même si quelqu'un supprime le nom d'origine. Les deux noms doivent pointer sur le même contenu, sur la même partition.",
+ ask:"Crée un lien physique nommé sauvegarde.txt vers donnees.txt.",
+ sol:["ln","donnees.txt","sauvegarde.txt"],
+ blocks:["-s","cp","ln -s"],
+ traps:{
+   "-s":"Piège classique : « -s » crée un lien SYMBOLIQUE, qui casse si l'original est supprimé. Le lien PHYSIQUE, c'est « ln » tout court.",
+   "ln -s":"« ln -s » crée un lien symbolique : il devient un lien mort si donnees.txt disparaît. Ici on veut un lien physique.",
+   cp:"« cp » ferait une copie indépendante : elle occuperait la place deux fois et ne resterait pas synchronisée."},
+ order:"Toujours : d'abord le fichier SOURCE, ensuite le NOM du lien à créer.",
+ why:"« ln » sans option crée un lien PHYSIQUE : même inode, donc le contenu survit à la suppression de l'autre nom. C'est contre-intuitif — on s'attend à ce que le lien par défaut soit symbolique, mais non.",
+ outCmd:"ln donnees.txt sauvegarde.txt\n$ ls -li\n262147 -rw-r--r--. 2 chaima chaima 84 12 mars  11:12 donnees.txt\n262147 -rw-r--r--. 2 chaima chaima 84 12 mars  11:12 sauvegarde.txt",
+ note:"Même numéro d'inode (262147) et compteur de liens à <b>2</b> : c'est bien un lien physique."},
+
+{id:"w1-ln-sym", w:1, src:"cours",
+ sc:"Tu veux un raccourci pratique dans ton dossier personnel vers le fichier de log /var/log/messages, qui est sur une autre partition.",
+ ask:"Crée un lien symbolique nommé journal vers /var/log/messages.",
+ sol:["ln","-s","/var/log/messages","journal"],
+ blocks:["cp","mv","-l"],
+ traps:{
+   cp:"« cp » copierait le log entier : gaspillage de place et copie figée dans le temps.",
+   mv:"« mv » déplacerait le fichier de log hors de /var/log : le système ne le retrouverait plus.",
+   "-l":"« -l » n'est pas une option de « ln » ; le lien symbolique, c'est « -s »."},
+ miss:{"-s":"Sans « -s », tu crées un lien PHYSIQUE. Or un lien physique ne peut pas traverser les partitions : la commande échouerait avec « Invalid cross-device link »."},
+ order:"D'abord la cible (le fichier visé), ensuite le nom du lien.",
+ why:"« ln -s cible nom » crée un pointeur. Contrairement au lien physique, il traverse les partitions et fonctionne sur les dossiers — mais il devient mort si la cible disparaît.",
+ outCmd:"ln -s /var/log/messages journal\n$ ls -l journal\nlrwxrwxrwx. 1 chaima chaima 17 12 mars  11:20 journal -> /var/log/messages",
+ note:"La ligne commence par <b>l</b> et affiche <b>journal -&gt; /var/log/messages</b> : signature du lien symbolique."},
+
+{id:"w1-ls-li", w:1, src:"cours",
+ sc:"Deux fichiers portent des noms différents et tu soupçonnes qu'il s'agit en réalité du même contenu, lié physiquement.",
+ ask:"Liste le dossier en affichant les numéros d'inode et les détails.",
+ sol:["ls",{p:["-l","-i"]}],
+ alt:[["ls","-li"],["ls","-il"]],
+ blocks:["-a","-h","-s"],
+ traps:{
+   "-a":"« -a » montre les fichiers cachés, pas les inodes.",
+   "-h":"« -h » rend les tailles lisibles, pas les inodes.",
+   "-s":"« -s » affiche la taille en blocs, pas le numéro d'inode."},
+ miss:{"-i":"Sans « -i », aucun numéro d'inode n'apparaît : impossible de prouver que deux noms partagent le même contenu."},
+ why:"« -i » ajoute le numéro d'inode en début de ligne. Deux fichiers avec le MÊME inode sont deux noms d'un même contenu : un lien physique.",
+ out:"262147 -rw-r--r--. 2 chaima chaima 84 12 mars  11:12 donnees.txt\n262147 -rw-r--r--. 2 chaima chaima 84 12 mars  11:12 sauvegarde.txt\n262150 lrwxrwxrwx. 1 chaima chaima 17 12 mars  11:20 journal -> /var/log/messages",
+ note:"Le lien symbolique a son <b>propre</b> inode (262150) : ce n'est qu'un pointeur."},
+
+{id:"w1-man", w:1, src:"cours",
+ sc:"Tu ne te souviens plus de toutes les options de la commande ls et tu veux consulter son manuel complet, navigable.",
+ ask:"Ouvre le manuel de la commande ls.",
+ sol:["man","ls"],
+ blocks:["--help","info","help","locate"],
+ traps:{
+   "--help":"« ls --help » donne l'aide RAPIDE, un simple résumé affiché d'un coup. Le manuel complet et navigable, c'est « man ».",
+   info:"« info » donne la documentation GNU étendue : c'est l'étape d'APRÈS man dans l'ordre conseillé.",
+   help:"« help » concerne les commandes internes du shell, pas les commandes externes comme ls.",
+   locate:"« locate » cherche des fichiers par nom via un index, ce n'est pas de la documentation."},
+ why:"Ordre conseillé pour se documenter : --help (rapide) → man (manuel complet) → info (étendu, GNU) → /usr/share/doc/ → locate.",
+ outCmd:"man ls\nLS(1)                       User Commands                      LS(1)\n\nNOM\n       ls - affiche le contenu d'un répertoire\n\nSYNOPSIS\n       ls [OPTION]... [FICHIER]...\n:",
+ note:"Dans man comme dans less : <b>q</b> pour quitter."},
+
+{id:"w1-hostname", w:1, src:"cours",
+ sc:"Tu travailles sur plusieurs machines virtuelles en même temps et tu veux confirmer sur laquelle ce terminal est connecté.",
+ ask:"Affiche le nom de la machine.",
+ sol:["hostname"],
+ blocks:["whoami","id","uname","machine"],
+ traps:{
+   whoami:"« whoami » donne le nom de l'UTILISATEUR, pas de la machine.",
+   id:"« id » donne uid, gid et groupes : c'est l'identité du compte.",
+   uname:"« uname » renseigne sur le noyau et le système ; le nom de la machine, c'est « hostname ».",
+   machine:"« machine » n'est pas une commande Linux."},
+ why:"« hostname » affiche le nom de la machine. C'est ce nom qu'on retrouve dans l'invite : chaima@rocky9:~$.",
+ out:"rocky9",
+ note:"Lecture de l'invite <b>chaima@rocky9:~$</b> : utilisateur @ machine : dossier, puis $ ou #."},
+
+/* ---------------- MONDE 2 : permissions ---------------- */
+{id:"w2-ls-l-file", w:2, src:"cours",
+ sc:"Ton script refuse de démarrer avec le message « Permission non accordée ». Avant de modifier quoi que ce soit, tu veux voir ses droits actuels.",
+ ask:"Affiche les droits du seul fichier script.sh.",
+ sol:["ls","-l","script.sh"],
+ blocks:["-a","cat","chmod"],
+ traps:{
+   "-a":"« -a » affiche les fichiers cachés, ce n'est pas ce qui montre les droits.",
+   cat:"« cat » affiche le contenu du script, pas ses permissions.",
+   chmod:"« chmod » MODIFIE les droits. Ici on observe d'abord — on ne change rien avant d'avoir regardé."},
+ miss:{"-l":"Sans « -l », tu obtiens juste le nom du fichier : aucune information de droits."},
+ order:"Les options se placent après la commande et avant le fichier : ls -l script.sh.",
+ why:"« ls -l fichier » affiche la ligne de droits de ce fichier précis. Observer avant d'agir, c'est la méthode.",
+ out:"-rw-r--r--. 1 chaima chaima 118 12 mars  09:22 script.sh",
+ note:"<b>-rw-r--r--</b> : aucun <b>x</b> nulle part, donc le script ne peut pas s'exécuter."},
+
+{id:"w2-quiz-type", w:2, src:"cours", quiz:true,
+ sc:"Dans la sortie de ls -l, tu lis la ligne : drwxr-xr-x. 2 chaima chaima 6 12 mars archives",
+ ask:"Que signifie le tout premier caractère, le « d » ?",
+ sol:["c'est un dossier"],
+ blocks:["c'est un fichier ordinaire","c'est un lien symbolique","le propriétaire peut lire"],
+ traps:{
+   "c'est un fichier ordinaire":"Un fichier ordinaire est indiqué par un tiret « - » en première position, pas par « d ».",
+   "c'est un lien symbolique":"Un lien symbolique commence par « l » (comme dans lrwxrwxrwx), pas par « d ».",
+   "le propriétaire peut lire":"Les droits du propriétaire sont les 3 caractères SUIVANTS (rwx). Le premier caractère, lui, indique uniquement le TYPE."},
+ why:"La ligne se lit ainsi : [type][3 droits propriétaire][3 droits groupe][3 droits autres]. « d » = dossier (directory), « - » = fichier ordinaire, « l » = lien symbolique.",
+ outCmd:"drwxr-xr-x.\n^\n|_ d = dossier",
+ note:""},
+
+{id:"w2-quiz-dir-x", w:2, src:"cours", quiz:true,
+ sc:"Un dossier partagé a les droits dr--r--r-- : tout le monde peut lire son contenu, mais personne ne peut faire cd dedans.",
+ ask:"Quel droit manque pour pouvoir ENTRER dans un dossier ?",
+ sol:["x (exécution)"],
+ blocks:["r (lecture)","w (écriture)","aucun, il faut être root"],
+ traps:{
+   "r (lecture)":"« r » sur un dossier permet de VOIR la liste de son contenu — c'est déjà accordé ici, et ça ne suffit pas pour y entrer.",
+   "w (écriture)":"« w » sur un dossier permet d'ajouter, supprimer ou réorganiser des fichiers dedans. Ça ne donne pas le droit de traverser.",
+   "aucun, il faut être root":"Non : un utilisateur standard entre parfaitement dans un dossier dès qu'il a le droit « x » dessus."},
+ why:"Sur un DOSSIER, les trois droits changent de sens : r = voir le contenu, w = ajouter/supprimer des fichiers, x = pouvoir entrer (traverser) le dossier. Sans x, « cd » est refusé.",
+ outCmd:"cd partage\nbash: cd: partage: Permission non accordée",
+ note:""},
+
+{id:"w2-chmod-ux", w:2, src:"cours",
+ sc:"Ton script script.sh est en -rw-r--r-- et refuse de se lancer. Tu es la propriétaire du fichier et tu veux pouvoir l'exécuter toi-même.",
+ ask:"Ajoute le droit d'exécution au propriétaire de script.sh.",
+ sol:["chmod","u+x","script.sh"],
+ blocks:["g+x","o+x","u-x","a+x","chown"],
+ traps:{
+   "g+x":"« g » vise le GROUPE, pas la propriétaire. Le fichier deviendrait exécutable pour les membres du groupe, pas pour toi.",
+   "o+x":"« o » vise les AUTRES (tout le reste du monde) : très permissif, et ça ne te concerne pas.",
+   "u-x":"Le signe « - » RETIRE le droit. Ici il faut l'AJOUTER, donc « + ».",
+   "a+x":"« a » (all) donne l'exécution à tout le monde : plus large que demandé, c'est une mauvaise habitude de sécurité.",
+   chown:"« chown » change le PROPRIÉTAIRE du fichier, pas ses droits."},
+ order:"L'ordre est : chmod, puis la modification de droits, puis le fichier visé.",
+ why:"chmod se lit en trois morceaux : QUI (u = user/propriétaire, g = groupe, o = autres, a = tous), l'ACTION (+ ajoute, - retire, = fixe), et le DROIT (r, w, x).",
+ outCmd:"chmod u+x script.sh\n$ ls -l script.sh\n-rwxr--r--. 1 chaima chaima 118 12 mars  09:22 script.sh",
+ note:"Le <b>x</b> est apparu dans le premier bloc de trois : celui de la propriétaire."},
+
+{id:"w2-chmod-gw", w:2, src:"cours",
+ sc:"Un fichier de référence est modifiable par tous les membres de ton groupe et plusieurs personnes l'ont déjà abîmé. Il doit rester lisible par le groupe, mais plus modifiable.",
+ ask:"Retire le droit d'écriture au groupe sur reference.txt.",
+ sol:["chmod","g-w","reference.txt"],
+ blocks:["g+w","o-w","u-w","g-r"],
+ traps:{
+   "g+w":"« + » AJOUTE le droit d'écriture : c'est exactement le problème à corriger.",
+   "o-w":"« o » vise les autres, pas le groupe.",
+   "u-w":"« u » vise la propriétaire : tu perdrais toi-même le droit de modifier ton fichier.",
+   "g-r":"« -r » retirerait la LECTURE au groupe. Or le fichier doit rester lisible : seule l'écriture doit partir."},
+ why:"Chaque droit se retire indépendamment : « g-w » enlève uniquement l'écriture au groupe, la lecture « r » reste intacte.",
+ outCmd:"chmod g-w reference.txt\n$ ls -l reference.txt\n-rw-r--r--. 1 chaima chaima 640 12 mars  14:03 reference.txt",
+ note:""},
+
+{id:"w2-chmod-or", w:2, src:"cours",
+ sc:"Un fichier contient des données confidentielles mais il est actuellement lisible par n'importe quel utilisateur de la machine.",
+ ask:"Retire le droit de lecture aux autres utilisateurs sur salaires.txt.",
+ sol:["chmod","o-r","salaires.txt"],
+ blocks:["a-r","g-r","o+r","u-r"],
+ traps:{
+   "a-r":"« a » vise TOUT LE MONDE, propriétaire compris : tu ne pourrais plus lire ton propre fichier.",
+   "g-r":"« g » vise le groupe. Ici la consigne parle des AUTRES utilisateurs, donc « o ».",
+   "o+r":"« + » ajoute la lecture aux autres : c'est l'inverse de la consigne.",
+   "u-r":"« u » vise la propriétaire : tu te bloquerais toi-même."},
+ why:"Les trois cercles de chmod sont bien distincts : Propriétaire (u) | Groupe (g) | Autres (o). Retirer un droit aux « autres » n'affecte ni toi ni ton groupe.",
+ outCmd:"chmod o-r salaires.txt\n$ ls -l salaires.txt\n-rw-r-----. 1 chaima chaima 220 12 mars  14:10 salaires.txt",
+ note:"Le dernier bloc est passé à <b>---</b> : les autres ne peuvent plus rien faire."},
+
+{id:"w2-chmod-644", w:2, src:"cours",
+ sc:"Un document doit être modifiable uniquement par sa propriétaire, et lisible (sans modification) par le groupe et par les autres.",
+ ask:"Applique ces droits à rapport.txt en notation octale.",
+ sol:["chmod","644","rapport.txt"],
+ blocks:["755","666","640","777"],
+ traps:{
+   "755":"755 = rwxr-xr-x : ça ajoute le droit d'EXÉCUTION, inutile et risqué pour un simple document texte.",
+   "666":"666 = rw-rw-rw- : tout le monde pourrait modifier le fichier. C'est exactement ce qu'on veut éviter.",
+   "640":"640 = rw-r----- : le groupe lit, mais les AUTRES n'ont plus aucun droit. Or ils doivent pouvoir lire.",
+   "777":"777 = rwxrwxrwx : tous les droits à tout le monde. À bannir, c'est la faille de sécurité classique."},
+ why:"Chaque chiffre est une somme : r = 4, w = 2, x = 1. Propriétaire 4+2 = 6 (rw-), groupe 4 (r--), autres 4 (r--) → 644.",
+ outCmd:"chmod 644 rapport.txt\n$ ls -l rapport.txt\n-rw-r--r--. 1 chaima chaima 284 12 mars  14:22 rapport.txt",
+ note:"<b>644</b> est le droit standard d'un fichier de données."},
+
+{id:"w2-chmod-755", w:2, src:"cours",
+ sc:"Un script doit pouvoir être lancé par tous les utilisateurs de la machine, mais modifié uniquement par sa propriétaire.",
+ ask:"Applique ces droits à deploy.sh en notation octale.",
+ sol:["chmod","755","deploy.sh"],
+ blocks:["644","777","700","775"],
+ traps:{
+   "644":"644 = rw-r--r-- : aucun x, donc personne ne peut lancer le script, pas même toi.",
+   "777":"777 = rwxrwxrwx : n'importe qui pourrait MODIFIER le script avant de l'exécuter. Faille classique.",
+   "700":"700 = rwx------ : toi seule peux le lancer, les autres n'ont aucun droit. Or ici tout le monde doit pouvoir l'exécuter.",
+   "775":"775 = rwxrwxr-x : le groupe pourrait aussi modifier le script. Seule la propriétaire doit pouvoir le faire."},
+ why:"Propriétaire 4+2+1 = 7 (rwx), groupe 4+1 = 5 (r-x), autres 4+1 = 5 (r-x) → 755. Lire et exécuter sans écrire, c'est le droit standard d'un script partagé.",
+ outCmd:"chmod 755 deploy.sh\n$ ls -l deploy.sh\n-rwxr-xr-x. 1 chaima chaima 512 12 mars  14:30 deploy.sh",
+ note:"<b>755</b> pour un script ou un dossier, <b>644</b> pour un fichier de données."},
+
+{id:"w2-chmod-700", w:2, src:"cours",
+ sc:"Tu crées un dossier prive dans ton home : personne d'autre que toi ne doit pouvoir le lire, y entrer, ni y écrire.",
+ ask:"Applique ces droits au dossier prive en notation octale.",
+ sol:["chmod","700","prive"],
+ blocks:["600","755","770","777"],
+ traps:{
+   "600":"600 = rw------- : il manque le « x ». Sur un DOSSIER, sans x tu ne peux même pas y entrer avec cd.",
+   "755":"755 laisse les autres lire et traverser le dossier. Or il doit être totalement privé.",
+   "770":"770 ouvre tous les droits au GROUPE. Ici personne d'autre que toi ne doit y accéder.",
+   "777":"777 ouvre tout à tout le monde : l'inverse d'un dossier privé."},
+ why:"Sur un dossier, le « x » est indispensable pour le traverser : 700 = rwx------ te donne lecture, écriture et entrée, et ferme la porte à tous les autres.",
+ outCmd:"chmod 700 prive\n$ ls -ld prive\ndrwx------. 2 chaima chaima 6 12 mars  14:41 prive",
+ note:"<b>ls -ld</b> affiche les droits du dossier lui-même, sans lister son contenu."},
+
+{id:"w2-quiz-octal", w:2, src:"cours", quiz:true,
+ sc:"Une ligne de ls -l affiche : -rwxr-x---",
+ ask:"Quelle notation octale correspond à ces droits ?",
+ sol:["750"],
+ blocks:["755","740","770"],
+ traps:{
+   "755":"755 = rwxr-xr-x : les autres auraient r-x, alors qu'ici leur bloc est vide (---).",
+   "740":"740 = rwxr----- : le groupe n'aurait que la lecture, or il a aussi l'exécution (r-x = 5).",
+   "770":"770 = rwxrwx--- : le groupe pourrait écrire, alors qu'il n'a que r-x."},
+ why:"On convertit bloc par bloc avec r=4, w=2, x=1 : rwx = 4+2+1 = 7, r-x = 4+0+1 = 5, --- = 0. Donc 750.",
+ outCmd:"-rwxr-x---\n rwx r-x ---\n  7   5   0",
+ note:""},
+
+{id:"w2-chown", w:2, src:"general",
+ sc:"Tu viens de monter un disque sur /mnt/ASR-DATA : il appartient à root et tu ne peux rien y écrire avec ton compte.",
+ ask:"Donne la propriété du dossier à l'utilisateur chaima et au groupe chaima.",
+ sol:["sudo","chown","chaima:chaima","/mnt/ASR-DATA"],
+ blocks:["chmod","777","chgrp"],
+ traps:{
+   chmod:"« chmod » change les DROITS, pas le propriétaire. Le dossier resterait à root.",
+   "777":"Ouvrir en 777 est le mauvais réflexe : ça donne tous les droits à toute la machine au lieu de corriger la propriété.",
+   chgrp:"« chgrp » ne change que le groupe ; ici il faut changer propriétaire ET groupe d'un coup."},
+ miss:{sudo:"Sans « sudo », la commande échoue : seul root peut donner un fichier à un autre utilisateur (« Opération non permise »)."},
+ order:"L'ordre est : sudo, chown, propriétaire:groupe, puis la cible.",
+ why:"« chown utilisateur:groupe cible » change le propriétaire et le groupe. C'est la bonne réponse au problème « je ne peux pas écrire dans mon point de montage » — ouvrir en 777 serait une rustine dangereuse.",
+ outCmd:"sudo chown chaima:chaima /mnt/ASR-DATA\n$ ls -ld /mnt/ASR-DATA\ndrwxr-xr-x. 2 chaima chaima 4096 12 mars  15:02 /mnt/ASR-DATA",
+ note:"Connaissance générale Rocky/RHEL, pas une commande vue telle quelle en cours."},
+
+{id:"w2-umask", w:2, src:"general",
+ sc:"Tu veux savoir quels droits seront donnés automatiquement aux nouveaux fichiers que tu crées dans cette session.",
+ ask:"Affiche le masque de création de fichiers courant.",
+ sol:["umask"],
+ blocks:["chmod","022","ls","-l"],
+ traps:{
+   chmod:"« chmod » modifie les droits d'un fichier EXISTANT ; le masque des futurs fichiers, c'est « umask ».",
+   "022":"« umask 022 » DÉFINIT le masque. Sans valeur, « umask » se contente de l'AFFICHER, ce qui est demandé ici.",
+   ls:"« ls » montre les droits actuels de fichiers existants, pas le masque.",
+   "-l":"« -l » est une option de ls, pas d'umask."},
+ why:"« umask » sans argument affiche le masque. Avec une valeur (umask 022), elle le modifie. Le masque RETIRE des droits par défaut : 022 donne 644 aux fichiers et 755 aux dossiers.",
+ out:"0022",
+ note:"Connaissance générale Rocky/RHEL, pas une commande vue telle quelle en cours."},
+
+/* ---------------- MONDE 3 : utilisateurs, groupes, sudo ---------------- */
+{id:"w3-passwd-file", w:3, src:"cours",
+ sc:"Tu veux vérifier quels comptes existent sur la machine et quel shell leur est attribué.",
+ ask:"Affiche le contenu du fichier qui liste les comptes.",
+ sol:["cat","/etc/passwd"],
+ blocks:["/etc/shadow","/etc/group","passwd","sudo"],
+ traps:{
+   "/etc/shadow":"« /etc/shadow » contient les mots de passe hashés, pas la liste lisible des comptes — et il est réservé à root.",
+   "/etc/group":"« /etc/group » liste les groupes, pas les comptes.",
+   passwd:"« passwd » est la COMMANDE qui change un mot de passe. Le fichier, lui, s'écrit « /etc/passwd ».",
+   sudo:"« sudo » est inutile ici : /etc/passwd est lisible par tout le monde."},
+ why:"« /etc/passwd » liste les comptes du système, une ligne par compte : nom, uid, gid, dossier personnel, shell. Malgré son nom, il ne contient AUCUN mot de passe (le x renvoie vers /etc/shadow).",
+ out:"root:x:0:0:root:/root:/bin/bash\nchaima:x:1000:1000:Chaima:/home/chaima:/bin/bash\npaul:x:1001:1001::/home/paul:/bin/bash",
+ note:"Le champ <b>x</b> signifie : mot de passe stocké ailleurs, dans /etc/shadow."},
+
+{id:"w3-shadow", w:3, src:"cours",
+ sc:"Ton formateur te demande de constater que les mots de passe sont bien hashés. Avec ton compte standard, la lecture directe est refusée.",
+ ask:"Affiche le fichier des mots de passe hashés avec les droits nécessaires.",
+ sol:["sudo","cat","/etc/shadow"],
+ blocks:["/etc/passwd","/etc/group","less"],
+ traps:{
+   "/etc/passwd":"« /etc/passwd » ne contient pas les mots de passe : juste un « x » qui renvoie vers shadow.",
+   "/etc/group":"« /etc/group » liste les groupes.",
+   less:"« less » lirait aussi le fichier, mais le vrai obstacle ici n'est pas l'outil de lecture : c'est le manque de privilèges."},
+ miss:{sudo:"Sans « sudo », la lecture échoue : « /etc/shadow : Permission non accordée ». Ce fichier n'est lisible que par root — c'est justement ce qui protège les mots de passe."},
+ order:"« sudo » se place TOUJOURS en premier : il exécute la commande qui suit avec les privilèges de root.",
+ why:"« /etc/shadow » stocke les mots de passe hashés et n'est lisible que par root. D'où « sudo » devant la commande de lecture.",
+ out:"root:$6$xR2f...:19790:0:99999:7:::\nchaima:$6$k9Lm...:19801:0:99999:7:::",
+ note:"<b>$6$</b> indique un hachage SHA-512 : le mot de passe n'est jamais stocké en clair."},
+
+{id:"w3-group-file", w:3, src:"cours",
+ sc:"Tu veux vérifier quels utilisateurs sont membres du groupe wheel, celui qui donne l'accès à sudo sur Rocky.",
+ ask:"Affiche le fichier qui liste les groupes.",
+ sol:["cat","/etc/group"],
+ blocks:["/etc/passwd","/etc/shadow","groups"],
+ traps:{
+   "/etc/passwd":"« /etc/passwd » liste les comptes, pas la composition des groupes.",
+   "/etc/shadow":"« /etc/shadow » contient les mots de passe hashés.",
+   groups:"« groups » affiche les groupes d'UN utilisateur ; ici on veut le fichier qui liste tous les groupes et leurs membres."},
+ why:"« /etc/group » donne une ligne par groupe : nom, gid et liste des membres secondaires. C'est là qu'on lit qui est dans wheel.",
+ out:"root:x:0:\nwheel:x:10:chaima\nchaima:x:1000:\npaul:x:1001:",
+ note:"Les trois fichiers à retenir : <b>/etc/passwd</b> (comptes), <b>/etc/shadow</b> (mots de passe), <b>/etc/group</b> (groupes)."},
+
+{id:"w3-id-user", w:3, src:"cours",
+ sc:"Un collègue, paul, dit qu'il ne peut pas utiliser sudo. Tu veux vérifier son uid et les groupes auxquels il appartient.",
+ ask:"Affiche l'identité complète de l'utilisateur paul.",
+ sol:["id","paul"],
+ blocks:["whoami","su","-u","sudo"],
+ traps:{
+   whoami:"« whoami » ne parle que de TON compte, et ne prend pas de nom d'utilisateur en argument.",
+   su:"« su paul » ouvre une session à sa place : beaucoup trop invasif pour une simple vérification.",
+   "-u":"« id -u paul » n'afficherait QUE l'uid : on veut aussi les groupes.",
+   sudo:"« sudo » n'est pas nécessaire : lire l'identité d'un autre compte est autorisé."},
+ why:"« id » accepte un nom d'utilisateur en argument : « id paul » affiche l'identité de paul au lieu de la tienne. On voit tout de suite s'il est dans le groupe wheel.",
+ out:"uid=1001(paul) gid=1001(paul) groupes=1001(paul)",
+ note:"Pas de <b>wheel</b> dans ses groupes : voilà pourquoi sudo lui est refusé."},
+
+{id:"w3-groups-user", w:3, src:"cours",
+ sc:"Tu veux juste la liste des groupes de paul, sans les numéros uid et gid.",
+ ask:"Affiche uniquement les groupes de l'utilisateur paul.",
+ sol:["groups","paul"],
+ blocks:["id","cat","/etc/group"],
+ traps:{
+   id:"« id paul » fonctionne, mais affiche aussi uid et gid. Ici on ne veut QUE les groupes.",
+   cat:"Lire un fichier entier est plus lourd que d'interroger directement le compte.",
+   "/etc/group":"« /etc/group » liste TOUS les groupes du système : il faudrait chercher paul à la main dedans."},
+ why:"« groups utilisateur » donne directement la liste des groupes de ce compte, sans les identifiants numériques.",
+ out:"paul : paul",
+ note:""},
+
+{id:"w3-useradd", w:3, src:"general",
+ sc:"Un nouveau stagiaire arrive. Tu dois lui créer un compte paul avec son dossier personnel /home/paul.",
+ ask:"Crée le compte paul avec son dossier personnel.",
+ sol:["sudo","useradd","-m","paul"],
+ blocks:["adduser","-r","passwd","usermod"],
+ traps:{
+   adduser:"« adduser » est le script interactif de Debian/Ubuntu. Sur Rocky/RHEL, la commande de référence est « useradd ».",
+   "-r":"« -r » crée un compte SYSTÈME (pour un service), sans dossier personnel : ce n'est pas ce qu'il faut pour une personne.",
+   passwd:"« passwd » définit le mot de passe : c'est l'étape SUIVANTE, une fois le compte créé.",
+   usermod:"« usermod » modifie un compte qui existe déjà ; ici il faut le créer."},
+ miss:{"-m":"Sans « -m », le compte est créé mais le dossier /home/paul n'existe pas : paul se connecte dans un home fantôme.",
+       sudo:"Sans « sudo », la création échoue : seul root peut créer un compte."},
+ order:"sudo d'abord, puis la commande, puis l'option, puis le nom du compte.",
+ why:"« useradd -m paul » crée le compte ET son dossier personnel. Le compte reste sans mot de passe (donc verrouillé) jusqu'à ce qu'on lance « passwd paul ».",
+ outCmd:"sudo useradd -m paul\n$ id paul\nuid=1001(paul) gid=1001(paul) groupes=1001(paul)",
+ note:"Connaissance générale Rocky/RHEL : le PPTX du cours reste à compléter sur ce point."},
+
+{id:"w3-passwd-set", w:3, src:"general",
+ sc:"Le compte paul vient d'être créé, mais il n'a pas encore de mot de passe : il ne peut pas se connecter.",
+ ask:"Définis le mot de passe du compte paul.",
+ sol:["sudo","passwd","paul"],
+ blocks:["useradd","usermod","-p","chpasswd"],
+ traps:{
+   useradd:"« useradd » crée le compte : c'est déjà fait.",
+   usermod:"« usermod » modifie les propriétés du compte (groupes, shell…), pas le mot de passe de façon interactive.",
+   "-p":"« -p » attend un mot de passe DÉJÀ hashé : mettre un mot de passe en clair derrière serait une erreur de sécurité classique.",
+   chpasswd:"« chpasswd » sert aux changements en masse depuis un fichier ; pour un seul compte, c'est « passwd »."},
+ miss:{sudo:"Sans « sudo », tu ne peux changer que TON propre mot de passe. Pour celui d'un autre compte, il faut les privilèges root."},
+ why:"« passwd utilisateur » demande le nouveau mot de passe de façon interactive et le stocke hashé dans /etc/shadow. Sans sudo, « passwd » ne change que ton propre mot de passe.",
+ outCmd:"sudo passwd paul\nNouveau mot de passe : \nRetapez le nouveau mot de passe : \npasswd : mot de passe mis à jour avec succès",
+ note:"Connaissance générale Rocky/RHEL : le PPTX du cours reste à compléter sur ce point."},
+
+{id:"w3-usermod-aG", w:3, src:"general",
+ sc:"Paul doit pouvoir administrer la machine avec sudo. Sur Rocky, il faut donc l'ajouter au groupe wheel — sans lui retirer ses groupes actuels.",
+ ask:"Ajoute paul au groupe secondaire wheel.",
+ sol:["sudo","usermod","-aG","wheel","paul"],
+ blocks:["-G","adm","useradd","groupadd"],
+ traps:{
+   "-G":"Piège majeur : « -G wheel » REMPLACE la liste des groupes secondaires. Paul perdrait tous ses autres groupes. Il faut « -aG » (a = append, ajouter).",
+   adm:"« adm » est un groupe lié à la lecture des logs, il ne donne aucun droit sudo. Sur Rocky/RHEL le groupe d'administration est « wheel » (sur Debian/Ubuntu, il s'appelle « sudo »).",
+   useradd:"« useradd » crée un compte ; paul existe déjà.",
+   groupadd:"« groupadd » crée un nouveau groupe ; wheel existe déjà."},
+ order:"sudo, usermod, l'option, le GROUPE, puis l'UTILISATEUR en dernier. Inverser les deux derniers ajouterait paul à un groupe nommé… paul.",
+ why:"« usermod -aG groupe utilisateur » AJOUTE un groupe secondaire sans toucher aux autres. Le « a » d'append est la sécurité : sans lui, la liste est écrasée.",
+ outCmd:"sudo usermod -aG wheel paul\n$ id paul\nuid=1001(paul) gid=1001(paul) groupes=1001(paul),10(wheel)",
+ note:"Paul doit se reconnecter pour que son nouveau groupe soit pris en compte."},
+
+{id:"w3-groupadd", w:3, src:"general",
+ sc:"Tu prépares un dossier partagé pour l'équipe et tu as besoin d'un nouveau groupe nommé devops.",
+ ask:"Crée le groupe devops.",
+ sol:["sudo","groupadd","devops"],
+ blocks:["useradd","usermod","-aG","addgroup"],
+ traps:{
+   useradd:"« useradd » crée un UTILISATEUR, pas un groupe.",
+   usermod:"« usermod » modifie un utilisateur existant.",
+   "-aG":"« -aG » est l'option d'usermod pour ajouter un utilisateur à un groupe : elle n'a pas de sens ici, aucun groupe n'existe encore.",
+   addgroup:"« addgroup » est le script Debian/Ubuntu. Sur Rocky/RHEL, c'est « groupadd »."},
+ miss:{sudo:"Sans « sudo », la création de groupe est refusée : c'est une opération d'administration."},
+ why:"« groupadd nom » crée le groupe. On ajoute ensuite les membres avec « usermod -aG devops utilisateur ».",
+ outCmd:"sudo groupadd devops\n$ grep devops /etc/group\ndevops:x:1002:",
+ note:""},
+
+{id:"w3-su", w:3, src:"cours",
+ sc:"Tu veux tester la configuration de paul en travaillant réellement dans son environnement : ses variables, son dossier personnel.",
+ ask:"Ouvre une session complète en tant que paul.",
+ sol:["su","-","paul"],
+ blocks:["sudo","-i","ssh","login"],
+ traps:{
+   sudo:"« sudo » exécute UNE commande avec d'autres privilèges ; ici on veut ouvrir toute une session dans l'environnement de paul.",
+   "-i":"« sudo -i » ouvre une session root, pas celle de paul.",
+   ssh:"« ssh » sert à se connecter à une machine DISTANTE ; ici tout se passe en local.",
+   login:"« login » est utilisé par le système au démarrage d'une console, pas pour changer de compte dans un terminal déjà ouvert."},
+ miss:{"-":"Sans le « - », tu prends bien l'identité de paul mais tu gardes TON environnement et ton dossier courant. Le tiret charge son environnement complet, comme une vraie connexion."},
+ order:"L'ordre est : su, le tiret, puis le nom du compte.",
+ why:"« su - utilisateur » ouvre une session complète (dossier personnel et variables d'environnement du compte visé). Sans le tiret, l'environnement reste le tien : source de bugs difficiles à comprendre.",
+ outCmd:"su - paul\nMot de passe : \n[paul@rocky9 ~]$ pwd\n/home/paul",
+ note:"L'invite change de <b>chaima@</b> à <b>paul@</b> : tu es bien dans son contexte. <b>exit</b> pour revenir."},
+
+{id:"w3-quiz-prompt", w:3, src:"cours", quiz:true,
+ sc:"Tu regardes par-dessus l'épaule d'un collègue : son terminal affiche l'invite [root@rocky9 ~]#",
+ ask:"Que t'indique le symbole # à la fin de l'invite ?",
+ sol:["la session est ouverte en root"],
+ blocks:["c'est un utilisateur standard","c'est un commentaire à ignorer","le terminal attend un mot de passe"],
+ traps:{
+   "c'est un utilisateur standard":"Un utilisateur standard a une invite qui se termine par « $ ». Le « # » signale au contraire les privilèges d'administration.",
+   "c'est un commentaire à ignorer":"Le « # » sert bien à commenter DANS un script, mais en fin d'invite il indique une session root.",
+   "le terminal attend un mot de passe":"Une demande de mot de passe s'affiche en toutes lettres (« Mot de passe : ») ; elle ne se résume pas à un symbole d'invite."},
+ why:"Fin d'invite : « $ » = utilisateur standard, « # » = root. C'est le premier réflexe de prudence — avec un « # », chaque commande est exécutée avec tous les privilèges, sans filet.",
+ outCmd:"[chaima@rocky9 ~]$   <- utilisateur standard\n[root@rocky9 ~]#     <- root",
+ note:""},
+
+{id:"w3-quiz-uid0", w:3, src:"cours", quiz:true,
+ sc:"Tu lis la première ligne de /etc/passwd : root:x:0:0:root:/root:/bin/bash",
+ ask:"Quel uid identifie le compte administrateur root ?",
+ sol:["0"],
+ blocks:["1","1000","100"],
+ traps:{
+   "1":"1 est un uid de compte système parmi d'autres (bin), pas celui de root.",
+   "1000":"1000 est le premier uid attribué aux utilisateurs HUMAINS créés après l'installation — le tien, par exemple.",
+   "100":"100 est un uid de compte système, sans privilège particulier."},
+ why:"Ce sont les privilèges de l'uid 0 qui font root, pas son nom. Tout compte dont l'uid vaut 0 possède tous les droits sur la machine.",
+ outCmd:"root:x:0:0:root:/root:/bin/bash\n        ^\n        |_ uid = 0",
+ note:"Les comptes humains commencent en général à <b>1000</b> sur Rocky 9."},
+
+{id:"w3-quiz-shadow", w:3, src:"cours", quiz:true,
+ sc:"On te demande où Rocky Linux range réellement les mots de passe des utilisateurs.",
+ ask:"Dans quel fichier sont stockés les mots de passe hashés ?",
+ sol:["/etc/shadow"],
+ blocks:["/etc/passwd","/etc/group","/etc/sudoers"],
+ traps:{
+   "/etc/passwd":"Malgré son nom, « /etc/passwd » ne contient aucun mot de passe : juste un « x » qui renvoie vers shadow. C'est le piège du nom.",
+   "/etc/group":"« /etc/group » liste les groupes et leurs membres.",
+   "/etc/sudoers":"« /etc/sudoers » définit qui a le droit d'utiliser sudo, pas les mots de passe."},
+ why:"Historiquement les mots de passe étaient dans /etc/passwd, lisible par tous. Ils ont été déplacés dans « /etc/shadow », lisible par root uniquement : c'est cette séparation qui protège les hachages.",
+ outCmd:"ls -l /etc/shadow\n----------. 1 root root 1290 12 mars  09:44 /etc/shadow",
+ note:"Droits <b>----------</b> : même root passe par ses privilèges spéciaux pour y accéder."}
+
+];
+
+/* ---------- expansion des réponses acceptées ---------- */
+function permut(arr){
+  if(arr.length<=1) return [arr.slice()];
+  var out=[];
+  for(var i=0;i<arr.length;i++){
+    var rest=arr.slice(0,i).concat(arr.slice(i+1));
+    var sub=permut(rest);
+    for(var j=0;j<sub.length;j++) out.push([arr[i]].concat(sub[j]));
+  }
+  return out;
+}
+/* Une "solution" est une liste de parties :
+   - "texte"          -> bloc obligatoire à cette position
+   - {p:[a,b]}        -> ces blocs, dans n'importe quel ordre entre eux
+   - {any:[a,b]}      -> un seul de ces blocs, au choix                      */
+function expandSol(sol){
+  var seqs=[[]], i, j, k;
+  for(i=0;i<sol.length;i++){
+    var part=sol[i], out=[];
+    if(typeof part==="string"){
+      for(j=0;j<seqs.length;j++) out.push(seqs[j].concat([part]));
+    } else if(part && part.p){
+      var perms=permut(part.p);
+      for(j=0;j<seqs.length;j++) for(k=0;k<perms.length;k++) out.push(seqs[j].concat(perms[k]));
+    } else if(part && part.any){
+      for(j=0;j<seqs.length;j++) for(k=0;k<part.any.length;k++) out.push(seqs[j].concat([part.any[k]]));
+    } else {
+      throw new Error("partie de solution invalide");
+    }
+    seqs=out;
+  }
+  return seqs;
+}
+function accepted(ex){
+  if(ex._acc) return ex._acc;
+  var list=expandSol(ex.sol), i;
+  if(ex.alt) for(i=0;i<ex.alt.length;i++) list=list.concat(expandSol(ex.alt[i]));
+  var seen={}, uniq=[];
+  for(i=0;i<list.length;i++){
+    var key=list[i].join(" ");
+    if(!seen[key]){ seen[key]=1; uniq.push(list[i]); }
+  }
+  ex._acc=uniq;
+  return uniq;
+}
+function acceptedStrings(ex){
+  return accepted(ex).map(function(s){return s.join(" ");});
+}
+/* Blocs proposés : tous les blocs utiles (au maximum d'occurrences) + les pièges */
+function tokenPool(ex){
+  var acc=accepted(ex), counts={}, i, j;
+  for(i=0;i<acc.length;i++){
+    var c={};
+    for(j=0;j<acc[i].length;j++) c[acc[i][j]]=(c[acc[i][j]]||0)+1;
+    for(var t in c) if(!counts[t] || c[t]>counts[t]) counts[t]=c[t];
+  }
+  var pool=[];
+  for(var tok in counts) for(i=0;i<counts[tok];i++) pool.push(tok);
+  if(ex.blocks) pool=pool.concat(ex.blocks);
+  return pool;
+}
+function isCorrect(ex, tokens){
+  var s=tokens.join(" "), acc=acceptedStrings(ex), i;
+  for(i=0;i<acc.length;i++) if(acc[i]===s) return true;
+  return false;
+}
+
+/* ---------- clavier libre : tolérance à la dictée ---------- */
+/* La dictée vocale sépare ou colle les signes de façon imprévisible :
+   « cat slash etc slash passwd », « ls tiret l », « notes point txt ».
+   On ne devine pas : on génère toutes les lectures plausibles de la phrase
+   (coller ou non chaque frontière qui touche un signe) et on accepte si
+   l'une d'elles correspond exactement à une réponse valable.            */
+function normalizeFree(raw){
+  var t=" "+String(raw)+" ";
+  t=t.replace(/\btirets?\s+bas\b/gi," _ ").replace(/\bunderscores?\b/gi," _ ");
+  t=t.replace(/\bdeux\s+points\b/gi," : ");
+  t=t.replace(/\btirets?\b/gi," - ").replace(/\bdash\b/gi," - ");
+  t=t.replace(/\bbarres?\s+obliques?\b/gi," / ").replace(/\bslash\b/gi," / ");
+  t=t.replace(/\barobases?\b/gi," @ ").replace(/\bast[ée]risques?\b/gi," * ").replace(/\b[ée]toiles?\b/gi," * ");
+  t=t.replace(/\bpoints?\b/gi," . ");
+  t=t.replace(/\s+/g," ");
+  return t.trim();
+}
+function freeTokens(raw){
+  var n=normalizeFree(raw);
+  return n.length? n.split(" ") : [];
+}
+function mergeable(a,b){
+  return /[\/._:@\-]$/.test(a) || /^[\/._:@\-]/.test(b);
+}
+/* toutes les lectures possibles de la saisie, la plus littérale en premier */
+function freeVariants(raw){
+  var toks=freeTokens(raw);
+  if(!toks.length) return [];
+  var bounds=[], i;
+  for(i=0;i<toks.length-1;i++) if(mergeable(toks[i],toks[i+1])) bounds.push(i);
+  if(bounds.length>12){
+    var glued=[toks[0]];
+    for(i=1;i<toks.length;i++){
+      if(mergeable(glued[glued.length-1],toks[i])) glued[glued.length-1]+=toks[i];
+      else glued.push(toks[i]);
+    }
+    return [toks.join(" "), glued.join(" ")];
+  }
+  var out=[], total=1<<bounds.length;
+  for(var mask=0;mask<total;mask++){
+    var parts=[toks[0]], bi=0;
+    for(i=1;i<toks.length;i++){
+      var merge=false;
+      if(bi<bounds.length && bounds[bi]===i-1){ merge=!!(mask&(1<<bi)); bi++; }
+      if(merge) parts[parts.length-1]+=toks[i]; else parts.push(toks[i]);
+    }
+    out.push(parts.join(" "));
+  }
+  return out;
+}
+/* renvoie "ok" | "casse" | "non" */
+function checkFree(ex, raw){
+  var vars=freeVariants(raw);
+  if(!vars.length) return "non";
+  var acc=acceptedStrings(ex), i, j;
+  for(i=0;i<vars.length;i++) for(j=0;j<acc.length;j++) if(vars[i]===acc[j]) return "ok";
+  for(i=0;i<vars.length;i++) for(j=0;j<acc.length;j++)
+    if(vars[i].toLowerCase()===acc[j].toLowerCase()) return "casse";
+  return "non";
+}
+
+/* lecture la plus proche de la réponse attendue : sert au diagnostic d'erreur */
+function bestFreeTokens(ex, raw){
+  var vars=freeVariants(raw);
+  if(!vars.length) return [];
+  var acc=accepted(ex), best=vars[0].split(" "), score=-1, i, j;
+  for(i=0;i<vars.length;i++){
+    var toks=vars[i].split(" ");
+    for(j=0;j<acc.length;j++){
+      var sc=overlapScore(toks,acc[j])-Math.abs(toks.length-acc[j].length)*0.5;
+      if(sc>score){ score=sc; best=toks; }
+    }
+  }
+  return best;
+}
+
+/* ---------- diagnostic d'erreur ---------- */
+function sameMultiset(a,b){
+  if(a.length!==b.length) return false;
+  var x=a.slice().sort(), y=b.slice().sort(), i;
+  for(i=0;i<x.length;i++) if(x[i]!==y[i]) return false;
+  return true;
+}
+function overlapScore(a,b){
+  var pool=b.slice(), n=0, i, k;
+  for(i=0;i<a.length;i++){ k=pool.indexOf(a[i]); if(k>=0){ pool.splice(k,1); n++; } }
+  return n;
+}
+/* Renvoie {reason, why, expected} : reason = ce qui cloche précisément,
+   why = le concept en jeu (toujours présent).                         */
+function diagnose(ex, tokens){
+  var acc=accepted(ex), i, j;
+  var expected=acc[0].join(" ");
+  if(!tokens.length){
+    return {reason:"Ta ligne de commande est vide : il faut assembler au moins un bloc.", why:ex.why, expected:expected};
+  }
+  /* 1. un bloc qui n'appartient à aucune réponse valable */
+  var known={};
+  for(i=0;i<acc.length;i++) for(j=0;j<acc[i].length;j++) known[acc[i][j]]=1;
+  for(i=0;i<tokens.length;i++){
+    if(!known[tokens[i]]){
+      var trap=(ex.traps && ex.traps[tokens[i]]) || null;
+      return {reason: trap || ("« "+tokens[i]+" » n'a pas sa place dans cette commande."),
+              why:ex.why, expected:expected, extra:tokens[i]};
+    }
+  }
+  /* 2. les bons blocs, mais mal ordonnés */
+  for(i=0;i<acc.length;i++){
+    if(sameMultiset(acc[i],tokens)){
+      return {reason:(ex.order || "Les blocs sont les bons, mais pas dans cet ordre.")+" Forme attendue : "+acc[i].join(" "),
+              why:ex.why, expected:acc[i].join(" "), order:true};
+    }
+  }
+  /* 3. il manque un bloc */
+  var best=acc[0], bestScore=-1;
+  for(i=0;i<acc.length;i++){
+    var sc=overlapScore(tokens,acc[i]);
+    if(sc>bestScore){ bestScore=sc; best=acc[i]; }
+  }
+  var pool=tokens.slice(), missing=[], k;
+  for(i=0;i<best.length;i++){
+    k=pool.indexOf(best[i]);
+    if(k>=0) pool.splice(k,1); else missing.push(best[i]);
+  }
+  if(missing.length){
+    var m=(ex.miss && ex.miss[missing[0]]) || ("Il manque « "+missing[0]+" » : la commande est incomplète.");
+    return {reason:m, why:ex.why, expected:best.join(" "), missing:missing[0]};
+  }
+  /* 4. blocs en trop (doublon) */
+  if(pool.length){
+    return {reason:"« "+pool[0]+" » est en trop : la commande attendue est plus courte.",
+            why:ex.why, expected:best.join(" ")};
+  }
+  return {reason:"Ce n'est pas la forme attendue.", why:ex.why, expected:expected};
+}
+
+/* ---------- révision espacée (Leitner) ---------- */
+var BOX_DAYS=[0,1,2,4,8,16];
+var MASTER_BOX=6;
+var DAY=86400000;
+function nextBox(box, ok){ return ok? Math.min(box+1,MASTER_BOX) : 0; }
+function dueAt(box, now){
+  if(box<=0) return now;
+  var d=BOX_DAYS[Math.min(box,BOX_DAYS.length-1)];
+  return now + d*DAY;
+}
+function isMastered(st){ return !!st && st.b>=MASTER_BOX; }
+
+/* ---------- niveaux ---------- */
+var TITLES=["Novice du terminal","Apprentie du shell","Exploratrice de l'arborescence",
+  "Gardienne des permissions","Gestionnaire de comptes","Dompteuse de processus",
+  "Administratrice junior","Administratrice confirmée","Architecte système","Impératrice du terminal"];
+function xpTotalForLevel(n){
+  var t=0;
+  for(var i=1;i<n;i++) t+=60+30*(i-1);
+  return t;
+}
+function levelInfo(xp){
+  var n=1;
+  while(xp>=xpTotalForLevel(n+1) && n<99) n++;
+  var base=xpTotalForLevel(n), next=xpTotalForLevel(n+1);
+  return {lvl:n, into:xp-base, span:next-base, next:next,
+          title:TITLES[Math.min(n-1,TITLES.length-1)]};
+}
+/* ---------- déblocage des mondes ---------- */
+var UNLOCK_RATIO=0.6;
+function worldExercises(n){
+  return EX.filter(function(e){return e.w===n;});
+}
+function worldStats(n, prog){
+  var list=worldExercises(n), done=0, mastery=0, mastered=0;
+  for(var i=0;i<list.length;i++){
+    var st=prog[list[i].id];
+    if(st && st.ok>0) done++;
+    if(st) mastery+=Math.min(st.b,MASTER_BOX)/MASTER_BOX;
+    if(isMastered(st)) mastered++;
+  }
+  return {total:list.length, done:done, mastered:mastered,
+          firstPass:list.length? done/list.length : 0,
+          mastery:list.length? mastery/list.length : 0};
+}
+function isWorldUnlocked(n, prog){
+  if(n<=1) return true;
+  var w=WORLDS.filter(function(x){return x.n===n;})[0];
+  if(!w || w.soon) return false;
+  if(!worldExercises(n).length) return false;
+  return worldStats(n-1, prog).firstPass >= UNLOCK_RATIO;
+}
+/* ---------- file de révision ---------- */
+function buildQueue(worldN, prog, now, size){
+  var list=worldExercises(worldN), due=[], fresh=[], later=[], i;
+  for(i=0;i<list.length;i++){
+    var e=list[i], st=prog[e.id];
+    if(!st || !st.n) fresh.push(e);
+    else if(isMastered(st)) later.push(e);
+    else if(st.due<=now) due.push(e);
+    else later.push(e);
+  }
+  due.sort(function(a,b){ return prog[a.id].due-prog[b.id].due; });
+  var q=due.concat(fresh);
+  if(q.length<size){
+    later.sort(function(a,b){
+      var A=prog[a.id], B=prog[b.id];
+      return (A.b-B.b) || (A.due-B.due);
+    });
+    q=q.concat(later);
+  }
+  return q.slice(0, size);
+}
+/* ==================== CORE:END ==================== */
+
+/* ==================== APPLICATION ==================== */
+var KEY="empire-chaima-linux-v1";
+var S={xp:0, prog:{}, streak:0, best:0, last:null, days:0,
+       free:false, noanim:false, len:8, lastWorld:1, seenIntro:false};
+
+function $(id){ return document.getElementById(id); }
+function save(){ try{ localStorage.setItem(KEY, JSON.stringify(S)); }catch(e){} }
+function load(){
+  try{
+    var raw=localStorage.getItem(KEY);
+    if(!raw) return;
+    var d=JSON.parse(raw);
+    if(d && typeof d==="object"){
+      for(var k in S) if(d[k]!==undefined && d[k]!==null) S[k]=d[k];
+      if(typeof S.prog!=="object"||!S.prog) S.prog={};
+    }
+  }catch(e){}
+}
+function toast(msg, ms){
+  var t=$("toast"); t.innerHTML=msg; t.classList.add("on");
+  clearTimeout(t._t); t._t=setTimeout(function(){ t.classList.remove("on"); }, ms||2600);
+}
+
+/* ---------- streak quotidien ---------- */
+function dayKey(d){
+  d=d||new Date();
+  var m=d.getMonth()+1, j=d.getDate();
+  return d.getFullYear()+"-"+(m<10?"0":"")+m+"-"+(j<10?"0":"")+j;
+}
+function daysBetween(a,b){
+  var pa=a.split("-"), pb=b.split("-");
+  var da=Date.UTC(+pa[0],+pa[1]-1,+pa[2]), db=Date.UTC(+pb[0],+pb[1]-1,+pb[2]);
+  return Math.round((db-da)/DAY);
+}
+function markPlayed(){
+  var today=dayKey();
+  if(S.last===today) return;
+  if(S.last){
+    var gap=daysBetween(S.last,today);
+    if(gap===1){ S.streak++; }
+    else { if(S.streak>1) toast("Série repartie de zéro — l'important c'est de revenir."); S.streak=1; }
+  } else S.streak=1;
+  S.last=today; S.days++;
+  if(S.streak>S.best) S.best=S.streak;
+  renderHud(S.xp,S.xp);
+  if(S.streak>=3) toast("🔥 "+S.streak+" jours d'affilée");
+  save();
+}
+
+/* ---------- HUD + animations ---------- */
+var hudXp=0;
+function renderHud(from, to){
+  var li=levelInfo(to);
+  $("lvlNum").textContent=li.lvl;
+  $("lvlTitle").textContent=li.title;
+  $("streakNum").textContent=S.streak;
+  $("streakBox").classList.toggle("off", S.streak<1);
+  var start=(from===undefined?to:from), t0=null, dur=(S.noanim?0:700);
+  function frame(ts){
+    if(t0===null) t0=ts;
+    var p=dur? Math.min(1,(ts-t0)/dur) : 1;
+    var e=1-Math.pow(1-p,3);
+    var v=Math.round(start+(to-start)*e);
+    $("xpNow").textContent=v;
+    var l=levelInfo(v);
+    $("xpFill").style.width=(l.span? (l.into/l.span*100):0)+"%";
+    $("lvlNum").textContent=l.lvl;
+    $("lvlTitle").textContent=l.title;
+    if(p<1) requestAnimationFrame(frame);
+  }
+  if(dur) requestAnimationFrame(frame); else {
+    $("xpNow").textContent=to;
+    $("xpFill").style.width=(li.span? (li.into/li.span*100):0)+"%";
+  }
+  hudXp=to;
+}
+function flyXp(n){
+  if(S.noanim) return;
+  var g=$("xpGain"); g.textContent="+"+n+" XP";
+  g.classList.remove("go"); void g.offsetWidth; g.classList.add("go");
+}
+function confetti(){
+  if(S.noanim) return;
+  var cols=["#2ecc71","#f0b429","#f0f3fa","#27ae60","#d4a017"];
+  for(var i=0;i<22;i++){
+    (function(i){
+      var d=document.createElement("div");
+      d.className="conf";
+      d.style.left=(Math.random()*100)+"vw";
+      d.style.background=cols[i%cols.length];
+      var dur=(1.5+Math.random()*1.3).toFixed(2);
+      d.style.animation="fall "+dur+"s linear "+(Math.random()*.35).toFixed(2)+"s forwards";
+      document.body.appendChild(d);
+      setTimeout(function(){ d.remove(); }, 3200);
+    })(i);
+  }
+}
+function celebrate(title, sub, big){
+  $("ovLvl").textContent=big;
+  $("ovTitle").textContent=title;
+  $("ovSub").textContent=sub;
+  $("lvlOverlay").classList.add("on");
+  $("lvlBadge").classList.remove("pop"); void $("lvlBadge").offsetWidth; $("lvlBadge").classList.add("pop");
+  confetti();
+}
+
+/* ---------- navigation entre écrans ---------- */
+function show(id){
+  var ss=document.querySelectorAll(".screen"), i;
+  for(i=0;i<ss.length;i++) ss[i].classList.remove("on");
+  $(id).classList.add("on");
+  window.scrollTo(0,0);
+}
+
+/* ---------- accueil ---------- */
+function renderHome(){
+  var host=$("worldList"), soon=$("soonList"), i;
+  host.innerHTML=""; soon.innerHTML="";
+  var soonNames=[];
+  for(i=0;i<WORLDS.length;i++){
+    var w=WORLDS[i];
+    if(w.soon){ soonNames.push(w.n+". "+w.name); continue; }
+    var st=worldStats(w.n,S.prog);
+    var unlocked=isWorldUnlocked(w.n,S.prog);
+    var pct=Math.round(st.mastery*100);
+    var b=document.createElement("button");
+    b.className="world"+(unlocked?"":" locked")+(st.mastered===st.total&&st.total?" done":"");
+    b.innerHTML=
+      '<div class="ico">'+(unlocked?w.ico:"🔒")+'</div>'+
+      '<div class="meta">'+
+        '<div class="nm"><span class="num">MONDE '+w.n+'</span> '+w.name+'</div>'+
+        '<div class="cmds">'+w.cmds+'</div>'+
+        '<div class="wbar"><div class="wfill" style="width:'+(unlocked?pct:0)+'%"></div></div>'+
+        (unlocked? '' : '<div class="lockmsg">Se débloque à '+Math.round(UNLOCK_RATIO*100)+'% du monde '+(w.n-1)+' (actuellement '+Math.round(worldStats(w.n-1,S.prog).firstPass*100)+'%)</div>')+
+      '</div>'+
+      '<div class="pct">'+(unlocked? pct+"%" : "")+'</div>';
+    (function(w,unlocked){
+      b.onclick=function(){
+        if(!unlocked){ toast("Termine d'abord "+Math.round(UNLOCK_RATIO*100)+"% du monde "+(w.n-1)+"."); return; }
+        startSession(w.n);
+      };
+    })(w,unlocked);
+    host.appendChild(b);
+  }
+  if(soonNames.length){
+    soon.innerHTML='<div class="card" style="margin-top:4px"><div class="desc">En préparation — livrés après ton retour sur cette version :<br><span style="color:var(--dim)">'+soonNames.join(" · ")+'</span></div></div>';
+  }
+  var totalDone=0, totalMast=0, total=0;
+  for(i=0;i<WORLDS.length;i++){
+    if(WORLDS[i].soon) continue;
+    var s2=worldStats(WORLDS[i].n,S.prog);
+    total+=s2.total; totalDone+=s2.done; totalMast+=s2.mastered;
+  }
+  $("globalStats").innerHTML=totalDone+" / "+total+" commandes réussies · <b style=\"color:var(--gold)\">"+totalMast+"</b> ancrées · meilleure série : "+S.best+" j";
+  var nx=nextWorld();
+  $("resumeLine").innerHTML= nx? ("Monde "+nx+" — "+WORLDS[nx-1].name) : "";
+}
+function nextWorld(){
+  var i, w;
+  for(i=0;i<WORLDS.length;i++){
+    w=WORLDS[i];
+    if(w.soon || !isWorldUnlocked(w.n,S.prog)) continue;
+    var st=worldStats(w.n,S.prog);
+    if(st.mastered<st.total) { if(w.n===S.lastWorld) return w.n; }
+  }
+  for(i=0;i<WORLDS.length;i++){
+    w=WORLDS[i];
+    if(w.soon || !isWorldUnlocked(w.n,S.prog)) continue;
+    if(worldStats(w.n,S.prog).mastered<worldStats(w.n,S.prog).total) return w.n;
+  }
+  return isWorldUnlocked(S.lastWorld,S.prog)? S.lastWorld : 1;
+}
+
+/* ---------- session ---------- */
+var SES=null;
+function stateOf(id){
+  if(!S.prog[id]) S.prog[id]={b:0, due:0, n:0, ok:0, ko:0};
+  return S.prog[id];
+}
+function startSession(n){
+  var q=buildQueue(n, S.prog, Date.now(), S.len);
+  if(!q.length){ toast("Ce monde n'a pas encore de contenu."); return; }
+  SES={world:n, queue:q, idx:0, xp:0, first:0, mastered:0, done:0, requeued:{}};
+  S.lastWorld=n; save();
+  show("scPlay");
+  renderQuestion();
+}
+function renderDots(){
+  var d=$("dots"); d.innerHTML="";
+  for(var i=0;i<SES.queue.length;i++){
+    var s=document.createElement("div");
+    s.className="dot"+(SES.marks&&SES.marks[i]?" "+SES.marks[i]:(i===SES.idx?" now":""));
+    d.appendChild(s);
+  }
+}
+var BUILT=[], POOL=[], ANSWERED=false, TRIES=0, HINTED=false;
+function renderQuestion(){
+  var ex=SES.queue[SES.idx];
+  ANSWERED=false; TRIES=0; HINTED=false; BUILT=[];
+  $("playWorld").textContent="Monde "+ex.w+" — "+WORLDS[ex.w-1].name;
+  renderDots();
+  var st=S.prog[ex.id];
+  var tags='<span class="tag">'+(SES.idx+1)+" / "+SES.queue.length+'</span>';
+  tags+= ex.src==="cours"? '<span class="tag cours">contenu de cours</span>'
+                         : '<span class="tag">base générale</span>';
+  if(st && st.n>0) tags+='<span class="tag rev">révision</span>';
+  $("tagRow").innerHTML=tags;
+  $("scText").textContent=ex.sc;
+  $("scAsk").textContent=ex.ask;
+  $("feedbackZone").innerHTML="";
+  $("btnNext").style.display="none";
+  $("actionRow").style.display="flex";
+  $("btnHint").style.display="";
+  $("btnHint").disabled=false;
+  var free=S.free && !ex.quiz;
+  $("buildZone").style.display=free?"none":"";
+  $("freeZone").style.display=free?"":"none";
+  if(free){ $("freeInput").value=""; }
+  POOL=tokenPool(ex).slice();
+  for(var i=POOL.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var t=POOL[i]; POOL[i]=POOL[j]; POOL[j]=t; }
+  renderTiles(ex);
+  renderLine(ex);
+  window.scrollTo(0,0);
+  $("hintZone").innerHTML="";
+  if(!S.seenIntro){
+    $("hintZone").innerHTML='<div class="hintbox">Touche les blocs pour composer la commande. Touche un bloc déjà placé pour le retirer.</div>';
+    S.seenIntro=true; save();
+    setTimeout(function(){ var h=$("hintZone").firstChild; if(h){ h.style.transition="opacity .5s"; h.style.opacity="0"; setTimeout(function(){ $("hintZone").innerHTML=""; },520);} }, 7000);
+  }
+}
+function renderTiles(ex){
+  var host=$("tiles"); host.innerHTML="";
+  for(var i=0;i<POOL.length;i++){
+    var used=false;
+    for(var k=0;k<BUILT.length;k++) if(BUILT[k].i===i) used=true;
+    var b=document.createElement("button");
+    b.className="tile"+(ex.quiz?" q":"")+(used?" used":"");
+    b.textContent=POOL[i];
+    (function(i){ b.onclick=function(){ addTok(i); }; })(i);
+    host.appendChild(b);
+  }
+}
+function renderLine(ex){
+  var line=$("cmdLine"); line.innerHTML="";
+  var p=document.createElement("span"); p.className="prompt"; p.textContent="$"; line.appendChild(p);
+  if(!BUILT.length){
+    var ph=document.createElement("span"); ph.className="placeholder";
+    ph.textContent=ex.quiz? "choisis une réponse" : "assemble ta commande…";
+    line.appendChild(ph);
+  }
+  for(var i=0;i<BUILT.length;i++){
+    var c=document.createElement("span");
+    c.className="chip"+(ex.quiz?" q":"");
+    c.innerHTML='<span>'+escapeHtml(BUILT[i].t)+'</span><span class="x">×</span>';
+    (function(i){ c.onclick=function(){ if(ANSWERED) return; BUILT.splice(i,1); renderLine(ex); renderTiles(ex); }; })(i);
+    line.appendChild(c);
+  }
+  var car=document.createElement("span"); car.className="caret"; line.appendChild(car);
+}
+function escapeHtml(s){
+  return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+}
+function addTok(i){
+  if(ANSWERED) return;
+  var ex=SES.queue[SES.idx];
+  for(var k=0;k<BUILT.length;k++) if(BUILT[k].i===i) return;
+  BUILT.push({i:i, t:POOL[i]});
+  renderLine(ex); renderTiles(ex);
+  if(ex.quiz){ setTimeout(doCheck, 120); }
+}
+
+/* ---------- validation ---------- */
+function doCheck(){
+  if(ANSWERED) return;
+  var ex=SES.queue[SES.idx];
+  var free=S.free && !ex.quiz;
+  var tokens, verdict;
+  if(free){
+    var raw=$("freeInput").value;
+    verdict=checkFree(ex, raw);
+    tokens=(verdict==="ok")? freeVariants(raw).filter(function(v){
+              return acceptedStrings(ex).indexOf(v)>=0; })[0].split(" ")
+                           : bestFreeTokens(ex, raw);
+  } else {
+    tokens=BUILT.map(function(b){return b.t;});
+    verdict=isCorrect(ex,tokens)? "ok":"non";
+  }
+  if(verdict==="ok"){ onGood(ex, tokens); return; }
+  if(verdict==="casse"){
+    onBad(ex, {reason:"La commande est bonne, mais pas la casse. Linux distingue les majuscules des minuscules : « -p » et « -P » ne sont pas la même option.",
+               why:ex.why, expected:acceptedStrings(ex)[0]});
+    return;
+  }
+  onBad(ex, diagnose(ex,tokens));
+}
+function termBlock(ex, tokens){
+  var body;
+  if(ex.outCmd!==undefined) body=ex.outCmd;
+  else body=(tokens.join(" "))+(ex.out? "\n"+ex.out : "");
+  var lines=body.split("\n"), html="", i;
+  for(i=0;i<lines.length;i++){
+    if(i===0) html+='<span class="p">[chaima@rocky9 ~]$</span> '+escapeHtml(lines[i]);
+    else if(lines[i].indexOf("$ ")===0) html+="\n"+'<span class="p">[chaima@rocky9 ~]$</span> '+escapeHtml(lines[i].slice(2));
+    else html+="\n"+escapeHtml(lines[i]);
+  }
+  return '<div class="term">'+html+'</div>';
+}
+function onGood(ex, tokens){
+  ANSWERED=true;
+  var st=stateOf(ex.id), wasMastered=isMastered(st);
+  var gain = HINTED? 6 : (TRIES>0? 5 : 12);
+  var now=Date.now();
+  if(TRIES===0){ st.b=nextBox(st.b,true); SES.first++; }
+  else { st.b=Math.max(1,Math.min(st.b+1,2)); }
+  st.due=dueAt(st.b, now); st.n++; st.ok++; st.last=now;
+  var justMastered=!wasMastered && isMastered(st);
+  if(justMastered) SES.mastered++;
+  SES.done++;
+  SES.marks=SES.marks||{}; SES.marks[SES.idx]=(TRIES===0?"ok":"ko");
+  var before=S.xp; S.xp+=gain; SES.xp+=gain;
+  var lvlBefore=levelInfo(before).lvl, lvlAfter=levelInfo(S.xp).lvl;
+  markPlayed();
+  save();
+  renderHud(before,S.xp); flyXp(gain);
+  var line=$("cmdLine");
+  line.classList.remove("flash"); void line.offsetWidth; line.classList.add("flash");
+  var head = TRIES===0? "Correct" : "Correct cette fois";
+  var fb='<div class="feedback ok"><div class="head">✓ '+head+' <span style="color:var(--dim);font-weight:600;font-size:13px">+'+gain+' XP</span></div>';
+  fb+= termBlock(ex, tokens.length? tokens : accepted(ex)[0]);
+  if(ex.note) fb+='<div class="note">'+ex.note+'</div>';
+  if(justMastered) fb+='<div class="note" style="color:var(--gold)"><b>Commande ancrée</b> — elle sort de la file de révision.</div>';
+  fb+='</div>';
+  $("feedbackZone").innerHTML=fb;
+  revealFeedback();
+  $("actionRow").style.display="none";
+  $("btnNext").style.display="";
+  renderDots();
+  if(lvlAfter>lvlBefore){
+    setTimeout(function(){
+      celebrate("Niveau "+lvlAfter, levelInfo(S.xp).title, lvlAfter);
+    }, 250);
+  }
+}
+function onBad(ex, d){
+  TRIES++;
+  var st=stateOf(ex.id);
+  if(TRIES===1){
+    st.b=nextBox(st.b,false); st.due=Date.now(); st.n++; st.ko++;
+    SES.marks=SES.marks||{}; SES.marks[SES.idx]="ko";
+    renderDots();
+    if(!SES.requeued[ex.id] && SES.queue.length < S.len+3){
+      SES.requeued[ex.id]=1;
+      var pos=Math.min(SES.idx+3, SES.queue.length);
+      SES.queue.splice(pos,0,ex);
+      renderDots();
+    }
+    save();
+  }
+  var line=$("cmdLine");
+  line.classList.remove("shake"); void line.offsetWidth; line.classList.add("shake");
+  var fb='<div class="feedback ko"><div class="head">✕ Pas encore</div>';
+  fb+='<div>'+d.reason+'</div>';
+  if(d.why && d.why!==d.reason) fb+='<div class="why">'+d.why+'</div>';
+  if(TRIES>=2) fb+='<div class="note">Réponse attendue : <code>'+escapeHtml(d.expected)+'</code></div>';
+  fb+='</div>';
+  $("feedbackZone").innerHTML=fb;
+  revealFeedback();
+  if(TRIES>=2){
+    $("btnHint").disabled=true;
+    $("btnNext").style.display="";
+    $("btnNext").textContent="Passer à la suite ▸";
+  }
+}
+function revealFeedback(){
+  var z=$("feedbackZone");
+  if(!z.firstChild || !z.firstChild.scrollIntoView) return;
+  try{ z.firstChild.scrollIntoView({block:"center", behavior:S.noanim?"auto":"smooth"}); }
+  catch(e){ z.firstChild.scrollIntoView(); }
+}
+function doHint(){
+  var ex=SES.queue[SES.idx];
+  if(ANSWERED) return;
+  HINTED=true;
+  var acc=accepted(ex)[0];
+  var msg;
+  if(ex.quiz) msg="La bonne réponse commence par : « "+String(acc[0]).slice(0,12)+"… »";
+  else if(acc.length===1) msg="Une seule commande suffit, elle commence par « "+acc[0].charAt(0)+" ».";
+  else msg="La commande commence par « "+acc[0]+" » et comporte "+acc.length+" bloc"+(acc.length>1?"s":"")+".";
+  $("hintZone").innerHTML='<div class="hintbox">'+msg+' <span style="color:var(--dim)">(XP réduits pour cette question)</span></div>';
+  $("btnHint").disabled=true;
+}
+function doNext(){
+  $("btnNext").textContent="Suivant ▸";
+  SES.idx++;
+  if(SES.idx>=SES.queue.length){ endSession(); return; }
+  show("scPlay");
+  renderQuestion();
+}
+function doClear(){
+  if(ANSWERED) return;
+  var ex=SES.queue[SES.idx];
+  if(S.free && !ex.quiz){ $("freeInput").value=""; $("freeInput").focus(); return; }
+  BUILT=[]; renderLine(ex); renderTiles(ex);
+}
+function endSession(){
+  var n=SES.queue.length;
+  $("recapScore").textContent=SES.first+"/"+n;
+  $("recapTitle").textContent="Série terminée";
+  $("recapXp").textContent="+"+SES.xp;
+  $("recapMastered").textContent=SES.mastered;
+  var msg;
+  var ratio=n? SES.first/n : 0;
+  if(ratio===1) msg="Sans faute. Ces commandes reviendront plus tard, à intervalle plus long.";
+  else if(ratio>=0.6) msg="Les commandes manquées reviennent dans la prochaine série.";
+  else msg="Beaucoup d'erreurs sur cette série : c'est exactement ce que la révision espacée va cibler.";
+  $("recapMsg").textContent=msg;
+  save();
+  show("scRecap");
+  var nxt=SES.world+1;
+  var wo=WORLDS[nxt-1];
+  if(wo && !wo.soon && isWorldUnlocked(nxt,S.prog) && !announced(nxt)){
+    setTimeout(function(){
+      S["unlocked"+nxt]=true; save();
+      celebrate("Monde "+nxt+" débloqué", wo.name, wo.ico);
+    }, 500);
+  }
+  renderHome();
+}
+function announced(n){ return !!S["unlocked"+n]; }
+
+/* ---------- réglages, export, import ---------- */
+function renderSettings(){
+  $("swFree").classList.toggle("on", !!S.free);
+  $("swAnim").classList.toggle("on", !!S.noanim);
+  $("btnLen").textContent=S.len;
+  $("lenDesc").textContent=S.len+" questions par série";
+  document.body.classList.toggle("noanim", !!S.noanim);
+}
+function doExport(){
+  var data=JSON.stringify(S,null,2);
+  var blob=new Blob([data],{type:"application/json"});
+  var url=URL.createObjectURL(blob);
+  var a=document.createElement("a");
+  a.href=url; a.download="empire-chaima-progression-"+dayKey()+".json";
+  document.body.appendChild(a); a.click();
+  setTimeout(function(){ URL.revokeObjectURL(url); a.remove(); },400);
+  toast("Fichier de progression téléchargé.");
+}
+function doImport(file){
+  var r=new FileReader();
+  r.onload=function(){
+    try{
+      var d=JSON.parse(r.result);
+      if(!d || typeof d!=="object" || typeof d.xp!=="number" || typeof d.prog!=="object") throw 0;
+      for(var k in S) if(d[k]!==undefined && d[k]!==null) S[k]=d[k];
+      save(); renderHud(0,S.xp); renderHome(); renderSettings();
+      toast("Progression importée : niveau "+levelInfo(S.xp).lvl+".");
+    }catch(e){ toast("Fichier illisible : ce n'est pas un export valide."); }
+  };
+  r.readAsText(file);
+}
+
+/* ---------- démarrage ---------- */
+function init(){
+  load();
+  document.body.classList.toggle("noanim", !!S.noanim);
+  renderHud(0,S.xp);
+  renderHome();
+  renderSettings();
+
+  $("btnPlay").onclick=function(){ startSession(nextWorld()); };
+  $("btnBack").onclick=function(){ show("scHome"); renderHome(); };
+  $("btnBack2").onclick=function(){ show("scHome"); renderHome(); };
+  $("btnSettings").onclick=function(){ renderSettings(); show("scSettings"); };
+  $("btnCheck").onclick=doCheck;
+  $("btnClear").onclick=doClear;
+  $("btnHint").onclick=doHint;
+  $("btnNext").onclick=doNext;
+  $("btnAgain").onclick=function(){ startSession(nextWorld()); };
+  $("btnHome").onclick=function(){ show("scHome"); renderHome(); };
+  $("ovClose").onclick=function(){ $("lvlOverlay").classList.remove("on"); };
+  $("lvlOverlay").onclick=function(e){ if(e.target===$("lvlOverlay")) $("lvlOverlay").classList.remove("on"); };
+
+  $("swFree").onclick=function(){ S.free=!S.free; save(); renderSettings();
+    toast(S.free? "Clavier libre activé — les blocs sont remplacés par une saisie." : "Retour au mode blocs."); };
+  $("swAnim").onclick=function(){ S.noanim=!S.noanim; save(); renderSettings(); };
+  $("btnLen").onclick=function(){ S.len = S.len===5?8 : (S.len===8?12:5); save(); renderSettings(); };
+  $("btnExport").onclick=doExport;
+  $("btnImport").onclick=function(){ $("fileInput").click(); };
+  $("fileInput").onchange=function(e){ if(e.target.files&&e.target.files[0]) doImport(e.target.files[0]); e.target.value=""; };
+  $("btnReset").onclick=function(){
+    if(!confirm("Effacer toute ta progression (XP, niveaux, révisions) ? Cette action est définitive.")) return;
+    S={xp:0,prog:{},streak:0,best:0,last:null,days:0,free:S.free,noanim:S.noanim,len:S.len,lastWorld:1,seenIntro:true};
+    save(); renderHud(0,0); renderHome(); renderSettings(); show("scHome");
+    toast("Progression réinitialisée.");
+  };
+  $("freeInput").addEventListener("keydown", function(e){
+    if(e.key==="Enter"){ e.preventDefault(); if(ANSWERED) doNext(); else doCheck(); }
+  });
+  document.addEventListener("keydown", function(e){
+    if(e.key==="Enter" && $("scPlay").classList.contains("on") && ANSWERED && $("btnNext").style.display!=="none"){
+      if(document.activeElement!==$("freeInput")) doNext();
+    }
+  });
+}
+if(typeof document!=="undefined") init();
+</script>
+</body>
+</html>
