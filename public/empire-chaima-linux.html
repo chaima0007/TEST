@@ -9,7 +9,7 @@
 :root{
   --bg:#0f1521; --bg2:#131b29; --panel:#1a2233; --panel2:#212c42;
   --line:#26314a; --line2:#33415f;
-  --txt:#f0f3fa; --dim:#5b6a85;
+  --txt:#f0f3fa; --dim:#8b9ab5;
   --ok:#2ecc71; --ok2:#27ae60; --okdim:rgba(46,204,113,.10);
   --err:#e74c3c; --err2:#c0392b; --errdim:rgba(231,76,60,.10);
   --gold:#f0b429; --gold2:#d4a017;
@@ -83,7 +83,7 @@ h2{font-size:17px;margin:26px 0 10px;color:var(--txt)}
 .btn.small{min-height:46px;font-size:15px;font-weight:600}
 .btn[disabled]{opacity:.4;pointer-events:none}
 .btnrow{display:flex;gap:10px}
-.btnrow .btn{margin-top:0}
+.btnrow .btn{margin-top:0;flex:1 1 0;min-width:0;padding-left:8px;padding-right:8px}
 
 /* ---------- cartes de monde ---------- */
 .world{display:flex;align-items:center;gap:13px;width:100%;text-align:left;padding:14px;
@@ -96,7 +96,7 @@ h2{font-size:17px;margin:26px 0 10px;color:var(--txt)}
 .world .nm{font-weight:700;font-size:15px;display:flex;align-items:center;gap:7px}
 .world .nm{flex-wrap:wrap}
 .world .nm .num{font-family:var(--mono);color:var(--dim);font-size:12px;font-weight:600;white-space:nowrap}
-.world .cmds{font-family:var(--mono);font-size:11.5px;color:var(--dim);margin:3px 0 7px;
+.world .cmds{font-family:var(--mono);font-size:13px;color:var(--dim);margin:3px 0 7px;
   white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .wbar{height:6px;border-radius:99px;background:#0a0f18;overflow:hidden;border:1px solid var(--line)}
 .wfill{height:100%;background:linear-gradient(90deg,var(--ok2),var(--ok));width:0%;transition:width .6s ease}
@@ -132,16 +132,18 @@ h2{font-size:17px;margin:26px 0 10px;color:var(--txt)}
 
 .cmdlabel{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--dim);margin:18px 0 6px}
 .cmdline{background:#070b12;border:1px solid var(--line2);border-radius:11px;padding:13px 14px;
-  min-height:58px;display:flex;align-items:center;flex-wrap:wrap;gap:7px;
+  min-height:58px;display:flex;align-items:center;flex-wrap:wrap;gap:10px;
   font-family:var(--mono);font-size:15px;overflow-wrap:anywhere}
 .cmdline .prompt{color:var(--ok2);flex:0 0 auto}
 .cmdline.shake{animation:shake .38s cubic-bezier(.36,.07,.19,.97)}
 @keyframes shake{10%,90%{transform:translateX(-2px)}20%,80%{transform:translateX(4px)}30%,50%,70%{transform:translateX(-6px)}40%,60%{transform:translateX(6px)}}
 .cmdline.flash{animation:flashok .5s ease}
 @keyframes flashok{0%{box-shadow:0 0 0 0 rgba(46,204,113,0)}30%{box-shadow:0 0 0 4px rgba(46,204,113,.28);border-color:var(--ok)}100%{box-shadow:0 0 0 0 rgba(46,204,113,0)}}
-.chip{background:#1c2740;border:1px solid var(--line2);border-radius:7px;padding:4px 9px;
+.chip{background:#1c2740;border:1px solid var(--line2);border-radius:7px;padding:4px 12px;
+  min-height:44px;color:var(--txt);
   font-family:var(--mono);font-size:14px;display:inline-flex;align-items:center;gap:6px;
   animation:chipin .16s ease both}
+.chip:active{transform:translateY(1px)}
 .chip .x{color:var(--dim);font-size:15px;line-height:1}
 @keyframes chipin{from{opacity:0;transform:scale(.85)}to{opacity:1;transform:none}}
 .chip.q{font-family:var(--sans);font-size:13.5px}
@@ -178,7 +180,7 @@ h2{font-size:17px;margin:26px 0 10px;color:var(--txt)}
 /* clavier libre */
 .freein{width:100%;min-height:52px;background:#070b12;border:1px solid var(--line2);border-radius:11px;
   padding:13px 14px;font-family:var(--mono);font-size:16px;color:var(--txt)}
-.freein:focus{outline:none;border-color:var(--ok2)}
+.freein:focus{border-color:var(--ok2)}
 
 /* ---------- récap / level up ---------- */
 .recap{text-align:center;padding:26px 18px}
@@ -209,7 +211,7 @@ h2{font-size:17px;margin:26px 0 10px;color:var(--txt)}
   border-bottom:1px solid var(--line)}
 .row:last-child{border-bottom:none}
 .row .lab{font-size:15px;font-weight:600}
-.desc{font-size:12.5px;color:var(--dim);line-height:1.55}
+.desc{font-size:14px;color:var(--dim);line-height:1.55}
 .row .desc{margin-top:3px}
 .sw{width:56px;height:32px;border-radius:99px;background:#0a0f18;border:1px solid var(--line2);
   position:relative;flex:0 0 auto;padding:0;transition:background .2s ease,border-color .2s ease}
@@ -222,15 +224,17 @@ h2{font-size:17px;margin:26px 0 10px;color:var(--txt)}
 .timerchip.warn{color:var(--err);border-color:var(--err2);animation:pulsewarn 1s ease-in-out infinite}
 @keyframes pulsewarn{0%,100%{opacity:1}50%{opacity:.55}}
 .bossbtn{margin-top:9px;width:100%;min-height:46px;border-radius:10px;font-weight:700;font-size:14px;
-  background:linear-gradient(180deg,#f0b429,#d4a017);border:1px solid #d4a017;color:#2a1c00;
+  background:rgba(240,180,41,.10);border:1px solid var(--gold2);color:var(--gold);
   display:flex;align-items:center;justify-content:center;gap:7px}
 .bossbtn:active{transform:translateY(2px)}
-.bossbtn.done{background:transparent;border:1px solid var(--gold2);color:var(--gold)}
+.bossbtn.done{background:transparent;border-style:dashed;color:var(--gold2)}
 .weakrow{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--line)}
 .weakrow:last-child{border-bottom:none}
 .weakrow .cnt{font-family:var(--mono);font-weight:800;color:var(--err);flex:0 0 auto;min-width:30px}
 .weakrow .cmd{font-family:var(--mono);font-size:13.5px;color:var(--txt);overflow-wrap:anywhere}
 .weakrow .meta2{font-size:12px;color:var(--dim);margin-top:3px}
+#btnReset{margin-top:24px}
+.freein:focus{outline:2px solid var(--ok2);outline-offset:2px}
 .foot{text-align:center;color:var(--dim);font-size:11.5px;margin-top:28px;letter-spacing:.05em}
 .foot b{color:var(--gold2);font-weight:600}
 .toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);z-index:70;background:#141d2e;
@@ -239,6 +243,9 @@ h2{font-size:17px;margin:26px 0 10px;color:var(--txt)}
   max-width:calc(100% - 32px);text-align:center}
 .toast.on{opacity:1;transform:translate(-50%,-6px)}
 body.noanim *,body.noanim *::before,body.noanim *::after{animation:none!important;transition:none!important}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
 </style>
 </head>
 <body>
@@ -382,10 +389,10 @@ body.noanim *,body.noanim *::before,body.noanim *::after{animation:none!importan
   <div class="card">
     <div class="row">
       <div>
-        <div class="lab">Mode clavier libre</div>
-        <div class="desc">Taper la commande au lieu d'assembler des blocs. Tolère les déformations de dictée (« tiret », « slash »…).</div>
+        <div class="lab">Mode de saisie</div>
+        <div class="desc" id="modeDesc">Blocs : tu assembles la commande en tapant sur des tuiles.</div>
       </div>
-      <button class="sw" id="swFree"><i></i></button>
+      <button class="btn small ghost" id="btnMode" style="width:auto;min-width:104px">Blocs</button>
     </div>
     <div class="row">
       <div>
@@ -451,8 +458,8 @@ var WORLDS = [
   {n:7, ico:"🔍", name:"Traitement de texte", cmds:"grep find sed awk cut sort wc"},
   {n:8, ico:"🗜️", name:"Archivage et logs", cmds:"tar gzip gunzip journalctl"},
   {n:9, ico:"💽", name:"Disques et montage", cmds:"lsblk fdisk mkfs mount fstab swap"},
-  {n:10, ico:"⌨️", name:"Console et clavier", cmds:"loadkeys localectl setfont vconsole", bonus:true, req:1},
-  {n:11, ico:"🔌", name:"SSH — serveur distant", cmds:"apt-get openssh-server adduser hostname ssh", distro:"ubuntu", req:1},
+  {n:10, ico:"⌨️", name:"Console et clavier", cmds:"loadkeys localectl setfont vconsole", bonus:true, req:7},
+  {n:11, ico:"🔌", name:"SSH — serveur distant", cmds:"apt-get openssh-server adduser hostname ssh", distro:"ubuntu", req:6},
   {n:12, ico:"🧱", name:"Pare-feu firewalld", cmds:"firewall-cmd zone service port runtime permanent", req:4}
 ];
 
@@ -634,7 +641,8 @@ var EX = [
 {id:"w1-less", w:1, src:"cours",
  sc:"Tu dois parcourir /var/log/messages qui fait plusieurs milliers de lignes. Avec cat, tout défile et tu ne peux rien lire.",
  ask:"Ouvre ce fichier en lecture paginée.",
- sol:["less","/var/log/messages"],
+ sol:["sudo","less","/var/log/messages"],
+ miss:{sudo:"Sans « sudo », la lecture échoue : « /var/log/messages : Permission non accordée ». Sur Rocky 9, les journaux de /var/log appartiennent à root et ne sont lisibles que par lui."},
  blocks:["cat","head","tail","more"],
  traps:{
    cat:"« cat » est justement le problème : il déverse les milliers de lignes d'un coup.",
@@ -642,13 +650,14 @@ var EX = [
    tail:"« tail » ne montre que la fin, sans navigation.",
    more:"« more » ne permet de descendre que vers le bas ; « less » est le standard car il navigue dans les deux sens."},
  why:"« less » ouvre le fichier page par page : flèches pour naviguer, « q » pour quitter. C'est l'outil des fichiers LONGS.",
- outCmd:"less /var/log/messages\nmars 12 09:02:11 rocky9 systemd[1]: Started Session 12 of user chaima.\nmars 12 09:02:11 rocky9 sshd[2214]: Accepted password for chaima from 192.168.0.42\n:",
+ outCmd:"sudo less /var/log/messages\nMar 12 09:02:11 rocky9 systemd[1]: Started Session 12 of user chaima.\nMar 12 09:02:11 rocky9 sshd[2214]: Accepted password for chaima from 192.168.0.42\n:",
  note:"Dans less : <b>q</b> pour quitter, <b>/mot</b> pour chercher."},
 
 {id:"w1-tail", w:1, src:"cours",
  sc:"Un service vient de planter. Ce qui t'intéresse dans le fichier de log, ce sont les toutes dernières lignes écrites.",
  ask:"Affiche la fin du fichier /var/log/messages.",
- sol:["tail","/var/log/messages"],
+ sol:["sudo","tail","/var/log/messages"],
+ miss:{sudo:"Sans « sudo », la lecture est refusée : « /var/log/messages : Permission non accordée ». Les journaux système appartiennent à root."},
  blocks:["head","cat","less","end"],
  traps:{
    head:"« head » affiche le DÉBUT du fichier : ce sont les événements les plus anciens, pas le plantage qui vient d'arriver.",
@@ -656,7 +665,7 @@ var EX = [
    less:"« less » fonctionne, mais pour voir tout de suite les dernières lignes le réflexe direct est « tail ».",
    end:"« end » n'est pas une commande Linux ; la fin d'un fichier s'affiche avec « tail »."},
  why:"« tail » affiche la FIN du fichier (10 dernières lignes par défaut) : c'est le réflexe après un incident, car les logs s'écrivent en bas.",
- out:"mars 12 10:41:02 rocky9 httpd[3120]: (98)Address already in use: AH00072: make_sock: could not bind to address [::]:80\nmars 12 10:41:02 rocky9 systemd[1]: httpd.service: Failed with result 'exit-code'.",
+ out:"Mar 12 10:41:02 rocky9 httpd[3120]: (98)Address already in use: AH00072: make_sock: could not bind to address [::]:80\nMar 12 10:41:02 rocky9 systemd[1]: httpd.service: Failed with result 'exit-code'.",
  note:"Sa jumelle : <b>head</b> pour le début du fichier."},
 
 {id:"w1-head", w:1, src:"cours",
@@ -971,18 +980,18 @@ var EX = [
  note:""},
 
 {id:"w2-chown", w:2, src:"general",
- sc:"Tu viens de monter un disque sur /mnt/ASR-DATA : il appartient à root et tu ne peux rien y écrire avec ton compte.",
+ sc:"Un dossier de travail /srv/equipe a été créé par root : ton compte ne peut rien y écrire.",
  ask:"Donne la propriété du dossier à l'utilisateur chaima et au groupe chaima.",
- sol:["sudo","chown","chaima:chaima","/mnt/ASR-DATA"],
+ sol:["sudo","chown","chaima:chaima","/srv/equipe"],
  blocks:["chmod","777","chgrp"],
  traps:{
    chmod:"« chmod » change les DROITS, pas le propriétaire. Le dossier resterait à root.",
-   "777":"Ouvrir en 777 est le mauvais réflexe : ça donne tous les droits à toute la machine au lieu de corriger la propriété.",
+   "777":"Ouvrir en 777 est le mauvais réflexe : tous les droits à toute la machine, au lieu de corriger la propriété.",
    chgrp:"« chgrp » ne change que le groupe ; ici il faut changer propriétaire ET groupe d'un coup."},
  miss:{sudo:"Sans « sudo », la commande échoue : seul root peut donner un fichier à un autre utilisateur (« Opération non permise »)."},
  order:"L'ordre est : sudo, chown, propriétaire:groupe, puis la cible.",
- why:"« chown utilisateur:groupe cible » change le propriétaire et le groupe. C'est la bonne réponse au problème « je ne peux pas écrire dans mon point de montage » — ouvrir en 777 serait une rustine dangereuse.",
- outCmd:"sudo chown chaima:chaima /mnt/ASR-DATA\n$ ls -ld /mnt/ASR-DATA\ndrwxr-xr-x. 2 chaima chaima 4096 12 mars  15:02 /mnt/ASR-DATA",
+ why:"« chown utilisateur:groupe cible » change le propriétaire et le groupe. C'est la bonne réponse au problème « ce dossier ne m'appartient pas » — ouvrir en 777 serait une rustine dangereuse, qui donnerait le droit d'écrire à toute la machine.",
+ outCmd:"sudo chown chaima:chaima /srv/equipe\n$ ls -ld /srv/equipe\ndrwxr-xr-x. 2 chaima chaima 4096 12 mars  15:02 /srv/equipe",
  note:"Connaissance générale Rocky/RHEL, pas une commande vue telle quelle en cours."},
 
 {id:"w2-umask", w:2, src:"general",
@@ -1040,7 +1049,7 @@ var EX = [
    groups:"« groups » affiche les groupes d'UN utilisateur ; ici on veut le fichier qui liste tous les groupes et leurs membres."},
  why:"« /etc/group » donne une ligne par groupe : nom, gid et liste des membres secondaires. C'est là qu'on lit qui est dans wheel.",
  out:"root:x:0:\nwheel:x:10:chaima\nchaima:x:1000:\npaul:x:1001:",
- note:"Les trois fichiers à retenir : <b>/etc/passwd</b> (comptes), <b>/etc/shadow</b> (mots de passe), <b>/etc/group</b> (groupes)."},
+ note:"Les trois fichiers à retenir : <b>/etc/passwd</b> (comptes), <b>/etc/shadow</b> (mots de passe), <b>/etc/group</b> (groupes). Le groupe qui donne sudo s'appelle <b>wheel</b> sur Rocky/RHEL et <b>sudo</b> sur Ubuntu/Debian : même rôle, deux noms."},
 
 {id:"w3-id-user", w:3, src:"cours",
  sc:"Un collègue, paul, dit qu'il ne peut pas utiliser sudo. Tu veux vérifier son uid et les groupes auxquels il appartient.",
@@ -1098,7 +1107,7 @@ var EX = [
    chpasswd:"« chpasswd » sert aux changements en masse depuis un fichier ; pour un seul compte, c'est « passwd »."},
  miss:{sudo:"Sans « sudo », tu ne peux changer que TON propre mot de passe. Pour celui d'un autre compte, il faut les privilèges root."},
  why:"« passwd utilisateur » demande le nouveau mot de passe de façon interactive et le stocke hashé dans /etc/shadow. Sans sudo, « passwd » ne change que ton propre mot de passe.",
- outCmd:"sudo passwd paul\nNouveau mot de passe : \nRetapez le nouveau mot de passe : \npasswd : mot de passe mis à jour avec succès",
+ outCmd:"sudo passwd paul\nChangement du mot de passe de l'utilisateur paul.\nNouveau mot de passe : \nRetapez le nouveau mot de passe : \npasswd : mot de passe mis à jour avec succès",
  note:"Connaissance générale Rocky/RHEL : le PPTX du cours reste à compléter sur ce point."},
 
 {id:"w3-usermod-aG", w:3, src:"general",
@@ -1111,7 +1120,7 @@ var EX = [
    adm:"« adm » est un groupe lié à la lecture des logs, il ne donne aucun droit sudo. Sur Rocky/RHEL le groupe d'administration est « wheel » (sur Debian/Ubuntu, il s'appelle « sudo »).",
    useradd:"« useradd » crée un compte ; paul existe déjà.",
    groupadd:"« groupadd » crée un nouveau groupe ; wheel existe déjà."},
- order:"sudo, usermod, l'option, le GROUPE, puis l'UTILISATEUR en dernier. Inverser les deux derniers ajouterait paul à un groupe nommé… paul.",
+ order:"sudo, usermod, l'option, le GROUPE, puis l'UTILISATEUR en dernier. Inversés, « usermod -aG paul wheel » viserait l'UTILISATEUR wheel pour l'ajouter au groupe paul : la commande échoue avec « usermod : l'utilisateur « wheel » n'existe pas ».",
  why:"« usermod -aG groupe utilisateur » AJOUTE un groupe secondaire sans toucher aux autres. Le « a » d'append est la sécurité : sans lui, la liste est écrasée.",
  outCmd:"sudo usermod -aG wheel paul\n$ id paul\nuid=1001(paul) gid=1001(paul) groupes=1001(paul),10(wheel)",
  note:"Paul doit se reconnecter pour que son nouveau groupe soit pris en compte."},
@@ -1128,7 +1137,7 @@ var EX = [
    addgroup:"« addgroup » est le script Debian/Ubuntu. Sur Rocky/RHEL, c'est « groupadd »."},
  miss:{sudo:"Sans « sudo », la création de groupe est refusée : c'est une opération d'administration."},
  why:"« groupadd nom » crée le groupe. On ajoute ensuite les membres avec « usermod -aG devops utilisateur ».",
- outCmd:"sudo groupadd devops\n$ grep devops /etc/group\ndevops:x:1002:",
+ outCmd:"sudo groupadd devops\n$ tail -3 /etc/group\nchaima:x:1000:\npaul:x:1001:\ndevops:x:1002:",
  note:""},
 
 {id:"w3-su", w:3, src:"cours",
@@ -1242,7 +1251,7 @@ var EX = [
  order:"L'ordre du tube est imposé : ce qui produit la sortie à gauche, ce qui la filtre à droite.",
  why:"Le tube « | » envoie la sortie de la commande de gauche dans l'entrée de celle de droite. « ps aux | grep httpd » = « liste tout, puis ne garde que les lignes contenant httpd ».",
  out:"apache      3120  8.4  2.1 412300 43120 ?        S    10:38   0:07 /usr/sbin/httpd -DFOREGROUND\nchaima      3455  0.0  0.0  12140  1020 pts/0    S+   10:41   0:00 grep --color=auto httpd",
- note:"La 2e ligne est la commande grep elle-même : c'est normal, elle apparaît toujours."},
+ note:"La 2e ligne est la commande grep elle-même : c'est normal, elle apparaît toujours. Le tube <b>|</b> et <b>grep</b> sont vus en détail au monde 7 ; ici, retiens l'enchaînement « je produis, je filtre »."},
 
 {id:"w4-top", w:4, src:"general",
  sc:"La machine rame et tu veux voir en direct quels processus consomment le processeur, avec un affichage qui se rafraîchit tout seul.",
@@ -1261,7 +1270,8 @@ var EX = [
 {id:"w4-kill", w:4, src:"general",
  sc:"Le processus 3120 est identifié comme fautif. Tu veux lui demander de s'arrêter proprement, en le laissant fermer ses fichiers.",
  ask:"Demande l'arrêt propre du processus 3120.",
- sol:["kill","3120"],
+ sol:["sudo","kill","3120"],
+ miss:{sudo:"Le processus 3120 appartient au compte apache, pas à toi : sans « sudo », le shell répond « kill: (3120) - Opération non permise ». On ne signale que ses propres processus."},
  blocks:["-9","killall","httpd","stop"],
  traps:{
    "-9":"« kill -9 » envoie SIGKILL : arrêt brutal, sans laisser le processus fermer ses fichiers. C'est le DERNIER recours, pas le premier réflexe.",
@@ -1269,13 +1279,13 @@ var EX = [
    httpd:"« kill » attend un numéro de processus (PID), pas un nom de programme.",
    stop:"« stop » n'est pas une commande Linux ; l'arrêt d'un processus passe par kill (ou systemctl pour un service)."},
  why:"« kill PID » envoie SIGTERM : une demande polie d'arrêt que le processus peut traiter proprement. C'est toujours ce qu'on essaie en premier.",
- outCmd:"kill 3120\n$ ps aux | grep httpd\nchaima      3499  0.0  0.0  12140  1020 pts/0    S+   10:44   0:00 grep --color=auto httpd",
+ outCmd:"sudo kill 3120\n$ ps aux | grep httpd\nchaima      3499  0.0  0.0  12140  1020 pts/0    S+   10:44   0:00 grep --color=auto httpd",
  note:"Plus rien après le grep : le processus s'est bien arrêté."},
 
 {id:"w4-kill-9", w:4, src:"general",
  sc:"Tu as déjà envoyé un kill classique au processus 3120, mais il est toujours là et bloque le port. Il ne répond plus à rien.",
  ask:"Force l'arrêt immédiat du processus 3120.",
- sol:["kill","-9","3120"],
+ sol:["sudo","kill","-9","3120"],
  blocks:["-15","killall","-r","top"],
  traps:{
    "-15":"« -15 » est SIGTERM, exactement ce que fait kill sans option : c'est ce qui vient d'échouer.",
@@ -1285,13 +1295,14 @@ var EX = [
  miss:{"-9":"Sans « -9 », tu renvoies le même signal poli (SIGTERM) qui vient déjà d'échouer : le processus restera bloqué."},
  order:"L'ordre est : kill, le signal, puis le PID.",
  why:"« kill -9 » envoie SIGKILL, traité par le noyau : le processus est terminé de force, sans pouvoir sauvegarder ni fermer ses fichiers. D'où la règle : jamais en premier, seulement quand SIGTERM a échoué.",
- outCmd:"kill -9 3120\n[1]+  Processus arrêté (tué)        httpd",
+ outCmd:"sudo kill -9 3120\n$ ps aux | grep httpd\nchaima      3505  0.0  0.0  12140  1020 pts/0    S+   10:45   0:00 grep --color=auto httpd",
  note:"Risque du <b>-9</b> : fichiers non fermés, données en cours d'écriture perdues."},
 
 {id:"w4-killall", w:4, src:"general",
  sc:"Plusieurs instances du même programme tournent en même temps et tu veux toutes les arrêter d'un coup, sans relever chaque PID.",
  ask:"Arrête toutes les instances du programme httpd par son nom.",
- sol:["killall","httpd"],
+ sol:["sudo","killall","httpd"],
+ miss:{sudo:"Sans « sudo », killall répond « httpd(3120) : Opération non permise » pour chaque instance appartenant à un autre compte."},
  blocks:["kill","3120","-9","pkill"],
  traps:{
    kill:"« kill » ne prend qu'un PID à la fois : il faudrait tous les relever un par un.",
@@ -1299,7 +1310,7 @@ var EX = [
    "-9":"Le signal brutal n'est pas demandé : on commence toujours par l'arrêt propre.",
    pkill:"« pkill » fait un travail proche mais cible par MOTIF de nom ; la commande vue ici est « killall »."},
  why:"« killall nom » envoie le signal à tous les processus portant ce nom de programme. Pratique quand un service a lancé plusieurs processus enfants.",
- outCmd:"killall httpd\n$ ps aux | grep httpd\nchaima      3512  0.0  0.0  12140  1020 pts/0    S+   10:46   0:00 grep --color=auto httpd",
+ outCmd:"sudo killall httpd\n$ ps aux | grep httpd\nchaima      3512  0.0  0.0  12140  1020 pts/0    S+   10:46   0:00 grep --color=auto httpd",
  note:""},
 
 {id:"w4-bg", w:4, src:"general",
@@ -1344,7 +1355,7 @@ var EX = [
  order:"L'ordre est : systemctl, l'action, puis le nom du service.",
  why:"« systemctl status service » indique s'il est actif, s'il démarre au boot, et affiche les dernières lignes de son journal. C'est le premier réflexe de diagnostic sur un service.",
  out:"● sshd.service - OpenSSH server daemon\n     Loaded: loaded (/usr/lib/systemd/system/sshd.service; enabled; preset: enabled)\n     Active: active (running) since Thu 2025-03-12 10:02:41 CET; 41min ago\n   Main PID: 1180 (sshd)",
- note:"Deux informations distinctes : <b>enabled</b> = démarrera au boot, <b>active (running)</b> = tourne maintenant."},
+ note:"Deux informations distinctes : <b>enabled</b> = démarrera au boot, <b>active (running)</b> = tourne maintenant. Retiens aussi le nom : l'unité est <b>sshd</b> sur Rocky/RHEL, <b>ssh</b> sur Ubuntu/Debian — le processus, lui, s'appelle sshd des deux côtés."},
 
 {id:"w4-systemctl-restart", w:4, src:"cours",
  sc:"Tu viens de modifier /etc/ssh/sshd_config. Le service tourne toujours avec l'ancienne configuration.",
@@ -1381,7 +1392,8 @@ var EX = [
 {id:"w4-ss", w:4, src:"cours",
  sc:"Le service sshd dit qu'il tourne, mais tu veux la preuve qu'il écoute bien sur le port 22.",
  ask:"Vérifie les ports en écoute et filtre sur le port 22.",
- sol:["ss","-tulpn","|","grep",":22"],
+ sol:["sudo","ss","-tulpn","|","grep",":22"],
+ miss:{sudo:"Sans « sudo », les colonnes s'affichent mais la partie users:((\"sshd\",pid=…)) reste vide : seul root voit à quel processus appartient un socket. Or c'est justement cette colonne qui prouve que sshd écoute."},
  blocks:["netstat","ps","-a","ping"],
  traps:{
    netstat:"« netstat » est l'ancien outil, souvent absent de Rocky 9 par défaut. Le remplaçant moderne est « ss ».",
@@ -1422,7 +1434,7 @@ var EX = [
  miss:{sudo:"Sans « sudo », le rechargement du pare-feu est refusé."},
  why:"Une règle « --permanent » est écrite sur disque mais pas chargée en mémoire. « --reload » relit les règles permanentes et les active : sans cette étape, l'autorisation ne sert à rien.",
  outCmd:"sudo firewall-cmd --reload\nsuccess\n$ sudo firewall-cmd --list-services\ncockpit dhcpv6-client ssh",
- note:"Séquence à retenir : <b>--permanent --add-service</b> puis <b>--reload</b>."},
+ note:"Séquence à retenir : <b>--permanent --add-service</b> puis <b>--reload</b>. Et une 4e cause de blocage existe sur Rocky : <b>SELinux</b>."},
 
 {id:"w4-quiz-enable", w:4, src:"cours", quiz:true,
  sc:"Tu as tapé « sudo systemctl enable sshd », sans autre option. La machine n'a pas redémarré depuis.",
@@ -1538,7 +1550,7 @@ var EX = [
    "config-manager":"« config-manager » sert à activer ou désactiver un dépôt, pas à les lister.",
    "--enable":"« --enable » est une option de config-manager."},
  why:"« dnf repolist » affiche les dépôts actifs. Sur Rocky 9, seuls baseos, appstream et extras le sont par défaut : CRB et EPEL doivent être ajoutés, ce qui explique la plupart des « No package available ».",
- out:"id du dépôt                    nom du dépôt\nappstream                      Rocky Linux 9 - AppStream\nbaseos                         Rocky Linux 9 - BaseOS\nextras                         Rocky Linux 9 - Extras",
+ out:"identifiant du dépôt           nom du dépôt\nappstream                      Rocky Linux 9 - AppStream\nbaseos                         Rocky Linux 9 - BaseOS\nextras                         Rocky Linux 9 - Extras",
  note:"Ni <b>crb</b> ni <b>epel</b> dans la liste : c'est la cause la plus fréquente d'un paquet introuvable."},
 
 {id:"w5-epel", w:5, src:"cours",
@@ -1554,7 +1566,7 @@ var EX = [
  miss:{sudo:"Sans « sudo », l'installation est refusée."},
  why:"EPEL n'est pas fourni par Rocky : il faut d'abord installer « epel-release », un paquet qui dépose la configuration du dépôt dans /etc/yum.repos.d/. Tant qu'il n'est pas installé, aucun paquet EPEL n'est visible.",
  outCmd:"sudo dnf install epel-release\nInstallation :\n epel-release   noarch   9-7.el9   extras   19 k\n\nTerminé !",
- note:"Ordre à respecter : <b>epel-release</b> → activer <b>crb</b> → installer le paquet voulu."},
+ note:"Ordre à respecter : <b>epel-release</b> → activer <b>crb</b> → installer le paquet voulu. Les dépôts vivent dans <b>/etc/yum.repos.d/</b> sur Rocky, dans <b>/etc/apt/sources.list.d/</b> sur Ubuntu/Debian."},
 
 {id:"w5-crb", w:5, src:"cours",
  sc:"Un paquet EPEL réclame des bibliothèques de développement fournies par le dépôt CodeReady Builder, présent mais désactivé sur Rocky 9.",
@@ -1612,7 +1624,7 @@ var EX = [
    "le paquet est déjà installé":"Dans ce cas dnf répondrait « Rien à faire », pas qu'il ne trouve aucune correspondance.",
    "il faut redémarrer la machine":"Un redémarrage ne change rien à la liste des dépôts configurés."},
  why:"« Aucune correspondance trouvée » signifie que dnf a cherché dans les dépôts ACTIFS et n'a rien trouvé. Sur Rocky 9, seuls baseos, appstream et extras sont actifs : un paquet EPEL reste invisible tant que epel-release n'est pas installé et crb activé.",
- outCmd:"sudo dnf install fastfetch\nDernière vérification de l'expiration des métadonnées...\nAucune correspondance trouvée : fastfetch\nErreur : impossible de trouver une correspondance",
+ outCmd:"sudo dnf install fastfetch\nDernière vérification de l'expiration des métadonnées...\nAucune correspondance trouvée pour l'argument : fastfetch\nErreur : Impossible de trouver une correspondance : fastfetch",
  note:""}
 ,
 /* ---------------- MONDE 6 : réseau ---------------- */
@@ -1860,7 +1872,7 @@ var EX = [
    sshd:"« sshd » est le nom du SERVICE côté serveur ; la commande cliente s'appelle « ssh ».",
    telnet:"« telnet » fait circuler le mot de passe en clair : à ne jamais utiliser pour de l'administration."},
  why:"« ssh utilisateur@machine » ouvre une session distante chiffrée. Le port 22 est implicite, comme 80 pour HTTP et 443 pour HTTPS.",
- outCmd:"ssh chaima@192.168.0.10\nThe authenticity of host '192.168.0.10' can't be established.\nED25519 key fingerprint is SHA256:5xK2p...\nAre you sure you want to continue connecting (yes/no)? yes\nchaima@192.168.0.10's password: \n[chaima@srv-web ~]$",
+ outCmd:"ssh chaima@192.168.0.10\nThe authenticity of host '192.168.0.10 (192.168.0.10)' can't be established.\nED25519 key fingerprint is SHA256:5xK2p...\nAre you sure you want to continue connecting (yes/no/[fingerprint])? yes\nWarning: Permanently added '192.168.0.10' (ED25519) to the list of known hosts.\nchaima@192.168.0.10's password: \n[chaima@srv-web ~]$",
  note:"À la première connexion, l'empreinte est demandée : répondre <b>yes</b> l'enregistre dans ~/.ssh/known_hosts."},
 
 {id:"w6-ssh-port", w:6, src:"cours",
@@ -1951,7 +1963,7 @@ var EX = [
    "23":"23 est le port de telnet, l'ancêtre non chiffré de SSH — à ne plus utiliser.",
    "2222":"2222 est un port personnalisé fréquemment choisi pour déplacer SSH, mais ce n'est pas le port par défaut."},
  why:"Le port 22 est le port standard de SSH, au même titre que 80 pour HTTP et 443 pour HTTPS. C'est aussi ce qu'on vérifie avec « ss -tulpn | grep :22 ».",
- outCmd:"ss -tulpn | grep :22\ntcp   LISTEN 0  128   0.0.0.0:22    0.0.0.0:*   users:((\"sshd\",pid=1180,fd=3))",
+ outCmd:"sudo ss -tulpn | grep :22\ntcp   LISTEN 0  128   0.0.0.0:22    0.0.0.0:*   users:((\"sshd\",pid=1180,fd=3))",
  note:""},
 
 {id:"w6-quiz-diag", w:6, src:"cours", quiz:true,
@@ -1971,7 +1983,8 @@ var EX = [
 {id:"w7-grep", w:7, src:"general",
  sc:"Le service httpd a planté. Tu veux retrouver les lignes contenant le mot erreur dans /var/log/messages.",
  ask:"Cherche le mot erreur dans ce fichier.",
- sol:["grep","erreur","/var/log/messages"],
+ sol:["sudo","grep","erreur","/var/log/messages"],
+ miss:{sudo:"Sans « sudo », grep ne peut pas ouvrir le fichier : « grep: /var/log/messages: Permission non accordée »."},
  blocks:["find","-name","cat","sed"],
  traps:{
    find:"« find » cherche des FICHIERS par nom ou attribut, pas du texte à l'intérieur d'un fichier.",
@@ -1980,13 +1993,13 @@ var EX = [
    sed:"« sed » sert à transformer du texte ; pour seulement le chercher, c'est grep."},
  order:"L'ordre est : grep, le motif cherché, puis le fichier où chercher.",
  why:"« grep motif fichier » affiche les lignes qui contiennent le motif. C'est l'outil de recherche DANS les fichiers, à ne pas confondre avec find qui cherche DES fichiers.",
- out:"mars 12 10:41:02 rocky9 httpd[3120]: erreur de configuration ligne 42\nmars 12 10:41:02 rocky9 systemd[1]: httpd.service: erreur fatale au démarrage",
+ out:"Mar 12 10:41:02 rocky9 httpd[3120]: erreur de configuration ligne 42\nMar 12 10:41:02 rocky9 systemd[1]: httpd.service: erreur fatale au démarrage",
  note:"Moyen mnémotechnique : <b>grep</b> cherche DANS, <b>find</b> cherche DES fichiers."},
 
 {id:"w7-grep-i", w:7, src:"general",
  sc:"Ta recherche du mot erreur ne remonte rien, alors que le log contient sûrement des lignes Erreur et ERREUR.",
  ask:"Cherche ce mot sans tenir compte des majuscules dans /var/log/messages.",
- sol:["grep","-i","erreur","/var/log/messages"],
+ sol:["sudo","grep","-i","erreur","/var/log/messages"],
  blocks:["-v","-c","-r","-n"],
  traps:{
    "-v":"« -v » INVERSE la recherche : elle afficherait toutes les lignes qui ne contiennent PAS le mot.",
@@ -1996,20 +2009,21 @@ var EX = [
  miss:{"-i":"Sans « -i », grep distingue les majuscules : « erreur », « Erreur » et « ERREUR » sont trois motifs différents."},
  order:"L'option se place après grep, avant le motif.",
  why:"Linux est sensible à la casse partout, y compris dans les recherches. « -i » (insensitive) rend grep tolérant aux majuscules — souvent indispensable dans les logs.",
- out:"mars 12 10:41:02 rocky9 httpd[3120]: Erreur de configuration ligne 42\nmars 12 10:44:19 rocky9 kernel: ERREUR I/O sur /dev/vdb",
+ out:"Mar 12 10:41:02 rocky9 httpd[3120]: Erreur de configuration ligne 42\nMar 12 10:44:19 rocky9 kernel: ERREUR I/O sur /dev/vdb",
  note:""},
 
 {id:"w7-grep-r", w:7, src:"general",
  sc:"Tu cherches dans quel fichier de /etc se trouve le mot Port, sans savoir lequel des centaines de fichiers le contient.",
  ask:"Cherche ce mot dans tout le dossier /etc, sous-dossiers compris.",
- sol:["grep","-r","Port","/etc"],
+ sol:["sudo","grep","-r","Port","/etc"],
  blocks:["-i","-v","find","-c"],
  traps:{
    "-i":"« -i » ignore la casse : utile parfois, mais ce n'est pas ce qui permet de descendre dans les sous-dossiers.",
    "-v":"« -v » inverse le filtre : elle afficherait les lignes SANS le mot cherché.",
    find:"« find » trouverait des fichiers par nom, pas par contenu.",
    "-c":"« -c » ne donne qu'un décompte, sans montrer où se trouve le mot."},
- miss:{"-r":"Sans « -r », grep reçoit un DOSSIER et répond « /etc : est un dossier » sans rien chercher."},
+ miss:{"-r":"Sans « -r », grep reçoit un DOSSIER et répond « /etc : est un dossier » sans rien chercher.",
+       sudo:"Sans « sudo », grep se heurte à une avalanche de « Permission non accordée » et manque justement les fichiers intéressants, comme /etc/ssh/sshd_config (lisible par root seul sur Rocky 9)."},
  why:"« -r » (récursif) fait descendre grep dans toute l'arborescence et affiche le chemin du fichier devant chaque ligne trouvée.",
  out:"/etc/ssh/sshd_config:#Port 22\n/etc/ssh/ssh_config:#   Port 22",
  note:"Avec <b>-r</b>, chaque résultat est préfixé par le fichier où il a été trouvé."},
@@ -2017,7 +2031,7 @@ var EX = [
 {id:"w7-grep-v", w:7, src:"general",
  sc:"Le fichier /etc/ssh/sshd_config est rempli de lignes de commentaires commençant par #. Tu veux ne voir que la configuration réellement active.",
  ask:"Affiche les lignes de ce fichier qui ne contiennent pas de dièse.",
- sol:["grep","-v","#","/etc/ssh/sshd_config"],
+ sol:["sudo","grep","-v","#","/etc/ssh/sshd_config"],
  blocks:["-i","-n","-c","sed"],
  traps:{
    "-i":"« -i » concerne la casse, elle n'exclut rien.",
@@ -2032,7 +2046,7 @@ var EX = [
 {id:"w7-grep-n", w:7, src:"general",
  sc:"Tu as trouvé une ligne fautive dans un fichier de configuration et tu dois indiquer à ton formateur à quelle ligne elle se trouve.",
  ask:"Cherche Port dans /etc/ssh/sshd_config en affichant les numéros de ligne.",
- sol:["grep","-n","Port","/etc/ssh/sshd_config"],
+ sol:["sudo","grep","-n","Port","/etc/ssh/sshd_config"],
  blocks:["-c","-i","-v","wc"],
  traps:{
    "-c":"« -c » donne le NOMBRE de lignes trouvées, pas leur numéro dans le fichier.",
@@ -2047,7 +2061,7 @@ var EX = [
 {id:"w7-grep-c", w:7, src:"general",
  sc:"Tu veux seulement savoir combien de tentatives de connexion échouées figurent dans /var/log/secure, sans lire les lignes.",
  ask:"Compte les lignes contenant Failed dans ce fichier.",
- sol:["grep","-c","Failed","/var/log/secure"],
+ sol:["sudo","grep","-c","Failed","/var/log/secure"],
  blocks:["-n","wc","-i","|"],
  traps:{
    "-n":"« -n » numérote les lignes au lieu de les compter.",
@@ -2391,7 +2405,8 @@ var EX = [
 {id:"w8-secure", w:8, src:"cours",
  sc:"Tu veux vérifier les tentatives de connexion et les usages de sudo, qui sont tracés dans un fichier texte classique de /var/log.",
  ask:"Affiche la fin du fichier /var/log/secure.",
- sol:["tail","/var/log/secure"],
+ sol:["sudo","tail","/var/log/secure"],
+ miss:{sudo:"Sans « sudo », la lecture est refusée : /var/log/secure est en -rw------- root root. C'est ce qui protège la trace des tentatives de connexion."},
  blocks:["/var/log/messages","journalctl","head","-u"],
  traps:{
    "/var/log/messages":"« messages » est le journal général du système ; les connexions et sudo sont dans « secure ».",
@@ -2399,8 +2414,8 @@ var EX = [
    head:"« head » montre le début du fichier, donc les événements les plus anciens.",
    "-u":"« -u » est une option de journalctl."},
  why:"Rocky garde aussi des journaux texte dans /var/log : « secure » pour l'authentification (connexions, sudo), « messages » pour le reste. Ils complètent journalctl.",
- out:"mars 12 10:12:44 rocky9 sudo[3301]: chaima : TTY=pts/0 ; PWD=/home/chaima ; USER=root ; COMMAND=/bin/dnf install httpd\nmars 12 10:38:02 rocky9 sshd[3520]: Failed password for invalid user admin from 192.168.0.77 port 51422 ssh2",
- note:"<b>/var/log/secure</b> = authentification, <b>/var/log/messages</b> = journal général."}
+ out:"Mar 12 10:12:44 rocky9 sudo[3301]: chaima : TTY=pts/0 ; PWD=/home/chaima ; USER=root ; COMMAND=/bin/dnf install httpd\nMar 12 10:38:02 rocky9 sshd[3520]: Failed password for invalid user admin from 192.168.0.77 port 51422 ssh2",
+ note:"<b>/var/log/secure</b> = authentification, <b>/var/log/messages</b> = journal général — sur Rocky/RHEL. Sur Ubuntu/Debian, les mêmes contenus s'appellent <b>/var/log/auth.log</b> et <b>/var/log/syslog</b> : le nom change, pas le rôle."}
 ,
 /* ---------------- MONDE 9 : disques et montage ---------------- */
 {id:"w9-lsblk", w:9, src:"cours",
@@ -2516,7 +2531,7 @@ var EX = [
    mount:"On ne peut pas monter une partition tant qu'elle n'est pas formatée."},
  miss:{sudo:"Sans « sudo », le formatage est refusé."},
  why:"Formater crée la structure qui permettra de stocker fichiers et dossiers. Le numéro dans /dev/vdb1 est essentiel : sans lui, tu vises le disque entier et tu détruis la table de partitions.",
- outCmd:"sudo mkfs.ext4 /dev/vdb1\nCréation d'un système de fichiers avec 2097152 blocs de 4k\nÉtiquette de système de fichiers=\nUUID de système de fichiers=d4e19f22-8b7c-4a51-93f6-6e0c8d3a4b15\nÉcriture des superblocs et de l'information de comptabilité du système de fichiers : complété",
+ outCmd:"sudo mkfs.ext4 /dev/vdb1\nmke2fs 1.46.5 (30-Dec-2021)\nCréation d'un système de fichiers avec 2097152 blocs de 4k\nÉtiquette de système de fichiers=\nUUID de système de fichiers=d4e19f22-8b7c-4a51-93f6-6e0c8d3a4b15\nÉcriture des superblocs et de l'information de comptabilité du système de fichiers : complété",
  note:"Toujours vérifier le NUMÉRO : <b>/dev/vdb1</b>, jamais <b>/dev/vdb</b>."},
 
 {id:"w9-blkid", w:9, src:"cours",
@@ -2628,16 +2643,16 @@ var EX = [
 {id:"w9-quiz-fstab", w:9, src:"cours", quiz:true,
  sc:"Tu ajoutes dans /etc/fstab la ligne de montage permanent de ta partition de données ext4, montée sur /ASR-DATA.",
  ask:"Quelle ligne est correcte ?",
- sol:["UUID=d4e19f22... /ASR-DATA ext4 defaults 0 2"],
- blocks:["UUID=d4e19f22... /ASR-DATA swap sw 0 0",
-         "/dev/vdb1 /ASR-DATA ext4 defaults 0 0",
-         "UUID=d4e19f22... ext4 /ASR-DATA defaults 0 2"],
+ sol:["UUID=d4e19f22... /mnt/ASR-DATA ext4 defaults 0 2"],
+ blocks:["UUID=d4e19f22... /mnt/ASR-DATA swap sw 0 0",
+         "/dev/vdb1 /mnt/ASR-DATA ext4 defaults 0 0",
+         "UUID=d4e19f22... ext4 /mnt/ASR-DATA defaults 0 2"],
  traps:{
-   "UUID=d4e19f22... /ASR-DATA swap sw 0 0":"« swap sw » décrit une partition d'ÉCHANGE. Pour une partition de données, le type est celui du système de fichiers : ext4.",
-   "/dev/vdb1 /ASR-DATA ext4 defaults 0 0":"Utiliser le nom /dev/vdb1 est fragile : l'ordre des disques peut changer au démarrage et la machine monterait le mauvais périphérique. On met l'UUID.",
-   "UUID=d4e19f22... ext4 /ASR-DATA defaults 0 2":"Les colonnes sont inversées : l'ordre est périphérique, point de montage, type, options, dump, passe."},
- why:"Une ligne fstab a six colonnes, dans cet ordre : périphérique (UUID de préférence), point de montage, type de système de fichiers, options, dump, ordre de vérification (0 pour la racine et le swap, 2 pour les autres partitions).",
- outCmd:"cat /etc/fstab\nUUID=3a7d9b12-55c8-49ee-bb02-1c4f7e9d2a10 /         xfs   defaults 0 0\nUUID=d4e19f22-8b7c-4a51-93f6-6e0c8d3a4b15 /ASR-DATA ext4  defaults 0 2",
+   "UUID=d4e19f22... /mnt/ASR-DATA swap sw 0 0":"« swap sw » décrit une partition d'ÉCHANGE. Pour une partition de données, le type est celui du système de fichiers : ext4.",
+   "/dev/vdb1 /mnt/ASR-DATA ext4 defaults 0 0":"Utiliser le nom /dev/vdb1 est fragile : l'ordre des disques peut changer au démarrage et la machine monterait le mauvais périphérique. On met l'UUID.",
+   "UUID=d4e19f22... ext4 /mnt/ASR-DATA defaults 0 2":"Les colonnes sont inversées : l'ordre est périphérique, point de montage, type, options, dump, passe."},
+ why:"Une ligne fstab a six colonnes, dans cet ordre : périphérique (UUID de préférence), point de montage, type de système de fichiers, options, dump, ordre de vérification par fsck. Pour cette dernière : 1 pour une racine vérifiée au démarrage (ext4), 2 pour les autres systèmes vérifiés, 0 quand il n'y a pas de vérification — le swap, et aussi XFS, qui ne passe pas par fsck : c'est pourquoi la racine XFS de Rocky 9 s'écrit « 0 0 ».",
+ outCmd:"cat /etc/fstab\nUUID=3a7d9b12-55c8-49ee-bb02-1c4f7e9d2a10 /         xfs   defaults 0 0\nUUID=d4e19f22-8b7c-4a51-93f6-6e0c8d3a4b15 /mnt/ASR-DATA ext4  defaults 0 2",
  note:""},
 
 {id:"w9-mount-a", w:9, src:"cours",
@@ -2652,7 +2667,7 @@ var EX = [
    df:"« df » constate ce qui est monté, mais ne teste pas les lignes de fstab."},
  miss:{sudo:"Sans « sudo », le montage est refusé."},
  why:"« mount -a » monte tout ce que déclare fstab et signale immédiatement les erreurs. C'est le test de sécurité obligatoire après avoir modifié le fichier — en cas de souci, journalctl -xe donne le détail.",
- outCmd:"sudo mount -a\n$ df -h | grep ASR-DATA\n/dev/vdb1        7,8G   24K  7,4G   1% /ASR-DATA",
+ outCmd:"sudo mount -a\n$ df -h | grep ASR-DATA\n/dev/vdb1        7,8G   24K  7,4G   1% /mnt/ASR-DATA",
  note:"Aucune erreur affichée + la ligne dans <b>df</b> = la configuration est bonne."},
 
 {id:"w9-free", w:9, src:"cours",
@@ -2713,7 +2728,7 @@ var EX = [
  order:"L'ordre est : fallocate, l'option de taille, la taille, puis le chemin du fichier.",
  why:"« fallocate -l taille fichier » réserve l'espace d'un coup, sans écrire tout le contenu : c'est instantané. Le fichier est ensuite traité comme une zone de swap.",
  outCmd:"sudo fallocate -l 1G /swapfile\n$ ls -lh /swapfile\n-rw-r--r--. 1 root root 1,0G 12 mars  16:02 /swapfile",
- note:"Droits <b>-rw-r--r--</b> : lisible par tout le monde — à corriger tout de suite."},
+ note:"Droits <b>-rw-r--r--</b> : lisible par tout le monde — à corriger tout de suite. À vérifier sur ta machine : si la racine est en XFS (le défaut de Rocky 9), swapon peut refuser un fichier créé par fallocate (« swapon failed: Argument invalide ») ; on le crée alors avec <b>sudo dd if=/dev/zero of=/swapfile bs=1M count=1024</b>. Demande à ton formateur quelle méthode il attend."},
 
 {id:"w9-chmod-swapfile", w:9, src:"cours",
  sc:"Le fichier /swapfile vient d'être créé en -rw-r--r-- : n'importe quel utilisateur pourrait lire la mémoire qui y sera écrite.",
@@ -2904,7 +2919,7 @@ var EX = [
  miss:{sudo:"Sans « sudo », apt-get ne peut pas écrire dans son cache : « Permission denied »."},
  why:"« apt-get update » télécharge la liste des paquets disponibles auprès des dépôts. Elle n'installe rien : c'est l'étape préalable qui évite les « paquet introuvable » ou les versions périmées.",
  out:"Hit:1 http://archive.ubuntu.com/ubuntu jammy InRelease\nGet:2 http://archive.ubuntu.com/ubuntu jammy-updates InRelease [119 kB]\nGet:3 http://security.ubuntu.com/ubuntu jammy-security InRelease [110 kB]\nFetched 1,845 kB in 2s (1,040 kB/s)\nReading package lists... Done",
- note:"Équivalent Rocky 9 : <b>sudo dnf check-update</b> (dnf rafraîchit son cache tout seul avant chaque opération)."},
+ note:"Équivalent Rocky 9 : <b>sudo dnf makecache</b> — qu'on ne tape presque jamais, dnf rafraîchissant son cache seul avant chaque opération. À ne pas confondre avec <b>dnf check-update</b>, qui LISTE les mises à jour disponibles."},
 
 {id:"w11-install-server", w:11, src:"cours-ubuntu",
  sc:"La machine doit ACCEPTER les connexions entrantes. Le client SSH est déjà là, mais aucun service n'écoute sur le port 22.",
@@ -2981,7 +2996,7 @@ var EX = [
        "-la":"Sans « -a », les fichiers de configuration (.bashrc, .profile) restent invisibles, et sans « -l » tu n'as ni droits ni propriétaire."},
  why:"« adduser » copie /etc/skel dans le nouveau dossier personnel : .bashrc, .profile, .bash_logout. Les droits drwxr-x--- expliquent pourquoi sudo est nécessaire pour regarder à l'intérieur depuis un autre compte.",
  out:"total 20\ndrwxr-x--- 2 sshuser sshuser 4096 Jun 30 09:26 .\ndrwxr-xr-x 5 root    root    4096 Jun 30 09:26 ..\n-rw-r--r-- 1 sshuser sshuser  220 Jun 30 09:26 .bash_logout\n-rw-r--r-- 1 sshuser sshuser 3771 Jun 30 09:26 .bashrc\n-rw-r--r-- 1 sshuser sshuser  807 Jun 30 09:26 .profile",
- note:"<b>drwxr-x---</b> : le propriétaire entre et écrit, le groupe entre et lit, les autres n'ont rien."},
+ note:"<b>drwxr-x---</b> : le propriétaire entre et écrit, le groupe entre et lit, les autres n'ont rien. C'est le défaut d'Ubuntu (DIR_MODE=0750) ; sur Rocky 9 un dossier personnel est plus fermé encore, en <b>drwx------</b>."},
 
 {id:"w11-ip-addr", w:11, src:"cours-ubuntu",
  sc:"Pour se connecter au serveur, il faut son adresse. Tu veux le détail complet de chaque interface, avec le masque et l'état.",
@@ -2996,7 +3011,7 @@ var EX = [
    "-I":"« -I » est une option de hostname, pas de ip."},
  why:"« ip addr » détaille chaque interface : lo pour la boucle locale (127.0.0.1), eth0 pour la carte réseau réelle, docker0 s'il y a du Docker. C'est la vue complète, à lire avant de choisir la bonne adresse.",
  out:"1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536\n    inet 127.0.0.1/8 scope host lo\n2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500\n    inet 172.16.50.114/24 metric 100 brd 172.16.50.255 scope global dynamic eth0\n3: docker0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500\n    inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0",
- note:"Erreur classique : prendre l'adresse <b>docker0</b> (172.17.0.1) au lieu de celle d'<b>eth0</b>."},
+ note:"Erreur classique : prendre l'adresse <b>docker0</b> (172.17.0.1) au lieu de celle d'<b>eth0</b>. Attention aussi : <b>ip</b> se lit pareil sur les deux distributions, mais la configuration PERMANENTE non — <b>nmcli</b> sur Rocky, <b>netplan</b> (/etc/netplan/*.yaml) sur Ubuntu Server."},
 
 {id:"w11-hostname-I", w:11, src:"cours-ubuntu",
  sc:"Tu veux juste la liste des adresses IP de la machine, sans lire toute la sortie détaillée de ip addr.",
@@ -3053,7 +3068,7 @@ var EX = [
    hostname:"Sans guillemets, la commande fonctionne pour un mot isolé, mais dès qu'il y a des options ou des espaces le shell local la découperait. On prend l'habitude de toujours mettre des guillemets."},
  order:"L'ordre est : ssh, la destination, puis la commande à exécuter entre guillemets.",
  why:"« ssh utilisateur@machine \"commande\" » exécute l'ordre à distance, affiche sa sortie chez toi, puis ferme la connexion. C'est ce qui permet d'automatiser : pas de session à tenir, un ordre puis on repart.",
- outCmd:"ssh sshuser@127.0.0.1 \"hostname\"\nsshuser@127.0.0.1's password: \niZrj91w6gb8osv0mra83hdZ",
+ outCmd:"ssh sshuser@127.0.0.1 \"hostname\"\nsshuser@127.0.0.1's password: \nubuntu",
  note:"Session interactive = discuter dans la maison. Commande unique = glisser un post-it dans la boîte aux lettres."},
 
 {id:"w11-ssh-command-args", w:11, src:"cours-ubuntu",
@@ -3119,7 +3134,7 @@ var EX = [
    "le mot de passe était faux":"Un mot de passe refusé afficherait « Permission denied », pas le résultat de la commande.",
    "le service ssh s'est arrêté":"Le service continue de tourner : c'est seulement cette connexion-là qui s'est terminée."},
  why:"Deux usages de ssh : sans commande, tu obtiens un shell complet qu'il faut refermer avec exit ; avec une commande entre guillemets, elle s'exécute, sa sortie s'affiche, et la connexion se ferme immédiatement. C'est ce second mode qui sert à automatiser.",
- outCmd:"ssh sshuser@127.0.0.1 \"hostname\"\niZrj91w6gb8osv0mra83hdZ\n$ ",
+ outCmd:"ssh sshuser@127.0.0.1 \"hostname\"\nubuntu\n$ ",
  note:""},
 
 {id:"w11-quiz-fingerprint", w:11, src:"cours-ubuntu", quiz:true,
@@ -3233,9 +3248,9 @@ var EX = [
    "--get-default-zone":"« --get-default-zone » ne renvoie qu'un nom.",
    "--get-services":"« --get-services » liste les définitions de services, pas les zones.",
    "--list-all":"« --list-all » détaille une zone, il ne les énumère pas."},
- why:"« --get-zones » énumère toutes les zones existantes : les neuf zones standard plus celles que tu as créées. C'est la vérification qui suit une création de zone, après le reload.",
+ why:"« --get-zones » énumère toutes les zones existantes : les neuf zones standard, la zone nm-shared ajoutée par NetworkManager sur Rocky 9, plus celles que tu as créées. C'est la vérification qui suit une création de zone, après le reload.",
  out:"block dmz drop external home internal lodhi nm-shared public trusted work",
- note:"Les neuf zones standard : drop, block, public, external, internal, dmz, work, home, trusted."},
+ note:"Les neuf zones standard : drop, block, public, external, internal, dmz, work, home, trusted. <b>nm-shared</b> vient de NetworkManager, <b>lodhi</b> est celle que tu viens de créer."},
 
 {id:"w12-set-default-zone", w:12, src:"cours",
  sc:"Ce serveur est dans le réseau interne de l'entreprise, où les autres machines sont relativement fiables. La zone par défaut doit devenir work.",
@@ -3482,14 +3497,14 @@ var EX = [
 {id:"w12-quiz-ssh", w:12, src:"cours", quiz:true,
  sc:"Tu administres un serveur uniquement par SSH et tu t'apprêtes à retirer le service ssh de la zone qui porte ton interface.",
  ask:"Quel est le risque ?",
- sol:["perdre immédiatement ton propre accès au serveur"],
+ sol:["perdre l'accès dès que tu te reconnecteras"],
  blocks:["arrêter le service sshd","supprimer le compte sshuser","effacer les règles permanentes"],
  traps:{
    "arrêter le service sshd":"Le service continue de tourner : c'est le pare-feu qui cesse de laisser passer le trafic vers lui.",
    "supprimer le compte sshuser":"Le pare-feu ne touche à aucun compte utilisateur.",
    "effacer les règles permanentes":"Retirer un service ne supprime pas les autres règles enregistrées."},
- why:"Le pare-feu filtre le trafic, pas les services. En retirant ssh de la zone active, sshd tourne toujours mais plus aucune connexion ne l'atteint — y compris la tienne. D'où la règle : garder une console locale ou celle de l'hyperviseur, et tester en runtime avant de rendre permanent.",
- outCmd:"sudo firewall-cmd --zone=public --remove-service=ssh\nsuccess\nclient_loop: send disconnect: Broken pipe",
+ why:"Le pare-feu filtre le trafic, pas les services : sshd continue de tourner. Le piège est plus sournois — ta session EN COURS survit, car firewalld laisse passer les connexions déjà établies. C'est la PROCHAINE connexion qui sera refusée, et si tu as fermé ton terminal entre-temps, tu es dehors. D'où la règle : garder une console locale ou celle de l'hyperviseur, et tester en runtime avant de rendre permanent.",
+ outCmd:"sudo firewall-cmd --zone=public --remove-service=ssh\nsuccess\n(ta session en cours continue de fonctionner)\n$ ssh chaima@192.168.0.10    <- depuis un autre poste\nssh: connect to host 192.168.0.10 port 22: Connection timed out",
  note:""},
 
 {id:"w12-quiz-richrule", w:12, src:"cours", quiz:true,
@@ -3506,6 +3521,67 @@ var EX = [
  why:"Une rich rule se lit comme une phrase : famille d'adresses, source, service, puis action (accept, reject, drop). L'ensemble est entouré d'apostrophes et chaque valeur de guillemets, sinon le shell la découpe avant que firewalld ne la voie.",
  outCmd:"sudo firewall-cmd --permanent --zone=public \\\n  --add-rich-rule='rule family=\"ipv4\" source address=\"192.168.1.0/24\" service name=\"ssh\" accept'\nsuccess\n$ sudo firewall-cmd --reload\nsuccess",
  note:"Attention : cette règle n'annule pas un <b>--add-service=ssh</b> global déjà posé."}
+,
+{id:"w3-quiz-visudo", w:3, src:"general", quiz:true,
+ sc:"Tu veux donner à paul le droit d'exécuter une seule commande avec sudo. Il faut pour cela modifier la configuration de sudo.",
+ ask:"Comment édite-t-on la configuration de sudo ?",
+ sol:["avec visudo, qui vérifie la syntaxe avant d'enregistrer"],
+ blocks:["avec nano /etc/sudoers, comme tout fichier texte",
+         "avec chmod 644 /etc/sudoers puis un éditeur",
+         "en ajoutant l'utilisateur dans /etc/passwd"],
+ traps:{
+   "avec nano /etc/sudoers, comme tout fichier texte":"C'est l'erreur qui coûte le plus cher : une faute de frappe dans /etc/sudoers rend sudo inutilisable sur toute la machine, et il faut un accès root direct pour réparer.",
+   "avec chmod 644 /etc/sudoers puis un éditeur":"Relâcher les droits de ce fichier est une faille en soi : sudo refuse d'ailleurs de fonctionner s'il le trouve trop permissif.",
+   "en ajoutant l'utilisateur dans /etc/passwd":"« /etc/passwd » décrit les comptes ; les droits sudo se définissent dans /etc/sudoers ou dans un fichier de /etc/sudoers.d/."},
+ why:"« visudo » ouvre /etc/sudoers dans un éditeur et VÉRIFIE la syntaxe avant d'enregistrer : en cas d'erreur, il refuse d'écrire et propose de corriger. C'est le garde-fou qui évite de se verrouiller hors de sudo. Pour une règle isolée, on crée plutôt un fichier dédié dans /etc/sudoers.d/ (édité avec « visudo -f »).",
+ outCmd:"sudo visudo\n>>> /etc/sudoers: syntax error near line 42 <<<\nQue faire ? [e]diter à nouveau, e[x]it sans sauver, [Q]uitter et sauver",
+ note:"Connaissance générale Rocky/RHEL. Le groupe <b>wheel</b> couvre déjà le cas courant : visudo sert aux droits sur mesure."},
+
+{id:"w4-disable", w:4, src:"general",
+ sc:"Le serveur web installé pour un test doit être arrêté maintenant et ne plus jamais redémarrer automatiquement au boot.",
+ ask:"Arrête et désactive le service httpd en une seule commande.",
+ sol:["sudo","systemctl","disable","--now","httpd"],
+ blocks:["enable","stop","restart","mask"],
+ traps:{
+   enable:"« enable » programme le démarrage automatique : exactement l'inverse.",
+   stop:"« stop » arrête le service maintenant, mais il repartira au prochain démarrage de la machine.",
+   restart:"« restart » le relance au lieu de l'arrêter.",
+   mask:"« mask » va plus loin : il rend le service impossible à démarrer, même à la main. Trop radical pour un simple test terminé."},
+ miss:{"--now":"Sans « --now », le service ne redémarrera plus au boot mais continue de tourner en ce moment.",
+       sudo:"Sans « sudo », piloter un service est refusé."},
+ order:"L'ordre est : sudo, systemctl, disable, --now, puis le service.",
+ why:"« disable --now » est le pendant exact de « enable --now » : il coupe le service immédiatement ET supprime son démarrage automatique. Les deux moitiés sont indépendantes, comme pour start et enable.",
+ outCmd:"sudo systemctl disable --now httpd\nRemoved /etc/systemd/system/multi-user.target.wants/httpd.service.",
+ note:"Symétrie à retenir : <b>enable --now</b> pour mettre en service, <b>disable --now</b> pour retirer."},
+
+{id:"w4-daemon-reload", w:4, src:"general",
+ sc:"Tu viens de modifier le fichier d'unité /etc/systemd/system/sauvegarde.service. Un simple restart ne prend pas ta modification en compte : systemd garde en mémoire l'ancienne définition.",
+ ask:"Demande à systemd de relire les fichiers d'unités.",
+ sol:["sudo","systemctl","daemon-reload"],
+ blocks:["restart","reload","enable","--now"],
+ traps:{
+   restart:"« restart » redémarre le service avec la définition que systemd a EN MÉMOIRE, c'est-à-dire l'ancienne : c'est précisément le piège.",
+   reload:"« systemctl reload service » demande au SERVICE de relire SA configuration ; ici c'est systemd lui-même qui doit relire le fichier d'unité.",
+   enable:"« enable » programme le démarrage au boot.",
+   "--now":"« --now » accompagne enable ou disable."},
+ miss:{sudo:"Sans « sudo », la relecture des unités est refusée."},
+ why:"systemd charge les fichiers d'unités au démarrage et les garde en mémoire. Toute modification d'un fichier .service exige « daemon-reload » AVANT le restart, sinon la modification est ignorée en silence. Même logique que « --reload » pour firewalld ou « restart sshd » après avoir édité sshd_config : écrire ne suffit jamais, il faut faire relire.",
+ outCmd:"sudo systemctl daemon-reload\n$ sudo systemctl restart sauvegarde.service",
+ note:"Ordre obligatoire : modifier le fichier <b>.service</b> → <b>daemon-reload</b> → <b>restart</b>."},
+
+{id:"w4-getenforce", w:4, src:"general",
+ sc:"Le service tourne, le port est en écoute, le pare-feu autorise le trafic — et la connexion est toujours refusée. Sur Rocky, il reste un quatrième gardien à interroger.",
+ ask:"Affiche le mode de fonctionnement de SELinux.",
+ sol:["getenforce"],
+ blocks:["systemctl","firewall-cmd","ss","setenforce"],
+ traps:{
+   systemctl:"« systemctl » renseigne sur le service : il a déjà été vérifié, il est actif.",
+   "firewall-cmd":"Le pare-feu a déjà été vérifié lui aussi : il autorise le service.",
+   ss:"« ss » confirme que le port écoute, ce qui est déjà établi.",
+   setenforce:"« setenforce » CHANGE le mode (0 permissif, 1 strict). On commence toujours par observer avec « getenforce »."},
+ why:"SELinux est actif en mode « Enforcing » par défaut sur Rocky 9 : il peut bloquer un service parfaitement configuré, par exemple un serveur web qui écoute sur un port non standard. C'est la quatrième cause à vérifier, après le service, le port et le pare-feu — et celle qu'on oublie systématiquement, parce qu'elle ne produit aucun message dans le journal du service.",
+ out:"Enforcing",
+ note:"Connaissance générale Rocky/RHEL. Les refus SELinux se lisent dans <b>/var/log/audit/audit.log</b> ou avec <b>ausearch -m avc</b>."}
 
 ];
 
@@ -3624,7 +3700,7 @@ var BOSS = [
           chpasswd:"« chpasswd » sert aux changements en masse depuis un fichier."},
    miss:{sudo:"Sans « sudo », tu ne changerais que TON propre mot de passe."},
    why:"« passwd utilisateur » demande le mot de passe de façon interactive et le stocke hashé dans /etc/shadow.",
-   outCmd:"sudo passwd paul\nNouveau mot de passe : \nRetapez le nouveau mot de passe : \npasswd : mot de passe mis à jour avec succès"},
+   outCmd:"sudo passwd paul\nChangement du mot de passe de l'utilisateur paul.\nNouveau mot de passe : \nRetapez le nouveau mot de passe : \npasswd : mot de passe mis à jour avec succès"},
   {id:"b3-4", w:3, src:"general", sc:"Étape 4 — Paul doit pouvoir administrer la machine, sans perdre ses groupes actuels.",
    ask:"Ajoute paul au groupe secondaire wheel.",
    sol:["sudo","usermod","-aG","wheel","paul"], blocks:["-G","adm","groupadd"],
@@ -3632,7 +3708,7 @@ var BOSS = [
           adm:"« adm » concerne la lecture des logs ; le groupe d'administration de Rocky est « wheel ».",
           groupadd:"« groupadd » créerait un groupe ; wheel existe déjà."},
    miss:{sudo:"Sans « sudo », la modification du compte est refusée."},
-   order:"Le groupe vient avant l'utilisateur : les inverser ajouterait paul à un groupe nommé paul.",
+   order:"Le groupe vient avant l'utilisateur. Inversés, « usermod -aG paul wheel » viserait l'utilisateur wheel : « usermod : l'utilisateur « wheel » n'existe pas ».",
    why:"Le « a » de « -aG » signifie append : on ajoute sans écraser. C'est le piège numéro un d'usermod.",
    outCmd:"sudo usermod -aG wheel paul\n$ id paul\nuid=1001(paul) gid=1001(paul) groupes=1001(paul),10(wheel)"}]},
 
@@ -3649,7 +3725,8 @@ var BOSS = [
    out:"● httpd.service - The Apache HTTP Server\n     Active: failed (Result: exit-code) since Thu 10:41:02 CET\n     httpd[3120]: (98)Address already in use: AH00072: make_sock: could not bind to address [::]:80"},
   {id:"b4-2", w:4, src:"cours", sc:"Étape 2 — Le port 80 est déjà pris. Vérifie qui écoute dessus.",
    ask:"Liste les ports en écoute et filtre sur le port 80.",
-   sol:["ss","-tulpn","|","grep",":80"], blocks:["netstat","ps",">"],
+   sol:["sudo","ss","-tulpn","|","grep",":80"], blocks:["netstat","ps",">"],
+   miss:{sudo:"Sans « sudo », la colonne du processus reste vide : tu vois que le port est pris, mais pas par qui."},
    traps:{netstat:"« netstat » est l'ancien outil, souvent absent de Rocky 9 : on utilise « ss ».",
           ps:"« ps » ne dit pas quel processus occupe un port.",
           ">":"« > » redirige vers un fichier ; pour enchaîner deux commandes, c'est le tube « | »."},
@@ -3658,12 +3735,13 @@ var BOSS = [
    out:"tcp   LISTEN 0   128   0.0.0.0:80   0.0.0.0:*   users:((\"httpd\",pid=3120,fd=4))"},
   {id:"b4-3", w:4, src:"cours", sc:"Étape 3 — Un ancien processus httpd (PID 3120) squatte le port. Demande-lui d'abord de s'arrêter proprement.",
    ask:"Demande l'arrêt propre du processus 3120.",
-   sol:["kill","3120"], blocks:["-9","killall","httpd"],
+   sol:["sudo","kill","3120"], blocks:["-9","killall","httpd"],
+   miss:{sudo:"Le processus httpd tourne sous le compte apache : sans sudo, l'arrêt est refusé."},
    traps:{"-9":"« -9 » est l'arrêt brutal : on ne l'utilise qu'après l'échec de l'arrêt propre.",
           killall:"« killall » viserait toutes les instances par nom ; ici on a un PID précis.",
           httpd:"« kill » attend un PID, pas un nom de programme."},
    why:"SIGTERM (kill sans option) laisse le processus fermer ses fichiers. C'est toujours la première tentative ; « -9 » reste le dernier recours.",
-   outCmd:"kill 3120\n$ ss -tulpn | grep :80\n(plus rien : le port est libéré)"},
+   outCmd:"sudo kill 3120\n$ ss -tulpn | grep :80\n(plus rien : le port est libéré)"},
   {id:"b4-4", w:4, src:"cours", sc:"Étape 4 — Le port est libre. Le service doit repartir maintenant ET à chaque démarrage de la machine.",
    ask:"Active et démarre le service httpd en une seule commande.",
    sol:["sudo","systemctl","enable","--now","httpd"], blocks:["start","restart","-f"],
@@ -3685,7 +3763,7 @@ var BOSS = [
           search:"« search » cherche un paquet par mot-clé.",
           "config-manager":"« config-manager » active ou désactive un dépôt, elle ne les liste pas."},
    why:"Sur Rocky 9, seuls baseos, appstream et extras sont actifs par défaut : c'est la première chose à vérifier devant un paquet introuvable.",
-   out:"id du dépôt      nom du dépôt\nappstream        Rocky Linux 9 - AppStream\nbaseos           Rocky Linux 9 - BaseOS\nextras           Rocky Linux 9 - Extras"},
+   out:"identifiant du dépôt   nom du dépôt\nappstream        Rocky Linux 9 - AppStream\nbaseos           Rocky Linux 9 - BaseOS\nextras           Rocky Linux 9 - Extras"},
   {id:"b5-2", w:5, src:"cours", sc:"Étape 2 — EPEL n'apparaît pas. Ajoute-le au système.",
    ask:"Installe le paquet qui ajoute le dépôt EPEL.",
    sol:["sudo","dnf","install","epel-release"], blocks:["epel","crb","--enable"],
@@ -3769,7 +3847,7 @@ var BOSS = [
  steps:[
   {id:"b7-1", w:7, src:"general", sc:"Étape 1 — Mesure d'abord le nombre de tentatives échouées dans /var/log/secure.",
    ask:"Compte les lignes contenant Failed dans ce fichier.",
-   sol:["grep","-c","Failed","/var/log/secure"], blocks:["-n","-v","wc"],
+   sol:["sudo","grep","-c","Failed","/var/log/secure"], blocks:["-n","-v","wc"],
    traps:{"-n":"« -n » numérote les lignes au lieu de les compter.",
           "-v":"« -v » afficherait les lignes qui ne contiennent PAS le mot.",
           wc:"Un enchaînement avec wc marcherait, mais grep sait compter seul avec « -c »."},
@@ -3778,13 +3856,13 @@ var BOSS = [
    out:"148"},
   {id:"b7-2", w:7, src:"general", sc:"Étape 2 — 148 tentatives. Tu veux voir ces lignes, quelle que soit la casse du mot cherché.",
    ask:"Cherche le mot failed sans tenir compte de la casse dans /var/log/secure.",
-   sol:["grep","-i","failed","/var/log/secure"], blocks:["-c","-v","-r"],
+   sol:["sudo","grep","-i","failed","/var/log/secure"], blocks:["-c","-v","-r"],
    traps:{"-c":"« -c » ne donnerait qu'un nombre, or on veut lire les lignes.",
           "-v":"« -v » exclurait justement ce qu'on cherche.",
           "-r":"« -r » sert à descendre dans un dossier ; ici on vise un fichier précis."},
    miss:{"-i":"Sans « -i », « Failed » et « failed » sont deux motifs différents."},
    why:"Linux est sensible à la casse partout : « -i » évite de passer à côté de la moitié des lignes.",
-   out:"mars 12 10:38:02 rocky9 sshd[3520]: Failed password for invalid user admin from 192.168.0.77\nmars 12 10:38:09 rocky9 sshd[3522]: failed login attempt from 192.168.0.77"},
+   out:"Mar 12 10:38:02 rocky9 sshd[3520]: Failed password for invalid user admin from 192.168.0.77\nMar 12 10:38:09 rocky9 sshd[3522]: failed login attempt from 192.168.0.77"},
   {id:"b7-3", w:7, src:"general", sc:"Étape 3 — Une même adresse revient. Vérifie quels fichiers de /etc ont été modifiés ces 7 derniers jours.",
    ask:"Cherche ces fichiers récemment modifiés.",
    sol:["find","/etc","-mtime","-7"], blocks:["+7","-size","-name"],
@@ -3862,7 +3940,7 @@ var BOSS = [
           mount:"On ne peut pas monter une partition non formatée."},
    miss:{sudo:"Sans « sudo », le formatage est refusé."},
    why:"Le numéro dans /dev/vdb1 est vital : l'oublier détruit la table de partitions du disque.",
-   outCmd:"sudo mkfs.ext4 /dev/vdb1\nUUID de système de fichiers=d4e19f22-8b7c-4a51-93f6-6e0c8d3a4b15\nÉcriture des superblocs : complété"},
+   outCmd:"sudo mkfs.ext4 /dev/vdb1\nmke2fs 1.46.5 (30-Dec-2021)\nUUID de système de fichiers=d4e19f22-8b7c-4a51-93f6-6e0c8d3a4b15\nÉcriture des superblocs : complété"},
   {id:"b9-3", w:9, src:"cours", sc:"Étape 3 — Le point de montage /mnt/ASR-DATA n'existe pas encore.",
    ask:"Crée ce dossier, avec ses parents si nécessaire.",
    sol:["sudo","mkdir","-p","/mnt/ASR-DATA"], blocks:["touch","mount","/mnt"],
@@ -3987,7 +4065,7 @@ var BOSS = [
           scp:"« scp » copie des fichiers, elle n'exécute pas de commande."},
    order:"L'ordre est : ssh, la destination, puis la commande entre guillemets.",
    why:"Une commande entre guillemets s'exécute à distance, affiche sa sortie chez toi, puis la connexion se ferme seule. C'est la base de l'automatisation par SSH.",
-   outCmd:"ssh sshuser@127.0.0.1 \"hostname\"\nsshuser@127.0.0.1's password: \niZrj91w6gb8osv0mra83hdZ"}]},
+   outCmd:"ssh sshuser@127.0.0.1 \"hostname\"\nsshuser@127.0.0.1's password: \nubuntu"}]},
 
 {w:12, name:"Le serveur web injoignable", ico:"🧱", xp:55,
  intro:"Le serveur web tourne, il écoute bien sur le port 80, mais aucune requête n'arrive de l'extérieur. Le pare-feu est le suspect numéro un. Tu vas observer, tester en runtime, puis enregistrer.",
@@ -4270,10 +4348,15 @@ function diagnose(ex, tokens){
 }
 
 /* ---------- révision espacée (Leitner) ---------- */
-var BOX_DAYS=[0,1,2,4,8,16];
-var MASTER_BOX=6;
+var BOX_DAYS=[0,1,3,7,14];
+var MASTER_BOX=4;
 var DAY=86400000;
-function nextBox(box, ok){ return ok? Math.min(box+1,MASTER_BOX) : 0; }
+/* Une erreur ne remet à zéro que les items encore fragiles : au-delà,
+   on recule de deux boîtes au lieu d'effacer des semaines de rappels. */
+function nextBox(box, ok){
+  if(ok) return Math.min(box+1,MASTER_BOX);
+  return box<=2? 0 : box-2;
+}
 function dueAt(box, now){
   if(box<=0) return now;
   var d=BOX_DAYS[Math.min(box,BOX_DAYS.length-1)];
@@ -4284,7 +4367,9 @@ function isMastered(st){ return !!st && st.b>=MASTER_BOX; }
 /* ---------- niveaux ---------- */
 var TITLES=["Novice du terminal","Apprentie du shell","Exploratrice de l'arborescence",
   "Gardienne des permissions","Gestionnaire de comptes","Dompteuse de processus",
-  "Administratrice junior","Administratrice confirmée","Architecte système","Impératrice du terminal"];
+  "Gestionnaire de paquets","Technicienne réseau","Chasseuse de logs","Maîtresse des disques",
+  "Gardienne du pare-feu","Administratrice junior","Administratrice confirmée",
+  "Architecte système","Experte Rocky Linux","Impératrice du terminal"];
 function xpTotalForLevel(n){
   var t=0;
   for(var i=1;i<n;i++) t+=60+30*(i-1);
@@ -4327,6 +4412,36 @@ function isWorldUnlocked(n, prog){
   /* un monde peut déclarer un prérequis explicite (labo indépendant, monde bonus) */
   return worldStats(reqWorld(w), prog).firstPass >= UNLOCK_RATIO;
 }
+/* ---------- entrelacement ---------- */
+/* Verbe de tête d'un exercice, « sudo » ignoré : c'est lui qui décide de la famille. */
+function headVerb(ex){
+  var seq=accepted(ex)[0];
+  return seq[0]==="sudo"? (seq[1]||seq[0]) : seq[0];
+}
+function shuffleList(list, rnd){
+  rnd=rnd||Math.random;
+  var a=list.slice(), i, j, t;
+  for(i=a.length-1;i>0;i--){ j=Math.floor(rnd()*(i+1)); t=a[i]; a[i]=a[j]; a[j]=t; }
+  return a;
+}
+/* Réordonne pour éviter la pratique en blocs : au plus deux items consécutifs
+   partageant le même verbe de tête, quand la composition le permet. */
+function interleave(list){
+  var rest=list.slice(), out=[], i, run=0, last=null;
+  while(rest.length){
+    var pick=0;
+    for(i=0;i<rest.length;i++){
+      var v=headVerb(rest[i]);
+      if(!(run>=2 && v===last)){ pick=i; break; }
+    }
+    var ex=rest.splice(pick,1)[0], hv=headVerb(ex);
+    run = (hv===last)? run+1 : 1;
+    last=hv;
+    out.push(ex);
+  }
+  return out;
+}
+
 /* ---------- file de révision ---------- */
 function buildQueue(worldN, prog, now, size){
   var list=worldExercises(worldN), due=[], fresh=[], later=[], i;
@@ -4338,7 +4453,7 @@ function buildQueue(worldN, prog, now, size){
     else later.push(e);
   }
   due.sort(function(a,b){ return prog[a.id].due-prog[b.id].due; });
-  var q=due.concat(fresh);
+  var q=interleave(due.concat(interleave(fresh)));
   if(q.length<size){
     later.sort(function(a,b){
       var A=prog[a.id], B=prog[b.id];
@@ -4347,6 +4462,53 @@ function buildQueue(worldN, prog, now, size){
     q=q.concat(later);
   }
   return q.slice(0, size);
+}
+
+/* ---------- révision du jour : tous mondes confondus ----------
+   Sans elle, les commandes d'un monde terminé ne reviennent jamais :
+   la file par monde n'est servie que si on rouvre ce monde à la main.
+   Répartition : au plus 5 rappels dus sur 8 questions, le reste en
+   nouveautés, puis en entretien des commandes déjà ancrées.          */
+function dailyStock(prog, now){
+  var due=[], fresh=[], upkeep=[], soon=[], i;
+  for(i=0;i<EX.length;i++){
+    var ex=EX[i];
+    if(!isWorldUnlocked(ex.w, prog)) continue;
+    var st=prog[ex.id];
+    if(!st || !st.n){ fresh.push(ex); continue; }
+    if(isMastered(st)){ if(st.due<=now) upkeep.push(ex); continue; }
+    if(st.due<=now) due.push(ex); else soon.push(ex);
+  }
+  due.sort(function(a,b){ return prog[a.id].due-prog[b.id].due; });
+  upkeep.sort(function(a,b){ return prog[a.id].due-prog[b.id].due; });
+  soon.sort(function(a,b){
+    var A=prog[a.id], B=prog[b.id];
+    return (A.b-B.b) || (A.due-B.due);
+  });
+  return {due:due, fresh:fresh, upkeep:upkeep, soon:soon};
+}
+/* Les nouveautés restent cantonnées aux deux mondes les plus bas encore en
+   cours : les rappels traversent tous les mondes, la découverte non — sinon
+   la série du jour sort une commande du monde 11 au deuxième jour de jeu. */
+function freshWorlds(fresh){
+  var seen={}, list=[], i;
+  for(i=0;i<fresh.length;i++) seen[fresh[i].w]=1;
+  for(var k in seen) list.push(+k);
+  list.sort(function(a,b){ return a-b; });
+  return list.slice(0,2);
+}
+function dailyQueue(prog, now, size, rnd){
+  var st=dailyStock(prog, now);
+  var maxDue=Math.max(1, Math.round(size*5/8));
+  var q=st.due.slice(0, maxDue);
+  var allowed=freshWorlds(st.fresh);
+  var freshList=st.fresh.filter(function(e){ return allowed.indexOf(e.w)>=0; });
+  var freshOrder=interleave(shuffleList(freshList, rnd));
+  q=q.concat(freshOrder.slice(0, size-q.length));
+  if(q.length<size) q=q.concat(st.due.slice(maxDue, maxDue+(size-q.length)));
+  if(q.length<size) q=q.concat(st.upkeep.slice(0, size-q.length));
+  if(q.length<size) q=q.concat(st.soon.slice(0, size-q.length));
+  return interleave(q.slice(0, size));
 }
 
 /* ---------- boss de fin de monde ---------- */
@@ -4429,6 +4591,15 @@ function examQueue(prog, size, rnd){
   return q;
 }
 
+/* ---------- accès au mode examen ---------- */
+var EXAM_MIN=60;
+function examProgress(prog){
+  var n=0, id;
+  for(id in prog){ if(EX.some(function(e){return e.id===id;}) && prog[id].ok>0) n++; }
+  return n;
+}
+function isExamOpen(prog){ return examProgress(prog) >= EXAM_MIN; }
+
 /* ---------- export texte de la fiche ---------- */
 function pad2(n){ return (n<10?"0":"")+n; }
 function fmtDate(ts){
@@ -4489,8 +4660,8 @@ function buildReport(state, now){
 
 /* ==================== APPLICATION ==================== */
 var KEY="empire-chaima-linux-v1";
-var S={xp:0, prog:{}, streak:0, best:0, last:null, days:0, log:[], boss:{},
-       free:false, noanim:false, len:8, examOn:true, lastWorld:1, seenIntro:false};
+var S={xp:0, prog:{}, streak:0, best:0, last:null, days:0, log:[], boss:{}, exams:[], dayKey:null, dayCount:0,
+       mode:"blocs", free:false, noanim:false, len:8, examOn:true, lastWorld:1, seenIntro:false};
 
 function $(id){ return document.getElementById(id); }
 function save(){ try{ localStorage.setItem(KEY, JSON.stringify(S)); }catch(e){} }
@@ -4527,7 +4698,7 @@ function markPlayed(){
   if(S.last){
     var gap=daysBetween(S.last,today);
     if(gap===1){ S.streak++; }
-    else { if(S.streak>1) toast("Série repartie de zéro — l'important c'est de revenir."); S.streak=1; }
+    else { if(S.streak>1) toast("Dernière séance il y a "+gap+" jours : le compteur de jours repart à 1. Ta progression, tes commandes ancrées et ta fiche de points faibles sont intactes."); S.streak=1; }
   } else S.streak=1;
   S.last=today; S.days++;
   if(S.streak>S.best) S.best=S.streak;
@@ -4535,6 +4706,20 @@ function markPlayed(){
   if(S.streak>=3) toast("🔥 "+S.streak+" jours d'affilée");
   save();
 }
+
+/* ---------- objectif du jour ----------
+   Une séance doit pouvoir se terminer : sans point d'arrêt, on s'arrête
+   toujours sur un abandon ou on déborde et on saute le lendemain. */
+function dayGoal(){
+  var due=dailyStock(S.prog, Date.now()).due.length;
+  return Math.min(24, Math.max(S.len*2, Math.min(due, 24)));
+}
+function bumpDay(){
+  var k=dayKey();
+  if(S.dayKey!==k){ S.dayKey=k; S.dayCount=0; }
+  S.dayCount++;
+}
+function dayDone(){ return S.dayKey===dayKey() && S.dayCount>=dayGoal(); }
 
 /* ---------- journal cumulatif des erreurs ---------- */
 function logError(ex, mode){
@@ -4550,6 +4735,7 @@ function renderHud(from, to){
   $("lvlNum").textContent=li.lvl;
   $("lvlTitle").textContent=li.title;
   $("streakNum").textContent=S.streak;
+  $("streakBox").title = S.best>S.streak? ("Série en cours : "+S.streak+" j · record : "+S.best+" j") : ("Série en cours : "+S.streak+" j");
   $("streakBox").classList.toggle("off", S.streak<1);
   var start=(from===undefined?to:from), t0=null, dur=(S.noanim?0:700);
   function frame(ts){
@@ -4591,6 +4777,16 @@ function confetti(){
     })(i);
   }
 }
+var PENDING_CELEB=null;
+function celebrateSoon(title, sub, big){
+  if(SES){ PENDING_CELEB={t:title, s:sub, b:big}; return; }
+  celebrate(title, sub, big);
+}
+function flushCeleb(){
+  if(!PENDING_CELEB) return;
+  var c=PENDING_CELEB; PENDING_CELEB=null;
+  setTimeout(function(){ celebrate(c.t, c.s, c.b); }, 350);
+}
 function celebrate(title, sub, big){
   $("ovLvl").textContent=big;
   $("ovTitle").textContent=title;
@@ -4620,19 +4816,21 @@ function renderHome(){
     var unlocked=isWorldUnlocked(w.n,S.prog);
     var pct=Math.round(st.firstPass*100);
     var b=document.createElement("button");
-    b.className="world"+(unlocked?"":" locked")+(st.mastered===st.total&&st.total?" done":"");
+    b.className="world"+(unlocked?"":" locked")+((unlocked&&st.mastery>=0.8)?" done":"");
     b.innerHTML=
       '<div class="ico">'+(unlocked?w.ico:"🔒")+'</div>'+
       '<div class="meta">'+
         '<div class="nm"><span class="num">MONDE '+w.n+'</span> '+w.name+'</div>'+
         '<div class="cmds">'+(w.distro==="ubuntu"? "Ubuntu/Debian · ":"")+w.cmds+'</div>'+
         '<div class="wbar"><div class="wfill" style="width:'+(unlocked?pct:0)+'%"></div></div>'+
-        (unlocked? '' : '<div class="lockmsg">Se débloque à '+Math.round(UNLOCK_RATIO*100)+'% du monde '+(w.bonus?1:w.n-1)+' (actuellement '+Math.round(worldStats(w.bonus?1:w.n-1,S.prog).firstPass*100)+'%)</div>')+
+        ((unlocked&&st.mastered)? '<div class="lockmsg" style="margin-top:5px"><b style="color:var(--gold)">'+st.mastered+'</b> commande'+(st.mastered>1?"s":"")+' ancrée'+(st.mastered>1?"s":"")+' sur '+st.total+'</div>' : '')+
+        (unlocked? '' : '<div class="lockmsg">Se débloque à '+Math.round(UNLOCK_RATIO*100)+'% du monde '+reqWorld(w)+' (actuellement '+Math.round(worldStats(reqWorld(w),S.prog).firstPass*100)+'%)</div>')+
       '</div>'+
       '<div class="pct">'+(unlocked? pct+"%" : "")+'</div>';
     (function(w,unlocked){
       b.onclick=function(){
-        if(!unlocked){ toast("Termine d'abord "+Math.round(UNLOCK_RATIO*100)+"% du monde "+(w.n-1)+"."); return; }
+        if(!unlocked){ var rq=reqWorld(w);
+          toast("Ce monde s'ouvre à "+Math.round(UNLOCK_RATIO*100)+"% du monde "+rq+". Tu y es à "+Math.round(worldStats(rq,S.prog).firstPass*100)+"%."); return; }
         startSession(w.n);
       };
     })(w,unlocked);
@@ -4662,10 +4860,35 @@ function renderHome(){
   }
   var bossDone=0, bi;
   for(bi=0;bi<BOSS.length;bi++) if(S.boss[BOSS[bi].w] && S.boss[BOSS[bi].w].done) bossDone++;
-  $("globalStats").innerHTML=totalDone+" / "+total+" commandes réussies · <b style=\"color:var(--gold)\">"+totalMast+"</b> ancrées · "+bossDone+"/"+BOSS.length+" boss · meilleure série : "+S.best+" j";
+  $("globalStats").innerHTML= totalDone
+    ? (totalDone+" / "+total+" commandes réussies · <b style=\"color:var(--gold)\">"+totalMast+"</b> ancrées · "+bossDone+"/"+BOSS.length+" boss · meilleure série : "+S.best+" j")
+    : ("Rien à préparer avant de commencer. Appuie sur Jouer : la première série fait "+S.len+" questions, une dizaine de minutes. Les autres mondes s'ouvrent au fur et à mesure.");
   $("btnExam").style.display=S.examOn? "" : "none";
+  if(S.examOn){
+    if(!isExamOpen(S.prog)){
+      $("btnExam").innerHTML="⏱ Simulation d'examen — "+examProgress(S.prog)+"/"+EXAM_MIN+" commandes réussies";
+      $("btnExam").style.opacity=".55";
+    } else {
+      var ex=(S.exams||[]), best=0, lastTxt="";
+      for(var ei=0;ei<ex.length;ei++) if(ex[ei].first/ex[ei].n > best/12) best=ex[ei].first;
+      if(ex.length){
+        var lastEx=ex[ex.length-1];
+        var jours=Math.round((Date.now()-lastEx.t)/DAY);
+        lastTxt=" · dernier "+lastEx.first+"/"+lastEx.n+(jours>0? ", il y a "+jours+" j":", aujourd'hui");
+      }
+      $("btnExam").innerHTML="⏱ Simulation d'examen"+(ex.length? " — meilleur "+best+"/12"+lastTxt : "");
+      $("btnExam").style.opacity="";
+    }
+  }
+  var stock=dailyStock(S.prog, Date.now());
   var nx=nextWorld();
-  $("resumeLine").innerHTML= nx? ("Monde "+nx+" — "+WORLDS[nx-1].name) : "";
+  var bits=[];
+  if(stock.due.length) bits.push("<b style=\"color:var(--txt)\">"+Math.min(stock.due.length, Math.max(1,Math.round(S.len*5/8)))+"</b> à revoir");
+  if(stock.fresh.length) bits.push(stock.fresh.length+" nouvelles disponibles");
+  if(!bits.length && stock.upkeep.length) bits.push(stock.upkeep.length+" à entretenir");
+  $("resumeLine").innerHTML = bits.length
+    ? ("Série du jour : "+bits.join(" · ")+(nx? " · monde "+nx : ""))
+    : (nx? ("Monde "+nx+" — "+WORLDS[nx-1].name) : "");
 }
 function nextWorld(){
   var i, w;
@@ -4689,6 +4912,14 @@ function stateOf(id){
   if(!S.prog[id]) S.prog[id]={b:0, due:0, n:0, ok:0, ko:0};
   return S.prog[id];
 }
+function startDaily(){
+  var q=dailyQueue(S.prog, Date.now(), S.len);
+  if(!q.length){ toast("Rien à réviser pour l'instant : choisis un monde ci-dessous."); return; }
+  SES={world:q[0].w, queue:q, idx:0, xp:0, first:0, mastered:0, done:0, requeued:{}, daily:true, marks:{}};
+  save();
+  show("scPlay");
+  renderQuestion();
+}
 function startSession(n){
   var q=buildQueue(n, S.prog, Date.now(), S.len);
   if(!q.length){ toast("Ce monde n'a pas encore de contenu."); return; }
@@ -4707,6 +4938,10 @@ function startBoss(n){
   renderQuestion();
 }
 function startExam(){
+  if(!isExamOpen(S.prog)){
+    toast("La simulation d'examen s'ouvre à "+EXAM_MIN+" commandes réussies (tu en as "+examProgress(S.prog)+").");
+    return;
+  }
   var q=examQueue(S.prog, 12);
   if(q.length<4){ toast("Pas encore assez de commandes débloquées pour un examen."); return; }
   SES={world:0, queue:q, idx:0, xp:0, first:0, mastered:0, done:0, requeued:{},
@@ -4753,11 +4988,20 @@ function renderDots(){
   var d=$("dots"); d.innerHTML="";
   for(var i=0;i<SES.queue.length;i++){
     var s=document.createElement("div");
-    s.className="dot"+(SES.marks&&SES.marks[i]?" "+SES.marks[i]:(i===SES.idx?" now":""));
+    var mk=SES.marks&&SES.marks[i];
+    s.className="dot"+(mk?" "+mk:(i===SES.idx?" now":""));
+    s.title="Question "+(i+1)+" : "+(mk==="ok"? "réussie du premier coup" : (mk==="ko"? "erreur" : (i===SES.idx? "en cours" : "à venir")));
     d.appendChild(s);
   }
 }
 var BUILT=[], POOL=[], ANSWERED=false, TRIES=0, HINTED=false;
+/* blocs par défaut ; « progressif » ne bascule au clavier que sur les
+   commandes déjà sues (boîte 3+), quand la reconnaissance ne suffit plus. */
+function inputFree(ex, st){
+  if(S.mode==="clavier" || S.free===true) return true;
+  if(S.mode==="progressif") return !!(st && st.b>=3);
+  return false;
+}
 function renderQuestion(){
   var ex=SES.queue[SES.idx];
   ANSWERED=false; TRIES=0; HINTED=false; BUILT=[];
@@ -4769,6 +5013,7 @@ function renderQuestion(){
   if(SES.boss) tags+='<span class="tag rev">⚔️ boss · étape '+(SES.idx+1)+'/'+SES.queue.length+'</span>';
   else if(SES.exam) tags+='<span class="tag rev">⏱ examen</span>';
   else if(SES.weak) tags+='<span class="tag rev">points faibles</span>';
+  else if(SES.daily && isMastered(st)) tags+='<span class="tag rev">entretien</span>';
   tags+= ex.src==="cours"? '<span class="tag cours">cours Rocky 9</span>'
         : (ex.src==="cours-ubuntu"? '<span class="tag cours">cours Ubuntu/Debian</span>'
                                   : '<span class="tag">base générale</span>');
@@ -4781,7 +5026,7 @@ function renderQuestion(){
   $("actionRow").style.display="flex";
   $("btnHint").style.display=(SES.boss||SES.exam)? "none" : "";
   $("btnHint").disabled=false;
-  var free=S.free && !ex.quiz;
+  var free=inputFree(ex, st) && !ex.quiz;
   $("buildZone").style.display=free?"none":"";
   $("freeZone").style.display=free?"":"none";
   if(free){ $("freeInput").value=""; }
@@ -4822,8 +5067,10 @@ function renderLine(ex){
     line.appendChild(ph);
   }
   for(var i=0;i<BUILT.length;i++){
-    var c=document.createElement("span");
+    var c=document.createElement("button");
+    c.type="button";
     c.className="chip"+(ex.quiz?" q":"");
+    c.setAttribute("aria-label","Retirer "+BUILT[i].t);
     c.innerHTML='<span>'+escapeHtml(BUILT[i].t)+'</span><span class="x">×</span>';
     (function(i){ c.onclick=function(){ if(ANSWERED) return; BUILT.splice(i,1); renderLine(ex); renderTiles(ex); }; })(i);
     line.appendChild(c);
@@ -4846,7 +5093,7 @@ function addTok(i){
 function doCheck(){
   if(ANSWERED) return;
   var ex=SES.queue[SES.idx];
-  var free=S.free && !ex.quiz;
+  var free=inputFree(ex, S.prog[ex.id]) && !ex.quiz;
   var tokens, verdict;
   if(free){
     var raw=$("freeInput").value;
@@ -4898,7 +5145,7 @@ function onGood(ex, tokens){
   renderHud(before,S.xp); flyXp(gain);
   var line=$("cmdLine");
   line.classList.remove("flash"); void line.offsetWidth; line.classList.add("flash");
-  var head = TRIES===0? "Correct" : "Correct cette fois";
+  var head="Correct";
   var fb='<div class="feedback ok"><div class="head">✓ '+head+' <span style="color:var(--dim);font-weight:600;font-size:13px">+'+gain+' XP</span></div>';
   fb+= termBlock(ex, tokens.length? tokens : accepted(ex)[0]);
   if(ex.note) fb+='<div class="note">'+ex.note+'</div>';
@@ -4910,9 +5157,8 @@ function onGood(ex, tokens){
   $("btnNext").style.display="";
   renderDots();
   if(lvlAfter>lvlBefore){
-    setTimeout(function(){
-      celebrate("Niveau "+lvlAfter, levelInfo(S.xp).title, lvlAfter);
-    }, 250);
+    $("lvlBadge").classList.remove("pop"); void $("lvlBadge").offsetWidth; $("lvlBadge").classList.add("pop");
+    toast("Niveau "+lvlAfter+" — "+levelInfo(S.xp).title);
   }
 }
 function onBad(ex, d){
@@ -4937,7 +5183,7 @@ function onBad(ex, d){
     SES.done++;
     var line0=$("cmdLine");
     line0.classList.remove("shake"); void line0.offsetWidth; line0.classList.add("shake");
-    $("feedbackZone").innerHTML='<div class="feedback ko"><div class="head">✕ Faux</div><div>'+d.reason+'</div>'+
+    $("feedbackZone").innerHTML='<div class="feedback ko"><div class="head">✕ Réponse manquée</div><div>'+d.reason+'</div>'+
       (d.why&&d.why!==d.reason? '<div class="why">'+d.why+'</div>':'')+
       '<div class="note">Réponse attendue : <code>'+escapeHtml(d.expected)+'</code></div></div>';
     revealFeedback();
@@ -4948,17 +5194,17 @@ function onBad(ex, d){
   }
   var line=$("cmdLine");
   line.classList.remove("shake"); void line.offsetWidth; line.classList.add("shake");
-  var fb='<div class="feedback ko"><div class="head">✕ Pas encore</div>';
+  var fb='<div class="feedback ko"><div class="head">'+(TRIES>=2? "✕ Voici la réponse" : "✕ Pas encore")+'</div>';
   fb+='<div>'+d.reason+'</div>';
   if(d.why && d.why!==d.reason) fb+='<div class="why">'+d.why+'</div>';
-  if(TRIES>=2) fb+='<div class="note">Réponse attendue : <code>'+escapeHtml(d.expected)+'</code></div>';
+  if(TRIES>=2) fb+='<div class="note">Réponse attendue : <code>'+escapeHtml(d.expected)+'</code> — recompose-la une fois avant de passer, c\'est ce geste-là qui la fait tenir.</div>';
   fb+='</div>';
   $("feedbackZone").innerHTML=fb;
   revealFeedback();
   if(TRIES>=2){
     $("btnHint").disabled=true;
     $("btnNext").style.display="";
-    $("btnNext").textContent="Passer à la suite ▸";
+    $("btnNext").textContent="Question suivante ▸";
   }
 }
 function revealFeedback(){
@@ -4980,6 +5226,7 @@ function doHint(){
   $("btnHint").disabled=true;
 }
 function doNext(){
+  if(ANSWERED){ bumpDay(); save(); }
   $("btnNext").textContent="Suivant ▸";
   SES.idx++;
   if(SES.idx>=SES.queue.length){ endSession(); return; }
@@ -4992,21 +5239,29 @@ function doClear(){
   if(S.free && !ex.quiz){ $("freeInput").value=""; $("freeInput").focus(); return; }
   BUILT=[]; renderLine(ex); renderTiles(ex);
 }
+var RECAP_ACTION=null;
+function resetRecapAction(){
+  RECAP_ACTION=null;
+  $("btnAgain").textContent="Continuer l'entraînement";
+  $("btnHome").textContent="Retour aux mondes";
+  flushCeleb();
+}
 function endSession(){
   stopTimer();
+  resetRecapAction();
   if(SES.boss){ endBoss(); return; }
   if(SES.exam){ endExam(); return; }
   var n=SES.queue.length;
   $("recapScore").textContent=SES.first+"/"+n;
-  $("recapTitle").textContent="Série terminée";
+  $("recapTitle").textContent="Série terminée — réussies du premier coup";
   $("recapXp").textContent="+"+SES.xp;
   $("recapMastered").textContent=SES.mastered;
   document.querySelector("#scRecap .stat:last-child .k").textContent="ancrées";
   var msg;
   var ratio=n? SES.first/n : 0;
   if(ratio===1) msg="Sans faute. Ces commandes reviendront plus tard, à intervalle plus long.";
-  else if(ratio>=0.6) msg="Les commandes manquées reviennent dans la prochaine série.";
-  else msg="Beaucoup d'erreurs sur cette série : c'est exactement ce que la révision espacée va cibler.";
+  else if(ratio>=0.6) msg=SES.first+" du premier coup sur "+n+". Les autres repassent dans la prochaine série.";
+  else msg=SES.done+" commandes traitées, "+SES.first+" trouvées du premier coup. Les autres sont replacées en début de file et reviendront dès la prochaine série : c'est le fonctionnement prévu, pas un retard à rattraper.";
   $("recapMsg").textContent=msg;
   save();
   show("scRecap");
@@ -5017,8 +5272,8 @@ function endSession(){
     if(isWorldUnlocked(cand.n,S.prog) && !announced(cand.n)){ wo=cand; break; }
   }
   if(wo){
+    S["unlocked"+wo.n]=true; save();
     (function(wo){ setTimeout(function(){
-      S["unlocked"+wo.n]=true; save();
       celebrate((wo.bonus? "Monde bonus débloqué" : "Monde "+wo.n+" débloqué"), wo.name, wo.ico);
     }, 500); })(wo);
   }
@@ -5026,10 +5281,11 @@ function endSession(){
 }
 
 function endBoss(){
+  resetRecapAction();
   var n=SES.queue.length, score=SES.first+"/"+n;
   var perfect=SES.first===n;
   var prev=S.boss[SES.world];
-  var bonus= perfect? SES.boss.xp : Math.round(SES.boss.xp*SES.first/n);
+  var bonus= Math.round(120*SES.first/n) + (perfect? 80 : 0);
   var before=S.xp; S.xp+=bonus; SES.xp+=bonus;
   S.boss[SES.world]={done:true, best:(prev&&prev.done&&prev.first>SES.first)? prev.best:score, first:Math.max(SES.first,(prev&&prev.first)||0)};
   save(); renderHud(before,S.xp);
@@ -5047,7 +5303,18 @@ function endBoss(){
 }
 
 function endExam(){
+  resetRecapAction();
   var n=SES.queue.length, secs=Math.round((Date.now()-SES.start)/1000);
+  var score=n? SES.first/n : 0;
+  var palier = score>=0.8? 200 : (score>=0.6? 80 : 0);
+  var gained = SES.first*4 + palier;
+  var beforeXp=S.xp;
+  S.xp = beforeXp - SES.xp + gained;   /* les XP par question sont remplacés par le barème d'examen */
+  SES.xp = gained;
+  renderHud(beforeXp, S.xp);
+  if(!S.exams) S.exams=[];
+  S.exams.push({t:Date.now(), first:SES.first, n:n, secs:secs});
+  if(S.exams.length>10) S.exams=S.exams.slice(-10);
   var m=Math.floor(secs/60), sec=secs%60;
   $("recapScore").textContent=SES.first+"/"+n;
   $("recapTitle").textContent=SES.timeout? "Temps écoulé" : "Examen terminé";
@@ -5058,16 +5325,23 @@ function endExam(){
   var pct=Math.round(SES.first/n*100);
   if(SES.timeout) msg="Le temps s'est arrêté avant la fin : "+SES.done+" question(s) traitée(s) sur "+n+".";
   else if(pct>=80) msg=pct+"% — niveau examen atteint sur cet échantillon.";
-  else if(pct>=60) msg=pct+"% — il reste des commandes à ancrer avant l'épreuve.";
-  else msg=pct+"% — reprends les mondes concernés avant de refaire un examen.";
+  else msg=pct+"% du premier coup.";
   if(SES.missed && SES.missed.length){
-    var noms=[], i;
+    var seenW={}, lst=[], noms=[], i;
+    for(i=0;i<SES.missed.length;i++) seenW[SES.missed[i].w]=1;
+    for(var k in seenW) lst.push("monde "+k);
+    lst.sort();
     for(i=0;i<SES.missed.length && i<6;i++) noms.push(accepted(SES.missed[i])[0].join(" "));
-    msg+=" À revoir : "+noms.join(", ")+(SES.missed.length>6? "…":"")+".";
+    msg+=" Les erreurs se concentrent sur : "+lst.join(", ")+
+         ". Ces commandes sont déjà dans ta fiche de points faibles — à revoir : "+
+         noms.join(", ")+(SES.missed.length>6? "…":"")+".";
+    RECAP_ACTION="weak";
+    $("btnAgain").textContent="S'entraîner sur les commandes ratées";
   }
   $("recapMsg").textContent=msg;
   save();
   show("scRecap");
+  if(score>=0.8) setTimeout(function(){ celebrate("Niveau examen", SES.first+"/"+n+" en "+m+"m"+(sec<10?"0":"")+sec, "🎓"); }, 350);
   renderHome();
 }
 function announced(n){ return !!S["unlocked"+n]; }
@@ -5126,7 +5400,14 @@ function exportReport(){
 
 /* ---------- réglages, export, import ---------- */
 function renderSettings(){
-  $("swFree").classList.toggle("on", !!S.free);
+  var modeLabels={blocs:"Blocs", progressif:"Progressif", clavier:"Clavier"};
+  var modeDescs={
+    blocs:"Blocs : tu assembles la commande en tapant sur des tuiles. Aucune saisie au clavier.",
+    progressif:"Progressif : blocs pour découvrir, clavier dès qu'une commande est bien sue (boîte 3). La dictée vocale est tolérée (« tiret », « slash »…).",
+    clavier:"Clavier libre : tu tapes toutes les commandes. La dictée vocale est tolérée (« tiret », « slash »…)."
+  };
+  $("btnMode").textContent=modeLabels[S.mode]||"Blocs";
+  $("modeDesc").textContent=modeDescs[S.mode]||modeDescs.blocs;
   $("swAnim").classList.toggle("on", !!S.noanim);
   $("swExam").classList.toggle("on", !!S.examOn);
   $("btnLen").textContent=S.len;
@@ -5165,7 +5446,7 @@ function init(){
   renderHome();
   renderSettings();
 
-  $("btnPlay").onclick=function(){ startSession(nextWorld()); };
+  $("btnPlay").onclick=startDaily;
   $("btnBack").onclick=function(){ stopTimer(); SES=null; show("scHome"); renderHome(); };
   $("btnBack2").onclick=function(){ show("scHome"); renderHome(); };
   $("btnSettings").onclick=function(){ renderSettings(); show("scSettings"); };
@@ -5173,8 +5454,15 @@ function init(){
   $("btnClear").onclick=doClear;
   $("btnHint").onclick=doHint;
   $("btnNext").onclick=doNext;
-  $("btnAgain").onclick=function(){ startSession(nextWorld()); };
-  $("btnHome").onclick=function(){ show("scHome"); renderHome(); };
+  $("btnAgain").onclick=function(){
+    if(RECAP_ACTION==="weak"){ resetRecapAction(); startWeak(); return; }
+    if(RECAP_ACTION==="stop"){ resetRecapAction(); SES=null; show("scHome"); renderHome(); return; }
+    startDaily();
+  };
+  $("btnHome").onclick=function(){
+    if(RECAP_ACTION==="stop"){ resetRecapAction(); startDaily(); return; }
+    SES=null; show("scHome"); renderHome();
+  };
   $("ovClose").onclick=function(){ $("lvlOverlay").classList.remove("on"); };
   $("lvlOverlay").onclick=function(e){ if(e.target===$("lvlOverlay")) $("lvlOverlay").classList.remove("on"); };
 
@@ -5184,8 +5472,11 @@ function init(){
   $("btnWeakTrain").onclick=startWeak;
   $("btnWeakExport").onclick=exportReport;
   $("swExam").onclick=function(){ S.examOn=!S.examOn; save(); renderSettings(); renderHome(); };
-  $("swFree").onclick=function(){ S.free=!S.free; save(); renderSettings();
-    toast(S.free? "Clavier libre activé — les blocs sont remplacés par une saisie." : "Retour au mode blocs."); };
+  $("btnMode").onclick=function(){
+    S.mode = S.mode==="blocs"? "progressif" : (S.mode==="progressif"? "clavier" : "blocs");
+    S.free = (S.mode==="clavier");
+    save(); renderSettings();
+  };
   $("swAnim").onclick=function(){ S.noanim=!S.noanim; save(); renderSettings(); };
   $("btnLen").onclick=function(){ S.len = S.len===5?8 : (S.len===8?12:5); save(); renderSettings(); };
   $("btnExport").onclick=doExport;

@@ -107,8 +107,10 @@ const ok = (c, l) => { if (c) pass++; else { fail++; errs.push(l); } };
   /* --- clavier libre + dictée --- */
   if (await page.locator("#lvlOverlay.on").isVisible()) await page.click("#ovClose");
   await page.click("#btnSettings");
-  await page.click("#swFree");
-  ok(await page.evaluate(() => S.free) === true, "le clavier libre s'active dans les réglages");
+  await page.click("#btnMode");
+  ok(await page.evaluate(() => S.mode) === "progressif", "le mode de saisie passe en progressif");
+  await page.click("#btnMode");
+  ok(await page.evaluate(() => S.mode) === "clavier", "puis en clavier libre");
   await page.click("#btnBack2");
   await page.click("#btnPlay");
   const isQuiz = await page.evaluate(() => !!SES.queue[SES.idx].quiz);
@@ -121,7 +123,8 @@ const ok = (c, l) => { if (c) pass++; else { fail++; errs.push(l); } };
     await page.click("#btnCheck");
     ok(await page.locator(".feedback.ok").isVisible(), "clavier libre : la dictée « " + dictee + " » est acceptée");
   }
-  await page.click("#btnSettings"); await page.click("#swFree"); await page.click("#btnBack2");
+  await page.click("#btnSettings"); await page.click("#btnMode"); await page.click("#btnBack2");
+  ok(await page.evaluate(() => S.mode) === "blocs", "le mode revient sur les blocs");
 
   /* --- déblocage du monde 2 --- */
   await page.evaluate(() => {

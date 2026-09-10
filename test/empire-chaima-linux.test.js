@@ -11,7 +11,8 @@ if (!m) { console.error("Bloc CORE introuvable dans le fichier HTML"); process.e
 const ctx = { console };
 vm.createContext(ctx);
 vm.runInContext(m[1], ctx);
-const { WORLDS, EX, BOSS, expandSol, accepted, acceptedStrings, tokenPool, isCorrect, diagnose,
+const { WORLDS, EX, BOSS, dailyQueue, dailyStock, interleave, headVerb, shuffleList, freshWorlds,
+        isExamOpen, examProgress, EXAM_MIN, expandSol, accepted, acceptedStrings, tokenPool, isCorrect, diagnose,
         normalizeFree, freeTokens, checkFree, nextBox, dueAt, isMastered, levelInfo,
         xpTotalForLevel, worldStats, isWorldUnlocked, buildQueue, DAY, MASTER_BOX,
         bossFor, isBossOpen, BOSS_UNLOCK, weakList, weakQueue, examQueue, examWorlds,
@@ -229,13 +230,22 @@ for (const ex of ITEMS) {
 
 /* ---------- 8. révision espacée ---------- */
 ok(nextBox(0, true) === 1 && nextBox(3, true) === 4, "bonne réponse : boîte suivante");
-ok(nextBox(4, false) === 0, "erreur : retour en boîte 0");
+ok(nextBox(2, false) === 0, "erreur sur un item fragile : retour en boîte 0");
+ok(nextBox(5, false) === 3, "erreur sur un item ancien : recul de deux boîtes, pas de remise à zéro");
+ok(nextBox(3, false) === 1, "le recul ne descend jamais sous la boîte 1 depuis la boîte 3");
 ok(nextBox(MASTER_BOX, true) === MASTER_BOX, "la boîte finale ne dépasse pas le maximum");
 const now = 1700000000000;
 ok(dueAt(0, now) === now, "boîte 0 : à revoir tout de suite");
 ok(dueAt(1, now) === now + DAY, "boîte 1 : demain");
-ok(dueAt(5, now) === now + 16 * DAY, "boîte 5 : dans 16 jours");
-ok(isMastered({ b: MASTER_BOX }) && !isMastered({ b: 5 }) && !isMastered(null), "détection des commandes ancrées");
+ok(dueAt(3, now) === now + 7 * DAY, "boîte 3 : dans une semaine");
+ok(dueAt(MASTER_BOX, now) === now + 14 * DAY, "une commande ancrée revient en entretien deux semaines plus tard");
+{ // une commande doit pouvoir s'ancrer avant l'examen
+  let b = 0, jours = 0, rappels = 0;
+  while (b < MASTER_BOX) { b = nextBox(b, true); jours = Math.round(dueAt(b, 0) / DAY); rappels++; }
+  ok(rappels <= 4, `ancrage atteint en ${rappels} rappels`);
+  ok(jours <= 14, `ancrage atteint au jour ${jours}, avant l'échéance d'examen`);
+}
+ok(isMastered({ b: MASTER_BOX }) && !isMastered({ b: MASTER_BOX - 1 }) && !isMastered(null), "détection des commandes ancrées");
 
 const prog = {};
 const w1 = EX.filter(e => e.w === 1);
@@ -252,6 +262,77 @@ prog[w1[2].id] = { b: 0, due: now - 1, n: 4, ok: 1, ko: 3 };
 q = buildQueue(1, prog, now, 8);
 ok(q[0].id === w1[2].id, "file : seule la commande non ancrée revient en tête");
 
+/* ---------- 8 bis. révision du jour, tous mondes confondus ---------- */
+{
+  const now2 = 1700000000000;
+  const prog = {};
+  const w1 = EX.filter(e => e.w === 1);
+  const w4 = EX.filter(e => e.w === 4);
+  // monde 1 entièrement en retard, mondes 2 et 3 sus, monde 4 débloqué et neuf
+  EX.filter(e => e.w <= 3).forEach(e => { prog[e.id] = { b: 2, due: now2 + 9 * DAY, n: 2, ok: 2, ko: 0 }; });
+  w1.forEach(e => { prog[e.id] = { b: 1, due: now2 - 5 * DAY, n: 2, ok: 2, ko: 0 }; });
+  const q = dailyQueue(prog, now2, 8);
+  ok(q.length === 8, "la série du jour fait la taille demandée");
+  ok(q.some(e => e.w === 1), "elle sert les commandes en retard d'un monde déjà terminé");
+  ok(q.some(e => e.w !== 1), "elle mélange plusieurs mondes dans la même série");
+  const dus = q.filter(e => prog[e.id] && prog[e.id].due <= now2).length;
+  ok(dus === 5, `au plus 5 rappels dus sur 8 questions (${dus})`);
+  ok(new Set(q.map(e => e.id)).size === q.length, "aucun doublon dans la série du jour");
+  // une commande ancrée n'est proposée qu'en entretien, une fois son échéance passée
+  const prog2 = {};
+  EX.filter(e => e.w === 1).forEach(e => { prog2[e.id] = { b: MASTER_BOX, due: now2 + 10 * DAY, n: 9, ok: 9, ko: 0 }; });
+  ok(dailyQueue(prog2, now2, 8).every(e => !isMastered(prog2[e.id]) || prog2[e.id].due <= now2),
+     "une commande ancrée non échue ne revient pas");
+  const prog3 = {};
+  EX.filter(e => e.w === 1).forEach(e => { prog3[e.id] = { b: MASTER_BOX, due: now2 - DAY, n: 9, ok: 9, ko: 0 }; });
+  ok(dailyQueue(prog3, now2, 8).length > 0, "une commande ancrée échue revient en entretien");
+  // elle ne pioche jamais dans un monde verrouillé
+  ok(dailyQueue({}, now2, 8).every(e => e.w === 1), "sur une progression vierge, seul le monde 1 est servi");
+  ok(dailyStock(prog, now2).due.length >= w1.length - 1, "le stock du jour compte les commandes en retard");
+  ok(dailyStock(prog, now2).fresh.some(e => e.w === 4) === isWorldUnlocked(4, prog),
+     "le stock de nouveautés suit les mondes débloqués");
+}
+
+/* ---------- 8 ter. entrelacement ---------- */
+{
+  const maxRun = (arr) => { let m = 1, r = 1; for (let i = 1; i < arr.length; i++) { r = arr[i] === arr[i - 1] ? r + 1 : 1; m = Math.max(m, r); } return m; };
+  // monde 1 : les familles de commandes sont variées, la règle des deux d'affilée tient
+  const w1x = EX.filter(e => e.w === 1);
+  ok(maxRun(w1x.map(headVerb)) > 2, "le contenu déclaré est groupé par famille de commandes");
+  ok(maxRun(interleave(w1x).map(headVerb)) <= 2,
+     `après entrelacement, jamais plus de deux commandes de la même famille (${maxRun(interleave(w1x).map(headVerb))})`);
+  // monde 12 : presque tout est firewall-cmd, l'entrelacement ne peut qu'améliorer
+  const w12 = EX.filter(e => e.w === 12).slice(0, 10);
+  ok(maxRun(interleave(w12).map(headVerb)) <= maxRun(w12.map(headVerb)),
+     "sur un monde presque mono-commande, l'entrelacement ne dégrade jamais l'ordre");
+  ok(interleave(w12).length === w12.length, "l'entrelacement ne perd aucun exercice");
+  ok(new Set(interleave(w12).map(e => e.id)).size === w12.length, "l'entrelacement ne duplique aucun exercice");
+  ok(headVerb(EX.find(e => e.id === "w12-add-service")) === "firewall-cmd", "le verbe de tête ignore sudo");
+  const q = buildQueue(1, {}, Date.now(), 8);
+  ok(maxRun(q.map(headVerb)) <= 2, "la première série d'un monde est entrelacée");
+}
+
+/* ---------- 8 quater. périmètre des nouveautés et accès à l'examen ---------- */
+{
+  const now3 = 1700000000000;
+  const prog = {};
+  EX.filter(e => e.w === 1).slice(0, 17).forEach(e => { prog[e.id] = { b: 1, due: now3 - DAY, n: 1, ok: 1, ko: 0 }; });
+  const mondes = [...new Set(dailyQueue(prog, now3, 8).map(e => e.w))];
+  ok(mondes.every(w => w <= 2), `la série du jour ne découvre pas un monde lointain (${mondes.join(",")})`);
+  ok(freshWorlds(EX).length === 2, "au plus deux mondes de découverte à la fois");
+  ok(worldByN(10).req === 7, "le monde console attend que find soit vu (monde 7)");
+  ok(worldByN(11).req === 6, "le labo SSH attend systemctl, les paquets et le réseau");
+  ok(worldByN(12).req === 4, "le pare-feu attend la gestion des services");
+  ok(!isExamOpen({}), "l'examen est fermé au départ");
+  const gros = {};
+  EX.slice(0, EXAM_MIN).forEach(e => { gros[e.id] = { b: 1, due: 0, n: 1, ok: 1, ko: 0 }; });
+  ok(examProgress(gros) === EXAM_MIN, "le compteur d'accès à l'examen suit les commandes réussies");
+  ok(isExamOpen(gros), `l'examen s'ouvre à ${EXAM_MIN} commandes réussies`);
+  const rates = {};
+  EX.slice(0, EXAM_MIN).forEach(e => { rates[e.id] = { b: 0, due: 0, n: 3, ok: 0, ko: 3 }; });
+  ok(!isExamOpen(rates), "des tentatives sans réussite n'ouvrent pas l'examen");
+}
+
 /* ---------- 9. niveaux ---------- */
 ok(levelInfo(0).lvl === 1, "0 XP -> niveau 1");
 ok(xpTotalForLevel(2) === 60 && xpTotalForLevel(3) === 150, "seuils de niveaux attendus");
@@ -262,6 +343,7 @@ for (let xp = 0; xp < 5000; xp += 7) {
   ok(li.lvl >= prev, "les niveaux ne redescendent jamais"); prev = li.lvl;
   ok(li.into >= 0 && li.into < li.span, `barre XP hors bornes à ${xp} XP`);
   ok(typeof li.title === "string" && li.title.length > 3, "titre de niveau manquant");
+  if (xp === 4000) ok(li.title !== levelInfo(1620).title, "il reste des titres à gagner au-delà du niveau 10");
 }
 
 /* ---------- 10. déblocage des mondes ---------- */
@@ -314,14 +396,21 @@ for (const b of BOSS) {
   ok(bossFor(99) === null, "aucun boss pour un monde inexistant");
 }
 
-/* ---------- 12. monde bonus ---------- */
+/* ---------- 12. mondes hors chaîne principale ---------- */
 {
   const p = {};
   ok(!isWorldUnlocked(10, p), "le monde bonus est fermé au départ");
   const l1 = EX.filter(e => e.w === 1);
   l1.slice(0, Math.ceil(l1.length * 0.6)).forEach(e => { p[e.id] = { b: 1, due: 0, n: 1, ok: 1, ko: 0 }; });
-  ok(isWorldUnlocked(10, p), "le monde bonus s'ouvre avec le monde 1, sans dépendre du monde 9");
+  ok(!isWorldUnlocked(10, p), "le monde console attend son prérequis réel, pas seulement le monde 1");
+  const l7 = EX.filter(e => e.w === 7);
+  l7.slice(0, Math.ceil(l7.length * 0.6)).forEach(e => { p[e.id] = { b: 1, due: 0, n: 1, ok: 1, ko: 0 }; });
+  ok(isWorldUnlocked(10, p), "le monde console s'ouvre une fois find maîtrisé (monde 7)");
   ok(!isWorldUnlocked(9, p), "le monde 9 reste soumis à la chaîne principale");
+  const p2 = {};
+  const l6 = EX.filter(e => e.w === 6);
+  l6.slice(0, Math.ceil(l6.length * 0.6)).forEach(e => { p2[e.id] = { b: 1, due: 0, n: 1, ok: 1, ko: 0 }; });
+  ok(isWorldUnlocked(11, p2), "le labo SSH s'ouvre après le monde réseau, sans attendre le monde 10");
 }
 
 /* ---------- 13. fiche des points faibles ---------- */
