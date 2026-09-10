@@ -130,7 +130,7 @@ const ok = (c, l) => { if (c) pass++; else { fail++; errs.push(l); } };
     save(); renderHome();
   });
   const cards = await page.locator(".world").count();
-  ok(cards === 10, "les 9 mondes + le monde bonus sont proposés (" + cards + ")");
+  ok(cards === 12, "les 12 mondes (dont bonus et labos) sont proposés (" + cards + ")");
   const w2locked = await page.evaluate(() => document.querySelectorAll(".world")[1].className.includes("locked"));
   ok(!w2locked, "le monde 2 se débloque une fois le seuil du monde 1 atteint");
   await page.evaluate(() => document.querySelectorAll(".world")[1].click());

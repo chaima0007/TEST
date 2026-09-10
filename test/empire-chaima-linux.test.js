@@ -48,7 +48,7 @@ for (const ex of ITEMS) {
   const id = ex.id;
   ok(!ids.has(id), `id dupliqué : ${id}`); ids.add(id);
   ok(typeof ex.w === "number" && WORLDS.some(w => w.n === ex.w), `${id} : monde inconnu`);
-  ok(ex.src === "cours" || ex.src === "general", `${id} : champ src invalide`);
+  ok(["cours", "cours-ubuntu", "general"].includes(ex.src), `${id} : champ src invalide`);
   ok(typeof ex.sc === "string" && ex.sc.length > 25, `${id} : scénario trop court`);
   ok(typeof ex.ask === "string" && ex.ask.length > 10, `${id} : consigne trop courte`);
   ok(typeof ex.why === "string" && ex.why.length >= 60, `${id} : explication de concept absente ou trop courte`);
@@ -297,7 +297,11 @@ for (const b of BOSS) {
     ok(vocab.has(first), `étape ${st.id} : « ${first} » n'apparaît dans aucun exercice du monde ${b.w}`);
   }
 }
-ok(BOSS.length === 9, `un boss par monde rempli attendu, ${BOSS.length} trouvés`);
+{
+  const remplis = WORLDS.filter(w => EX.some(e => e.w === w.n)).map(w => w.n);
+  ok(remplis.every(n => bossFor(n)), "chaque monde rempli a son boss");
+  ok(BOSS.length === remplis.length, `un boss par monde rempli attendu (${remplis.length}), ${BOSS.length} trouvés`);
+}
 {
   const p = {};
   ok(!isBossOpen(1, p), "le boss du monde 1 est fermé au départ");
@@ -357,7 +361,7 @@ ok(BOSS.length === 9, `un boss par monde rempli attendu, ${BOSS.length} trouvés
   const prog = {};
   EX.forEach(e => { prog[e.id] = { b: 2, due: 0, n: 2, ok: 2, ko: 0 }; });
   const worlds = examWorlds(prog);
-  ok(worlds.length >= 9, `tous les mondes débloqués alimentent l'examen (${worlds.length})`);
+  ok(worlds.length >= 12, `tous les mondes débloqués alimentent l'examen (${worlds.length})`);
   let seed = 42;
   const rnd = () => { seed = (seed * 1103515245 + 12345) & 0x7fffffff; return seed / 0x7fffffff; };
   const q = examQueue(prog, 12, rnd);
