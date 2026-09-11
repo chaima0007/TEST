@@ -2,6 +2,55 @@
 
 > Snapshot par session de travail sur cette chaîne. Ajout en haut, jamais d'écrasement.
 
+## 2026-09-11-23h15 (Europe/Brussels) — Consolidation + registre unifié + dossier DÉPOSANT n°1
+
+**Contrôle honnête (§11)** — Aucun document quasi identique, et un a été **évité** : je n'ai PAS recopié
+la charte consolidée au Drive, précisément pour ne pas recréer la divergence d'E-18. Le Drive reçoit les
+dossiers ; les normes vivent dans le dépôt, à un seul endroit. `croque-mort` non saisi, aucune boucle.
+
+**Consolidation faite, et elle rétrécit.** `veille/CHARTE-CONSOLIDEE-2026-09-11.md` — **99 lignes** de
+lecture à jour contre 319 d'historique conservé. Le point important est ce qu'elle **rend** : la condition
+d'arrêt, les règles de vérité, l'audit de chaîne, les trois rôles et la subordination sont désormais
+assurés par le CODEX et les agents, souvent plus strictement — le §5 du CODEX va plus loin que mon §7.1.
+Ne restent définies que cinq règles que rien d'autre ne couvre : divulgation art. 54 CBE, nommage Drive et
+son plafond, emplacements de sauvegarde et leur état réel, cadence des offices, structure Drive.
+La charte d'origine garde ses 12 sections, avec une bannière disant à quoi elle sert : comprendre
+**pourquoi** une décision a été prise, jamais savoir ce qui s'applique.
+
+**TROUVÉ EN CONSOLIDANT — deux registres d'erreurs coexistaient.** En relisant le CODEX §12 j'ai vu qu'il
+impose `/🔴 ERREURS.md` à la racine — qui existait, avec 3 entrées, en parallèle de ma base de 19 fiches,
+contenus partiellement recoupés et rien pour les comparer. **C'est E-18 en version pure, commise par moi
+dans le dispositif écrit pour l'empêcher.**
+Corrigé sans choisir un camp : `.claude/BASE-ERREURS.md` fait foi, `🔴 ERREURS.md` devient son **index
+généré**, et un contrôle **bloquant** en CI échoue si les deux divergent. Un index dérivé ne peut pas
+dériver. Les 3 entrées du registre racine n'ont rien perdu : deux sont devenues des fiches complètes —
+**E-20** (outil d'audit pointé sur la mauvaise cible : il produit des résultats vrais mais hors sujet) et
+**E-21** (état du site déduit du dépôt, pas du live) — la troisième correspondait déjà à E-02.
+**21 fiches.** Détection prouvée dans les deux sens par test piégé.
+
+**Défaut trouvé dans mon propre générateur**, en relisant sa sortie : il ne lisait que la première ligne
+de métadonnées, donc E-17 ressortait « DOCUMENTÉE » alors que sa fiche dit « corrigé ». Corrigé. Le statut
+n'est jamais inventé : il se déduit du vocabulaire de la fiche, et vaut « DOCUMENTÉE » quand aucune
+correction n'est revendiquée. Les deux seules **NON CORRIGÉE** sont les vrais points ouverts : E-08 et E-13.
+
+**Dossier DÉPOSANT n°1 ouvert** (Drive, « Brevetabilité de nos projets ») sur E-08, la LICENSE absente.
+Quatre options avec leurs conséquences, **aucune appliquée** : choisir une licence engage la
+commercialisation, donc c'est une décision de Chaima (§10). Le constat qui compte : la licence est en aval
+d'un autre problème — ce dépôt public contient la méthode interne, et **aucune licence ne répare ça**.
+Recommandé : « tous droits réservés » explicite maintenant (quelques minutes, réversible, ne concède
+rien), choix de fond après la séparation public/interne.
+
+**Vérifié** — `main` = `47d50bf`, les deux workflows VERTS avec le nouveau contrôle bloquant du registre ·
+cloisonnement code 0 · sécurité VERT · publication toujours **19 fichiers**, site inchangé.
+
+**BLOQUÉ PAR L'ENVIRONNEMENT, pas par la méthode** — le rôle **SCANNER** reste à zéro. Testé ce soir :
+Espacenet, WIPO Patentscope, USPTO, DPMA et EUIPO répondent **tous HTTP 000**, refus au gateway du proxy,
+comme `caelumpartners.agency`. Les axes de recherche et les priorités d'offices sont posés ; c'est un accès
+à ouvrir, ou un travail à faire depuis un navigateur. Je ne le contournerai pas en inventant des résultats.
+
+**Chez Chaima** — `uv run python main.py` · `caelum-coffre` · TMview · rendu du site · libellé de la
+LICENSE.
+
 ## 2026-09-11-22h10 (Europe/Brussels) — Réconciliation faite · 44 → 56 agents · 0 suppression
 
 **Contrôle honnête (§11)** — Aucun document quasi identique. **Élagueur non saisi** — et il faut noter
