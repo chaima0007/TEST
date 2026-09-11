@@ -93,6 +93,14 @@ function IconProspection({ className }: { className?: string }) {
   );
 }
 
+function IconDevis({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path fillRule="evenodd" d="M4 2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H4zm2 4h8v1.5H6V6zm0 3h8v1.5H6V9zm0 3h5v1.5H6V12z" clipRule="evenodd" />
+    </svg>
+  );
+}
+
 function IconChevronLeft({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -171,6 +179,7 @@ const navSections: NavSection[] = [
     title: "PROSPECTION (CAELUM)",
     items: [
       { href: "/dashboard/prospection", label: "Prospection", icon: IconProspection },
+      { href: "/dashboard/devis", label: "Devis", icon: IconDevis },
     ],
   },
   {
