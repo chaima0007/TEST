@@ -2,6 +2,60 @@
 
 > Snapshot par session de travail sur cette chaîne. Ajout en haut, jamais d'écrasement.
 
+## 2026-09-11-18h50 (Europe/Brussels) — Option B exécutée, 5 phases · Caelum Partners
+
+**Contrôle honnête (§11)** — Pas de document quasi identique : six commits, cinq phases distinctes,
+chacune avec son propre objet. Condition d'arrêt respectée. **ÉLAGUEUR non saisi**, motif : aucune
+boucle, aucune piste morte — la migration a avancé à chaque étape.
+
+**Les 5 phases, dans l'ordre, phase 4 isolée comme demandé**
+- **P1** `scripts/audit_cloisonnement.py` écrit AVANT tout déplacement, en mode avertissement.
+  Choix payant immédiatement : il a mesuré au lieu de supposer.
+- **P2** `shared/` extrait (14 modules en `git mv`, historique préservé) + `shared/attribution.py`
+  comme source unique + **mémoire découpée par produit** (`.memory/{caelum,kmm,competeiq,shared}.json`).
+  Lectures agrégées pour ne rien changer à l'affichage, écritures routées vers le propriétaire.
+- **P3** 19 modules rangés en `products/{caelum,kmm,competeiq}/agents/`. `agents/` disparaît.
+- **P4** sites en `products/*/site/`, `deploy.yml` recâblé. **Seule phase à risque, commit isolé.**
+- **P5** bascule du contrôle en **bloquant**, détection prouvée par test piégé.
+
+**Ce que la phase 1 a corrigé dans mon propre plan.** C1 passait, mais C3 échouait **12 fois** :
+quatre modules que j'avais classés transverses d'après les catégories de `main.py` importent en
+réalité des modules KMM. Ce sont des orchestrateurs du pipeline SEO, pas du transverse. Attribution
+refaite **sur la preuve des imports**. Répartition réelle : caelum 5 · kmm 11 · competeiq 4 · shared 15
+— loin des « 2 modules partagés » que mon plan annonçait.
+
+**E-18 : une divergence trouvée dans ma propre machinerie anti-divergence.**
+Le test piégé de la phase 5 a révélé qu'un piège **ne se déclenchait pas** : après migration, le
+chemin suffisait à attribuer un module, mais `main.py` interrogeait encore la table pour router la
+mémoire. Deux sources répondaient à la même question, sans que rien ne les compare — la faute d'E-01,
+commise dans le module écrit pour l'empêcher. Une relecture n'aurait rien vu : les deux moitiés
+étaient correctes séparément. Corrigé : le disque fait foi, la table devient un repli, et un contrôle
+**C4** compare les deux. **Un piège qui ne se déclenche pas est une information, pas un succès.**
+
+**Vérifié (avec preuve)**
+- Simulation à blanc du déploiement après la phase 4 : **exactement les 18 mêmes fichiers** qu'avant.
+  Le site publié est inchangé — c'était la contrainte qui gouvernait cette phase.
+- Trois garde-fous de déploiement re-testés par pièges après réécriture : fichier interne → bloqué ·
+  produit hors périmètre → bloqué · CNAME absent → bloqué · témoin légitime → passe.
+- Cinq contrôles de cloisonnement testés par pièges en mode bloquant : tous bloquent, témoin passe.
+- Résolution de chemin prouvée module par module (`importlib.find_spec`), sans exécuter le code.
+- Routage de la mémoire testé : 4 lancements de 4 propriétaires atterrissent chacun au bon endroit.
+- Compilation de `main.py` et des 35 modules. Contrôle sécurité du projet **VERT**. Push vérifié.
+
+**Limite honnête** — `__import__` d'un module d'agent échoue dans ce bac à sable sur
+`claude_agent_sdk`, dépendance déclarée au `pyproject.toml` mais non installée ici. Ce n'est pas un
+défaut de la migration : `find_spec` prouve que Python trouve bien chaque fichier à sa nouvelle place.
+La vérification d'exécution réelle reste à faire par Chaima avec `uv run python main.py`.
+
+**Trois décisions laissées à Chaima, rien n'a été déplacé**
+- `superviseur` : marqué PROVISOIRE dans le code. Il s'annonce « scan santé de la flotte », donc
+  transverse, mais n'inspecte que des modules KMM. Le rendre réellement transverse est un refactor.
+- `linkedin_cv/` : production personnelle, pas un produit. Toléré à la racine en attendant sa décision.
+- `products/kmm/agents/__init__.py` : inutile puisque les imports sont à plat. Conservé, non supprimé.
+
+**Reste** — vérification d'exécution de `main.py` par Chaima · création de `caelum-coffre` (403,
+droit à accorder) · résultat TMview · aucune PR, aucun merge : la fusion vers `main` lui appartient.
+
 ## 2026-09-11-18h05 (Europe/Brussels) — Option 0 exécutée · Option B planifiée · Caelum Partners
 
 **Contrôle honnête (§11)** — Pas de document quasi identique : l'Option B détaillée est un plan
