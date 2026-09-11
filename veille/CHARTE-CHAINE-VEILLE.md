@@ -219,3 +219,51 @@ vient de la collision d'autorité, pas du nombre de rôles. Chaque fichier d'age
 Chacun porte 7 sections : charte commune · mandat de domaine · mission · déclencheur · décision possédée ·
 interdits · passation. Déposés aux deux endroits demandés : `.claude/agents/*.md` dans le dépôt Caelum
 (branche `claude/chaine-veille-13-agents`) et un document par rôle au Drive, « Synergies inter-agents ».
+
+---
+
+## 10. Base d'erreurs de la chaîne (décision de Chaima du 2026-09-11)
+
+Une base d'erreurs existe, **à consulter avant d'agir**, pour que les mêmes fautes ne soient jamais
+reproduites deux fois.
+
+- **Copie de référence :** `.claude/BASE-ERREURS.md` dans le dépôt `chaima0007/keywordmoneymaker`
+  (branche `claude/chaine-veille-13-agents`) — placée à côté des agents pour qu'ils puissent réellement
+  la lire.
+- **Miroir de lecture :** Drive, « Synergies inter-agents », document du 2026-09-11-16h55.
+- **16 fiches** au départ, chacune avec : ce qui s'est passé (preuve datée) · cause racine · **signal de
+  détection** · contre-mesure · rôle qui en répond · leçon transférable.
+- **Mode d'emploi :** on ne la lit pas en entier. On lit l'index, on repère les fiches dont le signal de
+  détection ressemble à l'action qu'on va faire, et on applique leur contre-mesure avant d'agir.
+- **Tenue :** ajout uniquement, jamais de réécriture. Pas de blâme — on documente des causes, pas des
+  coupables : une base qui accuse cesse d'être alimentée. Rien n'est supprimé sans l'accord de Chaima.
+- **Les erreurs des agents y figurent au même titre** que les erreurs héritées. Six des seize fiches
+  (E-03, E-10, E-11, E-12, E-14, E-15) sont des fautes commises par un agent le 2026-09-11. Une base qui
+  ne contiendrait que les erreurs des autres serait fausse, et donc inutile.
+
+## 11. Contrôle honnête avant tout rapport (règle permanente, Chaima 2026-09-11)
+
+**S'applique aux 42 agents, pas seulement à l'assistant en session.**
+
+Aucun rapport complet ne commence sans une **phrase de contrôle honnête** répondant à deux questions :
+1. Ai-je produit récemment des documents quasi identiques, ou redit ce qui était déjà écrit ?
+2. La condition d'arrêt (§7.1 — aucun document neuf quand l'état est inchangé) a-t-elle effectivement
+   fonctionné ?
+
+Si la réponse révèle un problème — répétition, boucle, état inchangé documenté plusieurs fois —
+**l'ÉLAGUEUR est saisi immédiatement, avant la remise du rapport, sans attendre une demande de Chaima.**
+
+Si tout est sain, on le dit en une phrase **avec le motif**. Un contrôle de pure forme ne vaut rien : le
+but n'est pas de cocher une case, c'est d'attraper la dérive avant qu'elle ne coûte un mois — ce qui
+s'est produit entre le 28/07 et le 11/08/2026 (fiches E-01 et E-02).
+
+**Où la règle est réellement inscrite.** Pour lier les 42 agents et pas seulement les 13 de la chaîne,
+elle figure au **`CLAUDE.md` §2 ter** du dépôt Caelum — le seul document que tous les agents appliquent.
+Les 13 agents de la chaîne la portent en plus dans leur propre fichier.
+
+### Dette de forme à surveiller (autocritique)
+Cette charte a reçu cinq sections en une seule journée (§6 à §11), par ajouts successifs. C'est conforme
+à la règle « ajout, jamais écrasement », mais sa longueur devient elle-même un risque de lisibilité —
+exactement le travers de la fiche E-04. À la prochaine décision structurante, l'ARCHITECTE devra
+proposer à Chaima une **consolidation datée** (un document de synthèse qui remplace la lecture des
+sections empilées, sans supprimer aucune d'elles).

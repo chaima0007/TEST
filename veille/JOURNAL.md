@@ -2,6 +2,51 @@
 
 > Snapshot par session de travail sur cette chaîne. Ajout en haut, jamais d'écrasement.
 
+## 2026-09-11-16h55 (Europe/Brussels) — Base d'erreurs + contrôle avant rapport · Caelum Partners
+
+**Contrôle honnête (nouvelle règle §11, appliquée dès cette entrée)**
+- Documents quasi identiques produits récemment ? **Non.** Les 13 documents de rôle partagent une
+  structure mais diffèrent en substance (mission, déclencheur et décision possédée distincts) — c'est
+  la demande de Chaima, pas de la duplication. Le rectificatif de 16h40 recouvre la table de 16h20 sur
+  le fond, mais il existe **parce que** l'écrasement est interdit : c'est la règle qui fonctionne.
+- Condition d'arrêt fonctionnelle ? **Oui**, et vérifiable : aucun document neuf n'a été créé pour un
+  état inchangé ; le `Calendrier des expirations` a été déposé à **0 entrée** plutôt que rempli de
+  fiction ; aucune entrée de journal n'a été écrite sans changement d'état réel.
+- **ÉLAGUEUR non saisi**, motif : aucune piste morte, aucune boucle. Un seul point de dérive signalé,
+  de forme et non de fond — la charte a reçu 5 sections en un jour et devient longue (travers E-04).
+  Consolidation datée à proposer par l'ARCHITECTE, inscrite en dette dans la charte §11.
+
+**Fait — aux deux emplacements demandés**
+- **Base d'erreurs : 16 fiches.** GitHub : `.claude/BASE-ERREURS.md` (dépôt Caelum, branche
+  `claude/chaine-veille-13-agents`), placée à côté des agents pour qu'ils puissent la lire réellement.
+  Drive : miroir dans « Synergies inter-agents ».
+- Les 3 erreurs nommées par Chaima y sont : E-01 (règle anti-doublon de juillet ignorée un mois),
+  E-02 (faux positif « PR#2 non mergée » répété ~30 fois), E-03 (`fileSize` trompeur → read-back).
+- **13 autres erreurs ajoutées**, identifiées le même jour : titres de 300-400 caractères · index
+  obsolète · deux conventions concurrentes · deux flottes d'agents dont une non documentée · dépôt
+  public sans LICENSE · dépôt public inapte à sauvegarder du sensible · entité HTML littérale · clone
+  superficiel pris pour l'historique · conversion Drive altérante · recherche web prise pour un
+  registre · deux racines projet · contenu déposé dans le mauvais dépôt · service en échec pris pour
+  inexistant.
+- **6 des 16 fiches sont des fautes commises par un agent ce jour** (E-03, E-10, E-11, E-12, E-14,
+  E-15). Une base qui ne contiendrait que les erreurs des autres serait fausse.
+- **Règle de contrôle avant rapport** inscrite au `CLAUDE.md` **§2 ter** du dépôt Caelum — le seul
+  document que les 42 agents appliquent. La charte seule n'aurait lié que les 13.
+- Les 13 agents portent désormais 9 sections : + « AVANT D'AGIR — BASE D'ERREURS » et « AVANT TOUT
+  RAPPORT — CONTRÔLE HONNÊTE ».
+
+**Vérifié (avec preuve)**
+- `.claude/BASE-ERREURS.md` : 19 417 octets, 16 fiches (comptage `grep`).
+- 9 sections confirmées dans chacun des 13 agents.
+- Contrôle sécurité du projet relancé après modification : **VERT sur les contrôles bloquants**.
+- Push vérifié sur les deux dépôts. Read-back Drive effectué.
+
+**Non fait, volontairement**
+- **Les 29 agents préexistants n'ont pas été modifiés un par un.** La règle les lie via le
+  `CLAUDE.md` §2 ter, ce qui suffit et évite 29 modifications dans un système qui n'est pas le mien.
+- **Aucune PR, aucun merge.** `CLAUDE.md` est un fichier maître : sa modification attend l'accord de
+  Chaima et reste sur la branche.
+
 ## 2026-09-11-16h40 (Europe/Brussels) — 13 agents créés sur décision de Chaima · Caelum Partners
 
 **Décision reçue et exécutée**
