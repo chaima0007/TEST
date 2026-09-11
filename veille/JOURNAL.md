@@ -2,6 +2,43 @@
 
 > Snapshot par session de travail sur cette chaîne. Ajout en haut, jamais d'écrasement.
 
+## 2026-09-11-16h40 (Europe/Brussels) — 13 agents créés sur décision de Chaima · Caelum Partners
+
+**Décision reçue et exécutée**
+- Chaima n'a pas retenu la recommandation de fusion : les 13 rôles restent **distincts et nommés**.
+  Après explication du raisonnement, elle a confirmé et demandé de vrais fichiers, pas de la
+  documentation. Exécuté. La recommandation de 16h20 est annulée par un rectificatif daté (le document
+  d'origine n'a pas été écrasé).
+- Position révisée honnêtement : deux de ses arguments implicites étaient plus forts que les miens —
+  l'indépendance du CONTRÔLEUR est structurellement impossible à obtenir d'un agent unique, et
+  l'asymétrie des coûts (faux GO brevet vs cycle gaspillé) justifie la redondance. Maintenu et non
+  contesté : l'orchestration reste subordonnée à `meta-orchestrateur`.
+
+**Fait — aux deux emplacements demandés**
+- **GitHub** : 13 fichiers `.claude/agents/*.md` dans `chaima0007/keywordmoneymaker`, branche
+  `claude/chaine-veille-13-agents`. Parc : **29 → 42 agents**. Accès en écriture obtenu en cours de
+  session (le dépôt n'était accessible qu'en lecture jusque-là).
+- **Drive** : 13 documents dans « Synergies inter-agents », un par rôle, + 1 rectificatif.
+- Chaque agent porte 7 sections dont les 5 demandées : mission · déclencheur · décision possédée ·
+  interdits · passation.
+- Garde-fous inscrits dans chaque fichier : condition d'arrêt anti-boucle · rappel art. 54 CBE (ce
+  dépôt est public) · subordination hors domaine · GUETTEUR strictement défensif.
+
+**Vérifié (avec preuve)**
+- Contrôle de forme des 13 : frontmatter valide, `name` conforme au nom de fichier, 7 sections
+  présentes dans chacun — identique à la structure des 29 existants (comparaison faite sur
+  `qa-verificateur.md`).
+- **Contrôle sécurité du projet** (`scripts/audit_code_sur.py`, règle §2 bis du `CLAUDE.md`) exécuté :
+  **VERT sur les contrôles bloquants** (secrets, code à risque). Les 2 avertissements — 4 actions CI
+  non épinglées par SHA, 3 licences non vérifiées — sont **préexistants** et sans lien avec ces fichiers.
+- Read-back Drive : les 14 documents listés avec une taille réelle de 2,5 à 6,8 Ko.
+- Push vérifié sur les deux dépôts.
+
+**Non fait, volontairement**
+- **Aucune PR, aucun merge vers `main`.** La fusion est une décision de Chaima. Branche poussée, prête.
+- Nommage de fichier choisi `gardien-controle-final` et non `gardien`, pour ne pas entrer en collision
+  avec l'agent existant `gardien-juridique-verite`. Deux gardiens, deux périmètres.
+
 ## 2026-09-11-16h20 (Europe/Brussels) — Décisions de Chaima appliquées · projet : Caelum Partners
 
 **Décisions reçues et exécutées**

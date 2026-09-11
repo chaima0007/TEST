@@ -188,3 +188,34 @@ d'un rôle habilité à arrêter une boucle — ce que l'ÉLAGUEUR corrige.
 Le LISEZ-MOI porte un « Index des entrées » censé être « mis à jour à chaque nouvelle entrée ». Il ne
 contient qu'une ligne, du 2026-07-13, alors que le dossier compte au moins 9 documents postérieurs.
 L'index est obsolète. **Non corrigé sans l'accord de Chaima.**
+
+---
+
+## 9. Décision de Chaima du 2026-09-11 (16h35) — les 13 rôles sont des agents distincts
+
+**La recommandation de fusion du §7.2 est annulée sur sa partie « vérification ».** Chaima a tranché :
+les 13 rôles existent comme agents réels et nommés. Deux arguments issus de sa conception l'ont emporté :
+
+1. **L'indépendance ne se sous-traite pas.** Le CONTRÔLEUR doit vérifier « sans voir les conclusions
+   précédentes ». C'est structurellement impossible pour un agent qui a produit le premier verdict.
+   Le décompte « 4 rôles pour 1 responsabilité » était faux : ce sont **quatre moments distincts** —
+   éprouver, re-vérifier à l'aveugle, barrer la route, justifier la confiance par des preuves.
+2. **L'asymétrie des coûts.** Un cycle gaspillé coûte du temps ; un faux GO sur un brevet coûte des
+   honoraires pour un titre rejeté, et en cas de divulgation la nouveauté est perdue définitivement.
+   Face à ce déséquilibre, la redondance est une assurance, pas un gaspillage.
+
+**Maintenu (non contesté) :** l'orchestration reste subordonnée. `meta-orchestrateur` garde l'autorité
+sur le dépôt ; `chef-orchestre-veille` est son délégué pour le domaine veille et n'arbitre rien au-delà.
+Principe : **la redondance protège quand elle vérifie, elle nuit quand elle commande.**
+
+**Règle structurante qui rend la décision robuste :** *un rôle = une décision qu'il possède.* Le désordre
+vient de la collision d'autorité, pas du nombre de rôles. Chaque fichier d'agent porte donc une section
+« DÉCISION QUE TU POSSÈDES (et personne d'autre) » et des « INTERDITS » nommant ce qu'il ne touche pas.
+
+**Les 13 agents créés** (parc du dépôt Caelum : 29 → 42) :
+`testeur` · `controleur` · `protecteur` · `pilote` · `chef-orchestre-veille` · `sentinelles` ·
+`passerelle` · `gardien-controle-final` · `guetteur` · `prophete` · `boussole` · `dechiffreur` · `garant`
+
+Chacun porte 7 sections : charte commune · mandat de domaine · mission · déclencheur · décision possédée ·
+interdits · passation. Déposés aux deux endroits demandés : `.claude/agents/*.md` dans le dépôt Caelum
+(branche `claude/chaine-veille-13-agents`) et un document par rôle au Drive, « Synergies inter-agents ».
