@@ -2,6 +2,58 @@
 
 > Snapshot par session de travail sur cette chaîne. Ajout en haut, jamais d'écrasement.
 
+## 2026-09-11-18h05 (Europe/Brussels) — Option 0 exécutée · Option B planifiée · Caelum Partners
+
+**Contrôle honnête (§11)** — Pas de document quasi identique : l'Option B détaillée est un plan
+d'exécution, pas une reformulation du plan à 3 options de 17h35 (qui comparait ; celui-ci exécute).
+Condition d'arrêt respectée. **ÉLAGUEUR non saisi**, motif : aucune boucle, aucune piste morte.
+
+**Option 0 — EXÉCUTÉE et poussée.** `caelumpartners.agency` ne sert plus que Caelum.
+- Retirés de la liste blanche : `competeiq-landing.html`, `keywordmoneymaker-index.html`, et les
+  dossiers `competeiq/`, `intelligence/`, `kmm/`, `keywordmoneymaker/`, `seo/`. Les fichiers **restent**
+  au dépôt, ils ne sont plus servis.
+- Conservés car tous Caelum : `caelum/`, `agence/`, `home/` (redirigent vers « / ») et `nl/`.
+- **Fait aggravant trouvé en vérifiant :** `keywordmoneymaker-index.html` n'avait **pas** de `noindex`.
+  La page « AI SEO Content Generator » était donc **indexable** sur le domaine d'un conseil en
+  conformité. Ce n'était plus une hypothèse de positionnement, c'était mesurable.
+- **Garde-fou 3 ajouté, bloquant** : le déploiement échoue si un fichier ou un dossier produit
+  réapparaît dans le contenu public. La règle est vérifiée par la machine, pas par la mémoire (E-01).
+
+**Vérifications avant modification (aucune supposition)**
+- `grep` sur tout le contenu publié : **aucune** page Caelum ne liait ces produits → zéro lien mort.
+- `sitemap.xml` : ne listait que des URL Caelum → aucune modification nécessaire.
+- `robots.txt` : rien à changer.
+- Cibles réelles des dossiers lues une par une : `caelum/`, `home/`, `agence/` → « / » ; les cinq
+  autres → les deux pages produits. Tous en `noindex`.
+- Simulation à blanc du script de publication : **18 fichiers, tous Caelum**.
+- **Détection prouvée par deux tests piégés** (fichier produit réintroduit ; dossier produit
+  réintroduit) : les deux sortent en code 1. Un garde-fou qui ne bloque pas pendant un essai n'est
+  pas un garde-fou prouvé.
+- `_redirects` : les règles pointant vers les cibles retirées sont **commentées, non supprimées**.
+  Actives, elles renverraient 404 après une migration Cloudflare/Netlify — le piège que l'en-tête du
+  fichier signale déjà dans l'autre sens.
+- Contrôle sécurité du projet : **VERT sur les contrôles bloquants**.
+
+**Option B — PLANIFIÉE, RIEN D'EXÉCUTÉ.** Plan à 5 phases au Drive (« Plans de mise en œuvre »).
+Ordre imposé par les dépendances et le risque : (1) écrire le contrôle CI en mode avertissement
+**avant** tout déplacement, pour mesurer l'état réel au lieu de le supposer · (2) extraire `shared/`
+— le point dur, dont tout dépend · (3) déplacer les agents par produit en `git mv` (l'historique suit,
+avantage décisif sur l'Option A) · (4) sites + `deploy.yml`, **seule phase à risque réel**, isolée dans
+son propre commit · (5) basculer le contrôle CI en bloquant, détection prouvée par test piégé.
+**ESTIMATION : 2 à 2,5 sessions.**
+
+Point d'insertion du contrôle CI, en deux endroits volontairement distincts :
+`securite-code.yml` pour le cloisonnement du code (tourne à chaque push et PR, donc un import croisé
+devient impossible à merger), `deploy.yml` pour le périmètre de publication (déjà en place). Les
+fusionner laisserait passer l'un des deux.
+
+**Trois décisions signalées comme n'étant pas les miennes** : sort de `main.py` (lanceur unique
+transverse ou un par produit), de `.caelum_memory.json` (unique ou par produit), et des sites non
+publiés (rester sous `products/` ou sortir tout de suite, ce qui serait déjà l'Option A partielle).
+
+**Reste / en attente de Chaima** — feu vert Option B · création de `caelum-coffre` (403, droit à
+accorder) · résultat TMview · aucune PR, aucun merge.
+
 ## 2026-09-11-17h35 (Europe/Brussels) — Points 1, 4 exécutés · 3 bloqué · 5 proposé · Caelum Partners
 
 **Contrôle honnête (§11)** — Aucun document quasi identique : un plan (neuf) et une fiche E-17 (ajout).
