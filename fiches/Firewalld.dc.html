@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    :root{
+      --paper:#fbfaf7; --ink:#141b26; --soft:#4a5768; --rule:#ddd8cd;
+      --ok:#1a7a44; --err:#b03a2e; --amber:#8a6508;
+      --code:#f2f1ec; --codeline:#e2ded4;
+      --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+      --sans:system-ui,"Segoe UI","Helvetica Neue",sans-serif;
+      --mono:ui-monospace,"Cascadia Mono","SF Mono",Consolas,"Liberation Mono",monospace;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
+      -webkit-font-smoothing:antialiased}
+    a{color:var(--ok)} a:hover{color:#145c33}
+    .sheet{width:794px;height:1123px;padding:46px 52px 40px;display:flex;flex-direction:column;
+      background:var(--paper)}
+    .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+      color:var(--soft);display:flex;justify-content:space-between;align-items:baseline}
+    .eyebrow b{color:var(--amber);font-weight:600}
+    h1{font-family:var(--serif);font-size:34px;line-height:1.1;margin:10px 0 4px;letter-spacing:-.01em}
+    .lede{font-size:15px;color:var(--soft);margin:0 0 16px;max-width:56ch;text-wrap:pretty}
+    .hr{height:2px;background:var(--ink);margin:0 0 18px}
+    h2{font-family:var(--sans);font-size:12px;letter-spacing:.13em;text-transform:uppercase;
+      color:var(--soft);margin:0 0 8px;display:flex;align-items:center;gap:8px}
+    h2::after{content:"";flex:1;height:1px;background:var(--rule)}
+    section{margin-bottom:15px}
+    code,.cmd{font-family:var(--mono);font-size:13px}
+    .cmd{background:var(--code);border:1px solid var(--codeline);border-radius:3px;
+      padding:1px 5px;white-space:nowrap}
+    .block{font-family:var(--mono);font-size:13px;line-height:1.65;background:var(--code);
+      border:1px solid var(--codeline);border-left:3px solid var(--ok);border-radius:3px;
+      padding:10px 12px;white-space:pre-wrap}
+    .grid{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule)}
+    .grid>div{background:var(--paper);padding:7px 9px;font-size:13.5px;line-height:1.4}
+    .grid .h{background:#efece5;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+      color:var(--soft);font-weight:600;padding:6px 9px}
+    .grid .m{font-family:var(--mono);font-size:12.5px}
+    .steps{display:flex;flex-direction:column;gap:7px}
+    .step{display:flex;gap:11px;align-items:flex-start}
+    .num{font-family:var(--mono);font-weight:700;font-size:13px;color:var(--paper);background:var(--ink);
+      width:21px;height:21px;border-radius:11px;display:flex;align-items:center;justify-content:center;
+      flex:0 0 auto;margin-top:1px}
+    .step .body{flex:1;font-size:13.5px;line-height:1.45}
+    .step .body .q{color:var(--soft)}
+    .warn{border:1px solid var(--err);border-left:4px solid var(--err);border-radius:3px;
+      padding:10px 13px;font-size:13.5px;line-height:1.5}
+    .warn .t{font-weight:700;color:var(--err);font-size:11px;letter-spacing:.12em;
+      text-transform:uppercase;margin-bottom:5px}
+    .warn ul{margin:0;padding-left:17px} .warn li{margin:3px 0}
+    .note{font-size:13px;color:var(--soft);line-height:1.5;margin:7px 0 0}
+    .foot{margin-top:auto;padding-top:12px;border-top:1px solid var(--rule);
+      display:flex;justify-content:space-between;font-size:11px;color:var(--soft);
+      font-family:var(--mono);letter-spacing:.06em}
+    .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .sheet.compact section{margin-bottom:11px}
+    .sheet.compact .grid>div{padding:5px 9px}
+    .sheet.compact .grid .h{padding:5px 9px}
+    .sheet.compact .block{line-height:1.5;padding:8px 12px}
+    .sheet.compact .lede{margin-bottom:13px}
+    .sheet.compact h1{margin:8px 0 4px}
+    .sheet.compact .warn li{margin:2px 0}
+    .lbl{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);
+      font-weight:600;margin-bottom:5px}
+    .ok{color:var(--ok);font-weight:600}
+    .bad{color:var(--err);font-weight:600}
+  </style>
+</helmet>
+<div class="sheet compact">
+  <div class="eyebrow"><span>Empire Chaima · ASR2025</span><span>Fiche <b>2</b> / 4</span></div>
+  <h1>Pare-feu firewalld</h1>
+  <p class="lede">Une phrase à retenir : je choisis d'abord la <b>zone</b>, puis ce que j'autorise, puis si le changement est temporaire ou permanent.</p>
+  <div class="hr"></div>
+
+  <section style="margin-bottom:9px">
+    <h2>Runtime et permanent — la notion centrale</h2>
+    <div class="two">
+      <div>
+        <div class="lbl">Runtime — en mémoire</div>
+        <div class="block" style="border-left-color:#8a6508">sudo firewall-cmd --add-service=http
+
+→ effet immédiat, perdu au --reload
+→ filet de sécurité : une règle qui
+   te bloque disparaît d'elle-même</div>
+      </div>
+      <div>
+        <div class="lbl">Permanent — sur le disque</div>
+        <div class="block">sudo firewall-cmd --permanent \
+     --add-service=http
+sudo firewall-cmd --reload
+
+→ écrit, mais actif seulement
+   après le --reload</div>
+      </div>
+    </div>
+    <p class="note"><b>Sens des deux commandes :</b> <span class="cmd">--runtime-to-permanent</span> copie la mémoire vers le disque (j'ai testé, j'enregistre) · <span class="cmd">--reload</span> copie le disque vers la mémoire (et écrase ce qui n'a pas été enregistré).</p>
+  </section>
+
+  <section style="margin-bottom:9px">
+    <h2>Les commandes, par question posée</h2>
+    <div class="grid" style="grid-template-columns:1.1fr 1.4fr">
+      <div class="h">Ce que je veux savoir ou faire</div><div class="h">Commande</div>
+      <div>Le pare-feu tourne-t-il ?</div><div class="m">firewall-cmd --state</div>
+      <div>Toute la configuration de la zone</div><div class="m">firewall-cmd --list-all</div>
+      <div>Zone par défaut · zones actives</div><div class="m">firewall-cmd --get-default-zone<br>firewall-cmd --get-active-zones</div>
+      <div>Toutes les zones · changer la zone par défaut</div><div class="m">firewall-cmd --get-zones<br>firewall-cmd --set-default-zone=work</div>
+      <div>Déplacer une interface</div><div class="m">firewall-cmd --zone=public --change-interface=ens18</div>
+      <div>Ouvrir un port</div><div class="m">firewall-cmd --zone=public --add-port=9001/tcp</div>
+      <div>Autoriser un service connu</div><div class="m">firewall-cmd --zone=public --add-service=http</div>
+      <div>Enregistrer tout ce que j'ai testé</div><div class="m">firewall-cmd --runtime-to-permanent</div>
+    </div>
+
+  </section>
+
+  <section style="margin-bottom:12px">
+    <h2>L'exception : créer une zone</h2>
+    <div class="block">sudo firewall-cmd --permanent --new-zone=lodhi   <span style="color:#4a5768"># --permanent obligatoire</span>
+sudo firewall-cmd --reload                        <span style="color:#4a5768"># la charge en runtime</span>
+sudo firewall-cmd --zone=lodhi --add-service=ssh</div>
+    <p class="note">Sans <span class="cmd">--permanent</span> : <i>Option can be used only with --permanent</i>.</p>
+  </section>
+
+  <section style="margin-bottom:0">
+    <div class="warn">
+      <div class="t">Les pièges qui coûtent des points</div>
+      <ul>
+        <li><span class="cmd">--reload</span> efface les règles runtime non enregistrées. Enregistre <b>avant</b> de recharger.</li>
+        <li>Retirer <span class="cmd">ssh</span> ne coupe <b>pas</b> ta session en cours : firewalld laisse vivre les connexions établies. C'est la <b>prochaine</b> connexion qui sera refusée — et tu ne t'en aperçois qu'une fois dehors.</li>
+        <li><span class="cmd">--add-port=9001</span> sans <span class="cmd">/tcp</span> est refusé, et autoriser un service <b>ne le démarre pas</b> : le pare-feu laisse passer, <span class="cmd">systemctl</span> démarre.</li>
+        <li>Le service tourne, le port écoute, le pare-feu est ouvert, et ça ne passe toujours pas ? Quatrième gardien sur Rocky : <span class="cmd">getenforce</span> → SELinux.</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="foot"><span>Fiche générée depuis le jeu Empire Chaima</span><span>Rocky Linux 9</span></div>
+</div>
+</x-dc>
+</body>
+</html>

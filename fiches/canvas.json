@@ -1,0 +1,12 @@
+{
+  "artboards": [
+    { "file": "Main.dc.html",      "x": 0,    "y": 0,    "w": 794, "h": 1123, "title": "1 · Rocky / Ubuntu", "print": "fixed" },
+    { "file": "Firewalld.dc.html", "x": 894,  "y": 0,    "w": 794, "h": 1123, "title": "2 · firewalld",      "print": "fixed" },
+    { "file": "Reseau.dc.html",    "x": 1788, "y": 0,    "w": 794, "h": 1123, "title": "3 · Réseau, SSH, SCP", "print": "fixed" },
+    { "file": "Disques.dc.html",   "x": 2682, "y": 0,    "w": 794, "h": 1123, "title": "4 · Disques et swap", "print": "fixed" }
+  ],
+  "annotations": [
+    { "id": "impression", "x": 0, "y": -150, "w": 640, "text": "Quatre fiches A4 à imprimer.\nExport PDF depuis la barre d'outils : les quatre partent dans un seul fichier, une page chacune.\nContenu repris du jeu Empire Chaima, déjà vérifié commande par commande." }
+  ],
+  "launch": { "view": "focused", "file": "Main.dc.html" }
+}

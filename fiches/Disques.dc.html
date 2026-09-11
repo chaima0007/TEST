@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    :root{
+      --paper:#fbfaf7; --ink:#141b26; --soft:#4a5768; --rule:#ddd8cd;
+      --ok:#1a7a44; --err:#b03a2e; --amber:#8a6508;
+      --code:#f2f1ec; --codeline:#e2ded4;
+      --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+      --sans:system-ui,"Segoe UI","Helvetica Neue",sans-serif;
+      --mono:ui-monospace,"Cascadia Mono","SF Mono",Consolas,"Liberation Mono",monospace;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
+      -webkit-font-smoothing:antialiased}
+    a{color:var(--ok)} a:hover{color:#145c33}
+    .sheet{width:794px;height:1123px;padding:46px 52px 40px;display:flex;flex-direction:column;
+      background:var(--paper)}
+    .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+      color:var(--soft);display:flex;justify-content:space-between;align-items:baseline}
+    .eyebrow b{color:var(--amber);font-weight:600}
+    h1{font-family:var(--serif);font-size:34px;line-height:1.1;margin:10px 0 4px;letter-spacing:-.01em}
+    .lede{font-size:15px;color:var(--soft);margin:0 0 16px;max-width:56ch;text-wrap:pretty}
+    .hr{height:2px;background:var(--ink);margin:0 0 18px}
+    h2{font-family:var(--sans);font-size:12px;letter-spacing:.13em;text-transform:uppercase;
+      color:var(--soft);margin:0 0 8px;display:flex;align-items:center;gap:8px}
+    h2::after{content:"";flex:1;height:1px;background:var(--rule)}
+    section{margin-bottom:15px}
+    code,.cmd{font-family:var(--mono);font-size:13px}
+    .cmd{background:var(--code);border:1px solid var(--codeline);border-radius:3px;
+      padding:1px 5px;white-space:nowrap}
+    .block{font-family:var(--mono);font-size:13px;line-height:1.65;background:var(--code);
+      border:1px solid var(--codeline);border-left:3px solid var(--ok);border-radius:3px;
+      padding:10px 12px;white-space:pre-wrap}
+    .grid{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule)}
+    .grid>div{background:var(--paper);padding:7px 9px;font-size:13.5px;line-height:1.4}
+    .grid .h{background:#efece5;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+      color:var(--soft);font-weight:600;padding:6px 9px}
+    .grid .m{font-family:var(--mono);font-size:12.5px}
+    .steps{display:flex;flex-direction:column;gap:7px}
+    .step{display:flex;gap:11px;align-items:flex-start}
+    .num{font-family:var(--mono);font-weight:700;font-size:13px;color:var(--paper);background:var(--ink);
+      width:21px;height:21px;border-radius:11px;display:flex;align-items:center;justify-content:center;
+      flex:0 0 auto;margin-top:1px}
+    .step .body{flex:1;font-size:13.5px;line-height:1.45}
+    .step .body .q{color:var(--soft)}
+    .warn{border:1px solid var(--err);border-left:4px solid var(--err);border-radius:3px;
+      padding:10px 13px;font-size:13.5px;line-height:1.5}
+    .warn .t{font-weight:700;color:var(--err);font-size:11px;letter-spacing:.12em;
+      text-transform:uppercase;margin-bottom:5px}
+    .warn ul{margin:0;padding-left:17px} .warn li{margin:3px 0}
+    .note{font-size:13px;color:var(--soft);line-height:1.5;margin:7px 0 0}
+    .foot{margin-top:auto;padding-top:12px;border-top:1px solid var(--rule);
+      display:flex;justify-content:space-between;font-size:11px;color:var(--soft);
+      font-family:var(--mono);letter-spacing:.06em}
+    .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .sheet.compact section{margin-bottom:11px}
+    .sheet.compact .grid>div{padding:5px 9px}
+    .sheet.compact .grid .h{padding:5px 9px}
+    .sheet.compact .block{line-height:1.5;padding:8px 12px}
+    .sheet.compact .lede{margin-bottom:13px}
+    .sheet.compact h1{margin:8px 0 4px}
+    .sheet.compact .warn li{margin:2px 0}
+    .lbl{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);
+      font-weight:600;margin-bottom:5px}
+    .ok{color:var(--ok);font-weight:600}
+    .bad{color:var(--err);font-weight:600}
+  </style>
+</helmet>
+<div class="sheet compact">
+  <div class="eyebrow"><span>Empire Chaima · ASR2025</span><span>Fiche <b>4</b> / 4</span></div>
+  <h1>Disques, montage et swap</h1>
+  <p class="lede">Un disque neuf traverse toujours la même chaîne : voir, découper, formater, monter, puis rendre permanent. Sauter une étape donne un message d'erreur qui parle d'autre chose.</p>
+  <div class="hr"></div>
+
+  <section style="margin-bottom:8px">
+    <h2>Du disque neuf au dossier utilisable</h2>
+    <div class="steps" style="gap:5px">
+      <div class="step"><div class="num">1</div><div class="body"><span class="cmd">lsblk</span> &nbsp;<span class="q">Le disque est-il vu ?</span> Puis <span class="cmd">sudo fdisk -l /dev/vdb</span> pour la table actuelle.</div></div>
+      <div class="step"><div class="num">2</div><div class="body"><span class="cmd">sudo fdisk /dev/vdb</span> &nbsp;<span class="q">n</span> → <span class="q">p</span> → numéro → Entrée → <span class="q">+8G</span> → <span class="q">p</span> pour vérifier → <span class="bad">w</span> pour écrire et quitter.</div></div>
+      <div class="step"><div class="num">3</div><div class="body"><span class="cmd">sudo partprobe</span> &nbsp;<span class="q">si lsblk ne montre pas encore /dev/vdb1</span></div></div>
+      <div class="step"><div class="num">4</div><div class="body"><span class="cmd">sudo mkfs.ext4 /dev/vdb1</span> &nbsp;<span class="q">la partition, jamais le disque</span></div></div>
+      <div class="step"><div class="num">5</div><div class="body"><span class="cmd">sudo mkdir -p /mnt/ASR-DATA</span> puis <span class="cmd">sudo mount /dev/vdb1 /mnt/ASR-DATA</span></div></div>
+      <div class="step"><div class="num">6</div><div class="body"><span class="cmd">df -h</span> &nbsp;<span class="q">la ligne du point de montage prouve que c'est monté.</span> Démonter : <span class="cmd">cd ~</span> puis <span class="cmd">sudo umount /mnt/ASR-DATA</span> — occupé ? <span class="cmd">sudo lsof /mnt/ASR-DATA</span></div></div>
+    </div>
+  </section>
+
+  <section style="margin-bottom:8px">
+    <h2>Rendre le montage permanent</h2>
+    <div class="block">sudo cp /etc/fstab /etc/fstab.bak     <span style="color:#4a5768"># filet de sécurité, toujours</span>
+sudo blkid /dev/vdb1                  <span style="color:#4a5768"># récupérer l'UUID</span>
+UUID=d4e19f22-8b7c-…  /mnt/ASR-DATA  ext4  defaults  0 2
+sudo mount -a                         <span style="color:#4a5768"># tester AVANT de redémarrer</span></div>
+    <p class="note"><b>Les six colonnes :</b> périphérique (UUID, jamais /dev/vdb1 qui peut changer d'ordre) · point de montage · type · options · dump · vérification fsck — <b>0</b> pour le swap et pour XFS qui ne passe pas par fsck, <b>1</b> pour une racine ext4, <b>2</b> pour les autres. Une erreur ici peut bloquer le démarrage : d'où <span class="cmd">mount -a</span>, et <span class="cmd">journalctl -xe</span> si ça coince.</p>
+  </section>
+
+  <section style="margin-bottom:7px">
+    <h2>Swap — deux formes, deux écritures</h2>
+    <div class="two">
+      <div>
+        <div class="lbl">Partition de swap (type 82)</div>
+        <div class="block">sudo mkswap /dev/vdc1
+sudo swapon /dev/vdc1
+free -h        # vérifier
+
+fstab :
+UUID=7f1c9e33-…  none  swap  sw  0 0</div>
+      </div>
+      <div>
+        <div class="lbl">Fichier de swap</div>
+        <div class="block">sudo fallocate -l 1G /swapfile
+sudo chmod 600 /swapfile   # critique
+sudo mkswap /swapfile
+sudo swapon /swapfile
+
+fstab :
+/swapfile        none  swap  sw  0 0</div>
+      </div>
+    </div>
+    <p class="note">Une <b>partition</b> se déclare par son <b>UUID</b>, un <b>fichier</b> par son <b>chemin</b>. Redimensionner un fichier : <span class="cmd">swapoff</span> → <span class="cmd">rm</span> → <span class="cmd">fallocate</span> → <span class="cmd">chmod 600</span> → <span class="cmd">mkswap</span> → <span class="cmd">swapon</span>. Tendance à basculer : <span class="cmd">sudo sysctl vm.swappiness=10</span>.</p>
+  </section>
+
+  <section style="margin-bottom:0">
+    <div class="warn">
+      <div class="t">Les pièges qui coûtent des points</div>
+      <ul>
+        <li>Formater <span class="cmd">/dev/vdb</span> au lieu de <span class="cmd">/dev/vdb1</span> : la table de partitions est détruite.</li>
+        <li>Oublier le <b class="bad">w</b> dans fdisk : rien n'est écrit, et lsblk ne montre aucune partition.</li>
+        <li>Écrire <span class="cmd">ext4</span> au lieu de <span class="cmd">swap</span> dans fstab, ou un <b>UUID</b> pour un fichier de swap.</li>
+        <li>Oublier <span class="cmd">chmod 600</span> : swapon avertit ou refuse — ce fichier contient des morceaux de mémoire vive.</li>
+        <li>Racine en XFS (le défaut de Rocky 9) : <span class="cmd">swapon</span> peut refuser un fichier créé par fallocate. On le crée alors avec <span class="cmd">dd if=/dev/zero of=/swapfile bs=1M count=1024</span>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="foot" style="padding-top:9px"><span>Fiche générée depuis le jeu Empire Chaima</span><span>Rocky Linux 9</span></div>
+</div>
+</x-dc>
+</body>
+</html>

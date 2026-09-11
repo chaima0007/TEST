@@ -43,3 +43,6 @@ next-env.d.ts
 /lib/generated/prisma
 dev.db
 prisma/dev.db
+
+# canevas de fiches assemblé (régénérable depuis fiches/*.dc.html)
+fiches/fiches-revision-linux.html

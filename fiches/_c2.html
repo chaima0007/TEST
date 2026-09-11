@@ -1,0 +1,68 @@
+<div class="sheet compact">
+  <div class="eyebrow"><span>Empire Chaima · ASR2025</span><span>Fiche <b>2</b> / 4</span></div>
+  <h1>Pare-feu firewalld</h1>
+  <p class="lede">Une phrase à retenir : je choisis d'abord la <b>zone</b>, puis ce que j'autorise, puis si le changement est temporaire ou permanent.</p>
+  <div class="hr"></div>
+
+  <section style="margin-bottom:9px">
+    <h2>Runtime et permanent — la notion centrale</h2>
+    <div class="two">
+      <div>
+        <div class="lbl">Runtime — en mémoire</div>
+        <div class="block" style="border-left-color:#8a6508">sudo firewall-cmd --add-service=http
+
+→ effet immédiat, perdu au --reload
+→ filet de sécurité : une règle qui
+   te bloque disparaît d'elle-même</div>
+      </div>
+      <div>
+        <div class="lbl">Permanent — sur le disque</div>
+        <div class="block">sudo firewall-cmd --permanent \
+     --add-service=http
+sudo firewall-cmd --reload
+
+→ écrit, mais actif seulement
+   après le --reload</div>
+      </div>
+    </div>
+    <p class="note"><b>Sens des deux commandes :</b> <span class="cmd">--runtime-to-permanent</span> copie la mémoire vers le disque (j'ai testé, j'enregistre) · <span class="cmd">--reload</span> copie le disque vers la mémoire (et écrase ce qui n'a pas été enregistré).</p>
+  </section>
+
+  <section style="margin-bottom:9px">
+    <h2>Les commandes, par question posée</h2>
+    <div class="grid" style="grid-template-columns:1.1fr 1.4fr">
+      <div class="h">Ce que je veux savoir ou faire</div><div class="h">Commande</div>
+      <div>Le pare-feu tourne-t-il ?</div><div class="m">firewall-cmd --state</div>
+      <div>Toute la configuration de la zone</div><div class="m">firewall-cmd --list-all</div>
+      <div>Zone par défaut · zones actives</div><div class="m">firewall-cmd --get-default-zone<br>firewall-cmd --get-active-zones</div>
+      <div>Toutes les zones · changer la zone par défaut</div><div class="m">firewall-cmd --get-zones<br>firewall-cmd --set-default-zone=work</div>
+      <div>Déplacer une interface</div><div class="m">firewall-cmd --zone=public --change-interface=ens18</div>
+      <div>Ouvrir un port</div><div class="m">firewall-cmd --zone=public --add-port=9001/tcp</div>
+      <div>Autoriser un service connu</div><div class="m">firewall-cmd --zone=public --add-service=http</div>
+      <div>Enregistrer tout ce que j'ai testé</div><div class="m">firewall-cmd --runtime-to-permanent</div>
+    </div>
+
+  </section>
+
+  <section style="margin-bottom:12px">
+    <h2>L'exception : créer une zone</h2>
+    <div class="block">sudo firewall-cmd --permanent --new-zone=lodhi   <span style="color:#4a5768"># --permanent obligatoire</span>
+sudo firewall-cmd --reload                        <span style="color:#4a5768"># la charge en runtime</span>
+sudo firewall-cmd --zone=lodhi --add-service=ssh</div>
+    <p class="note">Sans <span class="cmd">--permanent</span> : <i>Option can be used only with --permanent</i>.</p>
+  </section>
+
+  <section style="margin-bottom:0">
+    <div class="warn">
+      <div class="t">Les pièges qui coûtent des points</div>
+      <ul>
+        <li><span class="cmd">--reload</span> efface les règles runtime non enregistrées. Enregistre <b>avant</b> de recharger.</li>
+        <li>Retirer <span class="cmd">ssh</span> ne coupe <b>pas</b> ta session en cours : firewalld laisse vivre les connexions établies. C'est la <b>prochaine</b> connexion qui sera refusée — et tu ne t'en aperçois qu'une fois dehors.</li>
+        <li><span class="cmd">--add-port=9001</span> sans <span class="cmd">/tcp</span> est refusé, et autoriser un service <b>ne le démarre pas</b> : le pare-feu laisse passer, <span class="cmd">systemctl</span> démarre.</li>
+        <li>Le service tourne, le port écoute, le pare-feu est ouvert, et ça ne passe toujours pas ? Quatrième gardien sur Rocky : <span class="cmd">getenforce</span> → SELinux.</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="foot"><span>Fiche générée depuis le jeu Empire Chaima</span><span>Rocky Linux 9</span></div>
+</div>

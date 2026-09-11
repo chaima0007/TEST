@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <style>
+    :root{
+      --paper:#fbfaf7; --ink:#141b26; --soft:#4a5768; --rule:#ddd8cd;
+      --ok:#1a7a44; --err:#b03a2e; --amber:#8a6508;
+      --code:#f2f1ec; --codeline:#e2ded4;
+      --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+      --sans:system-ui,"Segoe UI","Helvetica Neue",sans-serif;
+      --mono:ui-monospace,"Cascadia Mono","SF Mono",Consolas,"Liberation Mono",monospace;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
+      -webkit-font-smoothing:antialiased}
+    a{color:var(--ok)} a:hover{color:#145c33}
+    .sheet{width:794px;height:1123px;padding:46px 52px 40px;display:flex;flex-direction:column;
+      background:var(--paper)}
+    .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+      color:var(--soft);display:flex;justify-content:space-between;align-items:baseline}
+    .eyebrow b{color:var(--amber);font-weight:600}
+    h1{font-family:var(--serif);font-size:34px;line-height:1.1;margin:10px 0 4px;letter-spacing:-.01em}
+    .lede{font-size:15px;color:var(--soft);margin:0 0 16px;max-width:56ch;text-wrap:pretty}
+    .hr{height:2px;background:var(--ink);margin:0 0 18px}
+    h2{font-family:var(--sans);font-size:12px;letter-spacing:.13em;text-transform:uppercase;
+      color:var(--soft);margin:0 0 8px;display:flex;align-items:center;gap:8px}
+    h2::after{content:"";flex:1;height:1px;background:var(--rule)}
+    section{margin-bottom:15px}
+    code,.cmd{font-family:var(--mono);font-size:13px}
+    .cmd{background:var(--code);border:1px solid var(--codeline);border-radius:3px;
+      padding:1px 5px;white-space:nowrap}
+    .block{font-family:var(--mono);font-size:13px;line-height:1.65;background:var(--code);
+      border:1px solid var(--codeline);border-left:3px solid var(--ok);border-radius:3px;
+      padding:10px 12px;white-space:pre-wrap}
+    .grid{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule)}
+    .grid>div{background:var(--paper);padding:7px 9px;font-size:13.5px;line-height:1.4}
+    .grid .h{background:#efece5;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+      color:var(--soft);font-weight:600;padding:6px 9px}
+    .grid .m{font-family:var(--mono);font-size:12.5px}
+    .steps{display:flex;flex-direction:column;gap:7px}
+    .step{display:flex;gap:11px;align-items:flex-start}
+    .num{font-family:var(--mono);font-weight:700;font-size:13px;color:var(--paper);background:var(--ink);
+      width:21px;height:21px;border-radius:11px;display:flex;align-items:center;justify-content:center;
+      flex:0 0 auto;margin-top:1px}
+    .step .body{flex:1;font-size:13.5px;line-height:1.45}
+    .step .body .q{color:var(--soft)}
+    .warn{border:1px solid var(--err);border-left:4px solid var(--err);border-radius:3px;
+      padding:10px 13px;font-size:13.5px;line-height:1.5}
+    .warn .t{font-weight:700;color:var(--err);font-size:11px;letter-spacing:.12em;
+      text-transform:uppercase;margin-bottom:5px}
+    .warn ul{margin:0;padding-left:17px} .warn li{margin:3px 0}
+    .note{font-size:13px;color:var(--soft);line-height:1.5;margin:7px 0 0}
+    .foot{margin-top:auto;padding-top:12px;border-top:1px solid var(--rule);
+      display:flex;justify-content:space-between;font-size:11px;color:var(--soft);
+      font-family:var(--mono);letter-spacing:.06em}
+    .two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .sheet.compact section{margin-bottom:11px}
+    .sheet.compact .grid>div{padding:5px 9px}
+    .sheet.compact .grid .h{padding:5px 9px}
+    .sheet.compact .block{line-height:1.5;padding:8px 12px}
+    .sheet.compact .lede{margin-bottom:13px}
+    .sheet.compact h1{margin:8px 0 4px}
+    .sheet.compact .warn li{margin:2px 0}
+    .lbl{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);
+      font-weight:600;margin-bottom:5px}
+    .ok{color:var(--ok);font-weight:600}
+    .bad{color:var(--err);font-weight:600}
+  </style>
+</helmet>
+<div class="sheet">
+  <div class="eyebrow"><span>Empire Chaima · ASR2025</span><span>Fiche <b>1</b> / 4</span></div>
+  <h1>Rocky 9 face à Ubuntu/Debian</h1>
+  <p class="lede">Même travail, deux syntaxes. C'est la première cause d'erreur quand on suit les deux cours en parallèle : la commande est juste, la distribution est fausse.</p>
+  <div class="hr"></div>
+
+  <section>
+    <h2>Les équivalences à connaître</h2>
+    <div class="grid" style="grid-template-columns:1.05fr 1.25fr 1.25fr">
+      <div class="h">Besoin</div><div class="h">Rocky 9 / RHEL</div><div class="h">Ubuntu / Debian</div>
+
+      <div>Installer un paquet</div>
+      <div class="m">sudo dnf install httpd</div>
+      <div class="m">sudo apt-get install -y httpd</div>
+
+      <div>Rafraîchir l'index</div>
+      <div class="m">sudo dnf makecache<br><span style="color:#4a5768">(automatique avant chaque opération)</span></div>
+      <div class="m">sudo apt-get update</div>
+
+      <div>Créer un compte</div>
+      <div class="m">sudo useradd -m paul<br>sudo passwd paul</div>
+      <div class="m">sudo adduser paul<br><span style="color:#4a5768">(interactif, tout en une fois)</span></div>
+
+      <div>Groupe qui donne sudo</div>
+      <div class="m"><b>wheel</b></div>
+      <div class="m"><b>sudo</b></div>
+
+      <div>Unité systemd de SSH</div>
+      <div class="m"><b>sshd</b><br>systemctl status sshd</div>
+      <div class="m"><b>ssh</b><br>systemctl status ssh</div>
+
+      <div>Pare-feu</div>
+      <div class="m">firewalld — firewall-cmd<br><span style="color:#4a5768">zones, runtime / permanent</span></div>
+      <div class="m">ufw — sudo ufw allow 22/tcp<br><span style="color:#4a5768">ni zones, ni runtime</span></div>
+
+      <div>Réseau permanent</div>
+      <div class="m">nmcli (NetworkManager)</div>
+      <div class="m">netplan — /etc/netplan/*.yaml</div>
+
+      <div>Journal d'authentification</div>
+      <div class="m">/var/log/secure</div>
+      <div class="m">/var/log/auth.log</div>
+
+      <div>Journal général</div>
+      <div class="m">/var/log/messages</div>
+      <div class="m">/var/log/syslog</div>
+
+      <div>Dépôts déclarés dans</div>
+      <div class="m">/etc/yum.repos.d/</div>
+      <div class="m">/etc/apt/sources.list.d/</div>
+
+      <div>Dossier personnel par défaut</div>
+      <div class="m">drwx------ (0700)</div>
+      <div class="m">drwxr-x--- (0750)</div>
+
+      <div>/etc/ssh/sshd_config</div>
+      <div class="m">-rw------- (600) — sudo requis</div>
+      <div class="m">-rw-r--r-- (644) — lisible par tous</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Ce qui ne change pas</h2>
+    <p class="note"><span class="cmd">ip a</span> <span class="cmd">ip route</span> <span class="cmd">ssh</span> <span class="cmd">scp</span> <span class="cmd">systemctl</span> <span class="cmd">journalctl</span> <span class="cmd">grep</span> <span class="cmd">find</span> <span class="cmd">tar</span> <span class="cmd">chmod</span> <span class="cmd">chown</span> <span class="cmd">lsblk</span> <span class="cmd">mount</span> — et le processus s'appelle <b>sshd</b> des deux côtés, même quand l'unité s'appelle <b>ssh</b>.</p>
+  </section>
+
+  <section>
+    <div class="warn">
+      <div class="t">Le piège le plus fréquent</div>
+      <div class="block" style="border-left-color:#b03a2e;margin-bottom:8px">$ systemctl status ssh
+Unit ssh.service could not be found.</div>
+      Tu es sur Rocky : l'unité s'appelle <b>sshd</b>. Le même réflexe inversé sur Ubuntu donne
+      « Unit sshd.service could not be found ». Avant de taper, regarde quelle machine tu as en face.
+    </div>
+  </section>
+
+  <div class="foot"><span>Fiche générée depuis le jeu Empire Chaima</span><span>Rocky 9 · Ubuntu 22.04</span></div>
+</div>
+</x-dc>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<div class="sheet">
+  <div class="eyebrow"><span>Empire Chaima · ASR2025</span><span>Fiche <b>1</b> / 4</span></div>
+  <h1>Rocky 9 face à Ubuntu/Debian</h1>
+  <p class="lede">Même travail, deux syntaxes. C'est la première cause d'erreur quand on suit les deux cours en parallèle : la commande est juste, la distribution est fausse.</p>
+  <div class="hr"></div>
+
+  <section>
+    <h2>Les équivalences à connaître</h2>
+    <div class="grid" style="grid-template-columns:1.05fr 1.25fr 1.25fr">
+      <div class="h">Besoin</div><div class="h">Rocky 9 / RHEL</div><div class="h">Ubuntu / Debian</div>
+
+      <div>Installer un paquet</div>
+      <div class="m">sudo dnf install httpd</div>
+      <div class="m">sudo apt-get install -y httpd</div>
+
+      <div>Rafraîchir l'index</div>
+      <div class="m">sudo dnf makecache<br><span style="color:#4a5768">(automatique avant chaque opération)</span></div>
+      <div class="m">sudo apt-get update</div>
+
+      <div>Créer un compte</div>
+      <div class="m">sudo useradd -m paul<br>sudo passwd paul</div>
+      <div class="m">sudo adduser paul<br><span style="color:#4a5768">(interactif, tout en une fois)</span></div>
+
+      <div>Groupe qui donne sudo</div>
+      <div class="m"><b>wheel</b></div>
+      <div class="m"><b>sudo</b></div>
+
+      <div>Unité systemd de SSH</div>
+      <div class="m"><b>sshd</b><br>systemctl status sshd</div>
+      <div class="m"><b>ssh</b><br>systemctl status ssh</div>
+
+      <div>Pare-feu</div>
+      <div class="m">firewalld — firewall-cmd<br><span style="color:#4a5768">zones, runtime / permanent</span></div>
+      <div class="m">ufw — sudo ufw allow 22/tcp<br><span style="color:#4a5768">ni zones, ni runtime</span></div>
+
+      <div>Réseau permanent</div>
+      <div class="m">nmcli (NetworkManager)</div>
+      <div class="m">netplan — /etc/netplan/*.yaml</div>
+
+      <div>Journal d'authentification</div>
+      <div class="m">/var/log/secure</div>
+      <div class="m">/var/log/auth.log</div>
+
+      <div>Journal général</div>
+      <div class="m">/var/log/messages</div>
+      <div class="m">/var/log/syslog</div>
+
+      <div>Dépôts déclarés dans</div>
+      <div class="m">/etc/yum.repos.d/</div>
+      <div class="m">/etc/apt/sources.list.d/</div>
+
+      <div>Dossier personnel par défaut</div>
+      <div class="m">drwx------ (0700)</div>
+      <div class="m">drwxr-x--- (0750)</div>
+
+      <div>/etc/ssh/sshd_config</div>
+      <div class="m">-rw------- (600) — sudo requis</div>
+      <div class="m">-rw-r--r-- (644) — lisible par tous</div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Ce qui ne change pas</h2>
+    <p class="note"><span class="cmd">ip a</span> <span class="cmd">ip route</span> <span class="cmd">ssh</span> <span class="cmd">scp</span> <span class="cmd">systemctl</span> <span class="cmd">journalctl</span> <span class="cmd">grep</span> <span class="cmd">find</span> <span class="cmd">tar</span> <span class="cmd">chmod</span> <span class="cmd">chown</span> <span class="cmd">lsblk</span> <span class="cmd">mount</span> — et le processus s'appelle <b>sshd</b> des deux côtés, même quand l'unité s'appelle <b>ssh</b>.</p>
+  </section>
+
+  <section>
+    <div class="warn">
+      <div class="t">Le piège le plus fréquent</div>
+      <div class="block" style="border-left-color:#b03a2e;margin-bottom:8px">$ systemctl status ssh
+Unit ssh.service could not be found.</div>
+      Tu es sur Rocky : l'unité s'appelle <b>sshd</b>. Le même réflexe inversé sur Ubuntu donne
+      « Unit sshd.service could not be found ». Avant de taper, regarde quelle machine tu as en face.
+    </div>
+  </section>
+
+  <div class="foot"><span>Fiche générée depuis le jeu Empire Chaima</span><span>Rocky 9 · Ubuntu 22.04</span></div>
+</div>
