@@ -85,6 +85,14 @@ function IconPipeline({ className }: { className?: string }) {
   );
 }
 
+function IconProspection({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M2 5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5zm2.4.2a1 1 0 0 0-.8 1.6l4.8 4.6a2 2 0 0 0 2.4 0l4.8-4.6a1 1 0 0 0-.8-1.6H4.4z" />
+    </svg>
+  );
+}
+
 function IconChevronLeft({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -157,6 +165,12 @@ const navSections: NavSection[] = [
     title: "MATCHING FREELANCE",
     items: [
       { href: "/dashboard/pipeline", label: "Pipeline", icon: IconPipeline },
+    ],
+  },
+  {
+    title: "PROSPECTION (CAELUM)",
+    items: [
+      { href: "/dashboard/prospection", label: "Prospection", icon: IconProspection },
     ],
   },
   {

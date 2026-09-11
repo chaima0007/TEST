@@ -6,8 +6,8 @@ export default defineConfig({
     alias: { "@": resolve(__dirname, ".") },
   },
   test: {
-    // Les tests ne ciblent que la logique pure (analyzer, matcher) — pas de DB.
-    include: ["lib/**/__tests__/**/*.test.ts"],
+    // Logique pure (analyzer, matcher…) + routes API sans DB (ex. HERMES).
+    include: ["lib/**/__tests__/**/*.test.ts", "app/**/__tests__/**/*.test.ts"],
     environment: "node",
   },
 });
