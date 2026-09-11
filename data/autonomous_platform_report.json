@@ -1,5 +1,5 @@
 {
-  "genere_le": "2026-09-06T21:20:49.740798+00:00",
+  "genere_le": "2026-09-11T16:28:13.262243+00:00",
   "monte_carlo_n": 20000,
   "corpus": {
     "reponses": 783,
@@ -21,7 +21,7 @@
       "rps": 5,
       "cache_pct": 60,
       "p95_ms": 46,
-      "p99_ms": 50,
+      "p99_ms": 49,
       "pct_sous_200ms": 100.0,
       "verdict": "OK",
       "mitigation": "revalidate:30 + rendu statique"
@@ -70,7 +70,7 @@
       "type": "etat",
       "taux_casse_pct": 1.0,
       "urls_impactees_moy": 14,
-      "pct_corpus": 1.11,
+      "pct_corpus": 1.04,
       "verdict": "OK",
       "mitigation": "détecteur de changement + 2e source de secours"
     },
@@ -78,8 +78,8 @@
       "scenario": "Sources · Refonte d'un portail",
       "type": "stress",
       "taux_casse_pct": 5.0,
-      "urls_impactees_moy": 66,
-      "pct_corpus": 4.99,
+      "urls_impactees_moy": 72,
+      "pct_corpus": 5.48,
       "verdict": "ALERTE",
       "mitigation": "détecteur de changement + 2e source de secours"
     },
@@ -87,8 +87,8 @@
       "scenario": "Sources · Panne large",
       "type": "stress",
       "taux_casse_pct": 15.0,
-      "urls_impactees_moy": 195,
-      "pct_corpus": 14.85,
+      "urls_impactees_moy": 194,
+      "pct_corpus": 14.81,
       "verdict": "CRITIQUE",
       "mitigation": "détecteur de changement + 2e source de secours"
     },
@@ -169,7 +169,7 @@
       "reponses": 783,
       "modules": 184,
       "depuis_naissance": 355,
-      "battements_sans_croissance": 6,
+      "battements_sans_croissance": 7,
       "mitigation": "ajouter régulièrement des domaines vérifiés (loi + source officielle)"
     },
     {
@@ -189,7 +189,7 @@
       "plan_faits": 6,
       "plan_total": 13,
       "prochaine_etape": "Valider la grille de prix grands comptes (proposition prête : A/B/C) (avant le 2026-07-02)",
-      "battements_sans_progres": 72,
+      "battements_sans_progres": 73,
       "en_retard": 5,
       "mitigation": "respecter les dates butoirs du plan — ne pas stagner"
     },
@@ -225,7 +225,7 @@
     }
   ],
   "sceau": {
-    "seal_id": "AUTO-20260906212049",
+    "seal_id": "AUTO-20260911162813",
     "statut": "APPROUVÉ",
     "pire_verdict_etat": "ALERTE",
     "score_resilience": 76.0,
@@ -249,8 +249,8 @@
   },
   "vie": {
     "etat_vie": "🟠 Vigilance",
-    "battements": 95,
-    "age_jours": 69.49,
+    "battements": 96,
+    "age_jours": 74.29,
     "naissance": "2026-06-29T09:31:18.850752+00:00"
   },
   "todo": {

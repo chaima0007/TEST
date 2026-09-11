@@ -13,3 +13,5 @@
 
 - **2026-07-17** — Protocole « Drive d'abord » puis protocole de livraison v2 adoptés (désormais absorbés par le CODEX).
 - **2026-09-06** — PROTOCOLE CODEX installé : 21 agents, structure §12, skill debat, vocabulaire commun.
+
+- **2026-09-11** — **TRANCHÉ PAR CHAIMA** : réconciliation des agents = « mapper + compléter, ne pas remplacer », 0 suppression. La PR #6 de cette session (installation du CODEX sur Caelum) est fermée comme *superseded* : le protocole et la structure sont passés par la PR #7 (mergée sur `main` de Caelum, commit 29c22b9) et les 21 agents rédigés ici sont repris dans la PR #14 — 13 rôles absents ajoutés tels quels, 8 mappés aux agents existants. Les 13 agents avaient d'abord été audités sécurité (0 secret, 0 code malveillant, CI verte). **PR #14 encore ouverte à ce jour** : sur `main` de Caelum, le protocole est en place, les 13 agents ne le sont pas encore.
