@@ -2,6 +2,56 @@
 
 > Snapshot par session de travail sur cette chaîne. Ajout en haut, jamais d'écrasement.
 
+## 2026-09-11-20h35 (Europe/Brussels) — Infrastructure fusionnée sur main, déploiement vert
+
+**Contrôle honnête (§11)** — Aucun document quasi identique. **ÉLAGUEUR non saisi**, motif : aucune
+boucle. Une erreur de ma part en revanche, consignée plus bas.
+
+**FUSION FAITE — main = `94d932b`.** Fusion en deux temps comme décidé : l'infrastructure part,
+les 13 agents restent en réserve sur `claude/chaine-veille-13-agents`.
+
+**Déploiement VERT, prouvé par le journal du runner** (run 34633563819, toutes étapes succès) :
+- « ── Contenu réellement publié (**19 fichiers**) ── » suivi de la liste exacte — **identique à ma
+  simulation locale**, fichier par fichier.
+- « vérification de propriété publiée : googleab8fcc73e6abfbb0.html » → Search Console préservée.
+- **Aucun `::warning::fichier attendu absent`** : tous les fichiers de la liste blanche ont été trouvés
+  à leur nouvel emplacement `products/caelum/site/`.
+- Artefact 17 519 octets, déploiement créé pour `94d932b`, « Reported success! ».
+
+**Le contrôle de cloisonnement a tourné en CI réelle et il est BLOQUANT** : étape « Cloisonnement des
+produits (BLOQUANT depuis la phase 5) » — succès sur le runner. Ce n'est plus une preuve de bac à sable.
+
+**Delta réel en production** — mesuré en simulant les deux workflows avant la fusion : main publiait
+**26** fichiers, il en publie **19**. Les 19 sont identiques. Les 7 disparus sont tous CompeteIQ ou
+KeywordMoneyMaker (Option 0, voulue). Zéro fichier nouveau.
+
+**Ce que main avait fait entre-temps, et que j'ai intégré plutôt que contourné**
+- 44 agents (pas 29), protocole CODEX (`codex/`, dont `codex/agents-correspondance.md`), vérification
+  Google Search Console, retrait de `linkedin_cv/` du dépôt public.
+- `.gitignore` : les DEUX blocs conservés. `codex/` autorisé à la racine par le contrôle. Entrée
+  `linkedin_cv` retirée du contrôle, devenue sans objet.
+- Le fichier de vérification Google déplacé de la racine vers `products/caelum/site/` : il fonctionnait
+  par accident (le motif du workflow se résolvait à la racine) mais était séparé du site qu'il certifie.
+- **Vérifié : les 8 fichiers de site apportés par main sont IDENTIQUES à mes copies déplacées** — aucun
+  contenu perdu au passage en `products/`.
+
+**MON ERREUR, à ficher (candidate E-19)** — j'ai lancé `git stash` et `git checkout` **pendant une
+fusion en cours** pour calculer le delta de production. Ces manipulations ont détruit `MERGE_HEAD` :
+la fusion n'était plus enregistrée comme telle, et committer aurait produit un commit sans `main`
+comme parent — donc un conflit garanti à la fusion suivante. Détecté par un contrôle explicite de
+`MERGE_HEAD`, pas par chance. Reprise propre : `reset --hard`, fusion refaite, corrections réappliquées.
+**Leçon : une fusion en cours est un état fragile ; on ne fait aucune manipulation d'index ou de branche
+avant de l'avoir finalisée.** Fiche non encore ajoutée à la base : elle partira avec la réconciliation
+des agents plutôt que de motiver un second push sur main aujourd'hui.
+
+**Reste, et c'est pour Chaima**
+- **Le rendu final dans un navigateur.** Je ne peux pas le vérifier : la politique réseau de cet
+  environnement refuse `caelumpartners.agency` (403 au gateway, confirmé sur curl et sur le fetch).
+  Ce que je prouve s'arrête à ce que le runner a publié.
+- `uv run python main.py` — commande transmise, sortie brute attendue.
+- Réconciliation des 13 agents : questions posées rôle par rôle, arbitrage à elle.
+- `caelum-coffre` : à créer par elle (403 sur l'intégration). Résultat TMview attendu.
+
 ## 2026-09-11-18h50 (Europe/Brussels) — Option B exécutée, 5 phases · Caelum Partners
 
 **Contrôle honnête (§11)** — Pas de document quasi identique : six commits, cinq phases distinctes,
