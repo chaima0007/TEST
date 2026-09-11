@@ -16,6 +16,7 @@ export const FLEET: AgentDef[] = [
   { id: "sentinel", name: "SENTINEL", role: "Sécurité & protection Zero-Trust", premium: false, capabilities: ["compliance", "RGPD", "anti-fraude"] },
   { id: "oracle", name: "ORACLE", role: "Analytics & intelligence", premium: false, capabilities: ["KPIs", "scoring", "rétroaction"] },
   { id: "hermes", name: "HERMES", role: "Prospection LinkedIn & vente", premium: false, capabilities: ["outreach manuel", "A/B accroches", "suivi"] },
+  { id: "boussole", name: "BOUSSOLE", role: "Qualification & triage de leads", premium: false, capabilities: ["scoring déterministe", "questions de découverte", "priorisation"] },
   { id: "pacte", name: "PACTE", role: "Devis & proposition commerciale (closing)", premium: false, capabilities: ["devis", "périmètre", "modalités à confirmer"] },
   { id: "nexus", name: "NEXUS", role: "SEO & indexation", premium: false, capabilities: ["SEO", "sitemap", "indexation"] },
   { id: "forge", name: "FORGE", role: "Développement & déploiement", premium: false, capabilities: ["build", "déploiement", "reprise de run"] },

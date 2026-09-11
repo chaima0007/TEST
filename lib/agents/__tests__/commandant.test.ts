@@ -63,8 +63,8 @@ describe("RÉSOLVEUR.diagnose", () => {
 });
 
 describe("registry", () => {
-  it("contient 12 agents dont 2 premium (COMMANDANT, RÉSOLVEUR)", () => {
-    expect(FLEET).toHaveLength(12);
+  it("contient 13 agents dont 2 premium (COMMANDANT, RÉSOLVEUR)", () => {
+    expect(FLEET).toHaveLength(13);
     expect(premiumAgents().map((a) => a.id).sort()).toEqual(["commandant", "resolveur"]);
   });
 });
