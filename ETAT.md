@@ -3,12 +3,13 @@
 > Mis à jour à chaque livraison. Court par design. Détail : `00-LIRE-D-ABORD.md`.
 > Rapports horodatés (un par événement) : `reports/`.
 
-**Dernière mise à jour : 2026-07-17 22h05 CEST** (`TZ="Europe/Brussels" date`)
+**Dernière mise à jour : 2026-09-11 13h42 CEST** (`TZ="Europe/Brussels" date`)
 
-## État vérifié (preuve du 2026-07-17)
-- Tests : **33/33 verts** (`npm test`, 7 fichiers) · Lint : **0 erreur** · Types : **0 erreur**
-- Build local : **OK** (`npm run build`, 20/20 pages)
-- **Correction CI** (commit `2332776`) : `postinstall: prisma generate` — corrige l'échec de build Vercel (client Prisma gitignoré donc absent du checkout). Prouvé par repro : sans le fix `next build` échoue « module not found » ; avec, `postinstall` régénère le client puis le build passe. Sur le nouveau commit, le projet Vercel `test` **rebuild** (plus l'erreur).
+## État vérifié (preuve du 2026-09-11, commit `8391052`)
+- Tests : **44/44 verts** (`npm test`, 9 fichiers) · Lint : **0 erreur** (3 warnings préexistants) · Types : **0** (`tsc` après `next build`)
+- Build local : **OK** (`npm run build`, 21 routes) — inclut `/api/hermes/draft` + `/dashboard/prospection`
+- **HERMES branché dans l'app** (commit `8391052`) : route `POST /api/hermes/draft` (sans état) + page `/dashboard/prospection` (4 brouillons copiables, envoi manuel §10) + entrée sidebar.
+- **Correction CI** (commit `2332776`) : `postinstall: prisma generate` — corrige l'échec de build Vercel (client Prisma gitignoré donc absent du checkout).
 - Branche : `claude/nexus-market-agents-63dlku` · PR **#1 ouverte, non mergée**
 
 ## Point Vercel (config compte — action Chaima)
@@ -20,10 +21,12 @@
 - Aucune action réelle client (envoi, signature, encaissement) : volontaire.
 
 ## Reste
-1. Confirmer le vert Vercel sur `2332776` (ou déconnecter Vercel) / merger PR #1
-2. COMMANDANT → HERMES (messages LinkedIn ciblés) · 3. RÉSOLVEUR → surveillance des runs
-4. Connecteur de source réel (choix en attente) · 5. `ANTHROPIC_API_KEY` pour vérifier le LLM
+1. **Définir l'ICP + fournir 5–10 prospects réels** (app prête, il manque QUI cibler)
+2. `ANTHROPIC_API_KEY` pour activer/vérifier le chemin LLM de HERMES (sinon heuristique)
+3. Nettoyage Vercel (côté Chaima) / merger PR #1
+4. Connecteur de source réel pour le pipeline (choix en attente)
 
 ## Derniers rapports
+- `reports/2026-09-11-1342-branche-hermes-dashboard.md`
 - `reports/2026-07-17-2205-fix-build-vercel-prisma.md`
 - `reports/2026-07-17-2140-audit-dev-nexus-market.md`
