@@ -1,3 +1,12 @@
+> # ⚠️ DOCUMENT HISTORIQUE — NE PLUS LIRE COMME NORME
+> **Consolidé le 2026-09-11-22h50. La lecture à jour est `CHARTE-CONSOLIDEE-2026-09-11.md`.**
+>
+> Ce fichier a reçu douze sections en une seule journée. Il est conservé intégralement — aucune section
+> supprimée — parce qu'il porte le raisonnement et les contradictions arbitrées en chemin. Mais il n'est
+> plus la règle : une bonne partie a été reprise par le PROTOCOLE CODEX, et le reste vit dans le dépôt
+> Caelum. Le consulter pour comprendre POURQUOI une décision a été prise ; jamais pour savoir ce qui
+> s'applique aujourd'hui.
+
 # Charte de la chaîne « Veille, Brevets, Technologies & Capitaux »
 
 > **Portée : transversale** (infrastructure de la chaîne, tous projets).
