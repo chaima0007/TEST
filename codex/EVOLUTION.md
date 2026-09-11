@@ -4,6 +4,7 @@
 
 ## TEST / Nexus-Market
 
+- **2026-09-11** — Décision : **revue automatique des PR désactivée** tant que `ANTHROPIC_API_KEY` n'est pas posé. Le check finissait en `failure` sur chaque PR, commits documentaires compris (ERR-010) ; ERR-010 laissait le choix « poser le secret OU rendre le workflow non bloquant » — c'est la seconde option, temporaire. La CI lint/build/typecheck (`ci.yml`) reste active et inchangée. TRANCHÉ PAR CHAIMA.
 - **2026-09-11** — Décision : conflit de gouvernance PR #1 ↔ PR #8 (`main` = install CODEX « CompeteIQ ») tranché **Nexus-Market prioritaire** ; décisions de `main` intégrées, EVOLUTION en union. TRANCHÉ PAR CHAIMA.
 - **2026-09-11** — Problème résolu : **PR #1 remise mergeable** (conflit avec `main` après l'atterrissage de PR #2 `cbe82e0` = CI + mêmes correctifs lint). Merge de `main` dans la branche, 3 conflits résolus en union (`package.json`, `seed.ts`, `settings/page.tsx`), gate vert (77/77, lint 0, tsc 0, build OK). `dirty` → `unstable`. Merge dans `main` = décision humaine.
 - **2026-09-11** — Jalon : agent **RELANCE** (relance de devis, suivi post-proposition) — `lib/agents/relance.ts` + route `/api/relance/draft` + page `/dashboard/relance`. Referme la boucle après PACTE (J+3/J+7/clôture, sans harcèlement). 77/77 tests, `next build` OK. Boucle de vente Caelum complète : prospection → qualification → devis → relance.
