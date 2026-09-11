@@ -2,6 +2,60 @@
 
 > Snapshot par session de travail sur cette chaîne. Ajout en haut, jamais d'écrasement.
 
+## 2026-09-11-17h35 (Europe/Brussels) — Points 1, 4 exécutés · 3 bloqué · 5 proposé · Caelum Partners
+
+**Contrôle honnête (§11)** — Aucun document quasi identique : un plan (neuf) et une fiche E-17 (ajout).
+La condition d'arrêt a fonctionné, et mieux que ça : ce cycle a **réduit** la duplication au lieu d'en
+créer. **ÉLAGUEUR non saisi**, motif : aucune boucle, aucune piste morte.
+
+**Point 1 — FAIT.** Les 13 agents réduits à un pointeur de 2 lignes vers `CLAUDE.md` §2 ter + la base.
+Le texte normatif vivait en 14 endroits : c'était reproduire la divergence d'E-01. 8 sections par agent
+désormais, contre 9.
+
+**Point 3 — BLOQUÉ, pas oublié.** `caelum-coffre` **n'a pas pu être créé** : l'API GitHub répond
+**403 « Resource not accessible by integration »**. L'intégration de cette session n'a pas le droit de
+créer un dépôt. Ce n'est pas un échec transitoire (E-16 : « non autorisé », pas « en échec ») — aucune
+relance ne le résoudra. À créer par Chaima, ou en élargissant les droits de l'intégration.
+
+**Point 4 — FAIT.**
+- `agents/base_erreurs.py` : passerelle de la flotte Python vers la base. Conception clé — il **lit**
+  `.claude/BASE-ERREURS.md` et `CLAUDE.md`, il ne recopie rien. Preuve que ça marche : l'ajout d'E-17
+  a été repris par le module **sans aucune modification de code**.
+  Échec bruyant volontaire : une base illisible lève une exception au lieu de retourner vide — ne jamais
+  laisser croire « aucune erreur connue » quand la réponse est « je n'ai pas pu vérifier » (E-16).
+  Greffé au démarrage de `main_loop()`. Testé : import OK, 17 fiches lues,
+  `pour_action("je crée un dossier au Drive")` → E-01, E-03, E-12, E-14.
+- `.claude/FRONTIERE-SUBSTRATS.md` : la frontière des deux substrats, avec qui possède quoi, la règle
+  d'arbitrage, les interdits croisés, et la seule chose qui traverse (la base). Référencée au
+  `CLAUDE.md` §2 ter, point 3.
+- Couverture réelle corrigée : la règle atteint désormais les **75** agents (42 Markdown + 33 Python),
+  contre 42 auparavant.
+
+**Point 5 — PROPOSÉ, NON EXÉCUTÉ.** Plan à 3 options au Drive (« Plans de mise en œuvre »).
+En établissant les faits, une **Option 0** est apparue, non envisagée dans la demande : retirer les
+autres produits de la liste blanche de publication. Elle supprime le coût réel du mélange — la dilution
+du positionnement de Caelum — en ~30 minutes, sans toucher à la production. Recommandé : Option 0
+maintenant, Option B (mono-repo cloisonné + contrôle CI) ensuite si besoin, Option A (3 dépôts)
+seulement quand un produit gagne domaine et revenus.
+
+**Trouvé en chemin — E-17 ajoutée à la base (17 fiches).**
+Le commentaire de `deploy.yml` documente l'incident d'exposition signalé par Chaima au départ : le
+workflow publiait `path: '.'`, donc `CLAUDE.md`, `ETAT.md`, `reports/`, `.claude/`, `agents/` et un CV
+étaient lisibles sur `caelumpartners.agency`. Il **manquait** à la base. Cause racine : liste noire
+implicite — tout publié sauf ce qu'on pense à exclure. Corrigé de longue date par liste blanche + 2
+garde-fous bloquants ; la fiche existe pour qu'ils ne soient jamais affaiblis.
+
+**Autre fait établi, qui change le point 5 :** un seul domaine (`caelumpartners.agency`) sert les trois
+produits sous des sous-chemins. Et la flotte Python n'est pas séparable proprement —
+`decision_simulator.py` (Caelum + CompeteIQ) et `gdpr_garde.py` (Caelum + KMM) servent deux produits.
+
+**Vérifié (avec preuve)** — 8 sections par agent après réduction · `py_compile` sur `main.py` et
+`base_erreurs.py` · import et fonctions testés hors `main.py` · contrôle sécurité du projet **VERT sur
+les contrôles bloquants** après chaque modification · push vérifié · read-back Drive.
+
+**Reste / en attente de Chaima** — création de `caelum-coffre` (droits) · résultat du check TMview ·
+feu vert Option 0 et choix Option A/B · aucune PR, aucun merge.
+
 ## 2026-09-11-16h55 (Europe/Brussels) — Base d'erreurs + contrôle avant rapport · Caelum Partners
 
 **Contrôle honnête (nouvelle règle §11, appliquée dès cette entrée)**
