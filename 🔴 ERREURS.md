@@ -76,3 +76,10 @@
 3. **Les webhooks ne disent pas tout** (merge-conflit, CI post-fix) → le check-in périodique est indispensable (ERR-009).
 4. **Nos propres textes doivent respecter nos propres garde-fous** — les tester (ERR-006, ERR-007).
 5. **Secrets/config du dépôt ≠ code** : diagnostiquer via « échoue-t-il aussi sur un commit vide/doc ? » (ERR-010).
+
+---
+
+### Mesures d'accès
+| Date | Mesure | Statut | Preuve |
+|---|---|---|---|
+| 2026-09-11 | (mesure) accès en écriture d'une session avec dépôt attaché à la création | ✅ MESURE | branche codex/mesure-option3 poussée par ce commit |
