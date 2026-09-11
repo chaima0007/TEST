@@ -68,3 +68,123 @@ les 35 rôles fonctionnent-ils encore comme prévu ? · doublons apparus ? · r�
 vérification du code tiers). Plusieurs de ces agents recouvrent des rôles de cette chaîne. Le GARDIEN
 et l'ARCHITECTE doivent traiter ce recouvrement comme un doublon à résoudre, pas comme deux systèmes
 parallèles. Rien n'est fusionné ni supprimé sans accord de Chaima.
+
+---
+
+# DÉCISIONS DE CHAIMA DU 2026-09-11 — ACCEPTÉES ET INTÉGRÉES
+
+## 6. Trois rôles ajoutés (portant la chaîne à 38 rôles)
+
+### LE DÉPOSANT — propriété intellectuelle opérationnelle
+Possède les titres qui s'appliquent **réellement**, là où les 35 rôles d'origine ne regardaient que le
+brevet :
+- **Marque** : recherche d'antériorité BOIP (Benelux) et EUIPO, puis dépôt (classes 35 et 42 pour du
+  conseil et des services technologiques).
+- **Droit d'auteur** : fichier `LICENSE` explicite et en-têtes de copyright sur chaque dépôt. Un dépôt
+  public **sans licence** laisse les tiers dans le flou sur leurs droits — c'est le cas aujourd'hui du
+  dépôt Caelum.
+- **Droit *sui generis* des bases de données** (Dir. 96/9/CE) : fait documenter l'investissement
+  substantiel, qui est la **condition** de la protection. Sans cette documentation, le droit ne
+  s'exerce pas.
+- Reprend les angles morts déjà relevés par l'agent `completeur-angles-morts` (qui cite déjà « marque
+  BOIP ») au lieu de les redécouvrir.
+
+*Interdit :* ne dépose jamais rien. Prépare le dossier, chiffre le coût, et s'arrête à la décision de
+Chaima. Un conseil en PI humain reste requis avant tout dépôt réel.
+
+### L'HORLOGER — chronologie probatoire
+Construit et tient la preuve datée, sans laquelle les droits ci-dessus ne sont pas opposables :
+- Horodatage de l'investissement dans la base de données (temps passé, vérifications, mises à jour).
+- Date de première création et de première divulgation de chaque élément — établie sur l'historique
+  git **complet**, jamais sur un clone superficiel.
+- **i-DEPOT du BOIP** : instrument réel et bon marché pour **dater une idée sans la publier**. À
+  privilégier chaque fois qu'il faut prouver une antériorité sans déclencher de divulgation.
+
+*Interdit :* ne date jamais rien de façon approximative. Une date non vérifiée s'écrit « NON VÉRIFIÉ »,
+jamais estimée en silence.
+
+### L'ÉLAGUEUR — condition d'arrêt
+Seul rôle habilité à **tuer** une piste et à libérer les ressources. Les 35 rôles d'origine poussaient
+tous en avant ; le CONTRADICTEUR objecte mais ne clôt rien.
+- Déclare une piste morte, par écrit, avec le motif et la date.
+- Interdit sa réouverture sans élément nouveau **nommé**.
+- Surveille le signal d'alarme : plusieurs cycles consécutifs sans changement d'état (voir §7.1).
+
+*Interdit :* ne supprime aucun document. Une piste morte est archivée et datée, pas effacée. Rien n'est
+supprimé définitivement sans l'accord de Chaima.
+
+## 7. Cinq améliorations système adoptées
+
+### 7.1 Condition d'arrêt — anti-boucle (la plus importante)
+**Constat daté :** le Drive contient une trentaine de documents de juillet-août 2026 quasi identiques
+(« boucle-caelum »), tous porteurs du même message : « backlog SATURÉ → 0 nouvelle pièce · SILENCE ·
+rien de neuf ». La chaîne tournait à vide en produisant du bruit, et un faux positif y a survécu
+environ deux semaines sans être détecté.
+
+**Règle :** *aucun document nouveau quand l'état est inchangé.*
+- État inchangé → on met à jour **un seul** document d'état courant, et on se taise.
+- On n'escalade et on ne crée un document horodaté **que sur changement d'état réel**.
+- Trois cycles consécutifs sans changement → l'ÉLAGUEUR se saisit du dossier et tranche : la piste
+  est-elle vivante, ou la surveillance doit-elle cesser ?
+
+### 7.2 Articulation avec le parc d'agents existant
+La chaîne veille **ne se place pas à côté** des 29 agents du dépôt Caelum : elle se branche **dessous**,
+comme un domaine. `meta-orchestrateur` reste le seul chef d'orchestre ; le CHEF D'ORCHESTRE de la
+chaîne est son délégué pour le domaine veille/PI/capitaux et ne tranche rien hors de ce domaine.
+Toute validation passe par la **qualité en 3 couches déjà écrite** au `CLAUDE.md` §2 ; tout code tiers
+par la **chaîne §2 bis existante**. On ne réinvente aucune procédure en parallèle.
+Table de correspondance complète : Drive, « Synergies inter-agents », document du 2026-09-11-16h20.
+
+### 7.3 Dépôt privé pour le Coffre confidentiel
+Le dépôt Caelum étant **public**, il ne peut pas sauvegarder le « 🔒 Coffre confidentiel ». Tant qu'un
+dépôt privé distinct n'existe pas : **Drive + copie locale uniquement**, et rien de sensible sur GitHub.
+
+### 7.4 Discipline de nommage — plafond
+La convention du §1 est complétée d'un plafond, parce que les titres existants atteignent 300 à 400
+caractères et embarquent verdict, hashs de commit et état de PR :
+- **titre complet ≤ 120 caractères** ; **« sujet précis » ≤ 60 caractères**.
+- Le sujet nomme un **sujet**, pas un rapport d'exécution. Le verdict va dans le document, pas dans le
+  titre. Un titre doit rester lisible et triable dans une liste de dossier.
+
+### 7.5 Cadence de couverture des offices — première vague
+Documenter 22 offices pour chaque trouvaille n'est pas soutenable, et c'est surtout **redondant** :
+Espacenet et WIPO Patentscope donnent déjà les **familles internationales**, donc les équivalents
+nationaux d'un même brevet.
+- **Première vague (5 offices) :** OEB/Espacenet · WIPO Patentscope · USPTO · DPMA · CNIPA.
+- **Descente au registre national** (les 17 autres juridictions) **seulement** quand une famille
+  précise le justifie — et c'est alors documenté dans le dossier du pays concerné.
+- Les 22 dossiers de la bibliothèque restent créés et disponibles : c'est la **cadence** qui est
+  bornée, pas la couverture.
+
+## 8. Contradiction de normes trouvée le 2026-09-11 — à arbitrer par Chaima
+
+Le dossier Drive « 🗂️ Caelum — Journal d'Audit » contient déjà un document de règles daté du
+**2026-07-13** : « 📖 LISEZ-MOI — Règles du journal (nommage, format, zéro doublon) ». Il porte une
+convention **différente** de celle donnée par Chaima le 2026-09-11 :
+
+| | Convention du 2026-07-13 (LISEZ-MOI existant) | Convention du 2026-09-11 (instruction de Chaima) |
+|---|---|---|
+| Format | `AAAA-MM-JJ — Journal d'audit — [sujet court]` | `AAAA-MM-JJ-HHhMM — [Projet] — [Catégorie] — [Sujet précis]` |
+| Heure | absente | obligatoire (`HHhMM`) |
+| Projet / catégorie | implicites | explicites |
+| Même sujet le même jour | **compléter** l'entrée existante | un document **par trouvaille** |
+
+**Tranché, en attendant l'arbitrage :** la convention du 2026-09-11 prévaut — elle est plus récente et
+plus précise, et le créneau `[Catégorie]` absorbe proprement « Journal d'audit ». Les deux normes ne
+doivent pas coexister durablement : c'est à Chaima de confirmer, et le LISEZ-MOI du 2026-07-13 sera
+alors corrigé et daté. **Je n'ai pas modifié ce document existant.**
+
+### Ce que cette découverte apprend sur l'amélioration §7.1
+La règle anti-doublon **existait déjà** — écrite noir sur blanc le 2026-07-13 : « avant de créer un
+fichier, on vérifie qu'il n'existe pas déjà », « on ne recopie pas ce qui est déjà écrit ailleurs »,
+« si on retravaille le même jour sur le même sujet → on complète l'entrée existante ».
+
+Elle a ensuite été enfreinte une trentaine de fois entre juillet et août 2026 par les journaux
+« boucle-caelum ». **La condition d'arrêt du §7.1 ne crée donc pas une règle neuve : elle rétablit une
+discipline déjà décidée puis abandonnée.** Le problème n'était pas l'absence de règle, mais l'absence
+d'un rôle habilité à arrêter une boucle — ce que l'ÉLAGUEUR corrige.
+
+### Autre écart signalé (rôles MONSIEUR PROPRE / ARCHITECTE)
+Le LISEZ-MOI porte un « Index des entrées » censé être « mis à jour à chaque nouvelle entrée ». Il ne
+contient qu'une ligne, du 2026-07-13, alors que le dossier compte au moins 9 documents postérieurs.
+L'index est obsolète. **Non corrigé sans l'accord de Chaima.**
