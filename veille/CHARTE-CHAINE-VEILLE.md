@@ -267,3 +267,44 @@ Cette charte a reçu cinq sections en une seule journée (§6 à §11), par ajou
 exactement le travers de la fiche E-04. À la prochaine décision structurante, l'ARCHITECTE devra
 proposer à Chaima une **consolidation datée** (un document de synthèse qui remplace la lecture des
 sections empilées, sans supprimer aucune d'elles).
+
+---
+
+## 12. Réconciliation du 2026-09-11 (soir) — la chaîne est absorbée dans la flotte CODEX
+
+Les rôles de cette charte **n'existent plus comme système parallèle**. Ils ont été réconciliés avec la
+flotte du dépôt Caelum, rôle par rôle, sur arbitrage de Chaima. Le dépôt fait foi ; cette charte
+documente le raisonnement.
+
+**Ce qui a changé de nature.** Une autre session a installé entre-temps le **PROTOCOLE CODEX**
+(`CLAUDE.md` §1 à §15, dossier `codex/`) et mené sa propre réconciliation. Les agents ont désormais un
+format commun : socle CODEX partagé, vocabulaire imposé (§13 — VÉRIFIÉ / NON VÉRIFIÉ / CONFIRMÉ /
+PLAUSIBLE, confiance FAIBLE/MODÉRÉE/ÉLEVÉE, **jamais de pourcentage**), liste de ce qui reste
+strictement humain (§10), et un **bloc de passation obligatoire** en fin de chaque sortie (§14).
+Les 12 rôles ajoutés ont adopté ce format, socle repris verbatim. Écrire dans le format de cette charte
+aurait créé une troisième norme concurrente — les fiches E-06 et E-18 exactement.
+
+**Deux rôles de cette charte n'existent pas comme agents, et c'est volontaire :**
+- **ÉLAGUEUR** → abandonné au profit de `croque-mort`, déjà présent, même mission. La condition d'arrêt
+  du §7.1 reste la règle ; c'est `croque-mort` qui la fait appliquer.
+- **GARANT** → fusionné dans `verificateur-verite`, qui a reçu la nuance qui manquait : *sur quoi repose
+  exactement la confiance ?* La confiance par habitude n'est pas une preuve, et les « NON VÉRIFIÉ »
+  remontent en tête de document.
+- **DÉPOSANT** et **HORLOGER** (§6) existaient déjà sous ces noms : rien n'a été créé.
+
+**Frontières écrites des deux côtés.** Quatre rôles ont été redécoupés plutôt que juxtaposés :
+`guetteur` (menaces externes seules) · `passerelle` (circulation de l'info seule) · `superviseur-vigie`
+(état interne seul) ; `boussole` pose un **constat**, `cartographe` tient un **état** ; `protecteur`
+traite la fuite **juridique** (divulgation avant dépôt, irréparable), `conservateur-secrets` la fuite
+**technique** (réparable par rotation). Chaque frontière est inscrite dans les deux fichiers concernés :
+**une frontière connue d'un seul côté n'est pas une frontière.**
+
+**Où lire la vérité, désormais** — et non plus ici :
+- `codex/agents-correspondance.md` : qui couvre quoi, et avec quoi ne pas le confondre.
+- `.claude/agents/*.md` : le mandat de chaque agent.
+- `.claude/BASE-ERREURS.md` : 19 fiches. Source unique, lue par les deux substrats.
+- `.claude/FRONTIERE-SUBSTRATS.md` : Markdown contre Python, qui possède quoi.
+
+**Dette de forme, rappel du §11.** Cette charte compte maintenant douze sections empilées en un jour, et
+son rôle a changé : elle n'est plus la norme, elle est l'historique du raisonnement. La consolidation
+datée que l'ARCHITECTE doit proposer est désormais franchement due.

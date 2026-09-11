@@ -2,6 +2,42 @@
 
 > Snapshot par session de travail sur cette chaîne. Ajout en haut, jamais d'écrasement.
 
+## 2026-09-11-22h10 (Europe/Brussels) — Réconciliation faite · 44 → 56 agents · 0 suppression
+
+**Contrôle honnête (§11)** — Aucun document quasi identique. **Élagueur non saisi** — et il faut noter
+que ce rôle n'existe plus sous ce nom : c'est `croque-mort` qui l'assume désormais.
+
+**Arbitrages de Chaima appliqués, rôle par rôle**
+- `croque-mort` gardé, ÉLAGUEUR abandonné. `verificateur-verite` gardé, GARANT **fusionné** dedans avec
+  sa nuance (« sur quoi repose la confiance ? » + remontée des NON VÉRIFIÉ en tête).
+- Redécoupage en trois rôles nets : `superviseur-vigie` (état interne) · `guetteur` (menaces externes) ·
+  `passerelle` (circulation de l'info). Plus aucun chevauchement.
+- `cartographe` + `boussole` conservés, mandats écrits : l'un tient un ÉTAT, l'autre pose un CONSTAT.
+- `conservateur-secrets` + `protecteur` conservés : fuite technique réparable vs fuite juridique
+  irréparable. Sur un push public, les deux passent.
+- Les 8 sans équivalent créés. **Total 44 → 56 agents, aucune suppression, aucun renommage.**
+
+**Décision de forme que j'ai prise seul, et qui compte** — les 12 nouveaux adoptent le **format CODEX**
+de la flotte existante (socle repris verbatim, hachage identique aux 44 autres ; puis mission,
+déclencheur, décision possédée, interdits). Écrire dans le format de ma charte aurait introduit une
+**troisième norme concurrente** : les fiches E-06 et E-18 exactement. Le dépôt avait changé de
+convention entre-temps ; s'y plier valait mieux que défendre la mienne.
+
+**Frontières réciproques.** Les 4 agents existants concernés ont reçu la frontière **en ajout** :
+50 insertions, **0 suppression**, socle intact dans les quatre. Une frontière connue d'un seul côté n'est
+pas une frontière.
+
+**Fiche E-19 ajoutée (19 fiches)** — mon erreur du jour : une manipulation git pendant une fusion en
+cours détruit `MERGE_HEAD` **sans avertissement ni erreur**. La commande réussit, l'information
+disparaît. Attrapée par un contrôle explicite avant tout push, pas par une alerte de git.
+
+**Vérifié** — socle des 12 identique au bit près aux 44 existants · 0 ligne supprimée dans les 4 agents
+modifiés · cloisonnement code 0 · contrôle sécurité VERT · le pont Python lit bien 19 fiches et
+`pour_action("fusion git")` renvoie E-19 · **le site publié ne change pas** : aucun fichier de
+`products/*/site/` touché, simulation toujours à 19 fichiers · `main` = `d21a3bf`.
+
+**Reste chez Chaima** — `uv run python main.py`, `caelum-coffre`, TMview, et la vérification du rendu.
+
 ## 2026-09-11-20h35 (Europe/Brussels) — Infrastructure fusionnée sur main, déploiement vert
 
 **Contrôle honnête (§11)** — Aucun document quasi identique. **ÉLAGUEUR non saisi**, motif : aucune
