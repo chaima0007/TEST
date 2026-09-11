@@ -1,7 +1,7 @@
-<div class="sheet">
+<div class="sheet compact">
   <div class="eyebrow"><span>Empire Chaima · ASR2025</span><span>Fiche <b>1</b> / 4</span></div>
   <h1>Rocky 9 face à Ubuntu/Debian</h1>
-  <p class="lede">Même travail, deux syntaxes. C'est la première cause d'erreur quand on suit les deux cours en parallèle : la commande est juste, la distribution est fausse.</p>
+  <p class="lede">Même travail, deux syntaxes. Première cause d'erreur quand on suit les deux cours en parallèle : la commande est juste, la distribution est fausse.</p>
   <div class="hr"></div>
 
   <section>
@@ -9,68 +9,61 @@
     <div class="grid" style="grid-template-columns:1.05fr 1.25fr 1.25fr">
       <div class="h">Besoin</div><div class="h">Rocky 9 / RHEL</div><div class="h">Ubuntu / Debian</div>
 
-      <div>Installer un paquet</div>
+      <div>Installer un paquet<br><span style="color:#4a5768;font-size:12.5px">le nom du paquet change aussi</span></div>
       <div class="m">sudo dnf install httpd</div>
-      <div class="m">sudo apt-get install -y httpd</div>
+      <div class="m">sudo apt-get install -y <b>apache2</b></div>
 
       <div>Rafraîchir l'index</div>
-      <div class="m">sudo dnf makecache<br><span style="color:#4a5768">(automatique avant chaque opération)</span></div>
+      <div class="m">sudo dnf makecache <span style="color:#4a5768">(auto à l'expiration)</span></div>
       <div class="m">sudo apt-get update</div>
 
       <div>Créer un compte</div>
-      <div class="m">sudo useradd -m paul<br>sudo passwd paul</div>
-      <div class="m">sudo adduser paul<br><span style="color:#4a5768">(interactif, tout en une fois)</span></div>
+      <div class="m">sudo useradd -m paul <span style="color:#4a5768">puis</span> sudo passwd paul</div>
+      <div class="m">sudo adduser paul <span style="color:#4a5768">(interactif)</span></div>
 
       <div>Groupe qui donne sudo</div>
-      <div class="m"><b>wheel</b></div>
-      <div class="m"><b>sudo</b></div>
+      <div class="m"><b>wheel</b><br>sudo usermod -aG wheel paul</div>
+      <div class="m"><b>sudo</b><br>sudo usermod -aG sudo paul</div>
 
       <div>Unité systemd de SSH</div>
       <div class="m"><b>sshd</b><br>systemctl status sshd</div>
       <div class="m"><b>ssh</b><br>systemctl status ssh</div>
 
       <div>Pare-feu</div>
-      <div class="m">firewalld — firewall-cmd<br><span style="color:#4a5768">zones, runtime / permanent</span></div>
-      <div class="m">ufw — sudo ufw allow 22/tcp<br><span style="color:#4a5768">ni zones, ni runtime</span></div>
+      <div class="m">firewalld — firewall-cmd <span style="color:#4a5768">(zones, runtime)</span></div>
+      <div class="m">ufw — sudo ufw allow 22/tcp</div>
 
       <div>Réseau permanent</div>
       <div class="m">nmcli (NetworkManager)</div>
-      <div class="m">netplan — /etc/netplan/*.yaml</div>
+      <div class="m">netplan — /etc/netplan/*.yaml (Ubuntu)<br>/etc/network/interfaces (Debian)</div>
 
-      <div>Journal d'authentification</div>
-      <div class="m">/var/log/secure</div>
-      <div class="m">/var/log/auth.log</div>
-
-      <div>Journal général</div>
-      <div class="m">/var/log/messages</div>
-      <div class="m">/var/log/syslog</div>
+      <div>Journaux — authentification<br>puis général</div>
+      <div class="m">/var/log/secure<br>/var/log/messages</div>
+      <div class="m">/var/log/auth.log<br>/var/log/syslog</div>
 
       <div>Dépôts déclarés dans</div>
       <div class="m">/etc/yum.repos.d/</div>
       <div class="m">/etc/apt/sources.list.d/</div>
 
-      <div>Dossier personnel par défaut</div>
-      <div class="m">drwx------ (0700)</div>
-      <div class="m">drwxr-x--- (0750)</div>
-
-      <div>/etc/ssh/sshd_config</div>
-      <div class="m">-rw------- (600) — sudo requis</div>
-      <div class="m">-rw-r--r-- (644) — lisible par tous</div>
+      <div>Droits par défaut — dossier personnel<br>puis /etc/ssh/sshd_config</div>
+      <div class="m">drwx------ (0700)<br>-rw------- (600) — sudo requis</div>
+      <div class="m">drwxr-x--- (0750)<br>-rw-r--r-- (644) — lisible par tous</div>
     </div>
   </section>
 
-  <section>
+  <section style="margin-bottom:9px">
     <h2>Ce qui ne change pas</h2>
-    <p class="note"><span class="cmd">ip a</span> <span class="cmd">ip route</span> <span class="cmd">ssh</span> <span class="cmd">scp</span> <span class="cmd">systemctl</span> <span class="cmd">journalctl</span> <span class="cmd">grep</span> <span class="cmd">find</span> <span class="cmd">tar</span> <span class="cmd">chmod</span> <span class="cmd">chown</span> <span class="cmd">lsblk</span> <span class="cmd">mount</span> — et le processus s'appelle <b>sshd</b> des deux côtés, même quand l'unité s'appelle <b>ssh</b>.</p>
+    <p class="note"><span class="cmd">ip a</span> <span class="cmd">ip route</span> <span class="cmd">ssh</span> <span class="cmd">scp</span> <span class="cmd">systemctl</span> <span class="cmd">journalctl</span> <span class="cmd">grep</span> <span class="cmd">find</span> <span class="cmd">tar</span> <span class="cmd">chmod</span> <span class="cmd">lsblk</span> <span class="cmd">mount</span> — et le processus s'appelle <b>sshd</b> des deux côtés, même quand l'unité s'appelle <b>ssh</b>. Toujours <span class="cmd">-aG</span>, jamais <span class="cmd">-G</span> : sans le <b>a</b>, l'utilisateur est retiré de tous ses autres groupes.</p>
   </section>
 
-  <section>
+  <section style="margin-bottom:0">
     <div class="warn">
       <div class="t">Le piège le plus fréquent</div>
-      <div class="block" style="border-left-color:#b03a2e;margin-bottom:8px">$ systemctl status ssh
+      <div class="block" style="border-left-color:#b03a2e;margin-bottom:7px">$ systemctl status ssh    <span style="color:#4a5768"># sur Rocky</span>
 Unit ssh.service could not be found.</div>
-      Tu es sur Rocky : l'unité s'appelle <b>sshd</b>. Le même réflexe inversé sur Ubuntu donne
-      « Unit sshd.service could not be found ». Avant de taper, regarde quelle machine tu as en face.
+      Tu es sur Rocky : l'unité s'appelle <b>sshd</b>, et <b>ssh</b> n'existe pas. L'inverse n'est pas vrai —
+      sur Ubuntu, <span class="cmd">systemctl status sshd</span> fonctionne quand même, parce que ssh.service
+      déclare sshd comme alias. Le sens qui échoue est donc toujours le même : <b>ssh sur Rocky</b>.
     </div>
   </section>
 

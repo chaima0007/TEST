@@ -9,7 +9,7 @@
 <helmet>
   <style>
     :root{
-      --paper:#fbfaf7; --ink:#141b26; --soft:#4a5768; --rule:#ddd8cd;
+      --paper:#fbfaf7; --ink:#141b26; --soft:#4a5768; --rule:#b8b2a4;
       --ok:#1a7a44; --err:#b03a2e; --amber:#8a6508;
       --code:#f2f1ec; --codeline:#e2ded4;
       --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
@@ -20,7 +20,7 @@
     body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
       -webkit-font-smoothing:antialiased}
     a{color:var(--ok)} a:hover{color:#145c33}
-    .sheet{width:794px;height:1123px;padding:46px 52px 40px;display:flex;flex-direction:column;
+    .sheet{width:794px;height:1123px;padding:40px 46px 34px;display:flex;flex-direction:column;
       background:var(--paper)}
     .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
       color:var(--soft);display:flex;justify-content:space-between;align-items:baseline}
@@ -32,30 +32,30 @@
       color:var(--soft);margin:0 0 8px;display:flex;align-items:center;gap:8px}
     h2::after{content:"";flex:1;height:1px;background:var(--rule)}
     section{margin-bottom:15px}
-    code,.cmd{font-family:var(--mono);font-size:13px}
-    .cmd{background:var(--code);border:1px solid var(--codeline);border-radius:3px;
+    code,.cmd{font-family:var(--mono);font-size:13.5px}
+    .cmd{background:var(--code);border:1px solid #c9c3b5;border-radius:3px;
       padding:1px 5px;white-space:nowrap}
-    .block{font-family:var(--mono);font-size:13px;line-height:1.65;background:var(--code);
+    .block{font-family:var(--mono);font-size:13.5px;line-height:1.65;background:var(--code);
       border:1px solid var(--codeline);border-left:3px solid var(--ok);border-radius:3px;
       padding:10px 12px;white-space:pre-wrap}
     .grid{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule)}
-    .grid>div{background:var(--paper);padding:7px 9px;font-size:13.5px;line-height:1.4}
-    .grid .h{background:#efece5;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+    .grid>div{background:var(--paper);padding:7px 9px;font-size:14px;line-height:1.4}
+    .grid .h{background:#e4e0d6;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
       color:var(--soft);font-weight:600;padding:6px 9px}
-    .grid .m{font-family:var(--mono);font-size:12.5px}
+    .grid .m{font-family:var(--mono);font-size:13.5px}
     .steps{display:flex;flex-direction:column;gap:7px}
     .step{display:flex;gap:11px;align-items:flex-start}
     .num{font-family:var(--mono);font-weight:700;font-size:13px;color:var(--paper);background:var(--ink);
       width:21px;height:21px;border-radius:11px;display:flex;align-items:center;justify-content:center;
       flex:0 0 auto;margin-top:1px}
-    .step .body{flex:1;font-size:13.5px;line-height:1.45}
+    .step .body{flex:1;font-size:14px;line-height:1.45}
     .step .body .q{color:var(--soft)}
     .warn{border:1px solid var(--err);border-left:4px solid var(--err);border-radius:3px;
-      padding:10px 13px;font-size:13.5px;line-height:1.5}
+      padding:10px 13px;font-size:14px;line-height:1.5}
     .warn .t{font-weight:700;color:var(--err);font-size:11px;letter-spacing:.12em;
       text-transform:uppercase;margin-bottom:5px}
     .warn ul{margin:0;padding-left:17px} .warn li{margin:3px 0}
-    .note{font-size:13px;color:var(--soft);line-height:1.5;margin:7px 0 0}
+    .note{font-size:13.5px;color:var(--soft);line-height:1.5;margin:7px 0 0}
     .foot{margin-top:auto;padding-top:12px;border-top:1px solid var(--rule);
       display:flex;justify-content:space-between;font-size:11px;color:var(--soft);
       font-family:var(--mono);letter-spacing:.06em}
@@ -67,7 +67,9 @@
     .sheet.compact .lede{margin-bottom:13px}
     .sheet.compact h1{margin:8px 0 4px}
     .sheet.compact .warn li{margin:2px 0}
-    .lbl{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);
+    .block.volatil{border-left:3px dashed var(--amber)}
+    @media print{ *{ -webkit-print-color-adjust:exact; print-color-adjust:exact } }
+    .lbl{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);
       font-weight:600;margin-bottom:5px}
     .ok{color:var(--ok);font-weight:600}
     .bad{color:var(--err);font-weight:600}
@@ -81,50 +83,45 @@
 
   <section style="margin-bottom:9px">
     <h2>Runtime et permanent — la notion centrale</h2>
-    <div class="two">
-      <div>
-        <div class="lbl">Runtime — en mémoire</div>
-        <div class="block" style="border-left-color:#8a6508">sudo firewall-cmd --add-service=http
-
-→ effet immédiat, perdu au --reload
-→ filet de sécurité : une règle qui
-   te bloque disparaît d'elle-même</div>
-      </div>
-      <div>
-        <div class="lbl">Permanent — sur le disque</div>
-        <div class="block">sudo firewall-cmd --permanent \
-     --add-service=http
-sudo firewall-cmd --reload
-
-→ écrit, mais actif seulement
-   après le --reload</div>
-      </div>
+    <div class="grid" style="grid-template-columns:.8fr 1.1fr 1.1fr">
+      <div class="h"></div><div class="h">Runtime — en mémoire</div><div class="h">Permanent — sur le disque</div>
+      <div>La commande</div>
+      <div class="m">sudo firewall-cmd --add-service=http</div>
+      <div class="m">sudo firewall-cmd --permanent --add-service=http<br>sudo firewall-cmd --reload</div>
+      <div>Effet</div>
+      <div>immédiat</div>
+      <div>écrit, actif seulement après le <span class="cmd">--reload</span></div>
+      <div>Ce qui l'efface</div>
+      <div>un <span class="cmd">--reload</span> ou un redémarrage — d'où le filet de sécurité en labo</div>
+      <div>rien : c'est la configuration de référence</div>
     </div>
-    <p class="note"><b>Sens des deux commandes :</b> <span class="cmd">--runtime-to-permanent</span> copie la mémoire vers le disque (j'ai testé, j'enregistre) · <span class="cmd">--reload</span> copie le disque vers la mémoire (et écrase ce qui n'a pas été enregistré).</p>
+    <p class="note"><b>Sens des deux commandes :</b> <span class="cmd">--runtime-to-permanent</span> mémoire → disque (j'ai testé, j'enregistre) · <span class="cmd">--reload</span> disque → mémoire, et écrase ce qui n'était pas enregistré.</p>
   </section>
 
   <section style="margin-bottom:9px">
-    <h2>Les commandes, par question posée</h2>
-    <div class="grid" style="grid-template-columns:1.1fr 1.4fr">
-      <div class="h">Ce que je veux savoir ou faire</div><div class="h">Commande</div>
-      <div>Le pare-feu tourne-t-il ?</div><div class="m">firewall-cmd --state</div>
-      <div>Toute la configuration de la zone</div><div class="m">firewall-cmd --list-all</div>
-      <div>Zone par défaut · zones actives</div><div class="m">firewall-cmd --get-default-zone<br>firewall-cmd --get-active-zones</div>
-      <div>Toutes les zones · changer la zone par défaut</div><div class="m">firewall-cmd --get-zones<br>firewall-cmd --set-default-zone=work</div>
-      <div>Déplacer une interface</div><div class="m">firewall-cmd --zone=public --change-interface=ens18</div>
-      <div>Ouvrir un port</div><div class="m">firewall-cmd --zone=public --add-port=9001/tcp</div>
-      <div>Autoriser un service connu</div><div class="m">firewall-cmd --zone=public --add-service=http</div>
-      <div>Enregistrer tout ce que j'ai testé</div><div class="m">firewall-cmd --runtime-to-permanent</div>
+    <h2>Les commandes — toutes en <span style="text-transform:none;letter-spacing:0;font-family:var(--mono)">sudo firewall-cmd …</span></h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:3px 20px;font-size:13.5px;line-height:1.35;overflow-wrap:anywhere">
+      <div><span class="cmd">--state</span> le pare-feu tourne-t-il <span style="color:#4a5768">(seul sans sudo)</span></div>
+      <div><span class="cmd">--list-all</span> toute la configuration de la zone</div>
+      <div><span class="cmd">--get-default-zone</span> zone par défaut</div>
+      <div><span class="cmd">--get-active-zones</span> zones réellement actives</div>
+      <div><span class="cmd">--get-zones</span> toutes les zones existantes</div>
+      <div><span class="cmd">--set-default-zone=work</span> changer la zone</div>
+      <div><span class="cmd">--zone=public --add-port=9001/tcp</span></div>
+      <div><span class="cmd">--zone=public --remove-port=9001/tcp</span></div>
+      <div><span class="cmd">--zone=public --add-service=http</span></div>
+      <div><span class="cmd">--zone=public --remove-service=ssh</span></div>
+      <div><span class="cmd">--permanent --zone=trusted<br>--add-source=192.168.1.0/24</span></div>
+      <div><span class="cmd">--runtime-to-permanent</span> enregistrer mes tests</div>
     </div>
-
+    <p class="note">Tout passe par <b>sudo</b>, même les lectures : seul <span class="cmd">--state</span> répond sans privilège. Rattacher durablement une interface à une zone : plutôt <span class="cmd">nmcli connection modify ens18 connection.zone public</span>.</p>
   </section>
 
-  <section style="margin-bottom:12px">
+  <section style="margin-bottom:10px">
     <h2>L'exception : créer une zone</h2>
-    <div class="block">sudo firewall-cmd --permanent --new-zone=lodhi   <span style="color:#4a5768"># --permanent obligatoire</span>
-sudo firewall-cmd --reload                        <span style="color:#4a5768"># la charge en runtime</span>
-sudo firewall-cmd --zone=lodhi --add-service=ssh</div>
-    <p class="note">Sans <span class="cmd">--permanent</span> : <i>Option can be used only with --permanent</i>.</p>
+    <div class="block">sudo firewall-cmd --permanent --new-zone=lodhi   <span style="color:#4a5768"># obligatoire</span>
+sudo firewall-cmd --reload                        <span style="color:#4a5768"># la charge en runtime</span></div>
+    <p class="note">Sans <span class="cmd">--permanent</span>, firewalld refuse : cette option n'est pas permise en runtime.</p>
   </section>
 
   <section style="margin-bottom:0">
@@ -134,7 +131,7 @@ sudo firewall-cmd --zone=lodhi --add-service=ssh</div>
         <li><span class="cmd">--reload</span> efface les règles runtime non enregistrées. Enregistre <b>avant</b> de recharger.</li>
         <li>Retirer <span class="cmd">ssh</span> ne coupe <b>pas</b> ta session en cours : firewalld laisse vivre les connexions établies. C'est la <b>prochaine</b> connexion qui sera refusée — et tu ne t'en aperçois qu'une fois dehors.</li>
         <li><span class="cmd">--add-port=9001</span> sans <span class="cmd">/tcp</span> est refusé, et autoriser un service <b>ne le démarre pas</b> : le pare-feu laisse passer, <span class="cmd">systemctl</span> démarre.</li>
-        <li>Le service tourne, le port écoute, le pare-feu est ouvert, et ça ne passe toujours pas ? Quatrième gardien sur Rocky : <span class="cmd">getenforce</span> → SELinux.</li>
+        <li>Service actif, port en écoute, pare-feu ouvert, et ça ne passe toujours pas ? Quatrième gardien sur Rocky : <span class="cmd">getenforce</span> → SELinux.</li>
       </ul>
     </div>
   </section>

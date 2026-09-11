@@ -1,17 +1,17 @@
 <div class="sheet compact">
   <div class="eyebrow"><span>Empire Chaima · ASR2025</span><span>Fiche <b>3</b> / 4</span></div>
   <h1>Réseau, SSH et SCP</h1>
-  <p class="lede">Le diagnostic va du plus proche au plus lointain : chaque étape ne devient interprétable que si la précédente est bonne.</p>
+  <p class="lede">Du plus proche au plus lointain : chaque étape ne devient interprétable que si la précédente est bonne.</p>
   <div class="hr"></div>
 
-  <section style="margin-bottom:8px">
+  <section style="margin-bottom:7px">
     <h2>Diagnostic — toujours dans cet ordre</h2>
     <div class="steps" style="gap:5px">
       <div class="step"><div class="num">1</div><div class="body"><span class="cmd">ip a</span> &nbsp;<span class="q">Ai-je une adresse ?</span> Pas d'adresse → inutile de tester la suite.</div></div>
       <div class="step"><div class="num">2</div><div class="body"><span class="cmd">ip route</span> &nbsp;<span class="q">Ai-je une passerelle ?</span> Pas de ligne <b>default via</b> → la machine ne sort pas de son réseau.</div></div>
       <div class="step"><div class="num">3</div><div class="body"><span class="cmd">ping -c3 192.168.0.254</span> &nbsp;<span class="q">La passerelle répond-elle sur le réseau local ?</span></div></div>
-      <div class="step"><div class="num">4</div><div class="body"><span class="cmd">ping -c3 8.8.8.8</span> &nbsp;<span class="q">Le routage sort-il ?</span> Une IP pure, jamais un nom : sinon l'échec ne dit pas si c'est le réseau ou le DNS.</div></div>
-      <div class="step"><div class="num">5</div><div class="body"><span class="cmd">getent hosts rockylinux.org</span> &nbsp;<span class="q">Le DNS répond-il ?</span> Étape 4 bonne + étape 5 muette = problème DNS, rien d'autre.</div></div>
+      <div class="step"><div class="num">4</div><div class="body"><span class="cmd">ping -c3 8.8.8.8</span> &nbsp;<span class="q">Le routage sort-il ?</span> Une IP pure, jamais un nom : sinon l'échec ne dit pas si c'est le réseau ou le nom.</div></div>
+      <div class="step"><div class="num">5</div><div class="body"><span class="cmd">getent hosts rockylinux.org</span> &nbsp;<span class="q">La résolution de noms répond-elle ?</span> Étape 4 bonne + étape 5 muette = problème DNS, rien d'autre.</div></div>
     </div>
   </section>
 
@@ -19,35 +19,35 @@
     <h2>Deux outils, deux portées</h2>
     <div class="two">
       <div>
-        <div class="lbl">ip — immédiat, perdu au reboot</div>
-        <div class="block" style="border-left-color:#8a6508">sudo ip link set ens19 up
-sudo ip addr add 192.168.20.10/24 dev ens19
+        <div class="lbl">ip — immédiat, perdu au redémarrage</div>
+        <div class="block volatil">sudo ip link set ens18 up
+sudo ip addr add 192.168.0.10/24 dev ens18
 sudo ip route add default \
      via 192.168.0.254 dev ens18</div>
       </div>
       <div>
         <div class="lbl">nmcli — écrit dans le profil</div>
-        <div class="block">sudo nmcli connection modify ens18 \
+        <div class="block">nmcli connection show   # le NOM du profil
+sudo nmcli connection modify ens18 \
   ipv4.method manual \
-  ipv4.addresses 192.168.0.1/24 \
+  ipv4.addresses 192.168.0.10/24 \
   ipv4.gateway 192.168.0.254
 sudo nmcli connection up ens18</div>
       </div>
     </div>
-    <p class="note"><b>modify</b> écrit, <b>up</b> applique — oublier le <span class="cmd">up</span> est la cause n°1 du « rien ne change ». DNS : <span class="cmd">ipv4.dns "192.168.0.254 1.1.1.1"</span>, guillemets obligatoires. DHCP : <span class="cmd">ipv4.method auto</span>.</p>
+    <p class="note"><b>modify</b> écrit, <b>up</b> applique — l'oubli du <span class="cmd">up</span> est la première cause du « rien ne change ». Et <b>modify</b> porte sur le nom du PROFIL, pas de l'interface : il peut s'appeler « System ens18 ». DNS : <span class="cmd">ipv4.dns "192.168.0.254 1.1.1.1"</span>, guillemets obligatoires · DHCP : <span class="cmd">ipv4.method auto</span> · filet <b>pointillé</b> = volatil.</p>
   </section>
 
-  <section style="margin-bottom:8px">
+  <section style="margin-bottom:7px">
     <h2>SSH et SCP</h2>
-    <div class="grid" style="grid-template-columns:1.05fr 1.45fr">
-      <div class="h">Ce que je veux faire</div><div class="h">Commande</div>
-      <div>Ouvrir une session distante</div><div class="m">ssh chaima@192.168.0.10</div>
-      <div>Port autre que 22</div><div class="m">ssh <b>-p</b> 2222 chaima@192.168.0.10</div>
-      <div>Une commande, sans session</div><div class="m">ssh chaima@192.168.0.10 "hostname"</div>
-      <div>Envoyer un fichier</div><div class="m">scp rapport.txt chaima@192.168.0.10:/home/chaima/</div>
-      <div>Rapatrier un fichier</div><div class="m">scp chaima@192.168.0.10:/home/chaima/notes.txt .</div>
-      <div>Envoyer un dossier</div><div class="m">scp <b>-r</b> labo3/ chaima@192.168.0.10:/home/chaima/</div>
-      <div>Copier sur un autre port</div><div class="m">scp <b>-P</b> 2222 rapport.txt chaima@192.168.0.10:/home/chaima/</div>
+    <div style="display:flex;flex-direction:column;gap:4px;font-size:13.5px;line-height:1.35">
+      <div><span class="cmd">ssh chaima@192.168.0.10</span> ouvrir une session distante</div>
+      <div><span class="cmd">ssh <b>-p</b> 2222 chaima@192.168.0.10</span> port autre que 22</div>
+      <div><span class="cmd">ssh chaima@192.168.0.10 "hostname"</span> une commande, sans session</div>
+      <div><span class="cmd">scp rapport.txt chaima@192.168.0.10:/home/chaima/</span> envoyer</div>
+      <div><span class="cmd">scp chaima@192.168.0.10:/home/chaima/notes.txt .</span> rapatrier <span style="color:#4a5768">(le point = ici)</span></div>
+      <div><span class="cmd">scp <b>-r</b> labo3/ chaima@192.168.0.10:/home/chaima/</span> un dossier</div>
+      <div><span class="cmd">scp <b>-P</b> 2222 rapport.txt chaima@192.168.0.10:/home/chaima/</span> autre port</div>
     </div>
   </section>
 
@@ -55,10 +55,9 @@ sudo nmcli connection up ens18</div>
     <div class="warn">
       <div class="t">Les pièges qui coûtent des points</div>
       <ul>
-        <li><b class="bad">ssh -p</b> en minuscule, <b class="bad">scp -P</b> en majuscule. Pour scp, <span class="cmd">-p</span> minuscule veut dire « conserver dates et droits » : la commande passe, mais pas sur le bon port.</li>
-        <li>Un dossier sans <span class="cmd">-r</span> : <i>labo3: not a regular file</i>.</li>
-        <li>Oublier les <b>deux-points</b> avant le chemin distant : scp copie en local sans rien dire. Et modifier <span class="cmd">sshd_config</span> sans <span class="cmd">systemctl restart sshd</span> ne change rien : le service garde l'ancienne configuration.</li>
-        <li>Service <b>sshd</b> sur Rocky, <b>ssh</b> sur Ubuntu. Port 22 implicite, comme 80 pour HTTP et 443 pour HTTPS.</li>
+        <li><b class="bad">ssh -p</b> minuscule, <b class="bad">scp -P</b> majuscule. Pour scp, <span class="cmd">-p</span> minuscule signifie « conserver dates et droits » : la commande passe, mais pas sur le bon port.</li>
+        <li>Un dossier sans <span class="cmd">-r</span> : <i>scp: labo3: not a regular file</i>. Et sans les <b>deux-points</b> avant le chemin distant, scp traite la cible comme un chemin local : rien ne part sur le réseau.</li>
+        <li>Après avoir modifié <span class="cmd">sshd_config</span> : <span class="cmd">sudo sshd -t</span> pour valider la syntaxe, puis <span class="cmd">sudo systemctl restart sshd</span> — service <b>sshd</b> sur Rocky, <b>ssh</b> sur Ubuntu. Sans le restart, l'ancienne configuration reste en mémoire.</li>
       </ul>
     </div>
   </section>

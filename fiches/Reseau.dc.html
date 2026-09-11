@@ -9,7 +9,7 @@
 <helmet>
   <style>
     :root{
-      --paper:#fbfaf7; --ink:#141b26; --soft:#4a5768; --rule:#ddd8cd;
+      --paper:#fbfaf7; --ink:#141b26; --soft:#4a5768; --rule:#b8b2a4;
       --ok:#1a7a44; --err:#b03a2e; --amber:#8a6508;
       --code:#f2f1ec; --codeline:#e2ded4;
       --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
@@ -20,7 +20,7 @@
     body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
       -webkit-font-smoothing:antialiased}
     a{color:var(--ok)} a:hover{color:#145c33}
-    .sheet{width:794px;height:1123px;padding:46px 52px 40px;display:flex;flex-direction:column;
+    .sheet{width:794px;height:1123px;padding:40px 46px 34px;display:flex;flex-direction:column;
       background:var(--paper)}
     .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;
       color:var(--soft);display:flex;justify-content:space-between;align-items:baseline}
@@ -32,30 +32,30 @@
       color:var(--soft);margin:0 0 8px;display:flex;align-items:center;gap:8px}
     h2::after{content:"";flex:1;height:1px;background:var(--rule)}
     section{margin-bottom:15px}
-    code,.cmd{font-family:var(--mono);font-size:13px}
-    .cmd{background:var(--code);border:1px solid var(--codeline);border-radius:3px;
+    code,.cmd{font-family:var(--mono);font-size:13.5px}
+    .cmd{background:var(--code);border:1px solid #c9c3b5;border-radius:3px;
       padding:1px 5px;white-space:nowrap}
-    .block{font-family:var(--mono);font-size:13px;line-height:1.65;background:var(--code);
+    .block{font-family:var(--mono);font-size:13.5px;line-height:1.65;background:var(--code);
       border:1px solid var(--codeline);border-left:3px solid var(--ok);border-radius:3px;
       padding:10px 12px;white-space:pre-wrap}
     .grid{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule)}
-    .grid>div{background:var(--paper);padding:7px 9px;font-size:13.5px;line-height:1.4}
-    .grid .h{background:#efece5;font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+    .grid>div{background:var(--paper);padding:7px 9px;font-size:14px;line-height:1.4}
+    .grid .h{background:#e4e0d6;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
       color:var(--soft);font-weight:600;padding:6px 9px}
-    .grid .m{font-family:var(--mono);font-size:12.5px}
+    .grid .m{font-family:var(--mono);font-size:13.5px}
     .steps{display:flex;flex-direction:column;gap:7px}
     .step{display:flex;gap:11px;align-items:flex-start}
     .num{font-family:var(--mono);font-weight:700;font-size:13px;color:var(--paper);background:var(--ink);
       width:21px;height:21px;border-radius:11px;display:flex;align-items:center;justify-content:center;
       flex:0 0 auto;margin-top:1px}
-    .step .body{flex:1;font-size:13.5px;line-height:1.45}
+    .step .body{flex:1;font-size:14px;line-height:1.45}
     .step .body .q{color:var(--soft)}
     .warn{border:1px solid var(--err);border-left:4px solid var(--err);border-radius:3px;
-      padding:10px 13px;font-size:13.5px;line-height:1.5}
+      padding:10px 13px;font-size:14px;line-height:1.5}
     .warn .t{font-weight:700;color:var(--err);font-size:11px;letter-spacing:.12em;
       text-transform:uppercase;margin-bottom:5px}
     .warn ul{margin:0;padding-left:17px} .warn li{margin:3px 0}
-    .note{font-size:13px;color:var(--soft);line-height:1.5;margin:7px 0 0}
+    .note{font-size:13.5px;color:var(--soft);line-height:1.5;margin:7px 0 0}
     .foot{margin-top:auto;padding-top:12px;border-top:1px solid var(--rule);
       display:flex;justify-content:space-between;font-size:11px;color:var(--soft);
       font-family:var(--mono);letter-spacing:.06em}
@@ -67,7 +67,9 @@
     .sheet.compact .lede{margin-bottom:13px}
     .sheet.compact h1{margin:8px 0 4px}
     .sheet.compact .warn li{margin:2px 0}
-    .lbl{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);
+    .block.volatil{border-left:3px dashed var(--amber)}
+    @media print{ *{ -webkit-print-color-adjust:exact; print-color-adjust:exact } }
+    .lbl{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);
       font-weight:600;margin-bottom:5px}
     .ok{color:var(--ok);font-weight:600}
     .bad{color:var(--err);font-weight:600}
@@ -76,17 +78,17 @@
 <div class="sheet compact">
   <div class="eyebrow"><span>Empire Chaima · ASR2025</span><span>Fiche <b>3</b> / 4</span></div>
   <h1>Réseau, SSH et SCP</h1>
-  <p class="lede">Le diagnostic va du plus proche au plus lointain : chaque étape ne devient interprétable que si la précédente est bonne.</p>
+  <p class="lede">Du plus proche au plus lointain : chaque étape ne devient interprétable que si la précédente est bonne.</p>
   <div class="hr"></div>
 
-  <section style="margin-bottom:8px">
+  <section style="margin-bottom:7px">
     <h2>Diagnostic — toujours dans cet ordre</h2>
     <div class="steps" style="gap:5px">
       <div class="step"><div class="num">1</div><div class="body"><span class="cmd">ip a</span> &nbsp;<span class="q">Ai-je une adresse ?</span> Pas d'adresse → inutile de tester la suite.</div></div>
       <div class="step"><div class="num">2</div><div class="body"><span class="cmd">ip route</span> &nbsp;<span class="q">Ai-je une passerelle ?</span> Pas de ligne <b>default via</b> → la machine ne sort pas de son réseau.</div></div>
       <div class="step"><div class="num">3</div><div class="body"><span class="cmd">ping -c3 192.168.0.254</span> &nbsp;<span class="q">La passerelle répond-elle sur le réseau local ?</span></div></div>
-      <div class="step"><div class="num">4</div><div class="body"><span class="cmd">ping -c3 8.8.8.8</span> &nbsp;<span class="q">Le routage sort-il ?</span> Une IP pure, jamais un nom : sinon l'échec ne dit pas si c'est le réseau ou le DNS.</div></div>
-      <div class="step"><div class="num">5</div><div class="body"><span class="cmd">getent hosts rockylinux.org</span> &nbsp;<span class="q">Le DNS répond-il ?</span> Étape 4 bonne + étape 5 muette = problème DNS, rien d'autre.</div></div>
+      <div class="step"><div class="num">4</div><div class="body"><span class="cmd">ping -c3 8.8.8.8</span> &nbsp;<span class="q">Le routage sort-il ?</span> Une IP pure, jamais un nom : sinon l'échec ne dit pas si c'est le réseau ou le nom.</div></div>
+      <div class="step"><div class="num">5</div><div class="body"><span class="cmd">getent hosts rockylinux.org</span> &nbsp;<span class="q">La résolution de noms répond-elle ?</span> Étape 4 bonne + étape 5 muette = problème DNS, rien d'autre.</div></div>
     </div>
   </section>
 
@@ -94,35 +96,35 @@
     <h2>Deux outils, deux portées</h2>
     <div class="two">
       <div>
-        <div class="lbl">ip — immédiat, perdu au reboot</div>
-        <div class="block" style="border-left-color:#8a6508">sudo ip link set ens19 up
-sudo ip addr add 192.168.20.10/24 dev ens19
+        <div class="lbl">ip — immédiat, perdu au redémarrage</div>
+        <div class="block volatil">sudo ip link set ens18 up
+sudo ip addr add 192.168.0.10/24 dev ens18
 sudo ip route add default \
      via 192.168.0.254 dev ens18</div>
       </div>
       <div>
         <div class="lbl">nmcli — écrit dans le profil</div>
-        <div class="block">sudo nmcli connection modify ens18 \
+        <div class="block">nmcli connection show   # le NOM du profil
+sudo nmcli connection modify ens18 \
   ipv4.method manual \
-  ipv4.addresses 192.168.0.1/24 \
+  ipv4.addresses 192.168.0.10/24 \
   ipv4.gateway 192.168.0.254
 sudo nmcli connection up ens18</div>
       </div>
     </div>
-    <p class="note"><b>modify</b> écrit, <b>up</b> applique — oublier le <span class="cmd">up</span> est la cause n°1 du « rien ne change ». DNS : <span class="cmd">ipv4.dns "192.168.0.254 1.1.1.1"</span>, guillemets obligatoires. DHCP : <span class="cmd">ipv4.method auto</span>.</p>
+    <p class="note"><b>modify</b> écrit, <b>up</b> applique — l'oubli du <span class="cmd">up</span> est la première cause du « rien ne change ». Et <b>modify</b> porte sur le nom du PROFIL, pas de l'interface : il peut s'appeler « System ens18 ». DNS : <span class="cmd">ipv4.dns "192.168.0.254 1.1.1.1"</span>, guillemets obligatoires · DHCP : <span class="cmd">ipv4.method auto</span> · filet <b>pointillé</b> = volatil.</p>
   </section>
 
-  <section style="margin-bottom:8px">
+  <section style="margin-bottom:7px">
     <h2>SSH et SCP</h2>
-    <div class="grid" style="grid-template-columns:1.05fr 1.45fr">
-      <div class="h">Ce que je veux faire</div><div class="h">Commande</div>
-      <div>Ouvrir une session distante</div><div class="m">ssh chaima@192.168.0.10</div>
-      <div>Port autre que 22</div><div class="m">ssh <b>-p</b> 2222 chaima@192.168.0.10</div>
-      <div>Une commande, sans session</div><div class="m">ssh chaima@192.168.0.10 "hostname"</div>
-      <div>Envoyer un fichier</div><div class="m">scp rapport.txt chaima@192.168.0.10:/home/chaima/</div>
-      <div>Rapatrier un fichier</div><div class="m">scp chaima@192.168.0.10:/home/chaima/notes.txt .</div>
-      <div>Envoyer un dossier</div><div class="m">scp <b>-r</b> labo3/ chaima@192.168.0.10:/home/chaima/</div>
-      <div>Copier sur un autre port</div><div class="m">scp <b>-P</b> 2222 rapport.txt chaima@192.168.0.10:/home/chaima/</div>
+    <div style="display:flex;flex-direction:column;gap:4px;font-size:13.5px;line-height:1.35">
+      <div><span class="cmd">ssh chaima@192.168.0.10</span> ouvrir une session distante</div>
+      <div><span class="cmd">ssh <b>-p</b> 2222 chaima@192.168.0.10</span> port autre que 22</div>
+      <div><span class="cmd">ssh chaima@192.168.0.10 "hostname"</span> une commande, sans session</div>
+      <div><span class="cmd">scp rapport.txt chaima@192.168.0.10:/home/chaima/</span> envoyer</div>
+      <div><span class="cmd">scp chaima@192.168.0.10:/home/chaima/notes.txt .</span> rapatrier <span style="color:#4a5768">(le point = ici)</span></div>
+      <div><span class="cmd">scp <b>-r</b> labo3/ chaima@192.168.0.10:/home/chaima/</span> un dossier</div>
+      <div><span class="cmd">scp <b>-P</b> 2222 rapport.txt chaima@192.168.0.10:/home/chaima/</span> autre port</div>
     </div>
   </section>
 
@@ -130,10 +132,9 @@ sudo nmcli connection up ens18</div>
     <div class="warn">
       <div class="t">Les pièges qui coûtent des points</div>
       <ul>
-        <li><b class="bad">ssh -p</b> en minuscule, <b class="bad">scp -P</b> en majuscule. Pour scp, <span class="cmd">-p</span> minuscule veut dire « conserver dates et droits » : la commande passe, mais pas sur le bon port.</li>
-        <li>Un dossier sans <span class="cmd">-r</span> : <i>labo3: not a regular file</i>.</li>
-        <li>Oublier les <b>deux-points</b> avant le chemin distant : scp copie en local sans rien dire. Et modifier <span class="cmd">sshd_config</span> sans <span class="cmd">systemctl restart sshd</span> ne change rien : le service garde l'ancienne configuration.</li>
-        <li>Service <b>sshd</b> sur Rocky, <b>ssh</b> sur Ubuntu. Port 22 implicite, comme 80 pour HTTP et 443 pour HTTPS.</li>
+        <li><b class="bad">ssh -p</b> minuscule, <b class="bad">scp -P</b> majuscule. Pour scp, <span class="cmd">-p</span> minuscule signifie « conserver dates et droits » : la commande passe, mais pas sur le bon port.</li>
+        <li>Un dossier sans <span class="cmd">-r</span> : <i>scp: labo3: not a regular file</i>. Et sans les <b>deux-points</b> avant le chemin distant, scp traite la cible comme un chemin local : rien ne part sur le réseau.</li>
+        <li>Après avoir modifié <span class="cmd">sshd_config</span> : <span class="cmd">sudo sshd -t</span> pour valider la syntaxe, puis <span class="cmd">sudo systemctl restart sshd</span> — service <b>sshd</b> sur Rocky, <b>ssh</b> sur Ubuntu. Sans le restart, l'ancienne configuration reste en mémoire.</li>
       </ul>
     </div>
   </section>

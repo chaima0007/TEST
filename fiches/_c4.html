@@ -1,68 +1,62 @@
 <div class="sheet compact">
   <div class="eyebrow"><span>Empire Chaima · ASR2025</span><span>Fiche <b>4</b> / 4</span></div>
   <h1>Disques, montage et swap</h1>
-  <p class="lede">Un disque neuf traverse toujours la même chaîne : voir, découper, formater, monter, puis rendre permanent. Sauter une étape donne un message d'erreur qui parle d'autre chose.</p>
+  <p class="lede">Toujours la même chaîne : voir, découper, formater, monter, rendre permanent. Sauter une étape donne une erreur qui parle d'autre chose.</p>
   <div class="hr"></div>
 
-  <section style="margin-bottom:8px">
+  <section style="margin-bottom:7px">
     <h2>Du disque neuf au dossier utilisable</h2>
-    <div class="steps" style="gap:5px">
-      <div class="step"><div class="num">1</div><div class="body"><span class="cmd">lsblk</span> &nbsp;<span class="q">Le disque est-il vu ?</span> Puis <span class="cmd">sudo fdisk -l /dev/vdb</span> pour la table actuelle.</div></div>
+    <div class="steps" style="gap:4px">
+      <div class="step"><div class="num">1</div><div class="body"><span class="cmd">lsblk</span> <span class="q">le disque est-il vu ?</span> · <span class="cmd">lsblk -f</span> <span class="q">UUID et type</span></div></div>
       <div class="step"><div class="num">2</div><div class="body"><span class="cmd">sudo fdisk /dev/vdb</span> &nbsp;<span class="q">n</span> → <span class="q">p</span> → numéro → Entrée → <span class="q">+8G</span> → <span class="q">p</span> pour vérifier → <span class="bad">w</span> pour écrire et quitter.</div></div>
-      <div class="step"><div class="num">3</div><div class="body"><span class="cmd">sudo partprobe</span> &nbsp;<span class="q">si lsblk ne montre pas encore /dev/vdb1</span></div></div>
-      <div class="step"><div class="num">4</div><div class="body"><span class="cmd">sudo mkfs.ext4 /dev/vdb1</span> &nbsp;<span class="q">la partition, jamais le disque</span></div></div>
-      <div class="step"><div class="num">5</div><div class="body"><span class="cmd">sudo mkdir -p /mnt/ASR-DATA</span> puis <span class="cmd">sudo mount /dev/vdb1 /mnt/ASR-DATA</span></div></div>
-      <div class="step"><div class="num">6</div><div class="body"><span class="cmd">df -h</span> &nbsp;<span class="q">la ligne du point de montage prouve que c'est monté.</span> Démonter : <span class="cmd">cd ~</span> puis <span class="cmd">sudo umount /mnt/ASR-DATA</span> — occupé ? <span class="cmd">sudo lsof /mnt/ASR-DATA</span></div></div>
+      <div class="step"><div class="num">3</div><div class="body"><span class="cmd">sudo partprobe /dev/vdb</span> <span class="q">si lsblk ne montre pas encore /dev/vdb1</span> · puis <span class="cmd">sudo mkfs.ext4 /dev/vdb1</span> <span class="q">la partition, jamais le disque</span></div></div>
+      <div class="step"><div class="num">4</div><div class="body"><span class="cmd">sudo mkdir -p /mnt/ASR-DATA</span> puis <span class="cmd">sudo mount /dev/vdb1 /mnt/ASR-DATA</span></div></div>
+      <div class="step"><div class="num">5</div><div class="body"><span class="cmd">df -h</span> &nbsp;<span class="q">la ligne du point de montage prouve que c'est monté.</span> Démonter : <span class="cmd">cd ~</span> puis <span class="cmd">sudo umount /mnt/ASR-DATA</span> — occupé ? <span class="cmd">sudo lsof</span></div></div>
     </div>
   </section>
 
-  <section style="margin-bottom:8px">
+  <section style="margin-bottom:5px">
     <h2>Rendre le montage permanent</h2>
-    <div class="block">sudo cp /etc/fstab /etc/fstab.bak     <span style="color:#4a5768"># filet de sécurité, toujours</span>
-sudo blkid /dev/vdb1                  <span style="color:#4a5768"># récupérer l'UUID</span>
-UUID=d4e19f22-8b7c-…  /mnt/ASR-DATA  ext4  defaults  0 2
-sudo mount -a                         <span style="color:#4a5768"># tester AVANT de redémarrer</span></div>
-    <p class="note"><b>Les six colonnes :</b> périphérique (UUID, jamais /dev/vdb1 qui peut changer d'ordre) · point de montage · type · options · dump · vérification fsck — <b>0</b> pour le swap et pour XFS qui ne passe pas par fsck, <b>1</b> pour une racine ext4, <b>2</b> pour les autres. Une erreur ici peut bloquer le démarrage : d'où <span class="cmd">mount -a</span>, et <span class="cmd">journalctl -xe</span> si ça coince.</p>
+    <div class="block">sudo cp /etc/fstab /etc/fstab.bak   <span style="color:#4a5768"># filet de sécurité, toujours</span>
+sudo blkid /dev/vdb1                <span style="color:#4a5768"># récupérer l'UUID</span>
+sudo vi /etc/fstab                  <span style="color:#4a5768"># y ajouter la ligne :</span>
+    UUID=d4e19f22-8b7c-…  /mnt/ASR-DATA  ext4  defaults  0 2
+sudo systemctl daemon-reload        <span style="color:#4a5768"># fstab a changé</span>
+sudo mount -a                       <span style="color:#4a5768"># tester AVANT de redémarrer</span></div>
+    <p class="note"><b>Six colonnes :</b> périphérique (UUID, jamais /dev/vdb1) · point de montage · type · options · dump · fsck — <b>0</b> pour le swap et XFS, <b>1</b> pour une racine ext4, <b>2</b> sinon. Une erreur ici bloque le démarrage : d'où <span class="cmd">mount -a</span> avant de redémarrer.</p>
   </section>
 
-  <section style="margin-bottom:7px">
+  <section style="margin-bottom:5px">
     <h2>Swap — deux formes, deux écritures</h2>
     <div class="two">
       <div>
-        <div class="lbl">Partition de swap (type 82)</div>
+        <div class="lbl">Partition de swap — type 82 (MBR) ou 19 (GPT)</div>
         <div class="block">sudo mkswap /dev/vdc1
 sudo swapon /dev/vdc1
-free -h        # vérifier
-
-fstab :
-UUID=7f1c9e33-…  none  swap  sw  0 0</div>
+free -h   # vérifier · swapon -s</div>
       </div>
       <div>
         <div class="lbl">Fichier de swap</div>
-        <div class="block">sudo fallocate -l 1G /swapfile
-sudo chmod 600 /swapfile   # critique
-sudo mkswap /swapfile
-sudo swapon /swapfile
-
-fstab :
-/swapfile        none  swap  sw  0 0</div>
+        <div class="block">sudo dd if=/dev/zero of=/swapfile \
+     bs=1M count=1024   # racine XFS
+sudo chmod 600 /swapfile  # critique
+sudo mkswap /swapfile ; sudo swapon /swapfile</div>
       </div>
     </div>
-    <p class="note">Une <b>partition</b> se déclare par son <b>UUID</b>, un <b>fichier</b> par son <b>chemin</b>. Redimensionner un fichier : <span class="cmd">swapoff</span> → <span class="cmd">rm</span> → <span class="cmd">fallocate</span> → <span class="cmd">chmod 600</span> → <span class="cmd">mkswap</span> → <span class="cmd">swapon</span>. Tendance à basculer : <span class="cmd">sudo sysctl vm.swappiness=10</span>.</p>
+    <p class="note"><b>Dans fstab</b>, une <b>partition</b> se déclare par son UUID, un <b>fichier</b> par son chemin :<br>
+    <span class="cmd">UUID=7f1c9e33-…&nbsp;&nbsp;none&nbsp;&nbsp;swap&nbsp;&nbsp;sw&nbsp;&nbsp;0 0</span> &nbsp; <span class="cmd">/swapfile&nbsp;&nbsp;none&nbsp;&nbsp;swap&nbsp;&nbsp;sw&nbsp;&nbsp;0 0</span><br> Redimensionner un fichier : <span class="cmd">swapoff</span> → <span class="cmd">rm</span> → recréer → <span class="cmd">chmod 600</span> → <span class="cmd">mkswap</span> → <span class="cmd">swapon</span>. Tendance du noyau à basculer : <span class="cmd">sudo sysctl vm.swappiness=10</span>, en mémoire seulement — permanent dans <span class="cmd">/etc/sysctl.d/99-swappiness.conf</span>.</p>
   </section>
 
   <section style="margin-bottom:0">
     <div class="warn">
       <div class="t">Les pièges qui coûtent des points</div>
       <ul>
-        <li>Formater <span class="cmd">/dev/vdb</span> au lieu de <span class="cmd">/dev/vdb1</span> : la table de partitions est détruite.</li>
-        <li>Oublier le <b class="bad">w</b> dans fdisk : rien n'est écrit, et lsblk ne montre aucune partition.</li>
-        <li>Écrire <span class="cmd">ext4</span> au lieu de <span class="cmd">swap</span> dans fstab, ou un <b>UUID</b> pour un fichier de swap.</li>
-        <li>Oublier <span class="cmd">chmod 600</span> : swapon avertit ou refuse — ce fichier contient des morceaux de mémoire vive.</li>
-        <li>Racine en XFS (le défaut de Rocky 9) : <span class="cmd">swapon</span> peut refuser un fichier créé par fallocate. On le crée alors avec <span class="cmd">dd if=/dev/zero of=/swapfile bs=1M count=1024</span>.</li>
+        <li>Formater <span class="cmd">/dev/vdb</span> au lieu de <span class="cmd">/dev/vdb1</span> : la table de partitions est détruite. Oublier le <b class="bad">w</b> dans fdisk : rien n'est écrit, et lsblk ne montre aucune partition.</li>
+        <li>Écrire <span class="cmd">ext4</span> au lieu de <span class="cmd">swap</span> dans fstab, ou un <b>UUID</b> pour un fichier de swap. Oublier <span class="cmd">chmod 600</span> : swapon avertit ou refuse — ce fichier contient des morceaux de mémoire vive.</li>
+        <li><span class="cmd">fallocate -l 1G /swapfile</span> est plus rapide, mais ne convient qu'à ext4 : sur XFS — racine par défaut de Rocky 9 — <span class="cmd">swapon</span> refuse le fichier.</li>
       </ul>
     </div>
   </section>
 
-  <div class="foot" style="padding-top:9px"><span>Fiche générée depuis le jeu Empire Chaima</span><span>Rocky Linux 9</span></div>
+  <div class="foot" style="padding-top:7px"><span>Fiche générée depuis le jeu Empire Chaima</span><span>Rocky Linux 9</span></div>
 </div>
