@@ -3,9 +3,11 @@
 > Mis à jour à chaque livraison. Court par design. Détail : `00-LIRE-D-ABORD.md`.
 > Rapports horodatés (un par événement) : `reports/`.
 
-**Dernière mise à jour : 2026-09-11 14h45 CEST** (`TZ="Europe/Brussels" date`)
+**Dernière mise à jour : 2026-09-11 14h51 CEST** (`TZ="Europe/Brussels" date`)
 
-## État vérifié (preuve du 2026-09-11, commit `9df5764`)
+> **PR #1** : conflit avec `main` résolu (merge `064e144`) → repassée **mergeable** (`unstable`, seul rouge non-bloquant = `laloiavecmoi`). Merge dans `main` = décision de Chaima.
+
+## État vérifié (preuve du 2026-09-11, commit `064e144`, merge de `main`)
 - Tests : **77/77 verts** (`npm test`, 15 fichiers) · Lint : **0 erreur** (3 warnings préexistants) · Types : **0** (`tsc` après `next build`)
 - Build local : **OK** (`npm run build`) — inclut prospection/qualification/devis/relance + leurs routes API
 - **Boucle de vente Caelum complète** : HERMES (prospection) → BOUSSOLE (qualification) → PACTE (devis) → RELANCE (relance).
