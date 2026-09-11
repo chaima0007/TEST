@@ -3,12 +3,13 @@
 > Mis à jour à chaque livraison. Court par design. Détail : `00-LIRE-D-ABORD.md`.
 > Rapports horodatés (un par événement) : `reports/`.
 
-**Dernière mise à jour : 2026-09-11 14h33 CEST** (`TZ="Europe/Brussels" date`)
+**Dernière mise à jour : 2026-09-11 14h45 CEST** (`TZ="Europe/Brussels" date`)
 
-## État vérifié (preuve du 2026-09-11, commit `05c7666`)
-- Tests : **67/67 verts** (`npm test`, 13 fichiers) · Lint : **0 erreur** (3 warnings préexistants) · Types : **0** (`tsc` après `next build`)
-- Build local : **OK** (`npm run build`) — inclut prospection/qualification/devis + leurs routes API
-- **Entonnoir Caelum complet** : HERMES (prospection) → BOUSSOLE (qualification) → PACTE (devis).
+## État vérifié (preuve du 2026-09-11, commit `9df5764`)
+- Tests : **77/77 verts** (`npm test`, 15 fichiers) · Lint : **0 erreur** (3 warnings préexistants) · Types : **0** (`tsc` après `next build`)
+- Build local : **OK** (`npm run build`) — inclut prospection/qualification/devis/relance + leurs routes API
+- **Boucle de vente Caelum complète** : HERMES (prospection) → BOUSSOLE (qualification) → PACTE (devis) → RELANCE (relance).
+- **RELANCE** (commit `9df5764`) : relance de devis — route `POST /api/relance/draft` + page `/dashboard/relance`. Séquence J+3/J+7/clôture, sans fausse urgence ni remise inventée (§13). Envoi manuel (§10).
 - **BOUSSOLE** (commit `05c7666`) : qualification / triage de leads — route `POST /api/boussole/qualify` + page `/dashboard/qualification`. 100 % déterministe (aucun LLM), score transparent, pas de pourcentage (§10/§13). Recommande, ne décide pas.
 - **PACTE** (commit `25dc63c`) : rédacteur de devis / closing — route `POST /api/pacte/draft` + page `/dashboard/devis`. Modalités « À CONFIRMER », jamais de paiement en ligne promis (§10/§13).
 - **HERMES branché dans l'app** (commit `8391052`) : route `POST /api/hermes/draft` (sans état) + page `/dashboard/prospection` (4 brouillons copiables, envoi manuel §10) + entrée sidebar.
@@ -30,6 +31,7 @@
 4. Connecteur de source réel pour le pipeline (choix en attente)
 
 ## Derniers rapports
+- `reports/2026-09-11-1445-agent-relance-devis.md`
 - `reports/2026-09-11-1433-agent-boussole-qualification.md`
 - `reports/2026-09-11-1353-agent-pacte-devis.md`
 - `reports/2026-09-11-1342-branche-hermes-dashboard.md`
