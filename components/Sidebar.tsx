@@ -93,6 +93,14 @@ function IconProspection({ className }: { className?: string }) {
   );
 }
 
+function IconRelance({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path fillRule="evenodd" d="M10 3a7 7 0 1 0 6.32 4h-2.2A5 5 0 1 1 10 5V3zm0 0l3.5 2.5L10 8V3z" clipRule="evenodd" />
+    </svg>
+  );
+}
+
 function IconBoussole({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -189,6 +197,7 @@ const navSections: NavSection[] = [
       { href: "/dashboard/prospection", label: "Prospection", icon: IconProspection },
       { href: "/dashboard/qualification", label: "Qualification", icon: IconBoussole },
       { href: "/dashboard/devis", label: "Devis", icon: IconDevis },
+      { href: "/dashboard/relance", label: "Relance", icon: IconRelance },
     ],
   },
   {

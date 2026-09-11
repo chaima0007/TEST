@@ -18,6 +18,7 @@ export const FLEET: AgentDef[] = [
   { id: "hermes", name: "HERMES", role: "Prospection LinkedIn & vente", premium: false, capabilities: ["outreach manuel", "A/B accroches", "suivi"] },
   { id: "boussole", name: "BOUSSOLE", role: "Qualification & triage de leads", premium: false, capabilities: ["scoring déterministe", "questions de découverte", "priorisation"] },
   { id: "pacte", name: "PACTE", role: "Devis & proposition commerciale (closing)", premium: false, capabilities: ["devis", "périmètre", "modalités à confirmer"] },
+  { id: "relance", name: "RELANCE", role: "Relance de devis (suivi post-proposition)", premium: false, capabilities: ["séquence J+3/J+7/clôture", "réponse aux objections", "sans harcèlement"] },
   { id: "nexus", name: "NEXUS", role: "SEO & indexation", premium: false, capabilities: ["SEO", "sitemap", "indexation"] },
   { id: "forge", name: "FORGE", role: "Développement & déploiement", premium: false, capabilities: ["build", "déploiement", "reprise de run"] },
   { id: "echo", name: "ECHO", role: "Support client 24h/24", premium: false, capabilities: ["FAQ", "tickets", "réponses"] },
