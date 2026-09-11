@@ -9,3 +9,4 @@
 | Réconcilier `.claude/agents/` avec le set canonique | TEST | Technique/Protocole | 2026-09-06 | Les 21 agents sont dérivés du §1 (NON VÉRIFIÉ comme officiels) ; les remplacer par le set canonique de l'Empire s'il existe. |
 | Merger la PR #1 (pipeline + agents Nexus-Market) | TEST | Engagement | 2026-06-18 | Check pertinent (`test`) vert ; merge = décision humaine (§10). |
 | Fournir `ANTHROPIC_API_KEY` pour vérifier le chemin LLM | TEST | Technique | 2026-07-17 | Extraction/rédaction Claude codées mais NON VÉRIFIÉES (jamais exécutées) — seul le repli heuristique est prouvé. |
+| Définir l'ICP cible + brancher HERMES (route/UI + liste de prospects) | Caelum/TEST | Marché/Humain | 2026-09-11 | HERMES rédige les brouillons ; reste à définir QUI cibler et à fournir la liste de prospects (l'envoi reste manuel, §10). |

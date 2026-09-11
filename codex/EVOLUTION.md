@@ -4,6 +4,7 @@
 
 ## TEST / Nexus-Market
 
+- **2026-09-11** — Jalon : agent **HERMES** (rédacteur de prospection LinkedIn, `lib/agents/hermes.ts`) — brouillons personnalisés pour l'offre 500€, envoi manuel uniquement. 39/39 tests verts.
 - **2026-09-06** — PROTOCOLE CODEX (v2026-09-06) installé dans le projet (CLAUDE.md + structure §12 + agents dérivés + skill debat).
 - **2026-07-17** — Problème résolu : build Vercel corrigé (`postinstall: prisma generate`) ; `test` déployé (Ready).
 - **2026-07-17** — Jalon : agents premium COMMANDANT + RÉSOLVEUR ajoutés à la flotte Caelum (registre `lib/agents/`).
