@@ -1,8 +1,4 @@
-# /codex/opportunites/ — idées rentables (statut PROPOSÉ uniquement)
+# /codex/opportunites/
 
-> Un agent ne peut poser QUE le statut PROPOSÉ (§13). Chaima décide de la suite.
-
-## Format (CODEX §7)
-ID / Idée / Preuve de marché (sourcée ou NON VÉRIFIÉ) / Expertise dispo / Ressources / Avocat / Contradicteur / Scénarios (jamais de %) / Arbitre / Statut : PROPOSÉ.
-
-_(Aucune opportunité pour l'instant.)_
+Fiches **Opportunité** (idées rentables). Format §7. Un fichier par idée : `AAAA-MM-JJ-<id>.md`.
+Statut posable par un agent : **PROPOSÉ** uniquement (§13). Preuve de marché sourcée+datée, sinon « NON VÉRIFIÉ ».

@@ -1,9 +1,5 @@
-# /codex/licences-sortantes/ — nos licences à revendre / louer
+# /codex/licences-sortantes/
 
-> L'agent RÉDIGE le document complet (contrat, prix, conditions), pas une idée (CODEX §11).
-> Bloqué : envoi à un client réel + signature (humain, §10). Brevets : recherche d'antériorité seulement.
-
-## Format (CODEX §7)
-ID / Composant / Modèle / Document (contrat complet rédigé) / Vérifications avant usage réel / Statut : PROPOSÉ ET RÉDIGÉ.
-
-_(Aucune licence sortante pour l'instant.)_
+Fiches **Licence sortante** (§7, §11). Un fichier par licence : `AAAA-MM-JJ-<id>.md`.
+L'agent RÉDIGE le document complet (contrat, prix, conditions). Statut : **PROPOSÉ ET RÉDIGÉ**.
+Bloqué (§10) : envoi à un client réel + signature. Brevets : recherche d'antériorité uniquement, jamais de dépôt.

@@ -77,6 +77,46 @@ function IconSettings({ className }: { className?: string }) {
   );
 }
 
+function IconPipeline({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M3 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2 1 1 0 0 0 1 1h1a2 2 0 0 1 2 2 1 1 0 0 0 1 1h.5a2 2 0 1 1 0 2H14a3 3 0 0 1-3-3 1 1 0 0 0-1-1H9a3 3 0 0 1-3-3 1 1 0 0 0-1-1 2 2 0 0 1-2-2zm0 10a2 2 0 0 1 2-2h6a1 1 0 0 0 0 2H5a2 2 0 0 1-2 0z" />
+    </svg>
+  );
+}
+
+function IconProspection({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path d="M2 5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5zm2.4.2a1 1 0 0 0-.8 1.6l4.8 4.6a2 2 0 0 0 2.4 0l4.8-4.6a1 1 0 0 0-.8-1.6H4.4z" />
+    </svg>
+  );
+}
+
+function IconRelance({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path fillRule="evenodd" d="M10 3a7 7 0 1 0 6.32 4h-2.2A5 5 0 1 1 10 5V3zm0 0l3.5 2.5L10 8V3z" clipRule="evenodd" />
+    </svg>
+  );
+}
+
+function IconBoussole({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path fillRule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm3.2-11.2L11 11l-4.2 2.2L9 9l4.2-2.2zM10 11a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" clipRule="evenodd" />
+    </svg>
+  );
+}
+
+function IconDevis({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+      <path fillRule="evenodd" d="M4 2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H4zm2 4h8v1.5H6V6zm0 3h8v1.5H6V9zm0 3h5v1.5H6V12z" clipRule="evenodd" />
+    </svg>
+  );
+}
+
 function IconChevronLeft({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
@@ -143,6 +183,21 @@ const navSections: NavSection[] = [
       { href: "/dashboard/competitors", label: "Concurrents", icon: IconCompetitors },
       { href: "/dashboard/alerts", label: "Alertes", icon: IconAlerts, badge: 3 },
       { href: "/dashboard/reports", label: "Rapports", icon: IconReports },
+    ],
+  },
+  {
+    title: "MATCHING FREELANCE",
+    items: [
+      { href: "/dashboard/pipeline", label: "Pipeline", icon: IconPipeline },
+    ],
+  },
+  {
+    title: "PROSPECTION (CAELUM)",
+    items: [
+      { href: "/dashboard/prospection", label: "Prospection", icon: IconProspection },
+      { href: "/dashboard/qualification", label: "Qualification", icon: IconBoussole },
+      { href: "/dashboard/devis", label: "Devis", icon: IconDevis },
+      { href: "/dashboard/relance", label: "Relance", icon: IconRelance },
     ],
   },
   {

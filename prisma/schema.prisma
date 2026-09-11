@@ -95,3 +95,112 @@ model Report {
   user        User     @relation(fields: [userId], references: [id])
   createdAt   DateTime @default(now())
 }
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Nexus-Market — Pipeline de matching freelance (V1)
+//
+// State machine persistée : chaque étape lit l'état produit par la précédente
+// et écrit le suivant. Les tables ci-dessous SONT l'état du pipeline, ce qui
+// rend les runs reprenables après une panne (cf. lib/pipeline/orchestrator.ts).
+// ─────────────────────────────────────────────────────────────────────────────
+
+// Un passage complet du pipeline (Ingestion → Filtrage → Matching → Enrichissement → Notification).
+model PipelineRun {
+  id          String            @id @default(cuid())
+  status      String            @default("running") // running | completed | failed
+  currentStep Int               @default(0)         // index de l'étape courante (reprise)
+  startedAt   DateTime          @default(now())
+  finishedAt  DateTime?
+  error       String?
+  rawJobs     RawJob[]
+  analyzed    AnalyzedJob[]
+  matches     JobMatch[]
+  steps       PipelineStepLog[]
+}
+
+// Journal d'une étape pour un run : sert de timeline "décisions de l'IA" dans le dashboard.
+model PipelineStepLog {
+  id         String       @id @default(cuid())
+  step       String       // ingest | filter | match | enrich | notify
+  status     String       // ok | failed
+  message    String       @default("")
+  durationMs Int          @default(0)
+  runId      String
+  run        PipelineRun  @relation(fields: [runId], references: [id], onDelete: Cascade)
+  createdAt  DateTime     @default(now())
+}
+
+// Étape 1 — Ingestion : offre brute telle que renvoyée par un connecteur de source légal.
+model RawJob {
+  source      String
+  externalId  String
+  title       String
+  description String
+  rawBudget   String?
+  capturedAt  DateTime     @default(now())
+  runId       String
+  run         PipelineRun  @relation(fields: [runId], references: [id], onDelete: Cascade)
+  analyzed    AnalyzedJob?
+
+  @@id([runId, source, externalId])
+}
+
+// Étape 2 — Filtrage/Extraction : entités structurées + décision de qualification.
+model AnalyzedJob {
+  id           String       @id @default(cuid())
+  title        String
+  status       String       @default("pending") // pending | qualified | rejected
+  skills       String       @default("")        // CSV (SQLite n'a pas de type array)
+  budget       Float?
+  durationDays Int?
+  location     String?
+  score        Float        @default(0)
+  reason       String       @default("")        // pourquoi qualifié/rejeté (affiché dans l'UI)
+  runId        String
+  run          PipelineRun  @relation(fields: [runId], references: [id], onDelete: Cascade)
+  rawSource    String
+  rawExternal  String
+  rawJob       RawJob       @relation(fields: [runId, rawSource, rawExternal], references: [runId, source, externalId], onDelete: Cascade)
+  matches      JobMatch[]
+
+  @@unique([runId, rawSource, rawExternal])
+}
+
+// Profil d'un freelance abonné — cible du matching.
+model FreelanceProfile {
+  id        String     @id @default(cuid())
+  name      String
+  skills    String     @default("") // CSV
+  seniority String     @default("mid") // junior | mid | senior
+  minBudget Float      @default(0)
+  locations String     @default("") // CSV, "remote" inclus
+  bio       String     @default("")
+  matches   JobMatch[]
+  createdAt DateTime   @default(now())
+}
+
+// Étape 3/4 — Matching + Enrichissement : un match scoré, avec snippet explicatif et validation humaine.
+model JobMatch {
+  id            String           @id @default(cuid())
+  confidence    Float            @default(0)
+  snippet       String           @default("")
+  status        String           @default("proposed") // proposed | approved | rejected
+  rejectReason  String?
+  proposalDraft String?          // Rédacteur : brouillon de proposition
+  followupsDraft String?         // Négociateur : Q/R de suivi anticipées (JSON)
+  analyzedJobId String
+  analyzedJob   AnalyzedJob      @relation(fields: [analyzedJobId], references: [id], onDelete: Cascade)
+  profileId     String
+  profile       FreelanceProfile @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  runId         String
+  run           PipelineRun      @relation(fields: [runId], references: [id], onDelete: Cascade)
+  createdAt     DateTime         @default(now())
+}
+
+// Clé/valeur pour les paramètres auto-ajustables (boucle de rétroaction).
+// Ex: "minBudgetThreshold" relevé quand l'utilisateur rejette un match "pas assez cher".
+model PipelineSetting {
+  key       String   @id
+  value     String
+  updatedAt DateTime @updatedAt
+}

@@ -1,29 +1,31 @@
 ---
 name: debat
-description: Orchestre le PARCOURS 2 du CODEX (une décision engageante — dépendance, fonctionnalité, prix, opportunité, protocole). À invoquer AVANT toute recommandation sur une décision qui engage. Lance POUR et CONTRE en parallèle, puis simulateur → arbitre → vérificateur → A-DECIDER, et laisse Chaima décider.
+description: Orchestre le Parcours 2 du PROTOCOLE CODEX — toute décision engageante (dépendance, fonctionnalité, prix, opportunité, protocole). Lance avocat + contradicteur EN PARALLÈLE, puis simulateur, arbitre, vérificateur, et consigne dans A-DECIDER.md pour décision de Chaima.
 ---
 
-# Skill : debat (parcours 2 du CODEX)
+> Généré dérivé du PROTOCOLE CODEX §8 (NON VÉRIFIÉ comme set canonique de l'Empire).
 
-Une décision engageante se présente. Ce skill garantit qu'on ne « gagne » pas un débat, qu'on l'arbitre — le désaccord réel est la seule information utile.
+# Skill : débat (Parcours 2)
 
-## Séquence obligatoire (aucune étape sautée, surtout pour une idée « évidente »)
-1. **POUR + CONTRE en parallèle, dans un seul message.** `avocat` (POUR, sourcé) ET `contradicteur` (CONTRE, permanent) EN MÊME TEMPS. Les lancer l'un après l'autre détruit le désaccord.
-2. **simulateur-scenarios** — optimiste / réaliste / pessimiste. Jamais de pourcentage.
-3. **arbitre-expert** — UNE recommandation ; dit ce que CHAQUE camp a gagné ; recommande, n'exécute jamais.
-4. **verificateur-verite** — source datée, sinon « NON VÉRIFIÉ ».
-5. **Consigner dans /codex/A-DECIDER.md** puis **Chaima décide** (§10).
+Déclenche cette procédure pour **toute décision engageante** : ajouter une dépendance,
+lancer une fonctionnalité, fixer un prix, retenir une opportunité, modifier le protocole.
+**Aucune étape sautée — surtout pour une idée qui semble évidente.**
 
-## Règle de désaccord (§14)
-Quand deux agents se contredisent et que les faits ne départagent pas : **le verdict le plus prudent gagne par défaut.**
+## Étapes (dans l'ordre)
 
-## Sortie — bloc de passation (§14)
-    DE : arbitre-expert            POUR : CHAIMA
-    OBJET : [une phrase décidable]
-    VERDICT : [mot du §13]
-    PARCE QUE : [fait porteur — fichier:ligne ou source datée]
-    NON VÉRIFIÉ : [ce qui n'a pas pu être établi, ou « rien »]
-    CE QUI CHANGERAIT MON AVIS : [le fait précis]
+1. **Avocat + Contradicteur EN PARALLÈLE, dans UN SEUL message.**
+   Impératif : les lancer ensemble. Lancés l'un après l'autre, le second répond au premier,
+   les positions convergent et le désaccord réel — la seule information utile — disparaît (§8).
+2. **simulateur-scenarios** : optimiste / réaliste / pessimiste. Jamais de pourcentage (FAIBLE/MODÉRÉE/ÉLEVÉE).
+3. **arbitre-expert** : UNE recommandation. Doit dire **ce que chaque camp a gagné** ; toute
+   objection écartée est reprise par un garde-fou explicite (sinon la décision n'est pas
+   arbitrée, seulement gagnée).
+4. **verificateur-verite** : chaque affirmation = source datée ou « NON VÉRIFIÉ » (§13).
+5. **cartographe** : inscrire la décision dans `/codex/A-DECIDER.md` (§6).
+6. **CHAIMA décide.** Un agent recommande ; il n'exécute jamais (§10).
 
-## NOTE D'INSTALLATION (2026-09-11)
-Les agents référencés (`avocat`, `contradicteur`, `simulateur-scenarios`, `arbitre-expert`, `verificateur-verite`) font partie des 21 rôles CODEX **pas encore créés** dans ce dépôt (décision transverse parquée, voir /codex/A-DECIDER.md). En attendant, appliquer la séquence manuellement, en une passe, sans sauter le CONTRE — au besoin via des sous-agents.
+## Règles invariantes
+- Le contradicteur est **permanent, non désactivable**.
+- En cas d'égalité factuelle entre deux agents, **le verdict le plus prudent gagne par défaut** (§14).
+- Chaque agent finit par le **bloc de passation §14** (DE/POUR/OBJET/VERDICT/PARCE QUE/NON VÉRIFIÉ/CE QUI CHANGERAIT MON AVIS).
+- Rien ne s'engage (merge, argent, envoi, signature, « LANCÉ ») sans Chaima (§10).
