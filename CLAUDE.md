@@ -311,6 +311,6 @@ pas, **le verdict le plus prudent gagne par défaut.** S'en écarter exige de di
   - **Prisma** : le client est généré dans `lib/generated/prisma`, qui est **gitignoré** → absent d'un checkout neuf. Le script `postinstall: prisma generate` est en place (commit `2332776`) ; ne pas le retirer, sinon `next build` échoue « module not found ».
   - **Vercel** : 8 projets du compte sont branchés sur ce dépôt → déploiements en cascade et saturation du quota gratuit. Caelum vise **Cloudflare Pages**. Déconnexion des projets superflus = décision humaine en attente (voir `/codex/A-DECIDER.md`).
   - **Next.js** : version à breaking changes — lire `node_modules/next/dist/docs/` avant d'écrire du Next (actuellement **NON VÉRIFIÉ** : dossier absent de l'install). Voir aussi `@AGENTS.md`.
-  - **Agents `.claude/agents/`** : générés dérivés du §1 (NON VÉRIFIÉ comme set canonique de l'Empire) — à réconcilier, voir `/codex/A-DECIDER.md`.
+  - **Agents `.claude/agents/`** : **réconciliés le 2026-09-11** (TRANCHÉ PAR CHAIMA) — les 21 rôles du §1 portent désormais le set canonique de l'Empire, aligné sur `chaima0007/keywordmoneymaker` (socle commun identique, empreinte vérifiée). Détail : `/codex/agents-correspondance.md`. À ne pas confondre avec les agents applicatifs de `lib/agents/` (HERMES, BOUSSOLE, PACTE, RELANCE…), qui sont du code.
 
 @AGENTS.md

@@ -68,6 +68,12 @@
 - **Détection :** check_run en échec + log montrant la clé vide ; échoue **même sur un commit documentaire** → configuration, pas code.
 - **Correctif :** **décision humaine** — ajouter le secret (*Settings → Secrets → Actions*) **ou** rendre le workflow non bloquant. Commenté une fois sur la PR (#5634869297). Rejoint la ligne `ANTHROPIC_API_KEY` de `/codex/A-DECIDER.md`.
 
+## ERR-011 — Sessions programmées (Routines) : `git push` refusé (403) (2026-09-11)
+- **Ce qui s'est passé :** une Routine prépare un correctif mais échoue au `git push` — « not in this session's authorized repository set » (403). Le travail du passage est perdu à chaque fois (conteneur éphémère).
+- **Cause (VÉRIFIÉE) :** une session programmée ne porte aucun dépôt (`folders_state: FOLDERS_STATE_NONE` sur les 10 Routines du compte) et l'API des Routines **n'expose aucun paramètre de dépôt** — l'accès n'était donc pas réglable « dans les réglages de la Routine ». Les Routines existantes tournent en environnement `env_0111…7` (tags `cowork-remote`/`cowork-scheduled`), pas dans l'environnement Claude Code « Par défaut ».
+- **Détection :** `list_triggers` → `folders_state` ; `get_session` sur la session tirée → `environment_id` et `post_turn_summary`. Un run marqué `SUCCEEDED` signifie « réveil délivré », **pas** « travail abouti » — vérifier par `git ls-remote`, jamais par le statut.
+- **Correctif partiel (NON CLOS) :** ajouter `add_repo(access:"push")` au prompt de la Routine a été essayé et **n'a rien changé** (2 passages, aucune branche poussée) — le préambule a été retiré. Ce qui EST vérifié : le compte a bien les droits (pushs réels `bea133e` sur keywordmoneymaker, `cc22b83` sur ce dépôt) et une session avec dépôt attaché à la création (`source_url`) pousse sans problème. Ce qui reste ouvert : rendre ce chemin disponible aux Routines — `create_trigger` accepte `environment_id` mais pas `source_url`. Décision d'accès = humaine (§10).
+
 ---
 
 ### Motifs récurrents (méta-leçons)
