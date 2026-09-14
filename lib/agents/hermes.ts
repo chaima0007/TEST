@@ -9,6 +9,7 @@
 // si ANTHROPIC_API_KEY est présent (repli heuristique en cas d'absence/erreur).
 
 import Anthropic from "@anthropic-ai/sdk";
+import { verifierSansSurvente } from "./garde-fou";
 
 export interface Prospect {
   firstName: string;
@@ -90,7 +91,15 @@ export interface Writer {
 
 export class HeuristicHermes implements Writer {
   async draft(p: Prospect, o: Offer = CAELUM_OFFER): Promise<OutreachDraft> {
-    return heuristicDraft(p, o);
+    const d = heuristicDraft(p, o);
+    // ERR-016 : ce chemin est le repli ET le chemin actif sans clé API.
+    // Il doit être filtré comme le chemin LLM, sinon le garde-fou ne protège rien.
+    verifierSansSurvente(
+      [d.connectionNote, d.altConnectionNote, d.firstMessage, d.followUp],
+      BANNED,
+      "HERMES (heuristique)",
+    );
+    return d;
   }
 }
 

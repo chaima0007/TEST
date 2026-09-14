@@ -16,9 +16,7 @@
 
 import { describe, it, expect } from "vitest";
 import { HeuristicHermes, CAELUM_OFFER, type Prospect, type Offer } from "../hermes";
-
-// Le filtre tel qu'il est déclaré dans hermes.ts:48.
-const BANNED = [/\bgaranti/i, /\bcertifi/i, /\bmeilleur\b/i, /\bn[°o]\s?1\b/i, /\b100\s?%/];
+import { SurventeDetectee } from "../garde-fou";
 
 // Affirmations « sur nous » que la charte du verificateur-verite désigne comme
 // les plus dangereuses. Absentes de BANNED aujourd'hui.
@@ -38,22 +36,31 @@ async function texteComplet(o?: Offer): Promise<string> {
 }
 
 describe("garde-fou anti-survente — chemin heuristique", () => {
-  it("ÉCHOUE AUJOURD'HUI : une offre de survente traverse le chemin heuristique sans être filtrée", async () => {
+  // ✅ CORRIGÉ le 2026-09-14 — ce test passe désormais. Conservé comme test de
+  // non-régression : il redeviendrait rouge si le filtre repartait du chemin
+  // heuristique. Ne pas le supprimer.
+  it("rejette une offre de survente au lieu de l'émettre (ERR-016, volet structurel)", async () => {
     // `draft(p, o)` accepte n'importe quelle Offer : le champ `edge` est injecté
     // verbatim dans firstMessage (hermes.ts, heuristicDraft).
     const offrePiegee: Offer = {
       ...CAELUM_OFFER,
       edge: "résultats garantis, agence certifiée n°1",
     };
-    const texte = await texteComplet(offrePiegee);
 
-    // Le filtre du projet reconnaît bien ces termes…
-    expect(BANNED.some((re) => re.test(texte))).toBe(true);
+    // Comportement attendu : échec BRUYANT. L'heuristique est déjà le repli,
+    // elle n'a nulle part où se replier — émettre silencieusement serait pire.
+    await expect(new HeuristicHermes().draft(prospect, offrePiegee)).rejects.toThrow(
+      SurventeDetectee,
+    );
 
-    // …mais le code ne l'applique pas ici. Attendu après correctif : le texte
-    // émis ne contient AUCUN terme banni (rejet, expurgation, ou erreur levée).
-    const termesTrouves = BANNED.filter((re) => re.test(texte)).map(String);
-    expect(termesTrouves).toEqual([]);
+    // L'erreur nomme les termes fautifs, pour que la correction soit évidente.
+    await new HeuristicHermes()
+      .draft(prospect, offrePiegee)
+      .then(() => expect.unreachable("le brouillon n'aurait pas dû être produit"))
+      .catch((e: unknown) => {
+        expect(e).toBeInstanceOf(SurventeDetectee);
+        expect((e as SurventeDetectee).termes.join(" ").toLowerCase()).toContain("garanti");
+      });
   });
 
   it("ÉCHOUE AUJOURD'HUI : l'offre par défaut contient des affirmations « sur nous » non sourçables", async () => {
