@@ -4,6 +4,7 @@
 
 ## TEST / Nexus-Market
 
+- **2026-09-14** — Décision : **ICP de Caelum arrêté — consultants / coachs indépendants**. Contrainte de canal identifiée : HERMES prospecte sur LinkedIn, donc l'ICP doit y être actif ; les exemples du code (restaurants, kinés) ne le sont pas. Débloque à moitié la ligne A-DECIDER ; reste la liste de prospects. TRANCHÉ PAR CHAIMA.
 - **2026-09-11** — Décision : `.claude/agents/` **laissé en l'état** (set dérivé du §1 conservé, pas de remplacement par un set canonique). Prémisse d'origine erronée, décision reconfirmée après correction. Ligne sortie de A-DECIDER. TRANCHÉ PAR CHAIMA.
 - **2026-09-11** — Décision : **revue automatique des PR désactivée** tant que `ANTHROPIC_API_KEY` n'est pas posé. Le check finissait en `failure` sur chaque PR, commits documentaires compris (ERR-010) ; ERR-010 laissait le choix « poser le secret OU rendre le workflow non bloquant » — c'est la seconde option, temporaire. La CI lint/build/typecheck (`ci.yml`) reste active et inchangée. TRANCHÉ PAR CHAIMA.
 - **2026-09-11** — Décision : conflit de gouvernance PR #1 ↔ PR #8 (`main` = install CODEX « CompeteIQ ») tranché **Nexus-Market prioritaire** ; décisions de `main` intégrées, EVOLUTION en union. TRANCHÉ PAR CHAIMA.
