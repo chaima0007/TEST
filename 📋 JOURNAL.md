@@ -4,6 +4,36 @@
 
 ---
 
+SNAPSHOT 2026-09-14 21h45 CEST : **Audit sentinelle complet + mise en place de la preuve d'avancement quotidienne.**
+
+**DATE :** 2026-09-14 · **ÉTAT RÉEL VÉRIFIÉ :** `main` = `bc6be2c5` (`git fetch` en séance, pas de mémoire) · périmètre annoncé (ERR-013) : dépôt `chaima0007/test` **et** `chaima0007/keywordmoneymaker` (cloné en lecture, `90b1c87`), Drive, Routines, connecteurs.
+
+**ÉTAT AVANT SESSION.** Registres à jour côté décisions (ICP tranché, réunion du 21h15 consignée), passations corrigées à 21h16 par une session concurrente. Aucune donnée de sécurité des dépendances, aucun suivi des PR ouvertes.
+
+**ÉTAT APRÈS SESSION.** Six erreurs réelles consignées (ERR-016 → ERR-021), dont **deux CRITIQUES par escalade** (même cause racine sur 2 projets). Trois méta-leçons ajoutées. Aucune correction appliquée — tout attend le GO de Chaima.
+
+**DIFF RÉEL (factuel, pas d'intention) :**
+- `🔴 ERREURS.md` : +6 entrées (ERR-016 à ERR-021), +3 méta-leçons (9, 10, 11). 15 → **21 erreurs**.
+- `SUIVI_QUOTIDIEN.md` : créé (tableau de bord multi-projets, §3 de la consigne du 2026-09-14).
+- Aucun fichier applicatif touché. Aucune dépendance modifiée. Aucune PR ouverte ou fermée.
+
+**PREUVE VÉRIFIABLE :**
+- `npm audit` sur `bc6be2c5` : **22 vulnérabilités — 3 critiques, 11 hautes, 8 modérées** (`next` 16.2.9, `next-auth` 5.0.0-beta.31 → `@auth/core` GHSA-7rqj-j65f-68wh). Reproductible sans `node_modules`.
+- 5 PR ouvertes : #3, #4, #5, #6, #7 (API GitHub, `state=open`) — 0 ligne dans `A-DECIDER.md`.
+- Caelum `90b1c87` : `products/caelum/site/assets/caelum.css` sert 4 `.woff2` locaux → **fuite RGPD des polices FERMÉE**, alors que son `A-DECIDER.md` et la cartographie Drive de 18h45 la donnent encore en attente ; `LICENSE` présent alors que la fiche **E-08** reste « ⚠️ NON CORRIGÉE ».
+- `https://caelumpartners.agency/` → `CONNECT tunnel failed, 403`, HTTP **000** : version en prod **non comparable** au dernier commit depuis une session d'agent.
+- 10 Routines actives, aucune `auto_disabled_gate_denied`. Une one-shot (« Caelum — contrôle 8 h », 22h21) **jamais exécutée** ; « La Loi Avec Moi — BOUCLE contenu » en **PENDING** depuis 18h52.
+- Connecteurs : **Cloudflare Developer Platform = `needs_reconnect`** — c'est la cible d'hébergement de Caelum. `composio` connecté côté org mais **échec de connexion MCP dans cette session** (404).
+- Secrets : `git grep` sur motifs de clés réelles (Anthropic, GitHub, AWS, Slack, GCP, clés privées) → **0 résultat** sur les deux dépôts. Le seul littéral trouvé est `MASKED_API_KEY` (chaîne d'affichage, `app/dashboard/settings/page.tsx:6`).
+
+**AUDIT LÉGER — PRÉVU vs RÉALISÉ vs ÉCART :**
+- **PRÉVU** (`ETAT.md` § Reste, veille) : inventaire LinkedIn 1er degré (ICP tranché, liste à produire) · poser `ANTHROPIC_API_KEY` · nettoyage Vercel · connecteur de source réel.
+- **RÉALISÉ** : aucun des quatre. Les quatre sont des **actions de Chaima**, pas des tâches d'agent.
+- **ÉCART, signalé explicitement :** la journée a produit **4 commits documentaires et 0 livrable applicatif**. Distinction §4 de la consigne : documenter une décision et consigner une erreur sont de l'**AVANCEMENT RÉEL** (livrable versionné, vérifiable) ; mais **aucun code, aucun contenu publié, aucun prospect contacté**. Le système a de nouveau produit ce qu'il peut produire seul, et bute sur les mêmes décisions humaines. C'est le constat que la cartographie du 18h45 posait déjà — il est inchangé 3 heures plus tard.
+- **Sécurité du jour :** rien d'exposé par le travail du jour (écritures documentaires uniquement) ; mais ERR-016 et ERR-021 sont **préexistantes et non traitées**.
+
+Rien d'engagé. Aucune correction appliquée. **Toutes les SOLUTION_016 → SOLUTION_021 attendent un GO explicite.**
+
 SNAPSHOT 2026-09-14 21h30 CEST : **Passe de documentation (Chaima en surveillance, aucune action de sa part).** État réel vérifié, `main` `0c792ca3`. (1) **Deux documents de reprise étaient faux** : `ETAT.md` et `00-LIRE-D-ABORD.md` annonçaient « PR #1 ouverte, pas encore mergée » alors qu'elle est mergée depuis `9cc15c2f` — un agent repartant de là aurait travaillé sur une branche close. Corrigés, avec `main` daté et la mention que les tests 77/77 datent du 2026-09-11 et n'ont pas été re-exécutés. (2) Ajouté `reports/2026-09-14-2130-notes-exploitation-sessions-distantes.md` : 8 obstacles d'infrastructure rencontrés aujourd'hui, messages d'erreur verbatim (conteneur éphémère, refus du classificateur et leurs 3 motifs distincts, clone `--depth 1` single-branch, `main` qui bouge en séance, HTTP 403 du proxy sur la suppression de ref, redirection test→TEST, identifiant MCP changeant). (3) A-DECIDER : ligne ouverte sur les ~16 branches de projets étrangers hébergées ici — aucune mergée, donc aucune à supprimer ; la question est de les déplacer. Rien d'engagé.
 
 SNAPSHOT 2026-09-14 21h15 CEST : **Réunion de décision (7 agents) + préparation de la prospection.** État réel vérifié sur `main` `30c544fd`. (1) Réunion Parcours 2 sur la zone de prospection : question **écartée** — sans scraping le bassin est le réseau existant, la zone se constate après inventaire. Amendée sur 4 points par le vérificateur-vérité avant sortie. (2) **Quasi-incident évité (ERR-015)** : le garde-fou « écrire l'inventaire dans le fichier » invitait à committer des données personnelles sur un dépôt **public** ; `.gitignore` durci et vérifié par `git check-ignore`. (3) Produit : `reports/2026-09-14-2115-preparation-prospection.md` — modèle de fichier prospects (vide), mention d'information RGPD (brouillon), squelette de périmètre écrit de l'offre avec 7 `À DÉCIDER` non remplis (§10). (4) Deux lignes A-DECIDER ouvertes : conformité RGPD, bornage de l'offre. Rien d'engagé.
