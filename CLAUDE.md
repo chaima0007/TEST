@@ -301,7 +301,7 @@ pas, **le verdict le plus prudent gagne par défaut.** S'en écarter exige de di
 
 > Ajout §15.4 : uniquement dépôt, stack, commandes de vérif avant push, pièges connus.
 
-- **Dépôt :** `chaima0007/test` · **branche de dev :** `claude/nexus-market-agents-63dlku` (jamais de commit direct sur `main`, cf. §4 Parcours 4 / §10).
+- **Dépôt :** `chaima0007/test` · **branche de dev : voir `ETAT.md`** — ce fichier ne nomme plus aucune branche, pour qu'il n'y en ait qu'un seul à corriger quand elle change (ERR-022). `claude/nexus-market-agents-63dlku` est **close** depuis le merge de la PR #1 (`9cc15c2f`, 2026-09-11) : toute nouvelle branche part de `main`. Jamais de commit direct sur `main` (§4 Parcours 4 / §10).
 - **Stack :** Next.js 16 · TypeScript · Prisma (SQLite via adapter libsql) · Tailwind v4 · next-auth · Vitest.
 - **Commandes de vérification AVANT PUSH (Parcours 4) :**
   ```bash
