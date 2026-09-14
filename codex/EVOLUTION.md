@@ -4,6 +4,7 @@
 
 ## TEST / Nexus-Market
 
+- **2026-09-14** — Décision : **réunion de décision tenue (7 agents CODEX, Parcours 2)** sur la zone de prospection. Résultat : question **écartée**, la zone se constate après inventaire du réseau 1er degré. Deux lignes A-DECIDER ouvertes au passage (conformité RGPD de la prospection ; bornage écrit de l'offre à 500 €). Le vérificateur-vérité a amendé l'arbitrage sur 4 points avant sortie. TRANCHÉ PAR CHAIMA.
 - **2026-09-14** — Décision : **ICP de Caelum arrêté — consultants / coachs indépendants**. Contrainte de canal identifiée : HERMES prospecte sur LinkedIn, donc l'ICP doit y être actif ; les exemples du code (restaurants, kinés) ne le sont pas. Débloque à moitié la ligne A-DECIDER ; reste la liste de prospects. TRANCHÉ PAR CHAIMA.
 - **2026-09-11** — Décision : `.claude/agents/` **laissé en l'état** (set dérivé du §1 conservé, pas de remplacement par un set canonique). Prémisse d'origine erronée, décision reconfirmée après correction. Ligne sortie de A-DECIDER. TRANCHÉ PAR CHAIMA.
 - **2026-09-11** — Décision : **revue automatique des PR désactivée** tant que `ANTHROPIC_API_KEY` n'est pas posé. Le check finissait en `failure` sur chaque PR, commits documentaires compris (ERR-010) ; ERR-010 laissait le choix « poser le secret OU rendre le workflow non bloquant » — c'est la seconde option, temporaire. La CI lint/build/typecheck (`ci.yml`) reste active et inchangée. TRANCHÉ PAR CHAIMA.
