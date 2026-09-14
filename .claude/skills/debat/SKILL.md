@@ -3,7 +3,10 @@ name: debat
 description: Orchestre le Parcours 2 du PROTOCOLE CODEX — toute décision engageante (dépendance, fonctionnalité, prix, opportunité, protocole). Lance avocat + contradicteur EN PARALLÈLE, puis simulateur, arbitre, vérificateur, et consigne dans A-DECIDER.md pour décision de Chaima.
 ---
 
-> Généré dérivé du PROTOCOLE CODEX §8 (NON VÉRIFIÉ comme set canonique de l'Empire).
+> Généré dérivé du PROTOCOLE CODEX §8.
+> Mise à jour 2026-09-11 : les agents appelés ci-dessous (`avocat`, `contradicteur`, `simulateur-scenarios`,
+> `arbitre-expert`, `verificateur-verite`, `cartographe`) existent dans `.claude/agents/` au **set canonique**
+> de l'Empire — lançables directement comme sous-agents (`/codex/agents-correspondance.md`).
 
 # Skill : débat (Parcours 2)
 
