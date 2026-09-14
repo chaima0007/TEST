@@ -32,3 +32,47 @@ deux volets a été présenté comme bloqué parce que **l'un des deux** l'étai
 
 Une escalade qui ne nomme pas ce qui a déjà été livré est une escalade prématurée.
 <!-- END:codex-regle-decoupage -->
+
+<!-- BEGIN:codex-regle-fetch -->
+# Règle du `git fetch` d'ouverture — avant toute commande git
+
+Le conteneur d'une session est un **instantané figé à sa création**. `git status`,
+`git branch -a`, `git log` et tout fichier du dépôt affichent cet instantané, pas
+l'état du serveur. Plusieurs sessions travaillent en parallèle sur ce dépôt : l'écart
+se creuse pendant que tu lis. Voir `🔴 ERREURS.md`, ERR-011 puis ERR-019 (récidive).
+
+**`git fetch origin` est la PREMIÈRE commande de toute session qui touchera à git.**
+Avant `status`, avant `branch`, avant `checkout -b`, avant toute conclusion sur l'état
+du dépôt.
+
+## Les deux tests, non négociables
+
+**1. Avant de créer une branche** — elle part de l'état serveur, jamais du local :
+
+```bash
+git fetch origin
+git checkout -b <nom> origin/main    # et non : git checkout -b <nom>
+```
+
+**2. Avant d'annoncer un succès** — le retard doit être nul :
+
+```bash
+git log --oneline <ma-branche>..origin/main | wc -l   # doit afficher 0
+```
+
+Non nul = la branche est périmée. Corriger par `git merge origin/main` (jamais
+`rebase` ni `push --force` sur une branche que quelqu'un d'autre peut avoir
+récupérée), puis re-tester.
+
+## Interdits
+
+- Conclure quoi que ce soit sur l'état du dépôt sans un `fetch` dans la même session.
+- Lire `git branch -a` comme un état serveur : sans `fetch`, il ne liste que le cache local.
+- Annoncer « poussé », « OK » ou « terminé » sans avoir vérifié le retard.
+- Affirmer une conséquence git (« ça aurait supprimé X ») sans l'avoir **reproduite**.
+  Un merge en conflit n'est pas une suppression — le §13 exige de mesurer, pas de conclure.
+
+**Pourquoi cette règle passe avant les autres :** le registre d'erreurs ne protège
+que la session qui l'a fetché. Sans fetch, les leçons déjà écrites sont invisibles —
+et on les recommet. C'est précisément comme ça qu'ERR-011 a été rejouée le 2026-09-14.
+<!-- END:codex-regle-fetch -->
