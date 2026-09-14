@@ -10,10 +10,10 @@ SNAPSHOT 2026-09-14 21h45 CEST : **Audit sentinelle complet + mise en place de l
 
 **ÉTAT AVANT SESSION.** Registres à jour côté décisions (ICP tranché, réunion du 21h15 consignée), passations corrigées à 21h16 par une session concurrente. Aucune donnée de sécurité des dépendances, aucun suivi des PR ouvertes.
 
-**ÉTAT APRÈS SESSION.** Six erreurs réelles consignées (ERR-016 → ERR-021), dont **deux CRITIQUES par escalade** (même cause racine sur 2 projets). Trois méta-leçons ajoutées. Aucune correction appliquée — tout attend le GO de Chaima.
+**ÉTAT APRÈS SESSION.** Sept erreurs réelles consignées (**ERR-019 → ERR-025**), dont **deux CRITIQUES par escalade** (même cause racine sur 2 projets). Quatre méta-leçons ajoutées. Aucune correction appliquée — tout attend le GO de Chaima.
 
 **DIFF RÉEL (factuel, pas d'intention) :**
-- `🔴 ERREURS.md` : +6 entrées (ERR-016 à ERR-021), +3 méta-leçons (9, 10, 11). 15 → **21 erreurs**.
+- `🔴 ERREURS.md` : +7 entrées (**ERR-019 à ERR-025**), +4 méta-leçons (12 à 15). 18 → **25 erreurs**. *Numéros initialement écrits 016→021, **renumérotés après collision** avec une session concurrente qui avait posé ses propres ERR-016/017/018 et ses méta-leçons 9/10/11 pendant que j'écrivais — voir ERR-025.*
 - `SUIVI_QUOTIDIEN.md` : créé (tableau de bord multi-projets, §3 de la consigne du 2026-09-14).
 - Aucun fichier applicatif touché. Aucune dépendance modifiée. Aucune PR ouverte ou fermée.
 
@@ -30,7 +30,7 @@ SNAPSHOT 2026-09-14 21h45 CEST : **Audit sentinelle complet + mise en place de l
 - **PRÉVU** (`ETAT.md` § Reste, veille) : inventaire LinkedIn 1er degré (ICP tranché, liste à produire) · poser `ANTHROPIC_API_KEY` · nettoyage Vercel · connecteur de source réel.
 - **RÉALISÉ** : aucun des quatre. Les quatre sont des **actions de Chaima**, pas des tâches d'agent.
 - **ÉCART, signalé explicitement :** la journée a produit **4 commits documentaires et 0 livrable applicatif**. Distinction §4 de la consigne : documenter une décision et consigner une erreur sont de l'**AVANCEMENT RÉEL** (livrable versionné, vérifiable) ; mais **aucun code, aucun contenu publié, aucun prospect contacté**. Le système a de nouveau produit ce qu'il peut produire seul, et bute sur les mêmes décisions humaines. C'est le constat que la cartographie du 18h45 posait déjà — il est inchangé 3 heures plus tard.
-- **Sécurité du jour :** rien d'exposé par le travail du jour (écritures documentaires uniquement) ; mais ERR-016 et ERR-021 sont **préexistantes et non traitées**.
+- **Sécurité du jour :** rien d'exposé par le travail du jour (écritures documentaires uniquement) ; mais ERR-019 (vulnérabilités) et ERR-024 (SIRET fabriqué) sont **préexistantes et non traitées**.
 
 Rien d'engagé. Aucune correction appliquée. **Toutes les SOLUTION_016 → SOLUTION_021 attendent un GO explicite.**
 
