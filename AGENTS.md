@@ -39,7 +39,7 @@ Une escalade qui ne nomme pas ce qui a déjà été livré est une escalade pré
 Le conteneur d'une session est un **instantané figé à sa création**. `git status`,
 `git branch -a`, `git log` et tout fichier du dépôt affichent cet instantané, pas
 l'état du serveur. Plusieurs sessions travaillent en parallèle sur ce dépôt : l'écart
-se creuse pendant que tu lis. Voir `🔴 ERREURS.md`, ERR-011 puis ERR-019 (récidive).
+se creuse pendant que tu lis. Voir `🔴 ERREURS.md`, ERR-011 puis ERR-020 (récidive).
 
 **`git fetch origin` est la PREMIÈRE commande de toute session qui touchera à git.**
 Avant `status`, avant `branch`, avant `checkout -b`, avant toute conclusion sur l'état

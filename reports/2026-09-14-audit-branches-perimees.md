@@ -70,7 +70,7 @@ gouvernance du protocole CODEX :
 | `codex/EVOLUTION.md` | §6.5 — **APPEND-ONLY** | Une réécriture depuis l'état périmé **viole la règle append-only** : des jalons disparaissent |
 | `📋 JOURNAL.md` | §5 — snapshots | Snapshots comparés à une base périmée → §5 conclut « aucun changement » alors que 12 commits ont eu lieu |
 
-C'est le mécanisme exact d'ERR-011 et d'ERR-019 : ce ne sont pas des lignes de code,
+C'est le mécanisme exact d'ERR-011 et d'ERR-020 : ce ne sont pas des lignes de code,
 ce sont les fichiers **qui portent les décisions**. Une session qui les réécrit depuis
 l'état périmé efface des arbitrages humains — le seul dommage que le protocole traite
 comme irréversible.
