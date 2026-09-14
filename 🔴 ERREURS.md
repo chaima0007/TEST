@@ -121,6 +121,14 @@
 - **Correctif (APPLIQUÉ 2026-09-14) :** (a) volet structurel d'ERR-016 livré — `lib/agents/garde-fou.ts`, appliqué aux trois agents, 78 tests verts, aucune sortie visible modifiée ; (b) **règle du découpage obligatoire** écrite dans `AGENTS.md`, fichier chargé à chaque session via `@AGENTS.md` (CLAUDE.md:316) — donc réellement déclenchée, contrairement à une simple note de registre.
 - **Prévention, sous forme de test :** *si la phrase d'escalade peut être remplacée par « j'ai fait X, il reste Y qui t'appartient », alors elle devait l'être.* Une escalade qui ne nomme pas ce qui a déjà été livré est prématurée.
 
+## ERR-019 — Périmètre écrit demandé à Chaima alors que PACTE le produisait déjà (2026-09-14)
+- **Ce qui s'est passé :** le rapport `reports/2026-09-14-2115-preparation-prospection.md` présente un « squelette de périmètre écrit » avec **7 points `À DÉCIDER`**, comme s'il n'existait rien. En réalité l'agent PACTE (`lib/agents/pacte.ts`) **produit déjà** un devis structuré qui répond à **4 des 7** : livrables inclus (`scope`), hors-périmètre explicite (`outOfScope`), délai avec son déclencheur nommé (« 1 à 2 semaines après validation **et réception de vos contenus** »), et révisions bornées (« un aller-retour inclus ; au-delà, sur devis complémentaire »). Le prix y est même mieux formulé que dans HERMES : « forfait tout compris ».
+- **Cause :** l'audit a porté sur `hermes.ts` et sur le compte rendu de la réunion, jamais sur la **sortie réelle** de PACTE. Le besoin a été reconstruit à partir du débat au lieu d'être confronté au code existant. C'est le §9 anti-doublon qui n'a pas été appliqué : vérifier l'existant **avant** de demander à produire.
+- **Conséquence :** du travail demandé à Chaima pour rien, sur un sujet où elle avait déjà tranché en écrivant le code.
+- **Détection :** audit de la sortie heuristique de RELANCE et PACTE, lancé pour ne pas répéter ERR-013 (périmètre filtré présenté comme un audit). Le même réflexe a donc attrapé une erreur d'une autre nature.
+- **Correctif (APPLIQUÉ 2026-09-14) :** rapport corrigé — il ne reste que **3 points réellement ouverts**, tous absents du code (vérifié par recherche : « propriété », « domaine », « code source », « 12 mois », « renouvellement » n'apparaissent nulle part dans `pacte.ts`) : propriété du domaine et du code après paiement · coût de l'hébergement une fois la période « incluse » écoulée · heures estimées de livraison (usage interne, jamais communiqué).
+- **Prévention :** avant de demander à Chaima de produire quoi que ce soit, **exécuter le code qui pourrait déjà le produire**. Un devis, un message, un rapport : si un agent le génère, lire sa sortie réelle, pas sa description.
+
 ---
 
 ### Motifs récurrents (méta-leçons)
@@ -130,6 +138,7 @@
 4. **Nos propres textes doivent respecter nos propres garde-fous** — les tester (ERR-006, ERR-007).
 5. **Secrets/config du dépôt ≠ code** : diagnostiquer via « échoue-t-il aussi sur un commit vide/doc ? » (ERR-010).
 6. **L'état du dépôt à l'ouverture n'est pas l'état du dépôt maintenant** — re-vérifier côté serveur avant tout commit et avant toute conclusion, surtout quand plusieurs sessions tournent en parallèle (ERR-011).
+12. **Lire la sortie, pas la description** — avant de demander de produire, exécuter ce qui produit peut-être déjà ; et auditer **tous** les agents concernés, pas seulement celui par lequel on est entré (ERR-019, ERR-013).
 11. **Découper avant d'escalader** — le §10 liste des actions humaines, pas des sujets contaminants ; livrer la part livrable AVANT de rendre la main, et nommer précisément ce qui reste (ERR-018).
 10. **Tout texte qui traverse un shell doit être quoté** — heredoc à délimiteur quoté par défaut ; un backtick non quoté est une substitution de commande, pas un caractère (ERR-017).
 9. **Un garde-fou se vérifie sur le chemin qui tourne, pas sur celui qu'on craignait** — placé au mauvais endroit, il rassure sans protéger, et le repli d'un contrôle ne doit jamais être la sortie non contrôlée (ERR-016).
