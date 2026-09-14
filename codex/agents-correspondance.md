@@ -1,6 +1,15 @@
 # /codex/agents-correspondance.md — réconciliation de `.claude/agents/` avec le set canonique
 
-> **2026-09-11 — TRANCHÉ PAR CHAIMA.** Referme la ligne ouverte le 2026-09-06 dans `/codex/A-DECIDER.md` :
+> ## ⚠️ DÉCISION CONTESTÉE — lire avant d'appliquer
+> Une décision **opposée** est consignée sur `main`, datée du même jour et signée de la même façon :
+> « `.claude/agents/` — **laisser en l'état**, aucun agent remplacé ni supprimé […] reconfirmée explicitement
+> par Chaima une fois la prémisse corrigée. **TRANCHÉ PAR CHAIMA.** »
+>
+> Ce document décrit donc une **proposition**, pas un état acquis. Elle ne prend effet que si Chaima merge la PR.
+> Tant qu'elle n'est pas mergée, `main` garde son set d'origine et c'est lui qui fait foi.
+> Voir la ligne « Contradiction » dans `/codex/A-DECIDER.md`.
+
+> **2026-09-11 — TRANCHÉ PAR CHAIMA** (verdict contesté, cf. ci-dessus)**.** Referme la ligne ouverte le 2026-09-06 dans `/codex/A-DECIDER.md` :
 > « Les 21 agents sont dérivés du §1 (NON VÉRIFIÉ comme officiels) ; **les remplacer par le set canonique
 > de l'Empire s'il existe** ». Il existe : c'est celui de `chaima0007/keywordmoneymaker`.
 
