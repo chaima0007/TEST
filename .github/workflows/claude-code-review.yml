@@ -4,9 +4,27 @@ name: Claude Code Review
 # Prérequis : définir le secret de dépôt ANTHROPIC_API_KEY
 # (Settings → Secrets and variables → Actions → New repository secret).
 
+# DESACTIVE le 2026-09-11 par decision de Chaima (voir /codex/A-DECIDER.md).
+# Motif : faute du secret ANTHROPIC_API_KEY, le check « Revue automatique »
+# finissait en `failure` sur CHAQUE PR, y compris sur un commit purement
+# documentaire (voir 🔴 ERR-010). Un rouge permanent qui ne relit rien bruite
+# le gate sans rien apporter. ERR-010 laissait le choix entre poser le secret
+# et rendre le workflow non bloquant : c'est la seconde option qui est retenue,
+# de facon temporaire.
+#
+# POUR REACTIVER (dans cet ordre) :
+#   1. Poser le secret ANTHROPIC_API_KEY
+#      (Settings -> Secrets and variables -> Actions -> New repository secret).
+#   2. Retablir le declencheur automatique en decommentant les 2 lignes ci-dessous.
+#   3. Verifier sur une PR de test que la revue poste bien des commentaires.
+#
+# `workflow_dispatch` n'est present que parce qu'un workflow doit avoir au moins
+# un declencheur : un lancement manuel ne produit rien (le job est filtre par
+# `if:` sur github.event.pull_request, nul hors PR). Le workflow est inerte.
 on:
-  pull_request:
-    types: [opened, synchronize]
+  workflow_dispatch:
+  # pull_request:
+  #   types: [opened, synchronize]
 
 jobs:
   claude-review:

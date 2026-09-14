@@ -8,8 +8,8 @@
 ## 1. État général
 
 - **Repo** : `chaima0007/test`
-- **Branche de travail** : `claude/nexus-market-agents-63dlku` (NE PAS pousser ailleurs sans accord)
-- **Pull Request** : #1 → `main` — https://github.com/chaima0007/TEST/pull/1 (ouverte, pas encore mergée)
+- **Branche de travail** : ~~`claude/nexus-market-agents-63dlku`~~ — **PR #1 MERGÉE le 2026-09-11** (`9cc15c2f`). Cette branche est close : **partir de `main`**, pas d'elle.
+- **Pull Request** : #1 → `main` — https://github.com/chaima0007/TEST/pull/1 (**mergée**)
 - **Stack** : Next.js 16 + TypeScript + Prisma (SQLite via adapter libsql) + Tailwind + next-auth
 - **Qualité actuelle** : 33 tests verts · `lint` 0 erreur · `tsc` 0 erreur · `build` OK
 

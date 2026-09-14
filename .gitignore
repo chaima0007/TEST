@@ -44,3 +44,13 @@ next-env.d.ts
 dev.db
 prisma/dev.db
 .tmp-test*.db
+
+# Données de prospection — PERSONNES RÉELLES. Ce dépôt est PUBLIC.
+# Ne JAMAIS committer une liste de prospects : noms, entreprises, villes et
+# signaux observés sont des données personnelles (RGPD art. 4.1).
+# Le modèle vide est dans reports/ ; le fichier REMPLI reste local.
+prospects.md
+prospects.csv
+prospects-*.md
+prospects-*.csv
+/data/prospects*
