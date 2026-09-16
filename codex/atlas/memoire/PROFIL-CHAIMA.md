@@ -16,9 +16,17 @@
 | **Exige qu'on ne la flatte pas** | Dire la vérité même quand elle dérange ; se contredire quand c'est justifié. | 2026-09-16 | **ACTIF** |
 | **Objectif final : être autonome**, pilote de son système | Chaque étape la rend capable de la refaire seule. Pas de dépendance à moi. | 2026-09-16 | **ACTIF** |
 
+## Ce qui est PLAUSIBLE — raisonné, pas confirmé (§13)
+
+| Fait | Fiabilité | Origine | Comment ça devient VÉRIFIÉ |
+|---|---|---|---|
+| **Son OS est Windows** | **MODÉRÉE** | Chaima, 2026-09-16 : « **je pense** windows » — une impression, pas un constat. Converge avec le `Guide_Examen_MQ06` du Drive (cursus Windows Server), qui reste un exercice d'école et ne prouve rien sur sa machine. | La commande PowerShell du 2026-09-16 : si elle s'exécute, c'est Windows ; si elle échoue, ce n'en est pas. **La commande est sa propre preuve.** |
+
+Traiter « je pense Windows » comme un fait serait la faute R-009 sous une autre forme.
+
 ## Ce qui est NON VÉRIFIÉ — et le restera tant qu'elle ne l'aura pas dit
 
-- **Son OS** (Windows / macOS / Linux) — **bloquant**, rien ne peut être installé sans.
+- **Son OS, confirmé** (Windows / macOS / Linux) — **bloquant**, rien ne s'installe sans.
 - **RAM, VRAM, modèle de carte graphique, disque libre** — **bloquant** pour le choix du modèle.
 - **Son usage n°1**, le cas concret qui doit marcher en premier.
 - **Budget** : temps par semaine, argent.

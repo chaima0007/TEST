@@ -30,4 +30,8 @@
   disponible ne modifie que le titre et l'emplacement d'un document, pas son contenu. Sans
   conséquence — le document dit lui-même que **le dépôt a raison** — et corrigé à la première
   remontée réelle. Signalé plutôt que tu, conformément au §5.
+- **OS : « je pense windows » (Chaima, 2026-09-16).** Consigné **PLAUSIBLE, fiabilité
+  MODÉRÉE** — pas VÉRIFIÉ. Une commande PowerShell lui a été donnée, choisie pour être **sa
+  propre preuve** : si elle s'exécute, c'est Windows ; si elle échoue, ce n'en est pas. Aucune
+  installation ne partira d'une impression.
 - **Rien installé, rien acheté, rien engagé.**
