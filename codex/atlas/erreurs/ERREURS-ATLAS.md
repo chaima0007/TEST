@@ -13,6 +13,29 @@
 
 ---
 
+## ERR-ATLAS-003 — `printf` a dévoré le message de commit à « −10 % » (2026-09-16)
+
+- **Ce qui s'est passé :** message de commit construit avec `printf` ; le shell s'arrête à
+  `%,` et renvoie `printf: ',': invalid format character`. Le commit `c90a341` est parti avec
+  **4 lignes sur 30**. Contenu des fichiers intact — seul le message est amputé.
+- **Cause (CONFIRMÉE par le message d'erreur) :** dans `printf`, `%` introduit un format.
+  `−10 %, sans` est lu comme la directive `%,`, qui n'existe pas. Rien à voir avec l'accent
+  ou le caractère `−`.
+- **Parenté :** c'est le **cousin d'🔴 ERR-017** (backticks interprétés par le shell dans un
+  `commit -m`), déjà consignée sur ce dépôt. Même famille : *le texte français passe par une
+  moulinette shell qui a ses propres caractères magiques.* La leçon d'ERR-017 avait été tirée
+  pour les backticks seulement — trop étroitement.
+- **Détection :** `printf: '…': invalid format character` juste avant un `git commit` qui
+  réussit quand même. **Le commit ne rate pas** : c'est ce qui rend l'erreur silencieuse.
+  Vérifier avec `git log -1 --format=%B`.
+- **Correctif (VÉRIFIÉ) :** ne plus jamais construire un message de commit avec `printf`.
+  Écrire le message dans un fichier par **heredoc `<<'MSG'`** (guillemets simples = aucune
+  interprétation), puis `git commit -F fichier`. C'est ce qui était fait pour les premiers
+  commits de ce projet, et qui marchait.
+- **Non corrigé volontairement :** le message tronqué **reste tel quel**. Le réparer imposerait
+  un `--amend` + `push --force`, interdits par **R-002**. Une règle qu'on contourne « juste
+  cette fois » est une règle morte — et la vérité est dans les fichiers, pas dans le message.
+
 ## ERR-ATLAS-002 — Le bloc de commande invitait à être recollé (2026-09-16)
 
 - **Ce qui s'est passé :** après le téléchargement du modèle, Chaima a collé
