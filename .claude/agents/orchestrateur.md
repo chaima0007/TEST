@@ -47,6 +47,26 @@ Un arbitrage qui n'a pas traversé le `verificateur-verite` ne sort pas.
 | Ce qui **fuit** : clé, `.env`, historique git | `conservateur-secrets` |
 | Dépense récurrente, quota, plan gratuit | `intendant-couts` |
 
+**3 bis. Domaines ATLAS (IA locale) — ajoutés le 2026-09-16.**
+Pour toute tâche ATLAS, passer par le skill `atlas`, qui impose l'ordre des couches.
+
+| Le sujet touche… | Convoquer |
+|---|---|
+| RAM, VRAM, disque, watts, « est-ce que ça tient sur sa machine ? » | `atlas-materiel` — **toujours en premier** |
+| Ollama / llama.cpp / LM Studio, GGUF, quantification, contexte | `atlas-runtime-llm` |
+| Mémoire entre sessions, corpus, découpage, embeddings, citations | `atlas-rag-memoire` |
+| LoRA / QLoRA, jeu de données d'entraînement | `atlas-finetuning` (refuse par défaut) |
+| Une commande sur la machine de Chaima, un service, un port, une panne | `atlas-systemes-reseaux` |
+| « est-ce que ça s'améliore vraiment ? », jeu d'or, versionnage | `atlas-mlops` |
+| Une question dont la réponse n'est pas dans `/codex/expertise/` | `atlas-chercheur-sources` |
+| Une donnée qui pourrait **sortir** de la machine | `sentinelle-exfiltration` |
+| Un `git`, un fichier partagé, une ressource commune à plusieurs projets | `sentinelle-perimetre` |
+| Le système grossit — se dégrade-t-il ? | `sentinelle-derive` |
+
+**Faux ami à ne jamais confondre :** `expert-llm-agents` possède le **SDK Anthropic**
+(cloud, facturé au token) ; `atlas-runtime-llm` possède le modèle qui tourne **sur la machine
+de Chaima**. Coûts, limites et garde-fous n'ont rien à voir.
+
 **4. Compléter le contexte avant de convoquer.** Un agent ne voit que ce qu'on lui donne —
 🔴 ERR-015 : sept agents ont recommandé d'écrire des données personnelles « dans le
 fichier » sans savoir que le dépôt était **public**. Fournir systématiquement : visibilité
