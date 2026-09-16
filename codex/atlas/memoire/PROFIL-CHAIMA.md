@@ -60,10 +60,73 @@ propres données le même jour : deux questions de droit, deux échecs, une inst
 architecture déjà en place — 3 sentinelles, jeu d'or, journal d'apprentissage, règles
 apprises, remontée Drive. Sur ce point Chaima avait raison avant moi ; rien à corriger.
 
+## Le temps de Chaima — MESURÉ, faute d'avoir pu être estimé (2026-09-16)
+
+**Chaima, 2026-09-16 :** *« ce que je pourrais faire à travers le temps que j'ai, je ne peux
+pas estimer. »* Réponse honnête, et **information en soi** : un temps régulier s'estime. Un
+temps qui ne s'estime pas est généralement un temps **irrégulier**.
+
+Plutôt que de redemander, l'activité réelle a été **mesurée** sur les horodatages git — une
+donnée qui existait déjà et que personne n'avait regardée.
+
+### Ce que disent les horodatages (`git log --all --since="8 weeks ago"`)
+
+**6 jours actifs sur 56.** Amplitude du premier au dernier commit de chaque jour :
+
+| Jour | Amplitude | Commits |
+|---|---|---|
+| 2026-08-10 | instantané | 1 |
+| 2026-09-06 | 20h41 → 21h23 — **42 min** | 17 |
+| 2026-09-10 | 10h22 → 14h08 — **3 h 46** | 5 |
+| **2026-09-11** | 10h02 → 21h19 — **11 h 17** | 40 |
+| 2026-09-14 | 18h50 → 20h44 — **1 h 54** | 32 |
+| 2026-09-16 | 12h25 → 16h11 — **3 h 46** (en cours) | 19 |
+
+**Total ≈ 21 h 30 sur 8 semaines.**
+
+### Les deux lectures, toutes deux exactes — et c'est le point
+
+| Fenêtre | Moyenne |
+|---|---|
+| Les 8 semaines | **≈ 2 h 40 / semaine** |
+| Les 11 derniers jours (5 des 6 jours actifs) | **≈ 13 h / semaine** |
+
+**Le temps de Chaima n'est pas un débit hebdomadaire. Ce sont des rafales.** Cinq des six
+jours actifs tiennent dans les onze derniers jours ; avant, presque rien. Aucune moyenne ne
+décrit honnêtement ça — voilà pourquoi elle ne pouvait pas l'estimer. **Elle avait raison de
+ne pas répondre par un chiffre.**
+
+**Forme typique d'une rafale : 2 à 4 heures.** Une seule journée à 11 h, isolée.
+
+### Réserves, à ne pas perdre de vue
+
+1. **L'amplitude est un MAJORANT, pas du temps de travail.** Elle inclut les pauses. Le temps
+   réellement passé est inférieur — inconnu de combien.
+2. **Les commits sont produits par un agent**, pas par Chaima. Ils ne mesurent sa présence que
+   parce qu'une session ne tourne pas sans elle. Proxy, pas mesure directe.
+3. **Ce dépôt seulement.** Ce qu'elle fait ailleurs n'apparaît pas.
+4. Verdict §13 : **PLAUSIBLE, fiabilité ÉLEVÉE** sur la *forme* (irrégulière, par rafales de
+   2-4 h) ; **NON VÉRIFIÉ** sur le *volume* réel.
+
+### Ce que ça change pour D-001 — c'est décisif
+
+**Une personne qui travaille par rafales irrégulières de 2 à 4 heures ne peut pas tenir
+plusieurs fronts.** Chaque reprise commence par se rappeler où on en était. Avec 38 branches
+et une quinzaine de projets, une part importante de chaque rafale est consommée **avant** que
+le travail ne commence.
+
+**Et ça nomme enfin la valeur réelle d'ATLAS**, qui n'était jusqu'ici qu'une intuition :
+sa fonction n'est ni d'écrire du code, ni de savoir des choses — **c'est de rendre la reprise
+quasi gratuite.** Reprendre en cinq minutes au lieu d'une heure, sur un temps en rafales,
+n'est pas un confort : **c'est ce qui décide si la rafale produit quelque chose ou pas.**
+
+C'est exactement ce que l'arbitre recommandait — réduire le coût de décision — mais pour un
+motif qu'il n'avait pas : non pas l'engorgement (réfuté), **la fragmentation**.
+
 ## Ce qui est NON VÉRIFIÉ — et le restera tant qu'elle ne l'aura pas dit
 
 - **Son usage n°1**, le cas concret qui doit marcher en premier.
-- **Budget** : temps par semaine, argent.
+- **Budget argent** — jamais évoqué.
 - **Exigence de confidentialité** : 100 % local, ou cloud toléré pour certaines tâches.
 - **Où vivent ses données** sur la machine.
 

@@ -243,6 +243,37 @@ d'or n'existe pas (R-006). (4) Son objection « une IA locale n'immatricule pas 
 reçoit son garde-fou manquant : **échéance de réexamen datée au 2026-11-16** — si les dossiers
 n'ont rien débloqué à cette date, l'arbitrage se rouvre.
 
+#### Post-arbitrage — l'hypothèse centrale a été MESURÉE (2026-09-16, même jour)
+
+Les deux camps s'appuyaient en sens opposé sur le temps de Chaima sans le connaître ; le
+vérificateur en faisait son premier NON VÉRIFIÉ. Interrogée, Chaima répond qu'elle **ne peut
+pas l'estimer**. L'activité a donc été **mesurée** sur les horodatages git, au lieu d'être
+redemandée. Détail : `../memoire/PROFIL-CHAIMA.md`.
+
+**Résultat : 6 jours actifs sur 56, ≈ 21 h 30 au total, en rafales de 2 à 4 h.** Cinq des six
+jours tiennent dans les onze derniers. **Ce n'est pas un débit hebdomadaire, ce sont des
+rafales** — d'où l'impossibilité sincère d'estimer.
+
+**Effet sur l'arbitrage : il le renforce, mais en remplaçant encore une fois le motif.**
+
+| Motif | Statut |
+|---|---|
+| « Le débit de décisions déborde » (arbitre) | **RÉFUTÉ** — 10 ouvertes / 8 tranchées |
+| « Aucun message prospect jamais envoyé » + §14 prudence | **TIENT** |
+| **« Le temps est fragmenté en rafales de 2-4 h »** | **NOUVEAU — PLAUSIBLE, fiabilité ÉLEVÉE** |
+
+Une rafale de 2 à 4 heures ne permet pas de tenir plusieurs fronts : la reprise mange le début
+de chaque session, et 38 branches rendent cette reprise coûteuse. **Le gel n'est plus une
+mesure de discipline, c'est une conséquence arithmétique de la forme du temps disponible.**
+
+Et cela **nomme la valeur d'ATLAS** que trois agents avaient cherchée sans la trouver : ni
+écrire du code, ni savoir des choses — **rendre la reprise quasi gratuite**. Sur un temps en
+rafales, c'est ce qui décide si la rafale produit quelque chose.
+
+**Ce que l'avocat y gagne encore :** son argument du socle mutualisé se trouve confirmé par un
+chemin qu'il n'avait pas emprunté — un socle qui supprime le coût de reprise **est** le seul
+investissement qui rentabilise un temps fragmenté.
+
 #### Le fait unique qui départagera
 
 > **La date du premier message envoyé à un prospect réel.**
