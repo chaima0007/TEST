@@ -6,6 +6,25 @@
 
 ---
 
+## SNAPSHOT 2026-09-16 (5) — L'IA locale RÉPOND. Première mesure, première hallucination.
+
+- **Couche 1 complète et fonctionnelle. VÉRIFIÉ.** `qwen2.5:3b` téléchargé (1,9 Go) et
+  répondant sur la machine de Chaima. Le système existe.
+- **Première mesure réelle : `eval rate` = 8,10 tokens/s** — environ 2× la vitesse de la
+  parole, un paragraphe en 20 à 30 secondes. **Mesure à froid**, donc le **meilleur** cas :
+  sur une puce mobile 15 W qui se bride, la mesure après 10 min de charge sera plus basse et
+  reste à faire. Les estimations de `memoire/MACHINE.md` sont remplacées par ce relevé.
+- **Le modèle a halluciné au premier échange** : il a déclaré fautive une commande correcte et
+  inventé un nom de modèle inexistant (`qwen-2.5-v1:3b`), avec une assurance parfaite, en
+  anglais. **Consigné comme le relevé le plus instructif du projet** (`mesure/JEU-D-OR.md`) :
+  un 3B ne sait pas, il produit du plausible — ce qui démontre sur ses propres données
+  pourquoi le corpus est le cœur d'ATLAS, et referme le débat sur le fine-tuning pour un
+  second motif, démontré cette fois.
+- **ERR-ATLAS-002** : mon bloc de commande était le dernier élément copiable avant l'invite du
+  modèle — face à une invite, on recolle ce qu'on a sous la main. Règle **R-011** posée.
+- **Décision qui approche** : rester en 3B (rapide, invente plus) ou passer en 7B (meilleur en
+  français, projeté à 3-4 tokens/s). **Se tranchera sur le jeu d'or, pas sur une préférence.**
+
 ## SNAPSHOT 2026-09-16 (4) — Couche 1 posée : Ollama installé et lancé
 
 - **Ollama installé et en fonctionnement. VÉRIFIÉ** par capture d'écran de l'application

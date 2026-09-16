@@ -50,19 +50,42 @@ bat un gros modèle qui répond de mémoire.**
 
 Le fine-tuning étant matériellement fermé, il n'y a plus d'ambiguïté sur où investir l'effort.
 
-## Estimations de débit — NON VÉRIFIÉES, à mesurer (R-003)
+## Débit — PREMIÈRE MESURE RÉELLE (2026-09-16)
 
-Ordres de grandeur **raisonnés** à partir de la bande passante mémoire, **jamais mesurés sur
-cette machine**. Ils servent à choisir quoi tester en premier, **pas** à promettre un résultat.
+**Relevé sur la machine de Chaima**, sortie `--verbose` d'Ollama, capture d'écran à l'appui.
+Modèle `qwen2.5:3b` (1,9 Go téléchargés).
 
-| Taille de modèle (quantifié Q4) | Poids en mémoire | Attente raisonnée | Fiabilité |
+| Mesure | Valeur | Ce que ça veut dire |
+|---|---|---|
+| **`eval rate`** | **8,10 tokens/s** | **Vitesse d'écriture.** Environ 2× la vitesse de la parole humaine |
+| `prompt eval rate` | 21,34 tokens/s | Vitesse de **lecture** de la question |
+| `eval count` / `eval duration` | 154 tokens en 19,0 s | Un paragraphe ≈ **20 à 30 secondes** |
+| `load duration` | 4,4 ms | Modèle déjà en mémoire — pas de rechargement |
+
+**RÉSERVE MAJEURE, à ne pas oublier : c'est une mesure À FROID.** Premier échange, machine
+qui n'avait pas encore chauffé. Sur une puce mobile 15 W qui se bride en charge, **c'est le
+meilleur cas, pas le cas courant.** Verdict §13 : **VÉRIFIÉ pour un premier échange**,
+**NON VÉRIFIÉ** pour une conversation longue. La mesure après 10 minutes de charge reste à
+faire, et elle sera plus basse.
+
+**Honnêteté sur mon estimation :** j'avais annoncé « utilisable, lecture fluide » pour un 3B,
+en fiabilité MODÉRÉE. 8,10 tokens/s tombe dans cette fourchette. L'estimation était juste —
+ça ne la transforme pas en méthode : c'est la mesure qui fait foi, et elle n'était pas connue
+d'avance.
+
+## Projection pour un modèle plus gros — NON VÉRIFIÉE
+
+Sur processeur, la vitesse dépend surtout de la taille du modèle en mémoire. En proportion de
+la mesure ci-dessus :
+
+| Modèle | Poids | Projection | Fiabilité |
 |---|---|---|---|
-| 3 milliards de paramètres | ~2 Go | utilisable, lecture fluide | **MODÉRÉE** |
-| 7-8 milliards | ~4,5 Go | lent mais praticable | **MODÉRÉE** |
-| 13 milliards et + | ~8 Go et + | trop lent pour un usage réel | **MODÉRÉE** |
+| 3 milliards (`qwen2.5:3b`) | 1,9 Go | **8,10 tokens/s — MESURÉ** | **VÉRIFIÉ (à froid)** |
+| 7-8 milliards | ~4,5 Go | de l'ordre de 3 à 4 tokens/s | **MODÉRÉE** |
 
-**Le chiffre qui comptera est celui mesuré sur la machine de Chaima, après 10 minutes de
-charge.** Tout ce tableau est à remplacer par des mesures dès la couche 1 installée.
+**3 à 4 tokens/s, c'est sous la vitesse de la parole.** Un paragraphe demanderait environ une
+minute. Le compromis à trancher est donc réel : **qualité en français contre attente**. Il se
+tranchera sur une mesure et sur le jeu d'or, pas sur une préférence.
 
 ## Conséquences pratiques, non négociables
 

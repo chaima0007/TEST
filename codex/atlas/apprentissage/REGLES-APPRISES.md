@@ -19,6 +19,7 @@
 | R-008 | **Chercher dans le Drive avant de dire qu'une information manque — et la créer si elle n'existe pas.** Ne jamais renvoyer Chaima vers une information qu'on pouvait aller chercher ou préparer soi-même. | Correction de Chaima, 2026-09-16 | Méthode | 2026-09-16 | **ACTIVE** |
 | R-009 | **Ne jamais déduire une caractéristique de la machine d'un document d'école, d'un exemple ou d'un voisinage.** Un exercice Windows Server dans le Drive ne dit rien de l'OS de Chaima. Cherché ≠ supposé. | Constat du 2026-09-16 | Matériel | 2026-09-16 | **ACTIVE** |
 | R-010 | **Toute instruction destinée à Chaima doit contenir le repère qui lui dit où elle est.** Ne pas dire « ouvre PowerShell » mais « tape `powershell` dans la fenêtre ouverte, tu dois voir `PS` avant le curseur ». Et la section « si ça rate » doit contenir **l'échec réel**, pas trois échecs plausibles. | ERR-ATLAS-001 | Méthode / Systèmes | 2026-09-16 | **ACTIVE** |
+| R-011 | **Une commande qui ouvre une session interactive s'annonce comme telle** : « cette commande est finie, ne la recolle pas — désormais tu parles au modèle ». Et jamais un bloc copiable comme dernier élément avant une invite : face à une invite, on recolle ce qu'on a sous la main. | ERR-ATLAS-002 | Méthode / Systèmes | 2026-09-16 | **ACTIVE** |
 
 ---
 

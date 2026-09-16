@@ -43,9 +43,12 @@
 1. ~~Fiche matériel~~ — **FAIT** (`memoire/MACHINE.md`).
 2. ~~Couche 1 — installer le moteur~~ — **FAIT le 2026-09-16** : Ollama installé et lancé,
    VÉRIFIÉ par capture d'écran. Geste de Chaima (§10).
-3. **Couche 1, suite : télécharger un premier modèle 3B quantifié**, puis **mesurer** le débit
-   réel (`--verbose`) sur secteur, après 10 min de charge, et remplacer les estimations de
-   `memoire/MACHINE.md` par des mesures.
+3. ~~Couche 1, suite : premier modèle + mesure~~ — **FAIT le 2026-09-16.** `qwen2.5:3b`
+   répond. **8,10 tokens/s mesurés à froid.** Reste : la mesure **après 10 min de charge**,
+   qui sera plus basse et qui est la vraie.
+4. **Figer le jeu d'or** (R-006) — 20 à 30 questions réelles de Chaima. **À faire avant tout
+   autre changement**, y compris avant d'essayer un modèle plus gros : sans « avant », la
+   comparaison 3B/7B ne voudra rien dire.
 3. **Jeu d'or figé AVANT tout autre changement** (`atlas-mlops`) — sinon aucun progrès ne sera
    mesurable ensuite. Non négociable, c'est l'étape qu'on ne peut pas rattraper après coup.
 4. Couche 2 — interface.

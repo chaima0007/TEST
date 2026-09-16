@@ -13,6 +13,25 @@
 
 ---
 
+## ERR-ATLAS-002 — Le bloc de commande invitait à être recollé (2026-09-16)
+
+- **Ce qui s'est passé :** après le téléchargement du modèle, Chaima a collé
+  `ollama run qwen2.5:3b --verbose` **dans l'invite `>>>` du modèle**, au lieu d'y écrire une
+  question. Le modèle a traité la commande comme une question et a répondu à côté.
+- **Cause :** l'instruction disait bien « quand tu vois `>>>`, écris-lui une vraie question ».
+  Mais **le dernier élément copiable de mon message était la commande elle-même**. Face à une
+  invite qui attend quelque chose, on recolle ce qu'on a sous la main. L'instruction était
+  juste ; **sa mise en page disait le contraire.**
+- **Détection :** le modèle répond *à propos de la commande* au lieu d'y obéir. Autrement dit,
+  l'invite `>>>` n'est plus PowerShell : **elle ne prend plus de commandes, seulement du
+  texte adressé au modèle.**
+- **Correctif :** dire explicitement, à chaque commande qui ouvre une session interactive :
+  **« cette commande est finie, ne la recolle pas — désormais tu parles au modèle. »** Et ne
+  jamais laisser un bloc de commande comme dernier élément copiable avant une invite.
+- **Conséquence heureuse :** l'erreur a produit le relevé le plus instructif du projet — le
+  modèle a inventé un nom de modèle inexistant avec une assurance totale
+  (`../mesure/JEU-D-OR.md`). Ça ne rachète pas le défaut d'instruction, mais ça se consigne.
+
 ## ERR-ATLAS-001 — L'instruction a envoyé Chaima dans la mauvaise fenêtre (2026-09-16)
 
 - **Ce qui s'est passé :** instruction donnée — « touche Windows, taper `powershell`, Entrée ».
