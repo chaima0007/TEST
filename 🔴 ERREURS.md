@@ -151,6 +151,15 @@
 
 
 
+## ERR-022 — Le garde-fou écrit contre ERR-021 n'est lui-même pas en vigueur (2026-09-16)
+- **Ce qui s'est passé :** Chaima demande « pourquoi rien n'a changé ? ». Réponse mesurée : **rien n'a changé sur `main`**, qui est resté à `70e657b6` du 2026-09-14 au 2026-09-16. Les 8 commits de la session d'audit — ERR-020, ERR-021, la règle du `git fetch`, le rapport d'audit des branches, le snapshot du JOURNAL — vivent sur `codex/err-019-branche-perimee`, **jamais mergée**. `main` est le seul état que quiconque lit ; il n'a rien reçu.
+- **Cause :** l'agent a confondu **pousser** et **livrer**. Le merge vers `main` est strictement humain (§10) : l'agent n'avait pas le droit de le faire, et ne devait pas le faire. Le défaut est ailleurs — le rapport de fin de session a énuméré des branches et des SHA, **sans jamais dire la seule phrase qui comptait** : « rien de tout ceci n'atteindra `main` tant que tu ne l'auras pas mergé ». Une passation qui laisse croire que le travail est livré alors qu'il est seulement poussé est une passation fausse.
+- **Aggravant — la boucle, deuxième tour :** l'entrée précédente, **ERR-021**, énonce exactement ce défaut (« écrit » n'est pas « en vigueur » ; un correctif sur une branche non mergée ne protège rien), et le motif récurrent 14 le nomme. L'agent l'a rédigée puis l'a immédiatement rejouée **sur son propre garde-fou**. Pire qu'ERR-020 : là, la leçon était invisible faute de `fetch` ; ici elle était **écrite par l'agent lui-même, dans le même fichier, le même jour**.
+- **Conséquence concrète et mesurée :** `git show origin/main:AGENTS.md | grep -c "codex-regle-fetch"` → **0**. Les sessions clonent la branche par défaut ; elles chargent donc l'`AGENTS.md` de `main`, qui ne contient pas la règle. **Le garde-fou censé empêcher ERR-011/ERR-020 de se reproduire ne protège aucune session.** Il est inerte depuis son écriture.
+- **Détection :** audit systématique des correctifs (2026-09-16) — chaque entrée du registre nommant un artefact a été testée contre `origin/main`. Résultat : **5 correctifs sur 7 réellement en vigueur** (ERR-001 `postinstall`, ERR-005 regex tolérante, ERR-010 workflow non bloquant, ERR-015 `.gitignore` prospects, ERR-018 règle du découpage) ; **2 absents** — `lib/agents/garde-fou.ts` (ERR-021, déjà consigné) et la règle du `git fetch` (la présente entrée).
+- **Correctif :** aucun qu'un agent puisse appliquer — **le merge vers `main` est à Chaima (§10)**. Ce qui est fait : (a) la présente entrée ; (b) `codex/CARTOGRAPHIE.md`, carte vivante exigée par le §1 et jusqu'ici inexistante, qui affiche en tête l'écart `main` ↔ branches pour que la question « pourquoi rien n'a changé ? » se réponde d'un coup d'œil ; (c) le test d'écart ajouté au rituel §5 du JOURNAL.
+- **Prévention, sous forme de test :** *un rapport de fin de session qui cite une branche doit dire, dans la même phrase, si son contenu est sur `main` ou non.* Formulation obligatoire : **« poussé sur X — PAS sur `main` tant que tu ne l'as pas mergé »**. « Poussé » seul est une demi-vérité ; « livré » pour du non-mergé est faux.
+
 ---
 
 ### Motifs récurrents (méta-leçons)
@@ -165,6 +174,7 @@
 10. **Tout texte qui traverse un shell doit être quoté** — heredoc à délimiteur quoté par défaut ; un backtick non quoté est une substitution de commande, pas un caractère (ERR-017).
 9. **Un garde-fou se vérifie sur le chemin qui tourne, pas sur celui qu'on craignait** — placé au mauvais endroit, il rassure sans protéger, et le repli d'un contrôle ne doit jamais être la sortie non contrôlée (ERR-016).
 8. **Un agent ne voit que le contexte qu'on lui donne** — une omission dans l'énoncé devient un angle mort dans la décision ; la visibilité du dépôt, le volume et le canal font partie de l'énoncé (ERR-015).
+15. **« Poussé » n'est pas « livré »** — le merge vers `main` est humain (§10) ; un rapport qui cite une branche doit dire dans la même phrase qu'elle n'est pas sur `main` (ERR-022).
 14. **« Écrit » n'est pas « en vigueur »** — un correctif sur une branche non mergée ne protège rien ; vérifier sa présence sur `main` avant d'écrire « APPLIQUÉ » (ERR-021).
 13. **`git fetch` avant tout le reste** — un registre d'erreurs ne protège que la session qui l'a fetché ; sans fetch, les leçons déjà écrites sont invisibles et on les recommet (ERR-020, récidive d'ERR-011).
 7. **Un résumé n'est pas une source ; un périmètre filtré n'est pas un audit** — recouper avec l'artefact d'origine, annoncer le périmètre, vérifier sur le fichier réel (ERR-012, ERR-013, ERR-014).
