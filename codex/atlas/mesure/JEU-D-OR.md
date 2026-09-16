@@ -9,7 +9,16 @@
 questions **identiques**, posées **avant** et **après** chaque changement. Sinon on compare le
 souvenir d'une réponse avec l'impression d'une autre, et on se ment.
 
-## Comment on le construit (quand l'ÉTAPE 0 sera close)
+## ✅ CONSTRUIT — `JEU-D-OR-QUESTIONS.md`, figé le 2026-09-16
+
+24 questions, 5 familles, barème sur 33 points. **D (hors corpus) et E (pièges d'invention)
+comptent double** — une erreur y est invisible pour qui ne connaît pas déjà la réponse.
+
+**Découverte qui a façonné la structure :** le modèle a refusé d'inventer un **chiffre** puis
+inventé une **institution** dans la même réponse. Une famille par **type** d'invention :
+chiffre · date · institution · article de loi · citation.
+
+## Le principe de construction (conservé pour mémoire)
 
 20 à 30 questions **réelles** de Chaima — celles qu'elle poserait vraiment, pas des questions
 inventées pour être réussies. Pour chacune : la question, la réponse attendue, et la source
@@ -136,6 +145,6 @@ le projet est en français.
 **Mesure de débit associée :** `eval rate` **8,10 tokens/s** — à froid, premier échange.
 Détail et réserves : `../memoire/MACHINE.md`.
 
-**Ce qui n'est PAS encore fait :** le jeu d'or lui-même. 20 à 30 questions réelles de Chaima,
-avec les réponses attendues, à figer **avant** tout autre changement (R-006). Cette entrée est
-une observation, pas un jeu d'or.
+**FAIT depuis** : le jeu d'or est **figé** — 24 questions en 5 familles, barème sur 33 points :
+`JEU-D-OR-QUESTIONS.md`. Les questions ne changeront plus (on peut en ajouter, jamais en
+retirer ni en modifier : modifier une question détruit toute comparaison passée).
