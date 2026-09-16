@@ -6,6 +6,30 @@
 
 ---
 
+## SNAPSHOT 2026-09-16 (8) — Parcours 2 complet : D-001 arbitré, amendé, inscrit
+
+- **Les 5 étapes du §8 faites, aucune sautée.** Avocat ⟂ contradicteur **dans le même message**,
+  puis simulateur, arbitre, vérificateur. Raisonnement intégral dans
+  `deliberations/DELIBERATIONS.md` §D-001 — dossier créé aujourd'hui à la demande de Chaima.
+- **Chaque étage a corrigé le précédent. C'est le résultat le plus important de la journée :**
+  - le **contradicteur** a été réfuté sur son fait central (ref git non rafraîchie, ERR-011 —
+    l'erreur qu'il citait lui-même) ;
+  - l'**arbitre** a corrigé **les deux camps** sur les comptages : 14 lignes ouvertes et non 13,
+    4 anciennes et non 11, 10 créées en 5 jours ;
+  - le **vérificateur** a refusé le motif central de l'arbitre : « aucune des 4 anciennes n'a
+    bougé » est **faux** (deux portent une trace datée), et « le goulot EST le débit » est une
+    **inférence** — contre-fait dans le même fichier : **8 décisions tranchées par Chaima sur
+    la même fenêtre de 5 jours** contre 10 ouvertes. **L'engorgement n'est pas établi.**
+- **Recommandation maintenue, motif remplacé, confiance abaissée à MODÉRÉE.** Elle ne tient
+  plus sur l'engorgement mais sur le §14 (verdict le plus prudent par défaut) et sur un fait
+  nu : **aucun message n'a jamais été envoyé à un prospect réel**.
+- **Autocritique consignée** : 2 des 10 lignes ouvertes en 5 jours ont été créées **par ATLAS
+  lui-même aujourd'hui**. L'agent qui plaide contre l'encombrement y contribue.
+- **Ligne inscrite dans `/codex/A-DECIDER.md`** (ajout seul, périmètre partagé respecté).
+  **Statut PROPOSÉ. Chaima tranche** — aucun agent n'a exécuté quoi que ce soit.
+- **Réexamen daté : 2026-11-16.** Fait unique qui départagera : la date du premier message
+  envoyé à un prospect réel.
+
 ## SNAPSHOT 2026-09-16 (7) — L'attente est arbitrée, pas gommée
 
 - **Chaima exprime son attente** : « une IA qui ressemble à Claude, à qui je peux tout

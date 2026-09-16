@@ -30,8 +30,9 @@ protocole interdit de la trancher d'un avis, *« même — surtout — pour une 
 parallèle : lancés l'un après l'autre, le second répond au premier, les positions convergent,
 et le désaccord réel — la seule information utile — disparaît.
 
-**Statut : EN COURS.** Avocat, contradicteur et simulateur ont rendu. Arbitrage lancé,
-vérification à suivre.
+**Statut : ARBITRÉ ET VÉRIFIÉ — en attente de décision de Chaima.** Les cinq étapes du §8 ont
+été faites, aucune sautée : avocat ⟂ contradicteur (même message), simulateur, arbitre,
+vérificateur. Ligne inscrite dans `/codex/A-DECIDER.md`.
 
 ---
 
@@ -153,11 +154,111 @@ chaîne, ce qui est le comportement attendu du §14.
 
 ---
 
+### L'arbitrage — et les amendements du vérificateur qui l'ont amputé
+
+**Ce que l'arbitre a apporté de neuf, et qui est VÉRIFIÉ (recompté deux fois) :**
+`A-DECIDER.md` compte **14 lignes ouvertes** (et non 13, comme l'avançaient l'avocat *et* le
+brief), dont **4 seulement** dépassent 14 jours (et non 11, comme l'avançait le
+contradicteur), et **10 ont été créées depuis le 2026-09-11** — cinq jours.
+**Les deux camps se trompaient de chiffre. L'arbitre non.**
+
+**Sa recommandation :** affecter ATLAS au **premier encaissement**, pas à la création. Sa
+production n'est pas du code mais la **réduction du coût de décision de Chaima** : des dossiers
+où chaque question arrive avec ses options et une option par défaut, pour qu'elle **choisisse**
+au lieu de chercher. Gel de tout nouveau projet jusqu'au premier message prospect envoyé.
+
+#### ⚠️ Son motif central a été REFUSÉ par le vérificateur
+
+L'arbitre concluait : *« le goulot est le DÉBIT de décisions adressées à Chaima »*, en
+s'appuyant sur 10 ouvertures en 5 jours et sur l'idée qu'*« aucune des 4 lignes anciennes n'a
+bougé »*.
+
+**Deux défauts, tous deux vérifiés dans `A-DECIDER.md` le 2026-09-16 :**
+
+1. **« Aucune des 4 anciennes n'a bougé » est FAUX.** Deux portent une trace datée d'activité :
+   « **Volet CI retiré le 2026-09-11** » et « Pause **reconfirmée par Chaima le 2026-09-11** ».
+   Formulation correcte : aucune n'a été **close** — ce qui n'est pas la même chose.
+2. **« Le goulot EST le débit » est une INFÉRENCE, pas un fait** — et un contre-fait vit dans
+   le même fichier : la section « Décisions tranchées » enregistre **8 décisions TRANCHÉES PAR
+   CHAIMA entre le 2026-09-11 et le 2026-09-16**. Même fenêtre de cinq jours.
+
+| Sur 5 jours (2026-09-11 → 2026-09-16) | Compté |
+|---|---|
+| Décisions **ouvertes** | **10** |
+| Décisions **tranchées par Chaima** | **8** |
+
+**Le débit de sortie n'est ni nul, ni effondré.** Il est du même ordre que l'entrée. La thèse
+de l'engorgement n'est **pas établie** — elle est **PLAUSIBLE, fiabilité MODÉRÉE**, et elle
+deviendrait VÉRIFIÉE (ou tomberait) avec un relevé hebdomadaire sur 4 semaines.
+
+#### Les autres amendements retenus
+
+| Ce que disait l'arbitrage | Amendement appliqué |
+|---|---|
+| « les **3** blocages §10 » | **2 lignes ouvertes, 3 volets.** Le moyen d'encaissement est un volet de la ligne facturation, pas une 3e ligne. Les deux datent du **2026-09-11**. |
+| « blocages **§10** » | Humains **de fait**, mais « immatriculer » et « choisir un moyen d'encaissement » ne figurent **pas littéralement** au §10 (test du découpage, `AGENTS.md`). |
+| « **mesurer** les heures de Chaima » | Aucun agent ne peut mesurer ça → **demander**. |
+| Garde-fou « plus de 3 lignes/semaine » | Le contradicteur écrivait « **N fixé par Chaima** ». L'arbitre a posé N=3 de lui-même, sans donnée de débit → **PROPOSÉ : N = 3, à fixer par Chaima** (§10). |
+| « réduction du coût de décision » | Effet **supposé, jamais mesuré** → **NON VÉRIFIÉ**, fiabilité FAIBLE. |
+| « 0 € / aucun revenu » | `VALUATION.md` porte « 0 client payant, 0 ARR, 0 MRR **au jour de l'analyse** » — **sans date de cette analyse**. Chiffre sans date (§13) → à redater. |
+| « **ATLAS est affecté** à… » | Présuppose une décision **non tranchée** (« Où vit ATLAS », ouverte le 2026-09-16). Un arbitrage ne peut pas affecter ATLAS avant que Chaima ne l'ait dit. → **PROPOSÉ**. |
+
+#### Contradiction interne relevée, et tranchée
+
+L'arbitrage **interdisait** à ATLAS tout contenu factuel sans jeu d'or, **et** lui confiait des
+dossiers « avec options chiffrées » sur le statut légal et les prix. **Un dossier chiffré EST
+du contenu factuel.**
+**Levée :** ces dossiers sont produits par la **chaîne d'agents CODEX** (sourcée, vérifiée,
+§14), **jamais par le modèle local** — dont les 2 relevés sur 2 sont en échec, avec une
+institution inventée. L'interdiction faite au modèle local tient sans réserve.
+
+#### Ce que la recommandation devient après amendements
+
+**Elle survit, mais pas pour la raison annoncée.** Le motif « le débit déborde » tombe. Restent,
+et ils suffisent :
+
+- **Aucun message n'a jamais été envoyé à un prospect réel.** Fait, pas interprétation.
+- **Deux lignes bloquent le premier euro depuis le 2026-09-11**, et aucune n'est technique.
+- **Le modèle local invente** — 2 relevés sur 2 en échec.
+- **Les heures de Chaima sont inconnues**, et les deux camps s'en servaient en sens opposé.
+- **§14 — le verdict le plus prudent gagne par défaut** quand les faits ne départagent pas.
+  Ne pas ouvrir de front nouveau est le verdict prudent. **Aucun écart à justifier.**
+
+**Confiance : MODÉRÉE** — abaissée par rapport à l'arbitre, qui la tenait sur une inférence.
+
+#### Ce que chaque camp a gagné (§8 — sinon la décision est gagnée, pas arbitrée)
+
+**AVOCAT.** (1) Rien n'est tué : le gel porte sur le **démarrage**, pas sur l'acquis ; le socle
+mutualisé et `/codex/expertise/` transverse (§4) continuent d'accumuler. (2) **Son critère de
+renversement devient la condition de sortie du gel** — un devis signé ou un client payant, et
+la création rouvre : c'est lui qui aura eu raison. (3) Son argument 1 est **retenu comme
+garde-fou** : Caelum, né *après* CompeteIQ, est précisément le projet qu'on finit — on ne mise
+pas sur le mort. (4) Son argument 3 (§4) est **intact** : l'expertise transverse ne s'arrête
+pas pendant le gel.
+
+**CONTRADICTEUR.** (1) Son point 2 (l'angle Humain du §9) devient **l'action n°1**. (2) Son
+garde-fou N est adopté, **mais rendu à Chaima** comme il l'écrivait. (3) Son point 4 devient
+une **interdiction ferme** : aucun contenu factuel produit par le modèle local tant que le jeu
+d'or n'existe pas (R-006). (4) Son objection « une IA locale n'immatricule pas une entreprise »
+reçoit son garde-fou manquant : **échéance de réexamen datée au 2026-11-16** — si les dossiers
+n'ont rien débloqué à cette date, l'arbitrage se rouvre.
+
+#### Le fait unique qui départagera
+
+> **La date du premier message envoyé à un prospect réel.**
+
+Absent au **2026-11-16** → la voie « créer » s'est réalisée d'elle-même, et le contradicteur
+avait raison.
+
+---
+
 ### Ce qui reste NON VÉRIFIÉ après les deux plaidoiries
 
 | Point | Pourquoi ça bloque l'arbitrage |
 |---|---|
-| **Heures réellement disponibles de Chaima par semaine** | C'est **l'hypothèse centrale** du dossier. Les deux camps s'en servent en sens opposé sans la connaître. |
+| **Heures réellement disponibles de Chaima par semaine** | **L'hypothèse centrale.** Les deux camps s'en servent en sens opposé sans la connaître. Aucun agent ne peut la mesurer — il faut la **demander**. |
+| **Le rapport réel entre entrée et sortie d'A-DECIDER** | 10 ouvertes / 8 tranchées sur 5 jours : trop proche pour conclure. Un relevé hebdomadaire sur 4 semaines trancherait. |
+| **La date de l'analyse « 0 € » de `VALUATION.md`** | Le fichier dit « au jour de l'analyse » sans dire quel jour. Chiffre sans date (§13). |
 | Qu'un euro soit jamais entré | Aucun revenu consigné. Les deux thèses sont non testées. |
 | Valeur des ~16 projets étrangers | Aucun n'est évalué. « 16 projets » n'est pas « 16 actifs ». |
 | Utilité réelle d'ATLAS pour Chaima | Le jeu d'or n'existe pas encore ; les 2 seuls relevés sont des échecs. |
