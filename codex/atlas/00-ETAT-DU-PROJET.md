@@ -41,9 +41,11 @@
 ## RESTE (dans l'ordre, une action à la fois)
 
 1. ~~Fiche matériel~~ — **FAIT** (`memoire/MACHINE.md`).
-2. Couche 1 — installer le moteur + un premier modèle **3B quantifié**, puis **mesurer** le
-   débit réel après 10 min de charge et remplacer les estimations de `MACHINE.md` par des
-   mesures. Installation = **décision et geste de Chaima** (§10).
+2. ~~Couche 1 — installer le moteur~~ — **FAIT le 2026-09-16** : Ollama installé et lancé,
+   VÉRIFIÉ par capture d'écran. Geste de Chaima (§10).
+3. **Couche 1, suite : télécharger un premier modèle 3B quantifié**, puis **mesurer** le débit
+   réel (`--verbose`) sur secteur, après 10 min de charge, et remplacer les estimations de
+   `memoire/MACHINE.md` par des mesures.
 3. **Jeu d'or figé AVANT tout autre changement** (`atlas-mlops`) — sinon aucun progrès ne sera
    mesurable ensuite. Non négociable, c'est l'étape qu'on ne peut pas rattraper après coup.
 4. Couche 2 — interface.

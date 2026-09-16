@@ -6,6 +6,23 @@
 
 ---
 
+## SNAPSHOT 2026-09-16 (4) — Couche 1 posée : Ollama installé et lancé
+
+- **Ollama installé et en fonctionnement. VÉRIFIÉ** par capture d'écran de l'application
+  ouverte (une application ne s'ouvre pas si elle n'est pas installée). Premier composant du
+  système local en place. **Geste de Chaima**, comme le veut le §10 — ATLAS a recommandé,
+  elle a exécuté.
+- **Alerte `sentinelle-exfiltration` levée à l'ouverture, avant tout clic** : la page d'accueil
+  de l'application est un catalogue d'**applications tierces à connecter** (Claude Code,
+  Codex CLI, Copilot CLI, Hermes, Cline…). Plusieurs sont des outils **cloud**. Le simple fait
+  qu'Ollama soit installé localement **ne rend pas local** ce qui s'y branche. Point de
+  vigilance inscrit : un système « local avec repli cloud » est cloud les jours où la question
+  est difficile (R-004).
+- **Aucun modèle téléchargé à ce stade.** Volontaire : on vérifie le moteur avant de dépenser
+  2 Go et du temps de diagnostic sur deux problèmes au lieu d'un.
+- **Aucune mesure de débit encore.** Les estimations de `memoire/MACHINE.md` restent
+  **NON VÉRIFIÉES** jusqu'au premier relevé réel, sur secteur, après 10 minutes de charge.
+
 ## SNAPSHOT 2026-09-16 (3) — Matériel VÉRIFIÉ, un palier fermé pour de bon
 
 - **Volet matériel de l'ÉTAPE 0 : CLOS.** Windows 11 Pro · **15,9 Go de RAM** ·

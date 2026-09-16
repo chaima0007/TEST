@@ -73,3 +73,19 @@ charge.** Tout ce tableau est à remplacer par des mesures dès la couche 1 inst
    matérielle n'est pas négligeable. C'est un argument de plus pour la règle des 3 copies
    (`../continuite/RESTAURATION.md`) — et pas un argument pour acheter quoi que ce soit, ce
    qui reste §10.
+
+---
+
+## Ce qui est installé sur cette machine
+
+| Logiciel | Version | Installé le | Statut | Comment le vérifier |
+|---|---|---|---|---|
+| **Ollama** | non relevée | 2026-09-16 | **VÉRIFIÉ** — application ouverte, capture d'écran | `ollama --version` dans PowerShell |
+
+**Modèles téléchargés :** aucun à ce jour. Les lister : `ollama list`.
+
+**Point de vigilance permanent (`sentinelle-exfiltration`) :** l'application Ollama propose de
+connecter des **outils tiers**, dont plusieurs sont des services **cloud**. Ollama installé
+localement ne rend pas local ce qui s'y branche, et un compte connecté peut ouvrir l'accès à
+des modèles distants. **« Local » ne se déclare pas, il se vérifie** : tant qu'aucune
+observation du trafic sortant n'a été faite, la souveraineté des données est **NON VÉRIFIÉE**.
