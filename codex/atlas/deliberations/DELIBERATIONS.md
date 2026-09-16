@@ -17,6 +17,90 @@
 
 ---
 
+## ⚠️ FAIT BLOQUANT — e-facturation Peppol obligatoire (2026-09-16)
+
+> **Pas une délibération : un fait vérifié, consigné ici parce qu'il rouvre une décision.**
+> Vérifié **deux fois** : par `atlas-chercheur-sources`, puis **réouvert et relu directement
+> par l'orchestration** sur la source primaire — R-013 vaut d'abord pour soi.
+
+### Ce qui est VÉRIFIÉ — pages officielles lues le 2026-09-16
+
+**Source : `efacture.belgium.be` (portail fédéral belge).**
+
+Article du **09-10-2024** — `/fr/article/pour-qui-la-facturation-electronique-deviendra-t-elle-obligatoire` :
+
+> « À partir du 1er janvier 2026, toutes les entreprises belges assujetties à la TVA devront
+> utiliser des factures électroniques structurées entre elles. […] **L'envoi d'une facture en
+> format pdf par e-mail ou par plate-forme ne suffira donc plus.** »
+>
+> « **Avez-vous un numéro de TVA actif ?** Si c'est le cas, cette obligation s'applique
+> également à votre entreprise. »
+>
+> « **L'obligation s'applique donc également si vous utilisez le régime de la franchise de
+> taxe pour les petites entreprises** (si le chiffre d'affaires annuel de votre entreprise ne
+> dépasse pas 25.000 euros) »
+
+Communiqué du **07-04-2026** — `/fr/news/fin-de-la-periode-de-tolerance-pour-le-facturation` :
+
+> « Des informations ont été récemment communiquées dans les médias concernant l'application
+> de l'obligation […] pour les assujettis relevant du régime de la franchise. **Afin d'éviter
+> toute mauvaise interprétation, nous souhaitons préciser que ces assujettis sont en principe
+> également soumis à cette obligation.** »
+>
+> « La période générale de tolérance qui s'appliquait pendant les trois premiers mois de 2026
+> […] **est désormais terminée.** »
+
+**Le SPF a dû démentir publiquement** une information de presse contraire. Plusieurs sources
+de rang 3 datées de 2026 propagent encore l'inverse — dont certaines en se réclamant du SPF.
+**Ne jamais conclure sur du rang 3 :** ici, ça aurait produit exactement la mauvaise réponse.
+
+### Le détail juridique qui explique la confusion — et qui vaut d'être retenu
+
+La loi exclut les assujettis **de l'article 56** (le **forfait**), **pas ceux de l'article
+56bis** (la **franchise**). Deux articles voisins, deux régimes différents. Toute la
+désinformation tient à cette lettre. **On lit le numéro d'article, jamais le nom du régime.**
+
+### Les exceptions réelles (page officielle, liste fermée)
+
+Pas d'obligation d'**émettre** pour : assujettis **faillis** · entreprises réalisant
+**uniquement** des opérations exemptées art. 44 · assujettis **non établis** en Belgique ·
+assujettis **forfaitaires art. 56**.
+Et surtout : **« L'une des deux parties n'est-elle pas assujettie à la TVA ? Si tel est le cas,
+l'obligation ne s'applique pas à leurs transactions mutuelles. »**
+
+### Ce que ça fait concrètement à Caelum
+
+| Situation | Facture PDF par e-mail ? |
+|---|---|
+| Chaima (n° TVA actif) → **consultant/coach assujetti belge** | ❌ **NON. Peppol obligatoire.** |
+| Chaima → client **particulier** | ✅ oui — mais elle doit pouvoir **recevoir** du structuré |
+| Chaima → client dont l'activité est **entièrement exemptée art. 44** | ✅ oui (à vérifier client par client) |
+
+**L'ICP tranché le 2026-09-14 est « consultants / coachs indépendants » — donc majoritairement
+la première ligne.** `lib/agents/pacte.ts` produit des devis dont les modalités sont
+« À CONFIRMER » : **ce trou-là est désormais chiffré et daté.**
+
+**Ce n'est pas un mur, c'est une étape** : le raccordement Peppol passe par un logiciel de
+facturation. Mais c'est une étape **avant** le premier client, pas après.
+
+### Rapporté par l'agent, NON revérifié par l'orchestration
+
+Amendes de **1.500 / 3.000 / 5.000 €** (AR du 08-07-2025, MB 14-07-2025). Tolérance
+self-billing échue au 30-06-2026. **Tarifs** de raccordement relevés sur pages officielles des
+prestataires — voir `DOSSIER-02-ENCAISSEMENT.md`. Ces points sont **RELAYÉS**, pas revérifiés
+par moi : je n'ai rouvert que ce qui décide.
+
+### Deux pièges trouvés au passage — chacun aurait produit une faute
+
+1. **Le libellé de la mention de franchise a changé au 01-01-2025.** Le texte en vigueur dit
+   **« Régime particulier de la franchise de taxe »**. La variante la plus répandue sur le web
+   (« TVA non applicable, art. 56bis ») **ne figure dans aucun texte : elle est fabriquée.**
+2. **La conservation est passée de 10 à SEPT ans, rétroactivement** au 01-01-2023 (loi du
+   18-12-2025). Presque tout le web dit encore 10 ans — **y compris une note d'un institut
+   professionnel de février 2026**. Conserver plus longtemps n'est jamais une infraction.
+
+---
+
 ## D-001 — Créer en continu, ou débloquer le premier encaissement ? (2026-09-16)
 
 **Déclencheur.** Chaima formule son objectif réel : *« je veux une IA inarrêtable pour me

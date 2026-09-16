@@ -6,6 +6,31 @@
 
 ---
 
+## SNAPSHOT 2026-09-16 (10) — Un fait bloquant trouvé, vérifié deux fois
+
+- **⚠️ e-facturation Peppol obligatoire, franchise TVA comprise. VÉRIFIÉ** par un agent, puis
+  **relu directement par l'orchestration sur la source primaire** (`efacture.belgium.be`,
+  article du 09-10-2024 + communiqué du 07-04-2026). Phrase officielle : *« L'envoi d'une
+  facture en format pdf par e-mail ou par plate-forme ne suffira donc plus »*, et
+  *« l'obligation s'applique donc également si vous utilisez le régime de la franchise »*.
+- **Le modèle de facturation de Caelum est bloqué** tant qu'il n'y a pas de raccordement
+  Peppol : l'ICP tranché le 2026-09-14 (consultants/coachs indépendants) est majoritairement
+  assujetti à la TVA. Ligne ouverte dans `/codex/A-DECIDER.md`.
+- **Le SPF Finances a dû démentir publiquement** une information de presse contraire, et
+  plusieurs sources de rang 3 datées de 2026 propagent encore l'inverse **en se réclamant du
+  SPF**. Conclure sur du rang 3 aurait donné ici exactement la mauvaise réponse — la règle de
+  la source primaire vient de payer, en une fois, tout ce qu'elle coûte.
+- **Clé juridique retenue :** la loi exclut l'**art. 56** (forfait), **pas l'art. 56bis**
+  (franchise). **On lit le numéro d'article, jamais le nom du régime.**
+- **Deux pièges évités** : le libellé légal de la mention de franchise a changé au 01-01-2025
+  (la variante la plus répandue sur le web **n'existe dans aucun texte**) ; la conservation est
+  passée de 10 à **7 ans**, rétroactivement — presque tout le web, y compris une note d'un
+  institut professionnel de 2026, dit encore 10.
+- **Non revérifié par l'orchestration, donc RELAYÉ** : montants d'amendes et tarifs des
+  prestataires. Seul ce qui décide a été rouvert.
+- **Le renversement de la journée** : l'agent qui avait conclu « aucune source accessible »
+  avait tort ; celui qui a persisté a trouvé le fait qui change le plan commercial de Chaima.
+
 ## SNAPSHOT 2026-09-16 (9) — Feu vert de Chaima · deux dossiers · une fausse accusation réfutée
 
 - **Chaima : « pourquoi tu n'avances pas sans moi ? » puis « feu vert ».** Constat accepté : la
