@@ -62,11 +62,36 @@ Modèle `qwen2.5:3b` (1,9 Go téléchargés).
 | `eval count` / `eval duration` | 154 tokens en 19,0 s | Un paragraphe ≈ **20 à 30 secondes** |
 | `load duration` | 4,4 ms | Modèle déjà en mémoire — pas de rechargement |
 
-**RÉSERVE MAJEURE, à ne pas oublier : c'est une mesure À FROID.** Premier échange, machine
-qui n'avait pas encore chauffé. Sur une puce mobile 15 W qui se bride en charge, **c'est le
-meilleur cas, pas le cas courant.** Verdict §13 : **VÉRIFIÉ pour un premier échange**,
-**NON VÉRIFIÉ** pour une conversation longue. La mesure après 10 minutes de charge reste à
-faire, et elle sera plus basse.
+### Le bridage thermique — PRÉDIT, puis MESURÉ le même jour
+
+J'avais inscrit que la mesure à froid serait le **meilleur** cas et que la vraie serait plus
+basse. Trois échanges consécutifs l'ont vérifié, sans rien faire d'autre que parler au modèle :
+
+| Échange | `eval rate` | Écart vs le 1er |
+|---|---|---|
+| 1 — machine froide | **8,10 tokens/s** | référence |
+| 2 | **7,75 tokens/s** | **−4 %** |
+| 3 | **7,29 tokens/s** | **−10 %** |
+
+**CONFIRMÉ (§13) : la machine se bride en charge.** Environ **−10 % en trois échanges**. La
+courbe continuera de descendre puis se stabilisera ; le palier n'est pas encore connu.
+
+**Retenir pour toujours :** un débit annoncé sur un premier échange est **structurellement
+optimiste**. Toute mesure future de ce projet indique **le numéro de l'échange**, sinon elle
+ne veut rien dire.
+
+### Le second ralentisseur, moins visible et plus vicieux
+
+`prompt eval count` a suivi : **42 → 232 → 620 tokens**. À chaque question, le modèle **relit
+toute la conversation**. Deux effets cumulés :
+
+- la machine chauffe → elle écrit plus lentement ;
+- la conversation s'allonge → il y a plus à relire **avant** d'écrire.
+
+D'où le `total duration` qui monte (21 s → 56 s → 55 s) plus vite que la seule chute du débit.
+Conséquence pratique : **une conversation longue ralentit deux fois.** Repartir d'une session
+neuve (`/bye` puis relancer) remet le compteur de lecture à zéro. Le cache aide (361 tokens
+déjà en cache au 3e échange) mais ne supprime pas l'effet.
 
 **Honnêteté sur mon estimation :** j'avais annoncé « utilisable, lecture fluide » pour un 3B,
 en fiabilité MODÉRÉE. 8,10 tokens/s tombe dans cette fourchette. L'estimation était juste —

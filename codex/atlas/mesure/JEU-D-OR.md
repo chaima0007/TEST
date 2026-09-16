@@ -44,6 +44,67 @@ système n'apprend pas, quel que soit le volume de documents produits. C'est un 
 
 ## Relevés
 
+### 2026-09-16 — Deux questions de droit belge : le modèle SANS corpus
+
+Modèle `qwen2.5:3b`, sans aucun corpus. **C'est la mesure de référence « avant »** — celle à
+laquelle toutes les versions futures seront comparées. Elle ne se refera jamais.
+
+#### Q-001 — « Différence entre une ASBL et une SRL en Belgique, en 4 phrases »
+
+| | |
+|---|---|
+| **Débit** | 7,75 tokens/s · 341 tokens en 44 s |
+| **Verdict** | **ÉCHEC** — plausible en surface, faux sur le fond |
+| **Sourcé ?** | **NON** — aucune source, aucun article de loi |
+| **Consigne suivie ?** | **NON** — 4 phrases demandées, ~8 produites |
+
+Erreurs relevées (**corrections à confirmer sur source primaire**, voir réserve plus bas) :
+
+1. **« actionnaires » pour une ASBL.** Une ASBL n'a pas d'actionnaires : elle a des **membres**.
+   Erreur de vocabulaire qui révèle une erreur de concept.
+2. **« actionnaires » pour une SRL.** Une SRL a des **associés** ; ce sont les SA qui ont des
+   actionnaires. Le modèle emploie un seul mot pour trois réalités.
+3. **« avantages fiscaux […] en raison de l'étiquetage "SRL" sur l'immatriculation »** —
+   phrase **vide de sens**. Un raisonnement inventé, pas une approximation.
+4. **« ASBL idéale pour des activités non commerciales »** — vision **antérieure à la réforme
+   de 2019** (Code des sociétés et des associations) : une ASBL peut exercer des activités
+   commerciales tant qu'elle ne **distribue** pas de bénéfices. Le modèle raisonne sur un
+   droit périmé, sans le signaler.
+5. **« conseil d'administration indépendant »** — « indépendant » est ajouté de nulle part.
+6. **Omission majeure** : la suppression du capital minimum de la SRL par la réforme de 2019,
+   qui est l'une des vraies différences pratiques.
+
+#### Q-002 — « Date limite de dépôt des comptes d'une ASBL belge, et montant exact de l'amende »
+
+| | |
+|---|---|
+| **Débit** | 7,29 tokens/s · 321 tokens en 44 s |
+| **Verdict** | **ÉCHEC PARTIEL** — un point réussi, deux inventions |
+| **Sourcé ?** | **NON** |
+
+- ❌ **« 31 décembre de la deuxième année suivante »** — **inventé**. Un délai de deux ans est
+  invraisemblable. L'ordre de grandeur réel est de quelques mois après la clôture.
+- ❌ **« La Commission des Comptes »** — **cette institution n'existe pas**. Le modèle a
+  fabriqué un organisme officiel, puis lui a prêté un pouvoir de sanction. C'est la pire
+  espèce d'hallucination : **vérifiable, et invérifiable par qui ne sait pas déjà**.
+- ✅ **« il n'existe pas de montant précis en euros »** — **refus d'inventer un chiffre.**
+  Le seul point réussi des deux réponses, et ce n'est pas un détail : c'est précisément le
+  comportement que le jeu d'or doit récompenser.
+
+#### Ce que ces deux relevés établissent
+
+**Le danger n'est pas que le modèle se trompe. C'est qu'il se trompe exactement du même ton
+qu'il a raison.** Les réponses sont bien écrites, structurées, nuancées — et fausses. Sur du
+droit, une personne qui ne connaît pas déjà la réponse **ne peut pas faire la différence**.
+
+**Réserve que je m'applique à moi-même (§13) :** les corrections ci-dessus sont écrites de
+mémoire par un agent. Elles sont **PLAUSIBLES, fiabilité ÉLEVÉE**, et **NON VÉRIFIÉES** tant
+qu'une source primaire datée (Code des sociétés et des associations, site du SPF Justice,
+Moniteur belge) ne les a pas confirmées — travail de `atlas-chercheur-sources`. Remplacer une
+invention par une affirmation non sourcée ne serait pas un progrès, seulement un changement
+d'auteur. **C'est exactement pourquoi le corpus est la seule sortie : pour que ni le modèle,
+ni moi, n'ayons le dernier mot — seulement le document daté.**
+
 ### 2026-09-16 — Premier contact, et première hallucination observée
 
 **Contexte :** `qwen2.5:3b` sur Ollama. Chaima a collé par mégarde la commande

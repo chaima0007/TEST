@@ -7,6 +7,22 @@
 
 ---
 
+## 2026-09-16 — Deux questions de droit posées au modèle nu
+
+- **Tâche :** mesurer ce que vaut `qwen2.5:3b` sans corpus, sur le terrain réel de Chaima.
+- **Ce qui a marché :** poser **exprès** une question piège (un montant d'amende précis).
+  Le modèle a refusé d'inventer le chiffre — mais a inventé, dans la même réponse, une
+  **institution entière**. Sans la question piège, on aurait conclu « il est prudent ».
+- **Ce qui a raté :** rien côté méthode. Côté modèle : deux réponses sur deux sont fausses.
+- **Leçon retenue :** *tester la prudence d'un modèle sur un seul type d'invention ne dit rien
+  de sa prudence.* Il refuse d'inventer un **chiffre** (motif visiblement appris) et invente
+  sans hésiter un **organisme**. Le jeu d'or doit couvrir plusieurs formes d'invention :
+  chiffre, date, institution, article de loi, citation.
+- **Leçon qui vaut pour moi aussi :** j'ai corrigé six erreurs de mémoire, sans source. Le
+  réflexe correct n'est pas de me croire, c'est de marquer mes corrections NON VÉRIFIÉES et
+  de les faire confirmer. Un agent qui corrige une hallucination par une affirmation non
+  sourcée n'a rien corrigé.
+
 ## 2026-09-16 — Mise en place de la gouvernance ATLAS
 
 - **Tâche :** créer les agents de domaine, les sentinelles et la boucle d'apprentissage d'une

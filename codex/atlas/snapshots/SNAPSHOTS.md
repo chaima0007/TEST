@@ -6,6 +6,27 @@
 
 ---
 
+## SNAPSHOT 2026-09-16 (6) — Bridage CONFIRMÉ · mesure « avant » du jeu d'or établie
+
+- **Bridage thermique : prédit, puis MESURÉ le même jour.** `eval rate` 8,10 → 7,75 → 7,29
+  tokens/s en trois échanges, **−10 %**, sans rien changer d'autre que continuer à parler.
+  **CONFIRMÉ.** Toute mesure future du projet doit indiquer le **numéro de l'échange**.
+- **Second ralentisseur identifié** : `prompt eval count` 42 → 232 → 620 tokens. Le modèle
+  relit toute la conversation à chaque tour. **Une conversation longue ralentit deux fois** —
+  la machine chauffe *et* il y a plus à relire. `/bye` remet le compteur de lecture à zéro.
+- **Mesure « avant » du jeu d'or établie (Q-001, Q-002)** sur du droit belge, sans corpus :
+  **deux échecs**. Vocabulaire faux (actionnaires pour une ASBL, qui a des membres), droit
+  **périmé d'avant la réforme de 2019**, raisonnement inventé, et surtout **une institution
+  fabriquée de toutes pièces** — « la Commission des Comptes » n'existe pas. Un seul point
+  réussi : le refus d'inventer un montant d'amende.
+- **Le constat qui compte** : le modèle se trompe **du même ton** qu'il a raison. Sur du droit,
+  qui ne connaît pas déjà la réponse ne peut pas faire la différence.
+- **Réserve appliquée à moi-même** : mes corrections de droit belge sont **NON VÉRIFIÉES**
+  tant qu'une source primaire datée ne les confirme pas. Remplacer une invention par une
+  affirmation non sourcée n'est pas un progrès, juste un changement d'auteur.
+- **Toujours manquant, et désormais bloquant** : l'usage n°1 de Chaima. Le jeu d'or ne peut
+  pas être figé sans lui.
+
 ## SNAPSHOT 2026-09-16 (5) — L'IA locale RÉPOND. Première mesure, première hallucination.
 
 - **Couche 1 complète et fonctionnelle. VÉRIFIÉ.** `qwen2.5:3b` téléchargé (1,9 Go) et
