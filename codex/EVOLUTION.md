@@ -4,6 +4,8 @@
 
 ## TEST / Nexus-Market
 
+- **2026-09-16** — Jalon : **6 agents ajoutés** — `expert-nextjs`, `expert-donnees-prisma`, `expert-authentification`, `expert-cicd-deploiement`, `expert-llm-agents`, `orchestrateur`. Les 21 rôles du §1 sont des rôles de **gouvernance** ; aucun ne possédait un domaine **technique**, alors que 5 des erreurs consignées relèvent de la CI/déploiement. Quatre agents **délibérément non créés** au titre du §9 anti-bloat (doublons de `testeur-adverse`, `scribe-empire`, `gardien-donnees`, `sentinel-securite`). TRANCHÉ PAR CHAIMA.
+
 - **2026-09-16** — Jalon : **carte vivante créée** (`codex/CARTOGRAPHIE.md`). Diagnostic mesuré : `main` figé depuis le 14/09, 6 PR ouvertes, 38 refs distantes — le goulot est le §10 (merger est humain), pas la technique. Deux écarts de tenue relevés : les 4 dossiers `/codex/` sont vides (boucle §4 jamais démarrée) et 7 obstacles d'exploitation sur 8 étaient introuvables depuis le registre (corrigé par ERR-021, en index).
 - **2026-09-14** — Décision : **réunion de décision tenue (7 agents CODEX, Parcours 2)** sur la zone de prospection. Résultat : question **écartée**, la zone se constate après inventaire du réseau 1er degré. Deux lignes A-DECIDER ouvertes au passage (conformité RGPD de la prospection ; bornage écrit de l'offre à 500 €). Le vérificateur-vérité a amendé l'arbitrage sur 4 points avant sortie. TRANCHÉ PAR CHAIMA.
 - **2026-09-14** — Décision : **ICP de Caelum arrêté — consultants / coachs indépendants**. Contrainte de canal identifiée : HERMES prospecte sur LinkedIn, donc l'ICP doit y être actif ; les exemples du code (restaurants, kinés) ne le sont pas. Débloque à moitié la ligne A-DECIDER ; reste la liste de prospects. TRANCHÉ PAR CHAIMA.
