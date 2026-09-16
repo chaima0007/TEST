@@ -6,6 +6,22 @@
 
 ---
 
+## SNAPSHOT 2026-09-16 (3) — Matériel VÉRIFIÉ, un palier fermé pour de bon
+
+- **Volet matériel de l'ÉTAPE 0 : CLOS.** Windows 11 Pro · **15,9 Go de RAM** ·
+  **Intel i7-8650U** (4c/8t, puce mobile) · **Intel UHD 620 intégrée — aucune accélération
+  exploitable** · **120,2 Go libres**. Preuve : sortie PowerShell en capture d'écran.
+- **Conséquence dure, écrite plutôt qu'adoucie :** tout tournera **sur le processeur**. Un
+  modèle de 3 à 8 milliards de paramètres quantifié, pas davantage. Pas d'images, pas de
+  gros modèle, et **le palier fine-tuning LoRA/QLoRA est FERMÉ** — motif matériel définitif,
+  qui s'ajoute au refus par défaut de `atlas-finetuning`.
+- **La contrainte valide la stratégie au lieu de la contrarier :** le modèle ne pouvant pas
+  être gros, toute la valeur doit venir du corpus et de la mémoire — exactement ce que Chaima
+  demandait. Plus aucune ambiguïté sur où investir l'effort.
+- **Estimations de débit inscrites comme NON VÉRIFIÉES** (R-003), avec leur condition de
+  remplacement : une mesure réelle après 10 minutes de charge, sur secteur.
+- **Rien installé.** Installer un logiciel est un geste de Chaima (§10).
+
 ## SNAPSHOT 2026-09-16 (2) — OS VÉRIFIÉ + première erreur ATLAS consignée
 
 - **OS confirmé : Windows 11, build `10.0.26200.9457`, session `C:\Users\Chaima`.** Preuve :

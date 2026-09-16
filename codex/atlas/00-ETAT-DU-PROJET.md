@@ -31,16 +31,19 @@
 
 ## EN COURS
 
-- **ÉTAPE 0 — diagnostic matériel. Toujours ouverte, c'est le seul blocage.**
-  Cherché dans le Drive le 2026-09-16 : **les caractéristiques machine n'y sont pas**. Une
-  fiche vide a donc été créée pour que Chaima la remplisse (`01 — FICHE MACHINE`). Bloque tout
-  le reste : aucun modèle, runtime ni quantification ne peut être recommandé sans OS/RAM/VRAM
-  réels — ce serait **NON VÉRIFIÉ** (R-003, R-009).
+- **ÉTAPE 0 — volet matériel : CLOS le 2026-09-16.** Tous les chiffres sont **VÉRIFIÉS** par
+  sortie PowerShell : Windows 11 Pro · 16 Go RAM · i7-8650U · **Intel UHD 620, aucune carte
+  graphique utilisable** · 120 Go libres. Fiche complète et conséquences : `memoire/MACHINE.md`.
+  **Le palier fine-tuning est fermé pour motif matériel**, pas seulement méthodologique.
+- **ÉTAPE 0 — volet usage : ouvert.** Restent 4 réponses, non bloquantes pour la couche 1 :
+  usage n°1, temps disponible, exigence de confidentialité, où vivent ses documents.
 
 ## RESTE (dans l'ordre, une action à la fois)
 
-1. Réponses ÉTAPE 0 → fiche matériel par `atlas-materiel` (budget mémoire chiffré).
-2. Couche 1 — runtime + 1 modèle de départ (`atlas-runtime-llm`), commande exacte pour l'OS réel.
+1. ~~Fiche matériel~~ — **FAIT** (`memoire/MACHINE.md`).
+2. Couche 1 — installer le moteur + un premier modèle **3B quantifié**, puis **mesurer** le
+   débit réel après 10 min de charge et remplacer les estimations de `MACHINE.md` par des
+   mesures. Installation = **décision et geste de Chaima** (§10).
 3. **Jeu d'or figé AVANT tout autre changement** (`atlas-mlops`) — sinon aucun progrès ne sera
    mesurable ensuite. Non négociable, c'est l'étape qu'on ne peut pas rattraper après coup.
 4. Couche 2 — interface.

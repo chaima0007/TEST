@@ -24,6 +24,7 @@ première chose qu'on lit.
 | Une leçon d'une tâche (ce qui a marché / raté) | `apprentissage/JOURNAL-APPRENTISSAGE.md` |
 | Une **correction de Chaima** devenue règle | `apprentissage/REGLES-APPRISES.md` — **dans le même tour** |
 | Ce que j'apprends **sur Chaima** (préférences, contraintes) | `memoire/PROFIL-CHAIMA.md` |
+| Un fait **matériel mesuré** sur sa machine | `memoire/MACHINE.md` |
 | Une **décision tranchée par Chaima** sur ATLAS | `memoire/DECISIONS.md` |
 | Un **document de Chaima** à faire lire à l'IA | `corpus/` (le RAG) |
 | Une mesure de progrès, le jeu d'or | `mesure/JEU-D-OR.md` |

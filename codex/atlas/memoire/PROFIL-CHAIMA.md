@@ -17,6 +17,7 @@
 | **Objectif final : être autonome**, pilote de son système | Chaque étape la rend capable de la refaire seule. Pas de dépendance à moi. | 2026-09-16 | **ACTIF** |
 | **OS : Windows 11**, build `10.0.26200.9457` | Toutes les commandes sont Windows. **VÉRIFIÉ** par capture d'écran de l'invite de commandes, pas par déclaration. | 2026-09-16 | **ACTIF** |
 | **Session utilisateur : `C:\Users\Chaima`** | C'est là que vivront le modèle, la mémoire et le corpus. | 2026-09-16 | **ACTIF** |
+| **Matériel complet relevé** | 16 Go de RAM · i7-8650U · **aucune carte graphique utilisable** · 120 Go libres. Détail et conséquences : `MACHINE.md`. **Le fine-tuning est matériellement fermé.** | 2026-09-16 | **ACTIF** |
 | **Ouvre l'Invite de commandes, pas PowerShell** | Ne jamais dire « ouvre PowerShell » : dire « tape `powershell` dans la fenêtre déjà ouverte », et donner le repère `PS` avant le curseur (ERR-ATLAS-001). | 2026-09-16 | **ACTIF** |
 
 ## Ce qui est PLAUSIBLE — raisonné, pas confirmé (§13)
@@ -27,7 +28,6 @@
 
 ## Ce qui est NON VÉRIFIÉ — et le restera tant qu'elle ne l'aura pas dit
 
-- **RAM, VRAM, modèle de carte graphique, disque libre** — **bloquant** pour le choix du modèle.
 - **Son usage n°1**, le cas concret qui doit marcher en premier.
 - **Budget** : temps par semaine, argent.
 - **Exigence de confidentialité** : 100 % local, ou cloud toléré pour certaines tâches.
