@@ -6,6 +6,19 @@
 
 ---
 
+## SNAPSHOT 2026-09-16 (2) — OS VÉRIFIÉ + première erreur ATLAS consignée
+
+- **OS confirmé : Windows 11, build `10.0.26200.9457`, session `C:\Users\Chaima`.** Preuve :
+  capture d'écran de l'invite de commandes. Passe de PLAUSIBLE à **VÉRIFIÉ** — et la preuve
+  vient de l'échec de la commande, pas de son succès.
+- **ERR-ATLAS-001 ouverte** : mon instruction a envoyé Chaima dans `cmd.exe` au lieu de
+  PowerShell, et ma section « si ça rate » ne contenait pas l'échec réel. Faute d'agent, pas
+  d'utilisatrice. Règle **R-010** posée : toute instruction doit porter le repère qui dit où
+  on est (`PS` avant le curseur), et la liste des échecs doit contenir l'échec réel.
+- **La boucle d'apprentissage a tourné pour de vrai** : une erreur réelle → une entrée datée →
+  une règle qui l'empêche de se reproduire, dans le même tour. C'est le premier tour complet.
+- **Toujours NON VÉRIFIÉ** : RAM, carte graphique, VRAM, disque libre. Rien n'est installé.
+
 ## SNAPSHOT 2026-09-16 — Rangement en sous-dossiers + profil de Chaima ouvert
 
 État réel vérifié par `git ls-remote` : branche `claude/nifty-shannon-u87dv8` à `0e9240f`,

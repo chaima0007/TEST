@@ -18,6 +18,7 @@
 | R-007 | **Un type d'information = un sous-dossier = UN SEUL fichier vivant**, où l'on ajoute en tête. Jamais un nouveau fichier daté par événement (`audit-v2.md`, `audit-final.md`…) : c'est ça qui entremêle les documents. Table de routage : `../ROUTAGE.md`. | Correction de Chaima, 2026-09-16 | Rangement | 2026-09-16 | **ACTIVE** |
 | R-008 | **Chercher dans le Drive avant de dire qu'une information manque — et la créer si elle n'existe pas.** Ne jamais renvoyer Chaima vers une information qu'on pouvait aller chercher ou préparer soi-même. | Correction de Chaima, 2026-09-16 | Méthode | 2026-09-16 | **ACTIVE** |
 | R-009 | **Ne jamais déduire une caractéristique de la machine d'un document d'école, d'un exemple ou d'un voisinage.** Un exercice Windows Server dans le Drive ne dit rien de l'OS de Chaima. Cherché ≠ supposé. | Constat du 2026-09-16 | Matériel | 2026-09-16 | **ACTIVE** |
+| R-010 | **Toute instruction destinée à Chaima doit contenir le repère qui lui dit où elle est.** Ne pas dire « ouvre PowerShell » mais « tape `powershell` dans la fenêtre ouverte, tu dois voir `PS` avant le curseur ». Et la section « si ça rate » doit contenir **l'échec réel**, pas trois échecs plausibles. | ERR-ATLAS-001 | Méthode / Systèmes | 2026-09-16 | **ACTIVE** |
 
 ---
 
