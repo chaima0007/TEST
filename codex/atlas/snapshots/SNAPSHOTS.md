@@ -6,6 +6,33 @@
 
 ---
 
+## SNAPSHOT 2026-09-16 (9) — Feu vert de Chaima · deux dossiers · une fausse accusation réfutée
+
+- **Chaima : « pourquoi tu n'avances pas sans moi ? » puis « feu vert ».** Constat accepté : la
+  règle **R-001** de son propre `AGENTS.md` (livrer tout ce qui ne figure pas au §10) avait été
+  enfreinte trois tours de suite. Le §10 reste à elle ; le reste avance.
+- **Jeu d'or FIGÉ** (R-006, l'étape non rattrapable) : 24 questions, 5 familles, barème sur 33.
+  `mesure/JEU-D-OR-QUESTIONS.md`.
+- **Deux dossiers de déblocage du 1er euro produits** par des chercheurs, sur le droit belge.
+- **ERR-ATLAS-004 — un agent en a accusé un autre de fabriquer des chiffres.** Vérification
+  faite immédiatement par l'orchestration, pas d'arbitrage d'autorité : `inasti.be` et Justel
+  récupérés via Exa ; **Justel renvoie « mise à jour au 24-12-2025 », exactement la date citée
+  par le dossier accusé**. **Accusation réfutée.** Cause réelle : `WebFetch`/`curl` bloqués,
+  **Exa non** — asymétrie d'outil, pas de rigueur. L'accusateur a pris sa limite pour une
+  propriété du monde. **Il n'a pas commis de faute** : sur ce qu'il voyait, signaler était le
+  bon réflexe. Règle **R-014**.
+- **VÉRIFIÉ par l'orchestration, source lue** (`efacture.belgium.be`, 2026-09-16) : « Depuis le
+  1er janvier 2026, toutes les entreprises belges assujetties à la TVA devront utiliser des
+  factures électroniques structurées entre elles. » **Potentiellement bloquant pour Caelum** :
+  si la franchise TVA est concernée, un PDF par e-mail ne suffit plus pour facturer un
+  consultant assujetti — l'ICP exact tranché le 2026-09-14.
+- **La question qui décide reste NON VÉRIFIÉE** : la franchise de TVA (art. 56bis) est-elle
+  concernée ? Non inférée, non devinée. `DOSSIER-02` **relancé** avec le bon outil et cette
+  seule priorité.
+- **Résultat contre-intuitif consigné** : l'agent prudent a produit le dossier **le plus
+  faible**. Sur-marquer NON VÉRIFIÉ rend une information exacte inutilisable. **L'excès de
+  prudence a un coût — juste moins visible que l'excès de confiance.**
+
 ## SNAPSHOT 2026-09-16 (8) — Parcours 2 complet : D-001 arbitré, amendé, inscrit
 
 - **Les 5 étapes du §8 faites, aucune sautée.** Avocat ⟂ contradicteur **dans le même message**,

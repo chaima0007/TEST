@@ -13,6 +13,51 @@
 
 ---
 
+## ERR-ATLAS-004 — Deux agents, un outil, une fausse accusation (2026-09-16)
+
+**L'incident le plus instructif du projet à ce jour. Il a failli détruire la confiance dans
+un dossier juste.**
+
+- **Ce qui s'est passé :** deux chercheurs lancés en parallèle sur le droit belge.
+  - Le **DOSSIER-01** a consulté ses sources primaires et cité des montants précis (INASTI) et
+    le CSA via Justel, daté « mise à jour au 24-12-2025 ».
+  - Le **DOSSIER-02** a testé 14 domaines officiels, reçu **403 sur les 14** via `WebFetch` et
+    `curl`, et conclu — honnêtement, selon ce qu'il voyait — qu'**aucune source primaire
+    n'était joignable dans cette session**.
+  - Il en a tiré une **accusation** : des chiffres à la décimale, dans une session où rien ne
+    s'ouvre, sont « vraisemblablement relayés eux aussi », donc **à vérifier avant de servir de
+    base à une décision**.
+- **Cause (CONFIRMÉE par test direct de l'orchestration) :** **asymétrie de connaissance
+  d'outil**, pas de rigueur. `WebFetch` et `curl` sont bloqués ; **`mcp__Exa__web_fetch_exa`
+  ne l'est pas.** DOSSIER-01 l'avait trouvé, DOSSIER-02 l'ignorait. Le second a donc pris **sa
+  propre limite pour une propriété du monde.**
+- **Résolution — par le test, pas par l'autorité.** L'orchestration a récupéré elle-même
+  `inasti.be` et Justel via Exa. Justel a renvoyé « **mise à jour au 24-12-2025** » —
+  **exactement** la date citée par DOSSIER-01. **Accusation réfutée : ses sources sont
+  réelles.** `efacture.belgium.be` a été lu dans la foulée et confirme l'obligation
+  d'e-facturation structurée depuis le 01-01-2026.
+- **Ce qui est vraiment cassé, du coup :** le **DOSSIER-02**. Tout y est dégradé en
+  « NON VÉRIFIÉ » ou « RELAYÉ » alors que les sources étaient lisibles. Sa découverte la plus
+  lourde — l'obligation Peppol, qui pourrait empêcher Chaima de facturer par PDF — y est
+  **non vérifiée alors qu'elle était vérifiable**. Dossier **relancé** avec le bon chemin.
+- **Détection la prochaine fois :** un agent qui écrit « source inaccessible » **sans nommer
+  les outils essayés**. Et tout désaccord entre deux agents où l'un affirme l'impossibilité de
+  ce que l'autre a fait : **le plus souvent, celui qui a réussi a raison — l'échec ne prouve
+  que son propre échec.**
+- **Correctif (VÉRIFIÉ) :** R-014.
+
+### Les trois choses que cet incident valide
+
+1. **DOSSIER-02 a eu raison d'accuser.** Sur ce qu'il voyait, c'était le comportement correct :
+   signaler, ne pas corriger le fichier d'autrui, ne pas contourner un refus de politique. **Il
+   s'est trompé sans commettre de faute.** La distinction est capitale — on ne veut surtout pas
+   décourager ce réflexe.
+2. **La vérification tranche, pas l'ancienneté ni l'assurance.** Ni « l'accusateur a sûrement
+   raison », ni « l'accusé se défend bien » : une requête, une date qui correspond, terminé.
+3. **Un agent prudent peut produire un dossier inutilement faible.** Sur-marquer NON VÉRIFIÉ
+   n'est pas neutre : ça rend une information exacte inutilisable. **L'excès de prudence a un
+   coût, il est juste moins visible que l'excès de confiance.**
+
 ## ERR-ATLAS-003 — `printf` a dévoré le message de commit à « −10 % » (2026-09-16)
 
 - **Ce qui s'est passé :** message de commit construit avec `printf` ; le shell s'arrête à
