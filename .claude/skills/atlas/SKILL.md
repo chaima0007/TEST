@@ -5,9 +5,14 @@ description: Orchestre le projet ATLAS — IA locale, privée, qui accumule mém
 
 # Skill : ATLAS (IA locale)
 
-**À lire avant toute tâche ATLAS :** `codex/atlas/REGLES-APPRISES.md`, puis
-`codex/atlas/ETAT-DU-PROJET.md`. Reprendre sans relire tout l'historique, c'est leur raison
-d'être.
+**À lire avant toute tâche ATLAS, dans cet ordre :**
+`codex/atlas/apprentissage/REGLES-APPRISES.md` (ne pas refaire une erreur déjà corrigée) →
+`codex/atlas/00-ETAT-DU-PROJET.md` (où on en est) →
+`codex/atlas/memoire/PROFIL-CHAIMA.md` (à qui je parle, et ce qui est encore NON VÉRIFIÉ).
+
+**Avant d'écrire le moindre fichier :** `codex/atlas/ROUTAGE.md`. Un type d'information = un
+sous-dossier = **un seul fichier vivant**, ajout en tête. Créer un fichier daté par événement
+est une faute (R-007) — c'est ce qui entremêle les documents.
 
 ## Verrou n°1 — le diagnostic passe avant tout
 

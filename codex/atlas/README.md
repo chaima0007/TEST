@@ -14,16 +14,33 @@ un petit modèle bien alimenté bat un gros modèle qui répond de mémoire.
 Toute phrase de l'Empire qui laisse entendre le contraire est une survente et se corrige avant
 sortie (§13 — attention particulière aux affirmations **sur nous**).
 
-## Les 3 fichiers vivants
+## Le rangement — un type = un dossier = UN fichier vivant
 
-| Fichier | Contient | Qui écrit | Quand |
-|---|---|---|---|
-| `ETAT-DU-PROJET.md` | fait / en cours / reste / décisions prises | l'agent | fin de chaque session |
-| `JOURNAL-APPRENTISSAGE.md` | ce qui a marché, ce qui a raté, la leçon | l'agent | fin de chaque tâche |
-| `REGLES-APPRISES.md` | une correction de Chaima = une règle définitive | l'agent | **immédiatement** |
+    codex/atlas/
+    ├── 00-ETAT-DU-PROJET.md      ← LE SEUL FICHIER À OUVRIR POUR REPRENDRE
+    ├── ROUTAGE.md                ← où va quoi, aucune exception
+    ├── snapshots/SNAPSHOTS.md    ← ce qui a CHANGÉ (§5)
+    ├── audits/AUDITS.md          ← si c'est COHÉRENT (§5, §9)
+    ├── erreurs/ERREURS-ATLAS.md  ← les incidents réels → remontés au Drive
+    ├── apprentissage/            ← JOURNAL-APPRENTISSAGE.md · REGLES-APPRISES.md
+    ├── memoire/                  ← PROFIL-CHAIMA.md · DECISIONS.md      ┐ la base
+    ├── corpus/                   ← les documents que l'IA doit lire     ┘ qui grandit
+    ├── mesure/JEU-D-OR.md        ← la preuve que ça s'améliore vraiment
+    └── continuite/               ← RESTAURATION.md · SYNC-DRIVE.md
+
+**On AJOUTE en tête du fichier existant. On ne crée jamais un fichier daté par événement** —
+`audit-2026-09-16-v2.md` et sa descendance sont exactement ce qui entremêle les documents
+(règle R-007).
 
 Règle anti-bruit (§5) : rien n'a changé → **une ligne**, puis silence. Un rapport pour dire
 qu'il n'y a rien à dire est une faute contre le protocole.
+
+## « Inarrêtable » — la contradiction assumée
+
+Une IA locale **n'est pas** inarrêtable : elle s'arrête quand la machine s'arrête. Ce qui peut
+l'être, c'est la **connaissance** — 3 copies (machine, dépôt, Drive) et une restauration
+**réellement testée**, parce qu'une sauvegarde jamais restaurée n'est pas une sauvegarde.
+Tout est dans `continuite/RESTAURATION.md`.
 
 ## La boucle d'apprentissage — les 4 mécanismes
 
@@ -66,7 +83,7 @@ Elles complètent — sans les remplacer — `sentinel-securite` (ce qui entre),
 ## Remontée vers le Drive
 
 **Source de vérité = ce dépôt.** Le Drive est la **copie consultable**, pas l'original : un
-document Drive modifié à la main et divergeant du dépôt est un piège. Voir `SYNC-DRIVE.md`.
+document Drive modifié à la main et divergeant du dépôt est un piège. Voir `continuite/SYNC-DRIVE.md`. Dossier Drive : **ATLAS — IA locale (Empire Chaima)**.
 
 ## Ce qui reste strictement humain sur ATLAS (§10)
 

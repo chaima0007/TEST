@@ -26,12 +26,20 @@ cas de divergence, **le dépôt a raison**.
 **vérifié**. Pas « j'ai écrit des fichiers ». La distinction JOURNAL / EVOLUTION du §6.5 est
 exactement celle-là, et la confondre est ce qui noie un Empire sous le bruit.
 
-## Document Drive d'ATLAS
+## Dossier Drive d'ATLAS — rangé, pour ne pas se mélanger aux autres projets
 
-- **Titre :** `🔴 ERREURS & RÉUSSITES — ATLAS (IA locale) — ouvert le 2026-09-16`
-- **Dossier :** `1qXUj9D9r7HSmIMzMcsScz4Ynlv4auP4G` — le même que
-  `🔴 BASE DES ERREURS — Nexus-Market`, pour que tout se lise au même endroit.
-- **ID du document :** voir `codex/atlas/ETAT-DU-PROJET.md`, section FAIT.
+**`ATLAS — IA locale (Empire Chaima)`** — `1Ual-L_FKyitVvi71bQph51-gpOQeq4Ao`
+
+| Document | ID | Sens |
+|---|---|---|
+| `01 — FICHE MACHINE — À REMPLIR` | `1GRzD4Oow7O8wWjg-Dv3iirUbmlYpKyilyek0YsVOl20` | **Chaima écrit, ATLAS lit** — la seule exception |
+| `02 — ERREURS ET RÉUSSITES — ATLAS` | `1cKad7xISrny7R5KGr1hseX0HlOUWATHQ3QfvhlCDZkU` | ATLAS écrit, Chaima lit |
+
+Les documents des autres projets restent où ils sont : on ne déplace que les nôtres
+(`sentinelle-perimetre`).
+
+**Vérifier après chaque écriture Drive.** Une création peut renvoyer un succès et un document
+vide — constaté le 2026-09-16. On relit systématiquement le contenu écrit.
 
 ## Règles
 

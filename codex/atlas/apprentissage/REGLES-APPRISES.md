@@ -15,6 +15,9 @@
 | R-004 | Le repli d'un contrôle ne doit jamais être la sortie non contrôlée. Un système « local avec repli cloud » est cloud les jours où la question est difficile. | 🔴 ERR-016 | Sécurité / Exfiltration | 2026-09-16 | **ACTIVE** |
 | R-005 | Aucune commande sans savoir l'OS réel. Chaque étape sort en trois temps : la commande, la vérification que ça a marché, quoi faire si ça échoue. | Exigence de Chaima, 2026-09-16 | Systèmes | 2026-09-16 | **ACTIVE** |
 | R-006 | Le jeu d'or se fige **avant** le premier changement. C'est la seule étape de la boucle qu'on ne peut pas rattraper après coup. | `atlas-mlops` | Mesure | 2026-09-16 | **ACTIVE** |
+| R-007 | **Un type d'information = un sous-dossier = UN SEUL fichier vivant**, où l'on ajoute en tête. Jamais un nouveau fichier daté par événement (`audit-v2.md`, `audit-final.md`…) : c'est ça qui entremêle les documents. Table de routage : `../ROUTAGE.md`. | Correction de Chaima, 2026-09-16 | Rangement | 2026-09-16 | **ACTIVE** |
+| R-008 | **Chercher dans le Drive avant de dire qu'une information manque — et la créer si elle n'existe pas.** Ne jamais renvoyer Chaima vers une information qu'on pouvait aller chercher ou préparer soi-même. | Correction de Chaima, 2026-09-16 | Méthode | 2026-09-16 | **ACTIVE** |
+| R-009 | **Ne jamais déduire une caractéristique de la machine d'un document d'école, d'un exemple ou d'un voisinage.** Un exercice Windows Server dans le Drive ne dit rien de l'OS de Chaima. Cherché ≠ supposé. | Constat du 2026-09-16 | Matériel | 2026-09-16 | **ACTIVE** |
 
 ---
 
