@@ -76,6 +76,26 @@ La réunion a jugé l'offre **non défendable en l'état** : « premium », « s
 décide de répondre ou d'ignorer. Avec zéro référence publique, il ne peut pas te
 distinguer d'une arnaque, et ignorer ne lui coûte rien.
 
+> ⚠️ **CORRECTION du 2026-09-14 21h50 — ce tableau était faux (ERR-019).**
+> L'agent **PACTE produit déjà** un devis structuré qui répond à **4 des 7 points**.
+> Vérifié en exécutant `HeuristicPacte().draft(...)`, pas en lisant sa description.
+>
+> | Point | Déjà produit par PACTE ? |
+> |---|---|
+> | Inclus | ✅ `scope` — 4 livrables nommés |
+> | Exclu | ✅ `outOfScope` — 3 exclusions explicites |
+> | Délai | ✅ « 1 à 2 semaines après validation **et réception de vos contenus** » — le déclencheur est nommé |
+> | Révisions | ✅ « un aller-retour inclus ; au-delà, sur devis complémentaire » |
+> | Propriété domaine + code | ❌ **absent du code** |
+> | Hébergement après la période incluse | ❌ **absent** — « hébergement sécurisé inclus », sans borne |
+> | Heures estimées de livraison | ❌ **absent** (usage interne) |
+>
+> PACTE formule même le prix mieux que HERMES : « forfait tout compris » contre
+> « à partir de 500 € ». **Les deux agents se contredisent sur le prix** — le
+> prospect lit « à partir de », puis reçoit un devis « forfait ».
+>
+> **Il ne te reste donc que les 3 lignes ❌**, pas 7.
+
 Ce squelette ne contient **aucun engagement inventé** : chaque `À DÉCIDER` est un
 arbitrage qui t'appartient (§10). Je ne peux pas le remplir à ta place sans mentir.
 
