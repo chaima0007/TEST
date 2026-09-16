@@ -21,6 +21,7 @@
 | R-010 | **Toute instruction destinée à Chaima doit contenir le repère qui lui dit où elle est.** Ne pas dire « ouvre PowerShell » mais « tape `powershell` dans la fenêtre ouverte, tu dois voir `PS` avant le curseur ». Et la section « si ça rate » doit contenir **l'échec réel**, pas trois échecs plausibles. | ERR-ATLAS-001 | Méthode / Systèmes | 2026-09-16 | **ACTIVE** |
 | R-011 | **Une commande qui ouvre une session interactive s'annonce comme telle** : « cette commande est finie, ne la recolle pas — désormais tu parles au modèle ». Et jamais un bloc copiable comme dernier élément avant une invite : face à une invite, on recolle ce qu'on a sous la main. | ERR-ATLAS-002 | Méthode / Systèmes | 2026-09-16 | **ACTIVE** |
 | R-012 | **Jamais de `printf` pour un message de commit.** Heredoc `<<'MSG'` (guillemets simples) + `git commit -F`. Le `%` et les backticks sont magiques pour le shell, et le commit **réussit quand même** avec un message amputé — l'erreur est silencieuse. Vérifier par `git log -1 --format=%B`. | ERR-ATLAS-003, parente d'ERR-017 | Git / Méthode | 2026-09-16 | **ACTIVE** |
+| R-013 | **Un agent qui lit `git` sans `fetch` raisonne sur un passé.** Toute affirmation sur l'état du dépôt exige un `git fetch` **dans le même tour**, et se vérifie avant d'être relayée à Chaima. Corollaire : **un argument faux ne rend pas faux ses voisins** — on retire le fait, on ne jette pas la plaidoirie. | D-001 : le contradicteur a commis ERR-011, qu'il citait lui-même | Git / Méthode | 2026-09-16 | **ACTIVE** |
 
 ---
 

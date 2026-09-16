@@ -25,7 +25,8 @@ première chose qu'on lit.
 | Une **correction de Chaima** devenue règle | `apprentissage/REGLES-APPRISES.md` — **dans le même tour** |
 | Ce que j'apprends **sur Chaima** (préférences, contraintes) | `memoire/PROFIL-CHAIMA.md` |
 | Un fait **matériel mesuré** sur sa machine | `memoire/MACHINE.md` |
-| Une **décision tranchée par Chaima** sur ATLAS | `memoire/DECISIONS.md` |
+| Une **décision tranchée par Chaima** sur ATLAS | `memoire/DECISIONS.md` — **une ligne** |
+| Le **raisonnement** d'un débat : qui a plaidé quoi, sur quel fait, et **pourquoi cet angle** | `deliberations/DELIBERATIONS.md` — **une section** |
 | Un **document de Chaima** à faire lire à l'IA | `corpus/` (le RAG) |
 | Une mesure de progrès, le jeu d'or | `mesure/JEU-D-OR.md` |
 | Une procédure de sauvegarde / restauration | `continuite/RESTAURATION.md` |
@@ -43,6 +44,10 @@ première chose qu'on lit.
 2. **Journal ≠ EVOLUTION** (§6.5). Le journal accepte « rien de neuf ». EVOLUTION **jamais** :
    il ne reçoit que des jalons réels. C'est exactement la distinction qui empêche l'Empire de
    se noyer sous le bruit.
-3. **Règle anti-bruit (§5), qui prime sur tout ce tableau.** Rien n'a changé → **une ligne**,
+3. **Décision ≠ délibération.** `memoire/DECISIONS.md` répond à *« qu'a-t-on décidé ? »* en une
+   ligne. `deliberations/DELIBERATIONS.md` répond à *« pourquoi, contre quoi, et qu'est-ce qui
+   nous ferait changer d'avis ? »*. Sans le second, une décision de plus de six mois se
+   défend sans qu'on sache pourquoi — ou se refait de zéro.
+4. **Règle anti-bruit (§5), qui prime sur tout ce tableau.** Rien n'a changé → **une ligne**,
    puis silence. Un audit écrit pour dire qu'il n'y a rien à auditer est une faute contre le
    protocole, pas une preuve de sérieux.
