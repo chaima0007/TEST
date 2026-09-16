@@ -26,6 +26,40 @@
 |---|---|---|---|
 | **Version exacte : Windows 11 25H2** | **MODÉRÉE** | La build `26200` appartient à la série Windows 11 ; le nom commercial de cette build n'a pas été vérifié sur une source primaire datée. | Sortie de `winver` ou de `Get-CimInstance Win32_OperatingSystem`. **Sans effet sur nos choix** : ce qui compte est la RAM et la carte graphique, pas le nom commercial. |
 
+## L'attente exprimée — et son arbitrage
+
+**Chaima, 2026-09-16 :** *« une IA qui ressemble à Claude, que je peux tout lui demander, et
+qu'elle soit autonome mais surveillée. »*
+
+C'est l'ambition, pas un usage n°1. Elle se décompose en quatre attentes, dont **trois sont
+atteignables sur sa machine et une ne l'est pas**. Les confondre mènerait à une déception
+garantie dans trois mois — donc la décomposition est consignée ici, pas gommée.
+
+| Ce qui fait « Claude » | Atteignable chez Chaima ? | Par quoi |
+|---|---|---|
+| On lui parle naturellement, en français | **OUI** — déjà le cas | couche 2 + profil |
+| Elle se souvient de qui je suis, de mes décisions | **OUI** | `memoire/` (couche 3) |
+| Elle agit : lit, écrit, cherche dans mes dossiers | **OUI** | couche 5 + garde-fous |
+| **Elle sait énormément de choses de tête** | **NON. Irréductible.** | — |
+
+**La quatrième est structurellement hors d'atteinte** et aucun réglage ne la rattrapera :
+3 milliards de paramètres sur un processeur mobile de 2017 contre un très grand modèle sur
+ferme de calcul. Ce n'est pas un écart de configuration, c'est un écart d'ordre de grandeur.
+Le prétendre serait l'affirmation *sur nous* que le §13 signale comme la plus dangereuse.
+
+**Ce qui la remplace, et qui vaut mieux sur son terrain :** elle ne saura pas de tête, elle
+saura **où chercher dans les documents de Chaima**. Sur le domaine de Chaima, un système qui
+cite ses fiches datées bat un très grand modèle qui ne les a jamais lues. **Le choix réel
+n'est pas « Claude ou pas Claude » : c'est généraliste médiocre ou spécialiste fiable.**
+
+**« Tout lui demander » est précisément ce qui ne marche pas**, et c'est démontré sur ses
+propres données le même jour : deux questions de droit, deux échecs, une institution inventée
+(`../mesure/JEU-D-OR.md`). Un généraliste local est un généraliste qui invente partout.
+
+**« Autonome mais surveillée » : attente RETENUE telle quelle.** C'est exactement l'
+architecture déjà en place — 3 sentinelles, jeu d'or, journal d'apprentissage, règles
+apprises, remontée Drive. Sur ce point Chaima avait raison avant moi ; rien à corriger.
+
 ## Ce qui est NON VÉRIFIÉ — et le restera tant qu'elle ne l'aura pas dit
 
 - **Son usage n°1**, le cas concret qui doit marcher en premier.

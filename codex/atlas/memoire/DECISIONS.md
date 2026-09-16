@@ -6,6 +6,13 @@
 
 ---
 
+- **2026-09-16** — **PROPOSÉ, en attente de Chaima : premier domaine = le droit belge / l'asbl.**
+  Motif : c'est le seul domaine où un corpus **existe déjà** (fiches « La Loi Avec Moi »,
+  statuts et documents d'asbl), et celui où l'écart avec/sans corpus sera le plus
+  spectaculaire — les deux échecs de Q-001 et Q-002 en sont la preuve chiffrée. Un seul
+  domaine d'abord : le plafond du §4 est de 2 domaines actifs, et on n'en ouvre pas deux quand
+  on n'en maîtrise aucun. **Statut : PROPOSÉ** — seul statut qu'un agent peut poser (§13).
+
 - **2026-09-16** — **Rangement en sous-dossiers.** Un type d'information = un sous-dossier =
   **un seul fichier vivant**, où l'on ajoute en tête. Motif : éviter que les documents
   s'entremêlent. Conséquence directe : **interdit** de créer un nouveau fichier daté par

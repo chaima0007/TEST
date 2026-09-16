@@ -6,6 +6,23 @@
 
 ---
 
+## SNAPSHOT 2026-09-16 (7) — L'attente est arbitrée, pas gommée
+
+- **Chaima exprime son attente** : « une IA qui ressemble à Claude, à qui je peux tout
+  demander, autonome mais surveillée. » **Décomposée en 4 composantes** dans
+  `memoire/PROFIL-CHAIMA.md` : 3 atteignables, **1 structurellement hors d'atteinte** (savoir
+  énormément de choses de tête). Écart d'ordre de grandeur, pas de configuration.
+- **Contradiction assumée et écrite** : « tout lui demander » est exactement ce qui ne
+  fonctionne pas, et c'est **démontré le même jour sur ses propres données** — deux questions
+  de droit, deux échecs, une institution inventée. Un généraliste local invente partout.
+- **Ce qui remplace la 4e composante** : elle ne saura pas de tête, elle saura **où chercher
+  dans les documents de Chaima**. Sur son terrain, ça vaut mieux. Le choix réel est
+  « généraliste médiocre ou spécialiste fiable ».
+- **« Autonome mais surveillée » : retenu tel quel.** C'est l'architecture déjà en place.
+  Chaima avait raison avant moi sur ce point.
+- **Ligne A-DECIDER ouverte** : premier domaine d'expertise. **PROPOSÉ** — le droit belge /
+  l'asbl, parce que le corpus existe déjà et que l'écart y est mesuré. Décision de Chaima.
+
 ## SNAPSHOT 2026-09-16 (6) — Bridage CONFIRMÉ · mesure « avant » du jeu d'or établie
 
 - **Bridage thermique : prédit, puis MESURÉ le même jour.** `eval rate` 8,10 → 7,75 → 7,29
