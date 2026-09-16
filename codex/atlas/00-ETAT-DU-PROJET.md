@@ -66,7 +66,15 @@
 
 ## DÉCISIONS EN ATTENTE DE CHAIMA
 
-Voir `/codex/A-DECIDER.md`, ligne « Périmètre d'ATLAS ».
+**Une seule à trancher, et elle tient sur une page :**
+👉 **`deliberations/FICHE-DECISION-D-001.md`** — 3 options, la recommandée, ce que chacune
+coûte, et ce qui est réversible. **Lire 2 minutes, trancher en 30 secondes.**
+
+Les deux autres lignes (`Où vit ATLAS`, `Premier domaine`) ne bloquent rien pour l'instant.
+Détail : `/codex/A-DECIDER.md`.
+
+**Le 2026-09-16, Chaima a penché vers l'option A sans trancher.** Non consigné comme décision
+(§13 : « peut-être » n'est pas « TRANCHÉ PAR CHAIMA »), noté pour la reprise.
 
 ## NON VÉRIFIÉ à ce jour
 
