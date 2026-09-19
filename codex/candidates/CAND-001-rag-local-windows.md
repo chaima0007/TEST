@@ -59,3 +59,30 @@ MIT, 65 k étoiles, releases mensuelles, télémétrie **listée événement par
     PARCE QUE : docs.anythingllm.com/installation-desktop/windows (consulté 2026-09-19) recommande la connexion à l'Ollama déjà installé ; LICENSE = MIT (raw.githubusercontent.com, consulté 2026-09-19) ; README liste citations et télémétrie désactivable in-app.
     NON VÉRIFIÉ : année de la release v1.16.1 (non affichée par GitHub) ; timeout 5 min Ollama (source tierce) ; RAM réelle de l'app sur CPU seul ; mainteneurs Msty (code fermé) ; cadence GPT4All ; comportement réseau réel — aucun des trois n'a été exécuté en Zone 1.
     CE QUI CHANGERAIT MON AVIS : une capture de trafic en Zone 1 montrant une connexion sortante absente du README après désactivation de la télémétrie → REJET ; ou une mesure sur la machine de Chaima > 3 min par réponse RAG → basculer vers plus léger (Msty, ou moins d'extraits).
+
+## Licence — verdict guardian-licences (2026-09-19)
+
+Fichiers LICENSE lus (raw.githubusercontent.com, cdn.anythingllm.com, API Hugging Face) le 2026-09-19. **P** privé · **C** commercial (Caelum, prestations) · **S** licence sortante / redistribution (§11).
+
+| Composant | Licence lue | P | C | S |
+|---|---|---|---|---|
+| AnythingLLM (LICENSE) | **MIT**, © Mintplex Labs Inc. | OK | OK | OK, notice + LICENSE conservés |
+| Embedder `Xenova/all-MiniLM-L6-v2` | **Apache-2.0** (HF API) | OK | OK | OK, LICENSE + NOTICE |
+| LanceDB (LICENSE) | **Apache-2.0** | OK | OK | OK |
+| Ollama (LICENSE) | **MIT** | OK | OK | OK |
+| **FFmpeg 8.0 téléchargé à l'install** (cdn…/ffmpeg/8.0/LICENSE.txt) | **GPL-3.0**, exécutable séparé (issue #5708, 2026-05-27) | OK | OK | **REJETÉ** en produit fermé (§1) |
+| Modèle Meeting Assistant `nvidia/parakeet-tdt-0.6b-v3` (HF API) | **CC-BY-4.0** | OK | OK | Attribution ; téléchargement optionnel |
+| Libs GPU Ollama, modèles speaker/segmentation du CDN | **NON VÉRIFIÉ** (non lues / non nommés) | sans objet (CPU) | ? | ? |
+
+**AnythingLLM : VALIDÉ NON INTÉGRÉ (P et C).** Obligations MIT/Apache : conserver notices de copyright et textes de licence, rien d'autre ; aucune en simple usage. **S :** compatible avec une licence sortante propriétaire **si le binaire FFmpeg GPL-3.0 est exclu** et parakeet attribué ; avec FFmpeg, l'ensemble n'est pas MIT.
+
+**Open WebUI Desktop :** wrapper **AGPL-3.0** (LICENSE) ; app « Open WebUI License » = BSD-3 + clause 4 branding (exemption ≤ 50 utilisateurs/30 j). **P : VALIDÉ NON INTÉGRÉ** (l'AGPL n'impose rien à l'usage sans modification ni service réseau). **C : VALIDÉ NON INTÉGRÉ** en outil interne, branding intact ; **REJETÉ** si modifié et exposé à des clients. **S : REJETÉ.**
+
+**Msty Studio :** propriétaire CloudStack LLC (msty.ai/terms) : « the exercise of your trade or profession for which you are compensated… does not qualify » comme Personal Use. **P : VALIDÉ NON INTÉGRÉ. C : REJETÉ sans Aurum** (149 USD/an, NON VÉRIFIÉ). **S : REJETÉ** (« may not be distributed, sold, rented, leased »).
+
+    DE : guardian-licences          POUR : sentinel-securite (parallèle) puis CHAIMA
+    OBJET : Accepter AnythingLLM Desktop côté licence en P et C ; interdire sa redistribution dans un produit fermé tant que le FFmpeg GPL-3.0 y est.
+    VERDICT : VALIDÉ NON INTÉGRÉ (AnythingLLM P/C ; Open WebUI P/C interne ; Msty P) · REJETÉ (Msty C sans Aurum ; Open WebUI et Msty en S ; AnythingLLM en S avec FFmpeg)
+    PARCE QUE : anything-llm/master/LICENSE = MIT ; cdn.anythingllm.com/support/ffmpeg/8.0/LICENSE.txt = GPL-3.0 ; open-webui/desktop/main/LICENSE = AGPL-3.0 ; msty.ai/terms — consultés le 2026-09-19.
+    NON VÉRIFIÉ : licences des libs GPU et modèles speaker/segmentation du CDN ; prix Aurum ; contenu réel de l'installeur .exe (Zone 1 non faite).
+    CE QUI CHANGERAIT MON AVIS : un LICENSE différent dans l'installeur réel ; un modèle du CDN non commercial → REJETÉ en C ; FFmpeg retiré par Mintplex → S sans réserve.
