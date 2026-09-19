@@ -6,6 +6,24 @@
 >
 > Vérité totale : seules des erreurs réellement survenues figurent ici, avec leur preuve.
 
+## Convention de numérotation — TRANCHÉ PAR CHAIMA le 2026-09-19
+
+**Toute nouvelle entrée est titrée par horodatage : `ERR-AAAAMMJJ-HHMM`** (heure UTC de
+l'écriture). Exemple : `## ERR-20260919-1340 — …`.
+
+**Les entrées existantes `ERR-001` à `ERR-021` ne sont PAS renommées.** Leurs numéros restent
+des identifiants valides et restent cités tels quels dans `.claude/agents/`, la CI, les PR et
+`/codex/A-DECIDER.md`. Le registre porte donc deux conventions : c'est assumé, et c'est le prix
+à payer pour ne pas casser les références croisées.
+
+**Pourquoi :** le compteur séquentiel tenu à la main entre en collision dès que deux sessions
+écrivent en parallèle. Fait établi, pas hypothèse — une même entrée a été renumérotée **quatre
+fois en une soirée** (011 → 016 → 018 → 019 → 020) parce que `main` prenait le numéro
+entre-temps. L'horodatage rend la collision structurellement impossible sans coordination.
+
+**Ne jamais réutiliser le compteur pour une entrée neuve**, même si le prochain numéro semble
+libre : « semble libre » est exactement l'erreur qui a produit les quatre renumérotations.
+
 ---
 
 ## ERR-001 — Build Vercel : client Prisma absent (2026-07-17)
@@ -129,13 +147,15 @@
 - **Correctif (APPLIQUÉ 2026-09-14) :** rapport corrigé — il ne reste que **3 points réellement ouverts**, tous absents du code (vérifié par recherche : « propriété », « domaine », « code source », « 12 mois », « renouvellement » n'apparaissent nulle part dans `pacte.ts`) : propriété du domaine et du code après paiement · coût de l'hébergement une fois la période « incluse » écoulée · heures estimées de livraison (usage interne, jamais communiqué).
 - **Prévention :** avant de demander à Chaima de produire quoi que ce soit, **exécuter le code qui pourrait déjà le produire**. Un devis, un message, un rapport : si un agent le génère, lire sa sortie réelle, pas sa description.
 
-## ERR-020 — Sessions programmées (Routines) : `git push` refusé (403) (2026-09-11, NON CLOSE — numéro attribué le 2026-09-14, à revérifier au merge)
+## ERR-020 — Sessions programmées (Routines) : `git push` refusé (403) (2026-09-11, **NON CLOSE**)
 - **Ce qui s'est passé :** une Routine prépare un correctif mais échoue au `git push` — « not in this session's authorized repository set » (403). Le travail du passage est perdu à chaque fois (conteneur éphémère).
 - **Cause (VÉRIFIÉE) :** une session programmée ne porte aucun dépôt (`folders_state: FOLDERS_STATE_NONE` sur les 10 Routines du compte) et l'API des Routines **n'expose aucun paramètre de dépôt** — l'accès n'était donc pas réglable « dans les réglages de la Routine ». Les Routines existantes tournent en environnement `env_0111…7` (tags `cowork-remote`/`cowork-scheduled`), pas dans l'environnement Claude Code « Par défaut ».
 - **Détection :** `list_triggers` → `folders_state` ; `get_session` sur la session tirée → `environment_id` et `post_turn_summary`. Un run marqué `SUCCEEDED` signifie « réveil délivré », **pas** « travail abouti » — vérifier par `git ls-remote`, jamais par le statut.
 - **Correctif partiel (NON CLOS) :** ajouter `add_repo(access:"push")` au prompt de la Routine a été essayé et **n'a rien changé** (2 passages, aucune branche poussée) — le préambule a été retiré. Ce qui EST vérifié : le compte a bien les droits (pushs réels `bea133e` sur keywordmoneymaker, `cc22b83` sur ce dépôt) et une session avec dépôt attaché à la création (`source_url`) pousse sans problème. Ce qui reste ouvert : rendre ce chemin disponible aux Routines — `create_trigger` accepte `environment_id` mais pas `source_url`. Décision d'accès = humaine (§10).
 - **Ce qui a été éliminé par la mesure (2026-09-14) :** une Routine créée via l'outil `create_trigger` **ne peut pas porter de connecteurs**, donc ses sessions n'ont pas `add_repo`. Testé deux fois, en faisant varier la seule variable disponible : avec `environment_id` explicite, puis sans (pur héritage de la session appelante, qui tourne pourtant dans « Par défaut » avec les deux dépôts attachés et tous les connecteurs). Même résultat les deux fois — `mcp_connections: []` et le message « *Connectors on triggers created via this tool are limited to those the calling session itself holds ; this call had none to pass through* ». Le paramètre `connectors` est en outre refusé (« *not available for this organization* »). Une Routine ainsi créée, en environnement « Par défaut », a tourné 70 s sans rien pousser.
 - **La seule voie restante, non testée :** une Routine créée **depuis l'interface Routines de claude.ai** (qui, elle, attache les connecteurs), en environnement « Par défaut ». C'est la seule configuration jamais essayée. Rien d'autre à tester depuis une session — ce n'est plus un manque d'effort, c'est une limite d'outillage établie.
+- **Re-mesuré le 2026-09-19 :** `create_trigger` refuse toujours le paramètre `connectors` (« *not available for this organization* »). La limite tient, ce n'est pas un état transitoire.
+- **Recette de test complète** (procédure d'interface pas-à-pas, lecture binaire du résultat, Routines à recréer le jour où ça passe) : **`/codex/routines-acces-ecriture.md`**.
 
 ## ERR-021 — Obstacles d'exploitation constatés mais introuvables depuis le registre (2026-09-16)
 - **Ce qui s'est passé :** 8 obstacles d'infrastructure ont été constatés et documentés le 14/09 avec leurs messages verbatim, mais dans un rapport daté uniquement. Un audit du 16/09 montre que **7 sur 8 étaient introuvables** depuis `🔴 ERREURS.md` — or c'est ce fichier que les agents consultent, pas `reports/`.

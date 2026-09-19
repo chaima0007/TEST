@@ -4,6 +4,9 @@
 
 ## TEST / Nexus-Market
 
+- **2026-09-19** — Décision prise : **numérotation de `🔴 ERREURS.md` par horodatage** (`ERR-AAAAMMJJ-HHMM`), sans renommer `ERR-001` à `ERR-021`. Motif : une même entrée renumérotée quatre fois en une soirée, deux sessions écrivant en parallèle dans le registre. **TRANCHÉ PAR CHAIMA.**
+- **2026-09-19** — Problème cerné (non résolu) : l'accès en écriture des Routines programmées est une **limite d'organisation**, pas un réglage — `create_trigger` refuse le paramètre `connectors` (re-mesuré ce jour). Recette de test d'interface déposée dans `/codex/routines-acces-ecriture.md`. ERR-020 reste **NON CLOSE**.
+
 - **2026-09-16** — Jalon : **6 agents ajoutés** — `expert-nextjs`, `expert-donnees-prisma`, `expert-authentification`, `expert-cicd-deploiement`, `expert-llm-agents`, `orchestrateur`. Les 21 rôles du §1 sont des rôles de **gouvernance** ; aucun ne possédait un domaine **technique**, alors que 5 des erreurs consignées relèvent de la CI/déploiement. Quatre agents **délibérément non créés** au titre du §9 anti-bloat (doublons de `testeur-adverse`, `scribe-empire`, `gardien-donnees`, `sentinel-securite`). TRANCHÉ PAR CHAIMA.
 
 - **2026-09-16** — Jalon : **carte vivante créée** (`codex/CARTOGRAPHIE.md`). Diagnostic mesuré : `main` figé depuis le 14/09, 6 PR ouvertes, 38 refs distantes — le goulot est le §10 (merger est humain), pas la technique. Deux écarts de tenue relevés : les 4 dossiers `/codex/` sont vides (boucle §4 jamais démarrée) et 7 obstacles d'exploitation sur 8 étaient introuvables depuis le registre (corrigé par ERR-021, en index).
