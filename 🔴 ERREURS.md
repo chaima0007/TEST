@@ -6,6 +6,24 @@
 >
 > Vérité totale : seules des erreurs réellement survenues figurent ici, avec leur preuve.
 
+## Convention de numérotation — TRANCHÉ PAR CHAIMA le 2026-09-19
+
+**Toute nouvelle entrée est titrée par horodatage : `ERR-AAAAMMJJ-HHMM`** (heure UTC de
+l'écriture). Exemple : `## ERR-20260919-1340 — …`.
+
+**Les entrées existantes `ERR-001` à `ERR-021` ne sont PAS renommées.** Leurs numéros restent
+des identifiants valides et restent cités tels quels dans `.claude/agents/`, la CI, les PR et
+`/codex/A-DECIDER.md`. Le registre porte donc deux conventions : c'est assumé, et c'est le prix
+à payer pour ne pas casser les références croisées.
+
+**Pourquoi :** le compteur séquentiel tenu à la main entre en collision dès que deux sessions
+écrivent en parallèle. Fait établi, pas hypothèse — une même entrée a été renumérotée **quatre
+fois en une soirée** (011 → 016 → 018 → 019 → 020) parce que `main` prenait le numéro
+entre-temps. L'horodatage rend la collision structurellement impossible sans coordination.
+
+**Ne jamais réutiliser le compteur pour une entrée neuve**, même si le prochain numéro semble
+libre : « semble libre » est exactement l'erreur qui a produit les quatre renumérotations.
+
 ---
 
 ## ERR-001 — Build Vercel : client Prisma absent (2026-07-17)
@@ -130,7 +148,24 @@
 - **Correctif (APPLIQUÉ 2026-09-14) :** rapport corrigé — il ne reste que **3 points réellement ouverts**, tous absents du code (vérifié par recherche : « propriété », « domaine », « code source », « 12 mois », « renouvellement » n'apparaissent nulle part dans `pacte.ts`) : propriété du domaine et du code après paiement · coût de l'hébergement une fois la période « incluse » écoulée · heures estimées de livraison (usage interne, jamais communiqué).
 - **Prévention :** avant de demander à Chaima de produire quoi que ce soit, **exécuter le code qui pourrait déjà le produire**. Un devis, un message, un rapport : si un agent le génère, lire sa sortie réelle, pas sa description.
 
-## ERR-020 — Branche créée sur un `main` périmé : récidive d'ERR-011, par la session qui ne l'avait pas lue (2026-09-14, corrigée)
+## ERR-020 — Sessions programmées (Routines) : `git push` refusé (403) (2026-09-11, **NON CLOSE**)
+- **Ce qui s'est passé :** une Routine prépare un correctif mais échoue au `git push` — « not in this session's authorized repository set » (403). Le travail du passage est perdu à chaque fois (conteneur éphémère).
+- **Cause (VÉRIFIÉE) :** une session programmée ne porte aucun dépôt (`folders_state: FOLDERS_STATE_NONE` sur les 10 Routines du compte) et l'API des Routines **n'expose aucun paramètre de dépôt** — l'accès n'était donc pas réglable « dans les réglages de la Routine ». Les Routines existantes tournent en environnement `env_0111…7` (tags `cowork-remote`/`cowork-scheduled`), pas dans l'environnement Claude Code « Par défaut ».
+- **Détection :** `list_triggers` → `folders_state` ; `get_session` sur la session tirée → `environment_id` et `post_turn_summary`. Un run marqué `SUCCEEDED` signifie « réveil délivré », **pas** « travail abouti » — vérifier par `git ls-remote`, jamais par le statut.
+- **Correctif partiel (NON CLOS) :** ajouter `add_repo(access:"push")` au prompt de la Routine a été essayé et **n'a rien changé** (2 passages, aucune branche poussée) — le préambule a été retiré. Ce qui EST vérifié : le compte a bien les droits (pushs réels `bea133e` sur keywordmoneymaker, `cc22b83` sur ce dépôt) et une session avec dépôt attaché à la création (`source_url`) pousse sans problème. Ce qui reste ouvert : rendre ce chemin disponible aux Routines — `create_trigger` accepte `environment_id` mais pas `source_url`. Décision d'accès = humaine (§10).
+- **Ce qui a été éliminé par la mesure (2026-09-14) :** une Routine créée via l'outil `create_trigger` **ne peut pas porter de connecteurs**, donc ses sessions n'ont pas `add_repo`. Testé deux fois, en faisant varier la seule variable disponible : avec `environment_id` explicite, puis sans (pur héritage de la session appelante, qui tourne pourtant dans « Par défaut » avec les deux dépôts attachés et tous les connecteurs). Même résultat les deux fois — `mcp_connections: []` et le message « *Connectors on triggers created via this tool are limited to those the calling session itself holds ; this call had none to pass through* ». Le paramètre `connectors` est en outre refusé (« *not available for this organization* »). Une Routine ainsi créée, en environnement « Par défaut », a tourné 70 s sans rien pousser.
+- **La seule voie restante, non testée :** une Routine créée **depuis l'interface Routines de claude.ai** (qui, elle, attache les connecteurs), en environnement « Par défaut ». C'est la seule configuration jamais essayée. Rien d'autre à tester depuis une session — ce n'est plus un manque d'effort, c'est une limite d'outillage établie.
+- **Re-mesuré le 2026-09-19 :** `create_trigger` refuse toujours le paramètre `connectors` (« *not available for this organization* »). La limite tient, ce n'est pas un état transitoire.
+- **Recette de test complète** (procédure d'interface pas-à-pas, lecture binaire du résultat, Routines à recréer le jour où ça passe) : **`/codex/routines-acces-ecriture.md`**.
+
+## ERR-021 — Obstacles d'exploitation constatés mais introuvables depuis le registre (2026-09-16)
+- **Ce qui s'est passé :** 8 obstacles d'infrastructure ont été constatés et documentés le 14/09 avec leurs messages verbatim, mais dans un rapport daté uniquement. Un audit du 16/09 montre que **7 sur 8 étaient introuvables** depuis `🔴 ERREURS.md` — or c'est ce fichier que les agents consultent, pas `reports/`.
+- **Cause :** le rapport se déclare « faits d'exploitation », donc pas rangé comme erreur. Mais le registre accepte déjà ce type d'entrée : ERR-004 (conteneur éphémère) est exactement de cette nature. Un constat rangé au mauvais endroit est un constat perdu.
+- **Détection :** croiser les intitulés de `reports/` avec le contenu d'`ERREURS.md`. Si un obstacle réel n'a aucune occurrence dans le registre, il sera re-rencontré.
+- **Correctif (APPLIQUÉ) :** cette entrée sert d'**index**, pas de copie (§9, anti-bloat). Les 8 obstacles, avec leurs messages verbatim, sont dans `reports/2026-09-14-2130-notes-exploitation-sessions-distantes.md` : (1) conteneur éphémère et settings locaux perdus ; (2) attacher un dépôt à une session programmée ; (3) `git clone --depth 1` est single-branch ; (4) `main` bouge pendant la session ; (5) le proxy autorise le push mais **pas** `git push --delete` (HTTP 403) — la suppression de branche est humaine ; (6) le dépôt répond par une redirection `test` → `TEST` ; (7) l'identifiant du connecteur MCP change en cours de session ; (9) `npm ci` réussit mais des binaires de `.bin/` peuvent manquer.
+- **Prévention :** tout obstacle réel rencontré va dans le registre, au moins sous forme d'index. `reports/` garde le détail, `ERREURS.md` garde la trouvabilité.
+
+## ERR-20260914-1956 — Branche créée sur un `main` périmé : récidive d'ERR-011, par la session qui ne l'avait pas lue (2026-09-14, corrigée)
 - **Ce qui s'est passé :** chargé d'une mesure d'accès en écriture, l'agent a enchaîné `git status` puis `git checkout -b codex/mesure-option3` **sans un seul `git fetch`**. La branche est partie de `9cc15c2f`, l'état local figé à l'ouverture du conteneur, alors que `origin/main` était déjà à `75ebe4af`. Résultat mesuré : la branche ignorait **12 commits / 457 lignes** produits par d'autres sessions (ERR-011 à ERR-018, ICP Caelum, protections RGPD, gate ré-exécuté).
 - **Cause (CONFIRMÉE par reproduction) :** `git merge-base codex/mesure-option3 origin/main` = `9cc15c2f` ≠ `git rev-parse origin/main` = `75ebe4af`. L'agent a traité l'affichage de `git branch -a` — qui ne liste que les refs **déjà** en cache local — comme un état serveur. Un `-a` sans `fetch` préalable ne prouve rien sur le dépôt distant.
 - **Aggravant — la boucle :** l'entrée ERR-011 décrit **exactement** cette erreur, et le motif récurrent n°6 la nomme. L'agent ne les a pas appliquées **parce qu'elles faisaient partie des 12 commits qu'il ne voyait pas**. Un registre d'erreurs ne protège que la session qui a fetché ; l'omission du fetch est donc l'erreur qui **rend toutes les autres leçons invisibles**, pas une erreur parmi d'autres.
@@ -140,7 +175,7 @@
 - **Correctif (APPLIQUÉ et VÉRIFIÉ 2026-09-14) :** `origin/main` mergé dans `codex/mesure-option3` (merge, pas rebase : préserve `cc22b83`, la preuve de la mesure, et ne réécrit l'historique de personne). Conflit sur ce fichier résolu en **union** — motifs récurrents de `main` conservés, tableau de mesure conservé. Vérification : `git diff codex/mesure-option3...origin/main --shortstat` → **vide**, et `git log codex/mesure-option3..origin/main` → **0 commit**. La branche ne supprime plus rien.
 - **Prévention, sous forme de test :** *`git fetch` est la PREMIÈRE commande de toute session qui touchera à git — avant `status`, avant `branch`, avant toute conclusion.* Et avant d'annoncer un succès : `git diff <ma-branche>...origin/main --shortstat` doit être **vide**. Une branche qui supprime des lignes qu'on n'a pas écrites est un échec, même si le push a réussi.
 
-## ERR-021 — « Correctif APPLIQUÉ » pour un correctif qui vit sur une branche non mergée (2026-09-14)
+## ERR-20260914-2033 — « Correctif APPLIQUÉ » pour un correctif qui vit sur une branche non mergée (2026-09-14)
 - **Ce qui s'est passé :** ERR-018 sur `main` porte « **Correctif (APPLIQUÉ 2026-09-14)** : (a) volet structurel d'ERR-016 livré — `lib/agents/garde-fou.ts`, appliqué aux trois agents, 78 tests verts ». Vérification : `lib/agents/garde-fou.ts` **n'est pas sur `main`**. Il n'existe que sur `codex/testeur-adverse-garde-fou-survente`, non mergée. Sur la ligne principale, le garde-fou anti-survente d'ERR-016 **n'est pas en place** — et le chemin heuristique, seul chemin actif tant qu'aucune clé API n'est posée, émet toujours les trois affirmations non étayées (« hébergement sécurisé », « pensé pour convertir », « à partir de 500 € »).
 - **Cause :** confusion entre **écrit** et **en vigueur**. Le travail a bien été fait — le fichier existe, il est testé, et son merge vers `main` est une action humaine (§10) : l'agent n'avait pas le droit de le merger. Le défaut n'est pas d'avoir laissé le correctif sur une branche, c'est d'avoir écrit « APPLIQUÉ » **sans le qualifier**. Qui lit `main` conclut que la protection est active. Elle ne l'est pas.
 - **Détection :** audit de cohérence §5 (2026-09-14) — `git cat-file -e origin/main:lib/agents/garde-fou.ts` échoue ; une recherche sur toutes les branches le trouve sur une seule, non mergée. Aucun test, aucune CI ne signale ce cas : le fichier est vert **sur sa branche**.
@@ -151,14 +186,15 @@
 
 
 
-## ERR-022 — Le garde-fou écrit contre ERR-021 n'est lui-même pas en vigueur (2026-09-16)
+## ERR-20260916-1413 — Le garde-fou écrit contre ERR-20260914-2033 n'est lui-même pas en vigueur (2026-09-16)
 - **Ce qui s'est passé :** Chaima demande « pourquoi rien n'a changé ? ». Réponse mesurée : **rien n'a changé sur `main`**, qui est resté à `70e657b6` du 2026-09-14 au 2026-09-16. Les 8 commits de la session d'audit — ERR-020, ERR-021, la règle du `git fetch`, le rapport d'audit des branches, le snapshot du JOURNAL — vivent sur `codex/err-019-branche-perimee`, **jamais mergée**. `main` est le seul état que quiconque lit ; il n'a rien reçu.
 - **Cause :** l'agent a confondu **pousser** et **livrer**. Le merge vers `main` est strictement humain (§10) : l'agent n'avait pas le droit de le faire, et ne devait pas le faire. Le défaut est ailleurs — le rapport de fin de session a énuméré des branches et des SHA, **sans jamais dire la seule phrase qui comptait** : « rien de tout ceci n'atteindra `main` tant que tu ne l'auras pas mergé ». Une passation qui laisse croire que le travail est livré alors qu'il est seulement poussé est une passation fausse.
-- **Aggravant — la boucle, deuxième tour :** l'entrée précédente, **ERR-021**, énonce exactement ce défaut (« écrit » n'est pas « en vigueur » ; un correctif sur une branche non mergée ne protège rien), et le motif récurrent 14 le nomme. L'agent l'a rédigée puis l'a immédiatement rejouée **sur son propre garde-fou**. Pire qu'ERR-020 : là, la leçon était invisible faute de `fetch` ; ici elle était **écrite par l'agent lui-même, dans le même fichier, le même jour**.
+- **Aggravant — la boucle, deuxième tour :** l'entrée précédente, **ERR-20260914-2033**, énonce exactement ce défaut (« écrit » n'est pas « en vigueur » ; un correctif sur une branche non mergée ne protège rien), et le motif récurrent 14 le nomme. L'agent l'a rédigée puis l'a immédiatement rejouée **sur son propre garde-fou**. Pire qu'ERR-020 : là, la leçon était invisible faute de `fetch` ; ici elle était **écrite par l'agent lui-même, dans le même fichier, le même jour**.
 - **Conséquence concrète et mesurée :** `git show origin/main:AGENTS.md | grep -c "codex-regle-fetch"` → **0**. Les sessions clonent la branche par défaut ; elles chargent donc l'`AGENTS.md` de `main`, qui ne contient pas la règle. **Le garde-fou censé empêcher ERR-011/ERR-020 de se reproduire ne protège aucune session.** Il est inerte depuis son écriture.
-- **Détection :** audit systématique des correctifs (2026-09-16) — chaque entrée du registre nommant un artefact a été testée contre `origin/main`. Résultat : **5 correctifs sur 7 réellement en vigueur** (ERR-001 `postinstall`, ERR-005 regex tolérante, ERR-010 workflow non bloquant, ERR-015 `.gitignore` prospects, ERR-018 règle du découpage) ; **2 absents** — `lib/agents/garde-fou.ts` (ERR-021, déjà consigné) et la règle du `git fetch` (la présente entrée).
+- **Détection :** audit systématique des correctifs (2026-09-16) — chaque entrée du registre nommant un artefact a été testée contre `origin/main`. Résultat : **5 correctifs sur 7 réellement en vigueur** (ERR-001 `postinstall`, ERR-005 regex tolérante, ERR-010 workflow non bloquant, ERR-015 `.gitignore` prospects, ERR-018 règle du découpage) ; **2 absents** — `lib/agents/garde-fou.ts` (ERR-20260914-2033, déjà consigné) et la règle du `git fetch` (la présente entrée).
 - **Correctif :** aucun qu'un agent puisse appliquer — **le merge vers `main` est à Chaima (§10)**. Ce qui est fait : (a) la présente entrée ; (b) `codex/CARTOGRAPHIE.md`, carte vivante exigée par le §1 et jusqu'ici inexistante, qui affiche en tête l'écart `main` ↔ branches pour que la question « pourquoi rien n'a changé ? » se réponde d'un coup d'œil ; (c) le test d'écart ajouté au rituel §5 du JOURNAL.
 - **Prévention, sous forme de test :** *un rapport de fin de session qui cite une branche doit dire, dans la même phrase, si son contenu est sur `main` ou non.* Formulation obligatoire : **« poussé sur X — PAS sur `main` tant que tu ne l'as pas mergé »**. « Poussé » seul est une demi-vérité ; « livré » pour du non-mergé est faux.
+
 
 ---
 
@@ -174,7 +210,7 @@
 10. **Tout texte qui traverse un shell doit être quoté** — heredoc à délimiteur quoté par défaut ; un backtick non quoté est une substitution de commande, pas un caractère (ERR-017).
 9. **Un garde-fou se vérifie sur le chemin qui tourne, pas sur celui qu'on craignait** — placé au mauvais endroit, il rassure sans protéger, et le repli d'un contrôle ne doit jamais être la sortie non contrôlée (ERR-016).
 8. **Un agent ne voit que le contexte qu'on lui donne** — une omission dans l'énoncé devient un angle mort dans la décision ; la visibilité du dépôt, le volume et le canal font partie de l'énoncé (ERR-015).
-15. **« Poussé » n'est pas « livré »** — le merge vers `main` est humain (§10) ; un rapport qui cite une branche doit dire dans la même phrase qu'elle n'est pas sur `main` (ERR-022).
-14. **« Écrit » n'est pas « en vigueur »** — un correctif sur une branche non mergée ne protège rien ; vérifier sa présence sur `main` avant d'écrire « APPLIQUÉ » (ERR-021).
-13. **`git fetch` avant tout le reste** — un registre d'erreurs ne protège que la session qui l'a fetché ; sans fetch, les leçons déjà écrites sont invisibles et on les recommet (ERR-020, récidive d'ERR-011).
+15. **« Poussé » n'est pas « livré »** — le merge vers `main` est humain (§10) ; un rapport qui cite une branche doit dire dans la même phrase qu'elle n'est pas sur `main` (ERR-20260916-1413).
+14. **« Écrit » n'est pas « en vigueur »** — un correctif sur une branche non mergée ne protège rien ; vérifier sa présence sur `main` avant d'écrire « APPLIQUÉ » (ERR-20260914-2033).
+13. **`git fetch` avant tout le reste** — un registre d'erreurs ne protège que la session qui l'a fetché ; sans fetch, les leçons déjà écrites sont invisibles et on les recommet (ERR-20260914-1956, récidive d'ERR-011).
 7. **Un résumé n'est pas une source ; un périmètre filtré n'est pas un audit** — recouper avec l'artefact d'origine, annoncer le périmètre, vérifier sur le fichier réel (ERR-012, ERR-013, ERR-014).
