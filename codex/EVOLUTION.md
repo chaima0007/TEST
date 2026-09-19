@@ -4,6 +4,8 @@
 
 ## TEST / Nexus-Market
 
+- **2026-09-19** — Décision prise : **les 21 rôles de `.claude/agents/` passent au set canonique de l'Empire** (PR #9). Lève une contradiction entre deux décisions opposées du 2026-09-11 ; celle du « laisser en l'état » est supersédée. Aucun agent ajouté ni supprimé ; les 6 experts de domaine du 16/09 sont conservés. **TRANCHÉ PAR CHAIMA.**
+
 - **2026-09-19** — Décision prise : **numérotation de `🔴 ERREURS.md` par horodatage** (`ERR-AAAAMMJJ-HHMM`), sans renommer `ERR-001` à `ERR-021`. Motif : une même entrée renumérotée quatre fois en une soirée, deux sessions écrivant en parallèle dans le registre. **TRANCHÉ PAR CHAIMA.**
 - **2026-09-19** — Problème cerné (non résolu) : l'accès en écriture des Routines programmées est une **limite d'organisation**, pas un réglage — `create_trigger` refuse le paramètre `connectors` (re-mesuré ce jour). Recette de test d'interface déposée dans `/codex/routines-acces-ecriture.md`. ERR-020 reste **NON CLOSE**.
 

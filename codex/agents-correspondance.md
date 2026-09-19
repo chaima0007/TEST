@@ -1,15 +1,19 @@
 # /codex/agents-correspondance.md — réconciliation de `.claude/agents/` avec le set canonique
 
-> ## ⚠️ DÉCISION CONTESTÉE — lire avant d'appliquer
-> Une décision **opposée** est consignée sur `main`, datée du même jour et signée de la même façon :
-> « `.claude/agents/` — **laisser en l'état**, aucun agent remplacé ni supprimé […] reconfirmée explicitement
-> par Chaima une fois la prémisse corrigée. **TRANCHÉ PAR CHAIMA.** »
+> ## ✅ CONTRADICTION LEVÉE — TRANCHÉ PAR CHAIMA le 2026-09-19
+> Deux décisions **opposées** coexistaient, datées du même jour et signées de la même façon :
+> « laisser en l'état, aucun agent remplacé » (consignée sur `main`) et « remplacer par le set canonique »
+> (cette branche). Chaima a tranché le **2026-09-19** en faveur du **remplacement**, et la PR #9 a été mergée.
 >
-> Ce document décrit donc une **proposition**, pas un état acquis. Elle ne prend effet que si Chaima merge la PR.
-> Tant qu'elle n'est pas mergée, `main` garde son set d'origine et c'est lui qui fait foi.
-> Voir la ligne « Contradiction » dans `/codex/A-DECIDER.md`.
+> **La décision du 2026-09-11 « laisser en l'état » est donc SUPERSÉDÉE.** Elle reste consignée dans
+> `/codex/A-DECIDER.md` — une décision abandonnée se consigne comme abandonnée, avec sa date (§6) — mais
+> elle ne fait plus foi. C'est ce document qui décrit l'état réel de `.claude/agents/`.
+>
+> Le fait qui a emporté la décision : les ébauches n'avaient **ni champ `tools:` ni socle commun**, donc ni
+> §3 (anti-injection), ni §10 (frontière humaine), ni §13 (vocabulaire), ni §14 (passation) — précisément
+> les règles que ces agents existent pour appliquer. Aucun agent ajouté, supprimé ni renommé.
 
-> **2026-09-11 — TRANCHÉ PAR CHAIMA** (verdict contesté, cf. ci-dessus)**.** Referme la ligne ouverte le 2026-09-06 dans `/codex/A-DECIDER.md` :
+> **Referme la ligne ouverte le 2026-09-06 dans `/codex/A-DECIDER.md` :**
 > « Les 21 agents sont dérivés du §1 (NON VÉRIFIÉ comme officiels) ; **les remplacer par le set canonique
 > de l'Empire s'il existe** ». Il existe : c'est celui de `chaima0007/keywordmoneymaker`.
 
