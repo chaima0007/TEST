@@ -29,6 +29,10 @@
 - **2026-07-17** — Jalon : agents premium COMMANDANT + RÉSOLVEUR ajoutés à la flotte Caelum (registre `lib/agents/`).
 - **2026-06-18** — Jalon : pipeline Nexus-Market V1 (state machine 5 étapes) + agents Conseiller/Simulateur/Rédacteur/Négociateur/Auto-pilote ; PR #1 ouverte.
 
+- 2026-09-19 — **Trois agents de garantie créés** : `valideur` (la prémisse tient-elle ? née d'ERR-012/013/019 et `ERR-20260914-1956`), `essayeur` (exécuter plutôt que raisonner ; ERR-008/014/016), `confirmateur` (est-ce **en vigueur** là où ça tourne ? `ERR-20260914-2033`, `ERR-20260916-1413`). Ils comblent le seul trou que les 27 rôles existants laissaient : personne ne vérifiait qu'un correctif **tourne**. Contrainte mesurée le jour même : un agent écrit pendant une session n'y est pas utilisable (registre figé au démarrage — `Agent type 'valideur' not found`).
+- 2026-09-19 — **`scripts/audit-codex.sh`** : le rituel §5 exécutable en ~5 s, 7 contrôles. Premier passage : `A-DECIDER.md` n'était pas trié selon le §6 (corrigé), et « Merger la PR #1 » dormait depuis **93 jours** alors que la décision était prise depuis le 14/09 (close, preuve `9cc15c2f`). Le script a aussi trouvé un défaut **dans lui-même** — faux positif de doublon sur la nouvelle convention d'ID — corrigé en l'exécutant.
+- 2026-09-19 — **Deux cartographies fusionnées.** Deux sessions qui ne se voyaient pas en avaient écrit une chacune (16 et 19 septembre). Fusion sans écrasement : sections 1-6 de la version de `main`, 7-11 de l'autre.
+
 ## CompeteIQ (dépôt chaima0007/test)
 
 > Section intégrée depuis `main` (PR #8). Événements côté produit CompeteIQ.
