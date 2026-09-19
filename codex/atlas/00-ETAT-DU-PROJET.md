@@ -12,6 +12,8 @@
    décide laquelle. → `deliberations/DELIBERATIONS.md`, section « CONVERGENCE ».
 2. **Deux réponses d'une ligne** pour le dossier statut : as-tu aujourd'hui une activité
    salariée (ou des allocations) ? Et où sont les statuts de ton asbl ?
+   *(et, pour que ton IA locale grandisse : après chaque passe de la routine, relance les 3 lignes
+   `Invoke-WebRequest … / ollama create … / ollama run atlas-memoire` — c'est ça qui la met à jour)*
 3. **Trancher D-001** (gel des nouveaux projets jusqu'au 1er message prospect) —
    `deliberations/FICHE-DECISION-D-001.md`, 2 minutes. Option C « pas maintenant » est légitime.
 4. *(quand tu as 30 min devant ta machine)* **Zone 1 AnythingLLM** — les 7 étapes de
@@ -33,6 +35,13 @@
 | 19/09 | **`scripts/verifier-avant-push.sh`** — filet anti-fuite (dépôt public), inscrit dans `CLAUDE.md`. |
 
 ## EN COURS (sans toi)
+
+- **Routine quotidienne active** depuis le 2026-09-19 — `trig_01RXTwrecsCLboaL6kMmn6Ry`, tous
+  les jours **06h00 Bruxelles**. Elle fait le snapshot, lit les branches voisines, cherche du
+  neuf sur 2 domaines (droit belge · IA locale), **régénère la mémoire de ton IA locale**, pousse.
+  Notification push **seulement** si quelque chose de notable. **Première exécution : 20/09 06h**
+  — c'est elle qui dira si les droits de push fonctionnent. **Pour l'arrêter** : Routines dans
+  claude.ai. Coût par passe : NON VÉRIFIÉ, à lire sur la première.
 
 - **Parcours 1 — couche 4 (RAG local) : TERMINÉ.** AnythingLLM Desktop **VALIDÉ NON INTÉGRÉ**
   (scout + licence + sécurité concordants), deux réserves rejetées. Prochaine étape = **Zone 1

@@ -6,6 +6,27 @@
 
 ---
 
+## SNAPSHOT 2026-09-19 (4) — Le système tourne désormais sans Chaima
+
+**Compteur de passes sans fiche nouvelle : 0** (initialisé pour la routine).
+
+- **Pont vers l'IA locale livré** : `scripts/generer-modelfile-memoire.sh` →
+  `memoire/atlas-memoire.Modelfile` (~3 000 tokens : règles de prudence en français + état
+  complet du projet + règles apprises). Trois lignes PowerShell chez Chaima, adresse vérifiée
+  (`200`). **Premier moment où ce qui est construit ici entre dans sa machine.** Chaima avait
+  demandé « tu es censé créer une IA indépendante ? » — réponse consignée : elle existait,
+  elle était vide ; là elle se remplit. Limite dite : elle retrouvera et citera, elle ne
+  cherchera ni ne débattra.
+- **Routine quotidienne CRÉÉE** (`trig_01RXTwrecsCLboaL6kMmn6Ry`, 06h00 Bruxelles) sur
+  décision de Chaima — « surveille-le pour qu'il grandisse » — après signalement de la dépense
+  récurrente. Elle fait le §5, intègre les branches voisines, cherche sur 2 domaines,
+  **régénère le Modelfile**, pousse, se tait si rien. **Deux limites consignées** : sans
+  connecteurs (pas d'Exa → RELAYÉ/NON VÉRIFIÉ seulement, consigne adaptée) ; droits de push
+  à confirmer à la première exécution du 20/09.
+- **Ce que « grandir » veut dire désormais, mécaniquement** : la routine enrichit
+  `expertise/` et `memoire/` → régénère le Modelfile → Chaima relance 3 lignes → son IA locale
+  sait plus qu'hier. Quand le RAG sera en Zone 3, la même chose, sans les 3 lignes.
+
 ## SNAPSHOT 2026-09-19 (3) — Parcours 1 terminé : le RAG a son candidat
 
 - **CAND-001 complète** : scout (6 pistes, 3 écartées sur source) → guardian + sentinel **en

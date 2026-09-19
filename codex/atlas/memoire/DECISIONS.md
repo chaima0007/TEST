@@ -6,6 +6,14 @@
 
 ---
 
+- **2026-09-19** — **Routine quotidienne de surveillance et d'apprentissage créée.** Chaima :
+  « surveille-le pour qu'il grandisse ». La dépense récurrente avait été signalée (§10,
+  `intendant-couts`) ; elle maintient. Identifiant `trig_01RXTwrecsCLboaL6kMmn6Ry`, 06h00
+  Bruxelles, session neuve, notification push seulement si notable. **Limites dites** : sans
+  connecteurs (pas d'Exa → recherche dégradée, jamais VÉRIFIÉ sans page lue) ; droits de push
+  à confirmer à la première exécution. Réexamen automatique proposé après 7 passes vides.
+  **TRANCHÉ PAR CHAIMA.**
+
 - **2026-09-16** — **PROPOSÉ, en attente de Chaima : premier domaine = le droit belge / l'asbl.**
   Motif : c'est le seul domaine où un corpus **existe déjà** (fiches « La Loi Avec Moi »,
   statuts et documents d'asbl), et celui où l'écart avec/sans corpus sera le plus
