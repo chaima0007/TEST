@@ -78,6 +78,60 @@ rapports. Il n'y a pas de code à déménager — quelques fichiers `.md`, parfo
 | `claude/chaima-patent-audit-ytcxq3` | `codex/` + registres | Audit brevets (transverse) |
 | `claude/libre-accomplis-system-9wvsnf` | `codex/`, `docs/`, `tests/` | Libre Accomplis |
 
+### 🔴 CORRECTION du 2026-09-19 — `beautiful-hawking` n'est PAS étranger
+Son contenu est `codex/CARTOGRAPHIE.md` et `codex/agents-correspondance.md` : **la carte de CE
+dépôt**, produite par le rôle `cartographe` (§1). Je l'avais classée étrangère sur la foi de son
+nom. **Vérifié en l'ouvrant : elle est chez elle.** Le compte réel est donc **19 branches
+étrangères, pas 20** — et la leçon vaut pour tout le classement : le nom d'une branche n'est pas
+une preuve, dans un sens comme dans l'autre.
+
+### NOMS DÉFINITIFS DES DÉPÔTS — tranché par Chaima le 2026-09-19 (« nom simple du projet »)
+
+Tous **privés**. La branche est poussée telle quelle comme `main` du nouveau dépôt : pour le
+Type 2, elle contient le squelette Next.js **plus** l'application du projet — c'est l'état
+fonctionnel réel, et le découper casserait l'application.
+
+| Branche actuelle | → Nouveau dépôt privé | Type |
+|---|---|---|
+| `claude/gta-style-game-prototype` | **`gta-prototype`** | 1 |
+| `claude/moonbow-website` | **`moonbow`** | 1 |
+| `claude/multi-agent-migration-factory-riujie` | **`migration-factory`** | 1 |
+| `claude/presentation-project-selection-vy1hb7` | **`selection-projets`** | 1 |
+| `claude/crm-sales` | **`crm`** | 2 |
+| `claude/shopify-app-development-ri1090` | **`shopify-app`** | 2 |
+| `claude/foot-site-business-plan-ch0jt0` | **`feet-hub`** | 2 |
+| `claude/world-cup-2026-agents-mp6mi6` | **`mondial-2026`** | 2 |
+| `claude/empire-chaima-linux-game-54cqgy` | **`fiches-linux`** | 2 |
+| `claude/day-trading-yahoo-finance-a0w3q8` | **`day-trading`** | 2 |
+| `claude/canvas-project-concept-c4htto` | **`motif-studio`** | 2 |
+| `claude/mistral-mnwb5j` | **`collab-ia`** | 2 |
+| `claude/parents-enfants-mvp-1xwgqu` | **`bulle`** | 2 |
+| `claude/couples-app-mvp-chaima-fx3dya` | **`couples-app`** | 2 |
+| `claude/nifty-shannon-u87dv8` | **`atlas`** | 3 → requalifié |
+
+**`fiches-linux` — nom corrigé après ouverture :** la branche s'appelle
+`empire-chaima-linux-game` mais contient `fiches/Disques.dc.html`, `Firewalld.dc.html`,
+`Reseau.dc.html` — des **fiches de cours Linux/réseau**, pas un jeu.
+
+**`atlas` — requalifié du Type 3 vers un dépôt à part entière :** la branche ne contient pas
+« quelques documents » mais **toute la structure du projet ATLAS** (`codex/atlas/` : état,
+routage, apprentissage, audits, continuité, corpus, délibérations dont statut légal et
+encaissement). Un dossier Drive « ATLAS — IA locale (Empire Chaima) » existe déjà.
+
+### Les 4 branches Type 3 restantes — documents, pas dépôts
+`wizardly-franklin` (1 rapport d'heures Caelum + La Loi Avec Moi) · `adoring-albattani`
+(3 chartes de veille) · `chaima-patent-audit` (audit brevets, transverse) ·
+`libre-accomplis-system` (`docs/libre-et-accomplis/`). Destination : le dossier Drive du projet
+concerné. Aucun dépôt à créer.
+
+### ⛔ BLOCAGE CONSTATÉ le 2026-09-19 — création de dépôts impossible depuis une session d'agent
+`POST https://api.github.com/user/repos` → **`403 Resource not accessible by integration`**.
+L'intégration GitHub de cette session **n'a pas le droit de créer un dépôt**. Ce n'est pas un
+réglage à trouver : c'est une permission absente, du même ordre que le proxy d'egress (ERR-024).
+**Conséquence pratique :** les 15 dépôts doivent être créés **par Chaima**, vides, depuis
+github.com/new (nom + « Private » + Create, sans README ni .gitignore). Dès qu'un dépôt existe,
+le transfert de sa branche prend quelques secondes et se fait ici.
+
 ### Ce que ce classement change, concrètement
 - **4 branches** se rangent en une opération simple et sans risque (Type 1).
 - **10 branches** demandent une extraction soignée, une par une (Type 2) — c'est le gros du travail.
