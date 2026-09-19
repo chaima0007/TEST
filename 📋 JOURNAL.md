@@ -4,6 +4,16 @@
 
 ---
 
+SNAPSHOT 2026-09-19 (3) : **`main` = `8f17ae5a` — la PR #10 est MERGÉE.** Sept jours de travail en branche sont entrés sur la ligne principale, sur instruction explicite de Chaima (« ouvre et merge »), CI `Lint, Typecheck & Build` verte avant merge.
+- **Vérification post-merge par l'agent `confirmateur`**, chaque ligne par commande exécutée : **5 artefacts sur 6 EN VIGUEUR** — règle du `git fetch`, règle du découpage, `scripts/audit-codex.sh`, les 3 agents de garantie, `codex/CARTOGRAPHIE.md`. Exactement **un ✗ est devenu ✓** : la règle du `git fetch` protège enfin les sessions.
+- **La règle a servi dans l'heure qui a suivi sa mise en vigueur** : sans son `git fetch`, le confirmateur aurait raisonné sur `202a0016` et rendu un verdict faux sur 5 artefacts sur 6. Scénario ERR-011 / `ERR-20260914-1956`, évité par le garde-fou lui-même.
+- **Défaut trouvé et corrigé** : l'entrée ERR-016 se contredisait — titre « NON CORRIGÉ », ligne Correctif « volet structurel **APPLIQUÉ** le 2026-09-14 », alors que `git cat-file -e origin/main:lib/agents/garde-fou.ts` échoue. Formulation remise d'aplomb en « **LIVRÉ, NON MERGÉ — donc PAS en vigueur sur `main`** », avec note datée. Rien du correctif n'est retiré ; seul le mot change. C'est exactement `ERR-20260914-2033`, trouvé cette fois par l'outil au lieu d'être subi.
+- **Angle mort comblé** : les 5 artefacts tout juste mis en vigueur n'avaient **aucune ligne** dans la section 2 de l'audit — s'ils disparaissaient de `main`, l'audit resterait vert. Ajoutés, avec la règle d'extension écrite en commentaire. La surveillance passe de **6 à 11 artefacts**, 10 verts.
+- **Fait mesuré sur ERR-016** : la branche porteuse a 4 commits en attente, **27 de retard**, et **aucune PR n'existe pour elle**. Ce n'est pas « prête à merger », c'est « à rendre mergeable d'abord » — et ça exige la décision commerciale.
+- **ERR-003 vérifiée en direct** : le déploiement Vercel `laloiavecmoi` est passé en **Error** sur une PR strictement documentaire (11 fichiers, zéro ligne de code applicatif). Le coût de la ligne « Nettoyer les projets Vercel », qui dort depuis 64 jours, n'est pas théorique.
+- VÉRIFIÉ : lint 0 erreur, build OK, tsc **0 après build**, **77/77 tests**.
+- **Aucune branche supprimée. La branche du garde-fou n'a pas été mergée : ses 4 tests adverses sont rouges à dessein** (§10).
+
 SNAPSHOT 2026-09-19 (2) : `main` = `202a0016` — **a avancé de 12 commits** pendant la session (PR #9, réconciliation des agents, convention de numérotation tranchée). **Trois agents de garantie créés, et essayés.**
 - **`valideur` · `essayeur` · `confirmateur`** créés dans `.claude/agents/`. Anti-doublon §9 fait avant écriture : `verificateur-verite` source ce qui SORT, `testeur-adverse` ÉCRIT le test rouge, `superviseur-vigie` fait le snapshot — **aucun** ne vérifie qu'un correctif **tourne**. Chacun est justifié par des entrées du registre, nommées.
 - **Essayés, et le résultat est un constat, pas un succès :** `Agent type 'valideur' not found`. Le registre des agents est **figé au démarrage de session** — un agent écrit maintenant n'est pas utilisable maintenant. « Écrit ≠ en vigueur » à deux niveaux : pas utilisable dans la session qui le crée, pas utilisable par les autres tant que `main` ne l'a pas. Consigné dans la carte, §9.
