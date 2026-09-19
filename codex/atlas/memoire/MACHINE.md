@@ -112,6 +112,14 @@ la mesure ci-dessus :
 minute. Le compromis à trancher est donc réel : **qualité en français contre attente**. Il se
 tranchera sur une mesure et sur le jeu d'or, pas sur une préférence.
 
+## Ce que le RAG va coûter en vitesse — projection, NON VÉRIFIÉE (2026-09-19)
+
+Le modèle **relit** les extraits retrouvés avant d'écrire. `prompt eval` mesuré : **21-25
+tokens/s**. Quatre extraits ≈ 1 500 à 3 000 tokens → **70 à 140 secondes de lecture** avant
+le premier mot, hors bridage thermique. **Une question RAG coûtera 2 à 3 minutes.** Fiabilité
+**MODÉRÉE** (calcul du scout, pas mesure). Leviers si c'est trop : moins d'extraits, extraits
+plus courts. **Mesurer sur la première vraie question, et inscrire ici.**
+
 ## Conséquences pratiques, non négociables
 
 1. **Brancher l'ordinateur sur secteur.** Sur batterie, Windows bride le processeur : le
