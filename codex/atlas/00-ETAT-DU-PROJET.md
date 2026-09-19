@@ -31,6 +31,7 @@
 | 16/09 | **Dossier statut légal** sur sources primaires : travail associatif fermé, asbl encaisse mais ne reverse pas. `deliberations/DOSSIER-01-STATUT-LEGAL.md`. |
 | 19/09 | **Recoupement avec une branche voisine** : tu es à Bruxelles, 3 voies s'excluent 2 ans, JobYourself porte le n° de TVA → **l'ordre prime sur la vitesse**. |
 | 19/09 | **`memoire/CARTE-PROJETS.md`** — 38 branches : 15 vivantes, 3 ralenties, 20 dormantes. Risque n°1 : La Loi Avec Moi, 3 539 commits, une seule branche. |
+| 19/09 | **`PROMPT-MAITRE-v2.md`** + 2 agents (`sequenceur`, `explorateur-quantique`) — le prompt à coller dans tout projet ; chaîne complète, routage erreurs/Drive, 15 règles. |
 | 19/09 | **`scripts/verifier-avant-push.sh`** — filet anti-fuite (dépôt public), inscrit dans `CLAUDE.md`. |
 
 ## EN COURS (sans toi)

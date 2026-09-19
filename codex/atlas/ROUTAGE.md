@@ -32,6 +32,7 @@ première chose qu'on lit.
 | Une mesure de progrès, le jeu d'or | `mesure/JEU-D-OR.md` |
 | Une procédure de sauvegarde / restauration | `continuite/RESTAURATION.md` |
 | La remontée vers le Drive | `continuite/SYNC-DRIVE.md` |
+| Le **prompt à coller dans n'importe quel projet** | `PROMPT-MAITRE-v2.md` — copie dans le Drive |
 | Où en est le projet (fait / en cours / reste) | `00-ETAT-DU-PROJET.md` — **le seul fichier à ouvrir pour reprendre** |
 | Une décision qui **attend Chaima** | `/codex/A-DECIDER.md` (racine, partagé avec les autres projets) |
 | Une leçon **utile aux autres projets** | `/codex/expertise/` (transverse, §4) |

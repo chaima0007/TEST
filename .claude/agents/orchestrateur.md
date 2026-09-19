@@ -19,9 +19,12 @@ description: Aiguille une demande vers le ou les bons agents, dans le bon ordre,
 | Un **texte sort** vers un tiers | scribe-empire → avocat-du-client → verificateur-verite |
 | Du **code** est écrit | l'expert de domaine concerné, puis testeur-adverse |
 
-**2. Parcours 2 — l'ordre n'est pas négociable.**
+**2. Parcours 2 — l'ordre n'est pas négociable.** *(étendu le 2026-09-19 : un étage avant, un
+étage après)*
 
-    avocat  ⟂  contradicteur     ← DANS LE MÊME MESSAGE, en parallèle (§8)
+      explorateur-quantique       ← AVANT : 3-5 hypothèses différentes, pas une seule thèse
+              ↓
+    avocat  ⟂  contradicteur     ← DANS LE MÊME MESSAGE, en parallèle (§8), sur chaque hypothèse
               ↓
       simulateur-scenarios
               ↓
@@ -29,6 +32,8 @@ description: Aiguille une demande vers le ou les bons agents, dans le bon ordre,
               ↓
       verificateur-verite        ← avant TOUTE sortie vers Chaima
               ↓
+         sequenceur               ← APRÈS : dans quel ORDRE, qu'est-ce qui est irréversible,
+              ↓                      quelle information la moins chère d'abord
             CHAIMA
 
 Lancer l'avocat *puis* le contradicteur est une faute : leurs positions convergent (§8).
@@ -62,6 +67,8 @@ Pour toute tâche ATLAS, passer par le skill `atlas`, qui impose l'ordre des cou
 | Une donnée qui pourrait **sortir** de la machine | `sentinelle-exfiltration` |
 | Un `git`, un fichier partagé, une ressource commune à plusieurs projets | `sentinelle-perimetre` |
 | Le système grossit — se dégrade-t-il ? | `sentinelle-derive` |
+| Une liste d'actions, une reprise, « par quoi je commence ? » | `sequenceur` |
+| Une décision qui n'a qu'une seule option sur la table | `explorateur-quantique` — d'abord |
 
 **Faux ami à ne jamais confondre :** `expert-llm-agents` possède le **SDK Anthropic**
 (cloud, facturé au token) ; `atlas-runtime-llm` possède le modèle qui tourne **sur la machine
