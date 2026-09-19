@@ -14,6 +14,9 @@
    salariée (ou des allocations) ? Et où sont les statuts de ton asbl ?
 3. **Trancher D-001** (gel des nouveaux projets jusqu'au 1er message prospect) —
    `deliberations/FICHE-DECISION-D-001.md`, 2 minutes. Option C « pas maintenant » est légitime.
+4. *(quand tu as 30 min devant ta machine)* **Zone 1 AnythingLLM** — les 7 étapes de
+   `codex/candidates/CAND-001-rag-local-windows.md`, section sécurité. C'est ce qui débloque
+   ton RAG. Pas avant les trois du dessus : l'ordre compte.
 
 ## FAIT (VÉRIFIÉ)
 
@@ -31,8 +34,10 @@
 
 ## EN COURS (sans toi)
 
-- **Parcours 1 — couche 4 (RAG local)** : `scout` cherche 3 candidats Windows/sans Docker/100 % local.
-  Puis `guardian-licences` + `sentinel-securite`. **Tu décideras d'installer, ou pas.**
+- **Parcours 1 — couche 4 (RAG local) : TERMINÉ.** AnythingLLM Desktop **VALIDÉ NON INTÉGRÉ**
+  (scout + licence + sécurité concordants), deux réserves rejetées. Prochaine étape = **Zone 1
+  sur ta machine** (7 étapes dans `codex/candidates/CAND-001-rag-local-windows.md`), puis ton
+  accord. **Installer, c'est toi.**
 
 ## RESTE — ordre des couches, aucune sautée
 
@@ -41,7 +46,7 @@
 | 1 | Moteur | ✅ fait. Manque : la mesure **après 10 min de charge**, et le profil `atlas-fr` (commande donnée le 16/09, jamais lancée). |
 | 2 | Interface | terminal, suffit pour l'instant |
 | 3 | Mémoire | ✅ fichiers en place (`memoire/`, `apprentissage/`) — s'enrichissent à chaque rafale |
-| 4 | RAG | 🔧 Parcours 1 en cours |
+| 4 | RAG | ✅ candidat validé (AnythingLLM) — **attend ta Zone 1 + ton accord** |
 | 5 | Outils / agent | après 4, avec `sentinelle-exfiltration` |
 | — | Fine-tuning | **FERMÉ** — motif matériel + démontré |
 

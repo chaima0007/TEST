@@ -6,6 +6,23 @@
 
 ---
 
+## SNAPSHOT 2026-09-19 (3) — Parcours 1 terminé : le RAG a son candidat
+
+- **CAND-001 complète** : scout (6 pistes, 3 écartées sur source) → guardian + sentinel **en
+  parallèle**, verdicts concordants. **AnythingLLM Desktop v1.16.1 : VALIDÉ NON INTÉGRÉ.**
+  Open WebUI Desktop et Msty : **REJETÉS**.
+- **Trouvaille licence** : FFmpeg téléchargé par l'installeur est **GPL-3.0** — sans effet en
+  usage, à exclure d'une licence sortante. **Trouvailles sécurité** : 19/20 avis corrigés ;
+  `DISABLE_TELEMETRY` ne coupe **que** PostHog, deux sorties réseau subsistent (embedder au 1er
+  document, liste de modèles au démarrage) ; **installeur et wrapper hors dépôt public** →
+  signature et hashes NON VÉRIFIÉS ; « Dynamic Model Routing » = repli cloud natif (R-004).
+- **Souveraineté : NON VÉRIFIÉE, et dite telle quelle.** On ne peut pas exécuter un `.exe`
+  depuis ici. Procédure Zone 1 Windows écrite pour Chaima (signature, TCPView, opt-out, 10 min
+  de chat → `127.0.0.1` seul), plus le verrou pare-feu sortant. Toute adresse distante = REJET.
+- **Convention de nommage du corpus fixée avant le premier document** : la date du document
+  dans le nom, parce que le RAG cite le fichier, pas la date.
+- **Rien installé.** Installer = geste de Chaima (§10). Zone 1 → Zone 3 directement : interdit.
+
 ## SNAPSHOT 2026-09-19 (2) — « Avance un maximum » : carte, filet, candidat RAG
 
 - **Vision reformulée par Chaima** : une IA intelligente, motivante, qui cherche toute

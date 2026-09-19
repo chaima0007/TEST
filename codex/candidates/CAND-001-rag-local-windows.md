@@ -86,3 +86,83 @@ Fichiers LICENSE lus (raw.githubusercontent.com, cdn.anythingllm.com, API Huggin
     PARCE QUE : anything-llm/master/LICENSE = MIT ; cdn.anythingllm.com/support/ffmpeg/8.0/LICENSE.txt = GPL-3.0 ; open-webui/desktop/main/LICENSE = AGPL-3.0 ; msty.ai/terms — consultés le 2026-09-19.
     NON VÉRIFIÉ : licences des libs GPU et modèles speaker/segmentation du CDN ; prix Aurum ; contenu réel de l'installeur .exe (Zone 1 non faite).
     CE QUI CHANGERAIT MON AVIS : un LICENSE différent dans l'installeur réel ; un modèle du CDN non commercial → REJETÉ en C ; FFmpeg retiré par Mintplex → S sans réserve.
+
+## Sécurité — verdict sentinel-securite (2026-09-19)
+
+> Sources du 2026-09-19 ; code lu sur clone lecture seule du tag `v1.16.1`. Rien exécuté : **Zone 1 non faite, souveraineté NON VÉRIFIÉE.**
+
+### 1. CVE / avis (advisories GitHub + NVD)
+
+20 avis depuis 2025-05, dont CVE-2026-32626 (Desktop XSS → RCE, 9.6, ≤ 1.11.1) et CVE-2026-48116 (RCE, < 1.13.0). **19/20 corrigés en 1.16.1.** Reste GHSA-rh3m-xv7m-9jhf (2026-09-01, Moderate, ≤ 1.16.1, patch sur master seulement) : exige un rôle multi-utilisateur « Docker only » (README) → inexploitable sur Desktop, **PLAUSIBLE**.
+
+### 2. Vecteurs §3
+
+| Vecteur | Constat |
+|---|---|
+| Post-install | L'installeur tire de `cdn.anythingllm.com` : Ollama `bins.7z` + CUDA/ROCm, FFmpeg, modèles Meeting Assistant (~2 Go, évitables avec `/S`). **Hash/signature des archives : NON VÉRIFIÉ.** Wrapper Electron et installeur **hors dépôt public** (CONTRIBUTING.md) → inauditables. Signature du `.exe` : NON VÉRIFIÉ. |
+| Obfuscation | Aucune dans `server/`, `collector/`, `frontend/src`. |
+| Permissions | « Current User », sans admin (docs) ; reste en tray. |
+| Mainteneurs | Mintplex Labs Inc, société nommée ; release signée GPG « Verified ». |
+| Exfiltration déguisée | Aucun domaine sosie ; liste en §3. |
+| Repli cloud (R-004) | « Dynamic Model Routing » = repli cloud **natif**, inactif sans fournisseur cloud configuré : **n'en saisir aucun.** |
+
+### 3. Ce que l'opt-out coupe — et ce qui reste
+
+`DISABLE_TELEMETRY=true` ne coupe **que** PostHog (`telemetry.js:50`, `utils/telemetry/index.js:9`). Hors garde-fou :
+- `huggingface.co`, repli `cdn.anythingllm.com` : embedder natif, ~23 Mo, au premier document (`EmbeddingEngines/native/index.js:37,196`).
+- `raw.githubusercontent.com/BerriAI/litellm/…` : **au démarrage**, en fond, si cache > 3 jours (`AiProviders/modelMap/index.js:8,29`).
+- Ollama embarqué, auto-update, Community Hub, MCP, agents web : wrapper fermé → NON VÉRIFIÉ.
+
+### 4. Zone 1 sur Windows 11 Pro (MACHINE.md) — procédure pour Chaima
+
+1. Clic droit sur `AnythingLLMDesktop.exe` → Propriétés → *Signatures numériques*. Absent, ou signataire ≠ Mintplex Labs → **REJET**.
+2. Installer **TCPView** (Microsoft Sysinternals, gratuit : learn.microsoft.com/sysinternals/downloads/tcpview), activer *Resolve addresses*, le laisser ouvert.
+3. Installer (idéalement dans *Windows Sandbox*, option de Win 11 Pro = conteneur jetable). Attendu : `cdn.anythingllm.com` seul.
+4. *Settings → Privacy → télémétrie OFF* ; tray → *Quit* ; relancer ; brancher l'Ollama existant. Charger un document : un contact `huggingface.co`/`cdn.anythingllm.com` toléré.
+5. **Dix minutes de chat sur le corpus**, puis *File → Save*. Attendu pour `AnythingLLM.exe` et `llm.exe` : **`127.0.0.1` uniquement**. Toute adresse distante pendant le chat, ou `posthog` après opt-out = **REJET**.
+6. Alternative : `resmon` → Réseau → *Connexions TCP*.
+7. **Verrou (décision de Chaima)** : Pare-feu Windows → *Règles de trafic sortant* → *Bloquer* le programme `AnythingLLM.exe` et `llm.exe`  (Ollama en `localhost` non touché). « Local » devient une règle, plus une promesse.
+
+### 5. Réserves
+
+- **Open WebUI Desktop** : 0.11.3 couvre CVE-2026-70479/70487/70490 (corrigés 0.11.0). « Auto-updates… in the background » contredit « No phone-home » ; défauts `ENABLE_VERSION_UPDATE_CHECK=true`, `RAG_EMBEDDING_MODEL_AUTO_UPDATE=True`, `ENABLE_OPENAI_API=True` ; `OFFLINE_MODE=true` coupe tout (`env.py:1180-1184`) — **réglable depuis le wrapper ? NON VÉRIFIÉ.** Alpha, 1 mainteneur. **REJETÉ.**
+- **Msty Studio** : fermé, aucun CVE trouvé (absence ≠ preuve) ; tria.ge (2026-07-10) : composants « Unsigned PE » ; install « as Administrator », second Ollama, auto-update. Inauditable → **REJETÉ.**
+
+---
+
+    DE : sentinel-securite            POUR : arbitre-expert, puis CHAIMA
+    OBJET : Autoriser AnythingLLM Desktop v1.16.1 en Zone 1 sur la machine de Chaima avec la procédure §4 et le blocage pare-feu ; aucune Zone 3 avant la capture.
+    VERDICT : VALIDÉ NON INTÉGRÉ (AnythingLLM, Zone 1 seule — souveraineté NON VÉRIFIÉE) · REJETÉ (Open WebUI Desktop, Msty Studio)
+    PARCE QUE : 19/20 avis corrigés en 1.16.1 (2026-09-19) ; DISABLE_TELEMETRY ne garde que PostHog (`server/models/telemetry.js:50`) ; deux sorties hors garde-fou (`modelMap/index.js:29`, `native/index.js:37`) ; installeur fermé, intégrité CDN non publiée.
+    NON VÉRIFIÉ : signature du .exe ; hash des archives CDN ; réseau réel du wrapper (auto-update, Ollama embarqué) ; GHSA-rh3m sur Desktop ; OFFLINE_MODE depuis Open WebUI Desktop ; signature Msty.
+    CE QUI CHANGERAIT MON AVIS : REJET si TCPView montre une adresse distante pendant le chat après opt-out, ou un .exe non signé ; réserve levée si Mintplex publie les hashes CDN et une release > 1.16.1, et si la capture ne montre que localhost pendant 10 min.
+
+
+---
+
+## Statut consolidé — Parcours 1 terminé (2026-09-19)
+
+| Candidat | Licence | Sécurité | **Verdict §13** |
+|---|---|---|---|
+| **AnythingLLM Desktop v1.16.1** | VALIDÉ (privé + commercial ; FFmpeg GPL-3.0 à exclure d'une licence sortante) | VALIDÉ **Zone 1 seule** — souveraineté **NON VÉRIFIÉE** tant que la capture réseau n'est pas faite | **VALIDÉ NON INTÉGRÉ** |
+| Open WebUI Desktop | VALIDÉ privé / REJETÉ si modifié et exposé | REJETÉ (alpha, 1 mainteneur, auto-update contredisant « no phone-home ») | **REJETÉ** |
+| Msty Studio | REJETÉ en commercial sans licence payante | REJETÉ (fermé, inauditable, composants non signés signalés) | **REJETÉ** |
+
+**Scout, guardian et sentinel concordent.** Aucun désaccord à arbitrer.
+
+**Ce qui sépare « VALIDÉ NON INTÉGRÉ » de « INTÉGRÉ » : la Zone 1 sur la machine de Chaima**
+(procédure en 7 étapes dans la section sécurité), **puis son accord explicite** (§2, §10). Zone 1
+→ Zone 3 directement : interdit.
+
+**Les trois consignes non négociables si elle installe :**
+1. Vérifier la **signature numérique** du `.exe` avant de le lancer — absente → REJET.
+2. **Ne configurer AUCUN fournisseur cloud** dans l'app (le « Dynamic Model Routing » est un repli
+   cloud natif — R-004).
+3. **Règle pare-feu sortant « Bloquer »** sur `AnythingLLM.exe` et `llm.exe` après la
+   première ingestion — Ollama en localhost n'est pas affecté. C'est le verrou qui transforme
+   « on a coupé la télémétrie » en « ça ne peut pas sortir ».
+
+**Ce qui reste connecté même télémétrie coupée** (à savoir, pas à craindre) : le téléchargement de
+l'embedder au **premier document** (~23 Mo, une fois) et une liste de modèles rafraîchie **au
+démarrage** si le cache a plus de 3 jours. Les deux sont bloqués par la règle pare-feu ci-dessus —
+d'où l'ordre : installer, ingérer un premier document, **puis** verrouiller.
