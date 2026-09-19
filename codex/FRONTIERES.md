@@ -24,6 +24,73 @@ exactement ce qui produit l'état mesuré ci-dessous.
 
 ---
 
+## 1 bis. PLAN DE RANGEMENT — les 20 branches, par TYPE de désordre
+
+> Établi le 2026-09-19 en inspectant le **contenu réel** de chaque branche (arbre, ancêtre commun
+> avec `main`, fichiers ajoutés), pas son nom. **Ceci corrige le classement du même jour**, qui
+> mettait les 20 dans un seul sac : elles ne se rangent pas de la même façon, et deux d'entre
+> elles ne sont même pas un problème de projet.
+
+### TYPE 1 — Projet entier, aucun lien avec ce dépôt (4 branches)
+Histoire **indépendante** : aucun ancêtre commun avec `main`. L'arbre est entièrement autre.
+**Rangement = déménagement propre.** Créer un dépôt privé dédié, y pousser l'arbre tel quel.
+Aucun risque : rien à démêler.
+
+| Branche | Volume | Contenu réel | Dernier commit |
+|---|---|---|---|
+| `claude/gta-style-game-prototype` | 45 commits | `game/` + `presentation.html` | 2026-06-18 |
+| `claude/multi-agent-migration-factory-riujie` | — | `SYSTEME_AGENTS/`, `AUDIT/`, scripts Python | 2026-07-17 |
+| `claude/moonbow-website` | 9 commits | `website/` + `presentation.html` | 2026-06-16 |
+| `claude/presentation-project-selection-vy1hb7` | — | `presentation.html`, `research_agent.py` | 2026-06-16 |
+
+### TYPE 2 — Le code de CE projet, avec une application étrangère greffée dessus (10 branches)
+Elles **partent de `main`** et ajoutent leur propre `app/`, `lib/`, `components/` — donc elles
+**modifient les mêmes fichiers** que Nexus-Market. **C'est le type dangereux :** si l'une était
+fusionnée dans `main`, du code étranger atterrirait dans le produit. *(Vérifié le 2026-09-19 :
+aucune ne l'est.)*
+**Rangement = extraction**, pas copie de branche : on ne garde que le dossier ajouté.
+
+| Branche | Ce qu'elle ajoute par-dessus `main` |
+|---|---|
+| `claude/crm-sales` (47 commits) | `Dockerfile`, `docker-compose.yml`, `app/`, `lib/` |
+| `claude/shopify-app-development-ri1090` (25 commits) | `EQUIPE_AGENTS.md` + registres complets |
+| `claude/foot-site-business-plan-ch0jt0` (21 commits) | `feet-hub/`, `claude-mistral-duo/` |
+| `claude/world-cup-2026-agents-mp6mi6` (11 commits) | `analyse-mondial-2026/` |
+| `claude/empire-chaima-linux-game-54cqgy` (7 commits) | `fiches/` |
+| `claude/day-trading-yahoo-finance-a0w3q8` | `app/`, `docs/`, `lib/`, `scripts/` |
+| `claude/canvas-project-concept-c4htto` | `SIMULATIONS.md`, `app/`, `lib/` (Motif Studio) |
+| `claude/mistral-mnwb5j` | `claude_mistral_chain.py`, `collab-ia/` |
+| `claude/parents-enfants-mvp-1xwgqu` | `BULLE.md`, `app/`, `components/`, `lib/` |
+| `claude/couples-app-mvp-chaima-fx3dya` | `app/`, `components/`, `lib/` |
+
+### TYPE 3 — Pas un projet étranger : des DOCUMENTS écrits ici pour un autre projet (6 branches)
+Ce sont des **sessions d'autres projets qui ont travaillé dans ce dépôt** et y ont laissé leurs
+rapports. Il n'y a pas de code à déménager — quelques fichiers `.md`, parfois un dossier.
+**Rangement = copier ces fichiers vers le bon dépôt / dossier Drive.** Et surtout : **la règle du
+§1 empêche désormais que ça recommence** — c'est la seule prévention qui vaille ici.
+
+| Branche | Ce qu'elle a laissé | Projet réel |
+|---|---|---|
+| `claude/nifty-shannon-u87dv8` | `codex/`, `scripts/` | **ATLAS** — actif le 2026-09-19 |
+| `claude/wizardly-franklin-7gehzh` | `reports/` | Caelum + La Loi Avec Moi |
+| `claude/beautiful-hawking-4w1zlm` | `codex/` | NON VÉRIFIÉ |
+| `claude/adoring-albattani-ue4vtz` | `veille/` | Veille |
+| `claude/chaima-patent-audit-ytcxq3` | `codex/` + registres | Audit brevets (transverse) |
+| `claude/libre-accomplis-system-9wvsnf` | `codex/`, `docs/`, `tests/` | Libre Accomplis |
+
+### Ce que ce classement change, concrètement
+- **4 branches** se rangent en une opération simple et sans risque (Type 1).
+- **10 branches** demandent une extraction soignée, une par une (Type 2) — c'est le gros du travail.
+- **6 branches** ne demandent presque rien (Type 3) : ce sont des documents, et la règle du §1
+  est le vrai correctif.
+
+**Ordre recommandé :** Type 1 d'abord (preuve que la méthode marche), puis Type 3 (rapide), puis
+Type 2 (le plus long, un projet à la fois). **Rien n'est supprimé à aucune étape** : on copie
+vers la destination, on vérifie que la destination est complète, et le retrait d'ici — s'il a
+lieu un jour — est une décision séparée de Chaima (§10).
+
+---
+
 ## 2. ÉTAT MESURÉ — `chaima0007/TEST`, le 2026-09-19 (VÉRIFIÉ)
 
 **38 branches distantes.** Périmètre annoncé du dépôt (`CLAUDE.md`) : TEST / Nexus-Market
