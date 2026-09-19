@@ -16,7 +16,9 @@
 > `git fetch origin && git rev-parse --short origin/main`
 > `git log --oneline origin/main..origin/<branche> | wc -l`
 
-**Constat au 2026-09-16 : `main` = `70e657b6`, inchangé depuis le 2026-09-14.**
+**Constat au 2026-09-19 : `main` = `7b9552dd`, inchangé depuis le 2026-09-16.**
+
+> Ne recopie pas ce tableau de mémoire : **lance `bash scripts/audit-codex.sh`**, il le recalcule.
 
 | Ce qui a été produit | Où ça vit | Sur `main` ? | Ce qui manque |
 |---|---|---|---|
@@ -54,6 +56,34 @@ personne aujourd'hui.
 
 ---
 
+## 2 bis. L'AUDIT EXÉCUTABLE — `scripts/audit-codex.sh`
+
+```bash
+bash scripts/audit-codex.sh        # ~5 s, lecture seule, aucune écriture
+```
+
+Le rituel §5 rendu exécutable. Il refait, par la mesure, tout ce qui précède :
+
+| # | Ce qu'il vérifie | Né de |
+|---|---|---|
+| 0 | `git fetch` puis l'état serveur de `main` | ERR-011 / ERR-020 |
+| 1 | Écart branches ↔ `main` — le travail poussé mais **pas livré** | ERR-022 |
+| 2 | Chaque correctif annoncé est-il **en vigueur sur `main`** ? | ERR-021 |
+| 3 | Registre : ID en double, entrée sans correctif | — |
+| 4 | Structure §12 complète + les 21 rôles du §1 présents | §12 / §1 |
+| 5 | `CLAUDE.md` et `ETAT.md` se contredisent-ils ? | §5 |
+| 6 | Décisions qui dorment depuis plus de 14 jours | §6 |
+
+**Pourquoi il existe :** trois erreurs — ERR-020, 021, 022 — où une vérification de dix
+secondes aurait évité des jours de travail invisible. *Un audit qu'on refait à la main est
+un audit qu'on oublie de refaire.*
+
+Les branches dont l'historique diverge de plus de 100 commits sont marquées « historique
+étranger » et **exclues du total** : ce sont des projets sans lien hébergés dans ce dépôt,
+les compter noierait le signal — l'erreur commise au premier audit des branches.
+
+---
+
 ## 3. LA MACHINE — ce qui tourne
 
 > `find app/api -name route.ts | wc -l` · `ls lib/agents/*.ts`
@@ -72,6 +102,21 @@ personne aujourd'hui.
 **Sans état, sans persistance, sans envoi.** Chaque agent produit un brouillon copiable ;
 l'envoi est manuel (§10). Deux chemins par agent : `LLM*` (nécessite `ANTHROPIC_API_KEY`,
 **non posée**) et `Heuristic*` — **le seul chemin actif aujourd'hui**.
+
+### Les agents de gouvernance — 27 au total
+
+**Les 21 rôles du §1** (chaîne d'entrée · cœur délibératif · tenue de l'Empire · angles morts)
+sont tous présents, vérifié par l'audit.
+
+**+ 6 ajoutés le 2026-09-16** à ta demande : `expert-nextjs`, `expert-donnees-prisma`,
+`expert-llm-agents`, `expert-authentification`, `expert-cicd-deploiement`, `orchestrateur`.
+Chacun déclare explicitement ce dont il se distingue (§9, anti-doublon) — p. ex.
+`expert-donnees-prisma` ≠ `gardien-donnees`, qui traite le RGPD et non la couche technique.
+
+> **À savoir :** le skill `.claude/skills/debat/` **et** l'agent `orchestrateur` garantissent
+> tous deux le lancement **parallèle** d'`avocat` + `contradicteur` (§8 Parcours 2). Ce n'est
+> pas un doublon — `debat` exécute le parcours, `orchestrateur` aiguille vers lui — mais il
+> faut savoir que les deux existent pour ne pas en chercher un troisième.
 
 ### Support
 `commandant.ts` (orchestration) · `compliance.ts` (règles dures, plafond LinkedIn 25/j) ·
