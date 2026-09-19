@@ -33,10 +33,17 @@ exactement celle-là, et la confondre est ce qui noie un Empire sous le bruit.
 | Document | ID | Sens |
 |---|---|---|
 | `01 — FICHE MACHINE — À REMPLIR` | `1GRzD4Oow7O8wWjg-Dv3iirUbmlYpKyilyek0YsVOl20` | **Chaima écrit, ATLAS lit** — la seule exception |
-| `02 — ERREURS ET RÉUSSITES — ATLAS` | `1cKad7xISrny7R5KGr1hseX0HlOUWATHQ3QfvhlCDZkU` | ATLAS écrit, Chaima lit |
+| `02 — ERREURS ET RÉUSSITES — ATLAS (à jour au 2026-09-19)` | `19sqt-VCsfAifo1YIK0axYlu-wtZtfNzVL0lVgzz1C7g` | ATLAS écrit, Chaima lit — **version courante** |
+| `02 — … (version du 16/09 — REMPLACÉE, conservée)` | `1cKad7xISrny7R5KGr1hseX0HlOUWATHQ3QfvhlCDZkU` | périmée, gardée (un doc = un événement) |
+| `03 — PROMPT MAÎTRE v2` | `1dvZzc_DyMApBYOipJiug1WC6zYPiappmO1Z0PjMko4M` | copie du prompt à coller partout |
 
 Les documents des autres projets restent où ils sont : on ne déplace que les nôtres
 (`sentinelle-perimetre`).
+
+**L'outil Drive ne modifie pas le contenu d'un document existant** (titre et dossier seulement).
+Mettre à jour = renommer l'ancien « REMPLACÉ le <date>, conservé » + créer le nouveau. Ça respecte
+la convention de Chaima (un doc = un événement, jamais d'écrasement) tout en gardant **un seul
+document courant** par type. Ne jamais supprimer (§10).
 
 **Vérifier après chaque écriture Drive.** Une création peut renvoyer un succès et un document
 vide — constaté le 2026-09-16. On relit systématiquement le contenu écrit.

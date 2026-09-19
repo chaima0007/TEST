@@ -82,6 +82,8 @@ D-001 (gel) · Où vit ATLAS · Premier domaine · **Peppol avant 1er client** �
 
 Ton statut actuel (salariée / allocataire / autre) · le volume réel de tes heures (la forme, oui : rafales) · la valeur des 20 projets dormants · le palier de débit du modèle à chaud · le coût réel d'une passe de routine · si JobYourself porte l'obligation Peppol de ses membres.
 
-## Écart connu
+## Drive — à jour au 19/09
 
-Le document Drive `02 — ERREURS ET RÉUSSITES` est **périmé** (anciens chemins, 4 erreurs non remontées) : l'outil Drive disponible ne modifie pas le contenu d'un document existant. Le dépôt fait foi. À refaire quand un outil le permettra, ou par toi.
+Dossier « ATLAS — IA locale » : `01 fiche machine` (remplie par PowerShell, doc d'origine gardé) ·
+`02 ERREURS ET RÉUSSITES` **à jour** (4 erreurs, jalons, ce qui attend) · `03 PROMPT MAÎTRE v2`.
+Procédure de mise à jour : `continuite/SYNC-DRIVE.md`.
