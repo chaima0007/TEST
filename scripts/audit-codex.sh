@@ -69,7 +69,7 @@ ERR-010|revue auto des PR non bloquante|.github/workflows/claude-code-review.yml
 ERR-015|données de prospection gitignorées|.gitignore|prospects
 ERR-016|garde-fou anti-survente|lib/agents/garde-fou.ts|
 ERR-018|règle du découpage obligatoire|AGENTS.md|codex-regle-decoupage
-ERR-020|règle du git fetch d'ouverture|AGENTS.md|codex-regle-fetch
+ERR-20260914-1956|règle du git fetch d'ouverture|AGENTS.md|codex-regle-fetch
 TABLE
 info "un ✗ ici = le correctif est ÉCRIT quelque part, mais ne protège personne"
 
@@ -77,11 +77,15 @@ info "un ✗ ici = le correctif est ÉCRIT quelque part, mais ne protège person
 titre "3. REGISTRE D'ERREURS"
 REG="🔴 ERREURS.md"
 if [ -f "$REG" ]; then
-  n=$(grep -cE '^## ERR-[0-9]+' "$REG")
-  dup=$(grep -oE '^## ERR-[0-9]+' "$REG" | sort | uniq -d)
+  # Deux conventions cohabitent (tranché le 2026-09-19) : ERR-NNN pour l'existant,
+  # ERR-AAAAMMJJ-HHMM pour toute nouvelle entrée. La regex doit capturer l'ID ENTIER —
+  # sinon ERR-20260914-1956 et ERR-20260914-2033 sont vus comme un doublon (faux positif
+  # trouvé en exécutant ce script, 2026-09-19).
+  n=$(grep -cE '^## ERR-[0-9]+(-[0-9]+)?' "$REG")
+  dup=$(grep -oE '^## ERR-[0-9]+(-[0-9]+)?' "$REG" | sort | uniq -d)
   [ -z "$dup" ] && ok "$n entrées, aucun ID en double" || ko "ID en double : $(echo "$dup" | tr '\n' ' ')"
   # une entrée sans correctif est une entrée inachevée
-  sans=$(awk '/^## ERR-/{if(t&&!c)print t; t=$0; c=0} /^- \*\*Correctif/{c=1} END{if(t&&!c)print t}' "$REG" | grep -oE 'ERR-[0-9]+' | tr '\n' ' ')
+  sans=$(awk '/^## ERR-/{if(t&&!c)print t; t=$0; c=0} /^- \*\*Correctif/{c=1} END{if(t&&!c)print t}' "$REG" | grep -oE 'ERR-[0-9]+(-[0-9]+)?' | tr '\n' ' ')
   [ -z "$sans" ] && ok "chaque entrée porte un correctif" || ko "sans ligne Correctif : $sans"
 else ko "$REG introuvable"; fi
 
