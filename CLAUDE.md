@@ -301,6 +301,19 @@ pas, **le verdict le plus prudent gagne par défaut.** S'en écarter exige de di
 
 > Ajout §15.4 : uniquement dépôt, stack, commandes de vérif avant push, pièges connus.
 
+> ## ⛔ CHACUN RESTE À SA PLACE — à lire avant d'ouvrir une branche
+> **Ce dépôt est celui de TEST / Nexus-Market (CompeteIQ), et de l'outillage Caelum qui y vit.
+> Rien d'autre.** Si le travail demandé concerne un autre projet — La Loi Avec Moi, ATLAS, une
+> app, un jeu, un site, un business plan — **ne crée ici ni branche, ni fichier, ni rapport** :
+> dis-le, et demande le bon dépôt.
+> Mesure du 2026-09-19 (VÉRIFIÉ) : **38 branches distantes, dont 20 appartiennent à d'autres
+> projets** — plus de la moitié. Il y en avait 33 le 2026-09-14. Le mélange est **actif**.
+> Détail, carte et règle complète : `/codex/FRONTIERES.md`. Surveillance :
+> `gardien-des-frontieres`. Ce qui circule entre projets, c'est `/codex/expertise/` (§4) — la
+> **connaissance**. Pas le code, pas les branches, pas les rapports.
+> ⚠️ **Dépôt PUBLIC** (vérifié le 2026-09-19) : aucune donnée personnelle dans un fichier
+> versionné — seul le fait décisionnel dérivé (ERR-030).
+
 - **Dépôt :** `chaima0007/test` · **branche de dev : voir `ETAT.md`** — ce fichier ne nomme plus aucune branche, pour qu'il n'y en ait qu'un seul à corriger quand elle change (ERR-022). `claude/nexus-market-agents-63dlku` est **close** depuis le merge de la PR #1 (`9cc15c2f`, 2026-09-11) : toute nouvelle branche part de `main`. Jamais de commit direct sur `main` (§4 Parcours 4 / §10).
 - **Stack :** Next.js 16 · TypeScript · Prisma (SQLite via adapter libsql) · Tailwind v4 · next-auth · Vitest.
 - **Commandes de vérification AVANT PUSH (Parcours 4) :**
