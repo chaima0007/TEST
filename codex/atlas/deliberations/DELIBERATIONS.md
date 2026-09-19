@@ -419,6 +419,19 @@ rafales, c'est ce qui décide si la rafale produit quelque chose.
 chemin qu'il n'avait pas emprunté — un socle qui supprime le coût de reprise **est** le seul
 investissement qui rentabilise un temps fragmenté.
 
+#### Élément nouveau pour la décision — la volonté exprimée de Chaima (2026-09-19)
+
+Chaima décrit la cible finale de l'IA : *« gérer mes projets : en créer d'autres, les terminer,
+les faire avancer »*. **« En créer d'autres » va contre la recommandation de gel.** Ce n'est
+pas une décision sur D-001 (elle n'a pas tranché) — c'est un **fait nouveau à verser au
+dossier** : la volonté de créer est explicite, pas supposée. L'avocat en sort renforcé sur un
+point qu'il n'avait pas : **la création n'est pas une dérive, c'est l'intention déclarée.**
+L'arbitrage ne change pas de lui-même — il attend Chaima, et la fiche de décision reste valable :
+l'option B (continuer à créer) y est écrite avec son garde-fou (nombre maximum de fronts).
+Ce qui reste vrai quelle que soit l'option : **la routine ne créera aucun projet tant que D-001
+n'est pas tranché**, parce que créer sans décision, c'est choisir B par défaut — le seul cas où
+ne pas choisir est un choix (fiche, option C).
+
 #### Le fait unique qui départagera
 
 > **La date du premier message envoyé à un prospect réel.**

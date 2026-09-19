@@ -20,6 +20,28 @@
 | **Matériel complet relevé** | 16 Go de RAM · i7-8650U · **aucune carte graphique utilisable** · 120 Go libres. Détail et conséquences : `MACHINE.md`. **Le fine-tuning est matériellement fermé.** | 2026-09-16 | **ACTIF** |
 | **Ouvre l'Invite de commandes, pas PowerShell** | Ne jamais dire « ouvre PowerShell » : dire « tape `powershell` dans la fenêtre déjà ouverte », et donner le repère `PS` avant le curseur (ERR-ATLAS-001). | 2026-09-16 | **ACTIF** |
 
+## La cible finale, dite par Chaima (2026-09-19, VÉRIFIÉ — ses mots)
+
+*« Une fois que l'IA aura grandi et géré plusieurs simulations et de travail, et engrangé les
+informations, son but est de gérer mes projets : en créer d'autres, les terminer, les faire
+avancer — tout en étant en sécurité. »*
+
+**Décomposée, avec ce qui est atteignable et par quelle couche :**
+
+| Composante | Par qui / quoi | Atteignable ? |
+|---|---|---|
+| Grandir, engranger | routine quotidienne + `expertise/` + `memoire/` → Modelfile / RAG | ✅ en place |
+| Simuler | `simulateur-scenarios` (cloud, Parcours 2) | ✅ déjà utilisé (D-001) |
+| **Gérer mes projets** | sessions cloud (routines) — **pas l'IA locale**, qui retrouve et cite | ✅ partiellement : *avancer, proposer, préparer* ; **jamais décider, dépenser, envoyer, merger** (§10) |
+| **Terminer, faire avancer** | idem | ✅ — c'est le sens de D-001 |
+| **En créer d'autres** | idem | ⚠️ **en tension avec D-001** (gel des nouveaux projets jusqu'au 1er encaissement — PROPOSÉ, non tranché) |
+| En sécurité | 3 sentinelles, filet anti-fuite, §10, Zone 1 | ✅ |
+
+**La ligne qui ne bouge pas, et c'est elle qui rend « en sécurité » vrai :** *un agent
+recommande, Chaima décide.* Une IA qui gérerait ses projets **en décidant** ne serait pas en
+sécurité — elle serait hors contrôle. Gérer = préparer, avancer, proposer, surveiller ;
+trancher reste à elle.
+
 ## Ce qui est PLAUSIBLE — raisonné, pas confirmé (§13)
 
 | Fait | Fiabilité | Origine | Comment ça devient VÉRIFIÉ |
