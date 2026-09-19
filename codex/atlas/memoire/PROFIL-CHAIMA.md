@@ -164,6 +164,26 @@ ou allocataires. Si Chaima l'est, alors **l'option « indépendant à titre comp
 question bloquante n°1 du dossier ; elle est peut-être déjà résolue, mais seule Chaima peut le
 confirmer.**
 
+## Une ligne de travail qu'ATLAS ne voyait pas : BREVETS (découverte le 2026-09-19)
+
+Chaima : *« où est le lien de chercher des brevets et créer technologique et fusionner ? »*
+Réponse : **pas dans ce dépôt.** Elle vit dans `chaima0007/keywordmoneymaker` (branche
+`claude/chaine-veille-13-agents`, 42 agents) et dans le dossier Drive **« Brevetabilité »**.
+Trois documents le **2026-09-19 même** (11h30, 13h30, 15h10), pendant qu'ATLAS travaillait sur
+la facturation. **Deux parties de l'Empire ne se voyaient pas.** La routine ATLAS ne surveille
+que les branches de CE dépôt — extension à `keywordmoneymaker` : décision de Chaima.
+
+**« Fusionner », dans ses mots** (doc 15h10) : *« repérer et concevoir à l'aide de brevets
+trouvés, et fusionner pour créer des brevets que nous aurons et pourrons vendre »* — combiner
+des enseignements de brevets existants pour concevoir une invention nouvelle. Méthode écrite,
+honnête (art. 56 CBE, secret d'affaires en alternative, conseil PI obligatoire).
+
+**État de cette ligne, lu dans ses documents :** audit du 2026-07-17 → 0 invention brevetable
+dans CompeteIQ ; deux brevets US lus le 19/09 → deux idées **mortes** (art antérieur), deux
+**« zones de silence »** ouvertes (pistes, pas inventions) ; **étape suivante nommée par le
+document lui-même : la recherche d'antériorité**, bloquée par le réseau. **Ce qu'ATLAS y
+apporte : Google Patents se lit via Exa (EXP-SRC-004).** Le blocage n'est plus total.
+
 ## Ce qui est NON VÉRIFIÉ — et le restera tant qu'elle ne l'aura pas dit
 
 - **Son usage n°1**, le cas concret qui doit marcher en premier.

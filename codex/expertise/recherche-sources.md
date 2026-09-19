@@ -1,6 +1,6 @@
 # EXPERTISE — RECHERCHE DE SOURCES
 
-**Maturité : CONFIRMÉ** (3 fiches) · Transverse (§4) · Dernière mise à jour : 2026-09-16
+**Maturité : CONFIRMÉ** (4 fiches) · Transverse (§4) · Dernière mise à jour : 2026-09-16
 
 ---
 
@@ -90,3 +90,25 @@
 - **Projets où appliqué :** TEST/Caelum.
 - **Fiabilité : CONFIRMÉE** (rencontre directe, texte lu).
 - **Date de dernière confirmation :** 2026-09-16
+
+
+## EXP-SRC-004 — Google Patents se lit via Exa ; Espacenet non (2026-09-19)
+
+**Principe :** le « mur total » constaté le 2026-09-14 sur les bases de brevets (11 domaines
+refusés par la politique réseau, `403 CONNECT`) est un mur pour `WebFetch`/`curl`, **pas pour
+`mcp__Exa__web_fetch_exa`**. Test du 2026-09-19 : `patents.google.com/patent/US6931394B2/en`
+→ **page lue en entier** (titre, dates, cessionnaire, description). `worldwide.espacenet.com`
+→ `CRAWL_UNKNOWN_ERROR`, non lu.
+
+**Conséquence pour la ligne Brevetabilité (dépôt `keywordmoneymaker`, Drive « Brevetabilité »)** :
+l'étape « récolte de problèmes dans les sections *background* » et la **recherche d'antériorité**
+que son document du 2026-09-19 13h30 nomme comme étape suivante sont **exécutables** depuis une
+session qui dispose d'Exa. Les routines sans connecteurs ne le peuvent pas.
+
+**Limites :** une page Google Patents lue ≠ une recherche d'antériorité (celle-ci exige la
+recherche par classification CPC et la lecture des **revendications**, pas seulement de la
+description). Et une requête de recherche décrivant une idée est envoyée à un tiers : sans
+gravité juridique (pas une publication), mais à formuler par le **problème**, pas par la solution.
+
+**Sources liées :** EXP-SRC-002 (même leçon, autre domaine). **Projets :** ATLAS → Brevetabilité.
+**Fiabilité : ÉLEVÉE** (test direct). **Dernière confirmation : 2026-09-19.**
