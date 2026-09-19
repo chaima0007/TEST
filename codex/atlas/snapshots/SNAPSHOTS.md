@@ -6,6 +6,24 @@
 
 ---
 
+## SNAPSHOT 2026-09-19 (5) — Le Drive est lu : 906 fichiers cartographiés, 32 documents distillés
+
+- **Chaima : « notre IA doit lire tout mon Drive pour apprendre ».** Périmètre décidé seul et
+  dit : **Empire oui, privé non** (4 dossiers personnels pré-2026 comptés, jamais ouverts ;
+  coffre : titres seuls). Le dépôt est public → principes seulement, filet passé sur chaque fichier.
+- **`memoire/CARTE-DRIVE.md`** (cartographe) : 19 dossiers, **906 fichiers comptés** par listing
+  exhaustif, portes d'entrée identifiées, 10 documents à lire en premier avec ID. Révèle :
+  **7 protocoles maîtres concurrents**, LLAM en 3 copies, 28 dossiers vides, 4 index rivaux, et
+  **une contradiction non tranchée** sur le statut de LLAM (gelé vs vitrine). 3 lignes A-DECIDER.
+- **`expertise/methode-agents.md` + `erreurs-transverses.md`** (scout) : 32 documents lus. Six
+  familles d'erreurs sur neuf ont la même forme — *un état a changé et personne ne possédait la
+  question « est-ce encore vrai ? »* ; le correctif qui tient est un rôle ou un mécanisme
+  bloquant, jamais une phrase. **Deux familles récidivent malgré leur fiche.** 1 ligne A-DECIDER.
+- **Drive ↔ git ne se recouvrent pas** : 8 branches git sans dossier Drive, 2 projets Drive sans
+  branche ici. La synchronisation LLAM (368 fiches / 3 539 commits) : NON VÉRIFIÉE.
+- **Mémoire de l'IA locale régénérée** avec ce que le Drive a appris. Prochaine étape : **test
+  de reprise à froid** — une session neuve, le prompt maître, rien d'autre.
+
 ## SNAPSHOT 2026-09-19 (4) — Le système tourne désormais sans Chaima
 
 **Compteur de passes sans fiche nouvelle : 0** (initialisé pour la routine).

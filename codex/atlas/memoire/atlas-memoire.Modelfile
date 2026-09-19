@@ -15,7 +15,7 @@ MEMOIRE DU PROJET (copie du 2026-09-19, source de verite = le depot git, fichier
 =====
 # ATLAS — ÉTAT DU PROJET
 
-> **Le seul fichier à ouvrir pour reprendre.** Mis à jour : **2026-09-19 (soir)**.
+> **Le seul fichier à ouvrir pour reprendre.** Mis à jour : **2026-09-19 (soir, après lecture du Drive)**.
 > Ton temps est en rafales de 2-4 h (mesuré) : ce fichier existe pour que la reprise coûte
 > 30 secondes, pas 50 minutes.
 
@@ -46,7 +46,19 @@ MEMOIRE DU PROJET (copie du 2026-09-19, source de verite = le depot git, fichier
 | 16/09 | **Dossier statut légal** sur sources primaires : travail associatif fermé, asbl encaisse mais ne reverse pas. `deliberations/DOSSIER-01-STATUT-LEGAL.md`. |
 | 19/09 | **Recoupement avec une branche voisine** : tu es à Bruxelles, 3 voies s'excluent 2 ans, JobYourself porte le n° de TVA → **l'ordre prime sur la vitesse**. |
 | 19/09 | **`memoire/CARTE-PROJETS.md`** — 38 branches : 15 vivantes, 3 ralenties, 20 dormantes. Risque n°1 : La Loi Avec Moi, 3 539 commits, une seule branche. |
+| 19/09 | **`PROMPT-MAITRE-v2.md`** + 2 agents (`sequenceur`, `explorateur-quantique`) — le prompt à coller dans tout projet ; chaîne complète, routage erreurs/Drive, 15 règles. |
 | 19/09 | **`scripts/verifier-avant-push.sh`** — filet anti-fuite (dépôt public), inscrit dans `CLAUDE.md`. |
+
+## CE QUE JE SAIS DU DRIVE (lu le 19/09 — `memoire/CARTE-DRIVE.md`)
+
+**906 fichiers Empire**, du 18/06 au 19/09, dans 19 dossiers. Les plus gros : la base **La Loi
+Avec Moi** (368 fiches sourcées) et **COMPILATION & SYNOPSIS** (283 rapports de sessions, dont
+149 « boucle-caelum »). **Portes d'entrée** : ⭐ SOURCE UNIQUE DE VÉRITÉ → 00 SYNOPSIS MAÎTRE →
+un « 00 » par projet. **Ce qui cloche** : 7 protocoles maîtres concurrents, LLAM en 3 copies,
+28 dossiers vides, et deux documents qui se contredisent sur le statut de LLAM (gelé / vitrine)
+— trois lignes ouvertes dans A-DECIDER. Dossiers privés : **non ouverts**, par choix.
+**Ce que j'ai appris de la façon dont tes agents travaillent** : `codex/expertise/methode-agents.md`
+(6 principes) et `erreurs-transverses.md` (9 familles, 2 récidivent).
 
 ## EN COURS (sans toi)
 
