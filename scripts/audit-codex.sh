@@ -56,6 +56,10 @@ else info "TOTAL $EN_ATTENTE commit(s) hors de main. Le merge est humain (§10) 
 # ── 2. Chaque correctif annoncé est-il EN VIGUEUR sur main ? (ERR-021) ───────
 titre "2. CORRECTIFS EN VIGUEUR SUR MAIN"
 # Format : ERR|libellé|fichier[|motif grep dans ce fichier]
+# RÈGLE : tout artefact censé protéger quelqu'un doit avoir sa ligne ici. Sans ligne, sa
+# disparition de `main` passerait inaperçue et l'audit resterait vert — angle mort signalé
+# par le confirmateur le 2026-09-19 : les 5 artefacts mergés par la PR #10 n'étaient surveillés
+# par rien.
 while IFS='|' read -r err libelle fichier motif; do
   [ -z "${err:-}" ] && continue
   if [ -n "${motif:-}" ]; then
@@ -70,6 +74,11 @@ ERR-015|données de prospection gitignorées|.gitignore|prospects
 ERR-016|garde-fou anti-survente|lib/agents/garde-fou.ts|
 ERR-018|règle du découpage obligatoire|AGENTS.md|codex-regle-decoupage
 ERR-20260914-1956|règle du git fetch d'ouverture|AGENTS.md|codex-regle-fetch
+ERR-20260916-1413|audit §5 exécutable (ce script)|scripts/audit-codex.sh|
+ERR-20260916-1413|agent valideur|.claude/agents/valideur.md|
+ERR-20260916-1413|agent essayeur|.claude/agents/essayeur.md|
+ERR-20260916-1413|agent confirmateur|.claude/agents/confirmateur.md|
+§1 cartographe|carte vivante|codex/CARTOGRAPHIE.md|
 TABLE
 info "un ✗ ici = le correctif est ÉCRIT quelque part, mais ne protège personne"
 
