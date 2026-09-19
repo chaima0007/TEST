@@ -59,6 +59,13 @@ C'est la seule étape de la boucle **impossible à rattraper après coup**. Sans
 
 Puis le bloc de passation §14. Et la règle anti-bruit (§5) : rien n'a changé → une ligne.
 
+## Avant chaque push — sans exception, docs comprises
+
+`bash scripts/verifier-avant-push.sh <fichier-message>` — le dépôt est **public**. Le
+2026-09-19, une session voisine a inscrit une domiciliation et une date de naissance **dans un
+message de commit**. Ça ne se retire pas. Le filet ne bloque pas, il **signale** (§5) : relire,
+puis décider.
+
 ## Ne jamais
 
 Installer, supprimer, acheter, ouvrir un port, autoriser une sortie de données, lancer un

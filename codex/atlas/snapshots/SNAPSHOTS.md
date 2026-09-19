@@ -6,6 +6,29 @@
 
 ---
 
+## SNAPSHOT 2026-09-19 (2) — « Avance un maximum » : carte, filet, candidat RAG
+
+- **Vision reformulée par Chaima** : une IA intelligente, motivante, qui cherche toute
+  l'information pour décider au mieux, qui aide à rendre les projets **financièrement
+  autonomes**, apprend en permanence, sécurise et protège. Décomposée : *chercher* →
+  `atlas-chercheur-sources` + routine §4 (proposée) · *décider* → Parcours 2 + fiches de
+  décision · *apprendre* → `/codex/expertise/` (9 fiches, 2 domaines, maturités cohérentes) ·
+  *sécuriser/protéger* → sentinelles + **filet avant push livré aujourd'hui**. « Motivante » :
+  pas par flatterie (interdite par Chaima elle-même) — par la **reprise rendue gratuite** et le
+  **progrès rendu visible**.
+- **`memoire/CARTE-PROJETS.md` livrée** — dette du 16/09. 38 branches : **15 vivantes, 3
+  ralenties, 20 dormantes, 9 univers séparés.** Corrige l'audit du 14/09 : 5 branches sont bien
+  posées sur `main`. **Risque de continuité n°1 de l'Empire nommé** : La Loi Avec Moi, 3 539
+  commits, une seule branche, aucune sauvegarde. Signalé, pas corrigé (§10).
+- **`scripts/verifier-avant-push.sh` livré et testé** (a attrapé date de naissance, e-mail et
+  clé dans un faux message). Inscrit dans `CLAUDE.md` §15.4, le skill `atlas`, et **R-015**.
+  Il signale, ne bloque pas (§5). **Appliqué à ce commit-ci avant push.**
+- **Parcours 1 lancé** pour la couche 4 (RAG local, Windows, sans Docker, 100 % local) :
+  `scout` cherche 3 candidats sur source primaire → fiche `codex/candidates/CAND-001`. Ensuite
+  `guardian-licences` + `sentinel-securite` **en parallèle**. Installation = décision de Chaima.
+- **Routine quotidienne d'apprentissage : PROPOSÉE, pas créée.** Dépense récurrente = §10.
+- `/codex/expertise/` vérifié : 6 + 3 fiches, maturités exactes, aucun doublon. Rien à réconcilier.
+
 ## SNAPSHOT 2026-09-19 — Recoupement inter-sessions : l'ORDRE compte plus que la vitesse
 
 État réel vérifié par `git fetch` : branche à jour, `main` inchangé depuis le 2026-09-16

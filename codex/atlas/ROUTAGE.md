@@ -25,6 +25,7 @@ première chose qu'on lit.
 | Une **correction de Chaima** devenue règle | `apprentissage/REGLES-APPRISES.md` — **dans le même tour** |
 | Ce que j'apprends **sur Chaima** (préférences, contraintes) | `memoire/PROFIL-CHAIMA.md` |
 | Un fait **matériel mesuré** sur sa machine | `memoire/MACHINE.md` |
+| L'état des **38 branches** (vivant / ralenti / dormant, écart à main) | `memoire/CARTE-PROJETS.md` — réécrite à chaque relevé |
 | Une **décision tranchée par Chaima** sur ATLAS | `memoire/DECISIONS.md` — **une ligne** |
 | Le **raisonnement** d'un débat : qui a plaidé quoi, sur quel fait, et **pourquoi cet angle** | `deliberations/DELIBERATIONS.md` — **une section** |
 | Un **document de Chaima** à faire lire à l'IA | `corpus/` (le RAG) |

@@ -307,6 +307,11 @@ pas, **le verdict le plus prudent gagne par défaut.** S'en écarter exige de di
   ```bash
   npm run lint && npx tsc --noEmit && npm test && npm run build
   ```
+  **Et, parce que ce dépôt est PUBLIC (🔴 ERR-015, incident du 2026-09-19) — avant CHAQUE push, code ou docs :**
+  ```bash
+  bash scripts/verifier-avant-push.sh [fichier-message-de-commit]
+  ```
+  Signale secrets, e-mails perso, téléphones, dates de naissance, adresses. Un message de commit ne se retire pas (R-002).
 - **Pièges connus (VÉRIFIÉ le 2026-09-06) :**
   - **Prisma** : le client est généré dans `lib/generated/prisma`, qui est **gitignoré** → absent d'un checkout neuf. Le script `postinstall: prisma generate` est en place (commit `2332776`) ; ne pas le retirer, sinon `next build` échoue « module not found ».
   - **Vercel** : 8 projets du compte sont branchés sur ce dépôt → déploiements en cascade et saturation du quota gratuit. Caelum vise **Cloudflare Pages**. Déconnexion des projets superflus = décision humaine en attente (voir `/codex/A-DECIDER.md`).
