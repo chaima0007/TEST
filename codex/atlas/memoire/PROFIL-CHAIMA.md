@@ -123,6 +123,25 @@ n'est pas un confort : **c'est ce qui décide si la rafale produit quelque chose
 C'est exactement ce que l'arbitre recommandait — réduire le coût de décision — mais pour un
 motif qu'il n'avait pas : non pas l'engorgement (réfuté), **la fragmentation**.
 
+## Faits établis par une AUTRE session (branche `claude/charming-galileo-cqhkn1`, 2026-09-19)
+
+**Étiquette : RELAYÉ** — lus dans le commit `5be0a03` de cette branche, **non revérifiés par
+ATLAS**. Source déclarée : le CV de Chaima, lu dans son Drive à sa demande le 2026-09-19.
+
+| Fait | Effet sur ATLAS |
+|---|---|
+| **Chaima est domiciliée en Région de Bruxelles-Capitale** (Schaerbeek), pas en Wallonie | **Corrige** tout raisonnement régional. Les dispositifs wallons (Airbag, chèques-entreprises, SAACE, SOWALFIN) sont **hors sujet**. |
+| **Aucun diplôme de gestion**, toutes formations > 5 ans, **39 ans** | Sans effet à Bruxelles : **aucun dispositif bruxellois trouvé n'exige de diplôme de gestion**. Question close. |
+| Dispositifs bruxellois réellement applicables | **Tremplin-indépendants** (fédéral) · **JobYourself** (coopérative d'activités, test 18 mois, allocations conservées) · **Prime indépendant Actiris 4 000 €** · **Prime Lancement d'entreprise** (60 %, plafond 7 500 €) |
+| ⚠️ **Incompatibilité** | La prime Actiris est **refusée** si, dans les 2 ans précédents, on a bénéficié de **Tremplin** **ou** d'une **coopérative d'activités**. **Les trois voies s'excluent.** |
+
+**Ce que ces faits impliquent, et qui n'est PAS encore confirmé (PLAUSIBLE, fiabilité
+MODÉRÉE) :** Tremplin-indépendants et les primes Actiris s'adressent à des demandeurs d'emploi
+ou allocataires. Si Chaima l'est, alors **l'option « indépendant à titre complémentaire » du
+`DOSSIER-01` est fermée** — elle suppose une activité salariée principale. **C'était la
+question bloquante n°1 du dossier ; elle est peut-être déjà résolue, mais seule Chaima peut le
+confirmer.**
+
 ## Ce qui est NON VÉRIFIÉ — et le restera tant qu'elle ne l'aura pas dit
 
 - **Son usage n°1**, le cas concret qui doit marcher en premier.

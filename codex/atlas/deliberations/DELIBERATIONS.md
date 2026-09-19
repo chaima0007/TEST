@@ -17,6 +17,67 @@
 
 ---
 
+## 🔗 CONVERGENCE — deux sessions, deux trouvailles, une conséquence qu'aucune n'avait (2026-09-19)
+
+> **Cas d'école pour `sentinelle-perimetre`** : communiquer avec un projet voisin **sans le
+> perturber**. Rien n'a été modifié sur la branche `claude/charming-galileo-cqhkn1` — on l'a
+> **lue**, et on intègre chez nous.
+
+### Les deux moitiés
+
+**Moitié A — trouvée ici le 2026-09-16 (VÉRIFIÉ, source primaire relue par l'orchestration).**
+Depuis le 01-01-2026, un assujetti belge — **franchise de TVA comprise** — doit émettre des
+factures électroniques structurées à un client assujetti. **Le PDF par e-mail ne suffit plus.**
+L'ICP de Caelum étant « consultants/coachs indépendants », le modèle de facturation est bloqué
+sans raccordement Peppol.
+
+**Moitié B — trouvée le 2026-09-19 par la branche `charming-galileo` (RELAYÉ, commit `5be0a03`).**
+Chaima est à **Bruxelles**. Trois voies s'offrent à elle, et **elles s'excluent mutuellement
+pendant 2 ans** : Tremplin-indépendants · **JobYourself** (coopérative d'activités) · Prime
+Actiris 4 000 €. L'une d'elles a une particularité : *« teste 18 mois en gardant les
+allocations, **avec le n° d'entreprise ET de TVA de la coopérative** »*.
+
+### Ce que le recoupement produit — et personne ne l'avait
+
+**Sous une coopérative d'activités, Chaima facturerait sous le numéro de TVA de la
+coopérative. L'obligation Peppol pèserait alors sur la coopérative, pas sur elle.**
+
+Autrement dit : **la seule des trois voies qui dissout le blocage que j'ai trouvé est aussi
+celle qui ferme les deux autres pour deux ans.** Ni la session A, ni la session B ne pouvaient
+le voir seule.
+
+**Statut : PLAUSIBLE, fiabilité MODÉRÉE. Ce n'est PAS vérifié.** Une coopérative peut très bien
+exiger que ses membres se raccordent eux-mêmes, ou facturer sans être elle-même conforme.
+**Ne pas décider là-dessus avant la réponse.**
+
+### La question exacte à poser — une phrase, et elle vaut deux ans
+
+> *« Si je facture via vous, les factures partent-elles sous votre numéro de TVA et via votre
+> raccordement Peppol, ou dois-je me raccorder moi-même ? »*
+
+**À poser à JobYourself avant tout engagement.** Coût : un e-mail. Enjeu : la seule décision
+irréversible de deux ans du dossier.
+
+### Ce que ça change dans l'ordre des choses
+
+L'arbitrage D-001 recommandait de débloquer le premier encaissement. **Le recoupement montre
+que l'ordre compte plus que la vitesse :** choisir un statut **avant** de savoir qui porte
+l'obligation Peppol peut fermer, pour deux ans, la seule voie qui la règle.
+
+**Aucune démarche de statut ne devrait partir avant cette réponse.** C'est un délai de
+quelques jours contre un verrou de deux ans.
+
+### Signal `gardien-donnees` — non corrigé, signalé (§5)
+
+Le commit `5be0a03` inscrit **dans un message de commit, sur un dépôt PUBLIC**, ce qu'il
+nomme la domiciliation de Chaima et sa date de naissance. Un message de commit **ne se retire
+pas** sans réécrire l'historique — interdit par **R-002**, et de toute façon déjà diffusé.
+**ATLAS n'y touche pas** : ce n'est ni sa branche ni sa décision (§10). Deux choses relèvent
+de Chaima : savoir que c'est public, et décider si la pratique doit changer pour la suite.
+Rien n'est répété ici : ce fichier dit « Bruxelles », ce qui suffit à tout le raisonnement.
+
+---
+
 ## ⚠️ FAIT BLOQUANT — e-facturation Peppol obligatoire (2026-09-16)
 
 > **Pas une délibération : un fait vérifié, consigné ici parce qu'il rouvre une décision.**

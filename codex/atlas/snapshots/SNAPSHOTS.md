@@ -6,6 +6,35 @@
 
 ---
 
+## SNAPSHOT 2026-09-19 — Recoupement inter-sessions : l'ORDRE compte plus que la vitesse
+
+État réel vérifié par `git fetch` : branche à jour, `main` inchangé depuis le 2026-09-16
+(`7b9552d`), toujours 38 branches, rien en attente de commit.
+
+- **Activité détectée sur une branche voisine** : `claude/charming-galileo-cqhkn1`, commit
+  `5be0a03` du 2026-09-19. Lu, **jamais touché** (`sentinelle-perimetre`).
+- **Deux corrections majeures venues de là (RELAYÉ, non revérifié) :** Chaima est à
+  **Bruxelles** — tout un volet de dispositifs **wallons** était hors sujet, et une « urgence »
+  signalée le 16/09 y est reconnue **fausse** ; et l'absence de diplôme de gestion **n'est pas
+  bloquante** à Bruxelles.
+- **⚠️ Le recoupement que personne n'avait, et c'est le résultat du jour.** Trois voies
+  bruxelloises **s'excluent pendant 2 ans** (Tremplin · JobYourself · prime Actiris). Or
+  JobYourself facture **sous le n° de TVA de la coopérative** — donc **la seule voie qui
+  dissoudrait l'obligation Peppol trouvée ici le 16/09 est aussi celle qui ferme les deux
+  autres pour deux ans.** Ni l'une ni l'autre session ne pouvait le voir seule.
+  **PLAUSIBLE, fiabilité MODÉRÉE — surtout pas une base de décision en l'état.**
+- **Conséquence opérationnelle : l'ordre prime sur la vitesse.** Choisir un statut **avant**
+  de savoir qui porte l'obligation Peppol peut verrouiller deux ans. Une question d'une phrase
+  à poser à JobYourself lève l'incertitude. **Coût : un e-mail.**
+- **Signal `gardien-donnees`, signalé et non corrigé (§5, §10)** : le commit voisin inscrit
+  domiciliation et date de naissance **dans un message de commit, sur un dépôt PUBLIC**. Un
+  message de commit ne se retire pas sans réécrire l'historique (**R-002**), et c'est déjà
+  diffusé. ATLAS n'y touche pas et **ne répète rien** — ses propres fichiers disent
+  « Bruxelles », ce qui suffit au raisonnement.
+- **Valeur d'ATLAS démontrée en acte** : aucune de ces deux trouvailles n'était nouvelle. Ce
+  qui était neuf, c'est de **les mettre côte à côte** — exactement la fonction « mémoire qui
+  rend la reprise gratuite » identifiée le 2026-09-16.
+
 ## SNAPSHOT 2026-09-16 (10) — Un fait bloquant trouvé, vérifié deux fois
 
 - **⚠️ e-facturation Peppol obligatoire, franchise TVA comprise. VÉRIFIÉ** par un agent, puis
