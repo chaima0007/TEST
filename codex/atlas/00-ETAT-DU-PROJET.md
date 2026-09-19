@@ -4,7 +4,7 @@
 > Ton temps est en rafales de 2-4 h (mesuré) : ce fichier existe pour que la reprise coûte
 > 30 secondes, pas 50 minutes.
 
-## À FAIRE PAR TOI — 3 choses, dans cet ordre, et rien d'autre ne bloque
+## À FAIRE PAR TOI — quand tu veux, dans cet ordre, et rien d'autre ne bloque
 
 ~~1. e-mail à JobYourself~~ — **tranché le 19/09 : tu ne les contactes pas.** Conséquence :
    Peppol sera à ton nom → un logiciel de facturation raccordé, avant le 1er client (ligne
@@ -48,7 +48,7 @@ un « 00 » par projet. **Ce qui cloche** : 7 protocoles maîtres concurrents, L
 ## EN COURS (sans toi)
 
 - **Routine quotidienne active** depuis le 2026-09-19 — `trig_01RXTwrecsCLboaL6kMmn6Ry`, tous
-  les jours **06h00 Bruxelles**. Elle fait le snapshot, lit les branches voisines, cherche du
+  les jours **06h00 Bruxelles** (cron `0 4 * * *` UTC — **05h00 après le passage à l'heure d'hiver le 25/10/2026** ; à ajuster si ça gêne). Elle fait le snapshot, lit les branches voisines, cherche du
   neuf sur 2 domaines (droit belge · IA locale), **régénère la mémoire de ton IA locale**, pousse.
   Notification push **seulement** si quelque chose de notable. **Première exécution : 20/09 06h**
   — c'est elle qui dira si les droits de push fonctionnent. **Pour l'arrêter** : Routines dans
@@ -72,7 +72,7 @@ un « 00 » par projet. **Ce qui cloche** : 7 protocoles maîtres concurrents, L
 
 ## DÉCISIONS EN ATTENTE — `/codex/A-DECIDER.md`, 5 lignes ATLAS/Caelum
 
-D-001 (gel) · Où vit ATLAS · Premier domaine · **Peppol avant 1er client** · **Ordre : question JobYourself** · Routine quotidienne (proposée, dépense récurrente).
+D-001 (gel) · Où vit ATLAS · Premier domaine · **Peppol avant 1er client** · Zone 1 AnythingLLM · 3 décisions révélées par le Drive (protocole de référence, statut LLAM, copies Archive) · 2 familles d'erreurs non tenues. *(JobYourself : clos. Routine : créée, tranchée.)*
 
 ## RÈGLES NÉES DE MES ERREURS (à relire avant d'agir) — `apprentissage/REGLES-APPRISES.md`
 

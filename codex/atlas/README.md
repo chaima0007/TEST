@@ -1,9 +1,8 @@
 # ATLAS — IA locale, privée, qui accumule
 
-> **Statut : CONCEPTION. Rien n'est installé.** Le diagnostic matériel (ÉTAPE 0) n'a pas encore
-> de réponses — aucun choix de modèle, de runtime ou de quantification ne peut être arrêté
-> avant. Ce dossier contient la **gouvernance** du projet, qui elle ne dépend pas du matériel.
-> Créé le 2026-09-16.
+> **Statut au 2026-09-19 : EN SERVICE.** Machine VÉRIFIÉE (Windows 11, 16 Go, sans GPU), Ollama +
+> `qwen2.5:3b` installés par Chaima, mémoire locale régénérable, routine quotidienne active, RAG
+> candidat validé (attend sa Zone 1). Créé le 2026-09-16. **Le fichier à ouvrir : `00-ETAT-DU-PROJET.md`.**
 
 ## Le principe de vérité, écrit une fois pour toutes
 

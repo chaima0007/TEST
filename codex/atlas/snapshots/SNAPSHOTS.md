@@ -6,6 +6,21 @@
 
 ---
 
+## SNAPSHOT 2026-09-19 (6) — 14:10 UTC — Test de reprise à froid : PLAUSIBLE, 8 trous bouchés
+
+**Compteur de passes sans fiche nouvelle : 0.** *(Convention à partir d'ici : chaque snapshot porte
+son heure UTC, pour que `git log --since` fonctionne.)*
+
+- **Test de reprise à froid fait** (session neuve, prompt seul, lecture seule) : elle a repris —
+  **mais par inférence** sur deux ambiguïtés (`ETAT.md` ×2, `ERREURS` ×2) et une ligne A-DECIDER
+  contradictoire. Verdict **PLAUSIBLE**. Détail : `audits/AUDITS.md`.
+- **8 trous de mon périmètre corrigés** avant la première passe de la routine ; **2 trous du
+  périmètre partagé signalés, non corrigés** (§5) — dont un déjà signalé le 16/09.
+- **Drive mis à jour** : document d'erreurs courant recréé (l'outil ne modifie pas un document
+  existant), ancien conservé et renommé. Procédure écrite dans `continuite/SYNC-DRIVE.md`.
+- **Passe à CONFIRMÉ** si la routine du 20/09 06h produit un snapshot juste sans toucher
+  `ETAT.md` racine ni rouvrir JobYourself.
+
 ## SNAPSHOT 2026-09-19 (5) — Le Drive est lu : 906 fichiers cartographiés, 32 documents distillés
 
 - **Chaima : « notre IA doit lire tout mon Drive pour apprendre ».** Périmètre décidé seul et
