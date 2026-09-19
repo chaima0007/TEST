@@ -15,16 +15,15 @@ MEMOIRE DU PROJET (copie du 2026-09-19, source de verite = le depot git, fichier
 =====
 # ATLAS — ÉTAT DU PROJET
 
-> **Le seul fichier à ouvrir pour reprendre.** Mis à jour : **2026-09-19**.
+> **Le seul fichier à ouvrir pour reprendre.** Mis à jour : **2026-09-19 (soir)**.
 > Ton temps est en rafales de 2-4 h (mesuré) : ce fichier existe pour que la reprise coûte
 > 30 secondes, pas 50 minutes.
 
 ## À FAIRE PAR TOI — 3 choses, dans cet ordre, et rien d'autre ne bloque
 
-1. **Un e-mail à JobYourself** — *« Si je facture via vous, les factures partent-elles sous votre
-   n° de TVA et votre raccordement Peppol, ou dois-je me raccorder moi-même ? »*
-   **Avant toute démarche de statut.** Trois voies s'excluent pendant 2 ans ; cette réponse
-   décide laquelle. → `deliberations/DELIBERATIONS.md`, section « CONVERGENCE ».
+~~1. e-mail à JobYourself~~ — **tranché le 19/09 : tu ne les contactes pas.** Conséquence :
+   Peppol sera à ton nom → un logiciel de facturation raccordé, avant le 1er client (ligne
+   A-DECIDER « Se raccorder à Peppol »). Le problème d'ordre « 2 ans » n'existe plus.
 2. **Deux réponses d'une ligne** pour le dossier statut : as-tu aujourd'hui une activité
    salariée (ou des allocations) ? Et où sont les statuts de ton asbl ?
    *(et, pour que ton IA locale grandisse : après chaque passe de la routine, relance les 3 lignes

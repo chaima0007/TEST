@@ -6,6 +6,11 @@
 
 ---
 
+- **2026-09-19** — **JobYourself : non.** Chaima ne contacte pas la coopérative d'activités.
+  Voie retirée du tableau. Conséquence : Peppol est à son nom quel que soit le statut → un
+  raccordement lui est nécessaire avant le 1er client ; la question d'ordre « 2 ans » tombe.
+  **TRANCHÉ PAR CHAIMA.**
+
 - **2026-09-19** — **Routine quotidienne de surveillance et d'apprentissage créée.** Chaima :
   « surveille-le pour qu'il grandisse ». La dépense récurrente avait été signalée (§10,
   `intendant-couts`) ; elle maintient. Identifiant `trig_01RXTwrecsCLboaL6kMmn6Ry`, 06h00

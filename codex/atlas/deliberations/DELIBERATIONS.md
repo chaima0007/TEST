@@ -58,7 +58,15 @@ exiger que ses membres se raccordent eux-mêmes, ou facturer sans être elle-mê
 **À poser à JobYourself avant tout engagement.** Coût : un e-mail. Enjeu : la seule décision
 irréversible de deux ans du dossier.
 
-### Ce que ça change dans l'ordre des choses
+### Issue — TRANCHÉ PAR CHAIMA le 2026-09-19
+
+**« Non, je ne contacte pas JobYourself. »** La question n'est pas posée ; la voie coopérative
+sort du tableau. **Ce qui en découle, sans inférence :** l'obligation Peppol reste à son nom
+quel que soit le statut restant → un raccordement lui est nécessaire avant le premier client.
+**Le problème d'ordre disparaît** avec la seule voie qui le portait. Le recoupement reste
+consigné : il a servi à rendre la décision consciente, pas à la forcer.
+
+### Ce que ça change dans l'ordre des choses (avant la décision — conservé pour mémoire)
 
 L'arbitrage D-001 recommandait de débloquer le premier encaissement. **Le recoupement montre
 que l'ordre compte plus que la vitesse :** choisir un statut **avant** de savoir qui porte
