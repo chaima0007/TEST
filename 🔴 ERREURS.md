@@ -129,6 +129,14 @@
 - **Correctif (APPLIQUÉ 2026-09-14) :** rapport corrigé — il ne reste que **3 points réellement ouverts**, tous absents du code (vérifié par recherche : « propriété », « domaine », « code source », « 12 mois », « renouvellement » n'apparaissent nulle part dans `pacte.ts`) : propriété du domaine et du code après paiement · coût de l'hébergement une fois la période « incluse » écoulée · heures estimées de livraison (usage interne, jamais communiqué).
 - **Prévention :** avant de demander à Chaima de produire quoi que ce soit, **exécuter le code qui pourrait déjà le produire**. Un devis, un message, un rapport : si un agent le génère, lire sa sortie réelle, pas sa description.
 
+## ERR-027 — Des marqueurs de conflit git ont été commités ET poussés (2026-09-19)
+- **Ce qui s'est passé :** `codex/A-DECIDER.md` et `codex/EVOLUTION.md` ont été poussés sur la branche en portant `<<<<<<< Updated upstream` / `>>>>>>> Stashed changes`. Deux registres de gouvernance, illisibles en l'état, **publiés sur un dépôt public**.
+- **Sévérité : IMPORTANT** — §9 angles Technique et Réputation. Aucune donnée perdue (le conflit était en union, les deux versions présentes), mais les deux fichiers que le protocole désigne comme « les seuls à ouvrir » (§6) étaient cassés.
+- **Cause racine :** un `git stash pop` partiel a laissé les deux fichiers en état de conflit, puis **`git add -A` a tout avalé sans regarder**. `git add -A` ne distingue pas un fichier résolu d'un fichier en conflit : il ajoute ce qu'il trouve. Aucun garde-fou entre le conflit et le push.
+- **Détection :** **signalée par l'agent `avocat`**, hors de son mandat, pendant le Parcours 2. Ni moi, ni `git status` (qui affichait un arbre propre après l'`add`), ni la CI ne l'ont vue. **Le contrôle qui a marché n'était pas un contrôle — c'était un agent qui lisait le fichier pour autre chose.**
+- **Correctif (APPLIQUÉ 2026-09-19) :** conflits résolus **en union**, les deux entrées conservées, aucune de la session concurrente touchée. Vérifié : `git grep '^<<<<<<< '` ne renvoie plus rien.
+- **Prévention proposée, NON APPLIQUÉE :** refuser le commit si `git grep -l '^<<<<<<< '` renvoie quoi que ce soit — un hook `pre-commit`, ou une étape du gate §4. Trois lignes, coût nul. **EN ATTENTE DE GO.**
+
 ---
 
 ### Motifs récurrents (méta-leçons)
@@ -144,3 +152,4 @@
 9. **Un garde-fou se vérifie sur le chemin qui tourne, pas sur celui qu'on craignait** — placé au mauvais endroit, il rassure sans protéger, et le repli d'un contrôle ne doit jamais être la sortie non contrôlée (ERR-016).
 8. **Un agent ne voit que le contexte qu'on lui donne** — une omission dans l'énoncé devient un angle mort dans la décision ; la visibilité du dépôt, le volume et le canal font partie de l'énoncé (ERR-015).
 7. **Un résumé n'est pas une source ; un périmètre filtré n'est pas un audit** — recouper avec l'artefact d'origine, annoncer le périmètre, vérifier sur le fichier réel (ERR-012, ERR-013, ERR-014).
+17. **`git add -A` ne regarde pas ce qu'il ajoute** — après tout `stash pop` ou tout merge, vérifier `git grep '^<<<<<<< '` AVANT de committer ; un arbre « propre » au sens de `git status` peut contenir des marqueurs de conflit (ERR-027).
