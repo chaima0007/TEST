@@ -85,7 +85,7 @@ deuxième série — l'objectif du jour s'adapte.
 ## Pour qui développe dessus
 
 - `npm run test:jeu` — logique de correction, révision espacée, contenu
-  (19 841 assertions, sans dépendance).
+  (19 851 assertions, sans dépendance).
 - `npm run test:jeu:parcours` — 30 jours d'usage simulé : arriéré de rappels,
   ancrage, ouverture des mondes et de l'examen.
 - `npm run test:jeu:ui` — 165 vérifications dans un vrai navigateur
