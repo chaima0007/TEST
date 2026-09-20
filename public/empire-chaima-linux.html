@@ -177,6 +177,21 @@ h2{font-size:17px;margin:26px 0 10px;color:var(--txt)}
   font-family:var(--mono);font-size:13px;line-height:1.55;white-space:pre-wrap;overflow-wrap:anywhere;color:#d3e4d8}
 .term .p{color:var(--ok2)}
 .note{margin-top:12px;font-size:13.5px;color:var(--dim);border-top:1px solid var(--line);padding-top:11px}
+/* Anatomie : la commande qu'on vient de taper, découpée et nommée.
+   C'est ce qui la rend transposable à une autre commande. */
+.anat{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.apart{display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 10px;border-radius:9px;
+  background:#0a1019;border:1px solid var(--line);animation:apartin .3s cubic-bezier(.2,1.2,.4,1) both}
+@keyframes apartin{from{opacity:0;transform:translateY(6px) scale(.94)}to{opacity:1;transform:none}}
+.apart b{font-family:var(--mono);font-size:14px;font-weight:700;line-height:1.2;overflow-wrap:anywhere}
+.apart em{font-style:normal;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);white-space:nowrap}
+.apart.cmd{border-color:rgba(46,204,113,.45)} .apart.cmd b{color:var(--ok)}
+.apart.opt{border-color:rgba(240,180,41,.40)} .apart.opt b{color:var(--gold)}
+.apart.path b{color:var(--txt)}
+.apart.arg b{color:#cdd6e6}
+.apart.meta b{color:var(--dim)}
+.saybtn{margin-top:12px}
+.dot.vu{background:var(--gold2);border-color:var(--gold2)}
 .note b{color:var(--gold)}
 
 /* clavier libre */
@@ -249,6 +264,23 @@ h2{font-size:17px;margin:26px 0 10px;color:var(--txt)}
    « Suivant », à l'endroit exact où le pouce se pose. */
 .toast.lvl{top:86px;bottom:auto;background:#1b2437;border:2px solid var(--gold);color:var(--txt);
   font-size:16px;font-weight:700;padding:14px 20px}
+/* Confort de lecture : trois tailles. Sur une tablette tenue à bout de bras,
+   au soleil, 15px ne suffisent pas — et rien ne doit sortir de l'écran. */
+body.zoom1 .scenario,body.zoom2 .scenario{line-height:1.6}
+body.zoom1 .scenario{font-size:17px} body.zoom2 .scenario{font-size:19px}
+body.zoom1 .tile{font-size:17px;min-height:52px} body.zoom2 .tile{font-size:19px;min-height:56px}
+body.zoom1 .tile.q{font-size:16px} body.zoom2 .tile.q{font-size:17.5px}
+body.zoom1 .chip{font-size:16px;min-height:48px} body.zoom2 .chip{font-size:17.5px;min-height:52px}
+body.zoom1 .cmdline{font-size:17px} body.zoom2 .cmdline{font-size:19px}
+body.zoom1 .feedback{font-size:16px} body.zoom2 .feedback{font-size:17.5px}
+body.zoom1 .feedback .why{font-size:15.5px} body.zoom2 .feedback .why{font-size:17px}
+body.zoom1 .note,body.zoom1 .hintbox{font-size:15px} body.zoom2 .note,body.zoom2 .hintbox{font-size:16.5px}
+body.zoom1 .term{font-size:14px} body.zoom2 .term{font-size:15.5px}
+body.zoom1 .desc,body.zoom1 .warnbox{font-size:15.5px} body.zoom2 .desc,body.zoom2 .warnbox{font-size:17px}
+body.zoom1 .lockmsg{font-size:13.5px} body.zoom2 .lockmsg{font-size:15px}
+body.zoom1 .world .nm{font-size:16.5px} body.zoom2 .world .nm{font-size:18px}
+body.zoom1 .world .cmds{font-size:14px} body.zoom2 .world .cmds{font-size:15px}
+body.zoom1 .apart b{font-size:15.5px} body.zoom2 .apart b{font-size:17px}
 body.noanim *,body.noanim *::before,body.noanim *::after{animation:none!important;transition:none!important}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
@@ -325,6 +357,7 @@ body.noanim *,body.noanim *::before,body.noanim *::after{animation:none!importan
     <span id="scText"></span>
     <span class="ask" id="scAsk"></span>
   </div>
+  <button class="btn small ghost" id="btnSay" style="display:none;margin-top:10px">🔊 Écouter la consigne</button>
   <div id="hintZone"></div>
 
   <div class="cmdlabel">Ta commande</div>
@@ -422,6 +455,31 @@ body.noanim *,body.noanim *::before,body.noanim *::after{animation:none!importan
         <div class="desc" id="lenDesc">8 questions par série</div>
       </div>
       <button class="btn small ghost" id="btnLen" style="width:auto;min-width:74px">8</button>
+    </div>
+  </div>
+
+  <h2>Confort et accessibilité</h2>
+  <div class="card">
+    <div class="row">
+      <div>
+        <div class="lab">Taille du texte</div>
+        <div class="desc" id="zoomDesc">Normal</div>
+      </div>
+      <button class="btn small ghost" id="btnZoom" style="width:auto;min-width:104px">Normal</button>
+    </div>
+    <div class="row">
+      <div>
+        <div class="lab">Lecture à voix haute</div>
+        <div class="desc">Ajoute un bouton pour faire lire la consigne et l'explication par la tablette.</div>
+      </div>
+      <button class="sw" id="swTts"><i></i></button>
+    </div>
+    <div class="row">
+      <div>
+        <div class="lab">Retour vibrant</div>
+        <div class="desc">Une vibration courte quand c'est juste, une double quand c'est faux. Utile quand l'écran est difficile à lire.</div>
+      </div>
+      <button class="sw" id="swVibro"><i></i></button>
     </div>
   </div>
 
@@ -4755,13 +4813,47 @@ function buildReport(state, now){
   L.push("Fiche cumulative : elle s'enrichit à chaque erreur et n'est jamais remise à zéro.");
   return L.join("\n");
 }
+/* ---------- anatomie d'une commande ----------
+   Nommer chaque morceau de ce qu'on vient de taper est ce qui transforme une
+   suite de mots apprise par cœur en structure transposable à une autre
+   commande. Déduit de la réponse elle-même : aucun contenu à écrire à la main,
+   donc valable pour les 217 exercices d'un coup. */
+function partRole(tok, i, toks){
+  var first = (toks[0]==="sudo")? 1 : 0;
+  var verbe = toks[first]||"";
+  if(tok==="sudo") return "droits root";
+  if(tok==="|") return "tube";
+  if(tok==="&") return "arrière-plan";
+  if(i===first || (i>0 && toks[i-1]==="|")) return "commande";
+  if(/^-{1,2}[A-Za-z]/.test(tok)) return "option";
+  if((verbe==="chmod"||verbe==="setfacl") && /^[0-7]{3,4}$/.test(tok)) return "droits en octal";
+  if(verbe==="chmod" && /^[ugoa]*[+\-=][rwxst]+$/.test(tok)) return "droits";
+  if(/^\d{1,3}(\.\d{1,3}){3}(\/\d{1,2})?$/.test(tok)) return "adresse réseau";
+  if(/@/.test(tok)) return "compte@machine";
+  if(/^["']/.test(tok)) return "valeur entre guillemets";
+  if(/\//.test(tok)) return "chemin";
+  if(/^\d+$/.test(tok)) return "numéro";
+  if(/^[a-z]+:[^:]*:/.test(tok)) return "règle ACL";
+  if(/=/.test(tok)) return "réglage";
+  return "argument";
+}
+var ROLE_CLASS={"commande":"cmd","option":"opt","chemin":"path","adresse réseau":"path",
+  "droits root":"meta","tube":"meta","arrière-plan":"meta"};
+function anatomy(toks){
+  var out=[], i;
+  for(i=0;i<toks.length;i++){
+    var r=partRole(toks[i], i, toks);
+    out.push({t:toks[i], role:r, cls:ROLE_CLASS[r]||"arg"});
+  }
+  return out;
+}
 /* ==================== CORE:END ==================== */
 
 /* ==================== APPLICATION ==================== */
 var KEY="empire-chaima-linux-v1";
 var S={xp:0, prog:{}, streak:0, best:0, last:null, days:0, log:[], boss:{}, exams:[], dayKey:null, dayCount:0,
        mode:"blocs", free:false, noanim:false, len:8, examOn:true, lastWorld:1, seenIntro:false,
-       dayTarget:0, seen:{}, firstAnchor:false};
+       dayTarget:0, seen:{}, firstAnchor:false, zoom:0, tts:true, vibro:true};
 
 function $(id){ return document.getElementById(id); }
 function save(){ try{ localStorage.setItem(KEY, JSON.stringify(S)); }catch(e){} }
@@ -4783,6 +4875,33 @@ function load(){
       for(var ok in d) if(/^unlocked\d+$/.test(ok)) S.seen["monde"+ok.slice(8)]=true;
     }
   }catch(e){}
+}
+/* Retour vibrant : sur une tablette, c'est le seul canal qui ne demande ni de
+   regarder l'écran ni d'écouter. Court quand c'est juste, double quand ça ne
+   l'est pas — jamais long, jamais insistant. */
+function buzz(motif){
+  if(!S.vibro) return;
+  try{ if(navigator && typeof navigator.vibrate==="function") navigator.vibrate(motif); }catch(e){}
+}
+function sansBalises(html){ return String(html).replace(/<[^>]+>/g," ").replace(/\s+/g," ").trim(); }
+/* Lecture à voix haute : la tablette possède déjà une voix française hors-ligne.
+   Elle dicte ses commandes, autant qu'elle puisse aussi les écouter. */
+function speak(txt){
+  try{
+    if(!window.speechSynthesis) return;
+    window.speechSynthesis.cancel();
+    var u=new window.SpeechSynthesisUtterance(sansBalises(txt));
+    u.lang="fr-FR"; u.rate=0.95;
+    window.speechSynthesis.speak(u);
+  }catch(e){}
+}
+function ttsDispo(){ return !!(S.tts && typeof window!=="undefined" && window.speechSynthesis); }
+function boutonEcoute(label){
+  return ttsDispo()? '<button class="btn small ghost saybtn" type="button">🔊 '+label+'</button>' : "";
+}
+function brancheEcoute(txt){
+  var b=$("feedbackZone").querySelector(".saybtn");
+  if(b) b.onclick=function(){ speak(txt); };
 }
 function toast(msg, ms, cls){
   var t=$("toast"); t.innerHTML=msg;
@@ -4909,6 +5028,7 @@ function celebrate(title, sub, big){
   ov.classList.add("on","arming");
   setTimeout(function(){ ov.classList.remove("arming"); }, 400);
   $("lvlBadge").classList.remove("pop"); void $("lvlBadge").offsetWidth; $("lvlBadge").classList.add("pop");
+  buzz([0,18,60,18,60,45]);
   confetti();
 }
 
@@ -5127,7 +5247,7 @@ function renderDots(){
     d.appendChild(s);
   }
 }
-var BUILT=[], POOL=[], ANSWERED=false, TRIES=0, HINTED=false;
+var BUILT=[], POOL=[], ANSWERED=false, TRIES=0, HINTED=false, SHOWN=false;
 /* blocs par défaut ; « progressif » ne bascule au clavier que sur les
    commandes déjà sues (boîte 3+), quand la reconnaissance ne suffit plus. */
 function inputFree(ex, st){
@@ -5137,7 +5257,7 @@ function inputFree(ex, st){
 }
 function renderQuestion(){
   var ex=SES.queue[SES.idx];
-  ANSWERED=false; TRIES=0; HINTED=false; BUILT=[];
+  ANSWERED=false; TRIES=0; HINTED=false; SHOWN=false; BUILT=[];
   $("playWorld").textContent = SES.exam? "Simulation d'examen"
       : (SES.boss? "Boss — "+SES.boss.name : "Monde "+ex.w+" — "+worldByN(ex.w).name);
   renderDots();
@@ -5154,6 +5274,8 @@ function renderQuestion(){
   $("tagRow").innerHTML=tags;
   $("scText").textContent=ex.sc;
   $("scAsk").textContent=ex.ask;
+  $("btnSay").style.display = ttsDispo()? "" : "none";
+  $("btnSay").onclick=function(){ speak(ex.sc+". "+ex.ask); };
   $("feedbackZone").innerHTML="";
   $("btnNext").style.display="none";
   $("actionRow").style.display="flex";
@@ -5177,6 +5299,12 @@ function renderQuestion(){
     $("hintZone").innerHTML='<div class="hintbox">Touche les blocs pour composer la commande. Touche un bloc déjà placé pour le retirer.</div>';
     S.seenIntro=true; save();
     setTimeout(function(){ var h=$("hintZone").firstChild; if(h){ h.style.transition="opacity .5s"; h.style.opacity="0"; setTimeout(function(){ $("hintZone").innerHTML=""; },520);} }, 7000);
+  } else if(!SES.weak && !ex.quiz && !(st && st.n)){
+    /* Première rencontre : proposer la réponse AVANT l'échec. Se tromper est
+       utile sur une commande déjà croisée, pas sur une commande qu'on n'a
+       jamais vue — là, ça n'apprend rien et ça décourage. */
+    $("hintZone").innerHTML='<button class="btn small ghost" type="button" id="btnShow">Je ne l\'ai jamais vue — montre-moi</button>';
+    $("btnShow").onclick=doShow;
   }
 }
 function renderTiles(ex){
@@ -5209,6 +5337,16 @@ function renderLine(ex){
     line.appendChild(c);
   }
   var car=document.createElement("span"); car.className="caret"; line.appendChild(car);
+}
+/* Rend l'anatomie lisible : un morceau, son rôle en dessous, dans l'ordre réel
+   de la commande. Les rôles viennent de anatomy() — rien n'est écrit à la main. */
+function anatBlock(tokens){
+  var parts=anatomy(tokens), html='<div class="anat">', i;
+  for(i=0;i<parts.length;i++){
+    html+='<div class="apart '+parts[i].cls+'" style="animation-delay:'+(i*55)+'ms">'+
+          '<b>'+escapeHtml(parts[i].t)+'</b><em>'+parts[i].role+'</em></div>';
+  }
+  return html+'</div>';
 }
 function escapeHtml(s){
   return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
@@ -5261,15 +5399,16 @@ function termBlock(ex, tokens){
 function onGood(ex, tokens){
   ANSWERED=true;
   var st=stateOf(ex.id), wasMastered=isMastered(st);
-  var gain = HINTED? 6 : (TRIES>0? 5 : 12);
+  var seul = (TRIES===0 && !SHOWN);           /* trouvée sans aide */
+  var gain = SHOWN? 4 : (HINTED? 6 : (TRIES>0? 5 : 12));
   var now=Date.now();
-  if(TRIES===0){ st.b=nextBox(st.b,true); SES.first++; }
+  if(seul){ st.b=nextBox(st.b,true); SES.first++; }
   else { st.b=Math.max(1,Math.min(st.b+1,2)); }
   st.due=dueAt(st.b, now); st.n++; st.ok++; st.last=now;
   var justMastered=!wasMastered && isMastered(st);
   if(justMastered) SES.mastered++;
   SES.done++;
-  SES.marks=SES.marks||{}; SES.marks[SES.idx]=(TRIES===0?"ok":"ko");
+  SES.marks=SES.marks||{}; SES.marks[SES.idx]=(seul? "ok" : (SHOWN&&TRIES===0? "vu" : "ko"));
   if(SES.exam && TRIES>0 && SES.missed) SES.missed.push(ex);
   var before=S.xp; S.xp+=gain; SES.xp+=gain;
   var lvlBefore=levelInfo(before).lvl, lvlAfter=levelInfo(S.xp).lvl;
@@ -5280,11 +5419,16 @@ function onGood(ex, tokens){
   line.classList.remove("flash"); void line.offsetWidth; line.classList.add("flash");
   var head="Correct";
   var fb='<div class="feedback ok"><div class="head">✓ '+head+' <span style="color:var(--dim);font-weight:600;font-size:13px">+'+gain+' XP</span></div>';
-  fb+= termBlock(ex, tokens.length? tokens : accepted(ex)[0]);
+  var reponse = tokens.length? tokens : accepted(ex)[0];
+  fb+= termBlock(ex, reponse);
+  if(!ex.quiz) fb+= anatBlock(reponse);
   if(ex.note) fb+='<div class="note">'+ex.note+'</div>';
   if(justMastered) fb+='<div class="note" style="color:var(--gold)"><b>Commande ancrée</b> — elle sort de la file de révision.</div>';
+  fb+= boutonEcoute("Écouter l'explication");
   fb+='</div>';
   $("feedbackZone").innerHTML=fb;
+  brancheEcoute(ex.why+(ex.note? ". "+sansBalises(ex.note) : ""));
+  buzz(12);
   revealFeedback();
   $("actionRow").style.display="none";
   $("btnNext").style.display="";
@@ -5332,8 +5476,11 @@ function onBad(ex, d){
   fb+='<div>'+d.reason+'</div>';
   if(d.why && d.why!==d.reason) fb+='<div class="why">'+d.why+'</div>';
   if(TRIES>=2) fb+='<div class="note">Réponse attendue : <code>'+escapeHtml(d.expected)+'</code> — recompose-la une fois avant de passer, c\'est ce geste-là qui la fait tenir.</div>';
+  fb+= boutonEcoute("Écouter l'explication");
   fb+='</div>';
   $("feedbackZone").innerHTML=fb;
+  brancheEcoute(sansBalises(d.reason)+". "+sansBalises(d.why||""));
+  buzz([0,26,70,26]);
   revealFeedback();
   if(TRIES>=2){
     $("btnHint").disabled=true;
@@ -5346,6 +5493,18 @@ function revealFeedback(){
   if(!z.firstChild || !z.firstChild.scrollIntoView) return;
   try{ z.firstChild.scrollIntoView({block:"center", behavior:S.noanim?"auto":"smooth"}); }
   catch(e){ z.firstChild.scrollIntoView(); }
+}
+/* Montrer la commande, puis demander de la recomposer : l'exposition seule
+   ne laisse aucune trace, c'est la production qui ancre. */
+function doShow(){
+  var ex=SES.queue[SES.idx];
+  if(ANSWERED) return;
+  SHOWN=true;
+  var acc=accepted(ex)[0];
+  $("hintZone").innerHTML='<div class="hintbox"><div style="font-family:var(--mono);font-size:15px;color:var(--gold)">'+
+    escapeHtml(acc.join(" "))+'</div><div style="color:var(--dim);margin-top:8px">'+ex.why+'</div>'+
+    '<div style="margin-top:8px;color:var(--txt)">Compose-la maintenant avec les blocs : c\'est ce geste-là qui la fait tenir, pas la lecture.</div></div>';
+  $("btnHint").disabled=true;
 }
 function doHint(){
   var ex=SES.queue[SES.idx];
@@ -5603,6 +5762,16 @@ function renderSettings(){
   $("swExam").classList.toggle("on", !!S.examOn);
   $("btnLen").textContent=S.len;
   $("lenDesc").textContent=S.len+" questions par série";
+  var zl=["Normal","Grand","Très grand"];
+  var zd=["Taille par défaut.",
+          "Texte agrandi : consignes, blocs et explications.",
+          "Texte maximal — pour lire à bout de bras ou en plein soleil."];
+  $("btnZoom").textContent=zl[S.zoom||0];
+  $("zoomDesc").textContent=zd[S.zoom||0];
+  $("swTts").classList.toggle("on", !!S.tts);
+  $("swVibro").classList.toggle("on", !!S.vibro);
+  document.body.classList.toggle("zoom1", S.zoom===1);
+  document.body.classList.toggle("zoom2", S.zoom===2);
   document.body.classList.toggle("noanim", !!S.noanim);
 }
 /* Enregistre un fichier. En local, un lien de téléchargement suffit ; dans une
@@ -5655,6 +5824,8 @@ function doImport(file){
 function init(){
   load();
   if(!storageOk()) $("noStore").hidden=false;
+  document.body.classList.toggle("zoom1", S.zoom===1);
+  document.body.classList.toggle("zoom2", S.zoom===2);
   document.body.classList.toggle("noanim", !!S.noanim);
   renderHud(0,S.xp);
   renderHome();
@@ -5694,13 +5865,18 @@ function init(){
   };
   $("swAnim").onclick=function(){ S.noanim=!S.noanim; save(); renderSettings(); };
   $("btnLen").onclick=function(){ S.len = S.len===5?8 : (S.len===8?12:5); save(); renderSettings(); };
+  $("btnZoom").onclick=function(){ S.zoom = ((S.zoom||0)+1)%3; save(); renderSettings(); renderHome(); };
+  $("swTts").onclick=function(){ S.tts=!S.tts; if(!S.tts && window.speechSynthesis){ try{ window.speechSynthesis.cancel(); }catch(e){} } save(); renderSettings(); };
+  $("swVibro").onclick=function(){ S.vibro=!S.vibro; save(); renderSettings(); if(S.vibro) buzz(12); };
   $("btnExport").onclick=doExport;
   $("btnImport").onclick=function(){ $("fileInput").click(); };
   $("fileInput").onchange=function(e){ if(e.target.files&&e.target.files[0]) doImport(e.target.files[0]); e.target.value=""; };
   $("btnReset").onclick=function(){
     if(!confirm("Effacer toute ta progression (XP, niveaux, révisions) ? Cette action est définitive.")) return;
     S={xp:0,prog:{},streak:0,best:0,last:null,days:0,log:[],boss:{},free:S.free,
-       noanim:S.noanim,len:S.len,examOn:S.examOn,lastWorld:1,seenIntro:true};
+       noanim:S.noanim,len:S.len,examOn:S.examOn,lastWorld:1,seenIntro:true,
+       mode:S.mode,exams:[],dayKey:null,dayCount:0,dayTarget:0,seen:{},firstAnchor:false,
+       zoom:S.zoom,tts:S.tts,vibro:S.vibro};
     save(); renderHud(0,0); renderHome(); renderSettings(); show("scHome");
     toast("Progression réinitialisée.");
   };

@@ -16,7 +16,7 @@ const { WORLDS, EX, BOSS, dailyQueue, dailyStock, dueShare, interleave, headVerb
         normalizeFree, freeTokens, checkFree, nextBox, dueAt, isMastered, levelInfo,
         xpTotalForLevel, worldStats, isWorldUnlocked, buildQueue, DAY, MASTER_BOX,
         bossFor, isBossOpen, BOSS_UNLOCK, weakList, weakQueue, examQueue, examWorlds,
-        buildReport, worldByN, ALLBY } = ctx;
+        buildReport, worldByN, ALLBY, anatomy, partRole } = ctx;
 
 /* exercices + étapes de boss : mêmes règles de qualité et de validation */
 const STEPS = BOSS.reduce((a, b) => a.concat(b.steps), []);
@@ -470,6 +470,45 @@ for (const b of BOSS) {
   ok(Object.keys(per).length >= 3, "l'examen mélange plusieurs mondes");
   const vierge = examQueue({}, 12, rnd);
   ok(vierge.every(e => e.w === 1), "sur une progression vierge, l'examen ne pioche que dans le monde 1");
+}
+
+/* ---------- anatomie d'une commande ----------
+   Elle est déduite de la réponse : si elle se trompe, elle se trompe pour tout
+   le monde à la fois. D'où un contrôle sur les 217 exercices, pas trois. */
+{
+  const roles = (toks) => anatomy(toks).map(p => p.role);
+  ok(roles(["sudo", "chmod", "755", "deploy.sh"]).join("|") === "droits root|commande|droits en octal|argument",
+     "chmod octal : " + roles(["sudo", "chmod", "755", "deploy.sh"]).join(" "));
+  ok(roles(["sudo", "chmod", "g+s", "/srv/projet"]).join("|") === "droits root|commande|droits|chemin",
+     "chmod symbolique");
+  ok(roles(["sudo", "ss", "-tulpn", "|", "grep", ":22"]).join("|") === "droits root|commande|option|tube|commande|argument",
+     "le tube sépare deux commandes");
+  ok(roles(["scp", "-P", "2222", "rapport.txt", "chaima@192.168.0.10:/home/chaima/"]).join("|")
+       === "commande|option|numéro|argument|compte@machine", "scp distant");
+  ok(roles(["sudo", "firewall-cmd", "--permanent", "--add-source=192.168.1.0/24"]).join("|")
+       === "droits root|commande|option|option", "une option longue avec valeur reste une option");
+  ok(roles(["setfacl", "-m", "u:paul:rwx", "/srv/rapports"]).join("|") === "commande|option|règle ACL|chemin", "règle ACL");
+  ok(roles(["./sauvegarde.sh", "&"]).join("|") === "commande|arrière-plan", "arrière-plan");
+
+  /* Sur TOUS les items : le premier mot utile est la commande, « sudo » n'est jamais pris pour elle,
+     et chaque morceau reçoit une classe d'affichage connue. */
+  const classes = ["cmd", "opt", "path", "arg", "meta"];
+  let mauvaisVerbe = [], mauvaiseClasse = [], vide = [];
+  ITEMS.forEach(ex => {
+    if (ex.quiz) return;
+    const toks = accepted(ex)[0];
+    const a = anatomy(toks);
+    const i = toks[0] === "sudo" ? 1 : 0;
+    if (a[i] && a[i].role !== "commande") mauvaisVerbe.push(ex.id + " → " + a[i].t + "=" + a[i].role);
+    a.forEach(p => {
+      if (classes.indexOf(p.cls) < 0) mauvaiseClasse.push(ex.id + " → " + p.cls);
+      if (!p.role) vide.push(ex.id + " → " + p.t);
+    });
+  });
+  ok(!mauvaisVerbe.length, "le verbe de la commande est toujours reconnu : " + mauvaisVerbe.slice(0, 3).join(", "));
+  ok(!mauvaiseClasse.length, "chaque morceau reçoit une classe d'affichage connue : " + mauvaiseClasse.slice(0, 3).join(", "));
+  ok(!vide.length, "aucun morceau sans rôle : " + vide.slice(0, 3).join(", "));
+  ok(anatomy(["sudo"]).length === 1 && anatomy([]).length === 0, "anatomie d'une liste vide ou minimale");
 }
 
 /* ---------- résultat ---------- */

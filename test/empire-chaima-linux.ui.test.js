@@ -618,6 +618,139 @@ const ok = (c, l) => { if (c) pass++; else { fail++; errs.push(l); } };
     await ctx.close();
   }
 
+  /* --- effets utiles et accessibilité : anatomie, voix, vibration, taille du texte --- */
+  {
+    const ctx = await browser.newContext({ viewport: { width: 412, height: 820 } });
+    const q = await ctx.newPage();
+    const soucis = [];
+    q.on("pageerror", e => soucis.push(e.message));
+    await q.addInitScript(() => {
+      // Chromium de bureau n'a ni vibreur ni voix : on les instrumente pour les observer.
+      window.__vibr = [];
+      Object.defineProperty(navigator, "vibrate", {
+        configurable: true, value: (p) => { window.__vibr.push(p); return true; }
+      });
+      window.__dits = [];
+      Object.defineProperty(window, "speechSynthesis", {
+        configurable: true,
+        value: { speak: (u) => window.__dits.push(u && u.text), cancel: () => {} }
+      });
+      window.SpeechSynthesisUtterance = function (t) { this.text = t; this.lang = ""; this.rate = 1; };
+    });
+    await q.goto(FILE);
+    await q.waitForTimeout(200);
+    // la toute première question du jeu explique d'abord comment poser les blocs
+    await q.click("#btnPlay");
+    await q.waitForTimeout(250);
+    ok((await q.locator("#hintZone").innerText()).indexOf("blocs") >= 0,
+       "la toute première question explique comment poser les blocs, avant toute autre aide");
+    await q.click("#btnBack");
+    await q.evaluate(() => { S.seenIntro = true; save(); });
+    await q.click("#btnPlay");
+    await q.waitForTimeout(250);
+
+    // on se place sur une question à blocs (les quiz n'ont ni anatomie ni « montre-moi »)
+    for (let i = 0; i < 6 && await q.evaluate(() => !!SES.queue[SES.idx].quiz); i++) {
+      await q.evaluate(() => { SES.idx++; renderQuestion(); });
+    }
+
+    /* écoute de la consigne */
+    ok(await q.locator("#btnSay").isVisible(), "le bouton d'écoute de la consigne est proposé");
+    await q.click("#btnSay");
+    const ditConsigne = await q.evaluate(() => window.__dits.slice());
+    ok(ditConsigne.length === 1 && ditConsigne[0].length > 30,
+       "la consigne est envoyée à la synthèse vocale : " + (ditConsigne[0] || "").slice(0, 50));
+
+    /* « je ne l'ai jamais vue » */
+    ok(await q.locator("#btnShow").isVisible(), "à la première rencontre, le jeu propose de montrer la commande");
+    const attendue = await q.evaluate(() => accepted(SES.queue[SES.idx])[0].join(" "));
+    await q.click("#btnShow");
+    const aide = (await q.locator("#hintZone").innerText()).replace(/\s+/g, " ");
+    ok(aide.includes(attendue), "la commande attendue est montrée : " + attendue);
+    ok(/compose/i.test(aide), "et le jeu demande quand même de la composer");
+
+    /* composer la réponse montrée : barème réduit, marque distincte, anatomie */
+    const avant = await q.evaluate(() => S.xp);
+    await q.evaluate(() => {
+      const rep = accepted(SES.queue[SES.idx])[0];
+      for (const t of rep) {
+        for (let i = 0; i < POOL.length; i++) {
+          if (POOL[i] === t && !BUILT.some(b => b.i === i)) { addTok(i); break; }
+        }
+      }
+    });
+    if (!(await q.locator("#feedbackZone .feedback.ok").isVisible())) await q.click("#btnCheck");
+    await q.waitForTimeout(150);
+    const gagne = await q.evaluate(() => S.xp) - avant;
+    ok(gagne === 4, "une commande montrée puis recomposée rapporte un barème réduit (" + gagne + " XP)");
+    ok(await q.locator("#dots .dot.vu").count() === 1, "elle est marquée « vue », ni réussite ni erreur");
+
+    const parts = await q.evaluate(() => Array.prototype.map.call(
+      document.querySelectorAll(".anat .apart"), d => d.querySelector("em").textContent));
+    ok(parts.length === attendue.split(" ").length, "l'anatomie découpe toute la commande (" + parts.length + " morceaux)");
+    ok(parts.indexOf("commande") >= 0, "le verbe de la commande est nommé : " + parts.join(" · "));
+    ok((await q.evaluate(() => window.__vibr.slice())).length === 1, "une bonne réponse déclenche une vibration courte");
+
+    /* écoute de l'explication */
+    ok(await q.locator("#feedbackZone .saybtn").isVisible(), "l'explication peut être écoutée");
+    await q.click("#feedbackZone .saybtn");
+    ok((await q.evaluate(() => window.__dits.length)) === 2, "l'explication part bien à la synthèse vocale");
+
+    /* taille du texte */
+    const avantPx = await q.evaluate(() => parseFloat(getComputedStyle(document.getElementById("scenario")).fontSize));
+    await q.click("#btnBack");
+    await q.click("#btnSettings");
+    await q.click("#btnZoom");
+    ok(await q.evaluate(() => document.body.classList.contains("zoom1")), "la taille « Grand » s'applique");
+    await q.click("#btnZoom");
+    ok((await q.locator("#btnZoom").innerText()).indexOf("Très") >= 0, "la taille « Très grand » existe");
+    await q.click("#btnBack2");
+    await q.click("#btnPlay");
+    await q.waitForTimeout(200);
+    const apresPx = await q.evaluate(() => parseFloat(getComputedStyle(document.getElementById("scenario")).fontSize));
+    ok(apresPx > avantPx, "le texte des consignes grandit réellement (" + avantPx + " → " + apresPx + " px)");
+
+    /* et rien ne déborde de l'écran, même sur la plus petite tablette */
+    await q.setViewportSize({ width: 320, height: 720 });
+    await q.waitForTimeout(150);
+    ok(await q.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1),
+       "en très grand et en 320px, aucun défilement horizontal");
+    await q.setViewportSize({ width: 412, height: 820 });
+
+    /* les deux aides se coupent */
+    await q.click("#btnBack");
+    await q.click("#btnSettings");
+    await q.click("#swTts");
+    await q.click("#swVibro");
+    await q.click("#btnBack2");
+    await q.click("#btnPlay");
+    await q.waitForTimeout(200);
+    ok(await q.locator("#btnSay").isHidden(), "la lecture à voix haute se coupe depuis les réglages");
+    const vibrAvant = await q.evaluate(() => window.__vibr.length);
+    await q.evaluate(() => {
+      const rep = accepted(SES.queue[SES.idx])[0];
+      for (const t of rep) {
+        for (let i = 0; i < POOL.length; i++) {
+          if (POOL[i] === t && !BUILT.some(b => b.i === i)) { addTok(i); break; }
+        }
+      }
+    });
+    if (!(await q.locator("#feedbackZone .feedback.ok").isVisible())) await q.click("#btnCheck");
+    await q.waitForTimeout(150);
+    ok(await q.evaluate(() => window.__vibr.length) === vibrAvant, "le retour vibrant se coupe aussi");
+    ok(await q.locator("#feedbackZone .saybtn").count() === 0, "et le bouton d'écoute disparaît du feedback");
+
+    /* les réglages de confort survivent au rechargement */
+    await q.reload();
+    await q.waitForTimeout(200);
+    ok(await q.evaluate(() => S.zoom === 2 && S.tts === false && S.vibro === false),
+       "les réglages de confort sont enregistrés");
+    ok(await q.evaluate(() => document.body.classList.contains("zoom2")),
+       "et la taille du texte est appliquée dès l'ouverture");
+    ok(soucis.length === 0, "aucune erreur JavaScript sur tout ce parcours : " + soucis.join(" | "));
+    await ctx.close();
+  }
+
   await browser.close();
   console.log(`${pass} vérifications passées, ${fail} échec(s).`);
   if (fail) { [...new Set(errs)].forEach(e => console.log("  ✕ " + e)); process.exit(1); }

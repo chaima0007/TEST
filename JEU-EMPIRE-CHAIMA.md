@@ -28,6 +28,15 @@ Tu composes chaque commande en tapant sur des blocs. Un bloc déjà posé se ret
 en tapant dessus. En cas d'erreur, le jeu explique le concept en jeu, pas
 seulement « faux ».
 
+Sur une commande que tu n'as **jamais vue**, un bouton « je ne l'ai jamais vue —
+montre-moi » te la donne avant l'échec : tu la recomposes ensuite avec les
+blocs. Elle rapporte moins et revient dès le lendemain — c'est voulu, se
+tromper sur ce qu'on n'a jamais croisé n'apprend rien.
+
+Après chaque bonne réponse, la commande est **découpée et nommée** : quel
+morceau est la commande, lequel est une option, lequel est un chemin. C'est ce
+qui permet de transposer à une autre commande au lieu d'apprendre par cœur.
+
 ## Ce qu'il y a dedans
 
 - **12 mondes**, 217 commandes : navigation, permissions, comptes, processus et
@@ -57,6 +66,12 @@ seulement « faux ».
 - **Longueur d'une série** : 5, 8 ou 12 questions.
 - **Animations réduites**, si l'affichage rame.
 - **Mode examen visible**, pour masquer le bouton.
+- **Taille du texte** : Normal · Grand · Très grand — pour lire à bout de bras
+  ou en plein soleil. Rien ne déborde de l'écran, même en très grand.
+- **Lecture à voix haute** : un bouton fait lire la consigne, puis
+  l'explication, par la voix française de la tablette. Fonctionne hors-ligne.
+- **Retour vibrant** : une vibration courte quand c'est juste, une double quand
+  c'est faux. Utile quand l'écran est difficile à lire.
 
 ## Sauvegarder ta progression
 
@@ -85,12 +100,13 @@ deuxième série — l'objectif du jour s'adapte.
 ## Pour qui développe dessus
 
 - `npm run test:jeu` — logique de correction, révision espacée, contenu
-  (20 142 assertions, sans dépendance).
+  (20 153 assertions, sans dépendance).
 - `npm run test:jeu:parcours` — 30 jours d'usage simulé : arriéré de rappels,
   ancrage, ouverture des mondes et de l'examen.
-- `npm run test:jeu:ui` — 165 vérifications dans un vrai navigateur
+- `npm run test:jeu:ui` — 188 vérifications dans un vrai navigateur
   (Playwright) : parcours complet, retour du lendemain, export et import de la
-  sauvegarde, tablette sans stockage, barème d'examen et de boss.
+  sauvegarde, tablette sans stockage, barème d'examen et de boss, anatomie des
+  commandes, voix, vibration et taille du texte.
 
 Tout le contenu vit dans les tableaux `EX` (exercices) et `BOSS` (boss) du bloc
 `CORE` du fichier HTML. Un exercice déclare sa solution en blocs, ses blocs
