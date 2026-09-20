@@ -511,6 +511,53 @@ body.noanim *,body.noanim *::before,body.noanim *::after{animation:none!importan
 /* ==================== CORE:START ==================== */
 /* Données + logique pure de validation. Testé par test/empire-chaima-linux.test.js */
 
+/* ==================== JOURNAL DES CORRECTIONS ====================
+   Revue technique + pédagogique du 2026-09-20 (Rocky Linux 9). Corrigé :
+   - Format de date « JJ mois » -> « mois JJ » dans tous les out/outCmd
+     simulant ls -l (l'ordre réel de coreutils est mois puis jour, vérifié
+     par test direct : LC_TIME=fr_FR.UTF-8 ls -l).
+   - w8-journalctl-u : note corrigée (ACL systemd accorde aussi wheel/adm
+     en lecture sur Rocky 9, pas seulement adm — à reconfirmer sur VM).
+   - w4-getenforce : ajout de l'avertissement "semanage absent par défaut,
+     nécessite policycoreutils-python-utils" (piège d'examen classique).
+   - Monde 6 réseau : ajout de l'étape manquante "ping local" (passerelle)
+     entre nmcli-up et ping 8.8.8.8, comblant la méthode en 5 étapes
+     annoncée dans les notes mais jamais exercée.
+   - Monde 12 firewalld : plusieurs sol[] à flags multiples étaient à ordre
+     figé (ex. --permanent --zone= --add-port=) alors que firewall-cmd
+     accepte ses options longues dans n'importe quel ordre -> passage en
+     groupe permutable {p:[...]} + correction des champs "order" trompeurs.
+   - BOSS Monde 9 "Le disque neuf" : incohérence corrigée (disque neuf vs
+     partition vdb1 déjà présente sans étape de partitionnement) en
+     précisant que le disque arrive pré-partitionné par le gabarit de VM.
+   - BOSS Monde 10 : sortie de "localectl set-keymap" ne doit pas afficher
+     FONT= (seul KEYMAP= est écrit ; FONT= vient de l'exercice setfont,
+     plus tardif) — ligne retirée.
+   - Ajout de 6 exercices comblant des angles morts identifiés : w2-run-
+     dotslash (piège ./script.sh, PATH sans .), w1-rm-r (rm -r sur dossier
+     non vide), w9-mkswap-file / w9-swapon-file (swap sur FICHIER, pas
+     seulement sur partition), w9-quiz-fdisk-t (fdisk t -> 82 pour le
+     typage d'une partition swap), w6-ping-local (voir ci-dessus).
+   - w2-chmod-setgid / w2-chmod-sticky : sc précise maintenant que le
+     dossier appartient à root (cohérence avec le besoin de sudo).
+   - w9-quiz-fdisk : note ajoutée sur "defaults,nofail" en fstab pour un
+     montage non critique (piège classique de blocage au boot).
+
+   GAPS CONNUS RESTANTS (pour une prochaine session) :
+   - Monde 3 : verrouillage de compte (passwd -l/-S, usermod -L/-U, chage),
+     userdel, marqueurs de verrouillage dans /etc/shadow (!, !!, *).
+   - Monde 5 dnf : dnf provides, dnf reinstall, dnf check-update, prompt
+     d'import de clé GPG au premier install depuis un nouveau dépôt.
+   - Monde 4 systemctl : disable, is-enabled/is-active, journalctl -u
+     dédié à un service précis (déjà en partie couvert monde 8).
+   - Monde 6 nmcli : nmcli connection add (créer un profil sur une
+     interface qui n'en a aucun) jamais enseigné, seulement "modify".
+   - Monde 6 SSH : lien explicite entre port SSH non standard et SELinux
+     (semanage port -t ssh_port_t) absent des exercices SSH eux-mêmes.
+   - Uniformiser les guillemets simples/doubles entre grep/find et
+     sed/awk (cosmétique, non bloquant).
+   ==================================================================== */
+
 var WORLDS = [
   {n:1, ico:"📁", name:"Navigation et fichiers",
    cmds:"pwd ls cd cat less mkdir cp mv rm ln"},
@@ -601,7 +648,7 @@ var EX = [
    cat:"« cat » lit un fichier, il ne montre pas les droits d'un dossier."},
  miss:{"-l":"Sans « -l », « ls » ne montre que les noms : aucune colonne de droits."},
  why:"C'est « -l » (long) qui déplie chaque ligne en : type + droits, propriétaire, groupe, taille, date, nom.",
- out:"total 16\ndrwxr-xr-x. 2 chaima chaima   6 12 mars  09:14 archives\n-rw-r--r--. 1 chaima chaima 284 12 mars  09:20 config.txt\n-rw-r--r--. 1 chaima chaima  51 12 mars  09:21 notes.txt\n-rw-r--r--. 1 chaima chaima 118 12 mars  09:22 script.sh",
+ out:"total 16\ndrwxr-xr-x. 2 chaima chaima   6 mars 12  09:14 archives\n-rw-r--r--. 1 chaima chaima 284 mars 12  09:20 config.txt\n-rw-r--r--. 1 chaima chaima  51 mars 12  09:21 notes.txt\n-rw-r--r--. 1 chaima chaima 118 mars 12  09:22 script.sh",
  note:"Ici <b>script.sh</b> est en -rw-r--r-- : aucun x, donc il ne peut pas s'exécuter. C'est le monde 2."},
 
 {id:"w1-ls-la", w:1, src:"cours",
@@ -617,7 +664,7 @@ var EX = [
  miss:{"-a":"Sans « -a », les fichiers qui commencent par un point (.bashrc) restent invisibles.",
        "-l":"Sans « -l », tu vois les fichiers cachés mais sans leurs droits."},
  why:"Deux options se cumulent : « -a » (all) montre les fichiers cachés, « -l » (long) montre les droits. L'ordre entre elles est libre, et elles peuvent se coller : -la, -al, -l -a, -a -l sont équivalents.",
- out:"total 28\ndrwx------. 4 chaima chaima 4096 12 mars  09:31 .\ndrwxr-xr-x. 3 root   root     20 10 mars  14:02 ..\n-rw-r--r--. 1 chaima chaima  492 12 mars  09:05 .bashrc\ndrwxr-xr-x. 2 chaima chaima    6 12 mars  09:14 archives\n-rw-r--r--. 1 chaima chaima  284 12 mars  09:20 config.txt",
+ out:"total 28\ndrwx------. 4 chaima chaima 4096 mars 12  09:31 .\ndrwxr-xr-x. 3 root   root     20 mars 10  14:02 ..\n-rw-r--r--. 1 chaima chaima  492 mars 12  09:05 .bashrc\ndrwxr-xr-x. 2 chaima chaima    6 mars 12  09:14 archives\n-rw-r--r--. 1 chaima chaima  284 mars 12  09:20 config.txt",
  note:"Les deux premières lignes : <b>.</b> = le dossier courant, <b>..</b> = le dossier parent."},
 
 {id:"w1-cd-root", w:1, src:"cours",
@@ -773,7 +820,7 @@ var EX = [
    nano:"« nano » ouvre un éditeur : ça marche, mais ce n'est pas la commande directe pour créer un fichier vide.",
    rm:"« rm » supprime : danger, c'est l'inverse."},
  why:"« touch » crée un fichier vide s'il n'existe pas (et met à jour sa date s'il existe déjà).",
- outCmd:"touch rapport.txt\n$ ls -l rapport.txt\n-rw-r--r--. 1 chaima chaima 0 12 mars  10:58 rapport.txt",
+ outCmd:"touch rapport.txt\n$ ls -l rapport.txt\n-rw-r--r--. 1 chaima chaima 0 mars 12  10:58 rapport.txt",
  note:"Taille <b>0</b> : le fichier existe bien, il est vide."},
 
 {id:"w1-cp", w:1, src:"cours",
@@ -832,6 +879,20 @@ var EX = [
  outCmd:"rm vieux.log\n$ ls\nconfig.txt  notes.txt",
  note:"Pas de corbeille : <b>rm</b> est définitif."},
 
+{id:"w1-rm-r", w:1, src:"cours",
+ sc:"Le dossier archives contient encore plusieurs fichiers et tu veux t'en débarrasser complètement, lui et tout son contenu. Un « rmdir archives » vient de répondre « Le dossier n'est pas vide ».",
+ ask:"Supprime le dossier archives et tout ce qu'il contient.",
+ sol:["rm","-r","archives"],
+ blocks:["rmdir","-f","mv"],
+ traps:{
+   rmdir:"« rmdir » ne supprime qu'un dossier VIDE : c'est exactement l'erreur que tu viens de rencontrer.",
+   "-f":"« -f » (force) coupe les demandes de confirmation, mais ne descend pas dans un dossier : sans « -r », l'erreur « est un dossier » persiste.",
+   mv:"« mv » déplacerait le dossier ailleurs : il existerait toujours, avec tout son contenu."},
+ miss:{"-r":"Sans « -r », rm refuse un dossier : « rm: impossible de supprimer 'archives': est un dossier ». Il faut lui dire explicitement de descendre dedans."},
+ why:"« -r » (recursive) fait descendre rm dans le dossier et supprimer tout son contenu avant le dossier lui-même. Combinée à « -f » (« rm -rf »), c'est l'une des commandes les plus dangereuses de Linux : aucune confirmation, aucune corbeille.",
+ outCmd:"rm -r archives\n$ ls\nconfig.txt  notes.txt",
+ note:"Avant un <b>rm -r</b>, le réflexe de prudence est de vérifier avec <b>ls</b> ce qu'il y a dedans — l'erreur ne se rattrape pas."},
+
 {id:"w1-ln-hard", w:1, src:"cours",
  sc:"Tu veux qu'un fichier de données reste accessible sous un second nom, même si quelqu'un supprime le nom d'origine. Les deux noms doivent pointer sur le même contenu, sur la même partition.",
  ask:"Crée un lien physique nommé sauvegarde.txt vers donnees.txt.",
@@ -843,7 +904,7 @@ var EX = [
    cp:"« cp » ferait une copie indépendante : elle occuperait la place deux fois et ne resterait pas synchronisée."},
  order:"Toujours : d'abord le fichier SOURCE, ensuite le NOM du lien à créer.",
  why:"« ln » sans option crée un lien PHYSIQUE : même inode, donc le contenu survit à la suppression de l'autre nom. C'est contre-intuitif — on s'attend à ce que le lien par défaut soit symbolique, mais non.",
- outCmd:"ln donnees.txt sauvegarde.txt\n$ ls -li\n262147 -rw-r--r--. 2 chaima chaima 84 12 mars  11:12 donnees.txt\n262147 -rw-r--r--. 2 chaima chaima 84 12 mars  11:12 sauvegarde.txt",
+ outCmd:"ln donnees.txt sauvegarde.txt\n$ ls -li\n262147 -rw-r--r--. 2 chaima chaima 84 mars 12  11:12 donnees.txt\n262147 -rw-r--r--. 2 chaima chaima 84 mars 12  11:12 sauvegarde.txt",
  note:"Même numéro d'inode (262147) et compteur de liens à <b>2</b> : c'est bien un lien physique."},
 
 {id:"w1-ln-sym", w:1, src:"cours",
@@ -858,7 +919,7 @@ var EX = [
  miss:{"-s":"Sans « -s », tu crées un lien PHYSIQUE. Or un lien physique ne peut pas traverser les partitions : la commande échouerait avec « Invalid cross-device link »."},
  order:"D'abord la cible (le fichier visé), ensuite le nom du lien.",
  why:"« ln -s cible nom » crée un pointeur. Contrairement au lien physique, il traverse les partitions et fonctionne sur les dossiers — mais il devient mort si la cible disparaît.",
- outCmd:"ln -s /var/log/messages journal\n$ ls -l journal\nlrwxrwxrwx. 1 chaima chaima 17 12 mars  11:20 journal -> /var/log/messages",
+ outCmd:"ln -s /var/log/messages journal\n$ ls -l journal\nlrwxrwxrwx. 1 chaima chaima 17 mars 12  11:20 journal -> /var/log/messages",
  note:"La ligne commence par <b>l</b> et affiche <b>journal -&gt; /var/log/messages</b> : signature du lien symbolique."},
 
 {id:"w1-ls-li", w:1, src:"cours",
@@ -873,7 +934,7 @@ var EX = [
    "-s":"« -s » affiche la taille en blocs, pas le numéro d'inode."},
  miss:{"-i":"Sans « -i », aucun numéro d'inode n'apparaît : impossible de prouver que deux noms partagent le même contenu."},
  why:"« -i » ajoute le numéro d'inode en début de ligne. Deux fichiers avec le MÊME inode sont deux noms d'un même contenu : un lien physique.",
- out:"262147 -rw-r--r--. 2 chaima chaima 84 12 mars  11:12 donnees.txt\n262147 -rw-r--r--. 2 chaima chaima 84 12 mars  11:12 sauvegarde.txt\n262150 lrwxrwxrwx. 1 chaima chaima 17 12 mars  11:20 journal -> /var/log/messages",
+ out:"262147 -rw-r--r--. 2 chaima chaima 84 mars 12  11:12 donnees.txt\n262147 -rw-r--r--. 2 chaima chaima 84 mars 12  11:12 sauvegarde.txt\n262150 lrwxrwxrwx. 1 chaima chaima 17 mars 12  11:20 journal -> /var/log/messages",
  note:"Le lien symbolique a son <b>propre</b> inode (262150) : ce n'est qu'un pointeur."},
 
 {id:"w1-man", w:1, src:"cours",
@@ -917,11 +978,11 @@ var EX = [
  miss:{"-l":"Sans « -l », tu obtiens juste le nom du fichier : aucune information de droits."},
  order:"Les options se placent après la commande et avant le fichier : ls -l script.sh.",
  why:"« ls -l fichier » affiche la ligne de droits de ce fichier précis. Observer avant d'agir, c'est la méthode.",
- out:"-rw-r--r--. 1 chaima chaima 118 12 mars  09:22 script.sh",
+ out:"-rw-r--r--. 1 chaima chaima 118 mars 12  09:22 script.sh",
  note:"<b>-rw-r--r--</b> : aucun <b>x</b> nulle part, donc le script ne peut pas s'exécuter."},
 
 {id:"w2-quiz-type", w:2, src:"cours", quiz:true,
- sc:"Dans la sortie de ls -l, tu lis la ligne : drwxr-xr-x. 2 chaima chaima 6 12 mars archives",
+ sc:"Dans la sortie de ls -l, tu lis la ligne : drwxr-xr-x. 2 chaima chaima 6 mars 12 archives",
  ask:"Que signifie le tout premier caractère, le « d » ?",
  sol:["c'est un dossier"],
  blocks:["c'est un fichier ordinaire","c'est un lien symbolique","le propriétaire peut lire"],
@@ -959,8 +1020,22 @@ var EX = [
    chown:"« chown » change le PROPRIÉTAIRE du fichier, pas ses droits."},
  order:"L'ordre est : chmod, puis la modification de droits, puis le fichier visé.",
  why:"chmod se lit en trois morceaux : QUI (u = user/propriétaire, g = groupe, o = autres, a = tous), l'ACTION (+ ajoute, - retire, = fixe), et le DROIT (r, w, x).",
- outCmd:"chmod u+x script.sh\n$ ls -l script.sh\n-rwxr--r--. 1 chaima chaima 118 12 mars  09:22 script.sh",
+ outCmd:"chmod u+x script.sh\n$ ls -l script.sh\n-rwxr--r--. 1 chaima chaima 118 mars 12  09:22 script.sh",
  note:"Le <b>x</b> est apparu dans le premier bloc de trois : celui de la propriétaire."},
+
+{id:"w2-run-dotslash", w:2, src:"cours",
+ sc:"script.sh est maintenant exécutable (u+x). Tu tapes « script.sh » dans le terminal : bash répond « script.sh: commande introuvable ». Le fichier est pourtant bien là, dans le dossier courant.",
+ ask:"Lance le script en désignant explicitement le dossier courant.",
+ sol:["./script.sh"],
+ blocks:["script.sh","bash script.sh","sh script.sh","source script.sh"],
+ traps:{
+   "script.sh":"Sans chemin, le shell cherche « script.sh » dans les dossiers listés par $PATH (/usr/bin, /usr/local/bin…) — jamais dans le dossier courant, même si tu t'y trouves. D'où « commande introuvable » alors que le fichier existe bel et bien.",
+   "bash script.sh":"Ça fonctionne aussi (tu forces un nouveau shell à lire le script), mais ce n'est pas le réflexe testé ici : la commande attendue est ./",
+   "sh script.sh":"Fonctionne également, mais interprète le script avec sh, pas forcément avec bash : ce n'est pas le réflexe standard pour un script qui commence par #!/bin/bash.",
+   "source script.sh":"« source » exécute le script dans le shell ACTUEL (pratique pour charger des variables), pas dans un sous-shell séparé : l'effet n'est pas le même qu'une exécution normale."},
+ why:"Par sécurité, le dossier courant « . » n'est JAMAIS dans le $PATH sous Linux. « ./script.sh » dit explicitement « exécute le fichier script.sh situé ici ». C'est le piège n°1 juste après un premier chmod +x, et une cause fréquente de blocage à l'examen.",
+ out:"(le script s'exécute normalement)",
+ note:"Le <b>.</b> et le <b>/</b> sont tous les deux indispensables : <b>.</b> désigne le dossier courant, <b>/</b> sépare le dossier du nom de fichier."},
 
 {id:"w2-chmod-gw", w:2, src:"cours",
  sc:"Un fichier de référence est modifiable par tous les membres de ton groupe et plusieurs personnes l'ont déjà abîmé. Il doit rester lisible par le groupe, mais plus modifiable.",
@@ -973,7 +1048,7 @@ var EX = [
    "u-w":"« u » vise la propriétaire : tu perdrais toi-même le droit de modifier ton fichier.",
    "g-r":"« -r » retirerait la LECTURE au groupe. Or le fichier doit rester lisible : seule l'écriture doit partir."},
  why:"Chaque droit se retire indépendamment : « g-w » enlève uniquement l'écriture au groupe, la lecture « r » reste intacte.",
- outCmd:"chmod g-w reference.txt\n$ ls -l reference.txt\n-rw-r--r--. 1 chaima chaima 640 12 mars  14:03 reference.txt",
+ outCmd:"chmod g-w reference.txt\n$ ls -l reference.txt\n-rw-r--r--. 1 chaima chaima 640 mars 12  14:03 reference.txt",
  note:""},
 
 {id:"w2-chmod-or", w:2, src:"cours",
@@ -987,7 +1062,7 @@ var EX = [
    "o+r":"« + » ajoute la lecture aux autres : c'est l'inverse de la consigne.",
    "u-r":"« u » vise la propriétaire : tu te bloquerais toi-même."},
  why:"Les trois cercles de chmod sont bien distincts : Propriétaire (u) | Groupe (g) | Autres (o). Retirer un droit aux « autres » n'affecte ni toi ni ton groupe.",
- outCmd:"chmod o-r salaires.txt\n$ ls -l salaires.txt\n-rw-r-----. 1 chaima chaima 220 12 mars  14:10 salaires.txt",
+ outCmd:"chmod o-r salaires.txt\n$ ls -l salaires.txt\n-rw-r-----. 1 chaima chaima 220 mars 12  14:10 salaires.txt",
  note:"Le dernier bloc est passé à <b>---</b> : les autres ne peuvent plus rien faire."},
 
 {id:"w2-chmod-644", w:2, src:"cours",
@@ -1001,7 +1076,7 @@ var EX = [
    "640":"640 = rw-r----- : le groupe lit, mais les AUTRES n'ont plus aucun droit. Or ils doivent pouvoir lire.",
    "777":"777 = rwxrwxrwx : tous les droits à tout le monde. À bannir, c'est la faille de sécurité classique."},
  why:"Chaque chiffre est une somme : r = 4, w = 2, x = 1. Propriétaire 4+2 = 6 (rw-), groupe 4 (r--), autres 4 (r--) → 644.",
- outCmd:"chmod 644 rapport.txt\n$ ls -l rapport.txt\n-rw-r--r--. 1 chaima chaima 284 12 mars  14:22 rapport.txt",
+ outCmd:"chmod 644 rapport.txt\n$ ls -l rapport.txt\n-rw-r--r--. 1 chaima chaima 284 mars 12  14:22 rapport.txt",
  note:"<b>644</b> est le droit standard d'un fichier de données."},
 
 {id:"w2-chmod-755", w:2, src:"cours",
@@ -1015,7 +1090,7 @@ var EX = [
    "700":"700 = rwx------ : toi seule peux le lancer, les autres n'ont aucun droit. Or ici tout le monde doit pouvoir l'exécuter.",
    "775":"775 = rwxrwxr-x : le groupe pourrait aussi modifier le script. Seule la propriétaire doit pouvoir le faire."},
  why:"Propriétaire 4+2+1 = 7 (rwx), groupe 4+1 = 5 (r-x), autres 4+1 = 5 (r-x) → 755. Lire et exécuter sans écrire, c'est le droit standard d'un script partagé.",
- outCmd:"chmod 755 deploy.sh\n$ ls -l deploy.sh\n-rwxr-xr-x. 1 chaima chaima 512 12 mars  14:30 deploy.sh",
+ outCmd:"chmod 755 deploy.sh\n$ ls -l deploy.sh\n-rwxr-xr-x. 1 chaima chaima 512 mars 12  14:30 deploy.sh",
  note:"<b>755</b> pour un script ou un dossier, <b>644</b> pour un fichier de données."},
 
 {id:"w2-chmod-700", w:2, src:"cours",
@@ -1029,7 +1104,7 @@ var EX = [
    "770":"770 ouvre tous les droits au GROUPE. Ici personne d'autre que toi ne doit y accéder.",
    "777":"777 ouvre tout à tout le monde : l'inverse d'un dossier privé."},
  why:"Sur un dossier, le « x » est indispensable pour le traverser : 700 = rwx------ te donne lecture, écriture et entrée, et ferme la porte à tous les autres.",
- outCmd:"chmod 700 prive\n$ ls -ld prive\ndrwx------. 2 chaima chaima 6 12 mars  14:41 prive",
+ outCmd:"chmod 700 prive\n$ ls -ld prive\ndrwx------. 2 chaima chaima 6 mars 12  14:41 prive",
  note:"<b>ls -ld</b> affiche les droits du dossier lui-même, sans lister son contenu."},
 
 {id:"w2-quiz-octal", w:2, src:"cours", quiz:true,
@@ -1057,7 +1132,7 @@ var EX = [
  miss:{sudo:"Sans « sudo », la commande échoue : seul root peut donner un fichier à un autre utilisateur (« Opération non permise »)."},
  order:"L'ordre est : sudo, chown, propriétaire:groupe, puis la cible.",
  why:"« chown utilisateur:groupe cible » change le propriétaire et le groupe. C'est la bonne réponse au problème « ce dossier ne m'appartient pas » — ouvrir en 777 serait une rustine dangereuse, qui donnerait le droit d'écrire à toute la machine.",
- outCmd:"sudo chown chaima:chaima /srv/equipe\n$ ls -ld /srv/equipe\ndrwxr-xr-x. 2 chaima chaima 4096 12 mars  15:02 /srv/equipe",
+ outCmd:"sudo chown chaima:chaima /srv/equipe\n$ ls -ld /srv/equipe\ndrwxr-xr-x. 2 chaima chaima 4096 mars 12  15:02 /srv/equipe",
  note:"Connaissance générale Rocky/RHEL, pas une commande vue telle quelle en cours."},
 
 {id:"w2-umask", w:2, src:"general",
@@ -1075,7 +1150,7 @@ var EX = [
  note:"Connaissance générale Rocky/RHEL, pas une commande vue telle quelle en cours. Résultat inattendu : sur Rocky/RHEL, <b>/etc/bashrc</b> applique <b>umask 002</b> (et non 022) pour un compte standard dont le groupe primaire porte son propre nom (schéma UPG, le cas de chaima) — ce qui donne 664 aux fichiers et 775 aux dossiers, donc écriture ouverte au groupe. 022 est la valeur générique enseignée, mais la commande affiche ici la vraie valeur active de la session."},
 
 {id:"w2-chmod-setgid", w:2, src:"general",
- sc:"Le dossier /srv/projet est partagé par toute l'équipe (groupe equipe). Problème : chaque fichier créé dedans hérite du groupe PERSONNEL de son créateur, pas du groupe equipe — les autres membres ne peuvent donc pas le modifier.",
+ sc:"Le dossier /srv/projet appartient à root et est partagé par toute l'équipe (groupe equipe). Problème : chaque fichier créé dedans hérite du groupe PERSONNEL de son créateur, pas du groupe equipe — les autres membres ne peuvent donc pas le modifier.",
  ask:"Active le bit setgid sur /srv/projet pour que tout nouveau fichier hérite automatiquement du groupe du dossier.",
  sol:["sudo","chmod","g+s","/srv/projet"],
  blocks:["u+s","+t","g+w"],
@@ -1085,11 +1160,11 @@ var EX = [
    "g+w":"« g+w » donne juste l'écriture au groupe déjà en place ; ça ne change rien au groupe attribué aux NOUVEAUX fichiers créés."},
  miss:{sudo:"Le dossier appartient à root : sans « sudo », chmod répond « chmod: changement des permissions de '/srv/projet': Opération non permise ». On ne modifie que les droits de ses propres fichiers."},
  why:"Posé sur un DOSSIER, le setgid (g+s) fait que tout fichier ou sous-dossier créé à l'intérieur hérite automatiquement du groupe du parent — et non du groupe primaire de son créateur. C'est le réglage classique d'un dossier de travail partagé par plusieurs comptes d'un même groupe.",
- outCmd:"sudo chmod g+s /srv/projet\n$ ls -ld /srv/projet\ndrwxrwsr-x. 2 root equipe 4096 12 mars  15:10 /srv/projet",
+ outCmd:"sudo chmod g+s /srv/projet\n$ ls -ld /srv/projet\ndrwxrwsr-x. 2 root equipe 4096 mars 12  15:10 /srv/projet",
  note:"Le <b>s</b> remplace le x du groupe dans l'affichage : minuscule <b>s</b> si le x du groupe était déjà présent, majuscule <b>S</b> sinon (bit posé mais x absent). Le <b>sudo</b> est détaillé au monde 3."},
 
 {id:"w2-chmod-sticky", w:2, src:"general",
- sc:"Le dossier /srv/depot est en 777 pour que toute l'équipe puisse y déposer des fichiers. Problème : n'importe qui peut aussi supprimer ou renommer les fichiers des AUTRES, puisque l'écriture sur le dossier suffit pour ça.",
+ sc:"Le dossier /srv/depot, qui appartient à root, est en 777 pour que toute l'équipe puisse y déposer des fichiers. Problème : n'importe qui peut aussi supprimer ou renommer les fichiers des AUTRES, puisque l'écriture sur le dossier suffit pour ça.",
  ask:"Active le sticky bit sur /srv/depot pour que chacun ne puisse plus supprimer que ses propres fichiers.",
  sol:["sudo","chmod","+t","/srv/depot"],
  blocks:["g+s","-R","777"],
@@ -1099,7 +1174,7 @@ var EX = [
    "777":"777 est déjà en place — c'est justement lui qui pose problème : écriture ouverte à tous, donc suppression ouverte à tous."},
  miss:{sudo:"Le dossier appartient à root : sans « sudo », chmod répond « Opération non permise »."},
  why:"Le sticky bit (+t), posé sur un DOSSIER, laisse tout le monde créer des fichiers mais réserve la SUPPRESSION ou le renommage au propriétaire du fichier (et à root). C'est exactement le bit que porte /tmp sur tout système Linux.",
- outCmd:"sudo chmod +t /srv/depot\n$ ls -ld /srv/depot\ndrwxrwxrwt. 2 root equipe 4096 12 mars  15:14 /srv/depot",
+ outCmd:"sudo chmod +t /srv/depot\n$ ls -ld /srv/depot\ndrwxrwxrwt. 2 root equipe 4096 mars 12  15:14 /srv/depot",
  note:"Le <b>t</b> minuscule remplace le x des « autres » ; majuscule <b>T</b> si ce x n'était pas déjà présent. /tmp en est l'exemple universel : <b>drwxrwxrwt</b>."},
 
 {id:"w2-quiz-setuid", w:2, src:"general", quiz:true,
@@ -1112,7 +1187,7 @@ var EX = [
    "le fichier appartient à deux propriétaires à la fois":"Un fichier Unix n'a jamais qu'un seul propriétaire ; le « s » ne change rien à ça.",
    "c'est le sticky bit qui est actif":"Le sticky bit se lit sur le x des AUTRES, en toute fin de ligne (…rwt) ; ici le « s » est sur le bloc du PROPRIÉTAIRE, au tout début : c'est le setuid."},
  why:"Le setuid (s à la place du x du propriétaire) fait tourner l'exécutable avec les droits de SON propriétaire — ici root — quel que soit le compte qui le lance. C'est ce qui permet à chaima de changer son propre mot de passe via « passwd », alors que /etc/shadow n'est modifiable que par root.",
- outCmd:"ls -l /usr/bin/passwd\n-rwsr-xr-x. 1 root root 35080 12 mars  09:00 /usr/bin/passwd",
+ outCmd:"ls -l /usr/bin/passwd\n-rwsr-xr-x. 1 root root 35080 mars 12  09:00 /usr/bin/passwd",
  note:"Piège d'examen classique : confondre setuid (s sur le propriétaire, début de ligne) et setgid (s sur le groupe, milieu de ligne)."},
 
 {id:"w2-setfacl", w:2, src:"general",
@@ -1127,7 +1202,7 @@ var EX = [
  miss:{"-m":"Sans « -m » (modify), setfacl ne sait pas s'il doit ajouter, retirer ou lister une règle."},
  order:"setfacl, puis -m, puis la règle « u:compte:droits », puis la cible.",
  why:"Une ACL (liste de contrôle d'accès) ajoute des règles PAR UTILISATEUR (ou par groupe) en plus des trois blocs classiques propriétaire/groupe/autres. « setfacl -m u:paul:rwx cible » donne à paul, et seulement à lui, les droits rwx — sans toucher au propriétaire ni au groupe du dossier.",
- outCmd:"setfacl -m u:paul:rwx /srv/rapports\n$ ls -ld /srv/rapports\ndrwxrwxr-x+ 2 chaima chaima 4096 12 mars  15:20 /srv/rapports",
+ outCmd:"setfacl -m u:paul:rwx /srv/rapports\n$ ls -ld /srv/rapports\ndrwxrwxr-x+ 2 chaima chaima 4096 mars 12  15:20 /srv/rapports",
  note:"Le <b>+</b> après les droits (à la place du point habituel) signale la présence d'une ACL : c'est le signal à repérer dans un ls -l."},
 
 {id:"w2-getfacl", w:2, src:"general",
@@ -1327,7 +1402,7 @@ var EX = [
    "/etc/group":"« /etc/group » liste les groupes et leurs membres.",
    "/etc/sudoers":"« /etc/sudoers » définit qui a le droit d'utiliser sudo, pas les mots de passe."},
  why:"Historiquement les mots de passe étaient dans /etc/passwd, lisible par tous. Ils ont été déplacés dans « /etc/shadow », lisible par root uniquement : c'est cette séparation qui protège les hachages.",
- outCmd:"ls -l /etc/shadow\n----------. 1 root root 1290 12 mars  09:44 /etc/shadow",
+ outCmd:"ls -l /etc/shadow\n----------. 1 root root 1290 mars 12  09:44 /etc/shadow",
  note:"Droits <b>----------</b> : même root passe par ses privilèges spéciaux pour y accéder."}
 ,
 /* ---------------- MONDE 4 : processus et services ---------------- */
@@ -1967,8 +2042,23 @@ var EX = [
  outCmd:"sudo nmcli connection up ens18\nConnexion activée (chemin d'accès de l'objet actif D-Bus : /org/freedesktop/NetworkManager/ActiveConnection/3)",
  note:"Séquence complète : <b>modify</b> → <b>up</b> → vérifier avec <b>ip a</b>."},
 
+{id:"w6-ping-local", w:6, src:"cours",
+ sc:"Le profil vient d'être appliqué. Avant de tester Internet, étape 3 du diagnostic : vérifier que la passerelle elle-même répond, sur le réseau local.",
+ ask:"Envoie trois paquets de test vers la passerelle 192.168.0.254.",
+ sol:["ping","-c3","192.168.0.254"],
+ blocks:["8.8.8.8","-t","traceroute","getent"],
+ traps:{
+   "8.8.8.8":"Viser directement Internet saute une étape : si la passerelle elle-même ne répond pas, inutile d'aller plus loin.",
+   "-t":"« -t » règle la durée de vie des paquets ; pour limiter leur nombre c'est « -c ».",
+   traceroute:"« traceroute » détaille le chemin complet : trop tôt, on vérifie d'abord un simple aller-retour local.",
+   getent:"« getent hosts » teste la résolution de noms : ce sera l'étape 5, pas celle-ci."},
+ miss:{"-c3":"Sans « -c3 », ping tourne à l'infini et il faut l'arrêter avec Ctrl+C."},
+ why:"Étape 3 : si la passerelle locale ne répond pas, le problème est sur le réseau local (câble, switch, carte réseau) — inutile de chercher plus loin vers Internet.",
+ out:"PING 192.168.0.254 (192.168.0.254) 56(84) bytes of data.\n64 bytes from 192.168.0.254: icmp_seq=1 ttl=64 time=0.412 ms\n64 bytes from 192.168.0.254: icmp_seq=2 ttl=64 time=0.398 ms\n64 bytes from 192.168.0.254: icmp_seq=3 ttl=64 time=0.405 ms\n\n--- 192.168.0.254 ping statistics ---\n3 packets transmitted, 3 received, 0% packet loss",
+ note:"ttl=64 (contre ttl=115 pour 8.8.8.8 dans l'exercice suivant) : un hôte du réseau local répond toujours avec un ttl proche du maximum, car aucun routeur intermédiaire ne le décrémente."},
+
 {id:"w6-ping", w:6, src:"cours",
- sc:"Adresse et passerelle sont correctes. Étape 4 du diagnostic : vérifier que la machine sort réellement sur Internet, en visant une adresse IP publique connue.",
+ sc:"La passerelle répond. Étape 4 du diagnostic : vérifier que la machine sort réellement sur Internet, en visant une adresse IP publique connue.",
  ask:"Envoie trois paquets de test vers 8.8.8.8.",
  sol:["ping","-c3","8.8.8.8"],
  blocks:["rockylinux.org","-t","traceroute","getent"],
@@ -2485,7 +2575,7 @@ var EX = [
  order:"L'ordre est : journalctl, l'option de filtre, puis le nom du service.",
  why:"« -u » (unit) filtre sur une unité systemd. C'est le premier réflexe quand « systemctl status » ne montre pas assez de lignes pour comprendre l'échec.",
  out:"mars 12 10:02:41 rocky9 systemd[1]: Starting OpenSSH server daemon...\nmars 12 10:02:41 rocky9 sshd[1180]: Server listening on 0.0.0.0 port 22.\nmars 12 10:47:02 rocky9 sshd[3688]: Received signal 15; terminating.",
- note:"Enchaînement type : <b>systemctl status</b> → <b>journalctl -u service</b>. Piège silencieux : le journal système n'est lisible que par root et par le groupe <b>adm</b> — <b>wheel</b> ne suffit pas. Sans sudo, journalctl n'affiche aucune erreur, il affiche <b>-- No entries --</b>, ce qui ressemble à « il ne s'est rien passé »."},
+ note:"Enchaînement type : <b>systemctl status</b> → <b>journalctl -u service</b>. Sur Rocky 9, systemd pose une ACL qui autorise déjà les groupes <b>systemd-journal</b>, <b>adm</b> et <b>wheel</b> à lire le journal — un compte membre de wheel (comme le tien) n'a donc normalement pas besoin de sudo (à confirmer sur ta VM avec <b>getfacl /var/log/journal/*/system.journal</b>). Pour un compte qui n'est dans AUCUN de ces groupes, journalctl n'affiche aucune erreur explicite : juste <b>-- No entries --</b>, ce qui ressemble à tort à « il ne s'est rien passé »."},
 
 {id:"w8-journalctl-xe", w:8, src:"cours",
  sc:"Une commande vient d'échouer et systemd te renvoie vers le journal. Tu veux les derniers messages avec les explications complémentaires.",
@@ -2703,7 +2793,7 @@ var EX = [
  miss:{"-p":"Sans « -p », mkdir échoue si un dossier parent manque. C'est la sécurité habituelle pour créer un chemin complet d'un coup.",
        sudo:"Sans « sudo », écrire dans /mnt est refusé : ce dossier appartient à root."},
  why:"Un point de montage est un dossier vide qui servira de porte d'entrée vers le système de fichiers. « -p » crée toute la chaîne de dossiers sans erreur si elle existe déjà.",
- outCmd:"sudo mkdir -p /mnt/ASR-DATA\n$ ls -ld /mnt/ASR-DATA\ndrwxr-xr-x. 2 root root 6 12 mars  15:02 /mnt/ASR-DATA",
+ outCmd:"sudo mkdir -p /mnt/ASR-DATA\n$ ls -ld /mnt/ASR-DATA\ndrwxr-xr-x. 2 root root 6 mars 12  15:02 /mnt/ASR-DATA",
  note:""},
 
 {id:"w9-mount", w:9, src:"cours",
@@ -2779,7 +2869,7 @@ var EX = [
  miss:{sudo:"Sans « sudo », écrire dans /etc est refusé."},
  order:"Comme toujours avec cp : d'abord la SOURCE, ensuite la DESTINATION. Les inverser écraserait fstab par la sauvegarde.",
  why:"fstab est lu au démarrage : une ligne fausse peut bloquer le boot en mode secours. La sauvegarde est le filet de sécurité qui permet de revenir en arrière.",
- outCmd:"sudo cp /etc/fstab /etc/fstab.bak\n$ ls -l /etc/fstab*\n-rw-r--r--. 1 root root 465 12 mars  15:20 /etc/fstab\n-rw-r--r--. 1 root root 465 12 mars  15:24 /etc/fstab.bak",
+ outCmd:"sudo cp /etc/fstab /etc/fstab.bak\n$ ls -l /etc/fstab*\n-rw-r--r--. 1 root root 465 mars 12  15:20 /etc/fstab\n-rw-r--r--. 1 root root 465 mars 12  15:24 /etc/fstab.bak",
  note:"Règle d'or : <b>cp</b> avant toute modification d'un fichier système critique."},
 
 {id:"w9-quiz-fstab", w:9, src:"cours", quiz:true,
@@ -2795,7 +2885,7 @@ var EX = [
    "UUID=d4e19f22... ext4 /mnt/ASR-DATA defaults 0 2":"Les colonnes sont inversées : l'ordre est périphérique, point de montage, type, options, dump, passe."},
  why:"Une ligne fstab a six colonnes, dans cet ordre : périphérique (UUID de préférence), point de montage, type de système de fichiers, options, dump, ordre de vérification par fsck. Pour cette dernière : 1 pour une racine vérifiée au démarrage (ext4), 2 pour les autres systèmes vérifiés, 0 quand il n'y a pas de vérification — le swap, et aussi XFS, qui ne passe pas par fsck : c'est pourquoi la racine XFS de Rocky 9 s'écrit « 0 0 ».",
  outCmd:"cat /etc/fstab\nUUID=3a7d9b12-55c8-49ee-bb02-1c4f7e9d2a10 /         xfs   defaults 0 0\nUUID=d4e19f22-8b7c-4a51-93f6-6e0c8d3a4b15 /mnt/ASR-DATA ext4  defaults 0 2",
- note:""},
+ note:"Piège d'examen fréquent : pour un montage non vital (disque USB, partage réseau) qui peut manquer au démarrage, remplacer <b>defaults</b> par <b>defaults,nofail</b> évite qu'une ligne fstab pointant vers un périphérique absent ne bloque tout le boot en mode secours."},
 
 {id:"w9-mount-a", w:9, src:"cours",
  sc:"Tu viens d'ajouter ta ligne dans /etc/fstab. Tu veux vérifier qu'elle est correcte MAINTENANT, plutôt que de découvrir l'erreur au prochain redémarrage.",
@@ -2825,6 +2915,19 @@ var EX = [
  why:"« free -h » donne en une ligne la mémoire vive et le swap : total, utilisé, libre. C'est l'état des lieux avant et après l'ajout d'une zone d'échange.",
  out:"               total       utilisé      libre     partagé  tampon/cache   disponible\nMem:           1,9Gi       612Mi       892Mi        12Mi       456Mi       1,1Gi\nÉchange:          0B          0B          0B",
  note:"Ligne <b>Échange</b> à 0 : aucun swap actif pour l'instant."},
+
+{id:"w9-quiz-fdisk-t", w:9, src:"cours", quiz:true,
+ sc:"Dans fdisk sur /dev/vdc, tu viens de créer une nouvelle partition (n) qui doit devenir une zone d'échange plutôt qu'une partition de données classique.",
+ ask:"Avant d'écrire, quelle touche change le type de la partition ?",
+ sol:["t"],
+ blocks:["n","w","p"],
+ traps:{
+   n:"« n » créerait une NOUVELLE partition ; celle-ci existe déjà, il faut seulement changer son type.",
+   w:"« w » écrit et quitte : trop tôt — sans passer par « t » d'abord, le type par défaut « 83 Linux » serait enregistré au lieu de 82.",
+   p:"« p » ne fait qu'afficher la table de partitions."},
+ why:"« t » (type) change le code hexadécimal d'une partition déjà créée. Sans cette étape, une partition destinée au swap resterait typée « 83 Linux » : mkswap fonctionnerait quand même, mais les outils de diagnostic et certains installeurs se fient à ce code pour repérer le swap automatiquement.",
+ outCmd:"Commande (m pour l'aide) : t\nCode hexadécimal ou alias (taper L pour lister tous les alias) : 82\nType de la partition 1 changé pour « Linux swap / Solaris ».",
+ note:"82 = Linux swap, 83 = Linux (données) — c'est ce code 82 que suppose l'exercice suivant sur /dev/vdc1."},
 
 {id:"w9-mkswap", w:9, src:"cours",
  sc:"La partition /dev/vdc1 a été créée avec le type 82 et doit maintenant devenir une zone d'échange.",
@@ -2869,7 +2972,7 @@ var EX = [
  miss:{sudo:"Sans « sudo », écrire à la racine / est refusé."},
  order:"L'ordre est : fallocate, l'option de taille, la taille, puis le chemin du fichier.",
  why:"« fallocate -l taille fichier » réserve l'espace d'un coup, sans écrire tout le contenu : c'est instantané. Le fichier est ensuite traité comme une zone de swap.",
- outCmd:"sudo fallocate -l 1G /swapfile\n$ ls -lh /swapfile\n-rw-r--r--. 1 root root 1,0G 12 mars  16:02 /swapfile",
+ outCmd:"sudo fallocate -l 1G /swapfile\n$ ls -lh /swapfile\n-rw-r--r--. 1 root root 1,0G mars 12  16:02 /swapfile",
  note:"Droits <b>-rw-r--r--</b> : lisible par tout le monde — à corriger tout de suite. À vérifier sur ta machine : si la racine est en XFS (le défaut de Rocky 9), swapon peut refuser un fichier créé par fallocate (« swapon failed: Argument invalide ») ; on le crée alors avec <b>sudo dd if=/dev/zero of=/swapfile bs=1M count=1024</b>. Demande à ton formateur quelle méthode il attend."},
 
 {id:"w9-chmod-swapfile", w:9, src:"cours",
@@ -2884,8 +2987,36 @@ var EX = [
    chown:"Le fichier appartient déjà à root : c'est bien les DROITS qu'il faut restreindre, pas le propriétaire."},
  miss:{sudo:"Sans « sudo », modifier les droits d'un fichier appartenant à root est refusé."},
  why:"600 = rw------- : seul root peut lire et écrire. Un fichier de swap contient des morceaux de mémoire vive (mots de passe compris) : le laisser lisible est une faille. swapon refuse d'ailleurs souvent un fichier trop permissif.",
- outCmd:"sudo chmod 600 /swapfile\n$ ls -lh /swapfile\n-rw-------. 1 root root 1,0G 12 mars  16:02 /swapfile",
+ outCmd:"sudo chmod 600 /swapfile\n$ ls -lh /swapfile\n-rw-------. 1 root root 1,0G mars 12  16:02 /swapfile",
  note:"Étape <b>critique</b> : swapon avertit ou refuse si les droits sont trop larges."},
+
+{id:"w9-mkswap-file", w:9, src:"cours",
+ sc:"/swapfile a la bonne taille et les bons droits (600), mais ce n'est encore qu'un fichier ordinaire : aucune structure de zone d'échange n'y est écrite.",
+ ask:"Prépare /swapfile comme zone d'échange.",
+ sol:["sudo","mkswap","/swapfile"],
+ blocks:["mkfs.ext4","fallocate","swapon"],
+ traps:{
+   "mkfs.ext4":"« mkfs.ext4 » formaterait le fichier en système de fichiers de DONNÉES ; une zone d'échange se prépare avec « mkswap », pas un mkfs classique.",
+   fallocate:"« fallocate » a déjà réservé l'espace à l'étape précédente ; il reste à y écrire la structure de swap.",
+   swapon:"« swapon » ACTIVE une zone déjà préparée ; sans mkswap avant, il répond « n'est pas un espace d'échange valide »."},
+ miss:{sudo:"Sans « sudo », impossible d'écrire la structure de swap sur un fichier appartenant à root."},
+ why:"« mkswap » fonctionne aussi bien sur une PARTITION (/dev/vdc1) que sur un FICHIER (/swapfile) : dans les deux cas, elle écrit la signature qui permet au noyau de reconnaître une zone d'échange.",
+ outCmd:"sudo mkswap /swapfile\nConfiguration de l'espace de swap version 1, taille = 1024 Mio\nsans étiquette, UUID=7f1c9e33-42ab-4d6f-8e21-5b9d0c7a3f18",
+ note:"Le même UUID réapparaît dans /etc/fstab une fois le swap rendu permanent."},
+
+{id:"w9-swapon-file", w:9, src:"cours",
+ sc:"/swapfile est préparé comme zone d'échange (mkswap) mais le système ne l'utilise pas encore : « free -h » montre toujours la même quantité de swap qu'avant.",
+ ask:"Active immédiatement ce fichier comme zone d'échange.",
+ sol:["sudo","swapon","/swapfile"],
+ blocks:["swapoff","mkswap","mount"],
+ traps:{
+   swapoff:"« swapoff » désactiverait une zone déjà active : l'inverse de ce qui est demandé.",
+   mkswap:"« mkswap » a déjà préparé la structure à l'étape précédente ; il reste à l'activer.",
+   mount:"On ne « monte » pas une zone d'échange comme un système de fichiers classique : elle s'active avec swapon."},
+ miss:{sudo:"Sans « sudo », l'activation du swap est refusée."},
+ why:"« swapon » fonctionne exactement pareil sur une partition ou un fichier préparé par mkswap : c'est l'étape qui rend la zone réellement utilisable par le noyau, tout de suite mais temporairement (sans ligne fstab, elle disparaît au redémarrage).",
+ outCmd:"sudo swapon /swapfile\n$ free -h\n               total        used        free      shared  buff/cache   available\nSwap:          1,0Gi          0B       1,0Gi",
+ note:"Séquence complète pour un fichier de swap : <b>fallocate</b> → <b>chmod 600</b> → <b>mkswap</b> → <b>swapon</b> → ligne dans /etc/fstab."},
 
 {id:"w9-quiz-swapfile-fstab", w:9, src:"cours", quiz:true,
  sc:"Ton fichier /swapfile est préparé et activé. Tu ajoutes la ligne qui le rendra permanent dans /etc/fstab.",
@@ -3411,14 +3542,14 @@ var EX = [
 {id:"w12-add-interface", w:12, src:"cours",
  sc:"L'interface ens18 est reliée au réseau de l'entreprise et doit suivre les règles de la zone work.",
  ask:"Rattache cette interface à la zone work.",
- sol:["sudo","firewall-cmd","--zone=work","--add-interface=ens18"],
+ sol:["sudo","firewall-cmd",{p:["--zone=work","--add-interface=ens18"]}],
  blocks:["--remove-interface=ens18","--add-source=192.168.1.0/24","--set-default-zone=work","--add-service=ssh"],
  traps:{
    "--remove-interface=ens18":"« --remove-interface » retire l'interface de la zone : l'inverse.",
    "--add-source=192.168.1.0/24":"« --add-source » rattache une PLAGE D'ADRESSES à une zone, pas une carte réseau.",
    "--set-default-zone=work":"Changer la zone par défaut concerne tout le trafic non rattaché ; ici on vise une interface précise.",
    "--add-service=ssh":"« --add-service » autorise un service dans la zone : c'est une autre étape."},
- order:"On choisit d'abord la zone (--zone=), puis ce qu'on lui ajoute.",
+ order:"Les deux options peuvent se donner dans n'importe quel ordre (--add-interface=ens18 --zone=work fonctionne aussi) : firewall-cmd les lit toutes avant d'agir.",
  why:"Une zone s'active en lui rattachant une interface ou une source. C'est ce rattachement qui décide quelles règles s'appliquent au trafic de cette carte réseau.",
  outCmd:"sudo firewall-cmd --zone=work --add-interface=ens18\nsuccess",
  note:"Sur Rocky, NetworkManager peut aussi mémoriser la zone dans le profil de connexion : les deux outils travaillent ensemble."},
@@ -3426,13 +3557,14 @@ var EX = [
 {id:"w12-change-interface", w:12, src:"cours",
  sc:"L'interface ens18 est actuellement dans la zone work, mais elle doit passer dans public. Tu veux la déplacer en une seule commande.",
  ask:"Fais passer cette interface dans la zone public.",
- sol:["sudo","firewall-cmd","--zone=public","--change-interface=ens18"],
+ sol:["sudo","firewall-cmd",{p:["--zone=public","--change-interface=ens18"]}],
  blocks:["--add-interface=ens18","--remove-interface=ens18","--zone=work","--set-default-zone=public"],
  traps:{
    "--add-interface=ens18":"« --add-interface » suppose que l'interface n'appartient à aucune zone : ici elle est déjà dans work, il faut la déplacer.",
    "--remove-interface=ens18":"« --remove-interface » la sortirait de sa zone sans la placer dans la nouvelle : elle retomberait sur la zone par défaut.",
    "--zone=work":"C'est la zone de DÉPART ; la commande se donne du point de vue de la zone d'arrivée.",
    "--set-default-zone=public":"Changer la zone par défaut n'attache pas cette interface précise à public."},
+ order:"Les deux options peuvent se donner dans n'importe quel ordre.",
  why:"« --change-interface » déplace l'interface vers la zone visée, qu'elle appartienne déjà à une autre zone ou non. C'est la commande sûre pour un déplacement.",
  outCmd:"sudo firewall-cmd --zone=public --change-interface=ens18\nsuccess",
  note:"À distance, ne déplace jamais l'interface de ta session SSH dans une zone vide : tu te couperais l'accès."},
@@ -3440,7 +3572,7 @@ var EX = [
 {id:"w12-new-zone", w:12, src:"cours",
  sc:"Tu veux créer une zone personnalisée nommée lodhi. Tu as essayé sans option et firewalld a répondu : « Option can be used only with --permanent. »",
  ask:"Crée cette nouvelle zone correctement.",
- sol:["sudo","firewall-cmd","--permanent","--new-zone=lodhi"],
+ sol:["sudo","firewall-cmd",{p:["--permanent","--new-zone=lodhi"]}],
  blocks:["--zone=lodhi","--delete-zone=lodhi","--reload","--runtime-to-permanent"],
  traps:{
    "--zone=lodhi":"« --zone= » désigne une zone EXISTANTE pour lui appliquer une commande ; elle n'en crée aucune.",
@@ -3448,7 +3580,7 @@ var EX = [
    "--reload":"Le reload vient APRÈS la création, pour faire apparaître la zone dans le runtime.",
    "--runtime-to-permanent":"Cette commande enregistre le runtime actuel ; or une zone ne peut pas être créée en runtime."},
  miss:{"--permanent":"C'est l'exception du cours : sans « --permanent », firewalld refuse avec « Option can be used only with --permanent ». Une zone ne peut pas être créée en runtime."},
- order:"L'ordre est : firewall-cmd, --permanent, puis --new-zone=.",
+ order:"« --permanent » et « --new-zone= » peuvent se donner dans n'importe quel ordre : seule la présence de « --permanent » est obligatoire ici.",
  why:"Règle générale : on teste en runtime puis on rend permanent. La création de zone est l'exception : elle s'écrit directement dans la configuration permanente, et il faut ensuite un « --reload » pour que la zone existe aussi en runtime.",
  outCmd:"sudo firewall-cmd --permanent --new-zone=lodhi\nsuccess",
  note:"Enchaînement obligatoire : <b>--permanent --new-zone</b> → <b>--reload</b> → la zone devient utilisable."},
@@ -3470,13 +3602,14 @@ var EX = [
 {id:"w12-add-port", w:12, src:"cours",
  sc:"Une application maison écoute sur le port 9001 en TCP. Tu veux l'autoriser dans la zone public, en test d'abord, sans rien enregistrer.",
  ask:"Ouvre ce port en configuration temporaire.",
- sol:["sudo","firewall-cmd","--zone=public","--add-port=9001/tcp"],
+ sol:["sudo","firewall-cmd",{p:["--zone=public","--add-port=9001/tcp"]}],
  blocks:["--permanent","--remove-port=9001/tcp","--add-port=9001","--add-service=9001"],
  traps:{
    "--permanent":"« --permanent » enregistrerait la règle sur le disque : la consigne demande un test en runtime, sans persistance.",
    "--remove-port=9001/tcp":"« --remove-port » ferme le port.",
    "--add-port=9001":"Le protocole est obligatoire : firewalld attend « 9001/tcp » ou « 9001/udp ».",
    "--add-service=9001":"« --add-service » attend un NOM de service connu (ssh, http…), pas un numéro de port."},
+ order:"Les deux options peuvent se donner dans n'importe quel ordre.",
  why:"Une commande sans « --permanent » agit sur le runtime : effet immédiat, mais perdu au prochain reload ou redémarrage. C'est le bon réflexe d'apprentissage : tester d'abord, enregistrer ensuite.",
  outCmd:"sudo firewall-cmd --zone=public --add-port=9001/tcp\nsuccess\n$ sudo firewall-cmd --list-ports\n9001/tcp",
  note:"Ouvrir un port dans le pare-feu ne démarre pas le service : ce sont deux choses distinctes."},
@@ -3484,7 +3617,7 @@ var EX = [
 {id:"w12-add-port-permanent", w:12, src:"cours",
  sc:"Le test en runtime est concluant : le port 9001/tcp doit maintenant survivre aux redémarrages, dans la zone public.",
  ask:"Ouvre ce port de façon permanente.",
- sol:["sudo","firewall-cmd","--permanent","--zone=public","--add-port=9001/tcp"],
+ sol:["sudo","firewall-cmd",{p:["--permanent","--zone=public","--add-port=9001/tcp"]}],
  blocks:["--remove-port=9001/tcp","--reload","--add-service=http","--runtime-to-permanent"],
  traps:{
    "--remove-port=9001/tcp":"« --remove-port » ferme le port.",
@@ -3492,7 +3625,7 @@ var EX = [
    "--add-service=http":"« http » est un autre service ; ici on autorise un port par son numéro.",
    "--runtime-to-permanent":"Cette commande enregistrerait TOUT le runtime d'un coup : pratique après des tests, mais la consigne demande cette règle précise."},
  miss:{"--permanent":"Sans « --permanent », la règle disparaît au prochain reload ou redémarrage."},
- order:"L'ordre du cours est : firewall-cmd, --permanent, --zone=, puis l'action.",
+ order:"Les trois options peuvent se donner dans n'importe quel ordre : firewall-cmd les lit toutes avant d'agir.",
  why:"Une règle permanente est écrite sur le disque mais n'est pas encore active : il faut un « --reload » pour la charger dans le runtime. Écrire et appliquer sont deux gestes distincts.",
  outCmd:"sudo firewall-cmd --permanent --zone=public --add-port=9001/tcp\nsuccess\n$ sudo firewall-cmd --reload\nsuccess",
  note:"Toujours le couple : <b>--permanent</b> pour écrire, <b>--reload</b> pour appliquer."},
@@ -3528,14 +3661,14 @@ var EX = [
 {id:"w12-add-service", w:12, src:"cours",
  sc:"Tu viens d'installer un serveur web sur cette machine. Le service tourne mais aucune requête n'arrive : le pare-feu ne laisse pas passer HTTP. Tu testes d'abord sans rien enregistrer.",
  ask:"Autorise le service http dans la zone public, en runtime.",
- sol:["sudo","firewall-cmd","--zone=public","--add-service=http"],
+ sol:["sudo","firewall-cmd",{p:["--zone=public","--add-service=http"]}],
  blocks:["--add-port=80","--remove-service=http","--permanent","--add-service=https"],
  traps:{
    "--add-port=80":"Ouvrir le port par son numéro fonctionne, mais pour un protocole connu on préfère le service : firewalld sait déjà quels ports et protocoles lui associer. Et il manque le /tcp.",
    "--remove-service=http":"« --remove-service » retire l'autorisation.",
    "--permanent":"La consigne demande un test en runtime : « --permanent » viendra après validation.",
    "--add-service=https":"« https » correspond au port 443 chiffré ; ici on autorise HTTP."},
- order:"On désigne d'abord la zone, puis ce qu'on y autorise.",
+ order:"Les deux options peuvent se donner dans n'importe quel ordre.",
  why:"Pour un protocole connu (ssh, http, https), on autorise le SERVICE plutôt que le numéro de port : c'est plus lisible et firewalld applique la bonne définition de ports et protocoles.",
  outCmd:"sudo firewall-cmd --zone=public --add-service=http\nsuccess\n$ sudo firewall-cmd --list-services\ncockpit dhcpv6-client http ssh",
  note:"Autoriser un service dans le pare-feu ne le démarre pas : <b>systemctl</b> reste nécessaire."},
@@ -3543,13 +3676,14 @@ var EX = [
 {id:"w12-remove-service", w:12, src:"cours",
  sc:"Le serveur web a été démonté et HTTP n'a plus rien à faire dans la zone public.",
  ask:"Retire le service http de cette zone.",
- sol:["sudo","firewall-cmd","--zone=public","--remove-service=http"],
+ sol:["sudo","firewall-cmd",{p:["--zone=public","--remove-service=http"]}],
  blocks:["--add-service=http","--remove-service=ssh","--remove-port=80/tcp","--delete-zone=public"],
  traps:{
    "--add-service=http":"« --add-service » autorise : c'est l'inverse.",
    "--remove-service=ssh":"Danger : retirer SSH sur un serveur administré à distance te coupe l'accès. Ne jamais le faire sans autre moyen d'entrée.",
    "--remove-port=80/tcp":"Ce port n'a pas été ouvert par numéro mais via le service http : c'est le service qu'il faut retirer.",
    "--delete-zone=public":"Supprimer la zone entière est bien plus radical que retirer un service."},
+ order:"Les deux options peuvent se donner dans n'importe quel ordre.",
  why:"On retire ce qu'on a ajouté, de la même façon : un service autorisé par --add-service se retire par --remove-service. Un port ouvert par numéro se referme par --remove-port.",
  outCmd:"sudo firewall-cmd --zone=public --remove-service=http\nsuccess\n$ sudo firewall-cmd --list-services\ncockpit dhcpv6-client ssh",
  note:""},
@@ -3557,7 +3691,7 @@ var EX = [
 {id:"w12-add-source", w:12, src:"cours",
  sc:"Les machines du réseau 192.168.1.0/24 sont administrées par ton équipe et doivent bénéficier d'un niveau de confiance élevé, de façon durable.",
  ask:"Rattache ce réseau à la zone trusted, en permanent.",
- sol:["sudo","firewall-cmd","--permanent","--zone=trusted","--add-source=192.168.1.0/24"],
+ sol:["sudo","firewall-cmd",{p:["--permanent","--zone=trusted","--add-source=192.168.1.0/24"]}],
  blocks:["--add-interface=ens18","--remove-source=192.168.1.0/24","--add-source=192.168.1.25","--zone=public"],
  traps:{
    "--add-interface=ens18":"« --add-interface » rattache une carte réseau ; ici c'est une plage d'ADRESSES qu'on rattache.",
@@ -3565,6 +3699,7 @@ var EX = [
    "--add-source=192.168.1.25":"Sans masque, cette écriture ne désigne qu'un seul hôte. Pour tout le réseau, il faut « /24 ».",
    "--zone=public":"« public » est la zone peu fiable ; la consigne demande la confiance élevée."},
  miss:{"--permanent":"Sans « --permanent », le rattachement disparaît au prochain reload."},
+ order:"Les trois options peuvent se donner dans n'importe quel ordre.",
  why:"Une zone s'active par une interface OU par une source. Rattacher une plage d'adresses permet d'appliquer des règles différentes selon l'origine du trafic, sur la même carte réseau. « /24 » couvre 192.168.1.0 à 192.168.1.255.",
  outCmd:"sudo firewall-cmd --permanent --zone=trusted --add-source=192.168.1.0/24\nsuccess\n$ sudo firewall-cmd --reload\nsuccess",
  note:"<b>trusted</b> ouvre très largement : à réserver aux réseaux que tu maîtrises réellement."},
@@ -3586,13 +3721,14 @@ var EX = [
 {id:"w12-list-rich-rules", w:12, src:"cours",
  sc:"Une règle avancée a été ajoutée sur ce serveur pour n'autoriser SSH que depuis un réseau précis, et tu veux la relire.",
  ask:"Affiche les rich rules de la zone public.",
- sol:["sudo","firewall-cmd","--zone=public","--list-rich-rules"],
+ sol:["sudo","firewall-cmd",{p:["--zone=public","--list-rich-rules"]}],
  blocks:["--list-services","--list-all","--add-rich-rule","--list-ports"],
  traps:{
    "--list-services":"« --list-services » ne montre que les services simplement autorisés, pas les règles avancées.",
    "--list-all":"« --list-all » les affiche aussi, mais noyées dans toute la configuration : ici on veut uniquement les rich rules.",
    "--add-rich-rule":"« --add-rich-rule » en ajoute une.",
    "--list-ports":"« --list-ports » concerne les ports ouverts par numéro."},
+ order:"Les deux options peuvent se donner dans n'importe quel ordre.",
  why:"Une rich rule exprime une condition plus fine qu'une simple autorisation : source, service, action. Après en avoir écrit une, on la relit toujours pour vérifier ce qui a réellement été enregistré.",
  out:"rule family=\"ipv4\" source address=\"192.168.1.0/24\" service name=\"ssh\" accept",
  note:"Attention : une rich rule n'annule pas un <b>--add-service=ssh</b> global posé avant elle."},
@@ -3723,7 +3859,7 @@ var EX = [
    setenforce:"« setenforce » CHANGE le mode (0 permissif, 1 strict). On commence toujours par observer avec « getenforce »."},
  why:"SELinux est actif en mode « Enforcing » par défaut sur Rocky 9 : il peut bloquer un service parfaitement configuré, par exemple un serveur web qui écoute sur un port non standard. C'est la quatrième cause à vérifier, après le service, le port et le pare-feu — et celle qu'on oublie systématiquement, parce que le service se contente d'un « Permission denied » sans jamais nommer SELinux : la vraie trace est dans le journal d'audit, pas dans celui du service.",
  out:"Enforcing",
- note:"Connaissance générale Rocky/RHEL. Les refus SELinux se lisent dans <b>/var/log/audit/audit.log</b> (avec sudo) ou avec <b>sudo ausearch -m avc -ts recent</b>. Pour le serveur web sur un port non standard, la réparation est <b>sudo semanage port -a -t http_port_t -p tcp 8080</b>."}
+ note:"Connaissance générale Rocky/RHEL. Les refus SELinux se lisent dans <b>/var/log/audit/audit.log</b> (avec sudo) ou avec <b>sudo ausearch -m avc -ts recent</b>. Pour le serveur web sur un port non standard, la réparation est <b>sudo semanage port -a -t http_port_t -p tcp 8080</b> — mais sur une Rocky 9 minimale, <b>semanage</b> n'est pas installé par défaut (« command not found ») : il faut d'abord <b>sudo dnf install policycoreutils-python-utils</b>. Piège d'examen classique à ne pas oublier."}
 
 ];
 
@@ -3753,7 +3889,7 @@ var BOSS = [
    miss:{"-a":"Sans « -a », les fichiers commençant par un point restent invisibles.",
          "-l":"Sans « -l », tu n'as ni droits ni tailles."},
    why:"« -a » révèle les fichiers cachés, « -l » affiche les droits : les deux options se cumulent dans n'importe quel ordre.",
-   out:"total 20\n-rw-r--r--. 1 chaima chaima  284 12 mars  09:20 config.txt\n-rw-r--r--. 1 chaima chaima 1840 12 mars  09:44 rapport-final.txt\n-rw-r--r--. 1 chaima chaima   92 12 mars  09:12 .brouillon.swp"},
+   out:"total 20\n-rw-r--r--. 1 chaima chaima  284 mars 12  09:20 config.txt\n-rw-r--r--. 1 chaima chaima 1840 mars 12  09:44 rapport-final.txt\n-rw-r--r--. 1 chaima chaima   92 mars 12  09:12 .brouillon.swp"},
   {id:"b1-3", w:1, src:"cours", sc:"Étape 3 — Tu vas modifier config.txt avant de rendre le dossier. Sécurise-le d'abord.",
    ask:"Duplique config.txt sous le nom config.txt.bak.",
    sol:["cp","config.txt","config.txt.bak"], blocks:["mv","ln","rm"],
@@ -3784,7 +3920,7 @@ var BOSS = [
           cat:"« cat » afficherait le contenu du script, pas ses permissions."},
    miss:{"-l":"Sans « -l », tu n'obtiens que le nom du fichier."},
    why:"Observer avant d'agir : « ls -l fichier » montre la ligne de droits qui explique le refus.",
-   out:"-rw-r--r--. 1 chaima chaima 512 12 mars  14:28 deploy.sh"},
+   out:"-rw-r--r--. 1 chaima chaima 512 mars 12  14:28 deploy.sh"},
   {id:"b2-2", w:2, src:"cours", sc:"Étape 2 — Aucun x : le script n'est exécutable par personne. Il doit l'être par tous, mais modifiable par toi seule.",
    ask:"Applique ces droits à deploy.sh en notation octale.",
    sol:["chmod","755","deploy.sh"], blocks:["644","777","700"],
@@ -3792,7 +3928,7 @@ var BOSS = [
           "777":"777 laisserait n'importe qui MODIFIER le script avant de l'exécuter : faille classique.",
           "700":"700 réserve tout à toi : les autres ne pourraient pas le lancer."},
    why:"755 = rwx pour toi, r-x pour le groupe et les autres : chacun peut lire et exécuter, toi seule peux modifier.",
-   outCmd:"chmod 755 deploy.sh\n$ ls -l deploy.sh\n-rwxr-xr-x. 1 chaima chaima 512 12 mars  14:28 deploy.sh"},
+   outCmd:"chmod 755 deploy.sh\n$ ls -l deploy.sh\n-rwxr-xr-x. 1 chaima chaima 512 mars 12  14:28 deploy.sh"},
   {id:"b2-3", w:2, src:"cours", sc:"Étape 3 — Le script tourne, mais il échoue sur /srv/partage. Regarde les droits du dossier lui-même.",
    ask:"Affiche les droits du dossier /srv/partage sans lister son contenu.",
    sol:["ls","-ld","/srv/partage"], blocks:["-l","-a","-R"],
@@ -3801,7 +3937,7 @@ var BOSS = [
           "-R":"« -R » descend récursivement, encore plus de contenu."},
    miss:{"-ld":"Sans « -d », ls affiche le contenu du dossier au lieu de la ligne du dossier."},
    why:"« -d » (directory) demande la ligne du dossier lui-même. Combiné à « -l », il donne ses droits : c'est ainsi qu'on diagnostique un accès refusé sur un dossier.",
-   out:"drw-r--r--. 2 root root 4096 12 mars  14:31 /srv/partage"},
+   out:"drw-r--r--. 2 root root 4096 mars 12  14:31 /srv/partage"},
   {id:"b2-4", w:2, src:"cours", sc:"Étape 4 — drw-r--r-- : il manque le x, personne ne peut entrer. Ouvre la traversée aux autres utilisateurs.",
    ask:"Ajoute le droit d'exécution aux autres sur /srv/partage.",
    sol:["sudo","chmod","o+x","/srv/partage"], blocks:["o+w","o-x","u+x","777"],
@@ -3811,7 +3947,7 @@ var BOSS = [
           "777":"777 ouvrirait tous les droits à tout le monde au lieu du seul droit de traverser."},
    miss:{sudo:"Sans « sudo », impossible : le dossier appartient à root."},
    why:"Sur un dossier, « x » signifie pouvoir ENTRER (traverser). Sans lui, même avec « r », le cd est refusé.",
-   outCmd:"sudo chmod o+x /srv/partage\n$ ls -ld /srv/partage\ndrw-r--r-x. 2 root root 4096 12 mars  14:31 /srv/partage"}]},
+   outCmd:"sudo chmod o+x /srv/partage\n$ ls -ld /srv/partage\ndrw-r--r-x. 2 root root 4096 mars 12  14:31 /srv/partage"}]},
 
 {w:3, name:"Le stagiaire sans droits", ico:"👥", xp:45,
  intro:"Paul arrive en stage ce matin. Il lui faut un compte utilisable, un mot de passe, et le droit d'administrer la machine.",
@@ -4066,7 +4202,7 @@ var BOSS = [
    out:"mars 12 03:14:02 rocky9 httpd[2210]: (98)Address already in use\nmars 12 03:20:11 rocky9 systemd[1]: Started Daily Cleanup of Temporary Directories."}]},
 
 {w:9, name:"Le disque neuf", ico:"💽", xp:55,
- intro:"Un disque de 10 Go vient d'être ajouté à la VM. Il doit devenir un espace de données monté sur /mnt/ASR-DATA, utilisable immédiatement.",
+ intro:"Un disque de 10 Go vient d'être ajouté à la VM, déjà partitionné par le gabarit de la VM (une partition vdb1 de 8 Go, sans système de fichiers). Il doit devenir un espace de données monté sur /mnt/ASR-DATA, utilisable immédiatement.",
  steps:[
   {id:"b9-1", w:9, src:"cours", sc:"Étape 1 — Vérifie d'abord que le système voit le nouveau disque et ses partitions.",
    ask:"Liste les périphériques de type bloc.",
@@ -4094,7 +4230,7 @@ var BOSS = [
    miss:{"-p":"Sans « -p », mkdir échoue si un parent manque.",
          sudo:"Sans « sudo », écrire dans /mnt est refusé."},
    why:"Le point de montage est un dossier vide qui servira de porte d'entrée vers le système de fichiers.",
-   outCmd:"sudo mkdir -p /mnt/ASR-DATA\n$ ls -ld /mnt/ASR-DATA\ndrwxr-xr-x. 2 root root 6 12 mars  15:02 /mnt/ASR-DATA"},
+   outCmd:"sudo mkdir -p /mnt/ASR-DATA\n$ ls -ld /mnt/ASR-DATA\ndrwxr-xr-x. 2 root root 6 mars 12  15:02 /mnt/ASR-DATA"},
   {id:"b9-4", w:9, src:"cours", sc:"Étape 4 — Tout est prêt : rends la partition accessible.",
    ask:"Monte /dev/vdb1 sur /mnt/ASR-DATA.",
    sol:["sudo","mount","/dev/vdb1","/mnt/ASR-DATA"], blocks:["umount","/dev/vdb","mount -a"],
@@ -4146,7 +4282,7 @@ var BOSS = [
           status:"« localectl status » affiche la configuration sans la modifier."},
    miss:{sudo:"Sans « sudo », la modification de la configuration système est refusée."},
    why:"« localectl set-keymap » écrit KEYMAP= dans /etc/vconsole.conf et applique le réglage : c'est la version durable de loadkeys.",
-   outCmd:"sudo localectl set-keymap be-oss_latin9\n$ cat /etc/vconsole.conf\nKEYMAP=\"be-oss_latin9\"\nFONT=\"ter-v24n\""},
+   outCmd:"sudo localectl set-keymap be-oss_latin9\n$ cat /etc/vconsole.conf\nKEYMAP=\"be-oss_latin9\""},
   {id:"b10-4", w:10, src:"cours", sc:"Étape 4 — Dernière vérification : confirme la configuration réellement enregistrée.",
    ask:"Affiche la configuration de locale et de clavier.",
    sol:["localectl","status"],
@@ -4234,12 +4370,12 @@ var BOSS = [
    out:"public (active)\n  target: default\n  interfaces: enp9s0\n  sources: \n  services: ssh\n  ports: \n  rich rules: "},
   {id:"b12-3", w:12, src:"cours", sc:"Étape 3 — HTTP manque à l'appel. Autorise-le dans la zone public, en test, sans rien enregistrer.",
    ask:"Autorise le service http dans la zone public, en runtime.",
-   sol:["sudo","firewall-cmd","--zone=public","--add-service=http"],
+   sol:["sudo","firewall-cmd",{p:["--zone=public","--add-service=http"]}],
    blocks:["--permanent","--add-port=80","--remove-service=http"],
    traps:{"--permanent":"La consigne demande un test en runtime : on enregistrera après vérification.",
           "--add-port=80":"Ouvrir par numéro fonctionne, mais pour un protocole connu on préfère le service — et il manquerait le /tcp.",
           "--remove-service=http":"« --remove-service » retire l'autorisation : l'inverse."},
-   order:"On désigne d'abord la zone, puis ce qu'on y autorise.",
+   order:"Les deux options peuvent se donner dans n'importe quel ordre.",
    why:"Tester en runtime est le filet de sécurité : si la règle est mauvaise, un reload ou un redémarrage restaure la configuration enregistrée.",
    outCmd:"sudo firewall-cmd --zone=public --add-service=http\nsuccess"},
   {id:"b12-4", w:12, src:"cours", sc:"Étape 4 — Le site répond enfin. Vérifie ce qui est autorisé dans la zone avant d'enregistrer.",
@@ -5893,3 +6029,5 @@ if(typeof document!=="undefined") init();
 </script>
 </body>
 </html>
+
+</body></html>
