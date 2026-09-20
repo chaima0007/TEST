@@ -64,11 +64,23 @@ Fais-le de temps en temps, surtout avant l'examen.
 Quatre fiches A4 complètent le jeu (équivalences Rocky/Ubuntu, firewalld,
 réseau et SSH, disques et swap) : sources dans `fiches/`.
 
+## Le rythme, honnêtement
+
+Le jeu fait passer la consolidation avant la découverte : quand des rappels
+s'accumulent, il ouvre moins de commandes nouvelles. À deux séries par jour,
+compte environ **90 commandes vues et 40 ancrées au bout d'un mois**, les
+premières ancrées vers le douzième jour. Pour aller plus vite avant une
+échéance, allonge la série dans les réglages (12 questions) ou enchaîne une
+deuxième série — l'objectif du jour s'adapte.
+
 ## Pour qui développe dessus
 
 - `npm run test:jeu` — logique de correction, révision espacée, contenu
-  (19 835 assertions, sans dépendance).
-- `npm run test:jeu:ui` — parcours complet dans un vrai navigateur (Playwright).
+  (19 841 assertions, sans dépendance).
+- `npm run test:jeu:parcours` — 30 jours d'usage simulé : arriéré de rappels,
+  ancrage, ouverture des mondes et de l'examen.
+- `npm run test:jeu:ui` — parcours complet dans un vrai navigateur (Playwright),
+  dont le retour du lendemain.
 
 Tout le contenu vit dans les tableaux `EX` (exercices) et `BOSS` (boss) du bloc
 `CORE` du fichier HTML. Un exercice déclare sa solution en blocs, ses blocs

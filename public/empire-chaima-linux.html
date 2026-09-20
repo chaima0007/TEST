@@ -4498,9 +4498,20 @@ function freshWorlds(fresh){
   list.sort(function(a,b){ return a-b; });
   return list.slice(0,2);
 }
+/* Dosage rappels / nouveautés. Tant que l'arriéré reste raisonnable, on garde
+   5 rappels pour 3 découvertes. Dès qu'il enfle, on cesse d'ouvrir du contenu
+   neuf : sinon la file grossit sans fin et plus rien ne s'ancre jamais. */
+function dueShare(dueCount, size){
+  var neuves;
+  if(dueCount >= size*3)      neuves=Math.round(size/8);   /* gros arriéré : on consolide */
+  else if(dueCount >= size*2) neuves=Math.round(size/4);
+  else if(dueCount >= size)   neuves=Math.round(size*3/8);
+  else                        neuves=Math.round(size/2);   /* à jour : on avance vite     */
+  return Math.max(1, size-neuves);
+}
 function dailyQueue(prog, now, size, rnd){
   var st=dailyStock(prog, now);
-  var maxDue=Math.max(1, Math.round(size*5/8));
+  var maxDue=dueShare(st.due.length, size);
   var q=st.due.slice(0, maxDue);
   var allowed=freshWorlds(st.fresh);
   var freshList=st.fresh.filter(function(e){ return allowed.indexOf(e.w)>=0; });

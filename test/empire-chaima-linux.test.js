@@ -11,7 +11,7 @@ if (!m) { console.error("Bloc CORE introuvable dans le fichier HTML"); process.e
 const ctx = { console };
 vm.createContext(ctx);
 vm.runInContext(m[1], ctx);
-const { WORLDS, EX, BOSS, dailyQueue, dailyStock, interleave, headVerb, shuffleList, freshWorlds,
+const { WORLDS, EX, BOSS, dailyQueue, dailyStock, dueShare, interleave, headVerb, shuffleList, freshWorlds,
         isExamOpen, examProgress, EXAM_MIN, expandSol, accepted, acceptedStrings, tokenPool, isCorrect, diagnose,
         normalizeFree, freeTokens, checkFree, nextBox, dueAt, isMastered, levelInfo,
         xpTotalForLevel, worldStats, isWorldUnlocked, buildQueue, DAY, MASTER_BOX,
@@ -276,7 +276,15 @@ ok(q[0].id === w1[2].id, "file : seule la commande non ancrée revient en tête"
   ok(q.some(e => e.w === 1), "elle sert les commandes en retard d'un monde déjà terminé");
   ok(q.some(e => e.w !== 1), "elle mélange plusieurs mondes dans la même série");
   const dus = q.filter(e => prog[e.id] && prog[e.id].due <= now2).length;
-  ok(dus === 5, `au plus 5 rappels dus sur 8 questions (${dus})`);
+  ok(dus === dueShare(dailyStock(prog, now2).due.length, 8),
+     `la part de rappels suit le dosage prévu (${dus})`);
+  // dosage adaptatif : plus l'arriéré est gros, moins on ouvre de contenu neuf
+  ok(dueShare(0, 8) === 4, "à jour : moitié rappels, moitié découvertes");
+  ok(dueShare(8, 8) === 5, "file tendue : on ralentit la découverte");
+  ok(dueShare(16, 8) === 6, "arriéré : deux découvertes seulement");
+  ok(dueShare(40, 8) === 7, "gros arriéré : on consolide presque uniquement");
+  ok(dueShare(40, 8) < 8, "il reste toujours au moins une nouveauté par série");
+  ok(dueShare(0, 5) >= 1 && dueShare(99, 5) <= 5, "le dosage s'adapte aussi aux séries courtes");
   ok(new Set(q.map(e => e.id)).size === q.length, "aucun doublon dans la série du jour");
   // une commande ancrée n'est proposée qu'en entretien, une fois son échéance passée
   const prog2 = {};

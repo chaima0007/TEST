@@ -242,6 +242,68 @@ const ok = (c, l) => { if (c) pass++; else { fail++; errs.push(l); } };
   ok(await page.locator("#examTimer").isHidden(), "le minuteur s'arrête avec l'examen");
   await page.click("#btnHome");
 
+  /* --- revenir le lendemain : les rappels dus doivent être servis --- */
+  await page.evaluate(() => {
+    localStorage.removeItem("empire-chaima-linux-v1");
+  });
+  await page.reload();
+  await page.waitForTimeout(150);
+  await page.click("#btnPlay");
+  for (let k = 0; k < 12; k++) {
+    if (await page.locator("#scRecap").isVisible()) break;
+    await page.evaluate(() => {
+      accepted(SES.queue[SES.idx])[0].forEach(t => {
+        for (let i = 0; i < POOL.length; i++) if (POOL[i] === t && !BUILT.some(b => b.i === i)) { addTok(i); return; }
+      });
+    });
+    await page.waitForTimeout(160);
+    if (await page.locator("#actionRow").isVisible() && !(await page.locator("#feedbackZone .feedback").isVisible()))
+      await page.click("#btnCheck");
+    await page.waitForTimeout(140);
+    if (await page.locator("#lvlOverlay.on").isVisible()) { await page.waitForTimeout(450); await page.click("#ovClose"); }
+    if (await page.locator("#btnNext").isVisible()) await page.click("#btnNext");
+    await page.waitForTimeout(80);
+  }
+  await page.waitForTimeout(300);
+  if (await page.locator("#lvlOverlay.on").isVisible()) { await page.waitForTimeout(450); await page.click("#ovClose"); }
+  ok(await page.locator("#scRecap").isVisible(), "une première journée se termine sur un récapitulatif");
+  await page.click("#btnHome");
+  ok(await page.locator("#scHome").isVisible(), "le bouton du bas ramène toujours à l'accueil, quel que soit son libellé");
+  const veille = await page.evaluate(() => S.xp);
+  // on avance d'une journée, comme au réveil le lendemain
+  await page.evaluate(() => {
+    const raw = JSON.parse(localStorage.getItem("empire-chaima-linux-v1"));
+    const D = 86400000;
+    for (const k in raw.prog) { if (raw.prog[k].due) raw.prog[k].due -= D; if (raw.prog[k].last) raw.prog[k].last -= D; }
+    const d = new Date(raw.last + "T12:00:00"); d.setDate(d.getDate() - 1);
+    raw.last = d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
+    raw.dayKey = null; raw.dayCount = 0;
+    localStorage.setItem("empire-chaima-linux-v1", JSON.stringify(raw));
+  });
+  await page.reload();
+  await page.waitForTimeout(200);
+  const stock = await page.evaluate(() => dailyStock(S.prog, Date.now()).due.length);
+  ok(stock > 0, `le lendemain, des rappels sont arrivés à échéance (${stock})`);
+  ok((await page.locator("#resumeLine").innerText()).includes("à revoir"),
+     "l'accueil annonce les rappels du jour");
+  await page.click("#btnPlay");
+  await page.waitForTimeout(200);
+  const rappelsServis = await page.evaluate(() => SES.queue.filter(e => S.prog[e.id] && S.prog[e.id].n > 0).length);
+  ok(rappelsServis > 0, `la série du lendemain contient bien des rappels (${rappelsServis}/8)`);
+  await page.evaluate(() => {
+    accepted(SES.queue[SES.idx])[0].forEach(t => {
+      for (let i = 0; i < POOL.length; i++) if (POOL[i] === t && !BUILT.some(b => b.i === i)) { addTok(i); return; }
+    });
+  });
+  await page.waitForTimeout(160);
+  if (await page.locator("#actionRow").isVisible() && !(await page.locator("#feedbackZone .feedback").isVisible()))
+    await page.click("#btnCheck");
+  await page.waitForTimeout(200);
+  ok(await page.evaluate(() => S.xp) > veille, "une bonne réponse le lendemain rapporte bien des XP");
+  ok(await page.evaluate(() => S.streak) === 2, "la série quotidienne passe à deux jours");
+  if (await page.locator("#lvlOverlay.on").isVisible()) { await page.waitForTimeout(450); await page.click("#ovClose"); }
+  await page.click("#btnBack");
+
   /* --- affichage large --- */
   await page.setViewportSize({ width: 900, height: 800 });
   ok(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1), "aucun défilement horizontal en 900px");
