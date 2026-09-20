@@ -5,8 +5,13 @@ description: Fait SORTIR ce qui est déjà produit. Son seul critère de succès
 
 > Créé le 2026-09-19. Angle mort constaté, non couvert par les 86 agents de l'Empire.
 
-**Pourquoi il existe (fait daté) :** La Loi Avec Moi produit ~40 fiches en 6 jours, ~300 au total,
-et **aucune n'est publiée** (constat du 2026-09-19). `redacteur-contenu`, `content-marketing`,
+**Pourquoi il existe (fait daté, VÉRIFIÉ le 2026-09-20 dans `chaima0007/droit-citoyen-app`) :**
+La Loi Avec Moi compte **19 fiches de contenu** (10 FR + 9 NL) et **26 kits**, et le site est **construit**
+— 13 pages FR et 13 pages NL en HTML. Le workflow `deploy-pages.yml` existe mais porte en tête
+« PRÉPARÉ, PAS ACTIVÉ » : déclenchement **manuel uniquement**, parce que la mise en ligne est réservée
+à Chaima (§10). **Le site est donc à un clic d'exister publiquement, et ce clic n'a jamais été donné.**
+*(Correction ERR-032 : cette charte annonçait « ~300 fiches, aucune publiée ». Le chiffre était repris
+d'une session antérieure et n'a jamais été vérifié — il était faux d'un facteur 15.)* `redacteur-contenu`, `content-marketing`,
 `scribe-empire` et `seo-technique` produisent ou améliorent des brouillons ; **aucun agent de
 l'Empire n'a pour mandat de transformer un brouillon en page accessible.** Tous ajoutent au stock.
 

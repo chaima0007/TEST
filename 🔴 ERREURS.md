@@ -345,6 +345,36 @@ liste de ce qui recommencera.
   ou une **norme** ? » — un livrable se copie, une norme se référence. **EN ATTENTE DE GO.**
 - **✅ APPLIQUÉ le 2026-09-20 :** méta-leçon 21 inscrite — *un livrable se copie, une norme se référence*. Les deux fichiers de veille restants ne partiront pas au Drive.
 
+## ERR-032 — Chiffre faux d'un facteur 15, répété toute une session et déposé au Drive (2026-09-20)
+- **Ce qui s'est passé :** j'ai affirmé, à l'oral puis par écrit, que La Loi Avec Moi produisait
+  « **~40 fiches en 6 jours, ~300 au total, aucune publiée** ». **Vérification du 2026-09-20 dans
+  `chaima0007/droit-citoyen-app` (cloné, compté) : 19 fiches de contenu (10 FR + 9 NL) et 26 kits.**
+  Le chiffre était faux **d'un facteur 15**. Et la seconde moitié de l'affirmation était trompeuse :
+  le site est **construit** (13 pages FR, 13 pages NL) et `deploy-pages.yml` existe — il porte en tête
+  « **PRÉPARÉ, PAS ACTIVÉ** », déclenchement manuel, *parce que la mise en ligne est réservée à Chaima
+  (§10)*. Ce n'est donc pas un projet qui n'aboutit pas : c'est un projet **à un clic de la mise en ligne**.
+- **Sévérité : IMPORTANT** — §9 angles Stratégique et Réputation. Le chiffre a servi de **justification
+  écrite** à la création de l'agent `expediteur`, et il figure dans un document **déposé au Drive**
+  (rapport de session du 2026-09-19). Un mauvais diagnostic produit un mauvais outil.
+- **Cause racine :** le chiffre venait d'un **résumé de session antérieure**, repris tel quel sans jamais
+  être recoupé avec le dépôt. C'est **ERR-012 à l'identique** (« un fait affirmé depuis une source
+  périmée ») aggravé par le §13 : *un chiffre sans source datée est un chiffre faux en sursis*. Le dépôt
+  de LLAM n'était pas dans le périmètre de la session ; **je ne l'ai pas attaché, donc je n'ai pas
+  vérifié — et j'ai parlé quand même.** Le `verificateur-verite` ne pouvait pas l'attraper : le chiffre
+  n'était contredit par aucune source *présente*, il n'en avait simplement aucune.
+- **Détection (à retenir) :** tout chiffre portant sur un **autre dépôt** que celui de la session est
+  **NON VÉRIFIÉ par construction**. `add_repo` puis un `find | wc -l` coûtent deux minutes.
+- **Correctif (APPLIQUÉ le 2026-09-20) :** chiffre corrigé dans `.claude/agents/expediteur.md` (avec la
+  mention de la correction, pas une réécriture silencieuse) et dans `codex/A-DECIDER.md`. Le dépôt
+  `droit-citoyen-app` est désormais attaché à la session.
+- **⚠️ NON CORRIGÉ :** le document Drive « 2026-09-19-13h19 — Empire — Rapport de session » contient
+  toujours le chiffre faux. L'outil disponible ici ne permet pas d'en modifier le corps, et effacer est
+  une décision de Chaima (§10). **À rectifier par un document de correction daté, selon la règle
+  AJOUT-jamais-écrasement.**
+- **Prévention proposée, NON APPLIQUÉE :** aucun chiffre sur un projet tiers ne sort d'une session sans
+  que son dépôt ait été attaché et compté dans la même session, ou sans la mention littérale
+  **NON VÉRIFIÉ**. **EN ATTENTE DE GO.**
+
 ---
 
 ### Motifs récurrents (méta-leçons)
@@ -369,3 +399,4 @@ liste de ce qui recommencera.
 19. **Une fusion en union protège du conflit, pas de la disparition** — après tout merge sur un registre, recompter les entrées et traquer les références orphelines ; un fichier qui a silencieusement rétréci passe `git status`, la CI et la relecture (ERR-029).
 21. **Un livrable se copie, une norme se référence** — la règle « sauvegarde en plusieurs emplacements » vise les dossiers et les livrables ; dupliquer une **norme** crée une divergence. Et avant de ranger un fichier, lire le **journal de sa propre branche** : la décision a peut-être déjà été prise, et motivée (ERR-031).
 20. **Un dépôt public est une publication, pas un carnet** — ne jamais recopier une source personnelle dans un fichier versionné : en extraire le seul **fait décisionnel** qui sert. Un `.gitignore` protège un fichier qu'on n'ajoute pas, jamais un fichier qu'on doit committer (ERR-030, récidive d'ERR-015).
+22. **Un chiffre sur un AUTRE dépôt est NON VÉRIFIÉ par construction** — attacher le dépôt et compter, ou écrire la mention littérale. Un chiffre repris d'un résumé de session n'a pas de source : il en a l'air, c'est pire (ERR-032, récidive d'ERR-012).
