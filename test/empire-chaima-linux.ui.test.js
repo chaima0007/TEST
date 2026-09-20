@@ -354,6 +354,67 @@ const ok = (c, l) => { if (c) pass++; else { fail++; errs.push(l); } };
 
   ok(problems.length === 0, "aucune erreur JavaScript : " + problems.slice(0, 5).join(" | "));
 
+  /* --- export quand la page tourne en ligne ---
+     Là-bas, un lien de téléchargement direct est bloqué : c'est la capacité
+     « downloads » qui doit prendre le relais, et le repli local doit rester. */
+  {
+    const ctx = await browser.newContext({ viewport: { width: 412, height: 820 } });
+    const q = await ctx.newPage();
+    await q.addInitScript(() => {
+      window.__appels = [];
+      window.claude = { use: (nom) => Promise.resolve(nom === "downloads"
+        ? { save: (o) => { window.__appels.push(o); return Promise.resolve(); } } : null) };
+    });
+    await q.goto(FILE);
+    await q.waitForTimeout(200);
+    await q.evaluate(() => { S.xp = 340; S.prog = { "w1-ls": { b: 1, due: 0, n: 2, ok: 1, ko: 1, last: Date.now() } }; save(); });
+    await q.click("#btnSettings");
+    await q.click("#btnExport");
+    await q.waitForTimeout(300);
+    const appels = await q.evaluate(() => window.__appels);
+    ok(appels.length === 1, "en ligne, l'export passe par la capacité downloads");
+    ok(appels[0] && /^empire-chaima-progression-\d{4}-\d{2}-\d{2}\.json$/.test(appels[0].filename),
+       "le fichier exporté porte un nom daté : " + (appels[0] && appels[0].filename));
+    let contenu = null;
+    try { contenu = JSON.parse(appels[0].data); } catch (e) { /* laissé à null */ }
+    ok(contenu && contenu.xp === 340 && contenu.prog["w1-ls"], "l'export contient la progression réelle");
+    await q.click("#btnBack2");
+    await q.click("#btnWeak");
+    await q.click("#btnWeakExport");
+    await q.waitForTimeout(300);
+    const appels2 = await q.evaluate(() => window.__appels);
+    ok(appels2.length === 2 && /points-faibles-.*\.txt$/.test(appels2[1].filename),
+       "la fiche de points faibles emprunte le même chemin");
+    ok(appels2[1] && appels2[1].data.includes("COMMANDES À RETRAVAILLER"), "la fiche exportée contient le rapport complet");
+    await ctx.close();
+
+    // repli : sans la capacité, le téléchargement classique doit marcher
+    const ctx2 = await browser.newContext({ viewport: { width: 412, height: 820 }, acceptDownloads: true });
+    const q2 = await ctx2.newPage();
+    await q2.addInitScript(() => { window.claude = { use: () => Promise.resolve(null) }; });
+    await q2.goto(FILE);
+    await q2.waitForTimeout(200);
+    await q2.click("#btnSettings");
+    const dl3 = await Promise.all([q2.waitForEvent("download", { timeout: 5000 }).catch(() => null), q2.click("#btnExport")]);
+    ok(!!dl3[0], "sans la capacité, le téléchargement classique prend le relais");
+    await ctx2.close();
+
+    // refus : la page doit le dire, sans casser
+    const ctx3 = await browser.newContext({ viewport: { width: 412, height: 820 } });
+    const q3 = await ctx3.newPage();
+    const soucis3 = [];
+    q3.on("pageerror", e => soucis3.push(e.message));
+    await q3.addInitScript(() => { window.claude = { use: () => Promise.resolve({ save: () => Promise.reject(new Error("refus")) }) }; });
+    await q3.goto(FILE);
+    await q3.waitForTimeout(200);
+    await q3.click("#btnSettings");
+    await q3.click("#btnExport");
+    await q3.waitForTimeout(400);
+    ok((await q3.locator("#toast").innerText()).length > 0 && soucis3.length === 0,
+       "un refus d'enregistrement est annoncé, sans erreur JavaScript");
+    await ctx3.close();
+  }
+
   await browser.close();
   console.log(`${pass} vérifications passées, ${fail} échec(s).`);
   if (fail) { [...new Set(errs)].forEach(e => console.log("  ✕ " + e)); process.exit(1); }
