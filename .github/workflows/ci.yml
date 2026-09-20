@@ -19,6 +19,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          # Historique complet : le contrôle des registres compare le nombre
+          # d'entrées de 🔴 ERREURS.md avec origin/main (ERR-029). Avec le
+          # clone superficiel par défaut, origin/main est absent et le
+          # contrôle se désactive silencieusement.
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -28,6 +34,26 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      # ERR-026, ERR-027, ERR-029, ERR-030 : quatre défauts qui sont passés à
+      # travers `git status`, la CI et la relecture humaine, faute d'un outil
+      # qui les cherche. Détection prouvée dans les deux sens par test piégé.
+      - name: Contrôle des registres (BLOQUANT)
+        run: bash scripts/verifier-registres.sh
+
+      # ERR-020 : 22 vulnérabilités avaient vécu 3 mois sans être consignées,
+      # parce qu'aucune étape du gate n'interrogeait les dépendances.
+      # Seuil « critical » et non « high » : au 2026-09-20 il reste 10 `high`
+      # dont 8 ne se corrigent que par une rétrogradation MAJEURE de Prisma
+      # (7.8 → 6.19), qui est une décision de Chaima. Poser le seuil à `high`
+      # rendrait la CI rouge en permanence — un gate toujours rouge ne protège
+      # plus rien. Le seuil montera dès que cette décision sera tranchée.
+      - name: Audit des dépendances — critiques (BLOQUANT)
+        run: npm audit --audit-level=critical
+
+      - name: Audit des dépendances — rapport complet (informatif)
+        if: always()
+        run: npm audit || true
 
       # Le client Prisma est généré dans lib/generated/prisma (gitignoré).
       # prisma/seed.ts l'importe, donc il doit exister avant le typecheck.
@@ -44,3 +70,9 @@ jobs:
 
       - name: Typecheck (TypeScript)
         run: npm run typecheck
+
+      # La CI ne lançait PAS les tests — constaté le 2026-09-20. Le gate écrit
+      # dans CLAUDE.md les exige pourtant depuis toujours (§4 Parcours 4) :
+      # ils n'étaient vérifiés qu'à la main, donc seulement quand on y pensait.
+      - name: Tests (Vitest)
+        run: npm test

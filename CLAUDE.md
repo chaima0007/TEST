@@ -318,8 +318,30 @@ pas, **le verdict le plus prudent gagne par défaut.** S'en écarter exige de di
 - **Stack :** Next.js 16 · TypeScript · Prisma (SQLite via adapter libsql) · Tailwind v4 · next-auth · Vitest.
 - **Commandes de vérification AVANT PUSH (Parcours 4) :**
   ```bash
-  npm run lint && npx tsc --noEmit && npm test && npm run build
+  bash scripts/verifier-registres.sh \
+    && npm run lint && npm run build && npx tsc --noEmit && npm test \
+    && npm audit --audit-level=critical
   ```
+  **L'ordre compte :** `build` AVANT `tsc` (le build génère `.next/types/**` dont `tsc`
+  dépend — ERR-008). Les mêmes étapes tournent en CI (`.github/workflows/ci.yml`).
+  `scripts/verifier-registres.sh` cherche marqueurs de conflit, numéros d'erreur en double,
+  références orphelines, rétrécissement du registre et données personnelles (ERR-026/027/029/030).
+- **Aucune vérification hors dépôt/Drive n'est exécutable depuis une session d'agent (ERR-024).**
+  Le proxy d'egress refuse **tout** : site en production, registres de brevets (Espacenet,
+  Patentscope, USPTO, DPMA, EUIPO), DNS. Ce n'est pas une panne à contourner ni un accès à
+  demander : c'est une **propriété permanente de l'environnement**, constatée sur 2 projets et
+  déjà documentée le 2026-09-11. Toute tâche dont le livrable est une **observation du monde
+  extérieur** doit être routée vers le navigateur de Chaima. Une recherche web n'est pas un
+  registre : sans registre, le résultat s'écrit **NON VÉRIFIÉ**, jamais « aucune antériorité ».
+- **Rituel d'entrée §5 — ajouter au `git ls-remote` (ERR-021) :** lister aussi les **PR
+  ouvertes**. `A-DECIDER.md` ne suit que les décisions qu'un agent a formulées, jamais l'état
+  réel de la forge : 5 PR sont restées ouvertes 3 mois sans figurer nulle part.
+- **Un fait d'état vit à UN SEUL endroit (ERR-022/ERR-023).** `ETAT.md` fait foi pour la branche
+  de dev, le SHA de `main` et l'état des PR. Les autres fichiers y **renvoient**, ils ne
+  recopient pas : un fait dupliqué dans 3 fichiers se corrige dans 2 et ment dans le troisième.
+- **« APPLIQUÉ » sans SHA de `main` est une intention, pas un fait (ERR-028).** Une entrée du
+  registre ne peut porter « APPLIQUÉ » que si l'artefact est vérifié **sur `main`** — sinon le
+  statut est « ANNONCÉ ». Et un garde-fou présent mais jamais appelé est un garde-fou absent.
 - **Pièges connus (VÉRIFIÉ le 2026-09-06) :**
   - **Prisma** : le client est généré dans `lib/generated/prisma`, qui est **gitignoré** → absent d'un checkout neuf. Le script `postinstall: prisma generate` est en place (commit `2332776`) ; ne pas le retirer, sinon `next build` échoue « module not found ».
   - **Vercel** : 8 projets du compte sont branchés sur ce dépôt → déploiements en cascade et saturation du quota gratuit. Caelum vise **Cloudflare Pages**. Déconnexion des projets superflus = décision humaine en attente (voir `/codex/A-DECIDER.md`).

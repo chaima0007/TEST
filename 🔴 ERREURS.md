@@ -19,16 +19,52 @@ aucune n'est orpheline.** Le problème est que **13 solutions sur 31 ne sont pas
 6 attendent un GO, 4 restent ouvertes, 3 ne sont qu'à moitié posées. Et ce sont **exactement
 celles-là qui reviennent**.
 
-## État des 31 solutions
+## ✅ GO DE CHAIMA — 2026-09-20 : les correctifs parqués ont été appliqués
+
+**8 des 9 solutions parquées sont posées.** Ce qui a changé, concrètement :
+
+| Ce qui a été fait | Preuve |
+|---|---|
+| `next` → 16.3.5 · `next-auth` → beta.32 · `@tailwindcss/postcss` → 4.3.3 | **22 vulnérabilités → 17, 3 critiques → 0** |
+| `scripts/verifier-registres.sh` créé : marqueurs de conflit · numéros en double · références orphelines · rétrécissement du registre · données personnelles | **détection prouvée dans les deux sens par test piégé** |
+| Ce contrôle + `npm audit --audit-level=critical` branchés en **étapes bloquantes de la CI** | `.github/workflows/ci.yml` |
+| **La CI ne lançait pas les tests** — constaté ce jour, corrigé | étape `npm test` ajoutée |
+| 4 règles écrites dans `CLAUDE.md` : proxy d'egress · PR ouvertes au rituel §5 · un fait d'état à un seul endroit · « APPLIQUÉ » exige un SHA de `main` | ERR-021/022/023/024/028 |
+
+Gate complet re-passé vert avant push : **lint 0 erreur · `next build` OK · `tsc` 0 · 77/77 tests**.
+
+**Ce qui reste, et pourquoi — nommément :**
+- **ERR-025** (faux SIRET et faux téléphone dans un `.env.example` public) : le fichier vit sur la
+  branche `claude/b2b-outreach-system-7ht0n9`, pas ici. Le corriger exige de **pousser sur une autre
+  branche que la branche de dev**, ce que je ne fais pas sans un mot explicite. **Seul correctif du GO
+  non appliqué.**
+- **Rétrogradation Prisma 7.8 → 6.19** : 8 des 10 `high` restants n'ont pas d'autre correctif. C'est une
+  **rupture majeure**, donc une décision de Chaima (§10).
+- **ERR-030, volet historique** : le caviardage n'efface pas le commit `5be0a032`. **Passer le dépôt en
+  privé** reste sa décision, et reste recommandé.
+- **ERR-016** (fuites commerciales vivantes dans `hermes.ts` et `pacte.ts`) : touche au **texte
+  commercial**, qui lui appartient (§10).
+
+## État des 31 solutions — après le GO
 
 | État | Nb | Entrées |
 |---|---|---|
-| ✅ **Corrigé et vérifié** | 15 | ERR-001, 004→013, 015, 018, 019 |
-| ⏸️ **Écrit, EN ATTENTE DE GO de Chaima** | 6 | ERR-020, 021, 023, 024, 025, 026 |
-| 🟠 **À moitié appliqué** | 3 | ERR-027, 029, 031 |
-| 🔴 **Reste ouvert** | 4 | **ERR-016, 022, 028, 030** |
+| ✅ **Corrigé et vérifié** | 22 | ERR-001, 004→013, 015, 018→021, 023, 024, 026, 027, 029, 031 |
+| 🟠 **Détection posée, volet de fond restant** | 2 | ERR-030 (historique git) · **ERR-022** — la règle « un fait d'état à un seul endroit » est écrite et le rétrécissement du registre est bloqué en CI, mais le contrôle de **fraîcheur** proposé (comparer le SHA cité dans `ETAT.md` à `origin/main`) **n'est pas construit**. Je ne le compte donc pas comme corrigé. |
+| 🔴 **Reste ouvert — décision de Chaima** | 3 | **ERR-016** (texte commercial) · **ERR-025** (autre branche) · **ERR-028** (dépend d'ERR-016) |
 | 🖐️ **Solution écrite, geste humain requis (compte Vercel)** | 2 | ERR-002, 003 |
 | ⚪ **Non corrigé volontairement, motif écrit** | 1 | ERR-017 (un `--amend` forcerait un force-push sur `main` pendant qu'une autre session travaille) |
+
+*(Le tableau ci-dessous garde l'état d'avant le GO, comme mesure de départ.)*
+
+| État au 2026-09-20 avant GO | Nb | Entrées |
+|---|---|---|
+| ✅ Corrigé et vérifié | 15 | ERR-001, 004→013, 015, 018, 019 |
+| ⏸️ Écrit, EN ATTENTE DE GO | 6 | ERR-020, 021, 023, 024, 025, 026 |
+| 🟠 À moitié appliqué | 3 | ERR-027, 029, 031 |
+| 🔴 Reste ouvert | 4 | ERR-016, 022, 028, 030 |
+| 🖐️ Geste humain requis | 2 | ERR-002, 003 |
+| ⚪ Non corrigé volontairement | 1 | ERR-017 |
 
 **Six CRITIQUES ne sont pas refermées :** ERR-020 (22 vulnérabilités de dépendances) ·
 ERR-022 (un merge ne met pas à jour les registres) · ERR-024 (proxy d'egress) ·
@@ -194,6 +230,7 @@ liste de ce qui recommencera.
 - **Recherche de solution existante (mission §9) : AUCUNE.** Rien dans `🔴 ERREURS.md` (ERR-001→015), rien dans `codex/EVOLUTION.md`, rien dans la base Caelum (`.claude/BASE-ERREURS.md`, E-01→E-25). → **ERREUR SANS SOLUTION DOCUMENTÉE.**
 - **Détection (à retenir) :** `npm audit` fonctionne **sans `node_modules`** (il lit `package-lock.json`) — donc exécutable même en conteneur neuf.
 - **SOLUTION_020 préparée, NON APPLIQUÉE :** (a) `npm audit fix` pour `next` → 16.3.5 et `next-auth` → beta.32 (`isSemVerMajor: false`, non cassant d'après npm) ; (b) **ne pas** appliquer le correctif `prisma` : npm propose une **rétrogradation majeure** 7.10 → 6.19.3, inacceptable sans arbitrage ; (c) ajouter `npm audit --audit-level=high` au gate §4 et à `ci.yml`. **EN ATTENTE DE GO.**
+- **✅ GO DE CHAIMA — APPLIQUÉ le 2026-09-20 :** `next` 16.2.9 → **16.3.5** (`isSemVerMajor: false`), `next-auth` beta.31 → **beta.32** (tire `@auth/core` 0.41.3), `@tailwindcss/postcss` 4.3.1 → 4.3.3. **22 vulnérabilités → 17, et les 3 CRITIQUES sont tombées à 0.** Gate complet re-passé vert : lint 0 erreur, `next build` OK, `tsc` 0, **77/77 tests**. `npm audit --audit-level=critical` ajouté au gate (`CLAUDE.md`) **et** à la CI en étape bloquante, plus un rapport complet informatif. **Écart assumé par rapport au plan écrit :** le seuil prévu était `high` ; il reste 10 `high`, dont **8 ne se corrigent que par la rétrogradation MAJEURE de Prisma 7.8 → 6.19**. Un seuil `high` rendrait la CI **rouge en permanence**, et un gate toujours rouge ne protège plus rien. **Reste à trancher par Chaima :** accepter ou refuser cette rétrogradation. *(Note : `npm audit fix` et `npm update` sont inutilisables ici — bug npm `Cannot read properties of null (reading 'edgesOut')` ; les mises à jour ont été faites en ciblé.)*
 
 ## ERR-021 — Cinq PR ouvertes depuis juin/juillet, hors de tout suivi (2026-09-14)
 - **Ce qui s'est passé :** le dépôt porte **5 PR ouvertes** — #3, #4, #5 (brouillons), #6, #7 — créées entre le 2026-06-21 et le 2026-07-17. **Aucune n'apparaît dans `codex/A-DECIDER.md`.** #4 et #5 ciblent `claude/swarm-50-agent-architecture-3l6cno`, elle-même la branche de la PR #3 : une pile de brouillons empilés sur un brouillon.
@@ -201,6 +238,7 @@ liste de ce qui recommencera.
 - **Cause racine :** `A-DECIDER.md` suit les **décisions formulées par un agent**, pas l'**état réel de la forge**. Rien ne fait entrer une PR dans le registre : il faut qu'un agent y pense. Personne n'y a pensé en 3 mois.
 - **Solution existante liée : PARTIELLE.** ERR-013 (2026-09-11) a traité le même angle mort côté **branches** (33 inventoriées) et la session du 2026-09-14 21h16 en a tiré une ligne A-DECIDER (« sortir les projets étrangers »). **Pourquoi la récurrence :** le correctif d'ERR-013 portait sur les branches uniquement ; les PR n'ont pas été rattachées au même inventaire.
 - **SOLUTION_021 préparée, NON APPLIQUÉE :** ajouter une ligne A-DECIDER « Statut des 5 PR ouvertes » et étendre le rituel §5 à `list_pull_requests(state=open)` en plus de `git ls-remote`. **EN ATTENTE DE GO.**
+- **✅ GO DE CHAIMA — APPLIQUÉ le 2026-09-20 :** le rituel §5 des spécificités de `CLAUDE.md` impose désormais de lister les **PR ouvertes** en plus du `git ls-remote`. La ligne « Statut des 5 PR ouvertes » est dans `A-DECIDER.md`. Fermer ou reprendre ces PR reste une décision de Chaima (§10).
 
 ## ERR-022 — Un merge ne met pas à jour les registres d'état (récurrent, 2 projets) (2026-09-14)
 - **Ce qui s'est passé :** trois occurrences du même défaut, toutes constatées aujourd'hui.
@@ -217,6 +255,7 @@ liste de ce qui recommencera.
 - **Sévérité : IMPORTANT** — §9 angle Humain/Exécution. Un agent obéissant repart d'une branche close, 36 commits derrière `main`.
 - **Cause racine :** identique à ERR-022, mais dans sa variante la plus instructive — la correction elle-même a été **partielle**, parce que la liste des endroits où l'information est dupliquée n'existe nulle part. **Le fait est dupliqué dans 3 fichiers ; corriger 2 sur 3 laisse la source d'autorité fausse.**
 - **SOLUTION_023 préparée, NON APPLIQUÉE :** un fait d'état = **un seul emplacement** (`ETAT.md`), les autres y renvoient par lien au lieu de le recopier. `CLAUDE.md:304` ne nommerait plus aucune branche. **EN ATTENTE DE GO.**
+- **✅ GO DE CHAIMA — APPLIQUÉ le 2026-09-20 :** règle écrite dans `CLAUDE.md` — **un fait d'état vit à UN SEUL endroit** (`ETAT.md` fait foi pour la branche de dev, le SHA de `main`, l'état des PR) ; les autres fichiers y renvoient au lieu de recopier. `CLAUDE.md` ne nomme plus aucune branche depuis le 2026-09-19.
 
 ## ERR-024 — Le proxy d'egress interdit toute vérification externe (récurrent, 2 projets) (2026-09-14)
 - **Ce qui s'est passé :** trois blocages distincts, même mur.
@@ -227,6 +266,7 @@ liste de ce qui recommencera.
 - **Cause racine :** l'environnement d'exécution est **cloisonné en sortie par conception**. Ce n'est pas une panne : c'est une propriété permanente. Toute tâche dont le livrable est une **observation du monde extérieur** (site en ligne, registre public, DNS) est structurellement inexécutable ici, quel que soit l'agent.
 - **Solution existante liée : PARTIELLE et mal cadrée.** Caelum a consigné le cas des brevets comme une ligne A-DECIDER « accès / outillage » — c'est-à-dire comme un **problème d'accès à obtenir**, pas comme une **contrainte permanente de l'environnement**. **Pourquoi la récurrence :** tant que c'est décrit comme un accès manquant, chaque nouvelle tâche de vérification externe est planifiée comme si elle était faisable, et échoue.
 - **SOLUTION_024 préparée, NON APPLIQUÉE :** inscrire la contrainte dans `CLAUDE.md` (« aucune vérification hors dépôt/Drive n'est exécutable depuis une session d'agent ») et router ces tâches vers un canal qui sort (navigateur de Chaima, ou un job CI qui a le réseau). **EN ATTENTE DE GO.**
+- **✅ GO DE CHAIMA — APPLIQUÉ le 2026-09-20 :** la contrainte est inscrite dans `CLAUDE.md` comme **propriété permanente de l'environnement**, et non plus comme un accès à obtenir. Toute tâche dont le livrable est une observation du monde extérieur est explicitement routée vers le navigateur de Chaima ; sans registre, le résultat s'écrit **NON VÉRIFIÉ**.
 
 ## ERR-025 — Identité commerciale fabriquée dans un `.env.example`, sur un dépôt public (2026-09-14)
 - **Ce qui s'est passé :** le commit `0549fe32` (branche `claude/b2b-outreach-system-7ht0n9`, **non mergée**, publiée) pose comme **valeurs par défaut** d'un outil de prospection : `AGENCY_SIRET="123 456 789 00012"`, `AGENCY_YEARS_EXPERIENCE=10`, `AGENCY_PHONE="+33 1 23 45 67 89"`, `AGENCY_EMAIL="contact@competeiq.io"`. Ces variables alimentent le **pied des e-mails envoyés aux prospects**. Le fichier avertit lui-même : « ces valeurs sont des allégations commerciales […] doivent être EXACTES ».
@@ -242,6 +282,7 @@ liste de ce qui recommencera.
 - **Solution existante liée : AUCUNE pour la numérotation.** ERR-011 traite du `main` périmé (état du dépôt), pas d'un identifiant attribué en double. Le registre Caelum évite le problème autrement : son `🔴 ERREURS.md` est **généré** depuis `.claude/BASE-ERREURS.md`, une source unique — mais la collision de numéro y reste possible à l'écriture de la fiche.
 - **Détection :** `git fetch origin && git merge-tree $(git merge-base HEAD origin/main) HEAD origin/main` avant tout commit sur ce fichier. Ou, moins cher : `git show origin/main:"🔴 ERREURS.md" | grep -c "^## ERR-"` juste avant d'écrire.
 - **Correctif (2026-09-14, puis REFAIT le 2026-09-19 — voir ERR-029) :** mes sept entrées renumérotées **ERR-020 → ERR-026**, méta-leçons **13 → 16**, merge en union avec `main` (aucune entrée de l'autre session touchée). **Prévention proposée, NON APPLIQUÉE :** faire du numéro une donnée dérivée — un identifiant horodaté (`ERR-20260914-2147`) ne peut pas entrer en collision, ou une génération du registre depuis des fiches séparées, comme côté Caelum. **EN ATTENTE DE GO.**
+- **✅ GO DE CHAIMA — APPLIQUÉ le 2026-09-20 :** `scripts/verifier-registres.sh` refuse tout numéro d'erreur en double, et tourne en **étape bloquante de la CI**. Détection prouvée dans les deux sens par test piégé. Le garde-fou de tête du fichier reste en place.
 
 ## ERR-027 — Des marqueurs de conflit git ont été commités ET poussés (2026-09-19)
 - **Ce qui s'est passé :** `codex/A-DECIDER.md` et `codex/EVOLUTION.md` ont été poussés sur la branche en portant `<<<<<<< Updated upstream` / `>>>>>>> Stashed changes`. Deux registres de gouvernance, illisibles en l'état, **publiés sur un dépôt public**.
@@ -250,6 +291,7 @@ liste de ce qui recommencera.
 - **Détection :** **signalée par l'agent `avocat`**, hors de son mandat, pendant le Parcours 2. Ni moi, ni `git status` (qui affichait un arbre propre après l'`add`), ni la CI ne l'ont vue. **Le contrôle qui a marché n'était pas un contrôle — c'était un agent qui lisait le fichier pour autre chose.**
 - **Correctif (APPLIQUÉ 2026-09-19) :** conflits résolus **en union**, les deux entrées conservées, aucune de la session concurrente touchée. Vérifié : `git grep '^<<<<<<< '` ne renvoie plus rien.
 - **Prévention proposée, NON APPLIQUÉE :** refuser le commit si `git grep -l '^<<<<<<< '` renvoie quoi que ce soit — un hook `pre-commit`, ou une étape du gate §4. Trois lignes, coût nul. **EN ATTENTE DE GO.**
+- **✅ GO DE CHAIMA — APPLIQUÉ le 2026-09-20 :** `scripts/verifier-registres.sh` cherche les marqueurs de conflit dans tous les fichiers suivis (`.md`, `.ts`, `.tsx`, `.json`, `.yml`) et **bloque la CI**. C'est précisément le défaut qu'aucun outil ne cherchait — ni `git status`, ni la CI, ni la relecture.
 
 ## ERR-028 — Le registre d'erreurs annonce « APPLIQUÉ » un correctif qui vit sur une branche non fusionnée (2026-09-19)
 - **Ce qui s'est passé :** l'entrée **ERR-016** porte dans son corps « **Correctif : volet structurel APPLIQUÉ le 2026-09-14** (`lib/agents/garde-fou.ts` — `verifierSansSurvente()` appelé au point de sortie…) ». **Ce fichier n'existe ni sur `main`, ni sur aucune branche de travail** — uniquement sur `codex/testeur-adverse-garde-fou-survente`, **jamais fusionnée**. Vérifié par balayage des 33 branches. Sur le code qui tourne, `verifierSansSurvente` n'est appelé nulle part.
@@ -267,6 +309,7 @@ liste de ce qui recommencera.
 - **Détection (à retenir) :** `git show origin/main:'🔴 ERREURS.md' | grep -c '^## ERR-'` comparé à la même commande sur `HEAD` — un écart négatif ou nul après un commit qui *ajoute* une entrée est une perte. Et : `git grep -oE 'ERR-[0-9]{3}' | sort -u` recoupé avec les titres réellement présents détecte toute référence orpheline.
 - **Correctif (APPLIQUÉ le 2026-09-19, commit de ce jour) :** les sept entrées restaurées depuis `68c64d6a` et renumérotées **ERR-020 → ERR-026** — numérotation qui rend justes, sans les toucher, les trois références existantes. Méta-leçons 13 à 16 restaurées. Aucune entrée d'une autre session modifiée (§10).
 - **Prévention proposée, NON APPLIQUÉE :** ajouter au rituel §5 le recoupement « références orphelines » ci-dessus, et au gate §4 un contrôle qui refuse un commit faisant **baisser** le nombre d'entrées d'un registre. **EN ATTENTE DE GO.**
+- **✅ GO DE CHAIMA — APPLIQUÉ le 2026-09-20 :** deux contrôles ajoutés et **bloquants en CI** — (a) le registre ne doit jamais **rétrécir** par rapport à `origin/main`, (b) aucune **référence orpheline** (`ERR-xxx` cité sans entrée correspondante). `fetch-depth: 0` posé dans le workflow, sinon `origin/main` est absent et le contrôle se désactiverait en silence.
 
 ## ERR-030 — Données personnelles de Chaima publiées sur un dépôt PUBLIC (2026-09-19)
 - **Ce qui s'est passé :** le commit `5be0a032` (2026-09-19, poussé) a inscrit dans `codex/A-DECIDER.md` **l'adresse complète du domicile** (rue, numéro, commune), **la date de naissance**, l'âge, les intitulés et années de formation, et la date de fin des droits au chômage. **Vérifié le 2026-09-19 via l'API GitHub : `chaima0007/TEST` est `"private": false`, `"visibility": "public"`.** Ces données étaient lisibles par n'importe qui. *(Les valeurs ne sont pas recopiées ici : consigner l'incident ne doit pas le reproduire — cf. §10.)*
@@ -276,6 +319,7 @@ liste de ce qui recommencera.
 - **Correctif (APPLIQUÉ le 2026-09-19) :** les trois passages caviardés dans `codex/A-DECIDER.md` — région et tranche d'âge conservées (les faits décisionnels), adresse, date de naissance et intitulés de formation retirés. Le contenu complet reste dans le CV sur Drive, privé.
 - **⚠️ NON CORRIGÉ — RESTE DANS L'HISTORIQUE GIT :** le caviardage n'efface pas le commit `5be0a032`. Les données restent lisibles via l'historique de la branche. **Deux voies, toutes deux à trancher par Chaima (§10) :** (a) passer le dépôt en **privé** — immédiat, et conforme à sa propre règle « GitHub privé si sensible » ; (b) réécrire l'historique de la branche (force-push), ce qui casse toute copie existante et reste imparfait tant que GitHub n'a pas purgé son cache. **Recommandation PROPOSÉE : (a).** Le dépôt n'a ni étoile ni fork, et rien n'y justifie la visibilité publique.
 - **Prévention proposée, NON APPLIQUÉE :** règle explicite dans le protocole — *aucune donnée identifiant une personne physique (adresse, date de naissance, situation sociale, coordonnées) n'entre dans un fichier versionné ; seul le **fait décisionnel dérivé** y entre.* Et un contrôle ajouté au rituel §5, cherchant dates de naissance et adresses dans les fichiers suivis. **EN ATTENTE DE GO.**
+- **✅ GO DE CHAIMA — APPLIQUÉ le 2026-09-20 (volet détection) :** `scripts/verifier-registres.sh` cherche dates de naissance et adresses dans les fichiers suivis, et **bloque la CI**. **⚠️ Le volet historique reste entier :** les données sont toujours dans le commit `5be0a032`. **Passer le dépôt en privé reste la décision de Chaima**, et reste recommandée.
 
 ## ERR-031 — Norme recopiée au Drive, alors que son auteur avait délibérément refusé de le faire (2026-09-19)
 - **Ce qui s'est passé :** en rangeant les branches étrangères, j'ai déposé
@@ -299,6 +343,7 @@ liste de ce qui recommencera.
   explicite, pas un oubli.
 - **Prévention proposée, NON APPLIQUÉE :** avant tout dépôt Drive, se demander « est-ce un **livrable**
   ou une **norme** ? » — un livrable se copie, une norme se référence. **EN ATTENTE DE GO.**
+- **✅ APPLIQUÉ le 2026-09-20 :** méta-leçon 21 inscrite — *un livrable se copie, une norme se référence*. Les deux fichiers de veille restants ne partiront pas au Drive.
 
 ---
 
