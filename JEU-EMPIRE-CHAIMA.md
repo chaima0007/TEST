@@ -30,7 +30,7 @@ seulement « faux ».
 
 ## Ce qu'il y a dedans
 
-- **12 mondes**, 212 commandes : navigation, permissions, comptes, processus et
+- **12 mondes**, 217 commandes : navigation, permissions, comptes, processus et
   services, paquets, réseau, texte, archivage et logs, disques et swap, console,
   SSH sur serveur distant (Ubuntu), pare-feu firewalld.
 - **12 boss** : une panne réaliste par monde, en quatre ou cinq commandes
@@ -85,7 +85,7 @@ deuxième série — l'objectif du jour s'adapte.
 ## Pour qui développe dessus
 
 - `npm run test:jeu` — logique de correction, révision espacée, contenu
-  (19 851 assertions, sans dépendance).
+  (20 142 assertions, sans dépendance).
 - `npm run test:jeu:parcours` — 30 jours d'usage simulé : arriéré de rappels,
   ancrage, ouverture des mondes et de l'examen.
 - `npm run test:jeu:ui` — 165 vérifications dans un vrai navigateur
