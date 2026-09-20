@@ -106,6 +106,8 @@ h2{font-size:17px;margin:26px 0 10px;color:var(--txt)}
 .world.done{border-color:var(--ok2)}
 .world.soon{opacity:.4;border-style:dashed;pointer-events:none}
 .lockmsg{font-size:12px;color:var(--dim);margin-top:5px}
+.warnbox{border:1px solid var(--err2);background:var(--errdim);border-radius:10px;padding:12px 14px;margin-top:12px;font-size:14px;line-height:1.5;color:var(--txt)}
+.warnbox b{color:var(--err)}
 
 /* ---------- jeu ---------- */
 .gamehead{display:flex;align-items:center;gap:10px;margin:4px 0 14px}
@@ -278,6 +280,7 @@ body.noanim *,body.noanim *::before,body.noanim *::after{animation:none!importan
 <section class="screen on" id="scHome">
   <h1>Empire Chaima — Terminal</h1>
   <p class="sub" id="homeSub">Entraînement Linux · Rocky 9</p>
+  <div class="warnbox" id="noStore" hidden><b>Cette tablette n'enregistre pas ta progression.</b> Navigation privée ou stockage bloqué : tout sera perdu en fermant l'onglet. Rouvre le fichier dans un onglet normal, ou exporte ta progression avant de fermer (Réglages → Exporter).</div>
 
   <button class="btn primary" id="btnPlay">▸ Jouer</button>
   <div id="resumeLine" class="lockmsg" style="text-align:center;margin-top:8px"></div>
@@ -4677,6 +4680,9 @@ var S={xp:0, prog:{}, streak:0, best:0, last:null, days:0, log:[], boss:{}, exam
 
 function $(id){ return document.getElementById(id); }
 function save(){ try{ localStorage.setItem(KEY, JSON.stringify(S)); }catch(e){} }
+function storageOk(){
+  try{ localStorage.setItem(KEY+"-t","1"); localStorage.removeItem(KEY+"-t"); return true; }catch(e){ return false; }
+}
 function load(){
   try{
     var raw=localStorage.getItem(KEY);
@@ -5489,6 +5495,7 @@ function doImport(file){
 /* ---------- démarrage ---------- */
 function init(){
   load();
+  if(!storageOk()) $("noStore").hidden=false;
   document.body.classList.toggle("noanim", !!S.noanim);
   renderHud(0,S.xp);
   renderHome();

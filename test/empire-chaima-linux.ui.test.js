@@ -467,6 +467,41 @@ const ok = (c, l) => { if (c) pass++; else { fail++; errs.push(l); } };
     await ctx3.close();
   }
 
+  /* --- stockage refusé : le jeu doit le dire au lieu de perdre la progression en silence.
+     Cas réel : le fichier ouvert dans un onglet de navigation privée sur la tablette. --- */
+  {
+    const ctx = await browser.newContext({ viewport: { width: 412, height: 820 } });
+    const q = await ctx.newPage();
+    const soucis = [];
+    q.on("pageerror", e => soucis.push(e.message));
+    await q.addInitScript(() => {
+      Object.defineProperty(window, "localStorage", {
+        configurable: true, get() { throw new Error("stockage bloqu\u00e9"); }
+      });
+    });
+    await q.goto(FILE);
+    await q.waitForTimeout(200);
+    ok(soucis.length === 0, "sans stockage, la page se charge sans erreur JavaScript : " + soucis.join(" | "));
+    ok(await q.locator("#noStore").isVisible(), "sans stockage, l'avertissement est affich\u00e9 d\u00e8s l'accueil");
+    const texte = await q.locator("#noStore").innerText();
+    ok(/export/i.test(texte), "l'avertissement dit quoi faire (exporter)");
+    await q.click("#btnPlay");
+    ok(await q.locator("#scPlay").isVisible(), "sans stockage, on peut quand m\u00eame jouer");
+    await q.click("#btnBack");
+    ok(soucis.length === 0, "une s\u00e9rie sans stockage ne d\u00e9clenche aucune erreur : " + soucis.join(" | "));
+    await ctx.close();
+  }
+
+  /* --- cas normal : pas d'avertissement intempestif --- */
+  {
+    const ctx = await browser.newContext({ viewport: { width: 412, height: 820 } });
+    const q = await ctx.newPage();
+    await q.goto(FILE);
+    await q.waitForTimeout(150);
+    ok(await q.locator("#noStore").isHidden(), "quand le stockage marche, aucun avertissement n'appara\u00eet");
+    await ctx.close();
+  }
+
   await browser.close();
   console.log(`${pass} vérifications passées, ${fail} échec(s).`);
   if (fail) { [...new Set(errs)].forEach(e => console.log("  ✕ " + e)); process.exit(1); }
