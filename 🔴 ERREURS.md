@@ -221,6 +221,29 @@
 - **⚠️ NON CORRIGÉ — RESTE DANS L'HISTORIQUE GIT :** le caviardage n'efface pas le commit `5be0a032`. Les données restent lisibles via l'historique de la branche. **Deux voies, toutes deux à trancher par Chaima (§10) :** (a) passer le dépôt en **privé** — immédiat, et conforme à sa propre règle « GitHub privé si sensible » ; (b) réécrire l'historique de la branche (force-push), ce qui casse toute copie existante et reste imparfait tant que GitHub n'a pas purgé son cache. **Recommandation PROPOSÉE : (a).** Le dépôt n'a ni étoile ni fork, et rien n'y justifie la visibilité publique.
 - **Prévention proposée, NON APPLIQUÉE :** règle explicite dans le protocole — *aucune donnée identifiant une personne physique (adresse, date de naissance, situation sociale, coordonnées) n'entre dans un fichier versionné ; seul le **fait décisionnel dérivé** y entre.* Et un contrôle ajouté au rituel §5, cherchant dates de naissance et adresses dans les fichiers suivis. **EN ATTENTE DE GO.**
 
+## ERR-031 — Norme recopiée au Drive, alors que son auteur avait délibérément refusé de le faire (2026-09-19)
+- **Ce qui s'est passé :** en rangeant les branches étrangères, j'ai déposé
+  `veille/CHARTE-CONSOLIDEE-2026-09-11.md` dans le Drive (« Veille & Opportunités »). Quelques minutes plus
+  tard, en lisant le `veille/JOURNAL.md` de la même branche, j'ai trouvé ceci, écrit le 2026-09-11 par
+  l'auteur de la charte : *« je n'ai PAS recopié la charte consolidée au Drive, précisément pour ne pas
+  recréer la divergence d'E-18. Le Drive reçoit les dossiers ; les normes vivent dans le dépôt, à un seul
+  endroit. »* J'ai fait exactement ce qu'une décision explicite, datée et motivée avait écarté.
+- **Sévérité : IMPORTANT** — §9 angle Humain/Exécution. Une **norme** à deux endroits diverge ; c'est la
+  famille d'ERR-023 (« corrigé à deux endroits sur trois ») et de la fiche Caelum E-18.
+- **Cause racine :** j'ai appliqué une règle générale (« sauvegarde en plusieurs emplacements ») à un objet
+  qui en était explicitement exclu. La règle de sauvegarde vise les **livrables et les dossiers** ; une
+  norme, elle, doit avoir **une seule source**. Je n'ai pas distingué les deux, et je n'avais pas lu le
+  journal — qui se trouvait dans la même branche, deux fichiers plus loin.
+- **Correctif (APPLIQUÉ le 2026-09-19) :** le document Drive est **renommé** « COPIE QUI NE FAIT PAS FOI,
+  l'original vit dans le dépôt ». L'outil Drive disponible ici ne permet de modifier que le titre, pas le
+  corps ; et supprimer est une décision de Chaima (§10). Le titre porte donc l'avertissement.
+- **Conséquence pour le rangement :** les deux fichiers de veille restants
+  (`CHARTE-CHAINE-VEILLE.md`, historique, et `veille/JOURNAL.md`) **ne partiront PAS au Drive**. Leur
+  destination correcte est le **dépôt Caelum** (`keywordmoneymaker`), où vit la chaîne de veille. Décision
+  explicite, pas un oubli.
+- **Prévention proposée, NON APPLIQUÉE :** avant tout dépôt Drive, se demander « est-ce un **livrable**
+  ou une **norme** ? » — un livrable se copie, une norme se référence. **EN ATTENTE DE GO.**
+
 ---
 
 ### Motifs récurrents (méta-leçons)
@@ -243,4 +266,5 @@
 17. **`git add -A` ne regarde pas ce qu'il ajoute** — après tout `stash pop` ou tout merge, vérifier `git grep '^<<<<<<< '` AVANT de committer ; un arbre « propre » au sens de `git status` peut contenir des marqueurs de conflit (ERR-027).
 18. **« APPLIQUÉ » sans SHA sur `main` est une intention, pas un fait** — un correctif qui vit sur une branche non fusionnée est absent du code qui tourne, mais présent dans le registre que tout le monde croit (ERR-028).
 19. **Une fusion en union protège du conflit, pas de la disparition** — après tout merge sur un registre, recompter les entrées et traquer les références orphelines ; un fichier qui a silencieusement rétréci passe `git status`, la CI et la relecture (ERR-029).
+21. **Un livrable se copie, une norme se référence** — la règle « sauvegarde en plusieurs emplacements » vise les dossiers et les livrables ; dupliquer une **norme** crée une divergence. Et avant de ranger un fichier, lire le **journal de sa propre branche** : la décision a peut-être déjà été prise, et motivée (ERR-031).
 20. **Un dépôt public est une publication, pas un carnet** — ne jamais recopier une source personnelle dans un fichier versionné : en extraire le seul **fait décisionnel** qui sert. Un `.gitignore` protège un fichier qu'on n'ajoute pas, jamais un fichier qu'on doit committer (ERR-030, récidive d'ERR-015).

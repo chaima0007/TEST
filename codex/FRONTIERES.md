@@ -118,11 +118,36 @@ fonctionnel réel, et le découper casserait l'application.
 routage, apprentissage, audits, continuité, corpus, délibérations dont statut légal et
 encaissement). Un dossier Drive « ATLAS — IA locale (Empire Chaima) » existe déjà.
 
-### Les 4 branches Type 3 restantes — documents, pas dépôts
-`wizardly-franklin` (1 rapport d'heures Caelum + La Loi Avec Moi) · `adoring-albattani`
-(3 chartes de veille) · `chaima-patent-audit` (audit brevets, transverse) ·
-`libre-accomplis-system` (`docs/libre-et-accomplis/`). Destination : le dossier Drive du projet
-concerné. Aucun dépôt à créer.
+### Type 3 — RANGÉ le 2026-09-19 (ce qui ne dépendait de personne d'autre)
+
+| Document | Origine | Destination Drive | État |
+|---|---|---|---|
+| Audit PI / brevetabilité CompeteIQ | `chaima-patent-audit` | « Brevetabilité de nos projets » | ✅ déposé |
+| Charte consolidée — chaîne veille | `adoring-albattani` | « Veille & Opportunités » | ⚠️ déposé **puis marqué « ne fait pas foi »** — voir ERR-031 |
+| Calcul des 29 h réelles (Caelum + LLAM) | `wizardly-franklin` | « COMPILATION & SYNOPSIS » | ✅ déposé |
+
+**Ne partiront PAS au Drive — décision explicite, pas un oubli (ERR-031) :**
+`veille/CHARTE-CHAINE-VEILLE.md` (historique, explicitement remplacé par la charte consolidée)
+et `veille/JOURNAL.md`. Ce sont des **normes et un journal de travail** de la chaîne de veille :
+leur place est le dépôt **Caelum** (`keywordmoneymaker`), à un seul endroit. Une norme dupliquée
+diverge — c'est la faute même qu'ERR-031 consigne.
+
+**Reste chez lui :** `reports/2026-07-17-21h34-audit-livraison-competeiq.md`
+(branche `chaima-patent-audit`) parle de **CompeteIQ**, qui est le projet de ce dépôt. Il est
+déjà à sa place.
+
+**`libre-accomplis-system` requalifié :** ses 28 fichiers ne sont pas des documents mais un
+**projet complet** — agents Python et Node, tests, pipeline CI, scripts, traductions. Il lui faut
+un dépôt : **`libre-accomplis`** (16ᵉ).
+
+### 🔎 DEUX FAITS ÉTABLIS EN RANGEANT — la carte du §3 se corrige
+- **La Loi Avec Moi a son dépôt : `chaima0007/droit-citoyen-app`** (source : rapport du
+  2026-09-16, lu ce jour). La carte le marquait NON VÉRIFIÉ.
+- **Le refus `403` de création de dépôt était déjà documenté le 2026-09-11**, dans la charte de
+  veille (§3.3) : *« caelum-coffre n'existe pas encore (droit de création refusé à l'intégration,
+  403) »*. J'ai buté huit jours plus tard sur le même mur, faute d'avoir pu lire une réponse
+  rangée sur une branche étrangère. **C'est l'argument le plus concret de tout ce fichier :** un
+  document rangé ailleurs ne coûte pas de la propreté, il coûte du temps et des redécouvertes.
 
 ### ⛔ BLOCAGE CONSTATÉ le 2026-09-19 — création de dépôts impossible depuis une session d'agent
 `POST https://api.github.com/user/repos` → **`403 Resource not accessible by integration`**.
