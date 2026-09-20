@@ -78,7 +78,8 @@ const ok = (c, l) => { if (c) pass++; else { fail++; errs.push(l); } };
     answered++;
     await page.waitForTimeout(400);
     if (await page.locator("#lvlOverlay.on").isVisible()) {   // palier : célébration bloquante
-      ok(await page.locator("#ovTitle").innerText() !== "", "la montée de niveau est annoncée");
+      ok(await page.locator("#ovTitle").innerText() !== "", "le palier est annoncé");
+      await page.waitForTimeout(450);
       await page.click("#ovClose");
       await page.waitForTimeout(120);
     }
@@ -86,7 +87,7 @@ const ok = (c, l) => { if (c) pass++; else { fail++; errs.push(l); } };
     await page.waitForTimeout(60);
   }
   ok(answered >= 8, "toutes les questions de la série ont été traitées (" + answered + ")");
-  if (await page.locator("#lvlOverlay.on").isVisible()) await page.click("#ovClose");
+  if (await page.locator("#lvlOverlay.on").isVisible()) { await page.waitForTimeout(450); await page.click("#ovClose"); }
   ok(await page.locator("#scRecap").isVisible(), "l'écran de récapitulatif s'affiche");
   const recap = await page.locator("#scRecap").innerText();
   ok(/\d+\/\d+/.test(recap), "le récapitulatif affiche un score");
@@ -105,7 +106,7 @@ const ok = (c, l) => { if (c) pass++; else { fail++; errs.push(l); } };
   ok(await page.evaluate(() => S.streak) === 1, "le streak quotidien démarre à 1");
 
   /* --- clavier libre + dictée --- */
-  if (await page.locator("#lvlOverlay.on").isVisible()) await page.click("#ovClose");
+  if (await page.locator("#lvlOverlay.on").isVisible()) { await page.waitForTimeout(450); await page.click("#ovClose"); }
   await page.click("#btnSettings");
   await page.click("#btnMode");
   ok(await page.evaluate(() => S.mode) === "progressif", "le mode de saisie passe en progressif");
@@ -175,12 +176,12 @@ const ok = (c, l) => { if (c) pass++; else { fail++; errs.push(l); } };
     if (!(await page.locator("#feedbackZone .feedback.ok").isVisible())) await page.click("#btnCheck");
     ok(await page.locator(".feedback.ok").isVisible(), "étape de boss validée");
     await page.waitForTimeout(400);
-    if (await page.locator("#lvlOverlay.on").isVisible()) await page.click("#ovClose");
+    if (await page.locator("#lvlOverlay.on").isVisible()) { await page.waitForTimeout(450); await page.click("#ovClose"); }
     await page.click("#btnNext");
     await page.waitForTimeout(80);
   }
   await page.waitForTimeout(500);
-  if (await page.locator("#lvlOverlay.on").isVisible()) await page.click("#ovClose");
+  if (await page.locator("#lvlOverlay.on").isVisible()) { await page.waitForTimeout(450); await page.click("#ovClose"); }
   ok(await page.locator("#scRecap").isVisible(), "le boss se termine sur un récapitulatif");
   ok((await page.locator("#recapTitle").innerText()).includes("Boss"), "le récapitulatif annonce la victoire");
   ok(await page.evaluate(() => !!(S.boss && S.boss[1] && S.boss[1].done)), "la victoire sur le boss est enregistrée");

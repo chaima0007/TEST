@@ -194,6 +194,7 @@ h2{font-size:17px;margin:26px 0 10px;color:var(--txt)}
 .overlay{position:fixed;inset:0;z-index:80;background:rgba(8,12,20,.88);display:none;
   align-items:center;justify-content:center;padding:24px}
 .overlay.on{display:flex;animation:fadein .2s ease both}
+.overlay.arming .btn{opacity:.55}
 .lvlcard{background:var(--panel);border:1px solid var(--gold2);border-radius:18px;padding:28px 24px;
   text-align:center;max-width:340px;width:100%;animation:lvlin .55s cubic-bezier(.2,1.3,.4,1) both}
 @keyframes lvlin{from{opacity:0;transform:scale(.7)}to{opacity:1;transform:none}}
@@ -353,7 +354,7 @@ body.noanim *,body.noanim *::before,body.noanim *::after{animation:none!importan
     </div>
     <div class="lockmsg" id="recapMsg"></div>
   </div>
-  <div style="margin-top:14px">
+  <div style="margin-top:14px;display:flex;flex-direction:column;gap:10px">
     <button class="btn primary" id="btnAgain">Continuer l'entraînement</button>
     <button class="btn ghost" id="btnHome">Retour aux mondes</button>
   </div>
@@ -4785,13 +4786,15 @@ function celebrateSoon(title, sub, big){
 function flushCeleb(){
   if(!PENDING_CELEB) return;
   var c=PENDING_CELEB; PENDING_CELEB=null;
-  setTimeout(function(){ celebrate(c.t, c.s, c.b); }, 350);
+  setTimeout(function(){ celebrate(c.t, c.s, c.b); }, 120);
 }
 function celebrate(title, sub, big){
   $("ovLvl").textContent=big;
   $("ovTitle").textContent=title;
   $("ovSub").textContent=sub;
-  $("lvlOverlay").classList.add("on");
+  var ov=$("lvlOverlay");
+  ov.classList.add("on","arming");
+  setTimeout(function(){ ov.classList.remove("arming"); }, 400);
   $("lvlBadge").classList.remove("pop"); void $("lvlBadge").offsetWidth; $("lvlBadge").classList.add("pop");
   confetti();
 }
@@ -5243,8 +5246,22 @@ var RECAP_ACTION=null;
 function resetRecapAction(){
   RECAP_ACTION=null;
   $("btnAgain").textContent="Continuer l'entraînement";
+  $("btnAgain").className="btn primary";
+  $("btnAgain").style.order="0";
   $("btnHome").textContent="Retour aux mondes";
+  $("btnHome").className="btn ghost";
+  $("btnHome").style.order="1";
   flushCeleb();
+}
+/* Objectif du jour atteint : quitter devient l'action recommandée, sans que les
+   deux boutons échangent ce qu'ils font. */
+function markDayDone(){
+  $("btnHome").textContent="Terminé pour aujourd'hui ✓";
+  $("btnHome").className="btn primary";
+  $("btnHome").style.order="0";
+  $("btnAgain").textContent="Une série de plus";
+  $("btnAgain").className="btn ghost";
+  $("btnAgain").style.order="1";
 }
 function endSession(){
   stopTimer();
@@ -5275,7 +5292,7 @@ function endSession(){
     S["unlocked"+wo.n]=true; save();
     (function(wo){ setTimeout(function(){
       celebrate((wo.bonus? "Monde bonus débloqué" : "Monde "+wo.n+" débloqué"), wo.name, wo.ico);
-    }, 500); })(wo);
+    }, 150); })(wo);
   }
   renderHome();
 }
@@ -5298,7 +5315,7 @@ function endBoss(){
     ? "Toute la chaîne de commandes est passée du premier coup."
     : "Les étapes ratées sont enregistrées dans ta fiche de points faibles.";
   show("scRecap");
-  setTimeout(function(){ celebrate("Boss vaincu", SES.boss.name+" · "+score, "⚔️"); }, 350);
+  setTimeout(function(){ celebrate("Boss vaincu", SES.boss.name+" · "+score, "⚔️"); }, 120);
   renderHome();
 }
 
@@ -5341,7 +5358,7 @@ function endExam(){
   $("recapMsg").textContent=msg;
   save();
   show("scRecap");
-  if(score>=0.8) setTimeout(function(){ celebrate("Niveau examen", SES.first+"/"+n+" en "+m+"m"+(sec<10?"0":"")+sec, "🎓"); }, 350);
+  if(score>=0.8) setTimeout(function(){ celebrate("Niveau examen", SES.first+"/"+n+" en "+m+"m"+(sec<10?"0":"")+sec, "🎓"); }, 120);
   renderHome();
 }
 function announced(n){ return !!S["unlocked"+n]; }
@@ -5388,14 +5405,9 @@ function renderWeak(){
   }
 }
 function exportReport(){
-  var txt=buildReport(S, Date.now());
-  var blob=new Blob([txt],{type:"text/plain;charset=utf-8"});
-  var url=URL.createObjectURL(blob);
-  var a=document.createElement("a");
-  a.href=url; a.download="empire-chaima-points-faibles-"+dayKey()+".txt";
-  document.body.appendChild(a); a.click();
-  setTimeout(function(){ URL.revokeObjectURL(url); a.remove(); },400);
-  toast("Fiche exportée en texte.");
+  saveFile("empire-chaima-points-faibles-"+dayKey()+".txt",
+           buildReport(S, Date.now()), "text/plain;charset=utf-8",
+           "Fiche exportée en texte.");
 }
 
 /* ---------- réglages, export, import ---------- */
@@ -5414,15 +5426,37 @@ function renderSettings(){
   $("lenDesc").textContent=S.len+" questions par série";
   document.body.classList.toggle("noanim", !!S.noanim);
 }
+/* Enregistre un fichier. En local, un lien de téléchargement suffit ; dans une
+   page publiée, les téléchargements directs sont bloqués et c'est la capacité
+   « downloads » qui prend le relais. */
+function saveFile(nom, contenu, type, okMsg){
+  function lienLocal(){
+    try{
+      var blob=new Blob([contenu],{type:type});
+      var url=URL.createObjectURL(blob);
+      var a=document.createElement("a");
+      a.href=url; a.download=nom;
+      document.body.appendChild(a); a.click();
+      setTimeout(function(){ URL.revokeObjectURL(url); a.remove(); },400);
+      toast(okMsg);
+    }catch(e){ toast("Téléchargement impossible sur cet appareil."); }
+  }
+  if(typeof window!=="undefined" && window.claude && typeof window.claude.use==="function"){
+    try{
+      window.claude.use("downloads").then(function(dl){
+        if(!dl){ lienLocal(); return; }
+        dl.save({filename:nom, data:contenu}).then(function(){ toast(okMsg); },
+          function(){ toast("Enregistrement refusé."); });
+      }, function(){ lienLocal(); });
+      return;
+    }catch(e){}
+  }
+  lienLocal();
+}
 function doExport(){
-  var data=JSON.stringify(S,null,2);
-  var blob=new Blob([data],{type:"application/json"});
-  var url=URL.createObjectURL(blob);
-  var a=document.createElement("a");
-  a.href=url; a.download="empire-chaima-progression-"+dayKey()+".json";
-  document.body.appendChild(a); a.click();
-  setTimeout(function(){ URL.revokeObjectURL(url); a.remove(); },400);
-  toast("Fichier de progression téléchargé.");
+  saveFile("empire-chaima-progression-"+dayKey()+".json",
+           JSON.stringify(S,null,2), "application/json",
+           "Fichier de progression enregistré.");
 }
 function doImport(file){
   var r=new FileReader();
@@ -5456,15 +5490,16 @@ function init(){
   $("btnNext").onclick=doNext;
   $("btnAgain").onclick=function(){
     if(RECAP_ACTION==="weak"){ resetRecapAction(); startWeak(); return; }
-    if(RECAP_ACTION==="stop"){ resetRecapAction(); SES=null; show("scHome"); renderHome(); return; }
-    startDaily();
+    resetRecapAction(); startDaily();
   };
   $("btnHome").onclick=function(){
-    if(RECAP_ACTION==="stop"){ resetRecapAction(); startDaily(); return; }
-    SES=null; show("scHome"); renderHome();
+    resetRecapAction(); SES=null; show("scHome"); renderHome();
   };
-  $("ovClose").onclick=function(){ $("lvlOverlay").classList.remove("on"); };
-  $("lvlOverlay").onclick=function(e){ if(e.target===$("lvlOverlay")) $("lvlOverlay").classList.remove("on"); };
+  $("ovClose").onclick=function(){ if(!$("lvlOverlay").classList.contains("arming")) $("lvlOverlay").classList.remove("on"); };
+  $("lvlOverlay").onclick=function(e){
+    if($("lvlOverlay").classList.contains("arming")) return;
+    if(e.target===$("lvlOverlay")) $("lvlOverlay").classList.remove("on");
+  };
 
   $("btnWeak").onclick=function(){ renderWeak(); show("scWeak"); };
   $("btnExam").onclick=function(){ startExam(); };
