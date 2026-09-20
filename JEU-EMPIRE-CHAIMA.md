@@ -17,8 +17,12 @@ menu ⋮ → « Ajouter à l'écran d'accueil ».
 
 Le bouton **Jouer** lance la série du jour : quelques rappels arrivés à échéance,
 tous mondes confondus, plus des commandes nouvelles. Huit questions, une dizaine
-de minutes. Quand l'objectif du jour est atteint, le récapitulatif propose
-« Terminé pour aujourd'hui » — c'est fait, tu peux poser la tablette.
+de minutes. L'accueil annonce ce que coûte la journée avant que tu commences
+(« La journée : 16 questions, environ 11 min »), puis où tu en es
+(« 7 / 16 aujourd'hui »). L'objectif est fixé à la première question et ne bouge
+plus. Quand il est atteint, le bouton cesse de pousser à rejouer et le
+récapitulatif propose « Terminé pour aujourd'hui » — c'est fait, tu peux poser
+la tablette.
 
 Tu composes chaque commande en tapant sur des blocs. Un bloc déjà posé se retire
 en tapant dessus. En cas d'erreur, le jeu explique le concept en jeu, pas
@@ -30,7 +34,10 @@ seulement « faux ».
   services, paquets, réseau, texte, archivage et logs, disques et swap, console,
   SSH sur serveur distant (Ubuntu), pare-feu firewalld.
 - **12 boss** : une panne réaliste par monde, en quatre ou cinq commandes
-  enchaînées. Ils s'ouvrent à 70 % du monde.
+  enchaînées. Ils s'ouvrent à 70 % du monde et le jeu te prévient quand l'un
+  d'eux devient disponible. Le gros gain est pour la première victoire et pour
+  le premier sans-faute ; les rejeux restent utiles mais ne rapportent plus une
+  journée entière.
 - **Révision espacée** : une commande ratée revient tout de suite, une commande
   sue revient de plus en plus tard, puis passe en entretien toutes les deux
   semaines.
@@ -38,7 +45,9 @@ seulement « faux ».
   exportable en texte, avec un bouton pour t'entraîner uniquement là-dessus.
 - **Simulation d'examen** : 12 questions chronométrées, sans indice, une seule
   tentative. S'ouvre à 60 commandes réussies. Les dix derniers scores sont
-  conservés pour voir la courbe.
+  conservés pour voir la courbe. Un examen raté ne coûte jamais d'XP : les
+  points gagnés question par question restent acquis, le score n'ajoute qu'un
+  bonus (à partir de 60 %, puis de 80 %). Tu ne risques rien à le tenter tôt.
 
 ## Réglages
 
@@ -79,8 +88,9 @@ deuxième série — l'objectif du jour s'adapte.
   (19 841 assertions, sans dépendance).
 - `npm run test:jeu:parcours` — 30 jours d'usage simulé : arriéré de rappels,
   ancrage, ouverture des mondes et de l'examen.
-- `npm run test:jeu:ui` — parcours complet dans un vrai navigateur (Playwright),
-  dont le retour du lendemain.
+- `npm run test:jeu:ui` — 165 vérifications dans un vrai navigateur
+  (Playwright) : parcours complet, retour du lendemain, export et import de la
+  sauvegarde, tablette sans stockage, barème d'examen et de boss.
 
 Tout le contenu vit dans les tableaux `EX` (exercices) et `BOSS` (boss) du bloc
 `CORE` du fichier HTML. Un exercice déclare sa solution en blocs, ses blocs
