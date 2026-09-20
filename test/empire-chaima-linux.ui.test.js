@@ -502,6 +502,122 @@ const ok = (c, l) => { if (c) pass++; else { fail++; errs.push(l); } };
     await ctx.close();
   }
 
+  /* --- économie : le boss, l'examen et l'objectif du jour --- */
+  {
+    const ctx = await browser.newContext({ viewport: { width: 412, height: 820 } });
+    const q = await ctx.newPage();
+    const soucis = [];
+    q.on("pageerror", e => soucis.push(e.message));
+    await q.goto(FILE);
+    await q.waitForTimeout(150);
+
+    // Le boss paie plein tarif une fois, puis cesse d'être une machine à XP.
+    const boss = await q.evaluate(() => {
+      const jouer = (justes) => {
+        const n = BOSS[0].steps.length;
+        const avant = S.xp;
+        SES = { queue: new Array(n), first: justes, done: n, world: 1, boss: BOSS[0], xp: justes * 12, marks: {} };
+        endBoss();
+        return S.xp - avant;
+      };
+      S.boss = {}; S.xp = 1000; S.seen = {};
+      const premiere = jouer(BOSS[0].steps.length);
+      const rejeu1 = jouer(BOSS[0].steps.length);
+      const rejeu2 = jouer(BOSS[0].steps.length);
+      S.boss = {}; S.xp = 1000;
+      const imparfaite = jouer(BOSS[0].steps.length - 1);
+      const sansFauteApres = jouer(BOSS[0].steps.length);
+      return { premiere, rejeu1, rejeu2, imparfaite, sansFauteApres };
+    });
+    ok(boss.premiere === 200, "la première victoire sur un boss vaut son plein tarif (" + boss.premiere + " XP)");
+    ok(boss.rejeu1 === 25 && boss.rejeu2 === 25, "un rejeu de boss ne rapporte plus une journée d'XP (" + boss.rejeu1 + " XP)");
+    ok(boss.imparfaite < boss.premiere, "une victoire imparfaite rapporte moins (" + boss.imparfaite + " XP)");
+    ok(boss.sansFauteApres === 80, "le premier sans-faute après une victoire imparfaite est récompensé (" + boss.sansFauteApres + " XP)");
+
+    // L'examen n'enlève jamais d'XP déjà gagnés.
+    const exam = await q.evaluate(() => {
+      const passer = (justes) => {
+        const avant = S.xp;
+        SES = { queue: new Array(12), first: justes, done: 12, start: Date.now() - 300000,
+                exam: true, xp: justes * 12, marks: {}, missed: [] };
+        endExam();
+        return { avant, apres: S.xp };
+      };
+      S.xp = 2000; S.exams = [];
+      return { faible: passer(7), moyen: passer(8), fort: passer(10), parfait: passer(12) };
+    });
+    ok(exam.faible.apres >= exam.faible.avant, "un examen raté ne fait jamais reculer le compteur d'XP");
+    ok(exam.moyen.apres - exam.moyen.avant === 60, "un examen entre 60 et 79 % ajoute le palier intermédiaire");
+    ok(exam.fort.apres - exam.fort.avant === 180, "un examen à 80 % et plus ajoute le grand palier");
+    ok(exam.parfait.apres - exam.parfait.avant === 180, "un examen parfait aussi, et rien n'est retiré");
+
+    // L'objectif du jour est figé au réveil : il ne bouge plus en cours de séance.
+    const objectif = await q.evaluate(() => {
+      S.prog = {}; S.dayKey = null; S.dayTarget = 0; S.dayCount = 0; S.len = 8;
+      bumpDay();
+      const auDebut = dayGoal();
+      const faux = {};
+      EX.slice(0, 40).forEach(e => { faux[e.id] = { b: 1, due: Date.now() - 1000, n: 1, ok: 1, ko: 0, last: Date.now() - 86400000 }; });
+      S.prog = faux;
+      return { auDebut, plusTard: dayGoal() };
+    });
+    ok(objectif.auDebut === objectif.plusTard,
+       "l'objectif du jour ne change pas pendant la journée (" + objectif.auDebut + " puis " + objectif.plusTard + ")");
+    ok(objectif.auDebut <= 20, "l'objectif du jour reste tenable sur une tablette (" + objectif.auDebut + " questions)");
+
+    // L'accueil dit où elle en est, avant et après l'objectif.
+    await q.evaluate(() => { S.prog = {}; S.dayKey = dayKey(); S.dayTarget = 16; S.dayCount = 7; renderHome(); });
+    const enCours = await q.locator("#resumeLine").innerText();
+    ok(/7\s*\/\s*16 aujourd'hui/.test(enCours), "l'accueil affiche l'avancement du jour : " + enCours.split("\n")[0]);
+    ok((await q.locator("#btnPlay").innerText()).indexOf("Jouer") >= 0, "tant que l'objectif n'est pas atteint, le bouton reste « Jouer »");
+    await q.evaluate(() => { S.dayCount = 16; renderHome(); });
+    ok((await q.locator("#btnPlay").innerText()).indexOf("Objectif du jour atteint") >= 0,
+       "objectif atteint : l'accueil ne pousse plus à rejouer");
+    ok(await q.locator("#btnPlay").isEnabled(), "elle peut quand même rejouer si elle le veut");
+
+    // Un boss disponible se voit depuis l'accueil.
+    const bossVu = await q.evaluate(() => {
+      S.prog = {}; S.boss = {}; S.dayCount = 0; S.dayTarget = 0; S.dayKey = null;
+      EX.filter(e => e.w === 1).forEach(e => { S.prog[e.id] = { b: 2, due: Date.now() + 86400000, n: 2, ok: 2, ko: 0, last: Date.now() }; });
+      renderHome();
+      return document.getElementById("resumeLine").innerText;
+    });
+    ok(/Boss disponible/.test(bossVu), "un boss ouvert et non vaincu est annoncé sur l'accueil : " + bossVu.replace(/\n/g, " · "));
+
+    // Les annonces ne se répètent pas à chaque réouverture du fichier.
+    await q.evaluate(() => { S.seen = {}; markAnnounced("monde2"); save(); });
+    await q.reload();
+    await q.waitForTimeout(150);
+    ok(await q.evaluate(() => announced(2)), "un monde déjà annoncé le reste après rechargement");
+    ok(soucis.length === 0, "aucune erreur JavaScript pendant ces vérifications : " + soucis.join(" | "));
+    await ctx.close();
+  }
+
+  /* --- la montée de niveau doit être lisible, pas cachée sous le pouce --- */
+  {
+    const ctx = await browser.newContext({ viewport: { width: 412, height: 820 } });
+    const q = await ctx.newPage();
+    await q.goto(FILE);
+    await q.waitForTimeout(150);
+    await q.click("#btnPlay");
+    await q.waitForTimeout(200);
+    const pos = await q.evaluate(() => {
+      document.getElementById("btnNext").style.display = "";
+      toast("⬆ Niveau 3 — Exploratrice de l'arborescence", 4000, "lvl");
+      const t = document.getElementById("toast").getBoundingClientRect();
+      const n = document.getElementById("btnNext").getBoundingClientRect();
+      const st = getComputedStyle(document.getElementById("toast"));
+      const a = document.getElementById("actionRow").getBoundingClientRect();
+      const chev = (r) => t.bottom > r.top && t.top < r.bottom;
+      return { chevauche: chev(n) || chev(a), taille: parseFloat(st.fontSize),
+               dansEcran: t.top >= 0 && t.bottom <= window.innerHeight };
+    });
+    ok(!pos.chevauche, "le message de niveau ne recouvre aucun bouton sous le pouce");
+    ok(pos.dansEcran, "le message de niveau tient entièrement dans l'écran");
+    ok(pos.taille >= 16, "le message de niveau est lisible (" + pos.taille + "px)");
+    await ctx.close();
+  }
+
   await browser.close();
   console.log(`${pass} vérifications passées, ${fail} échec(s).`);
   if (fail) { [...new Set(errs)].forEach(e => console.log("  ✕ " + e)); process.exit(1); }

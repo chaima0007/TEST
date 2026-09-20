@@ -245,6 +245,10 @@ h2{font-size:17px;margin:26px 0 10px;color:var(--txt)}
   box-shadow:0 8px 26px rgba(0,0,0,.5);opacity:0;pointer-events:none;transition:opacity .25s ease,transform .25s ease;
   max-width:calc(100% - 32px);text-align:center}
 .toast.on{opacity:1;transform:translate(-50%,-6px)}
+/* La montée de niveau s'affichait à 22px du bas, c'est-à-dire SOUS le bouton
+   « Suivant », à l'endroit exact où le pouce se pose. */
+.toast.lvl{top:86px;bottom:auto;background:#1b2437;border:2px solid var(--gold);color:var(--txt);
+  font-size:16px;font-weight:700;padding:14px 20px}
 body.noanim *,body.noanim *::before,body.noanim *::after{animation:none!important;transition:none!important}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
@@ -4382,7 +4386,9 @@ var TITLES=["Novice du terminal","Apprentie du shell","Exploratrice de l'arbores
   "Gardienne des permissions","Gestionnaire de comptes","Dompteuse de processus",
   "Gestionnaire de paquets","Technicienne réseau","Chasseuse de logs","Maîtresse des disques",
   "Gardienne du pare-feu","Administratrice junior","Administratrice confirmée",
-  "Architecte système","Experte Rocky Linux","Impératrice du terminal"];
+  "Architecte système","Experte Rocky Linux","Référente Rocky et Ubuntu",
+  "Pilote de serveurs distants","Analyste des pannes","Ingénieure système",
+  "Formatrice du terminal","Vétérante de l'astreinte","Impératrice du terminal"];
 function xpTotalForLevel(n){
   var t=0;
   for(var i=1;i<n;i++) t+=60+30*(i-1);
@@ -4685,7 +4691,8 @@ function buildReport(state, now){
 /* ==================== APPLICATION ==================== */
 var KEY="empire-chaima-linux-v1";
 var S={xp:0, prog:{}, streak:0, best:0, last:null, days:0, log:[], boss:{}, exams:[], dayKey:null, dayCount:0,
-       mode:"blocs", free:false, noanim:false, len:8, examOn:true, lastWorld:1, seenIntro:false};
+       mode:"blocs", free:false, noanim:false, len:8, examOn:true, lastWorld:1, seenIntro:false,
+       dayTarget:0, seen:{}, firstAnchor:false};
 
 function $(id){ return document.getElementById(id); }
 function save(){ try{ localStorage.setItem(KEY, JSON.stringify(S)); }catch(e){} }
@@ -4700,11 +4707,18 @@ function load(){
     if(d && typeof d==="object"){
       for(var k in S) if(d[k]!==undefined && d[k]!==null) S[k]=d[k];
       if(typeof S.prog!=="object"||!S.prog) S.prog={};
+      if(typeof S.seen!=="object"||!S.seen) S.seen={};
+      /* reprise des anciennes sauvegardes : les déblocages étaient stockés
+         en clés libres, que ce chargement ne recopiait pas — d'où des
+         célébrations qui repartaient à chaque réouverture du fichier. */
+      for(var ok in d) if(/^unlocked\d+$/.test(ok)) S.seen["monde"+ok.slice(8)]=true;
     }
   }catch(e){}
 }
-function toast(msg, ms){
-  var t=$("toast"); t.innerHTML=msg; t.classList.add("on");
+function toast(msg, ms, cls){
+  var t=$("toast"); t.innerHTML=msg;
+  t.classList.toggle("lvl", cls==="lvl");
+  t.classList.add("on");
   clearTimeout(t._t); t._t=setTimeout(function(){ t.classList.remove("on"); }, ms||2600);
 }
 
@@ -4738,12 +4752,16 @@ function markPlayed(){
    Une séance doit pouvoir se terminer : sans point d'arrêt, on s'arrête
    toujours sur un abandon ou on déborde et on saute le lendemain. */
 function dayGoal(){
+  /* Figé à la première question de la journée : sinon l'objectif change sous
+     les pieds de la joueuse (24 au réveil, 16 en fin de séance). */
+  if(S.dayKey===dayKey() && S.dayTarget) return S.dayTarget;
   var due=dailyStock(S.prog, Date.now()).due.length;
-  return Math.min(24, Math.max(S.len*2, Math.min(due, 24)));
+  return Math.min(20, Math.max(S.len*2, Math.min(due, 20)));
 }
 function bumpDay(){
   var k=dayKey();
-  if(S.dayKey!==k){ S.dayKey=k; S.dayCount=0; }
+  if(S.dayKey!==k){ S.dayKey=k; S.dayCount=0; S.dayTarget=0; }
+  if(!S.dayTarget) S.dayTarget=dayGoal();
   S.dayCount++;
 }
 function dayDone(){ return S.dayKey===dayKey() && S.dayCount>=dayGoal(); }
@@ -4915,9 +4933,26 @@ function renderHome(){
   if(stock.due.length) bits.push("<b style=\"color:var(--txt)\">"+Math.min(stock.due.length, Math.max(1,Math.round(S.len*5/8)))+"</b> à revoir");
   if(stock.fresh.length) bits.push(stock.fresh.length+" nouvelles disponibles");
   if(!bits.length && stock.upkeep.length) bits.push(stock.upkeep.length+" à entretenir");
-  $("resumeLine").innerHTML = bits.length
+  var goal=dayGoal(), fait=(S.dayKey===dayKey()? S.dayCount : 0), fini=dayDone();
+  var bd=bossDisponible();
+  var detail = bits.length
     ? ("Série du jour : "+bits.join(" · ")+(nx? " · monde "+nx : ""))
     : (nx? ("Monde "+nx+" — "+WORLDS[nx-1].name) : "");
+  if(fini){
+    var demain=dailyStock(S.prog, Date.now()+DAY).due.length - stock.due.length;
+    $("btnPlay").innerHTML="Objectif du jour atteint ✓ — jouer quand même";
+    $("btnPlay").className="btn ghost";
+    $("resumeLine").innerHTML = "<b style=\"color:var(--ok)\">"+fait+" / "+goal+" aujourd'hui</b>"
+      + (demain>0? (" · demain : "+demain+" commande"+(demain>1?"s":"")+" revien"+(demain>1?"nent":"t")) : "")
+      + (bd? ("<br>⚔️ Boss disponible — "+bd.name) : "");
+  } else {
+    $("btnPlay").innerHTML="▸ Jouer";
+    $("btnPlay").className="btn primary";
+    var entete = fait
+      ? ("<b style=\"color:var(--txt)\">"+fait+" / "+goal+" aujourd'hui</b>")
+      : ("La journée : <b style=\"color:var(--txt)\">"+goal+" questions</b>, environ "+Math.max(5,Math.round(goal*0.7))+" min");
+    $("resumeLine").innerHTML = entete + "<br>" + (bd? ("⚔️ Boss disponible — "+bd.name+" · "+bd.steps.length+" étapes") : detail);
+  }
 }
 function nextWorld(){
   var i, w;
@@ -5187,7 +5222,8 @@ function onGood(ex, tokens){
   renderDots();
   if(lvlAfter>lvlBefore){
     $("lvlBadge").classList.remove("pop"); void $("lvlBadge").offsetWidth; $("lvlBadge").classList.add("pop");
-    toast("Niveau "+lvlAfter+" — "+levelInfo(S.xp).title);
+    toast("⬆ Niveau "+lvlAfter+" — "+levelInfo(S.xp).title, 4000, "lvl");
+    SES.lvlUp=lvlAfter;
   }
 }
 function onBad(ex, d){
@@ -5307,6 +5343,7 @@ function endSession(){
   else msg=SES.done+" commandes traitées, "+SES.first+" trouvées du premier coup. Les autres sont replacées en début de file et reviendront dès la prochaine série : c'est le fonctionnement prévu, pas un retard à rattraper.";
   var soon=dailyStock(S.prog, Date.now()+DAY).due.length - dailyStock(S.prog, Date.now()).due.length;
   if(soon>0) msg+=" Demain : "+soon+" commande"+(soon>1?"s":"")+" revien"+(soon>1?"nent":"t")+".";
+  if(SES.lvlUp) msg = "Niveau "+SES.lvlUp+" atteint — "+levelInfo(S.xp).title+". " + msg;
   $("recapMsg").textContent=msg;
   if(dayDone()) markDayDone();
   save();
@@ -5318,10 +5355,23 @@ function endSession(){
     if(isWorldUnlocked(cand.n,S.prog) && !announced(cand.n)){ wo=cand; break; }
   }
   if(wo){
-    S["unlocked"+wo.n]=true; save();
+    markAnnounced("monde"+wo.n); save();
     (function(wo){ setTimeout(function(){
       celebrate((wo.bonus? "Monde bonus débloqué" : "Monde "+wo.n+" débloqué"), wo.name, wo.ico);
     }, 150); })(wo);
+  } else if(SES && SES.mastered>0 && !S.firstAnchor){
+    /* Le premier ancrage, c'est le paiement de deux semaines de révision :
+       il mérite mieux qu'une ligne de texte dans la boîte de feedback. */
+    S.firstAnchor=true; save();
+    setTimeout(function(){ celebrate("Première commande ancrée", "Elle sort de la file de révision", "⚓"); }, 150);
+  } else {
+    var nb=bossANnoncer();
+    if(nb){
+      markAnnounced("boss"+nb.w); save();
+      (function(nb){ setTimeout(function(){
+        celebrate("Boss disponible", nb.name+" · "+nb.steps.length+" étapes", "⚔️");
+      }, 150); })(nb);
+    }
   }
   renderHome();
 }
@@ -5331,12 +5381,21 @@ function endBoss(){
   var n=SES.queue.length, score=SES.first+"/"+n;
   var perfect=SES.first===n;
   var prev=S.boss[SES.world];
-  var bonus= Math.round(120*SES.first/n) + (perfect? 80 : 0);
+  var dejaVaincu = !!(prev && prev.done);
+  var dejaSansFaute = !!(prev && prev.first===n);
+  var premiere = !dejaVaincu;
+  var sansFauteInedit = perfect && !dejaSansFaute;
+  /* Le boss est un événement : il paie plein tarif la première fois, et une
+     seconde fois le jour du premier sans-faute. Les rejeux suivants restent
+     utiles (les étapes comptent) mais ne rapportent plus une journée d'XP. */
+  var bonus = premiere ? (Math.round(120*SES.first/n) + (perfect? 80 : 0))
+            : (sansFauteInedit ? 80 : 25);
   var before=S.xp; S.xp+=bonus; SES.xp+=bonus;
   S.boss[SES.world]={done:true, best:(prev&&prev.done&&prev.first>SES.first)? prev.best:score, first:Math.max(SES.first,(prev&&prev.first)||0)};
   save(); renderHud(before,S.xp);
   $("recapScore").textContent=score;
-  $("recapTitle").textContent=perfect? "Boss vaincu sans faute" : "Boss vaincu";
+  $("recapTitle").textContent= premiere? (perfect? "Boss vaincu sans faute" : "Boss vaincu")
+                             : (sansFauteInedit? "Boss vaincu sans faute" : "Boss rejoué");
   $("recapXp").textContent="+"+SES.xp;
   $("recapMastered").textContent=n-SES.first;
   document.querySelector("#scRecap .stat:last-child .k").textContent="étapes ratées";
@@ -5344,7 +5403,9 @@ function endBoss(){
     ? "Toute la chaîne de commandes est passée du premier coup."
     : "Les étapes ratées sont enregistrées dans ta fiche de points faibles.";
   show("scRecap");
-  setTimeout(function(){ celebrate("Boss vaincu", SES.boss.name+" · "+score, "⚔️"); }, 120);
+  if(premiere || sansFauteInedit){
+    setTimeout(function(){ celebrate(sansFauteInedit&&!premiere? "Boss vaincu sans faute" : "Boss vaincu", SES.boss.name+" · "+score, "⚔️"); }, 120);
+  }
   renderHome();
 }
 
@@ -5352,11 +5413,13 @@ function endExam(){
   resetRecapAction();
   var n=SES.queue.length, secs=Math.round((Date.now()-SES.start)/1000);
   var score=n? SES.first/n : 0;
-  var palier = score>=0.8? 200 : (score>=0.6? 80 : 0);
-  var gained = SES.first*4 + palier;
+  /* Les XP gagnés question par question restent acquis : un compteur qui recule
+     est la pire chose qu'on puisse montrer à quelqu'un qui vient d'oser l'examen.
+     Le barème n'AJOUTE qu'un palier, jamais il ne retire. */
+  var palier = score>=0.8? 180 : (score>=0.6? 60 : 0);
   var beforeXp=S.xp;
-  S.xp = beforeXp - SES.xp + gained;   /* les XP par question sont remplacés par le barème d'examen */
-  SES.xp = gained;
+  S.xp = beforeXp + palier;
+  SES.xp += palier;
   renderHud(beforeXp, S.xp);
   if(!S.exams) S.exams=[];
   S.exams.push({t:Date.now(), first:SES.first, n:n, secs:secs});
@@ -5390,7 +5453,25 @@ function endExam(){
   if(score>=0.8) setTimeout(function(){ celebrate("Niveau examen", SES.first+"/"+n+" en "+m+"m"+(sec<10?"0":"")+sec, "🎓"); }, 120);
   renderHome();
 }
-function announced(n){ return !!S["unlocked"+n]; }
+function announced(n){ return !!(S.seen && S.seen["monde"+n]); }
+function markAnnounced(cle){ if(!S.seen) S.seen={}; S.seen[cle]=true; }
+function bossAnnounced(n){ return !!(S.seen && S.seen["boss"+n]); }
+/* Premier boss ouvert, pas encore vaincu, jamais annoncé. */
+function bossANnoncer(){
+  for(var i=0;i<BOSS.length;i++){
+    var w=BOSS[i].w;
+    if(isBossOpen(w,S.prog) && !(S.boss[w]&&S.boss[w].done) && !bossAnnounced(w)) return BOSS[i];
+  }
+  return null;
+}
+/* Premier boss ouvert et pas encore vaincu, annoncé ou non : pour l'accueil. */
+function bossDisponible(){
+  for(var i=0;i<BOSS.length;i++){
+    var w=BOSS[i].w;
+    if(isBossOpen(w,S.prog) && !(S.boss[w]&&S.boss[w].done)) return BOSS[i];
+  }
+  return null;
+}
 
 /* ---------- fiche des points faibles ---------- */
 function renderWeak(){
