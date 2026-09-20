@@ -354,6 +354,58 @@ const ok = (c, l) => { if (c) pass++; else { fail++; errs.push(l); } };
 
   ok(problems.length === 0, "aucune erreur JavaScript : " + problems.slice(0, 5).join(" | "));
 
+  /* --- réimporter une progression : cache vidé, changement d'appareil --- */
+  {
+    const ctx = await browser.newContext({ viewport: { width: 412, height: 820 } });
+    const q = await ctx.newPage();
+    const soucis = [];
+    q.on("pageerror", e => soucis.push(e.message));
+    await q.goto(FILE);
+    await q.waitForTimeout(200);
+    const sauvegarde = await q.evaluate(() => {
+      S.xp = 1450; S.streak = 6; S.best = 9;
+      EX.filter(e => e.w <= 3).forEach((e, i) => {
+        S.prog[e.id] = { b: i % 4, due: Date.now() + i * 3600000, n: 2, ok: 2, ko: i % 3 ? 0 : 2, last: Date.now() };
+      });
+      S.boss = { 1: { done: true, best: "4/4", first: 4 } };
+      S.exams = [{ t: Date.now() - 3 * 86400000, first: 9, n: 12, secs: 400 }];
+      S.mode = "progressif"; S.len = 12; S.examOn = false;
+      save();
+      return localStorage.getItem("empire-chaima-linux-v1");
+    });
+    await q.evaluate(() => localStorage.clear());
+    await q.reload();
+    await q.waitForTimeout(200);
+    ok(await q.evaluate(() => S.xp) === 0, "cache vidé : la progression repart de zéro");
+    await q.click("#btnSettings");
+    await q.setInputFiles("#fileInput", { name: "empire-chaima-progression.json", mimeType: "application/json", buffer: Buffer.from(sauvegarde) });
+    await q.waitForTimeout(400);
+    const restaure = await q.evaluate(() => ({
+      xp: S.xp, streak: S.streak, best: S.best, prog: Object.keys(S.prog).length,
+      boss: !!(S.boss && S.boss[1] && S.boss[1].done), exams: (S.exams || []).length,
+      mode: S.mode, len: S.len, examOn: S.examOn, toast: document.getElementById("toast").textContent
+    }));
+    ok(restaure.xp === 1450 && restaure.prog > 40, `la progression est restaurée (${restaure.xp} XP, ${restaure.prog} commandes)`);
+    ok(restaure.streak === 6 && restaure.best === 9, "les séries quotidiennes sont restaurées");
+    ok(restaure.boss && restaure.exams === 1, "boss vaincu et historique d'examen restaurés");
+    ok(restaure.mode === "progressif" && restaure.len === 12 && restaure.examOn === false, "les réglages sont restaurés");
+    ok(restaure.toast.includes("importée"), "un retour visible confirme l'import");
+    await q.reload();
+    await q.waitForTimeout(250);
+    ok(await q.evaluate(() => S.xp) === 1450, "la progression réimportée survit au rechargement");
+    await q.click("#btnPlay");
+    await q.waitForTimeout(250);
+    ok(await q.locator("#scPlay").isVisible(), "une série se lance sur la progression réimportée");
+    await q.click("#btnBack");
+    await q.click("#btnSettings");
+    await q.setInputFiles("#fileInput", { name: "autre.json", mimeType: "application/json", buffer: Buffer.from("pas du tout du json") });
+    await q.waitForTimeout(400);
+    ok((await q.locator("#toast").innerText()).includes("illisible"), "un fichier invalide est refusé proprement");
+    ok(await q.evaluate(() => S.xp) === 1450, "un fichier invalide n'écrase pas la progression en place");
+    ok(soucis.length === 0, "aucune erreur JavaScript pendant l'import");
+    await ctx.close();
+  }
+
   /* --- export quand la page tourne en ligne ---
      Là-bas, un lien de téléchargement direct est bloqué : c'est la capacité
      « downloads » qui doit prendre le relais, et le repli local doit rester. */
