@@ -8,6 +8,62 @@
 
 ---
 
+# 📊 TABLEAU DE BORD — audit du 2026-09-20
+
+> Demandé par Chaima : *« vérifie si les erreurs sont bien répertoriées et si la solution
+> l'est aussi, car trop d'erreurs surviennent. »* Audit mené entrée par entrée sur les 31.
+
+## Réponse courte
+**L'enregistrement n'est pas le problème. Les 31 entrées ont toutes une solution écrite —
+aucune n'est orpheline.** Le problème est que **13 solutions sur 31 ne sont pas appliquées** :
+6 attendent un GO, 4 restent ouvertes, 3 ne sont qu'à moitié posées. Et ce sont **exactement
+celles-là qui reviennent**.
+
+## État des 31 solutions
+
+| État | Nb | Entrées |
+|---|---|---|
+| ✅ **Corrigé et vérifié** | 15 | ERR-001, 004→013, 015, 018, 019 |
+| ⏸️ **Écrit, EN ATTENTE DE GO de Chaima** | 6 | ERR-020, 021, 023, 024, 025, 026 |
+| 🟠 **À moitié appliqué** | 3 | ERR-027, 029, 031 |
+| 🔴 **Reste ouvert** | 4 | **ERR-016, 022, 028, 030** |
+| 🖐️ **Solution écrite, geste humain requis (compte Vercel)** | 2 | ERR-002, 003 |
+| ⚪ **Non corrigé volontairement, motif écrit** | 1 | ERR-017 (un `--amend` forcerait un force-push sur `main` pendant qu'une autre session travaille) |
+
+**Six CRITIQUES ne sont pas refermées :** ERR-020 (22 vulnérabilités de dépendances) ·
+ERR-022 (un merge ne met pas à jour les registres) · ERR-024 (proxy d'egress) ·
+ERR-028 (« APPLIQUÉ » annoncé pour un correctif non fusionné) · ERR-029 (7 entrées disparues) ·
+ERR-030 (données personnelles sur dépôt public).
+
+## Pourquoi « trop d'erreurs surviennent » — la vraie réponse
+
+Il n'y a **pas 31 problèmes distincts**. Il y a **six causes racines**, dont deux produisent à
+elles seules la moitié du registre.
+
+| Cause racine | Nb | Entrées | Refermée ? |
+|---|---|---|---|
+| **Une correction n'est pas propagée partout** (merge, registres, branches) | 6 | ERR-012, 022, 023, 028, 029, 031 | ❌ non — et elle a produit 4 générations d'erreurs en 6 jours |
+| **Le contrôle avant push ne voit pas cette classe de défaut** (dépendances, PR ouvertes, marqueurs de conflit, données perso) | 4 | ERR-020, 021, 027, 030 | ❌ non |
+| **Nos propres textes violent nos propres garde-fous** | 5 | ERR-005, 006, 007, 016, 025 | ⚠️ partiellement (ERR-016 toujours ouverte) |
+| **Contraintes permanentes de l'environnement** (Vercel, proxy, conteneur éphémère) | 5 | ERR-001, 002, 003, 004, 024 | ⚠️ décrites, non contournables |
+| **Périmètre annoncé plus large que le périmètre réel** | 3 | ERR-013, 018, 019 | ✅ oui |
+| **Deux sessions écrivent au même endroit** | 2 | ERR-011, 026 | ❌ non (3 collisions en 48 h) |
+
+## La leçon que ce tableau rend indiscutable
+
+**Un correctif parqué n'est pas un correctif.** Deux preuves datées, dans ce registre :
+- La prévention des collisions de numéro (ERR-026) a été **écrite puis parquée**. Elle a coûté
+  une **troisième** collision deux jours plus tard.
+- La cause racine d'ERR-022 (« un merge ne met pas à jour les registres ») a été identifiée le
+  2026-09-14 puis parquée. Elle a produit **ERR-023, ERR-028 et ERR-029** dans les cinq jours —
+  dont la disparition silencieuse de sept entrées de ce fichier.
+
+Ce n'est donc pas qu'il y a trop d'erreurs. **C'est que les mêmes reviennent, parce que leur
+correctif attend une autorisation.** Les six lignes « EN ATTENTE DE GO » sont, littéralement, la
+liste de ce qui recommencera.
+
+---
+
 ## ERR-001 — Build Vercel : client Prisma absent (2026-07-17)
 - **Ce qui s'est passé :** `next build` échoue → `Module not found: Can't resolve '@/lib/generated/prisma/client'`.
 - **Cause (CONFIRMÉE par reproduction) :** le client Prisma est généré dans `lib/generated/prisma`, **gitignoré** → absent d'un checkout neuf (Vercel, clone).
