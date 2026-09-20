@@ -35,7 +35,8 @@ exactement celle-là, et la confondre est ce qui noie un Empire sous le bruit.
 | `01 — FICHE MACHINE — À REMPLIR` | `1GRzD4Oow7O8wWjg-Dv3iirUbmlYpKyilyek0YsVOl20` | **Chaima écrit, ATLAS lit** — la seule exception |
 | `02 — ERREURS ET RÉUSSITES — ATLAS (à jour au 2026-09-19)` | `19sqt-VCsfAifo1YIK0axYlu-wtZtfNzVL0lVgzz1C7g` | ATLAS écrit, Chaima lit — **version courante** |
 | `02 — … (version du 16/09 — REMPLACÉE, conservée)` | `1cKad7xISrny7R5KGr1hseX0HlOUWATHQ3QfvhlCDZkU` | périmée, gardée (un doc = un événement) |
-| `03 — PROMPT MAÎTRE v2` | `1dvZzc_DyMApBYOipJiug1WC6zYPiappmO1Z0PjMko4M` | copie du prompt à coller partout |
+| `03 — PROMPT MAÎTRE v2 (amendé après test à froid)` | `1wmi71buYd5L143BNl5jNd9Wmz3S-Pg2y5Nu-g5Mdla4` | **version courante**, relue après écriture |
+| `03 — … (version 13h29 — REMPLACÉE, conservée)` | `1dvZzc_DyMApBYOipJiug1WC6zYPiappmO1Z0PjMko4M` | périmée, gardée |
 
 Les documents des autres projets restent où ils sont : on ne déplace que les nôtres
 (`sentinelle-perimetre`).

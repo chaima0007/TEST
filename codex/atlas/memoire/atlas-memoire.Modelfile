@@ -15,7 +15,7 @@ MEMOIRE DU PROJET (copie du 2026-09-19, source de verite = le depot git, fichier
 =====
 # ATLAS — ÉTAT DU PROJET
 
-> **Le seul fichier à ouvrir pour reprendre.** Mis à jour : **2026-09-19 (soir, après lecture du Drive)**.
+> **Le seul fichier à ouvrir pour reprendre.** Mis à jour : **2026-09-20 11:25 UTC**.
 > Ton temps est en rafales de 2-4 h (mesuré) : ce fichier existe pour que la reprise coûte
 > 30 secondes, pas 50 minutes.
 
@@ -62,12 +62,12 @@ un « 00 » par projet. **Ce qui cloche** : 7 protocoles maîtres concurrents, L
 
 ## EN COURS (sans toi)
 
-- **Routine quotidienne active** depuis le 2026-09-19 — `trig_01RXTwrecsCLboaL6kMmn6Ry`, tous
-  les jours **06h00 Bruxelles** (cron `0 4 * * *` UTC — **05h00 après le passage à l'heure d'hiver le 25/10/2026** ; à ajuster si ça gêne). Elle fait le snapshot, lit les branches voisines, cherche du
-  neuf sur 2 domaines (droit belge · IA locale), **régénère la mémoire de ton IA locale**, pousse.
-  Notification push **seulement** si quelque chose de notable. **Première exécution : 20/09 06h**
-  — c'est elle qui dira si les droits de push fonctionnent. **Pour l'arrêter** : Routines dans
-  claude.ai. Coût par passe : NON VÉRIFIÉ, à lire sur la première.
+- **Routine quotidienne : EN PAUSE depuis le 20/09** (`trig_01RXTwrecsCLboaL6kMmn6Ry`). Sa
+  première passe (20/09 04:06 UTC) a tourné 7 min, coûté **2,51 $**, et **n'a rien pu pousser** :
+  ses sessions n'ont aucun dépôt attaché (`sources: []`, VÉRIFIÉ). Même limite que tes autres
+  routines. **Pour la remettre en service : attacher le dépôt avec droits de push à
+  l'environnement des routines (réglage claude.ai, à toi), puis réactiver.** Sans ça, elle coûte
+  et ne dépose rien. Détail : ligne A-DECIDER du 20/09.
 
 - **Parcours 1 — couche 4 (RAG local) : TERMINÉ.** AnythingLLM Desktop **VALIDÉ NON INTÉGRÉ**
   (scout + licence + sécurité concordants), deux réserves rejetées. Prochaine étape = **Zone 1

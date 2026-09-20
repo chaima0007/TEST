@@ -6,6 +6,24 @@
 
 ---
 
+## SNAPSHOT 2026-09-20 — 11:25 UTC — Première passe de la routine : a tourné, n'a rien pu pousser. Mise en pause.
+
+**Compteur de passes sans fiche nouvelle : 1** (la passe du 20/09, sans dépôt).
+
+- **Routine, 1re passe** (04:06 UTC) : SUCCEEDED, 7 min, **2,51 $**, **aucun commit**. Cause
+  **VÉRIFIÉE** dans sa configuration : `sources: []` — pas de dépôt attaché, donc pas de push.
+  **Pas propre à ATLAS** : les consignes de tes autres routines disent la même chose, et ton
+  JOURNAL du 11/09 l'avait déjà identifié. **Mise en pause** (réversible) : coût sans dépôt =
+  coût dormant. Correctif structurel = attacher le dépôt à l'environnement des routines — **à toi**.
+- **Le test de reprise à froid reste PLAUSIBLE, pas CONFIRMÉ** : la passe du 20/09 n'a pas
+  produit le snapshot qui devait le confirmer. Pas parce que le prompt est mauvais — parce que
+  la session n'avait rien où écrire.
+- **Signal `intendant-couts` / `superviseur-vigie`** : ≥ 9 routines actives sur le compte, dont
+  une **horaire** et une toutes les **8 h** ; la méta-surveillance a **échoué** le 19/09.
+  Coût mensuel cumulé : NON VÉRIFIÉ. Ligne A-DECIDER.
+- **Drive** : prompt maître v2 **amendé** recréé et relu (`1wmi71bu…`) ; ancien renommé, gardé.
+- Aucune autre branche n'a bougé depuis le 19/09 14:10 UTC.
+
 ## SNAPSHOT 2026-09-19 (6) — 14:10 UTC — Test de reprise à froid : PLAUSIBLE, 8 trous bouchés
 
 **Compteur de passes sans fiche nouvelle : 0.** *(Convention à partir d'ici : chaque snapshot porte
