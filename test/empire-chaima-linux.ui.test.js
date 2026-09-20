@@ -304,6 +304,48 @@ const ok = (c, l) => { if (c) pass++; else { fail++; errs.push(l); } };
   if (await page.locator("#lvlOverlay.on").isVisible()) { await page.waitForTimeout(450); await page.click("#ovClose"); }
   await page.click("#btnBack");
 
+  /* --- objectif du jour atteint : la séance peut se terminer --- */
+  await page.evaluate(() => { localStorage.removeItem("empire-chaima-linux-v1"); });
+  await page.reload();
+  await page.waitForTimeout(150);
+  await page.click("#btnPlay");
+  await page.waitForTimeout(150);
+  // on se place juste avant l'objectif, puis on termine la série
+  await page.evaluate(() => { S.dayKey = dayKey(); S.dayCount = dayGoal() - 1; save(); });
+  for (let k = 0; k < 12; k++) {
+    if (await page.locator("#scRecap").isVisible()) break;
+    await page.evaluate(() => {
+      accepted(SES.queue[SES.idx])[0].forEach(t => {
+        for (let i = 0; i < POOL.length; i++) if (POOL[i] === t && !BUILT.some(b => b.i === i)) { addTok(i); return; }
+      });
+    });
+    await page.waitForTimeout(160);
+    if (await page.locator("#actionRow").isVisible() && !(await page.locator("#feedbackZone .feedback").isVisible()))
+      await page.click("#btnCheck");
+    await page.waitForTimeout(140);
+    if (await page.locator("#lvlOverlay.on").isVisible()) { await page.waitForTimeout(450); await page.click("#ovClose"); }
+    if (await page.locator("#btnNext").isVisible()) await page.click("#btnNext");
+    await page.waitForTimeout(80);
+  }
+  await page.waitForTimeout(300);
+  if (await page.locator("#lvlOverlay.on").isVisible()) { await page.waitForTimeout(450); await page.click("#ovClose"); }
+  ok(await page.evaluate(() => dayDone()), "l'objectif du jour est atteint");
+  const fini = await page.evaluate(() => ({
+    haut: document.getElementById("btnHome").textContent.trim(),
+    hautCls: document.getElementById("btnHome").className,
+    hautOrdre: document.getElementById("btnHome").style.order,
+    basOrdre: document.getElementById("btnAgain").style.order,
+    bas: document.getElementById("btnAgain").textContent.trim(),
+    msg: document.getElementById("recapMsg").textContent
+  }));
+  ok(fini.haut.includes("Terminé pour aujourd'hui"), "le récapitulatif propose d'arrêter pour aujourd'hui");
+  ok(fini.hautCls.includes("primary") && Number(fini.hautOrdre) < Number(fini.basOrdre),
+     "cette proposition est l'action mise en avant");
+  ok(fini.bas.includes("Une série de plus"), "continuer reste possible, en second");
+  ok(/Demain : \d+ commande/.test(fini.msg), "le récapitulatif annonce ce qui revient demain : " + fini.msg.slice(-40));
+  await page.click("#btnHome");
+  ok(await page.locator("#scHome").isVisible(), "terminer la journée ramène à l'accueil");
+
   /* --- affichage large --- */
   await page.setViewportSize({ width: 900, height: 800 });
   ok(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth + 1), "aucun défilement horizontal en 900px");

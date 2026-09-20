@@ -5290,7 +5290,10 @@ function endSession(){
   if(ratio===1) msg="Sans faute. Ces commandes reviendront plus tard, à intervalle plus long.";
   else if(ratio>=0.6) msg=SES.first+" du premier coup sur "+n+". Les autres repassent dans la prochaine série.";
   else msg=SES.done+" commandes traitées, "+SES.first+" trouvées du premier coup. Les autres sont replacées en début de file et reviendront dès la prochaine série : c'est le fonctionnement prévu, pas un retard à rattraper.";
+  var soon=dailyStock(S.prog, Date.now()+DAY).due.length - dailyStock(S.prog, Date.now()).due.length;
+  if(soon>0) msg+=" Demain : "+soon+" commande"+(soon>1?"s":"")+" revien"+(soon>1?"nent":"t")+".";
   $("recapMsg").textContent=msg;
+  if(dayDone()) markDayDone();
   save();
   show("scRecap");
   var wo=null, wi;
