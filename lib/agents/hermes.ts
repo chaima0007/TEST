@@ -29,7 +29,7 @@ export const CAELUM_OFFER: Offer = {
   service: "site web premium",
   price: 500,
   currency: "€",
-  edge: "design sur-mesure, mise en ligne rapide, hébergement sécurisé inclus",
+  edge: "design sur-mesure, mise en ligne rapide, hébergement inclus",
 };
 
 export interface OutreachDraft {
@@ -45,7 +45,24 @@ export interface OutreachDraft {
 export const NOTE_CAP = 280;
 
 // Termes bannis : affirmations « sur nous » non sourçables / survente (PROTOCOLE §13).
-const BANNED = [/\bgaranti/i, /\bcertifi/i, /\bmeilleur\b/i, /\bn[°o]\s?1\b/i, /\b100\s?%/];
+const BANNED = [
+  /\bgaranti/i,
+  /\bcertifi/i,
+  /\bmeilleur\b/i,
+  /\bn[°o]\s?1\b/i,
+  /\b100\s?%/,
+  // Ajoutés le 2026-09-20 (ERR-016, volet « affirmations sur nous »). Retirer le mot
+  // du texte ne suffit pas : sans motif ici, rien n'empêche de le réécrire demain.
+  //
+  // ATTENTION — portée réelle de ces deux motifs AUJOURD'HUI : `BANNED` n'est consulté
+  // qu'une seule fois, ligne ~146, DANS `LLMHermes`. `HeuristicHermes` ne le lit jamais
+  // (ERR-016). Or l'heuristique est le seul chemin actif tant qu'`ANTHROPIC_API_KEY` est
+  // absente. Ce qui protège le chemin actif aujourd'hui, c'est que les deux formules ont
+  // été retirées de `CAELUM_OFFER` et de `firstMessage` — pas cette liste. Elle ne couvrira
+  // l'heuristique qu'une fois `lib/agents/garde-fou.ts` mergé.
+  /\bsécuris/i, // affirmation sur nous : aucune mesure d'hébergement n'est établie
+  /pensé pour convertir/i, // promesse de résultat : Caelum n'a aucun client à ce jour
+];
 
 function trimTo(s: string, cap: number): string {
   if (s.length <= cap) return s;
@@ -72,7 +89,7 @@ function heuristicDraft(p: Prospect, o: Offer): OutreachDraft {
   );
   const firstMessage = [
     `Merci d'avoir accepté, ${p.firstName} !`,
-    `${constat} Chez Caelum Partners, je conçois votre ${o.service} (${o.edge}) à partir de ${eur(o)}, pensé pour convertir.`,
+    `${constat} Chez Caelum Partners, je conçois votre ${o.service} (${o.edge}) à partir de ${eur(o)}.`,
     `Est-ce que 15 minutes cette semaine vous conviendraient pour voir si ça a du sens pour ${p.company} ? Sans engagement.`,
   ].join("\n\n");
   const followUp = [

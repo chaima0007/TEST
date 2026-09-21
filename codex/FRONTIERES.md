@@ -123,14 +123,14 @@ encaissement). Un dossier Drive « ATLAS — IA locale (Empire Chaima) » existe
 | Document | Origine | Destination Drive | État |
 |---|---|---|---|
 | Audit PI / brevetabilité CompeteIQ | `chaima-patent-audit` | « Brevetabilité de nos projets » | ✅ déposé |
-| Charte consolidée — chaîne veille | `adoring-albattani` | « Veille & Opportunités » | ⚠️ déposé **puis marqué « ne fait pas foi »** — voir ERR-031 |
+| Charte consolidée — chaîne veille | `adoring-albattani` | « Veille & Opportunités » | ⚠️ déposé **puis marqué « ne fait pas foi »** — voir ERR-20260920-1123 |
 | Calcul des 29 h réelles (Caelum + LLAM) | `wizardly-franklin` | « COMPILATION & SYNOPSIS » | ✅ déposé |
 
-**Ne partiront PAS au Drive — décision explicite, pas un oubli (ERR-031) :**
+**Ne partiront PAS au Drive — décision explicite, pas un oubli (ERR-20260920-1123) :**
 `veille/CHARTE-CHAINE-VEILLE.md` (historique, explicitement remplacé par la charte consolidée)
 et `veille/JOURNAL.md`. Ce sont des **normes et un journal de travail** de la chaîne de veille :
 leur place est le dépôt **Caelum** (`keywordmoneymaker`), à un seul endroit. Une norme dupliquée
-diverge — c'est la faute même qu'ERR-031 consigne.
+diverge — c'est la faute même qu'ERR-20260920-1123 consigne.
 
 **Reste chez lui :** `reports/2026-07-17-21h34-audit-livraison-competeiq.md`
 (branche `chaima-patent-audit`) parle de **CompeteIQ**, qui est le projet de ce dépôt. Il est
@@ -152,7 +152,7 @@ un dépôt : **`libre-accomplis`** (16ᵉ).
 ### ⛔ BLOCAGE CONSTATÉ le 2026-09-19 — création de dépôts impossible depuis une session d'agent
 `POST https://api.github.com/user/repos` → **`403 Resource not accessible by integration`**.
 L'intégration GitHub de cette session **n'a pas le droit de créer un dépôt**. Ce n'est pas un
-réglage à trouver : c'est une permission absente, du même ordre que le proxy d'egress (ERR-024).
+réglage à trouver : c'est une permission absente, du même ordre que le proxy d'egress (ERR-20260914-2024).
 **Conséquence pratique :** les 15 dépôts doivent être créés **par Chaima**, vides, depuis
 github.com/new (nom + « Private » + Create, sans README ni .gitignore). Dès qu'un dépôt existe,
 le transfert de sa branche prend quelques secondes et se fait ici.

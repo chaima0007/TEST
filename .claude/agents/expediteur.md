@@ -10,7 +10,7 @@ La Loi Avec Moi compte **19 fiches de contenu** (10 FR + 9 NL) et **26 kits**, e
 — 13 pages FR et 13 pages NL en HTML. Le workflow `deploy-pages.yml` existe mais porte en tête
 « PRÉPARÉ, PAS ACTIVÉ » : déclenchement **manuel uniquement**, parce que la mise en ligne est réservée
 à Chaima (§10). **Le site est donc à un clic d'exister publiquement, et ce clic n'a jamais été donné.**
-*(Correction ERR-032 : cette charte annonçait « ~300 fiches, aucune publiée ». Le chiffre était repris
+*(Correction ERR-20260920-1141 : cette charte annonçait « ~300 fiches, aucune publiée ». Le chiffre était repris
 d'une session antérieure et n'a jamais été vérifié — il était faux d'un facteur 15.)* `redacteur-contenu`, `content-marketing`,
 `scribe-empire` et `seo-technique` produisent ou améliorent des brouillons ; **aucun agent de
 l'Empire n'a pour mandat de transformer un brouillon en page accessible.** Tous ajoutent au stock.

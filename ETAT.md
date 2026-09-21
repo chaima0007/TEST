@@ -7,7 +7,7 @@
 
 > **PR #1 : MERGÉE** dans `main` (commit de merge `9cc15c2f`, « Merge PR #1 — Nexus-Market : pipeline de matching + flotte d'agents Caelum »). La branche `claude/nexus-market-agents-63dlku` n'est plus la branche de travail. **Toute nouvelle branche part de `main`.**
 
-> **`main` = `0c792ca3`** au 2026-09-14 21h30 CEST (vérifié par `git ls-remote`, pas de mémoire).
+> **`main` = `cf2e105e`** au 2026-09-21 (vérifié par `git fetch`, pas de mémoire). *Mis à jour par le contrôle de fraîcheur d'`audit-codex.sh` — ERR-20260914-2022.*
 
 ## État vérifié — **re-constaté le 2026-09-14 à 21h22 CEST sur `main` `bc6be2c5`**
 - Tests : **77/77 verts** — 15 fichiers, `vitest run`, durée 2,88 s

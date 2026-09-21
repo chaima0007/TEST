@@ -71,7 +71,7 @@ function heuristicProposal(l: LeadBrief, o: Offer): Proposal {
       `Design sur-mesure (vitrine 3 à 5 sections), adapté à votre image`,
       `Entièrement responsive (mobile, tablette, ordinateur)`,
       `Formulaire de contact relié à votre e-mail`,
-      `Mise en ligne + hébergement sécurisé inclus`,
+      `Mise en ligne + hébergement inclus`,
       `Un aller-retour de révisions`,
     ],
     outOfScope: [

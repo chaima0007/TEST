@@ -21,7 +21,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           # Historique complet : le contrôle des registres compare le nombre
-          # d'entrées de 🔴 ERREURS.md avec origin/main (ERR-029). Avec le
+          # d'entrées de 🔴 ERREURS.md avec origin/main (ERR-20260919-1316). Avec le
           # clone superficiel par défaut, origin/main est absent et le
           # contrôle se désactive silencieusement.
           fetch-depth: 0
@@ -35,7 +35,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # ERR-026, ERR-027, ERR-029, ERR-030 : quatre défauts qui sont passés à
+      # ERR-20260914-2026, ERR-20260919-1259, ERR-20260919-1316, ERR-20260919-1324 : quatre défauts qui sont passés à
       # travers `git status`, la CI et la relecture humaine, faute d'un outil
       # qui les cherche. Détection prouvée dans les deux sens par test piégé.
       - name: Contrôle des registres (BLOQUANT)

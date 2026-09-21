@@ -312,9 +312,9 @@ pas, **le verdict le plus prudent gagne par défaut.** S'en écarter exige de di
 > `gardien-des-frontieres`. Ce qui circule entre projets, c'est `/codex/expertise/` (§4) — la
 > **connaissance**. Pas le code, pas les branches, pas les rapports.
 > ⚠️ **Dépôt PUBLIC** (vérifié le 2026-09-19) : aucune donnée personnelle dans un fichier
-> versionné — seul le fait décisionnel dérivé (ERR-030).
+> versionné — seul le fait décisionnel dérivé (ERR-20260919-1324).
 
-- **Dépôt :** `chaima0007/test` · **branche de dev : voir `ETAT.md`** — ce fichier ne nomme plus aucune branche, pour qu'il n'y en ait qu'un seul à corriger quand elle change (ERR-022). `claude/nexus-market-agents-63dlku` est **close** depuis le merge de la PR #1 (`9cc15c2f`, 2026-09-11) : toute nouvelle branche part de `main`. Jamais de commit direct sur `main` (§4 Parcours 4 / §10).
+- **Dépôt :** `chaima0007/test` · **branche de dev : voir `ETAT.md`** — ce fichier ne nomme plus aucune branche, pour qu'il n'y en ait qu'un seul à corriger quand elle change (ERR-20260914-2022). `claude/nexus-market-agents-63dlku` est **close** depuis le merge de la PR #1 (`9cc15c2f`, 2026-09-11) : toute nouvelle branche part de `main`. Jamais de commit direct sur `main` (§4 Parcours 4 / §10).
 - **Stack :** Next.js 16 · TypeScript · Prisma (SQLite via adapter libsql) · Tailwind v4 · next-auth · Vitest.
 - **Commandes de vérification AVANT PUSH (Parcours 4) :**
   ```bash
@@ -325,8 +325,8 @@ pas, **le verdict le plus prudent gagne par défaut.** S'en écarter exige de di
   **L'ordre compte :** `build` AVANT `tsc` (le build génère `.next/types/**` dont `tsc`
   dépend — ERR-008). Les mêmes étapes tournent en CI (`.github/workflows/ci.yml`).
   `scripts/verifier-registres.sh` cherche marqueurs de conflit, numéros d'erreur en double,
-  références orphelines, rétrécissement du registre et données personnelles (ERR-026/027/029/030).
-- **Aucune vérification hors dépôt/Drive n'est exécutable depuis une session d'agent (ERR-024).**
+  références orphelines, rétrécissement du registre et données personnelles (ERR-20260914-2026/027/029/030).
+- **Aucune vérification hors dépôt/Drive n'est exécutable depuis une session d'agent (ERR-20260914-2024).**
   Le proxy d'egress refuse **tout** : site en production, registres de brevets (Espacenet,
   Patentscope, USPTO, DPMA, EUIPO), DNS. Ce n'est pas une panne à contourner ni un accès à
   demander : c'est une **propriété permanente de l'environnement**, constatée sur 2 projets et
@@ -336,7 +336,7 @@ pas, **le verdict le plus prudent gagne par défaut.** S'en écarter exige de di
 - **Rituel d'entrée §5 — ajouter au `git ls-remote` (ERR-021) :** lister aussi les **PR
   ouvertes**. `A-DECIDER.md` ne suit que les décisions qu'un agent a formulées, jamais l'état
   réel de la forge : 5 PR sont restées ouvertes 3 mois sans figurer nulle part.
-- **Un fait d'état vit à UN SEUL endroit (ERR-022/ERR-023).** `ETAT.md` fait foi pour la branche
+- **Un fait d'état vit à UN SEUL endroit (ERR-20260914-2022/ERR-20260914-2023).** `ETAT.md` fait foi pour la branche
   de dev, le SHA de `main` et l'état des PR. Les autres fichiers y **renvoient**, ils ne
   recopient pas : un fait dupliqué dans 3 fichiers se corrige dans 2 et ment dans le troisième.
 - **« APPLIQUÉ » sans SHA de `main` est une intention, pas un fait (ERR-028).** Une entrée du
@@ -346,6 +346,6 @@ pas, **le verdict le plus prudent gagne par défaut.** S'en écarter exige de di
   - **Prisma** : le client est généré dans `lib/generated/prisma`, qui est **gitignoré** → absent d'un checkout neuf. Le script `postinstall: prisma generate` est en place (commit `2332776`) ; ne pas le retirer, sinon `next build` échoue « module not found ».
   - **Vercel** : 8 projets du compte sont branchés sur ce dépôt → déploiements en cascade et saturation du quota gratuit. Caelum vise **Cloudflare Pages**. Déconnexion des projets superflus = décision humaine en attente (voir `/codex/A-DECIDER.md`).
   - **Next.js** : version à breaking changes — lire `node_modules/next/dist/docs/` avant d'écrire du Next (actuellement **NON VÉRIFIÉ** : dossier absent de l'install). Voir aussi `@AGENTS.md`.
-  - **Agents `.claude/agents/`** : générés dérivés du §1 (NON VÉRIFIÉ comme set canonique de l'Empire) — à réconcilier, voir `/codex/A-DECIDER.md`.
+  - **Agents `.claude/agents/`** : **réconciliés le 2026-09-11, arbitrage confirmé le 2026-09-19** (TRANCHÉ PAR CHAIMA — la décision opposée « laisser en l'état » est supersédée) — les 21 rôles du §1 portent désormais le set canonique de l'Empire, aligné sur `chaima0007/keywordmoneymaker` (socle commun identique, empreinte vérifiée). Détail : `/codex/agents-correspondance.md`. À ne pas confondre avec les agents applicatifs de `lib/agents/` (HERMES, BOUSSOLE, PACTE, RELANCE…), qui sont du code.
 
 @AGENTS.md

@@ -11,7 +11,7 @@ description: Vérifie qu'un correctif consigné comme APPLIQUÉ est réellement 
   que sur `codex/testeur-adverse-garde-fou-survente`, **non fusionnée**. Sur `main`,
   `verifierSansSurvente` n'est appelé nulle part et les trois fuites commerciales sont vivantes.
   Un agent a fondé un arbitrage sur ce correctif fantôme.
-- **ERR-026 (2026-09-19)** : la prévention de collision de numéros avait été écrite puis **parquée
+- **ERR-20260914-2026 (2026-09-19)** : la prévention de collision de numéros avait été écrite puis **parquée
   « en attente de GO »**. Troisième collision deux jours plus tard. Un correctif parqué n'est pas
   un correctif.
 
