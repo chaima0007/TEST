@@ -1,0 +1,13 @@
+https://raw.githubusercontent.com/chaima0007/TEST/claude/nifty-shannon-u87dv8/codex/atlas/00-ETAT-DU-PROJET.md|2026-09-21 - atlas - etat du projet ATLAS - codex.md
+https://raw.githubusercontent.com/chaima0007/TEST/claude/nifty-shannon-u87dv8/codex/atlas/apprentissage/REGLES-APPRISES.md|2026-09-21 - atlas - regles apprises R-001 a R-016 - codex.md
+https://raw.githubusercontent.com/chaima0007/TEST/claude/nifty-shannon-u87dv8/codex/atlas/memoire/MACHINE.md|2026-09-21 - atlas - fiche machine et procedures - codex.md
+https://raw.githubusercontent.com/chaima0007/TEST/claude/nifty-shannon-u87dv8/codex/atlas/memoire/DECISIONS.md|2026-09-19 - atlas - decisions prises - codex.md
+https://raw.githubusercontent.com/chaima0007/TEST/claude/nifty-shannon-u87dv8/codex/atlas/deliberations/FICHE-DECISION-D-001.md|2026-09-16 - atlas - fiche decision D-001 - codex.md
+https://raw.githubusercontent.com/chaima0007/TEST/claude/nifty-shannon-u87dv8/codex/atlas/deliberations/DOSSIER-01-STATUT-LEGAL.md|2026-09-16 - droit-belge - dossier statut legal - codex.md
+https://raw.githubusercontent.com/chaima0007/TEST/claude/nifty-shannon-u87dv8/codex/atlas/deliberations/DOSSIER-02-ENCAISSEMENT.md|2026-09-16 - droit-belge - dossier encaissement Peppol - codex.md
+https://raw.githubusercontent.com/chaima0007/TEST/claude/nifty-shannon-u87dv8/codex/expertise/droit-belge.md|2026-09-16 - droit-belge - expertise droit belge - codex.md
+https://raw.githubusercontent.com/chaima0007/TEST/claude/nifty-shannon-u87dv8/codex/expertise/recherche-sources.md|2026-09-19 - methode - expertise recherche de sources - codex.md
+https://raw.githubusercontent.com/chaima0007/TEST/claude/nifty-shannon-u87dv8/codex/expertise/methode-agents.md|2026-09-19 - methode - expertise methode des agents - codex.md
+https://raw.githubusercontent.com/chaima0007/TEST/claude/nifty-shannon-u87dv8/codex/expertise/erreurs-transverses.md|2026-09-19 - methode - expertise erreurs transverses - codex.md
+https://raw.githubusercontent.com/chaima0007/TEST/claude/nifty-shannon-u87dv8/codex/A-DECIDER.md|2026-09-21 - atlas - ce qui attend une decision - codex.md
+https://raw.githubusercontent.com/chaima0007/TEST/claude/nifty-shannon-u87dv8/codex/atlas/corpus/2026-09-21%20-%20atlas%20-%20lexique%20des%20sigles%20-%20codex.md|2026-09-21 - atlas - lexique des sigles - codex.md

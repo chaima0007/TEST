@@ -58,3 +58,44 @@ Fin de la memoire. Tout ce qui n'est pas ci-dessus : "Ce n'est pas dans ma memoi
 TAIL
 } > "$out"
 echo "écrit : $out ($(wc -w < "$out") mots, ~$(( $(wc -c < "$out") / 3 )) tokens estimés) + $tete"
+
+# ---- MANIFEST du corpus « dépôt » : ce que scripts/atlas-apprendre.bat télécharge dans
+# %USERPROFILE%\ATLAS\corpus\depot pour AnythingLLM (RAG). PAS dans le Modelfile (trop gros).
+# Format : URL_encodée|nom_local_ASCII  — date = dernier commit du fichier (convention corpus/README).
+manifest=codex/atlas/corpus/MANIFEST.txt
+base_url="https://raw.githubusercontent.com/chaima0007/TEST/claude/nifty-shannon-u87dv8"
+python3 - "$base_url" "$manifest" <<'PY'
+import sys, subprocess, urllib.parse, re, unicodedata, glob
+base, out = sys.argv[1], sys.argv[2]
+selection = [
+  ("codex/atlas/00-ETAT-DU-PROJET.md",                 "atlas",        "etat du projet ATLAS"),
+  ("codex/atlas/apprentissage/REGLES-APPRISES.md",     "atlas",        "regles apprises R-001 a R-016"),
+  ("codex/atlas/memoire/MACHINE.md",                   "atlas",        "fiche machine et procedures"),
+  ("codex/atlas/memoire/DECISIONS.md",                 "atlas",        "decisions prises"),
+  ("codex/atlas/deliberations/FICHE-DECISION-D-001.md","atlas",        "fiche decision D-001"),
+  ("codex/atlas/deliberations/DOSSIER-01-STATUT-LEGAL.md","droit-belge","dossier statut legal"),
+  ("codex/atlas/deliberations/DOSSIER-02-ENCAISSEMENT.md","droit-belge","dossier encaissement Peppol"),
+  ("codex/expertise/droit-belge.md",                   "droit-belge",  "expertise droit belge"),
+  ("codex/expertise/recherche-sources.md",             "methode",      "expertise recherche de sources"),
+  ("codex/expertise/methode-agents.md",                "methode",      "expertise methode des agents"),
+  ("codex/expertise/erreurs-transverses.md",           "methode",      "expertise erreurs transverses"),
+  ("codex/A-DECIDER.md",                               "atlas",        "ce qui attend une decision"),
+]
+for f in sorted(glob.glob("codex/atlas/corpus/*.md")):
+    if f.endswith("README.md"): continue
+    selection.append((f, None, None))
+def ascii_(t):
+    t = unicodedata.normalize("NFKD", t).encode("ascii","ignore").decode()
+    return re.sub(r"[^A-Za-z0-9 ._-]+","",t).strip()
+lines=[]
+for path, dom, title in selection:
+    date = subprocess.run(["git","log","-1","--format=%cs","--",path],capture_output=True,text=True).stdout.strip() or "0000-00-00"
+    if dom is None:
+        name = ascii_(path.split("/")[-1])
+    else:
+        name = f"{date} - {dom} - {ascii_(title)} - codex.md"
+    url = base + "/" + urllib.parse.quote(path)
+    lines.append(f"{url}|{name}")
+open(out,"w",encoding="utf-8").write("\n".join(lines)+"\n")
+print(f"manifest : {out} ({len(lines)} fichiers)")
+PY

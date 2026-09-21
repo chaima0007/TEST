@@ -13,8 +13,12 @@ set "CORPUS=%BASE%\corpus"
 set "TETE=%BASE%\memoire-depot.txt"
 set "SORTIE=%BASE%\atlas-memoire-local.Modelfile"
 set "URL=https://raw.githubusercontent.com/chaima0007/TEST/claude/nifty-shannon-u87dv8/codex/atlas/memoire/atlas-memoire.tete.txt"
+set "DEPOT=%CORPUS%\depot"
+set "MANIFEST=%BASE%\manifest.txt"
+set "URLMAN=https://raw.githubusercontent.com/chaima0007/TEST/claude/nifty-shannon-u87dv8/codex/atlas/corpus/MANIFEST.txt"
 
 if not exist "%CORPUS%" mkdir "%CORPUS%"
+if not exist "%DEPOT%" mkdir "%DEPOT%"
 
 echo.
 echo [1/4] Telechargement de la memoire du depot...
@@ -24,6 +28,16 @@ if errorlevel 1 (
   pause
   exit /b 1
 )
+
+echo [1b]  Fiches ecrites par ATLAS pour AnythingLLM -^> %DEPOT%
+curl -L -f -s -S -o "%MANIFEST%" "%URLMAN%"
+set /a D=0
+if exist "%MANIFEST%" (
+  for /f "usebackq tokens=1,2 delims=|" %%A in ("%MANIFEST%") do (
+    curl -L -f -s -S -o "%DEPOT%\%%B" "%%A" && set /a D+=1
+  )
+)
+echo       %D% fiche^(s^) a jour dans corpus\depot ^(a envoyer dans AnythingLLM, pas dans la fenetre noire^)
 
 echo [2/4] Lecture de tes notes locales dans %CORPUS%
 set /a TOTAL=0

@@ -61,6 +61,22 @@ télécharge la mémoire du dépôt, y ajoute toutes les notes du dossier et rec
 champs (le tiret long est pénible à taper dans une console) :
 `2026-09-21 - test - premiere note - moi.md`.
 
+**Deux étages, depuis le 2026-09-21 (soir) :**
+- `%USERPROFILE%\ATLAS\corpus\*.md` = **les notes de Chaima**, courtes, entrent dans le Modelfile
+  (fenêtre noire) ET dans AnythingLLM.
+- `%USERPROFILE%\ATLAS\corpus\depot\` = **les fiches écrites par ATLAS dans le dépôt** (expertise,
+  dossiers, règles, état du projet, lexique), téléchargées automatiquement par le script depuis
+  `codex/atlas/corpus/MANIFEST.txt` (généré par `scripts/generer-modelfile-memoire.sh`). Trop
+  volumineuses pour le Modelfile : **pour AnythingLLM seulement** (envoi du dossier entier :
+  sélecteur de fichiers → Ctrl + A → Ouvrir → cocher → Déplacer vers l'espace de travail).
+  Noms de fichiers ASCII, datés du dernier commit du fichier source.
+
+**Le Drive :** l'IA locale n'a pas besoin d'internet pour lire le Drive. L'application Google
+Drive pour Windows synchronise les fichiers dans un dossier local ; AnythingLLM les lit comme
+n'importe quel fichier. C'est Drive qui parle à internet, pas l'IA — le pare-feu ne gêne rien.
+Les « Connecteurs de données » d'AnythingLLM (sites web, GitHub, YouTube…) exigent, eux, une
+sortie réseau : bloqués par la règle pare-feu, volontairement.
+
 **Limite connue :** le modèle lit tout d'un bloc (fenêtre de 16 384 tokens). Au-delà d'environ
 30 000 octets de notes, le script prévient : archiver les anciennes. Ce seuil est le
 déclencheur mesurable du passage au RAG (couche 4, AnythingLLM, Zone 1 à faire).

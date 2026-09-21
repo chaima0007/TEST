@@ -164,6 +164,16 @@ déclencheur chiffré du RAG (couche 4)** : il n'injecte que l'extrait utile, pa
 
 *(Ancienne méthode, toujours valable sans notes locales : `curl` du Modelfile + `ollama create`.)*
 
+**Depuis le 2026-09-21 (soir), le script télécharge aussi les fiches du dépôt** dans
+`%USERPROFILE%\ATLAS\corpus\depot\` (liste : `codex/atlas/corpus/MANIFEST.txt`). Elles sont
+pour AnythingLLM (RAG), pas pour la fenêtre noire. Le `curl` du script est à refaire une fois
+pour prendre cette version.
+
+**AnythingLLM Desktop 1.16.1 — INSTALLÉ le 2026-09-21** (Zone 1 faite, voir
+`codex/candidates/CAND-001-rag-local-windows.md`). Réglages qui comptent : LLM = Ollama
+`qwen2.5:3b` ; espace de travail en **mode Chat** (pas Agent) ; invite en français qui impose de
+citer le fichier ; règle pare-feu sortante « ATLAS AnythingLLM bloque » sur `AnythingLLM.exe`.
+
 Test de contrôle après rechargement : `où en est le projet ATLAS ?` — la réponse doit commencer
 par le DERNIER ÉVÉNEMENT du fichier `00-ETAT-DU-PROJET.md`. Sortir : `/bye`.
 
