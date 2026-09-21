@@ -450,6 +450,14 @@ liste de ce qui recommencera.
 - **Prévention, sous forme de test :** *un rapport de fin de session qui cite une branche doit dire, dans la même phrase, si son contenu est sur `main` ou non.* Formulation obligatoire : **« poussé sur X — PAS sur `main` tant que tu ne l'as pas mergé »**. « Poussé » seul est une demi-vérité ; « livré » pour du non-mergé est faux.
 
 
+## ERR-20260921-1205 — Un contrôle bloquant rendu inoffensif par un `| tail -1` (2026-09-21)
+- **Ce qui s'est passé :** j'ai enchaîné `bash scripts/verifier-registres.sh | tail -1 && git add -A && git commit … && git push`. Le contrôle **a échoué** (il venait de détecter deux références orphelines que j'avais moi-même introduites dans le message de snapshot) — mais `tail` renvoie **0**, donc le `&&` a laissé passer le commit **et le push**. Le garde-fou a fonctionné, son verdict a été jeté.
+- **Sévérité : IMPORTANT** — §9 angle Technique. Dans le commit **qui installe ce contrôle**, je l'ai neutralisé.
+- **Cause racine :** dans un tube, `$?` est celui de la **dernière** commande, pas de la première. Filtrer la sortie d'un contrôle pour la rendre lisible **supprime son pouvoir de bloquer**. C'est la même faute qu'un `--audit-level` trop haut ou qu'un test désactivé : le contrôle existe, il est vert à l'œil, il ne protège plus rien.
+- **Détection :** `set -o pipefail`, ou ne jamais filtrer la sortie d'une commande dont on utilise le code de sortie.
+- **Correctif (APPLIQUÉ le 2026-09-21) :** références orphelines corrigées et re-poussées dans la minute ; le contrôle ré-exécuté **sans tube** renvoie 0. Le gate écrit dans `CLAUDE.md` n'utilise aucun tube — c'est ma commande ad hoc qui était fautive, pas le gate.
+- **Prévention proposée, NON APPLIQUÉE :** interdire tout `|` entre une étape de gate et son `&&` dans les commandes de session, et ajouter `set -o pipefail` en tête des scripts appelants. **EN ATTENTE DE GO.**
+
 ---
 
 ### Motifs récurrents (méta-leçons)
@@ -478,3 +486,4 @@ liste de ce qui recommencera.
 21. **Un livrable se copie, une norme se référence** — la règle « sauvegarde en plusieurs emplacements » vise les dossiers et les livrables ; dupliquer une **norme** crée une divergence. Et avant de ranger un fichier, lire le **journal de sa propre branche** : la décision a peut-être déjà été prise, et motivée (ERR-20260920-1123).
 20. **Un dépôt public est une publication, pas un carnet** — ne jamais recopier une source personnelle dans un fichier versionné : en extraire le seul **fait décisionnel** qui sert. Un `.gitignore` protège un fichier qu'on n'ajoute pas, jamais un fichier qu'on doit committer (ERR-20260919-1324, récidive d'ERR-015).
 22. **Un chiffre sur un AUTRE dépôt est NON VÉRIFIÉ par construction** — attacher le dépôt et compter, ou écrire la mention littérale. Un chiffre repris d'un résumé de session n'a pas de source : il en a l'air, c'est pire (ERR-20260920-1141, récidive d'ERR-012).
+23. **Un contrôle dont on filtre la sortie ne bloque plus rien** — dans un tube, le code de sortie est celui de la dernière commande. `| tail` sur un gate le rend décoratif (ERR-20260921-1205).
