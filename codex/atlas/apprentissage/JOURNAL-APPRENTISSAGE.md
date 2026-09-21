@@ -40,8 +40,14 @@
   contexte ne cherche pas un fait, il prend ce qui est saillant. La structure du fichier
   d'état est donc une décision de fiabilité, pas de mise en page : dernier événement en tête,
   lexique fermé pour les sigles.
-- **Mesure à refaire :** même question après rechargement. Attendu : la réponse commence par la
-  routine en pause, et RAG est défini correctement ou pas développé du tout.
+- **Mesure « après » (2026-09-21, capture) : CONFIRMÉ.** Après rechargement, la réponse à la
+  même question commence par « DERNIER ÉVÉNEMENT » et la routine en pause, avec le coût exact
+  et la marche à suivre. Résidu cosmétique : le titre a été récité avec sa parenthèse de
+  consigne → parenthèse retirée du titre, la consigne reste dans les règles SYSTEM.
+  Test du lexique (RAG) : en attente de la capture.
+- **Incident de collage :** coller dans l'invite `>>>` a injecté `200~` (marqueur de collage
+  de Windows Terminal, non compris par Ollama). Solution : taper au clavier. Ajouté à
+  `MACHINE.md`.
 
 ## 2026-09-16 — Mise en place de la gouvernance ATLAS
 

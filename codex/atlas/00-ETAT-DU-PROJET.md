@@ -4,7 +4,7 @@
 > Ton temps est en rafales de 2-4 h (mesuré) : ce fichier existe pour que la reprise coûte
 > 30 secondes, pas 50 minutes.
 
-## DERNIER ÉVÉNEMENT (à dire en premier si on te demande « où en est le projet »)
+## DERNIER ÉVÉNEMENT
 
 **21/09 — La routine quotidienne est EN PAUSE.** Sa 1re passe du 20/09 a tourné 7 minutes,
 coûté 2,51 $ et n'a rien pu écrire : l'environnement des routines n'a aucun dépôt attaché.

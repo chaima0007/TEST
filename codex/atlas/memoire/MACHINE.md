@@ -157,6 +157,10 @@ ollama run atlas-memoire
 Test de contrôle après rechargement : `où en est le projet ATLAS ?` — la réponse doit commencer
 par le DERNIER ÉVÉNEMENT du fichier `00-ETAT-DU-PROJET.md`. Sortir : `/bye`.
 
+**Piège CONFIRMÉ le 2026-09-21 :** coller un texte dans l'invite `>>>` injecte `200~` en tête
+(marqueur de collage de Windows Terminal). **Taper les questions au clavier**, ou faire
+Ctrl + C puis retaper.
+
 **Point de vigilance permanent (`sentinelle-exfiltration`) :** l'application Ollama propose de
 connecter des **outils tiers**, dont plusieurs sont des services **cloud**. Ollama installé
 localement ne rend pas local ce qui s'y branche, et un compte connecté peut ouvrir l'accès à
