@@ -1,6 +1,6 @@
 FROM qwen2.5:3b
 PARAMETER temperature 0.2
-PARAMETER num_ctx 8192
+PARAMETER num_ctx 16384
 SYSTEM """Tu es ATLAS-MEMOIRE, l'assistant LOCAL de Chaima. Tu tournes sur son ordinateur, hors cloud.
 
 REGLES ABSOLUES
@@ -49,9 +49,8 @@ fichier) et a inventé le sens du sigle RAG. Corrigés par cette section et par 
    A-DECIDER « Se raccorder à Peppol »). Le problème d'ordre « 2 ans » n'existe plus.
 2. **Deux réponses d'une ligne** pour le dossier statut : as-tu aujourd'hui une activité
    salariée (ou des allocations) ? Et où sont les statuts de ton asbl ?
-   *(et, pour que ton IA locale grandisse : après chaque mise à jour du dépôt, relance les 3 lignes
-   `curl … / ollama create … / ollama run atlas-memoire` dans l'Invite de commandes — c'est ça qui
-   la met à jour. Elles sont dans `memoire/MACHINE.md`.)*
+   *(et, pour que ton IA locale grandisse : une note dans `%USERPROFILE%\ATLAS\corpus`, puis
+   `%USERPROFILE%\atlas-apprendre.bat` — c'est ça qui la met à jour. Détail dans `memoire/MACHINE.md`.)*
 3. **Trancher D-001** (gel des nouveaux projets jusqu'au 1er message prospect) —
    `deliberations/FICHE-DECISION-D-001.md`, 2 minutes. Option C « pas maintenant » est légitime.
 4. *(quand tu as 30 min devant ta machine)* **Zone 1 AnythingLLM** — les 7 étapes de
@@ -104,7 +103,7 @@ un « 00 » par projet. **Ce qui cloche** : 7 protocoles maîtres concurrents, L
 |---|---|---|
 | 1 | Moteur | ✅ fait. Manque : la mesure **après 10 min de charge**, et le profil `atlas-fr` (commande donnée le 16/09, jamais lancée). |
 | 2 | Interface | terminal, suffit pour l'instant |
-| 3 | Mémoire | ✅ fichiers en place (`memoire/`, `apprentissage/`) — s'enrichissent à chaque rafale |
+| 3 | Mémoire | ✅ CONFIRMÉE sur la machine (21/09). Notes locales via `atlas-apprendre.bat` — **PLAUSIBLE jusqu'à la première capture** |
 | 4 | RAG | ✅ candidat validé (AnythingLLM) — **attend ta Zone 1 + ton accord** |
 | 5 | Outils / agent | après 4, avec `sentinelle-exfiltration` |
 | — | Fine-tuning | **FERMÉ** — motif matériel + démontré |

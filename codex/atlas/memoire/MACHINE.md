@@ -145,14 +145,18 @@ plus courts. **Mesurer sur la première vraie question, et inscrire ici.**
 le 2026-09-21, capture). Toute commande donnée doit fonctionner dans cmd. Variables : `%USERPROFILE%`
 et non `$HOME`. Téléchargement : `curl` (fourni avec Windows), pas `Invoke-WebRequest`.
 
-**Les 3 lignes qui rechargent la mémoire dans l'IA locale** (à relancer après chaque mise à jour
-du dépôt, dans l'Invite de commandes, une ligne à la fois) :
+**Recharger la mémoire dans l'IA locale — depuis le 2026-09-21, UN script :**
+`%USERPROFILE%\atlas-apprendre.bat` (source : `scripts/atlas-apprendre.bat`, récupéré une fois
+par `curl`). Il télécharge la mémoire du dépôt, ajoute les notes de `%USERPROFILE%\ATLAS\corpus`
+et reconstruit `atlas-memoire`. À relancer après chaque mise à jour du dépôt ou chaque note ajoutée.
 
 ```bat
-curl -L -o "%USERPROFILE%\atlas-memoire.Modelfile" "https://raw.githubusercontent.com/chaima0007/TEST/claude/nifty-shannon-u87dv8/codex/atlas/memoire/atlas-memoire.Modelfile"
-ollama create atlas-memoire -f "%USERPROFILE%\atlas-memoire.Modelfile"
+curl -L -o "%USERPROFILE%\atlas-apprendre.bat" "https://raw.githubusercontent.com/chaima0007/TEST/claude/nifty-shannon-u87dv8/scripts/atlas-apprendre.bat"
+%USERPROFILE%\atlas-apprendre.bat
 ollama run atlas-memoire
 ```
+
+*(Ancienne méthode, toujours valable sans notes locales : `curl` du Modelfile + `ollama create`.)*
 
 Test de contrôle après rechargement : `où en est le projet ATLAS ?` — la réponse doit commencer
 par le DERNIER ÉVÉNEMENT du fichier `00-ETAT-DU-PROJET.md`. Sortir : `/bye`.

@@ -47,10 +47,25 @@ juridique de 2024 ingérée en 2026 serait citée « 2026 ». **La date doit don
   en tête de nom. On ne supprime pas (§10) : le RAG doit pouvoir dire « la version de 2024
   disait autre chose ».
 
-## Ajouter un document — procédure
+## Ajouter un document — procédure SUR LA MACHINE DE CHAIMA (en service depuis le 2026-09-21)
 
-Les commandes exactes viendront avec l'outil retenu (Parcours 1 en cours). Les quatre temps
-sont fixés :
+**Où :** dans le dossier `%USERPROFILE%\ATLAS\corpus` de sa machine, **jamais dans ce dépôt**
+(il est public — R-015). Ce dossier README décrit la convention ; les notes vivent chez elle.
+
+**Comment (Invite de commandes) :** écrire la note dans le Bloc-notes, puis lancer
+`%USERPROFILE%\atlas-apprendre.bat` (source : `scripts/atlas-apprendre.bat`). Le script
+télécharge la mémoire du dépôt, y ajoute toutes les notes du dossier et reconstruit le modèle
+`atlas-memoire`. Aucune donnée ne sort de la machine : le script ne fait que télécharger.
+
+**Nom de fichier sur la machine :** même convention, mais avec un tiret simple entre les
+champs (le tiret long est pénible à taper dans une console) :
+`2026-09-21 - test - premiere note - moi.md`.
+
+**Limite connue :** le modèle lit tout d'un bloc (fenêtre de 16 384 tokens). Au-delà d'environ
+30 000 octets de notes, le script prévient : archiver les anciennes. Ce seuil est le
+déclencheur mesurable du passage au RAG (couche 4, AnythingLLM, Zone 1 à faire).
+
+Les quatre temps restent obligatoires :
 
 1. **Dater et sourcer** : d'où vient ce document, de quand.
 2. **Vérifier qu'il n'existe pas déjà** : un doublon dégrade les réponses, il ne les enrichit

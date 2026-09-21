@@ -23,6 +23,23 @@
   de les faire confirmer. Un agent qui corrige une hallucination par une affirmation non
   sourcée n'a rien corrigé.
 
+## 2026-09-21 — Les notes locales entrent dans la mémoire (PLAUSIBLE jusqu'à capture)
+
+- **Tâche :** Chaima demande « continuer les commandes pour qu'elle apprenne ». Couche 3 selon
+  l'ordre du skill `atlas` : la mémoire doit grandir avec **ses** notes, pas seulement les
+  fichiers du dépôt.
+- **Choix :** un script `.bat` (`scripts/atlas-apprendre.bat`), parce que son shell réel est
+  l'Invite de commandes (CONFIRMÉ). Il télécharge la tête du Modelfile, concatène les notes
+  de `%USERPROFILE%\ATLAS\corpus`, clôt la chaîne SYSTEM et reconstruit `atlas-memoire`.
+- **Pourquoi pas le RAG tout de suite :** l'installation d'AnythingLLM est humaine (§10) et la
+  Zone 1 n'est pas faite. Le `.bat` donne la croissance dès maintenant, avec un seuil mesurable
+  (30 000 octets) qui deviendra l'argument chiffré pour passer au RAG.
+- **Sécurité :** les notes restent sur sa machine, jamais dans le dépôt public (R-015). Le
+  script ne fait qu'un téléchargement sortant ; `sentinelle-exfiltration` n'a rien à redire.
+- **Risques connus, à vérifier sur capture :** encodage des accents via `type` sous
+  `chcp 65001` ; une note contenant trois guillemets droits casserait le Modelfile.
+- **Verdict :** PLAUSIBLE. Passe à CONFIRMÉ à la première capture où l'IA cite une note locale.
+
 ## 2026-09-21 — Premier test réel de la mémoire locale (CONFIRMÉ)
 
 - **Tâche :** Chaima charge `atlas-memoire` sur sa machine et pose la question de contrôle

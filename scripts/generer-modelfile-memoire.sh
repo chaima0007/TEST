@@ -6,11 +6,12 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 out=codex/atlas/memoire/atlas-memoire.Modelfile
+tete=codex/atlas/memoire/atlas-memoire.tete.txt
 {
 cat <<'HEAD'
 FROM qwen2.5:3b
 PARAMETER temperature 0.2
-PARAMETER num_ctx 8192
+PARAMETER num_ctx 16384
 SYSTEM """Tu es ATLAS-MEMOIRE, l'assistant LOCAL de Chaima. Tu tournes sur son ordinateur, hors cloud.
 
 REGLES ABSOLUES
@@ -44,10 +45,15 @@ cat <<'MID'
 REGLES APPRISES (extrait)
 MID
 grep -E '^\| R-0' codex/atlas/apprentissage/REGLES-APPRISES.md | sed -E 's/\*\*//g; s/`//g' | awk -F'|' '{printf "- %s : %s\n", $2, $3}' | sed 's/  */ /g'
+} | sed "s/DATE_COPIE/$(date -u +%F)/" > "$tete"
+# Modelfile complet = tête + clôture. La tête seule sert au script Windows
+# scripts/atlas-apprendre.bat, qui y ajoute les NOTES LOCALES de Chaima avant de clore.
+{
+cat "$tete"
 cat <<'TAIL'
 =====
 Fin de la memoire. Tout ce qui n'est pas ci-dessus : "Ce n'est pas dans ma memoire."
 """
 TAIL
-} | sed "s/DATE_COPIE/$(date -u +%F)/" > "$out"
-echo "écrit : $out ($(wc -w < "$out") mots, ~$(( $(wc -c < "$out") / 3 )) tokens estimés)"
+} > "$out"
+echo "écrit : $out ($(wc -w < "$out") mots, ~$(( $(wc -c < "$out") / 3 )) tokens estimés) + $tete"
