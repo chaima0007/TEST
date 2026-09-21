@@ -9,6 +9,7 @@
 // si ANTHROPIC_API_KEY est présent (repli heuristique en cas d'absence/erreur).
 
 import Anthropic from "@anthropic-ai/sdk";
+import { verifierSansSurvente } from "./garde-fou";
 
 export interface Prospect {
   firstName: string;
@@ -89,7 +90,12 @@ function heuristicDraft(p: Prospect, o: Offer): OutreachDraft {
   );
   const firstMessage = [
     `Merci d'avoir accepté, ${p.firstName} !`,
-    `${constat} Chez Caelum Partners, je conçois votre ${o.service} (${o.edge}) à partir de ${eur(o)}.`,
+    // ERR-016 / avocat-du-client (2026-09-14) : « à partir de » annonce un prix
+    // PLANCHER, donc une facture plus élevée. PACTE facture un forfait tout
+    // compris (`pacte.ts:54` et `:85`). Deux de nos textes se contredisaient, et
+    // celui qui part le premier promettait le mauvais sens. Le prix lui-même
+    // (`o.price`) n'est pas touché : seule la contradiction est levée.
+    `${constat} Chez Caelum Partners, je conçois votre ${o.service} (${o.edge}) pour un forfait de ${eur(o)}.`,
     `Est-ce que 15 minutes cette semaine vous conviendraient pour voir si ça a du sens pour ${p.company} ? Sans engagement.`,
   ].join("\n\n");
   const followUp = [
@@ -107,7 +113,15 @@ export interface Writer {
 
 export class HeuristicHermes implements Writer {
   async draft(p: Prospect, o: Offer = CAELUM_OFFER): Promise<OutreachDraft> {
-    return heuristicDraft(p, o);
+    const d = heuristicDraft(p, o);
+    // ERR-016 : ce chemin est le repli ET le chemin actif sans clé API.
+    // Il doit être filtré comme le chemin LLM, sinon le garde-fou ne protège rien.
+    verifierSansSurvente(
+      [d.connectionNote, d.altConnectionNote, d.firstMessage, d.followUp],
+      BANNED,
+      "HERMES (heuristique)",
+    );
+    return d;
   }
 }
 

@@ -14,6 +14,7 @@
 // est présent (repli heuristique en cas d'absence/erreur).
 
 import Anthropic from "@anthropic-ai/sdk";
+import { verifierSansSurvente } from "./garde-fou";
 import { CAELUM_OFFER, type Offer } from "./hermes";
 
 export type Objection = "price" | "timing" | "trust" | "none";
@@ -94,7 +95,14 @@ export interface SequenceWriter {
 
 export class HeuristicRelance implements SequenceWriter {
   async draft(p: PendingQuote, o: Offer = CAELUM_OFFER): Promise<FollowUpSequence> {
-    return heuristicSequence(p, o);
+    const seq = heuristicSequence(p, o);
+    // ERR-016 : ce chemin est le repli ET le chemin actif sans clé API.
+    verifierSansSurvente(
+      seq.messages.map((m) => `${m.label}\n${m.body}`),
+      BANNED,
+      "RELANCE (heuristique)",
+    );
+    return seq;
   }
 }
 

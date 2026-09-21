@@ -14,6 +14,7 @@
 // Chaima de compléter selon son statut réel.
 
 import Anthropic from "@anthropic-ai/sdk";
+import { verifierSansSurvente } from "./garde-fou";
 import { CAELUM_OFFER, type Offer } from "./hermes";
 
 export interface LeadBrief {
@@ -94,7 +95,18 @@ export interface ProposalWriter {
 
 export class HeuristicPacte implements ProposalWriter {
   async draft(l: LeadBrief, o: Offer = CAELUM_OFFER): Promise<Proposal> {
-    return heuristicProposal(l, o);
+    const prop = heuristicProposal(l, o);
+    // ERR-016 : ce chemin est le repli ET le chemin actif sans clé API.
+    // BANNED_PAYMENT est inclus : §10 interdit de promettre un paiement en ligne.
+    verifierSansSurvente(
+      [
+        prop.subject, prop.understanding, prop.timeline, prop.priceLine, prop.nextStep,
+        ...prop.scope, ...prop.outOfScope, ...prop.terms,
+      ],
+      [...BANNED, ...BANNED_PAYMENT],
+      "PACTE (heuristique)",
+    );
+    return prop;
   }
 }
 
