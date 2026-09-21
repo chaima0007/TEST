@@ -23,6 +23,26 @@
   de les faire confirmer. Un agent qui corrige une hallucination par une affirmation non
   sourcée n'a rien corrigé.
 
+## 2026-09-21 — Premier test réel de la mémoire locale (CONFIRMÉ)
+
+- **Tâche :** Chaima charge `atlas-memoire` sur sa machine et pose la question de contrôle
+  « où en est le projet ATLAS ? ».
+- **Ce qui a marché :** le pont fichiers → Modelfile → Ollama fonctionne. L'IA locale a cité
+  des faits qui ne peuvent venir que de nos fichiers : le débit mesuré, le RAG validé en attente
+  de Zone 1, Peppol, le statut LLAM, le prompt maître v2 dans le Drive. Aucun chiffre inventé.
+- **Ce qui a raté :** (1) le fait le plus récent, la routine en pause, n'a pas été cité alors
+  qu'il était dans la mémoire ; (2) le sigle RAG a reçu un sens inventé. C'est la « réponse
+  fluide et fausse » que `sentinelle-derive` décrit — observée pour de vrai, pas en théorie.
+- **Ce qui a aussi raté, côté instructions :** la commande `ollama run` a été collée avec un
+  mot en trop (`atlas-memoireollama`). Une commande sur une seule ligne, dans son propre bloc,
+  réduit ce risque (R-011).
+- **Leçon retenue :** R-016. Un modèle de 3 milliards de paramètres avec 8 192 tokens de
+  contexte ne cherche pas un fait, il prend ce qui est saillant. La structure du fichier
+  d'état est donc une décision de fiabilité, pas de mise en page : dernier événement en tête,
+  lexique fermé pour les sigles.
+- **Mesure à refaire :** même question après rechargement. Attendu : la réponse commence par la
+  routine en pause, et RAG est défini correctement ou pas développé du tout.
+
 ## 2026-09-16 — Mise en place de la gouvernance ATLAS
 
 - **Tâche :** créer les agents de domaine, les sentinelles et la boucle d'apprentissage d'une

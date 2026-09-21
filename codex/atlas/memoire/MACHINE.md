@@ -138,7 +138,24 @@ plus courts. **Mesurer sur la première vraie question, et inscrire ici.**
 |---|---|---|---|---|
 | **Ollama** | non relevée | 2026-09-16 | **VÉRIFIÉ** — application ouverte, capture d'écran | `ollama --version` dans PowerShell |
 
-**Modèles téléchargés :** aucun à ce jour. Les lister : `ollama list`.
+**Modèles présents (CONFIRMÉ le 2026-09-21, captures d'écran) :** `qwen2.5:3b` (moteur) et
+`atlas-memoire` (profil mémoire construit dessus, `success` à la création). Les lister : `ollama list`.
+
+**Shell réellement utilisé par Chaima : l'Invite de commandes (cmd), pas PowerShell** (CONFIRMÉ
+le 2026-09-21, capture). Toute commande donnée doit fonctionner dans cmd. Variables : `%USERPROFILE%`
+et non `$HOME`. Téléchargement : `curl` (fourni avec Windows), pas `Invoke-WebRequest`.
+
+**Les 3 lignes qui rechargent la mémoire dans l'IA locale** (à relancer après chaque mise à jour
+du dépôt, dans l'Invite de commandes, une ligne à la fois) :
+
+```bat
+curl -L -o "%USERPROFILE%\atlas-memoire.Modelfile" "https://raw.githubusercontent.com/chaima0007/TEST/claude/nifty-shannon-u87dv8/codex/atlas/memoire/atlas-memoire.Modelfile"
+ollama create atlas-memoire -f "%USERPROFILE%\atlas-memoire.Modelfile"
+ollama run atlas-memoire
+```
+
+Test de contrôle après rechargement : `où en est le projet ATLAS ?` — la réponse doit commencer
+par le DERNIER ÉVÉNEMENT du fichier `00-ETAT-DU-PROJET.md`. Sortir : `/bye`.
 
 **Point de vigilance permanent (`sentinelle-exfiltration`) :** l'application Ollama propose de
 connecter des **outils tiers**, dont plusieurs sont des services **cloud**. Ollama installé

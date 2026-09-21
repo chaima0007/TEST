@@ -1,8 +1,18 @@
 # ATLAS — ÉTAT DU PROJET
 
-> **Le seul fichier à ouvrir pour reprendre.** Mis à jour : **2026-09-20 11:25 UTC**.
+> **Le seul fichier à ouvrir pour reprendre.** Mis à jour : **2026-09-21 18:05 UTC**.
 > Ton temps est en rafales de 2-4 h (mesuré) : ce fichier existe pour que la reprise coûte
 > 30 secondes, pas 50 minutes.
+
+## DERNIER ÉVÉNEMENT (à dire en premier si on te demande « où en est le projet »)
+
+**21/09 — La routine quotidienne est EN PAUSE.** Sa 1re passe du 20/09 a tourné 7 minutes,
+coûté 2,51 $ et n'a rien pu écrire : l'environnement des routines n'a aucun dépôt attaché.
+Remise en service = Chaima attache le dépôt avec droits de push à l'environnement « Par défaut »
+(réglage claude.ai), puis réactive la routine. **21/09 — Mémoire locale CONFIRMÉE :** le modèle
+`atlas-memoire` a été chargé sur la machine de Chaima et a répondu avec des faits vrais tirés de
+ces fichiers. Deux défauts mesurés : il a omis la routine en pause (fait enterré en milieu de
+fichier) et a inventé le sens du sigle RAG. Corrigés par cette section et par un lexique.
 
 ## À FAIRE PAR TOI — quand tu veux, dans cet ordre, et rien d'autre ne bloque
 
@@ -11,8 +21,9 @@
    A-DECIDER « Se raccorder à Peppol »). Le problème d'ordre « 2 ans » n'existe plus.
 2. **Deux réponses d'une ligne** pour le dossier statut : as-tu aujourd'hui une activité
    salariée (ou des allocations) ? Et où sont les statuts de ton asbl ?
-   *(et, pour que ton IA locale grandisse : après chaque passe de la routine, relance les 3 lignes
-   `Invoke-WebRequest … / ollama create … / ollama run atlas-memoire` — c'est ça qui la met à jour)*
+   *(et, pour que ton IA locale grandisse : après chaque mise à jour du dépôt, relance les 3 lignes
+   `curl … / ollama create … / ollama run atlas-memoire` dans l'Invite de commandes — c'est ça qui
+   la met à jour. Elles sont dans `memoire/MACHINE.md`.)*
 3. **Trancher D-001** (gel des nouveaux projets jusqu'au 1er message prospect) —
    `deliberations/FICHE-DECISION-D-001.md`, 2 minutes. Option C « pas maintenant » est légitime.
 4. *(quand tu as 30 min devant ta machine)* **Zone 1 AnythingLLM** — les 7 étapes de

@@ -355,3 +355,13 @@ son heure UTC, pour que `git log --since` fonctionne.)*
   propre preuve** : si elle s'exécute, c'est Windows ; si elle échoue, ce n'en est pas. Aucune
   installation ne partira d'une impression.
 - **Rien installé, rien acheté, rien engagé.**
+
+## SNAPSHOT 2026-09-21 18:10 UTC — compteur : 2
+
+- **Changé depuis le 20/09 :** mémoire locale **CONFIRMÉE** sur la machine de Chaima (captures :
+  `curl` OK, `ollama create` → `success`, réponse avec faits vrais). Deux défauts mesurés
+  (fait récent omis, sigle inventé) → R-016, section « DERNIER ÉVÉNEMENT » en tête de
+  `00-ETAT-DU-PROJET.md`, lexique fermé dans le Modelfile, `MACHINE.md` mis à jour (cmd, pas
+  PowerShell ; 2 modèles présents).
+- **Inchangé :** routine en pause, tout ce qui attend Chaima dans `codex/A-DECIDER.md`.
+- **Rien installé, rien acheté, rien engagé.**
