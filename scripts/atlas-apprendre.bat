@@ -64,6 +64,7 @@ if errorlevel 1 (
 )
 
 echo [4/4] Termine. Ton IA locale connait maintenant le depot + %N% note^(s^).
-echo        Pour lui parler :  ollama run atlas-memoire
+echo        Elle demarre. La 1re reponse est lente ^(elle relit toute la memoire^), les suivantes sont rapides.
+echo        Pour sortir : /bye
 echo.
-pause
+ollama run atlas-memoire

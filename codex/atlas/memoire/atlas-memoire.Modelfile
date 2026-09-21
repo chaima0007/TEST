@@ -127,22 +127,22 @@ Dossier « ATLAS — IA locale » : `01 fiche machine` (remplie par PowerShell, 
 Procédure de mise à jour : `continuite/SYNC-DRIVE.md`.
 =====
 REGLES APPRISES (extrait)
-- R-001 : Ne jamais présenter un ensemble comme bloqué parce qu'une fraction l'est. Découper, livrer le livrable, n'escalader que le reste en le nommant. 
-- R-002 : Sur chaima0007/test : jamais de push --force, de suppression de branche, ni de réécriture d'historique. Plus de 30 branches, ~15 projets étrangers, aucune mergée — chaque branche est l'unique copie de son travail. 
-- R-003 : Ne jamais annoncer un débit, une qualité ou un coût sans mesure sur la machine de Chaima. Sinon : NON VÉRIFIÉ, écrit littéralement. 
-- R-004 : Le repli d'un contrôle ne doit jamais être la sortie non contrôlée. Un système « local avec repli cloud » est cloud les jours où la question est difficile. 
-- R-005 : Aucune commande sans savoir l'OS réel. Chaque étape sort en trois temps : la commande, la vérification que ça a marché, quoi faire si ça échoue. 
-- R-006 : Le jeu d'or se fige avant le premier changement. C'est la seule étape de la boucle qu'on ne peut pas rattraper après coup. 
-- R-007 : Un type d'information = un sous-dossier = UN SEUL fichier vivant, où l'on ajoute en tête. Jamais un nouveau fichier daté par événement (audit-v2.md, audit-final.md…) : c'est ça qui entremêle les documents. Table de routage : ../ROUTAGE.md. 
-- R-008 : Chercher dans le Drive avant de dire qu'une information manque — et la créer si elle n'existe pas. Ne jamais renvoyer Chaima vers une information qu'on pouvait aller chercher ou préparer soi-même. 
-- R-009 : Ne jamais déduire une caractéristique de la machine d'un document d'école, d'un exemple ou d'un voisinage. Un exercice Windows Server dans le Drive ne dit rien de l'OS de Chaima. Cherché ≠ supposé. 
-- R-010 : Toute instruction destinée à Chaima doit contenir le repère qui lui dit où elle est. Ne pas dire « ouvre PowerShell » mais « tape powershell dans la fenêtre ouverte, tu dois voir PS avant le curseur ». Et la section « si ça rate » doit contenir l'échec réel, pas trois échecs plausibles. 
-- R-011 : Une commande qui ouvre une session interactive s'annonce comme telle : « cette commande est finie, ne la recolle pas — désormais tu parles au modèle ». Et jamais un bloc copiable comme dernier élément avant une invite : face à une invite, on recolle ce qu'on a sous la main. 
-- R-012 : Jamais de printf pour un message de commit. Heredoc <<'MSG' (guillemets simples) + git commit -F. Le % et les backticks sont magiques pour le shell, et le commit réussit quand même avec un message amputé — l'erreur est silencieuse. Vérifier par git log -1 --format=%B. 
-- R-013 : Un agent qui lit git sans fetch raisonne sur un passé. Toute affirmation sur l'état du dépôt exige un git fetch dans le même tour, et se vérifie avant d'être relayée à Chaima. Corollaire : un argument faux ne rend pas faux ses voisins — on retire le fait, on ne jette pas la plaidoirie. 
-- R-014 : « Inaccessible » n'est jamais une conclusion : c'est un constat sur MES outils. Sur ce dépôt, WebFetch et curl sont bloqués vers les sites officiels ; mcp__Exa__web_fetch_exa fonctionne. Aucun agent n'écrit « source inaccessible » sans nommer les outils essayés, Exa compris. Corollaire : quand un agent affirme impossible ce qu'un autre a fait, celui qui a réussi a la présomption — un échec ne prouve que lui-même. 
-- R-015 : Le dépôt est PUBLIC : rien de personnel n'y descend, ni dans un fichier, ni dans un message de commit. bash scripts/verifier-avant-push.sh <msg> avant chaque push. Dans les fichiers ATLAS on écrit « Bruxelles », jamais une adresse ; « 39 ans », jamais une date de naissance. Un message de commit ne se retire pas (R-002). 
-- R-016 : Un petit modèle ne lit pas, il survole : le fait le plus récent va en TÊTE, sous un titre qui le nomme. Test du 2026-09-21 : la routine en pause était dans le Modelfile (ligne 65) et l'IA locale ne l'a pas citée. Corollaire : un sigle sans définition sera inventé (« RAG = Ressources Alimentaires Générales »). Tout sigle utilisé dans la mémoire figure dans un LEXIQUE fermé, et la règle dit quoi répondre hors lexique. 
+- R-001 : en le nommant
+- R-002 : aucune mergée
+- R-003 : sur la machine de Chaima
+- R-004 :  Le repli d'un contrôle ne doit jamais être la sortie non contrôlée. Un système « local avec repli cloud » est cloud les jours où la question est difficile. 
+- R-005 :  Aucune commande sans savoir l'OS réel. Chaque étape sort en trois temps : la commande, la vérification que ça a marché, quoi faire si ça échoue. 
+- R-006 : avant
+- R-007 : Un type d'information = un sous-dossier = UN SEUL fichier vivant
+- R-008 : Chercher dans le Drive avant de dire qu'une information manque — et la créer si elle n'existe pas.
+- R-009 : Ne jamais déduire une caractéristique de la machine d'un document d'école, d'un exemple ou d'un voisinage.
+- R-010 : Toute instruction destinée à Chaima doit contenir le repère qui lui dit où elle est.
+- R-011 : Une commande qui ouvre une session interactive s'annonce comme telle
+- R-012 : Jamais de printf pour un message de commit.
+- R-013 : Un agent qui lit git sans fetch raisonne sur un passé.
+- R-014 : « Inaccessible » n'est jamais une conclusion : c'est un constat sur MES outils.
+- R-015 : Le dépôt est PUBLIC : rien de personnel n'y descend, ni dans un fichier, ni dans un message de commit.
+- R-016 : Un petit modèle ne lit pas, il survole : le fait le plus récent va en TÊTE, sous un titre qui le nomme.
 =====
 Fin de la memoire. Tout ce qui n'est pas ci-dessus : "Ce n'est pas dans ma memoire."
 """

@@ -153,8 +153,14 @@ et reconstruit `atlas-memoire`. À relancer après chaque mise à jour du dépô
 ```bat
 curl -L -o "%USERPROFILE%\atlas-apprendre.bat" "https://raw.githubusercontent.com/chaima0007/TEST/claude/nifty-shannon-u87dv8/scripts/atlas-apprendre.bat"
 %USERPROFILE%\atlas-apprendre.bat
-ollama run atlas-memoire
 ```
+Depuis le 2026-09-21 (soir), le script **lance lui-même** `ollama run atlas-memoire` à la fin :
+une seule commande au quotidien. Le `curl` ne se refait que si le script change.
+
+**Lenteur mesurée par Chaima (2026-09-21) :** la 1re réponse de chaque session attend que le
+processeur relise toute la mémoire (~3 600 tokens après raccourcissement des règles, ~4 500
+avant). Sans GPU, c'est une à deux minutes. Les réponses suivantes sont rapides. **C'est le
+déclencheur chiffré du RAG (couche 4)** : il n'injecte que l'extrait utile, pas tout.
 
 *(Ancienne méthode, toujours valable sans notes locales : `curl` du Modelfile + `ollama create`.)*
 

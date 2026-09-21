@@ -44,7 +44,8 @@ cat <<'MID'
 =====
 REGLES APPRISES (extrait)
 MID
-grep -E '^\| R-0' codex/atlas/apprentissage/REGLES-APPRISES.md | sed -E 's/\*\*//g; s/`//g' | awk -F'|' '{printf "- %s : %s\n", $2, $3}' | sed 's/  */ /g'
+# Une règle = sa phrase en gras seulement (le détail reste dans le dépôt) : mémoire courte = IA plus rapide sur CPU
+grep -E '^\| R-0' codex/atlas/apprentissage/REGLES-APPRISES.md | awk -F'|' '{id=$2; txt=$3; if (match(txt,/\*\*[^*]+\*\*/)) txt=substr(txt,RSTART+2,RLENGTH-4); gsub(/`/,"",txt); gsub(/  +/," ",txt); gsub(/^ +| +$/,"",id); printf "- %s : %s\n", id, txt}'
 } | sed "s/DATE_COPIE/$(date -u +%F)/" > "$tete"
 # Modelfile complet = tête + clôture. La tête seule sert au script Windows
 # scripts/atlas-apprendre.bat, qui y ajoute les NOTES LOCALES de Chaima avant de clore.

@@ -39,6 +39,14 @@
 - **Risques connus, à vérifier sur capture :** encodage des accents via `type` sous
   `chcp 65001` ; une note contenant trois guillemets droits casserait le Modelfile.
 - **Verdict :** PLAUSIBLE. Passe à CONFIRMÉ à la première capture où l'IA cite une note locale.
+- **Retour de Chaima, le soir même : « c'est lent, et pourquoi on recommence toujours la même
+  action ? »** Deux constats justes. (1) Lent : la 1re réponse relit toute la mémoire sur CPU.
+  Correctif : règles réduites à leur phrase en gras dans le Modelfile (4 540 → 3 608 tokens
+  estimés) ; le vrai remède est le RAG, et cette lenteur en est désormais l'argument mesuré.
+  (2) Répétition : j'ai fait reconstruire à chaque correction et demandé une capture par étape.
+  Correctif : le script lance l'IA lui-même (une commande), et je ne demande plus qu'une capture,
+  la finale. **Leçon :** une procédure qui exige trois commandes et une capture par étape n'est
+  pas une procédure pour quelqu'un qui débute, c'est une procédure pour moi.
 
 ## 2026-09-21 — Premier test réel de la mémoire locale (CONFIRMÉ)
 
