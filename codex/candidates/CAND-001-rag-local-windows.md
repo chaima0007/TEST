@@ -115,7 +115,7 @@ Fichiers LICENSE lus (raw.githubusercontent.com, cdn.anythingllm.com, API Huggin
 
 ### 4. Zone 1 sur Windows 11 Pro (MACHINE.md) — procédure pour Chaima
 
-1. Clic droit sur `AnythingLLMDesktop.exe` → Propriétés → *Signatures numériques*. Absent, ou signataire ≠ Mintplex Labs → **REJET**.
+1. Clic droit sur `AnythingLLMDesktop.exe` → Propriétés → *Signatures numériques*. Absent, ou signataire ≠ Mintplex Labs → **REJET**. **✅ FAIT le 2026-09-21 (capture) : signataire « Mintplex La… », sha256, horodaté le 27 août 2026 ; fichier de 391 Mo téléchargé depuis anythingllm.com/desktop. VÉRIFIÉ.**
 2. Installer **TCPView** (Microsoft Sysinternals, gratuit : learn.microsoft.com/sysinternals/downloads/tcpview), activer *Resolve addresses*, le laisser ouvert.
 3. Installer (idéalement dans *Windows Sandbox*, option de Win 11 Pro = conteneur jetable). Attendu : `cdn.anythingllm.com` seul.
 4. *Settings → Privacy → télémétrie OFF* ; tray → *Quit* ; relancer ; brancher l'Ollama existant. Charger un document : un contact `huggingface.co`/`cdn.anythingllm.com` toléré.
@@ -134,7 +134,7 @@ Fichiers LICENSE lus (raw.githubusercontent.com, cdn.anythingllm.com, API Huggin
     OBJET : Autoriser AnythingLLM Desktop v1.16.1 en Zone 1 sur la machine de Chaima avec la procédure §4 et le blocage pare-feu ; aucune Zone 3 avant la capture.
     VERDICT : VALIDÉ NON INTÉGRÉ (AnythingLLM, Zone 1 seule — souveraineté NON VÉRIFIÉE) · REJETÉ (Open WebUI Desktop, Msty Studio)
     PARCE QUE : 19/20 avis corrigés en 1.16.1 (2026-09-19) ; DISABLE_TELEMETRY ne garde que PostHog (`server/models/telemetry.js:50`) ; deux sorties hors garde-fou (`modelMap/index.js:29`, `native/index.js:37`) ; installeur fermé, intégrité CDN non publiée.
-    NON VÉRIFIÉ : signature du .exe ; hash des archives CDN ; réseau réel du wrapper (auto-update, Ollama embarqué) ; GHSA-rh3m sur Desktop ; OFFLINE_MODE depuis Open WebUI Desktop ; signature Msty.
+    NON VÉRIFIÉ : ~~signature du .exe~~ (VÉRIFIÉE le 2026-09-21, capture) ; hash des archives CDN ; réseau réel du wrapper (auto-update, Ollama embarqué) ; GHSA-rh3m sur Desktop ; OFFLINE_MODE depuis Open WebUI Desktop ; signature Msty.
     CE QUI CHANGERAIT MON AVIS : REJET si TCPView montre une adresse distante pendant le chat après opt-out, ou un .exe non signé ; réserve levée si Mintplex publie les hashes CDN et une release > 1.16.1, et si la capture ne montre que localhost pendant 10 min.
 
 
