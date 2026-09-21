@@ -40,7 +40,7 @@ Remise en service = Chaima attache le dépôt avec droits de push à l'environne
 (réglage claude.ai), puis réactive la routine. **21/09 — Mémoire locale CONFIRMÉE :** le modèle
 `atlas-memoire` a été chargé sur la machine de Chaima et a répondu avec des faits vrais tirés de
 ces fichiers. Deux défauts mesurés : il a omis la routine en pause (fait enterré en milieu de
-fichier) et a inventé le sens du sigle RAG. Corrigés par cette section et par un lexique, **les deux corrections CONFIRMÉES par re-test le 21/09**.
+fichier) et a inventé le sens du sigle RAG. Corrigés par cette section et par un lexique, **les deux corrections CONFIRMÉES par re-test le 21/09**. **Le soir : tes notes locales entrent dans sa mémoire** (`atlas-apprendre.bat`, CONFIRMÉ sur une note test). Prochaine couche : le RAG, qui règle la lenteur.
 
 ## À FAIRE PAR TOI — quand tu veux, dans cet ordre, et rien d'autre ne bloque
 
@@ -103,7 +103,7 @@ un « 00 » par projet. **Ce qui cloche** : 7 protocoles maîtres concurrents, L
 |---|---|---|
 | 1 | Moteur | ✅ fait. Manque : la mesure **après 10 min de charge**, et le profil `atlas-fr` (commande donnée le 16/09, jamais lancée). |
 | 2 | Interface | terminal, suffit pour l'instant |
-| 3 | Mémoire | ✅ CONFIRMÉE sur la machine (21/09). Notes locales via `atlas-apprendre.bat` — **PLAUSIBLE jusqu'à la première capture** |
+| 3 | Mémoire | ✅ **CONFIRMÉE** (21/09) : mémoire du dépôt **et** notes locales via `atlas-apprendre.bat`. Limite mesurée : 1re réponse lente sur CPU → argument du RAG |
 | 4 | RAG | ✅ candidat validé (AnythingLLM) — **attend ta Zone 1 + ton accord** |
 | 5 | Outils / agent | après 4, avec `sentinelle-exfiltration` |
 | — | Fine-tuning | **FERMÉ** — motif matériel + démontré |

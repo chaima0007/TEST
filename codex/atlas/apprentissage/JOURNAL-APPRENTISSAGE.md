@@ -23,7 +23,7 @@
   de les faire confirmer. Un agent qui corrige une hallucination par une affirmation non
   sourcée n'a rien corrigé.
 
-## 2026-09-21 — Les notes locales entrent dans la mémoire (PLAUSIBLE jusqu'à capture)
+## 2026-09-21 — Les notes locales entrent dans la mémoire (CONFIRMÉ le soir même)
 
 - **Tâche :** Chaima demande « continuer les commandes pour qu'elle apprenne ». Couche 3 selon
   l'ordre du skill `atlas` : la mémoire doit grandir avec **ses** notes, pas seulement les
@@ -38,7 +38,10 @@
   script ne fait qu'un téléchargement sortant ; `sentinelle-exfiltration` n'a rien à redire.
 - **Risques connus, à vérifier sur capture :** encodage des accents via `type` sous
   `chcp 65001` ; une note contenant trois guillemets droits casserait le Modelfile.
-- **Verdict :** PLAUSIBLE. Passe à CONFIRMÉ à la première capture où l'IA cite une note locale.
+- **Verdict : CONFIRMÉ** (capture du 2026-09-21, soir) — note « couscous » écrite dans le
+  Bloc-notes, script lancé (« 1 notes, 58 octets », `success`), question posée, réponse exacte.
+  Accents intacts à travers `type` sous `chcp 65001` (risque levé). Réserve : elle n'a pas nommé
+  le fichier source, malgré la consigne ; à surveiller avec plusieurs notes.
 - **Retour de Chaima, le soir même : « c'est lent, et pourquoi on recommence toujours la même
   action ? »** Deux constats justes. (1) Lent : la 1re réponse relit toute la mémoire sur CPU.
   Correctif : règles réduites à leur phrase en gras dans le Modelfile (4 540 → 3 608 tokens
