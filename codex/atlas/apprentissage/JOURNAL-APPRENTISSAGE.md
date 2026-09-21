@@ -44,7 +44,8 @@
   même question commence par « DERNIER ÉVÉNEMENT » et la routine en pause, avec le coût exact
   et la marche à suivre. Résidu cosmétique : le titre a été récité avec sa parenthèse de
   consigne → parenthèse retirée du titre, la consigne reste dans les règles SYSTEM.
-  Test du lexique (RAG) : en attente de la capture.
+  Test du lexique (RAG), capture du 2026-09-21 : **CONFIRMÉ** — « Retrieval-Augmented
+  Generation », explication juste, aucun sens inventé. **R-016 prouvée sur ses deux volets.**
 - **Incident de collage :** coller dans l'invite `>>>` a injecté `200~` (marqueur de collage
   de Windows Terminal, non compris par Ollama). Solution : taper au clavier. Ajouté à
   `MACHINE.md`.

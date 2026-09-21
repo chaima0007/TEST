@@ -40,7 +40,7 @@ Remise en service = Chaima attache le dépôt avec droits de push à l'environne
 (réglage claude.ai), puis réactive la routine. **21/09 — Mémoire locale CONFIRMÉE :** le modèle
 `atlas-memoire` a été chargé sur la machine de Chaima et a répondu avec des faits vrais tirés de
 ces fichiers. Deux défauts mesurés : il a omis la routine en pause (fait enterré en milieu de
-fichier) et a inventé le sens du sigle RAG. Corrigés par cette section et par un lexique.
+fichier) et a inventé le sens du sigle RAG. Corrigés par cette section et par un lexique, **les deux corrections CONFIRMÉES par re-test le 21/09**.
 
 ## À FAIRE PAR TOI — quand tu veux, dans cet ordre, et rien d'autre ne bloque
 
