@@ -1318,7 +1318,7 @@ var EX = [
  miss:{sudo:"Sans « sudo », tu ne peux changer que TON propre mot de passe. Pour celui d'un autre compte, il faut les privilèges root."},
  why:"« passwd utilisateur » demande le nouveau mot de passe de façon interactive et le stocke hashé dans /etc/shadow. Sans sudo, « passwd » ne change que ton propre mot de passe.",
  outCmd:"sudo passwd paul\nChangement du mot de passe de l'utilisateur paul.\nNouveau mot de passe : \nRetapez le nouveau mot de passe : \npasswd : mot de passe mis à jour avec succès",
- note:"Connaissance générale Rocky/RHEL : le PPTX du cours reste à compléter sur ce point."},
+ note:"Sur Rocky 9, <b>passwd</b> passe par <b>pwquality</b> (réglé dans /etc/security/pwquality.conf, 8 caractères minimum par défaut). Pour un utilisateur ordinaire, un mot de passe trop faible est REFUSÉ. Avec sudo, root reçoit seulement un avertissement (« MOT DE PASSE INCORRECT : le mot de passe est plus court que 8 caractères »), la question est reposée, et s'il confirme le mot de passe est accepté quand même : root n'est jamais bloqué, il est seulement prévenu."},
 
 {id:"w3-usermod-aG", w:3, src:"general",
  sc:"Paul doit pouvoir administrer la machine avec sudo. Sur Rocky, il faut donc l'ajouter au groupe wheel — sans lui retirer ses groupes actuels.",
@@ -3859,7 +3859,210 @@ var EX = [
    setenforce:"« setenforce » CHANGE le mode (0 permissif, 1 strict). On commence toujours par observer avec « getenforce »."},
  why:"SELinux est actif en mode « Enforcing » par défaut sur Rocky 9 : il peut bloquer un service parfaitement configuré, par exemple un serveur web qui écoute sur un port non standard. C'est la quatrième cause à vérifier, après le service, le port et le pare-feu — et celle qu'on oublie systématiquement, parce que le service se contente d'un « Permission denied » sans jamais nommer SELinux : la vraie trace est dans le journal d'audit, pas dans celui du service.",
  out:"Enforcing",
- note:"Connaissance générale Rocky/RHEL. Les refus SELinux se lisent dans <b>/var/log/audit/audit.log</b> (avec sudo) ou avec <b>sudo ausearch -m avc -ts recent</b>. Pour le serveur web sur un port non standard, la réparation est <b>sudo semanage port -a -t http_port_t -p tcp 8080</b> — mais sur une Rocky 9 minimale, <b>semanage</b> n'est pas installé par défaut (« command not found ») : il faut d'abord <b>sudo dnf install policycoreutils-python-utils</b>. Piège d'examen classique à ne pas oublier."}
+ note:"Connaissance générale Rocky/RHEL. Les refus SELinux se lisent dans <b>/var/log/audit/audit.log</b> (avec sudo) ou avec <b>sudo ausearch -m avc -ts recent</b>. Pour le serveur web sur un port non standard, la réparation est <b>sudo semanage port -a -t http_port_t -p tcp 8080</b> — mais sur une Rocky 9 minimale, <b>semanage</b> n'est pas installé par défaut (« command not found ») : il faut d'abord <b>sudo dnf install policycoreutils-python-utils</b>. Piège d'examen classique à ne pas oublier."},
+
+/* ---------------- ajouts : verrouillage de comptes, état des services,
+                    recherche de paquets, profils réseau, SELinux ---------- */
+
+{id:"w3-passwd-lock", w:3, src:"general",
+ sc:"Paul part en congé trois mois. Son compte doit rester en place — ses fichiers, ses droits, son courrier — mais plus personne ne doit pouvoir s'y connecter par mot de passe.",
+ ask:"Verrouille le mot de passe du compte paul avec la commande passwd.",
+ sol:["sudo","passwd","-l","paul"],
+ blocks:["-u","-d","-e","userdel"],
+ traps:{
+   "-u":"« -u » DÉverrouille : c'est exactement l'inverse de ce qui est demandé.",
+   "-d":"Piège dangereux : « -d » SUPPRIME le mot de passe. Le compte se retrouve sans mot de passe du tout, ce qui est bien pire qu'un compte verrouillé.",
+   "-e":"« -e » force l'expiration : paul devra changer son mot de passe à la prochaine connexion, mais il pourra toujours se connecter.",
+   userdel:"« userdel » SUPPRIME le compte. Ici on veut le conserver intact, seulement empêcher la connexion."},
+ miss:{"-l":"Sans « -l », « sudo passwd paul » demande simplement un NOUVEAU mot de passe au lieu de verrouiller l'ancien.",
+       sudo:"Sans « sudo », passwd ne s'applique qu'à ton propre compte : verrouiller celui d'un autre exige root."},
+ order:"L'ordre est : sudo, passwd, l'option, puis le nom du compte.",
+ why:"Verrouiller n'efface rien : passwd -l ajoute simplement un « ! » devant le hachage dans /etc/shadow, ce qui rend la comparaison de mot de passe impossible — aucun mot de passe saisi ne pourra jamais correspondre. Le compte, ses fichiers et ses groupes restent intacts, et un « passwd -u » retire le « ! » et rend l'accès tel qu'il était. C'est la bonne réponse à un départ temporaire ; userdel, lui, est définitif.",
+ outCmd:"sudo passwd -l paul\nVerrouillage du mot de passe pour l'utilisateur paul.\npasswd : opération réussie",
+ note:"Attention : verrouiller le MOT DE PASSE n'empêche pas une connexion par <b>clé SSH</b>, qui ne passe pas par /etc/shadow. Pour fermer vraiment la porte, on ajoute <b>sudo usermod -s /sbin/nologin paul</b> ou on désactive le compte avec <b>sudo chage -E 0 paul</b>. Les messages ci-dessus s'affichent en anglais (<b>Locking password for user paul.</b> / <b>passwd: Success</b>) sur une machine sans traduction française."},
+
+{id:"w3-passwd-S", w:3, src:"general",
+ sc:"Paul t'écrit qu'il n'arrive plus à se connecter. Avant de toucher à quoi que ce soit, tu veux savoir dans quel état est son mot de passe.",
+ ask:"Affiche l'état du mot de passe du compte paul.",
+ sol:["sudo","passwd","-S","paul"],
+ blocks:["-l","-u","-d","id"],
+ traps:{
+   "-l":"« -l » VERROUILLE le compte. Poser un diagnostic ne doit jamais commencer par une commande qui modifie.",
+   "-u":"« -u » déverrouille. Tu ne sais pas encore si le compte est verrouillé : observe d'abord.",
+   "-d":"« -d » supprime le mot de passe : tu transformerais un problème de connexion en trou de sécurité.",
+   id:"« id paul » montre l'UID, le GID et les groupes. Utile, mais il ne dit rien de l'état du mot de passe."},
+ miss:{"-S":"Sans « -S », « sudo passwd paul » ne montre rien : il DEMANDE un nouveau mot de passe. La majuscule compte : « -s » n'existe pas ici.",
+       sudo:"Sans « sudo », tu ne peux consulter que ton propre état."},
+ order:"L'ordre est : sudo, passwd, l'option, puis le nom du compte.",
+ why:"« passwd -S » résume l'état en une ligne. Le deuxième champ est celui qu'on lit : PS = mot de passe défini et utilisable, LK = verrouillé (un « ! » devant le hachage), NP = aucun mot de passe. Les champs suivants donnent la date du dernier changement, puis l'âge minimum, l'âge maximum, la période d'avertissement et le délai d'inactivité, tous en jours. C'est le premier réflexe devant un « je n'arrive plus à me connecter ».",
+ outCmd:"sudo passwd -S paul\npaul LK 2026-09-22 0 99999 7 -1",
+ note:"Lecture de la ligne : <b>paul</b> (compte) · <b>LK</b> (verrouillé) · <b>2026-09-22</b> (dernier changement) · <b>0</b> (âge minimum) · <b>99999</b> (âge maximum, soit jamais) · <b>7</b> (avertissement) · <b>-1</b> (pas d'inactivité). Pour tous les comptes d'un coup : <b>sudo passwd -Sa</b>."},
+
+{id:"w3-usermod-U", w:3, src:"general",
+ sc:"Paul est de retour de congé. « passwd -S paul » affiche LK : son mot de passe est toujours verrouillé. Il faut le lui rendre, sans le changer.",
+ ask:"Déverrouille le compte paul avec usermod.",
+ sol:["sudo","usermod","-U","paul"],
+ blocks:["-L","-l","-e","groupmod"],
+ traps:{
+   "-L":"« -L » VERROUILLE (Lock). C'est ce qui a déjà été fait ; on veut l'inverse.",
+   "-l":"Attention à la casse : « -l » en minuscule RENOMME le compte. « usermod -l pierre paul » transformerait paul en pierre.",
+   "-e":"« -e » fixe une date d'expiration du COMPTE. C'est un autre verrou, il ne débloque pas le mot de passe.",
+   groupmod:"« groupmod » modifie un groupe, pas un compte utilisateur."},
+ miss:{"-U":"Sans « -U », « sudo usermod paul » ne fait rien : usermod répond « usermod : aucune modification n'a été effectuée ».",
+       sudo:"Sans « sudo », modifier un compte est refusé."},
+ order:"L'ordre est : sudo, usermod, l'option, puis le nom du compte.",
+ why:"« usermod -U » et « passwd -u » font la même chose : retirer le « ! » placé devant le hachage dans /etc/shadow. Le mot de passe d'origine est donc retrouvé tel quel, paul n'a rien à redéfinir. Retenir la paire majuscule pour usermod (-L / -U) et minuscule pour passwd (-l / -u) : les deux outils, deux conventions.",
+ outCmd:"sudo usermod -U paul\n$ sudo passwd -S paul\npaul PS 2026-09-22 0 99999 7 -1",
+ note:"Cas particulier à connaître : si le compte n'a JAMAIS eu de mot de passe, /etc/shadow contient <b>!!</b>. Déverrouiller retire un seul « ! » et laisse un champ vide — usermod refuse d'ailleurs l'opération en avertissant que cela rendrait le compte accessible sans mot de passe. La bonne suite est alors <b>sudo passwd paul</b>."},
+
+{id:"w3-chage-l", w:3, src:"general",
+ sc:"La politique de l'école impose de changer son mot de passe tous les 90 jours. Tu veux vérifier ce qui est réellement appliqué au compte paul.",
+ ask:"Affiche la politique d'âge du mot de passe de paul.",
+ sol:["sudo","chage","-l","paul"],
+ blocks:["-M","-E","-d","groups"],
+ traps:{
+   "-M":"« -M » ne lit rien : il ÉCRIT l'âge maximum. « chage -M 90 paul » imposerait la règle au lieu de la consulter.",
+   "-E":"« -E » ÉCRIT une date d'expiration du compte. Consulter d'abord, modifier ensuite.",
+   "-d":"Très piégeux : « chage -d 0 paul » force le changement de mot de passe à la prochaine connexion. C'est une modification, pas une lecture.",
+   groups:"« groups paul » liste ses groupes : rien à voir avec l'âge du mot de passe."},
+ miss:{"-l":"Sans « -l », chage ouvre le mode INTERACTIF et te pose une à une toutes les questions de réglage.",
+       sudo:"Sans « sudo », tu ne peux consulter que ton propre compte."},
+ order:"L'ordre est : sudo, chage, l'option, puis le nom du compte.",
+ why:"« chage -l » est la version lisible de « passwd -S » : les mêmes informations, mais en toutes lettres et avec des dates au lieu de nombres de jours. On y lit d'un coup si le mot de passe expire, si le compte expire, et quand. C'est là qu'on débusque un « il ne peut plus se connecter » causé par une date dépassée plutôt que par un mauvais mot de passe.",
+ outCmd:"sudo chage -l paul\nDernier changement de mot de passe                      : sept. 22, 2026\nFin de validité du mot de passe                         : jamais\nMot de passe désactivé                                  : jamais\nFin de validité du compte                               : jamais\nNombre minimum de jours entre les changements de mot de passe : 0\nNombre maximum de jours entre les changements de mot de passe : 99999\nNombre de jours d'avertissement avant la fin de validité : 7",
+ note:"Curiosité utile en examen : chage affiche la date au format <b>mois abrégé, jour, année</b> (« sept. 22, 2026 ») quelle que soit la langue — seul le nom du mois est traduit, l'ordre est figé dans le programme. Pour appliquer la règle des 90 jours : <b>sudo chage -M 90 paul</b>."},
+
+{id:"w3-userdel-r", w:3, src:"general",
+ sc:"Le stage de paul est terminé et l'école demande que plus rien ne reste sur le serveur : ni le compte, ni son dossier personnel.",
+ ask:"Supprime le compte paul ainsi que son dossier personnel.",
+ sol:["sudo","userdel","-r","paul"],
+ blocks:["-f","deluser","usermod","groupdel"],
+ traps:{
+   "-f":"« -f » force la suppression même si paul est connecté, ET supprime son dossier même si des fichiers appartiennent à d'autres. À réserver aux cas désespérés.",
+   deluser:"« deluser » est la commande Debian/Ubuntu. Sur Rocky/RHEL, c'est « userdel ».",
+   usermod:"« usermod » modifie un compte ; ici il faut le faire disparaître.",
+   groupdel:"« groupdel » supprime un GROUPE. Le groupe primaire de paul disparaîtra tout seul avec le compte."},
+ miss:{"-r":"Sans « -r », le compte disparaît mais /home/paul reste. Ses fichiers n'ont plus de propriétaire connu : « ls -l » affiche alors un simple numéro d'UID à la place du nom.",
+       sudo:"Sans « sudo », supprimer un compte est refusé."},
+ order:"L'ordre est : sudo, userdel, l'option, puis le nom du compte.",
+ why:"« userdel -r » efface le compte dans /etc/passwd et /etc/shadow, puis supprime /home/paul et sa boîte de courrier. C'est irréversible : un départ définitif se sauvegarde AVANT (par exemple avec tar), et un départ temporaire se traite par un verrouillage plutôt que par une suppression.",
+ outCmd:"sudo userdel -r paul\nuserdel : la file d'attente du courrier (/var/spool/mail/paul) n'a pas été trouvée",
+ note:"Ce message n'est PAS une erreur : il signale seulement qu'il n'y avait pas de boîte de courrier à effacer. Les fichiers de paul situés ailleurs que dans /home (par exemple dans /srv ou /var) ne sont pas touchés : <b>sudo find / -nouser</b> permet de les retrouver ensuite."},
+
+{id:"w3-quiz-shadow-lock", w:3, src:"general", quiz:true,
+ sc:"Tu ouvres /etc/shadow pour comprendre pourquoi trois comptes se comportent différemment, et tu remarques un « ! » devant le hachage de paul.",
+ ask:"Que signifie ce « ! » placé devant le hachage ?",
+ sol:["le mot de passe est verrouillé : aucune connexion par mot de passe n'est possible"],
+ blocks:["le mot de passe est vide : n'importe qui peut se connecter",
+         "le mot de passe a expiré et doit être changé à la prochaine connexion",
+         "c'est un compte système réservé à un service"],
+ traps:{
+   "le mot de passe est vide : n'importe qui peut se connecter":"C'est le cas inverse, et le plus dangereux : un champ VIDE entre les deux premiers « : » signifie aucun mot de passe demandé. Le « ! », lui, ferme la porte.",
+   "le mot de passe a expiré et doit être changé à la prochaine connexion":"L'expiration ne se lit pas ici : elle se calcule avec les champs de dates situés APRÈS le hachage, et se consulte avec « chage -l ».",
+   "c'est un compte système réservé à un service":"Les comptes de service portent en général une étoile « * », pas un « ! » — et surtout, ils n'ont jamais eu de mot de passe à verrouiller."},
+ why:"Le deuxième champ de /etc/shadow contient le hachage du mot de passe, et son premier caractère raconte l'histoire du compte : « ! » = un mot de passe existe mais il a été verrouillé (passwd -l ou usermod -L), « !! » = aucun mot de passe n'a jamais été défini, « * » = connexion par mot de passe impossible par conception, typique des comptes de service, et un champ VIDE = aucun mot de passe demandé, la faille à corriger immédiatement. Le verrou fonctionne parce qu'aucun mot de passe saisi ne peut produire un hachage commençant par « ! ».",
+ outCmd:"sudo grep -E '^(paul|sylvie|chrony):' /etc/shadow\npaul:!$6$k9Lm2P...:20353:0:99999:7:::\nsylvie:$6$aB7xQz...:20353:0:99999:7:::\nchrony:!!:20120::::::",
+ note:"Se relit avec <b>sudo passwd -S</b> : paul sera <b>LK</b>, sylvie <b>PS</b>, chrony <b>LK</b> lui aussi — car <b>!!</b> commence par un « ! »."},
+
+{id:"w4-is-enabled", w:4, src:"general",
+ sc:"Le serveur a redémarré cette nuit et httpd n'est pas reparti. Tu veux savoir si son démarrage automatique est bien programmé, sans lire tout le pavé de « status ».",
+ ask:"Demande si le service httpd est programmé au démarrage.",
+ sol:["systemctl","is-enabled","httpd"],
+ blocks:["is-active","enable","status","sudo"],
+ traps:{
+   "is-active":"« is-active » répond sur MAINTENANT (tourne-t-il ?). La question porte sur le PROCHAIN démarrage.",
+   enable:"« enable » PROGRAMME le démarrage automatique. Ici on interroge, on ne modifie pas encore.",
+   status:"« status » donne la réponse, mais noyée dans quinze lignes. « is-enabled » répond en un mot, ce qui le rend utilisable dans un script.",
+   sudo:"« sudo » n'est pas nécessaire : interroger l'état d'un service est permis à tout le monde. Piloter un service, en revanche, l'exige."},
+ order:"L'ordre est : systemctl, la sous-commande, puis le nom du service.",
+ why:"systemd sépare deux questions que l'on confond sans arrêt : « is-enabled » répond « est-il programmé au démarrage ? » et « is-active » répond « tourne-t-il en ce moment ? ». Les deux sont indépendantes : un service peut tourner sans être programmé (il ne reviendra pas après le redémarrage) ou être programmé sans tourner (il a planté depuis). Ces commandes répondent par un seul mot et par un code de retour, ce qui en fait les briques de tout script de vérification.",
+ outCmd:"systemctl is-enabled httpd\ndisabled",
+ note:"Réponses possibles : <b>enabled</b>, <b>disabled</b>, <b>static</b> (pas d'interrupteur, le service est tiré par un autre), <b>masked</b> (interdit de démarrer). Pour réparer ici : <b>sudo systemctl enable --now httpd</b>."},
+
+{id:"w4-is-active", w:4, src:"general",
+ sc:"Tu écris un petit script de surveillance : il doit simplement savoir si httpd tourne, sans afficher le moindre détail supplémentaire.",
+ ask:"Demande si le service httpd tourne en ce moment.",
+ sol:["systemctl","is-active","httpd"],
+ blocks:["is-enabled","is-failed","start","status"],
+ traps:{
+   "is-enabled":"« is-enabled » parle du PROCHAIN démarrage de la machine, pas de l'instant présent.",
+   "is-failed":"« is-failed » ne répond que sur un seul cas : le service a-t-il échoué ? Un service simplement arrêté n'est pas en échec, il répondrait « non » aux deux.",
+   start:"« start » DÉMARRE le service. Un script de surveillance observe, il n'agit pas de lui-même.",
+   status:"« status » affiche un bloc complet avec les dernières lignes de journal : trop bavard pour un script."},
+ order:"L'ordre est : systemctl, la sous-commande, puis le nom du service.",
+ why:"« is-active » répond en un mot — active, inactive ou failed — et renvoie surtout un code de retour : 0 si le service tourne, non nul sinon. C'est ce code, invisible à l'écran, qui permet d'écrire « if systemctl is-active --quiet httpd; then ... ». Le pendant est « is-enabled » pour le démarrage automatique : maintenant d'un côté, au boot de l'autre.",
+ outCmd:"systemctl is-active httpd\ninactive",
+ note:"L'option <b>--quiet</b> supprime l'affichage et ne garde que le code de retour, ce qu'on veut dans un script. On lit ce code avec <b>echo $?</b> : <b>0</b> = le service tourne."},
+
+{id:"w5-provides", w:5, src:"general",
+ sc:"Tu tapes « semanage port -l » et Rocky répond « bash: semanage: commande introuvable ». Tu ne connais pas le nom du paquet qui la fournit.",
+ ask:"Trouve quel paquet fournit la commande semanage.",
+ sol:["dnf","provides","\"*/semanage\""],
+ blocks:["search","install","list","info"],
+ traps:{
+   search:"« dnf search » cherche dans les NOMS et les descriptions des paquets. Il ne connaît pas la liste des fichiers installés, donc il passe à côté quand le nom du paquet ne ressemble pas à celui de la commande.",
+   install:"« install » installe — encore faut-il savoir QUOI installer. C'est précisément la question.",
+   list:"« dnf list » énumère des paquets par leur nom, il ne descend pas au niveau des fichiers.",
+   info:"« dnf info » décrit un paquet dont on connaît déjà le nom."},
+ miss:{provides:"Sans « provides », dnf ne sait pas qu'on l'interroge sur un FICHIER."},
+ order:"L'ordre est : dnf, provides, puis le motif de recherche entre guillemets.",
+ why:"« dnf provides » interroge l'index des fichiers de tous les dépôts et répond à la question « quel paquet contient ce fichier ? », même si ce paquet n'est pas installé. C'est la réponse universelle à « commande introuvable ». Le motif « */semanage » signifie « un chemin, quel qu'il soit, se terminant par semanage », et les guillemets sont indispensables : sans eux, le shell tenterait d'interpréter l'étoile comme un nom de fichier du dossier courant.",
+ outCmd:"dnf provides \"*/semanage\"\npolicycoreutils-python-utils-3.6-2.1.el9.noarch : SELinux policy core python utilities\nDépôt        : appstream\nCorrespondance trouvée :\nNom de fichier    : /usr/sbin/semanage",
+ note:"« whatprovides » est un synonyme exact de « provides ». Une fois le nom obtenu : <b>sudo dnf install policycoreutils-python-utils</b>. Même méthode pour toutes les commandes absentes d'une Rocky minimale, par exemple <b>netstat</b> (paquet <b>net-tools</b>) ou <b>ifconfig</b> (le même)."},
+
+{id:"w5-check-update", w:5, src:"general",
+ sc:"Avant la fenêtre de maintenance de ce soir, on te demande la liste des mises à jour disponibles — sans en installer une seule maintenant.",
+ ask:"Liste les mises à jour disponibles sans rien installer.",
+ sol:["dnf","check-update"],
+ blocks:["update","upgrade","--assumeyes","makecache"],
+ traps:{
+   update:"« dnf update » INSTALLE les mises à jour après une simple confirmation. Un doigt trop rapide sur « o » et la maintenance a commencé sans toi.",
+   upgrade:"« upgrade » est le synonyme exact de « update » sur dnf : il installe lui aussi.",
+   "--assumeyes":"« --assumeyes » (ou « -y ») répond oui à toutes les questions : exactement ce qu'il ne faut pas ajouter ici.",
+   makecache:"« makecache » rafraîchit les métadonnées des dépôts mais n'affiche aucune liste de mises à jour."},
+ why:"« check-update » ne fait que lire : il compare les versions installées à celles des dépôts et affiche la liste, sans jamais rien télécharger ni installer. Son code de retour est parlant : 100 s'il existe des mises à jour, 0 si tout est à jour, 1 en cas d'erreur. Ce 100, contre-intuitif, est ce qui permet à un script de surveillance de prévenir qu'une machine a pris du retard.",
+ outCmd:"dnf check-update\nDernière vérification de l'expiration des métadonnées effectuée il y a 0:03:12 le lun. 22 sept. 2026 09:41:07.\n\nkernel.x86_64                     5.14.0-503.el9      baseos\nopenssl.x86_64                    1:3.2.2-6.el9       baseos\nsudo.x86_64                       1.9.5p2-10.el9      appstream",
+ note:"Le code de retour <b>100</b> signifie « il y a des mises à jour », et non une erreur : on le lit avec <b>echo $?</b>. Aucun <b>sudo</b> n'est nécessaire pour consulter."},
+
+{id:"w6-nmcli-conn-add", w:6, src:"general",
+ sc:"Une deuxième carte réseau, ens19, vient d'être ajoutée à la machine virtuelle. « nmcli connection show » ne l'affiche nulle part : aucun profil n'existe encore pour elle. Tu veux en créer un nommé bureau.",
+ ask:"Crée un profil ethernet nommé bureau sur la carte ens19.",
+ sol:["sudo","nmcli","connection","add","type ethernet","ifname ens19","con-name bureau"],
+ blocks:["modify","device","up","ifname bureau"],
+ traps:{
+   modify:"« modify » change un profil EXISTANT. Ici il n'y en a aucun : nmcli répondrait « unknown connection 'bureau' ».",
+   device:"« nmcli device » sert à consulter l'état des cartes. Un profil se crée côté « connection ».",
+   up:"« up » active un profil : c'est l'étape d'APRÈS, une fois qu'il existe.",
+   "ifname bureau":"Confusion classique : « ifname » désigne la CARTE physique (ens19), pas le nom du profil. Le nom du profil se donne avec « con-name »."},
+ miss:{"type ethernet":"Sans « type », nmcli ne sait pas quelle sorte de connexion créer et refuse : « Error: value for 'type' argument is required. »",
+       "ifname ens19":"Sans « ifname », le profil n'est rattaché à aucune carte : il pourrait s'appliquer à n'importe laquelle.",
+       "con-name bureau":"Sans « con-name », nmcli invente un nom tout seul, du genre « ethernet-ens19 », et la consigne n'est pas respectée.",
+       sudo:"Sans « sudo », la création d'un profil est refusée."},
+ order:"L'ordre est : sudo nmcli connection add, puis type, ifname et con-name.",
+ why:"Sur Rocky, une carte sans profil NetworkManager reste muette : c'est le profil, et non la carte, qui porte l'adresse, la passerelle et les DNS. « add » crée ce profil, « modify » le règle, « up » l'active. Les trois mots à ne jamais mélanger : le TYPE est la nature du lien (ethernet), l'IFNAME est la carte physique (ens19), le CON-NAME est l'étiquette que tu choisis (bureau) et que tu réutiliseras dans toutes les commandes suivantes.",
+ outCmd:"sudo nmcli connection add type ethernet ifname ens19 con-name bureau\nConnexion « bureau » (7f3a1c5e-2b90-4d11-9a6f-0c8e5d2b1a44) ajoutée avec succès.",
+ note:"Suite logique : <b>sudo nmcli connection modify bureau ipv4.method manual ipv4.addresses 192.168.1.10/24</b> puis <b>sudo nmcli connection up bureau</b>. Le profil est écrit dans <b>/etc/NetworkManager/system-connections/bureau.nmconnection</b>."},
+
+{id:"w6-semanage-port", w:6, src:"general",
+ sc:"Tu as changé le port SSH en 2222 dans /etc/ssh/sshd_config, ouvert le pare-feu, et sshd refuse toujours de démarrer : « Cannot bind any address ». SELinux n'autorise sshd qu'à certains ports.",
+ ask:"Autorise SELinux à laisser sshd écouter sur le port 2222 en tcp.",
+ sol:["sudo","semanage","port","-a","-t","ssh_port_t","-p","tcp","2222"],
+ blocks:["-m","-d","http_port_t","udp"],
+ traps:{
+   "-m":"« -m » MODIFIE une règle existante. Le port 2222 n'est encore déclaré nulle part : semanage répondrait « ValueError: Port tcp/2222 is not defined ».",
+   "-d":"« -d » SUPPRIME la règle. On veut en ajouter une.",
+   "http_port_t":"« http_port_t » est l'étiquette des ports du serveur web. SELinux refuserait toujours sshd : chaque service a son étiquette, ici « ssh_port_t ».",
+   udp:"SSH fonctionne en TCP. Autoriser le port en udp ne changerait rien au blocage."},
+ miss:{"-a":"Sans « -a », semanage ne sait pas s'il doit ajouter, modifier ou supprimer.",
+       "-t":"Sans « -t », l'étiquette à poser sur le port n'est pas précisée.",
+       "-p":"Sans « -p », le protocole n'est pas précisé : semanage exige de savoir s'il s'agit de tcp ou d'udp.",
+       "ssh_port_t":"C'est l'étiquette SELinux qui autorise sshd. Sans elle, la règle n'a aucun sens.",
+       sudo:"Sans « sudo », modifier la politique SELinux est refusé."},
+ order:"L'ordre est : sudo semanage port -a -t <étiquette> -p <protocole> <numéro>.",
+ why:"SELinux étiquette aussi les PORTS, pas seulement les fichiers : sshd n'a le droit de se lier qu'à un port portant l'étiquette ssh_port_t (22 par défaut). Changer le port dans sshd_config et ouvrir le pare-feu ne suffit donc pas — il reste ce troisième verrou, celui qu'on oublie, parce que le message d'erreur de sshd ne prononce jamais le mot SELinux. Trois gardiens à franchir pour un port : le service, le pare-feu, SELinux.",
+ outCmd:"sudo semanage port -a -t ssh_port_t -p tcp 2222\n$ sudo semanage port -l | grep ssh_port_t\nssh_port_t                     tcp      2222, 22",
+ note:"Sur une Rocky 9 minimale, <b>semanage</b> n'existe pas : <b>sudo dnf install policycoreutils-python-utils</b> d'abord (voir <b>dnf provides</b>, monde 5). La séquence complète pour déplacer SSH sur 2222 : éditer <b>/etc/ssh/sshd_config</b>, puis <b>semanage port -a</b>, puis <b>sudo firewall-cmd --permanent --add-port=2222/tcp</b> et <b>--reload</b>, puis <b>sudo systemctl restart sshd</b>."}
+
 
 ];
 
@@ -5768,7 +5971,11 @@ function endBoss(){
     : "Les étapes ratées sont enregistrées dans ta fiche de points faibles.";
   show("scRecap");
   if(premiere || sansFauteInedit){
-    setTimeout(function(){ celebrate(sansFauteInedit&&!premiere? "Boss vaincu sans faute" : "Boss vaincu", SES.boss.name+" · "+score, "⚔️"); }, 120);
+    /* On fige le titre du boss MAINTENANT : entre l'appel et l'affichage il
+       s'écoule 120 ms, et SES peut déjà désigner une autre partie. */
+    (function(titre, chiffre, inedit){ setTimeout(function(){
+      celebrate(inedit? "Boss vaincu sans faute" : "Boss vaincu", titre+" · "+chiffre, "⚔️");
+    }, 120); })(SES.boss.name, score, sansFauteInedit&&!premiere);
   }
   renderHome();
 }
@@ -5814,7 +6021,10 @@ function endExam(){
   $("recapMsg").textContent=msg;
   save();
   show("scRecap");
-  if(score>=0.8) setTimeout(function(){ celebrate("Niveau examen", SES.first+"/"+n+" en "+m+"m"+(sec<10?"0":"")+sec, "🎓"); }, 120);
+  if(score>=0.8){
+    /* Même précaution : le résultat est figé avant le délai d'affichage. */
+    (function(txt){ setTimeout(function(){ celebrate("Niveau examen", txt, "🎓"); }, 120); })(SES.first+"/"+n+" en "+m+"m"+(sec<10?"0":"")+sec);
+  }
   renderHome();
 }
 function announced(n){ return !!(S.seen && S.seen["monde"+n]); }

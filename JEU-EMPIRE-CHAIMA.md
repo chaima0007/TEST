@@ -39,9 +39,11 @@ qui permet de transposer à une autre commande au lieu d'apprendre par cœur.
 
 ## Ce qu'il y a dedans
 
-- **12 mondes**, 217 commandes : navigation, permissions, comptes, processus et
-  services, paquets, réseau, texte, archivage et logs, disques et swap, console,
-  SSH sur serveur distant (Ubuntu), pare-feu firewalld.
+- **12 mondes**, 235 exercices — 205 commandes à composer et 30 questions
+  de cours : navigation, permissions, comptes (dont verrouillage et
+  suppression), processus et services, paquets, réseau, texte, archivage
+  et logs, disques et swap, console, SSH sur serveur distant (Ubuntu),
+  pare-feu firewalld.
 - **12 boss** : une panne réaliste par monde, en quatre ou cinq commandes
   enchaînées. Ils s'ouvrent à 70 % du monde et le jeu te prévient quand l'un
   d'eux devient disponible. Le gros gain est pour la première victoire et pour
@@ -100,10 +102,10 @@ deuxième série — l'objectif du jour s'adapte.
 ## Pour qui développe dessus
 
 - `npm run test:jeu` — logique de correction, révision espacée, contenu
-  (20 153 assertions, sans dépendance).
+  (21 535 assertions, sans dépendance).
 - `npm run test:jeu:parcours` — 30 jours d'usage simulé : arriéré de rappels,
   ancrage, ouverture des mondes et de l'examen.
-- `npm run test:jeu:ui` — 188 vérifications dans un vrai navigateur
+- `npm run test:jeu:ui` — 190 vérifications dans un vrai navigateur
   (Playwright) : parcours complet, retour du lendemain, export et import de la
   sauvegarde, tablette sans stockage, barème d'examen et de boss, anatomie des
   commandes, voix, vibration et taille du texte.

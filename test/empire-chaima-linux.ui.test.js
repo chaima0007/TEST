@@ -534,6 +534,18 @@ const ok = (c, l) => { if (c) pass++; else { fail++; errs.push(l); } };
     ok(boss.imparfaite < boss.premiere, "une victoire imparfaite rapporte moins (" + boss.imparfaite + " XP)");
     ok(boss.sansFauteApres === 80, "le premier sans-faute après une victoire imparfaite est récompensé (" + boss.sansFauteApres + " XP)");
 
+    // La célébration s'affiche 120 ms plus tard : d'ici là, une autre partie
+    // a pu commencer. Le titre du boss doit être figé, pas relu au dernier moment.
+    await q.evaluate(() => {
+      S.boss = {}; S.xp = 1000; S.seen = {};
+      const n = BOSS[0].steps.length;
+      SES = { queue: new Array(n), first: n, done: n, world: 1, boss: BOSS[0], xp: n * 12, marks: {} };
+      endBoss();
+      SES = { queue: [], first: 0, done: 0, xp: 0, marks: {} };  // elle est déjà repartie ailleurs
+    });
+    await q.waitForTimeout(300);
+    ok(soucis.length === 0, "la célébration d'un boss survit au départ d'une autre partie : " + soucis.join(" | "));
+
     // L'examen n'enlève jamais d'XP déjà gagnés.
     const exam = await q.evaluate(() => {
       const passer = (justes) => {
@@ -550,6 +562,17 @@ const ok = (c, l) => { if (c) pass++; else { fail++; errs.push(l); } };
     ok(exam.moyen.apres - exam.moyen.avant === 60, "un examen entre 60 et 79 % ajoute le palier intermédiaire");
     ok(exam.fort.apres - exam.fort.avant === 180, "un examen à 80 % et plus ajoute le grand palier");
     ok(exam.parfait.apres - exam.parfait.avant === 180, "un examen parfait aussi, et rien n'est retiré");
+
+    // Même vérification pour l'examen.
+    await q.evaluate(() => {
+      S.xp = 2000; S.exams = [];
+      SES = { queue: new Array(12), first: 12, done: 12, start: Date.now() - 300000,
+              exam: true, xp: 144, marks: {}, missed: [] };
+      endExam();
+      SES = null;
+    });
+    await q.waitForTimeout(300);
+    ok(soucis.length === 0, "la célébration d'un examen survit à la fin de la session : " + soucis.join(" | "));
 
     // L'objectif du jour est figé au réveil : il ne bouge plus en cours de séance.
     const objectif = await q.evaluate(() => {
