@@ -39,16 +39,22 @@ qui permet de transposer à une autre commande au lieu d'apprendre par cœur.
 
 ## Ce qu'il y a dedans
 
-- **12 mondes**, 235 exercices — 205 commandes à composer et 30 questions
-  de cours : navigation, permissions, comptes (dont verrouillage et
-  suppression), processus et services, paquets, réseau, texte, archivage
-  et logs, disques et swap, console, SSH sur serveur distant (Ubuntu),
-  pare-feu firewalld.
-- **12 boss** : une panne réaliste par monde, en quatre ou cinq commandes
-  enchaînées. Ils s'ouvrent à 70 % du monde et le jeu te prévient quand l'un
+- **14 mondes**, 428 exercices : navigation, permissions et ACL, comptes
+  (création, verrouillage, vieillissement des mots de passe), processus,
+  services, cron et at, cibles systemd, SELinux, paquets dnf et flatpak,
+  réseau et SSH par clé, texte et redirections, archivage et journaux,
+  disques, LVM, NFS et autofs, console, SSH sur serveur distant (Ubuntu),
+  pare-feu firewalld, scripts bash, conteneurs podman.
+- **14 boss** : une panne réaliste par monde, en quatre ou cinq commandes
+  enchaînées. Ils s'ouvrent à 70 % du monde, plafonné à 22 commandes
+  réussies, et le jeu te prévient quand l'un
   d'eux devient disponible. Le gros gain est pour la première victoire et pour
   le premier sans-faute ; les rejeux restent utiles mais ne rapportent plus une
   journée entière.
+- **Ouverture des mondes** : un monde s'ouvre à 60 % du précédent, plafonné à
+  18 commandes réussies. Le plafond compte : certains mondes font plus de
+  70 exercices, et sans lui il faudrait en réussir 45 avant d'entrevoir la
+  suite. La carte d'un monde verrouillé annonce le nombre exact qui manque.
 - **Révision espacée** : une commande ratée revient tout de suite, une commande
   sue revient de plus en plus tard, puis passe en entretien toutes les deux
   semaines.
@@ -94,7 +100,7 @@ réseau et SSH, disques et swap) : sources dans `fiches/`.
 
 Le jeu fait passer la consolidation avant la découverte : quand des rappels
 s'accumulent, il ouvre moins de commandes nouvelles. À deux séries par jour,
-compte environ **90 commandes vues et 40 ancrées au bout d'un mois**, les
+compte environ **100 commandes vues et 50 ancrées au bout d'un mois**, les
 premières ancrées vers le douzième jour. Pour aller plus vite avant une
 échéance, allonge la série dans les réglages (12 questions) ou enchaîne une
 deuxième série — l'objectif du jour s'adapte.
@@ -102,7 +108,7 @@ deuxième série — l'objectif du jour s'adapte.
 ## Pour qui développe dessus
 
 - `npm run test:jeu` — logique de correction, révision espacée, contenu
-  (21 535 assertions, sans dépendance).
+  (33 707 assertions, sans dépendance).
 - `npm run test:jeu:parcours` — 30 jours d'usage simulé : arriéré de rappels,
   ancrage, ouverture des mondes et de l'examen.
 - `npm run test:jeu:ui` — 190 vérifications dans un vrai navigateur

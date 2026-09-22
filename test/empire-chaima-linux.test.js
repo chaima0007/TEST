@@ -15,7 +15,7 @@ const { WORLDS, EX, BOSS, dailyQueue, dailyStock, dueShare, interleave, headVerb
         isExamOpen, examProgress, EXAM_MIN, expandSol, accepted, acceptedStrings, tokenPool, isCorrect, diagnose,
         normalizeFree, freeTokens, checkFree, nextBox, dueAt, isMastered, levelInfo,
         xpTotalForLevel, worldStats, isWorldUnlocked, buildQueue, DAY, MASTER_BOX,
-        bossFor, isBossOpen, BOSS_UNLOCK, weakList, weakQueue, examQueue, examWorlds,
+        bossFor, isBossOpen, BOSS_UNLOCK, unlockNeed, bossNeed, UNLOCK_MAX, weakList, weakQueue, examQueue, examWorlds,
         buildReport, worldByN, ALLBY, anatomy, partRole } = ctx;
 
 /* exercices + étapes de boss : mêmes règles de qualité et de validation */
@@ -379,13 +379,34 @@ for (const b of BOSS) {
     ok(/^Étape \d/.test(st.sc), `étape ${st.id} : la narration ne situe pas l'étape`);
     ok(EX.every(e => e.id !== st.id), `étape ${st.id} : identifiant en conflit avec un exercice`);
   }
-  // les commandes du boss doivent appartenir au vocabulaire du monde
-  const vocab = new Set();
-  EX.filter(e => e.w === b.w).forEach(e => accepted(e).forEach(sq => sq.forEach(t => vocab.add(t))));
+  // Un boss ne doit jamais introduire une commande jamais enseignée : il révise.
+  // Il a le droit de rappeler une commande d'un monde antérieur (un script se
+  // termine par chmod +x), mais la majorité de ses étapes reste dans son monde.
+  const vocabMonde = new Set(), vocabVu = new Set();
+  EX.forEach(e => {
+    if (e.w > b.w) return;
+    accepted(e).forEach(sq => sq.forEach(t => {
+      vocabVu.add(t);
+      if (e.w === b.w) vocabMonde.add(t);
+    }));
+  });
+  let etapesCmd = 0, dansSonMonde = 0;
   for (const st of b.steps) {
-    const first = accepted(st)[0][0];
-    ok(vocab.has(first), `étape ${st.id} : « ${first} » n'apparaît dans aucun exercice du monde ${b.w}`);
+    const rep = accepted(st)[0];
+    if (st.quiz) {
+      // Une étape-quiz répond par une phrase ou une ligne entière, pas par un verbe.
+      ok(rep.length === 1 && typeof rep[0] === "string" && rep[0].length > 10,
+         `étape ${st.id} : réponse de quiz vide ou trop courte`);
+      continue;
+    }
+    etapesCmd++;
+    const first = rep[0];
+    ok(vocabVu.has(first),
+       `étape ${st.id} : « ${first} » n'est enseigné par aucun exercice jusqu'au monde ${b.w}`);
+    if (vocabMonde.has(first)) dansSonMonde++;
   }
+  ok(etapesCmd === 0 || dansSonMonde * 2 >= etapesCmd,
+     `boss ${b.w} : ${dansSonMonde}/${etapesCmd} étapes seulement dans le vocabulaire de son monde`);
 }
 {
   const remplis = WORLDS.filter(w => EX.some(e => e.w === w.n)).map(w => w.n);
@@ -396,10 +417,10 @@ for (const b of BOSS) {
   const p = {};
   ok(!isBossOpen(1, p), "le boss du monde 1 est fermé au départ");
   const l1 = EX.filter(e => e.w === 1);
-  l1.slice(0, Math.ceil(l1.length * 0.6)).forEach(e => { p[e.id] = { b: 1, due: 0, n: 1, ok: 1, ko: 0 }; });
-  ok(!isBossOpen(1, p), "60% ne suffit pas à ouvrir le boss");
-  l1.slice(0, Math.ceil(l1.length * BOSS_UNLOCK)).forEach(e => { p[e.id] = { b: 1, due: 0, n: 1, ok: 1, ko: 0 }; });
-  ok(isBossOpen(1, p), "70% ouvre le boss du monde 1");
+  l1.slice(0, bossNeed(1) - 1).forEach(e => { p[e.id] = { b: 1, due: 0, n: 1, ok: 1, ko: 0 }; });
+  ok(!isBossOpen(1, p), "une commande avant le seuil, le boss reste fermé");
+  l1.slice(0, bossNeed(1)).forEach(e => { p[e.id] = { b: 1, due: 0, n: 1, ok: 1, ko: 0 }; });
+  ok(isBossOpen(1, p), "le seuil atteint ouvre le boss du monde 1");
   ok(!isBossOpen(2, p), "le boss d'un monde verrouillé reste fermé");
   ok(bossFor(99) === null, "aucun boss pour un monde inexistant");
 }
@@ -516,6 +537,17 @@ const counts = {};
 EX.forEach(e => counts[e.w] = (counts[e.w] || 0) + 1);
 console.log("Exercices par monde :", JSON.stringify(counts), "— total", EX.length);
 console.log("Boss :", BOSS.length, "— étapes de boss :", STEPS.length);
+/* ---------- 12. les portes restent franchissables quand un monde grossit ---------- */
+for (const w of WORLDS) {
+  const total = EX.filter(e => e.w === w.n).length;
+  if (!total) continue;
+  const need = unlockNeed(w.n), bneed = bossNeed(w.n);
+  ok(need <= UNLOCK_MAX, `monde ${w.n} : ouvrir la suite demande ${need} commandes, c'est un mur`);
+  ok(need <= total, `monde ${w.n} : seuil d'ouverture au-dessus du contenu du monde`);
+  ok(bneed <= total, `monde ${w.n} : seuil du boss au-dessus du contenu du monde`);
+  ok(bneed >= need, `monde ${w.n} : le boss s'ouvrirait avant le monde suivant`);
+}
+
 console.log(`${pass} assertions passées, ${fail} échec(s).`);
 if (fail) {
   const uniq = [...new Set(errs)];
