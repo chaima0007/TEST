@@ -4515,6 +4515,74 @@ body.noanim *,body.noanim *::before,body.noanim *::after{animation:none!importan
      reste « à vérifier sur VM » dans w5-flatpak-remote-add.
    ==================================================================== */
 
+/* ====================================================================
+   Session du 2026-09-22 (session interactive avec Chaima, en parallèle de
+   la routine planifiée). Deux lignes de travail vivaient en parallèle sans
+   le savoir : ce fichier, publié en artefact, et le dépôt git
+   chaima0007/TEST (branche claude/empire-chaima-linux-game-54cqgy), qui
+   porte une SUITE DE TESTS automatisée absente de la validation ad hoc
+   des sessions précédentes. Cette session a repris ce fichier comme base
+   dans le dépôt et l'a passé à ces tests pour la première fois.
+
+   À SAVOIR POUR LES PROCHAINES SESSIONS : le dépôt contient
+   test/empire-chaima-linux.test.js (moteur + contrat pédagogique,
+   33 707 assertions), .parcours.test.js (30 jours d'usage simulé) et
+   .ui.test.js (190 vérifications dans un vrai Chromium via Playwright).
+   Ils vérifient des choses que le script de contrôle structurel habituel
+   ne voit pas : présence d'un out/outCmd sur CHAQUE item, longueur
+   minimale des explications de piège, déclenchement réel de chaque trap
+   par diagnose(), rythme d'ouverture des mondes sur un mois simulé, et
+   absence d'erreur JavaScript pendant un parcours complet au navigateur.
+
+   3 DÉFAUTS DE CONTENU trouvés par ces tests et corrigés :
+   - w2-quiz-acl-default-vs-access et w2-quiz-acl-b-vs-k n'avaient NI out
+     NI outCmd : termBlock() serait retombé sur son cas par défaut et
+     aurait affiché la phrase de réponse du quiz comme une sortie de
+     commande. Le même défaut avait déjà été trouvé puis corrigé sur
+     w4-quiz-tuned-pourquoi lors d'une session antérieure : il est
+     réapparu depuis. Cette fois les sorties ajoutées font le travail
+     pédagogique (les deux listes ACL côte à côte et un fichier antérieur
+     qui n'a rien hérité ; l'entrée d'accès toujours présente après -k).
+   - w5-flatpak-install-app : l'explication du piège « search » tenait en
+     trois mots (« Chercherait sans installer. »), sous le seuil du
+     contrat pédagogique. Réécrite.
+
+   1 DÉFAUT DE PROGRESSION trouvé par la simulation de 30 jours, et c'est
+   le plus important : un seuil d'ouverture en POURCENTAGE se retourne
+   contre les mondes riches. 60 % du monde 4, qui compte désormais 75
+   exercices, demandait 45 commandes réussies avant d'entrevoir le monde 5
+   (38 pour le monde 9). Sur le mois simulé, Chaima n'ouvrait plus que 4
+   mondes là où elle en ouvrait 6 quand le jeu était plus petit : chaque
+   session d'enrichissement resserrait la porte sans que personne ne le
+   voie. UNLOCK_RATIO et BOSS_UNLOCK sont donc désormais PLAFONNÉS par
+   unlockNeed()/bossNeed() (18 et 22 commandes réussies), et les cartes de
+   l'accueil annoncent le nombre exact qui manque au lieu d'un pourcentage.
+   À NE PAS REVENIR EN ARRIÈRE sans relancer test:jeu:parcours : le
+   plafond est ce qui empêche un ajout de contenu de pénaliser la
+   progression.
+
+   1 CORRECTIF DE FIABILITÉ (moteur d'affichage, hors CORE) : les
+   célébrations de fin de boss et de fin d'examen lisaient SES 120 ms plus
+   tard, au moment de l'affichage. Si une autre partie avait commencé
+   entre-temps, la page levait « Cannot read properties of undefined » et
+   aucune célébration ne s'affichait. Les valeurs sont désormais figées à
+   l'appel, et deux vérifications UI dédiées reproduisent le cas.
+
+   2 RÈGLES DE TEST assouplies là où elles se trompaient de cible : une
+   étape de BOSS en quiz répond par une phrase et non par un verbe (b4-6,
+   b13-2 à b13-5), et un BOSS a le droit de rappeler une commande d'un
+   monde antérieur (b13-6 se termine par chmod u+x, enseigné au monde 2)
+   tant que la majorité de ses étapes reste dans son monde. La garantie
+   utile est conservée : aucune étape de BOSS n'introduit une commande
+   jamais enseignée.
+
+   Aucun exercice supprimé, aucune solution modifiée, aucun contenu
+   pédagogique retiré. État validé : 428 exercices, 14 mondes, 14 BOSS
+   (67 étapes) — 33 707 assertions, 18 vérifications de parcours,
+   190 vérifications au navigateur, 0 échec. Premier rendu mesuré à
+   229 ms pour 1,1 Mo.
+   ==================================================================== */
+
 var WORLDS = [
   {n:1, ico:"📁", name:"Navigation et fichiers",
    cmds:"pwd ls cd cat less mkdir cp mv rm ln"},
